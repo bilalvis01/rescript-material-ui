@@ -1,0 +1,33 @@
+{
+  "name": "@bilalvis01/rescript-material-ui",
+  "namespace": "materialui",
+  "reason": {
+    "react-jsx": 3
+  },
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "__tests__",
+      "subdirs": true
+    },
+    {
+      "dir": "bindings"
+    }
+  ],
+  "package-specs": [
+    {
+      "module": "commonjs",
+      "in-source": true
+    }
+  ],
+  "suffix": ".js",
+  "bs-dependencies": [
+    "@rescript/react"
+  ],
+  "bs-dev-dependencies": [
+    "@glennsl/bs-jest"
+  ]
+}
