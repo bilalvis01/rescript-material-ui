@@ -1,0 +1,6 @@
+{
+  "name": "rescript-material-ui",
+  "workspaces": [
+    "core"
+  ]
+}
