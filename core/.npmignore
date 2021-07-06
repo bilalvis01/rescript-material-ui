@@ -1,0 +1,8 @@
+/__tests__
+/lib
+/.merlin
+/.bsb-lock
+/.cache
+/package-lock.json
+/src/*.bs.js
+/bindings
