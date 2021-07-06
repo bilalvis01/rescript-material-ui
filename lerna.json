@@ -1,8 +1,0 @@
-{
-  "packages": [
-    "docs",
-    "packages/*"
-  ],
-  "version": "0.10.3",
-  "npmClient": "npm"
-}

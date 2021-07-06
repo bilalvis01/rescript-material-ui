@@ -1,5 +1,0 @@
-/src/*.js
-/src/*.re
-!/gulpfile.js
-!/nameList.js
-!/Icon.re

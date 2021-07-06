@@ -1,6 +1,0 @@
-node_modules
-lib
-.merlin
-.cache
-.bsb.lock
-lerna-debug.log
