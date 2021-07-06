@@ -1,0 +1,4 @@
+type dir = [
+  | #ltr
+  | #rtl
+];
