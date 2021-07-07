@@ -1,11 +1,42 @@
+@unboxed
+type rec commaItem =
+  | CommaItem('a): commaItem;
+
+type comma = [
+  | #comma(array<commaItem>)
+];
+
+@unboxed
+type rec spaceItem =
+  | SpaceItem('a): spaceItem;
+
+type space = [
+  | #space(array<spaceItem>)
+];
+
 type global = [
   | #inherit
   | #initial
   | #unset
 ];
 
+// Scalar
 type number = [
-  | #num(float)
+  | #number(float)
+];
+
+type integer = [
+  | #int(int)
+];
+
+type string_ = [
+  | #string(string)
+];
+
+type scalar = [
+  | number
+  | integer
+  | string_
 ];
 
 // Length
@@ -253,7 +284,6 @@ type color_global = [
   | color
   | global
 ];
-
 
 type displayOutside = [
   | #block
@@ -639,7 +669,12 @@ type borderRadius_global = [
 
 type border = [
   | lineStyle
+  | lineWidth
+  | color
   | global
+  | scalar
+  | space
+  | comma
 ];
 
 type borderColor = [

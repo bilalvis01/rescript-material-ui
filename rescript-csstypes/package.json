@@ -1,0 +1,26 @@
+{
+  "name": "@bilalvis01/rescript-csstypes",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "test:start": "jest --watch",
+    "re:build": "rescript",
+    "re:start": "rescript build -w"
+  },
+  "keywords": [
+    "rescript",
+    "csstypes",
+    "rescript-csstypes"
+  ],
+  "author": "BILAL <bilalvis01@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "rescript": "^9.1.4"
+  },
+  "dependencies": {
+    "@rescript/react": "^0.10.3"
+  }
+}

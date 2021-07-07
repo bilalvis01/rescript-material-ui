@@ -1,4 +1,4 @@
-open StyleType;
+open Type;
 
 // Number
 let num: float => [> #num(float) ];
@@ -36,9 +36,10 @@ let rgba: (rgbValue, rgbValue, rgbValue, alpha) => [> #rgba(rgbValue, rgbValue, 
 let rgbHex: string => [> #rgbHex(string) ];
 
 // Border
-external borderString: string => border = "%identity";
+/*
 let border2: (~style: lineStyle, [ | color | lineWidth ]) => border;
 let border3: (~width: lineWidth, ~style: lineStyle, ~color: color) => border;
+*/
 
 external borderColorString: string => borderColor = "%identity";
 let borderColor2: (borderColor, borderColor) => borderColor;

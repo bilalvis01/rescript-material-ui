@@ -1,11 +1,15 @@
-open StyleType;
+open Type;
 
 // Global
 external global: global => string = "%identity";
 
-// Number
-let num: float => string;
+// Scalar
+external num: float => string = "%identity";
 let number: number => string;
+external intg: int => string = "%identity";
+let integer: integer => string;
+let string: string_ => string;
+let scalar: scalar => string;
 
 // Length
 let ch: float => string;
@@ -47,9 +51,14 @@ let rgbHex: string => string;
 external colorKeyword: colorKeyword => string = "%identity"; 
 let color: color => string;
 
+// Comma and Space separated value
+let comma: (comma, 'a => string) => string;
+let space: (space, 'a => string) => string;
+
 // Line
 let lineWidth: lineWidth => string;
 external lineStyle: lineStyle => string = "%identity";
 
-// BorderColor
+// Border
+let border: border => string;
 let borderColor: borderColor => string;

@@ -1,0 +1,27 @@
+{
+  "name": "@bilalvis01/rescript-csstypes",
+  "namespace": "css",
+  "reason": {
+    "react-jsx": 3
+  },
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "__tests__",
+      "subdirs": true
+    }
+  ],
+  "package-specs": [
+    {
+      "module": "commonjs",
+      "in-source": true
+    }
+  ],
+  "suffix": ".js",
+  "bs-dependencies": [
+    "@rescript/react"
+  ]
+}

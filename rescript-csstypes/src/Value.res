@@ -1,4 +1,5 @@
-open StyleType;
+open Belt;
+open Type;
 
 // Number
 let num = v => #num(v);
@@ -35,30 +36,36 @@ let rgb = (v1, v2, v3) => #rgb(v1, v2, v3);
 let rgba = (v1, v2, v3, v4) => #rgba(v1, v2, v3, v4);
 let rgbHex = v => #rgbHex(v);
 
-external borderString: string => border = "%identity";
+/*
 let border2 = (
   ~style: lineStyle,
   widthOrColor: [ | color | lineWidth ] 
 ) => {
   let widthOrColor = switch widthOrColor {
-    | #...color as c => StyleValueToString.color(c)
-    | #...lineWidth as w => StyleValueToString.lineWidth(w)
+    | #...color as c => ValueToString.color(c)
+    | #...lineWidth as w => ValueToString.lineWidth(w)
   };
 
-  borderString(`${StyleValueToString.lineStyle(style)} ${widthOrColor}`);
+  borderString(`${ValueToString.lineStyle(style)} ${widthOrColor}`);
 };
 let border3 = (
   ~width: lineWidth,
   ~style: lineStyle,
   ~color: color
 ) => {
-  borderString(`${StyleValueToString.lineWidth(width)} ${StyleValueToString.lineStyle(style)} ${StyleValueToString.color(color)}`);
+  borderString(`${ValueToString.lineWidth(width)} ${ValueToString.lineStyle(style)} ${ValueToString.color(color)}`);
+};
+*/
+
+module Border = {
+  external string: string => border = "%identity";
+  let make = v => string(ValueToString.border(v));
 };
 
 external borderColorString: string => borderColor = "%identity";
 let borderColor2 = (v1, v2) => 
-  borderColorString(`${StyleValueToString.borderColor(v1)} ${StyleValueToString.borderColor(v2)}`);
+  borderColorString(`${ValueToString.borderColor(v1)} ${ValueToString.borderColor(v2)}`);
 let borderColor3 = (v1, v2, v3) => 
-  borderColorString(`${StyleValueToString.borderColor(v1)} ${StyleValueToString.borderColor(v2)} ${StyleValueToString.borderColor(v3)}`);
+  borderColorString(`${ValueToString.borderColor(v1)} ${ValueToString.borderColor(v2)} ${ValueToString.borderColor(v3)}`);
 let borderColor4 = (v1, v2, v3, v4) => 
-  borderColorString(`${StyleValueToString.borderColor(v1)} ${StyleValueToString.borderColor(v2)} ${StyleValueToString.borderColor(v3)} ${StyleValueToString.borderColor(v4)}`);
+  borderColorString(`${ValueToString.borderColor(v1)} ${ValueToString.borderColor(v2)} ${ValueToString.borderColor(v3)} ${ValueToString.borderColor(v4)}`);

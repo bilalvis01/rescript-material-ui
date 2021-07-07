@@ -1,14 +1,31 @@
-open StyleType;
+open Type;
 open Belt;
 
 // Global
 external global: global => string = "%identity";
 
-// Number
-let num = v => Float.toString(v);
+external num: float => string = "%identity";
 let number = v => {
   switch v {
-    | #num(v) => num(v)
+    | #number(v) => num(v)
+  }
+};
+external intg: int => string = "%identity";
+let integer = v => {
+  switch v {
+    | #int(v) => intg(v)
+  };
+};
+let string = v => {
+  switch v {
+    | #string(v) => v
+  };
+};
+let scalar = v => {
+  switch v {
+    | #...number as n => number(n)
+    | #...integer as i => integer(i)
+    | #...string_ as s => string(s)
   }
 };
 
@@ -115,7 +132,40 @@ let color = v => {
   };
 };
 
+
+let comma = (v, cb) => {
+  switch v {
+    | #comma(arr) => 
+      arr->Array.reduce("", (acc, CommaItem(item)) => 
+        if (Js.String2.length(acc) == 0) { cb(Obj.magic(item)) }
+        else { `${acc}, ${cb(Obj.magic(item))}` }
+      )
+  }
+};
+
+let space = (v, cb) => {
+  switch v {
+    | #space(arr) => 
+      arr->Array.reduce("", (acc, SpaceItem(item)) => 
+        if (Js.String2.length(acc) == 0) { cb(Obj.magic(item)) }
+        else { `${acc} ${cb(Obj.magic(item))}` }
+      )
+  }
+};
+
 // Border
+let rec border = v => {
+  switch v {
+    | #...lineStyle as s => lineStyle(s)
+    | #...lineWidth as w => lineWidth(w)
+    | #...color as c => color(c)
+    | #...global as g => global(g)
+    | #...scalar as s => scalar(s)
+    | #...space as s => space(s, border)
+    | #...comma as c => comma(c, border)
+  };
+};
+
 let borderColor = v => {
   switch v {
     | #...color as c => color(c)
