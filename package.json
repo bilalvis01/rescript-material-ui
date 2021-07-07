@@ -1,6 +1,6 @@
 {
   "name": "rescript-material-ui",
   "workspaces": [
-    "core"
+    "@bilalvis01/rescript-material-ui"
   ]
 }
