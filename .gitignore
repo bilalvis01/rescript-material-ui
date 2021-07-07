@@ -1,6 +1,6 @@
 lib
 node_modules
 *.code-workspace
-.bsb.log
+.bsb.lock
 .merlin
 package-lock.json
