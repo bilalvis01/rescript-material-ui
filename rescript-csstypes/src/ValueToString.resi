@@ -4,9 +4,9 @@ open Type;
 external global: global => string = "%identity";
 
 // Scalar
-external num: float => string = "%identity";
+let num: float => string;
 let number: number => string;
-external intg: int => string = "%identity";
+let intg: int => string;
 let integer: integer => string;
 let string: string_ => string;
 let scalar: scalar => string;
@@ -51,9 +51,8 @@ let rgbHex: string => string;
 external colorKeyword: colorKeyword => string = "%identity"; 
 let color: color => string;
 
-// Comma and Space separated value
-let comma: (comma, 'a => string) => string;
-let space: (space, 'a => string) => string;
+// Combinator
+let combinator: (combinator<'a>, 'a => string) => string;
 
 // Line
 let lineWidth: lineWidth => string;

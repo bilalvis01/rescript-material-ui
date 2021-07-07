@@ -4,13 +4,13 @@ open Belt;
 // Global
 external global: global => string = "%identity";
 
-external num: float => string = "%identity";
+let num = v => Float.toString(v);
 let number = v => {
   switch v {
     | #number(v) => num(v)
   }
 };
-external intg: int => string = "%identity";
+let intg = v => Int.toString(v);
 let integer = v => {
   switch v {
     | #int(v) => intg(v)
@@ -132,26 +132,22 @@ let color = v => {
   };
 };
 
-
-let comma = (v, cb) => {
+let combinator = (v, cb) => {
   switch v {
-    | #comma(arr) => 
-      arr->Array.reduce("", (acc, CommaItem(item)) => 
-        if (Js.String2.length(acc) == 0) { cb(Obj.magic(item)) }
-        else { `${acc}, ${cb(Obj.magic(item))}` }
+    | #many(v) =>
+      v->Array.reduce("", (acc, item) => 
+        if (Js.String2.length(acc) == 0) { cb(item) }
+        else { `${acc} ${cb(item)}` }
       )
-  }
-};
-
-let space = (v, cb) => {
-  switch v {
-    | #space(arr) => 
-      arr->Array.reduce("", (acc, SpaceItem(item)) => 
-        if (Js.String2.length(acc) == 0) { cb(Obj.magic(item)) }
-        else { `${acc} ${cb(Obj.magic(item))}` }
+    | #stack(v) =>
+      v->Array.reduce("", (acc, item) => 
+        if (Js.String2.length(acc) == 0) { cb(item) }
+        else { `${acc}, ${cb(item)}` }
       )
+    | #join(v1, v2) => `${cb(v1)}, ${cb(v2)}`
+    | #concat(v1, v2) => `${cb(v1)} ${cb(v2)}` 
   }
-};
+}
 
 // Border
 let rec border = v => {
@@ -161,8 +157,7 @@ let rec border = v => {
     | #...color as c => color(c)
     | #...global as g => global(g)
     | #...scalar as s => scalar(s)
-    | #...space as s => space(s, border)
-    | #...comma as c => comma(c, border)
+    | #...combinator as c => combinator(c, border)
   };
 };
 

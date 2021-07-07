@@ -1,65 +1,76 @@
-open Belt;
 open Type;
+type synthetic<'a>;
 
-// Number
-let num = v => #num(v);
+module Basic = {
+  // Number
+  let num = v => #number(v);
+  external number: float => synthetic<'a> = "%identity";
 
-// Length
-let ch = l => #ch(l);
-let em = l => #em(l);
-let ex = l => #ex(l);
-let rem = l => #rem(l);
-let vh = l => #vh(l);
-let vw = l => #vw(l);
-let vmin = l => #vmin(l);
-let vmax = l => #vmax(l);
-let px = l => #px(l);
-let cm = l => #cm(l);
-let mm = l => #mm(l);
-let inch = l => #inch(l);
-let pc = l => #pc(l);
-let pt = l => #pt(l);
+  // Integer
+  let int = v => #int(v);
+  external integer: int => synthetic<'a> = "%identity";
 
-// Percentage
-let pct = v => #pct(v);
+  // String
+  let str = v => #string(v);
+  external string: string => synthetic<'a> = "%identity";
 
-// Angle
-let deg = v => #deg(v);
-let grad = v => #grad(v);
-let rad = v => #rad(v);
-let turn = v => #turn(v);
 
-// Color
-let hsl = (v1, v2, v3) => #hsl(v1, v2, v3);
-let hsla = (v1, v2, v3, v4) => #hsla(v1, v2, v3, v4);
-let rgb = (v1, v2, v3) => #rgb(v1, v2, v3);
-let rgba = (v1, v2, v3, v4) => #rgba(v1, v2, v3, v4);
-let rgbHex = v => #rgbHex(v);
+  // Length
+  let ch = l => #ch(l);
+  let em = l => #em(l);
+  let ex = l => #ex(l);
+  let rem = l => #rem(l);
+  let vh = l => #vh(l);
+  let vw = l => #vw(l);
+  let vmin = l => #vmin(l);
+  let vmax = l => #vmax(l);
+  let px = l => #px(l);
+  let cm = l => #cm(l);
+  let mm = l => #mm(l);
+  let inch = l => #inch(l);
+  let pc = l => #pc(l);
+  let pt = l => #pt(l);
 
-/*
-let border2 = (
-  ~style: lineStyle,
-  widthOrColor: [ | color | lineWidth ] 
-) => {
-  let widthOrColor = switch widthOrColor {
-    | #...color as c => ValueToString.color(c)
-    | #...lineWidth as w => ValueToString.lineWidth(w)
-  };
+  // Percentage
+  let pct = v => #pct(v);
 
-  borderString(`${ValueToString.lineStyle(style)} ${widthOrColor}`);
+  // Angle
+  let deg = v => #deg(v);
+  let grad = v => #grad(v);
+  let rad = v => #rad(v);
+  let turn = v => #turn(v);
+
+  // Color
+  let hsl = (v1, v2, v3) => #hsl(v1, v2, v3);
+  let hsla = (v1, v2, v3, v4) => #hsla(v1, v2, v3, v4);
+  let rgb = (v1, v2, v3) => #rgb(v1, v2, v3);
+  let rgba = (v1, v2, v3, v4) => #rgba(v1, v2, v3, v4);
+  let rgbHex = v => #rgbHex(v);
 };
-let border3 = (
-  ~width: lineWidth,
-  ~style: lineStyle,
-  ~color: color
-) => {
-  borderString(`${ValueToString.lineWidth(width)} ${ValueToString.lineStyle(style)} ${ValueToString.color(color)}`);
+
+module Combinator = {
+  let many = v => #many(v);
+  let stack = v => #stack(v);
+  let join = (v1, v2) => #join(v1, v2);
+  let concat = (v1, v2) => #concat(v1, v2);
 };
-*/
 
 module Border = {
-  external string: string => border = "%identity";
-  let make = v => string(ValueToString.border(v));
+  type tag;
+  type t = synthetic<tag>;
+  external string: string => t = "%identity";
+  let make = v => ValueToString.border(v)->string;
+  let make2 = (v1, v2) => 
+    v1
+    ->Combinator.concat(v2)
+    ->ValueToString.border
+    ->string;
+  let make3 = (v1, v2, v3) =>
+    v1
+    ->Combinator.concat(v2)
+    ->Combinator.concat(v3)
+    ->ValueToString.border
+    ->string;
 };
 
 external borderColorString: string => borderColor = "%identity";

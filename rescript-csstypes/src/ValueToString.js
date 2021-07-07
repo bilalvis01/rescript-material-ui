@@ -4,12 +4,20 @@
 var Curry = require("rescript/lib/js/curry.js");
 var Belt_Array = require("rescript/lib/js/belt_Array.js");
 
+function num(v) {
+  return String(v);
+}
+
 function number(v) {
-  return v.VAL;
+  return String(v.VAL);
+}
+
+function intg(v) {
+  return String(v);
 }
 
 function integer(v) {
-  return v.VAL;
+  return String(v.VAL);
 }
 
 function string(v) {
@@ -17,7 +25,12 @@ function string(v) {
 }
 
 function scalar(v) {
-  return v.VAL;
+  var variant = v.NAME;
+  if (variant === "string") {
+    return v.VAL;
+  } else {
+    return String(v.VAL);
+  }
 }
 
 function ch(l) {
@@ -160,7 +173,7 @@ function lineWidth(v) {
 
 function hue(v) {
   if (v.NAME === "number") {
-    return v.VAL;
+    return String(v.VAL);
   } else {
     return angle(v);
   }
@@ -168,7 +181,7 @@ function hue(v) {
 
 function alpha(v) {
   if (v.NAME === "number") {
-    return v.VAL;
+    return String(v.VAL);
   } else {
     return percentage(v);
   }
@@ -176,7 +189,7 @@ function alpha(v) {
 
 function rgbValue(v) {
   if (v.NAME === "number") {
-    return v.VAL;
+    return String(v.VAL);
   } else {
     return percentage(v);
   }
@@ -226,24 +239,32 @@ function color(v) {
   return hsla(match$3[0], match$3[1], match$3[2], match$3[3]);
 }
 
-function comma(v, cb) {
-  return Belt_Array.reduce(v.VAL, "", (function (acc, item) {
-                if (acc.length === 0) {
-                  return Curry._1(cb, item);
-                } else {
-                  return acc + ", " + Curry._1(cb, item);
-                }
-              }));
-}
-
-function space(v, cb) {
-  return Belt_Array.reduce(v.VAL, "", (function (acc, item) {
-                if (acc.length === 0) {
-                  return Curry._1(cb, item);
-                } else {
-                  return acc + " " + Curry._1(cb, item);
-                }
-              }));
+function combinator(v, cb) {
+  var variant = v.NAME;
+  if (variant === "concat") {
+    var match = v.VAL;
+    return Curry._1(cb, match[0]) + " " + Curry._1(cb, match[1]);
+  }
+  if (variant === "many") {
+    return Belt_Array.reduce(v.VAL, "", (function (acc, item) {
+                  if (acc.length === 0) {
+                    return Curry._1(cb, item);
+                  } else {
+                    return acc + " " + Curry._1(cb, item);
+                  }
+                }));
+  }
+  if (variant === "stack") {
+    return Belt_Array.reduce(v.VAL, "", (function (acc, item) {
+                  if (acc.length === 0) {
+                    return Curry._1(cb, item);
+                  } else {
+                    return acc + ", " + Curry._1(cb, item);
+                  }
+                }));
+  }
+  var match$1 = v.VAL;
+  return Curry._1(cb, match$1[0]) + ", " + Curry._1(cb, match$1[1]);
 }
 
 function border(v) {
@@ -259,12 +280,10 @@ function border(v) {
   var variant = v.NAME;
   if (variant === "rem" || variant === "vw" || variant === "vh" || variant === "px" || variant === "pt" || variant === "pc" || variant === "mm" || variant === "ex" || variant === "em" || variant === "cm" || variant === "ch" || variant === "vmin" || variant === "vmax" || variant === "inch") {
     return lineWidth(v);
-  } else if (variant === "comma") {
-    return comma(v, border);
+  } else if (variant === "stack" || variant === "many" || variant === "concat" || variant === "join") {
+    return combinator(v, border);
   } else if (variant === "number" || variant === "string" || variant === "int") {
     return scalar(v);
-  } else if (variant === "space") {
-    return space(v, border);
   } else {
     return color(v);
   }
@@ -282,7 +301,9 @@ function borderColor(v) {
   }
 }
 
+exports.num = num;
 exports.number = number;
+exports.intg = intg;
 exports.integer = integer;
 exports.string = string;
 exports.scalar = scalar;
@@ -317,8 +338,7 @@ exports.rgb = rgb;
 exports.rgba = rgba;
 exports.rgbHex = rgbHex;
 exports.color = color;
-exports.comma = comma;
-exports.space = space;
+exports.combinator = combinator;
 exports.lineWidth = lineWidth;
 exports.border = border;
 exports.borderColor = borderColor;

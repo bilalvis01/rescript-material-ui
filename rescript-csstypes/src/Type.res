@@ -1,17 +1,8 @@
-@unboxed
-type rec commaItem =
-  | CommaItem('a): commaItem;
-
-type comma = [
-  | #comma(array<commaItem>)
-];
-
-@unboxed
-type rec spaceItem =
-  | SpaceItem('a): spaceItem;
-
-type space = [
-  | #space(array<spaceItem>)
+type combinator<'a> = [
+  | #many(array<'a>)
+  | #stack(array<'a>)
+  | #join('a, 'a)
+  | #concat('a, 'a)
 ];
 
 type global = [
@@ -667,14 +658,13 @@ type borderRadius_global = [
   | global
 ];
 
-type border = [
+type rec border = [
   | lineStyle
   | lineWidth
   | color
   | global
   | scalar
-  | space
-  | comma
+  | combinator<border>
 ];
 
 type borderColor = [
