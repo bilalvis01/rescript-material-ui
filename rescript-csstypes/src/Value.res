@@ -59,24 +59,24 @@ module Border = {
   type tag;
   type t = synthetic<tag>;
   external string: string => t = "%identity";
-  let make = v => ValueToString.border(v)->string;
+  let make = v => Stringify.border(v)->string;
   let make2 = (v1, v2) => 
     v1
     ->Combinator.concat(v2)
-    ->ValueToString.border
+    ->Stringify.border
     ->string;
   let make3 = (v1, v2, v3) =>
     v1
     ->Combinator.concat(v2)
     ->Combinator.concat(v3)
-    ->ValueToString.border
+    ->Stringify.border
     ->string;
 };
 
 external borderColorString: string => borderColor = "%identity";
 let borderColor2 = (v1, v2) => 
-  borderColorString(`${ValueToString.borderColor(v1)} ${ValueToString.borderColor(v2)}`);
+  borderColorString(`${Stringify.borderColor(v1)} ${Stringify.borderColor(v2)}`);
 let borderColor3 = (v1, v2, v3) => 
-  borderColorString(`${ValueToString.borderColor(v1)} ${ValueToString.borderColor(v2)} ${ValueToString.borderColor(v3)}`);
+  borderColorString(`${Stringify.borderColor(v1)} ${Stringify.borderColor(v2)} ${Stringify.borderColor(v3)}`);
 let borderColor4 = (v1, v2, v3, v4) => 
-  borderColorString(`${ValueToString.borderColor(v1)} ${ValueToString.borderColor(v2)} ${ValueToString.borderColor(v3)} ${ValueToString.borderColor(v4)}`);
+  borderColorString(`${Stringify.borderColor(v1)} ${Stringify.borderColor(v2)} ${Stringify.borderColor(v3)} ${Stringify.borderColor(v4)}`);
