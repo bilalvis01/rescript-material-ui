@@ -187,7 +187,7 @@ function alpha(v) {
   }
 }
 
-function rgbValue(v) {
+function rgbParam(v) {
   if (v.NAME === "number") {
     return String(v.VAL);
   } else {
@@ -204,11 +204,11 @@ function hsla(v1, v2, v3, v4) {
 }
 
 function rgb(v1, v2, v3) {
-  return "rgb(" + rgbValue(v1) + ", " + rgbValue(v2) + ", " + rgbValue(v3) + ")";
+  return "rgb(" + rgbParam(v1) + ", " + rgbParam(v2) + ", " + rgbParam(v3) + ")";
 }
 
 function rgba(v1, v2, v3, v4) {
-  return "rgba(" + rgbValue(v1) + ", " + rgbValue(v2) + ", " + rgbValue(v3) + ", " + alpha(v4) + ")";
+  return "rgba(" + rgbParam(v1) + ", " + rgbParam(v2) + ", " + rgbParam(v3) + ", " + alpha(v4) + ")";
 }
 
 function rgbHex(v) {
@@ -269,7 +269,7 @@ function combinator(v, cb) {
 
 function border(v) {
   if (typeof v !== "object") {
-    if (v === "inset" || v === "double" || v === "dotted" || v === "dashed" || v === "groove" || v === "outset" || v === "solid" || v === "ridge" || v === "hidden" || v === "none" || v === "inherit" || v === "unset" || v === "initial") {
+    if (v === "inset" || v === "double" || v === "dotted" || v === "dashed" || v === "groove" || v === "outset" || v === "solid" || v === "ridge" || v === "hidden" || v === "none" || v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
       return v;
     } else if (v === "thick" || v === "medium" || v === "thin") {
       return lineWidth(v);
@@ -290,14 +290,10 @@ function border(v) {
 }
 
 function borderColor(v) {
-  if (typeof v === "object") {
+  if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
     return color(v);
-  } else if (v === "inherit" || v === "unset" || v === "initial") {
-    return v;
-  } else if (v === "revert") {
-    return "revert";
   } else {
-    return color(v);
+    return v;
   }
 }
 
@@ -331,7 +327,7 @@ exports.turn = turn;
 exports.angle = angle;
 exports.hue = hue;
 exports.alpha = alpha;
-exports.rgbValue = rgbValue;
+exports.rgbParam = rgbParam;
 exports.hsl = hsl;
 exports.hsla = hsla;
 exports.rgb = rgb;

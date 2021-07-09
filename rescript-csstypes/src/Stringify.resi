@@ -42,11 +42,11 @@ let angle: angle => string;
 // Color
 let hue: hue => string;
 let alpha: alpha => string;
-let rgbValue: rgbValue => string;
+let rgbParam: rgbParam => string;
 let hsl: (hue, percentage, percentage) => string;
 let hsla: (hue, percentage, percentage, alpha) => string;
-let rgb: (rgbValue, rgbValue, rgbValue) => string;
-let rgba: (rgbValue, rgbValue, rgbValue, alpha) => string;
+let rgb: (rgbParam, rgbParam, rgbParam) => string;
+let rgba: (rgbParam, rgbParam, rgbParam, alpha) => string;
 let rgbHex: string => string;
 external colorKeyword: colorKeyword => string = "%identity"; 
 let color: color => string;

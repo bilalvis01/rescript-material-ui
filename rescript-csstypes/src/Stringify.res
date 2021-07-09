@@ -109,7 +109,7 @@ let alpha = v => {
     | #...number as n => number(n)
   };
 };
-let rgbValue = v => {
+let rgbParam = v => {
   switch v {
     | #...percentage as l => percentage(l)
     | #...number as n => number(n)
@@ -117,8 +117,8 @@ let rgbValue = v => {
 };
 let hsl = (v1, v2, v3) => `hsl(${hue(v1)}, ${percentage(v2)}, ${percentage(v3)})`;
 let hsla = (v1, v2, v3, v4) => `hsla(${hue(v1)}, ${percentage(v2)}, ${percentage(v3)}, ${alpha(v4)})`;
-let rgb = (v1, v2, v3) => `rgb(${rgbValue(v1)}, ${rgbValue(v2)}, ${rgbValue(v3)})`;
-let rgba = (v1, v2, v3, v4) => `rgba(${rgbValue(v1)}, ${rgbValue(v2)}, ${rgbValue(v3)}, ${alpha(v4)})`;
+let rgb = (v1, v2, v3) => `rgb(${rgbParam(v1)}, ${rgbParam(v2)}, ${rgbParam(v3)})`;
+let rgba = (v1, v2, v3, v4) => `rgba(${rgbParam(v1)}, ${rgbParam(v2)}, ${rgbParam(v3)}, ${alpha(v4)})`;
 let rgbHex = v => `#${v}`;
 external colorKeyword: colorKeyword => string = "%identity"; 
 let color = v => {
@@ -165,6 +165,5 @@ let borderColor = v => {
   switch v {
     | #...color as c => color(c)
     | #...global as g => global(g)
-    | #revert => "revert"
   };
 };

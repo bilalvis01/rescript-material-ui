@@ -1,3 +1,6 @@
+/*
+Combinator
+*/
 type combinator<'a> = [
   | #many(array<'a>)
   | #stack(array<'a>)
@@ -5,13 +8,23 @@ type combinator<'a> = [
   | #concat('a, 'a)
 ];
 
+/* 
+Textual data types
+*/
 type global = [
   | #inherit
   | #initial
   | #unset
+  | #revert
 ];
 
-// Scalar
+type string_ = [
+  | #string(string)
+];
+
+/* 
+ Numeric data type
+*/
 type number = [
   | #number(float)
 ];
@@ -20,21 +33,32 @@ type integer = [
   | #int(int)
 ];
 
-type string_ = [
-  | #string(string)
-];
-
+// scalar
 type scalar = [
   | number
   | integer
   | string_
 ];
 
-// Length
+// percentage
 type percentage = [
   | #pct(float)
 ];
 
+// ratio
+type ratio = [
+  | #ratio(int, int)
+];
+
+// flex
+type flexUnit = [
+  | #fr
+];
+
+/*
+Quantities
+*/
+// length
 type length = [
   | #ch(float)
   | #em(float)
@@ -52,26 +76,6 @@ type length = [
   | #pt(float)
 ];
 
-type length_percentage = [
-  | length
-  | percentage
-]
-
-type width = [
-  | #"min-content"
-  | #"max-content"
-  | #"fit-content"
-  | #"auto"
-  | length_percentage
-];
-
-type lineWidth = [
-  | length
-  | #thin
-  | #medium
-  | #thick
-];
-
 // Angle
 type angle = [
   | #deg(float)
@@ -80,21 +84,52 @@ type angle = [
   | #turn(float)
 ];
 
-// Line
-type lineStyle = [
-  | #none
-  | #hidden
-  | #dotted
-  | #dashed
-  | #solid
-  | #double
-  | #groove
-  | #ridge
-  | #inset
-  | #outset
+// time
+type time = [
+  | #s(float)
+  | #ms(float)
 ];
 
-// Color
+// Frequency
+type frequency = [
+  | #hz(float)
+  | #khz(float)
+];
+
+// Resolution
+type resolution = [
+  | #dpi(float)
+  | #dpcm(float)
+  | #dppx(float)
+  | #x(float) // alias for dppx
+];
+
+/*
+Cominations of types
+*/
+type lengthPercentage = [
+  | length
+  | percentage
+];
+
+type frequencyPercentage = [
+  | frequency
+  | percentage
+];
+
+type anglePercentage = [
+  | angle
+  | percentage
+];
+
+type timePercentage = [
+  | time
+  | percentage
+];
+
+/*
+Color
+*/
 type colorKeyword = [
   | #transparent
   | #currentColor
@@ -257,7 +292,7 @@ type hue = [
   | number
 ];
 
-type rgbValue = [
+type rgbParam = [
   | percentage
   | number
 ];
@@ -266,14 +301,38 @@ type color = [
   | colorKeyword
   | #hsl(hue, percentage, percentage)
   | #hsla(hue, percentage, percentage, alpha)
-  | #rgb(rgbValue, rgbValue, rgbValue)
-  | #rgba(rgbValue, rgbValue, rgbValue, alpha)
+  | #rgb(rgbParam, rgbParam, rgbParam)
+  | #rgba(rgbParam, rgbParam, rgbParam, alpha)
   | #rgbHex(string)
 ];
 
-type color_global = [
-  | color
-  | global
+type width = [
+  | #"min-content"
+  | #"max-content"
+  | #"fit-content"
+  | #"auto"
+  | lengthPercentage
+];
+
+type lineWidth = [
+  | length
+  | #thin
+  | #medium
+  | #thick
+];
+
+// Line
+type lineStyle = [
+  | #none
+  | #hidden
+  | #dotted
+  | #dashed
+  | #solid
+  | #double
+  | #groove
+  | #ridge
+  | #inset
+  | #outset
 ];
 
 type displayOutside = [
@@ -521,7 +580,7 @@ type position_global = [
 ];
 
 type edgePosition = [
-  | length_percentage
+  | lengthPercentage
   | #auto
 ];
 
@@ -531,11 +590,11 @@ type edgePosition_global = [
 ];
 
 type sizing = [
-  | length_percentage
+  | lengthPercentage
   | #auto
   | #"max-content"
   | #"min-content"
-  | #"fit-content"(length_percentage)
+  | #"fit-content"(lengthPercentage)
 ];
 
 type sizing_global = [
@@ -544,7 +603,7 @@ type sizing_global = [
 ];
 
 type margin = [
-  | length_percentage
+  | lengthPercentage
   | #auto
 ];
 
@@ -554,11 +613,11 @@ type margin_global = [
 ];
 
 type padding = [
-  | length_percentage
+  | lengthPercentage
 ];  
 
 type padding_global = [
-  | length_percentage
+  | lengthPercentage
   | global
 ];
 
@@ -579,7 +638,7 @@ type relativeSize = [
 ];
 
 type fontSize = [
-  | length_percentage
+  | lengthPercentage
   | absoluteSize
   | relativeSize
 ];
@@ -626,7 +685,7 @@ type letterSpacing_global = [
 type lineHeight = [
   | #num(float)
   | #normal
-  | length_percentage
+  | lengthPercentage
 ];
 
 type lineHeight_global = [
@@ -650,7 +709,7 @@ type textAlign_global = [
 ];
 
 type borderRadius = [
-  | length_percentage
+  | lengthPercentage
 ];
 
 type borderRadius_global = [

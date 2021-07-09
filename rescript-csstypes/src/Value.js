@@ -210,93 +210,6 @@ function rgbHex(v) {
         };
 }
 
-var Basic = {
-  num: num,
-  $$int: $$int,
-  str: str,
-  ch: ch,
-  em: em,
-  ex: ex,
-  rem: rem,
-  vh: vh,
-  vw: vw,
-  vmin: vmin,
-  vmax: vmax,
-  px: px,
-  cm: cm,
-  mm: mm,
-  inch: inch,
-  pc: pc,
-  pt: pt,
-  pct: pct,
-  deg: deg,
-  grad: grad,
-  rad: rad,
-  turn: turn,
-  hsl: hsl,
-  hsla: hsla,
-  rgb: rgb,
-  rgba: rgba,
-  rgbHex: rgbHex
-};
-
-function many(v) {
-  return {
-          NAME: "many",
-          VAL: v
-        };
-}
-
-function stack(v) {
-  return {
-          NAME: "stack",
-          VAL: v
-        };
-}
-
-function join(v1, v2) {
-  return {
-          NAME: "join",
-          VAL: [
-            v1,
-            v2
-          ]
-        };
-}
-
-function concat(v1, v2) {
-  return {
-          NAME: "concat",
-          VAL: [
-            v1,
-            v2
-          ]
-        };
-}
-
-var Combinator = {
-  many: many,
-  stack: stack,
-  join: join,
-  concat: concat
-};
-
-var make = Stringify$Css.border;
-
-function make2(v1, v2) {
-  return Stringify$Css.border(concat(v1, v2));
-}
-
-function make3(v1, v2, v3) {
-  return Stringify$Css.border(concat(concat(v1, v2), v3));
-}
-
-var Border = {
-  make: make,
-  make2: make2,
-  make3: make3
-};
-
 function borderColor2(v1, v2) {
   return Stringify$Css.borderColor(v1) + " " + Stringify$Css.borderColor(v2);
 }
@@ -309,9 +222,33 @@ function borderColor4(v1, v2, v3, v4) {
   return Stringify$Css.borderColor(v1) + " " + Stringify$Css.borderColor(v2) + " " + Stringify$Css.borderColor(v3) + " " + Stringify$Css.borderColor(v4);
 }
 
-exports.Basic = Basic;
-exports.Combinator = Combinator;
-exports.Border = Border;
+exports.num = num;
+exports.$$int = $$int;
+exports.str = str;
+exports.ch = ch;
+exports.em = em;
+exports.ex = ex;
+exports.rem = rem;
+exports.vh = vh;
+exports.vw = vw;
+exports.vmin = vmin;
+exports.vmax = vmax;
+exports.px = px;
+exports.cm = cm;
+exports.mm = mm;
+exports.inch = inch;
+exports.pc = pc;
+exports.pt = pt;
+exports.pct = pct;
+exports.deg = deg;
+exports.grad = grad;
+exports.rad = rad;
+exports.turn = turn;
+exports.hsl = hsl;
+exports.hsla = hsla;
+exports.rgb = rgb;
+exports.rgba = rgba;
+exports.rgbHex = rgbHex;
 exports.borderColor2 = borderColor2;
 exports.borderColor3 = borderColor3;
 exports.borderColor4 = borderColor4;

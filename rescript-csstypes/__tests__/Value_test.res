@@ -1,5 +1,4 @@
-open Value;
-open Value.Basic;
+open Value
 open Jest;
 
 test("border", (.) => {
