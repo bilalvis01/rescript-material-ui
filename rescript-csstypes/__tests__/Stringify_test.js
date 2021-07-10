@@ -11,7 +11,7 @@ test("number", (function () {
       }));
 
 test("integer", (function () {
-        expect(Stringify$Css.intg(1)).toBe("1");
+        expect(Stringify$Css.$$int(1)).toBe("1");
         expect(Stringify$Css.integer(Value$Css.$$int(1))).toBe("1");
         
       }));

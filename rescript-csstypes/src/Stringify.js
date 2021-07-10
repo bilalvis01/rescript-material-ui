@@ -4,6 +4,55 @@
 var Curry = require("rescript/lib/js/curry.js");
 var Belt_Array = require("rescript/lib/js/belt_Array.js");
 
+function concat(v, cb) {
+  var match = v.VAL;
+  return Curry._1(cb, match[0]) + " " + Curry._1(cb, match[1]);
+}
+
+function join(v, cb) {
+  var match = v.VAL;
+  return Curry._1(cb, match[0]) + ", " + Curry._1(cb, match[1]);
+}
+
+function stick(v, cb) {
+  var match = v.VAL;
+  return Curry._1(cb, match[0]) + " / " + Curry._1(cb, match[1]);
+}
+
+function concatMany(v, cb) {
+  return Belt_Array.reduce(v.VAL, "", (function (acc, item) {
+                if (acc.length === 0) {
+                  return Curry._1(cb, item);
+                } else {
+                  return acc + " " + Curry._1(cb, item);
+                }
+              }));
+}
+
+function joinMany(v, cb) {
+  return Belt_Array.reduce(v.VAL, "", (function (acc, item) {
+                if (acc.length === 0) {
+                  return Curry._1(cb, item);
+                } else {
+                  return acc + ", " + Curry._1(cb, item);
+                }
+              }));
+}
+
+function stickMany(v, cb) {
+  return Belt_Array.reduce(v.VAL, "", (function (acc, item) {
+                if (acc.length === 0) {
+                  return Curry._1(cb, item);
+                } else {
+                  return acc + " / " + Curry._1(cb, item);
+                }
+              }));
+}
+
+function string(v) {
+  return v.VAL;
+}
+
 function num(v) {
   return String(v);
 }
@@ -12,7 +61,7 @@ function number(v) {
   return String(v.VAL);
 }
 
-function intg(v) {
+function $$int(v) {
   return String(v);
 }
 
@@ -20,8 +69,29 @@ function integer(v) {
   return String(v.VAL);
 }
 
-function string(v) {
-  return v.VAL;
+function pct(v) {
+  return String(v) + "%";
+}
+
+function percentage(v) {
+  return String(v.VAL) + "%";
+}
+
+function r(v1, v2) {
+  return String(v1) + "/" + String(v2);
+}
+
+function ratio(v) {
+  var match = v.VAL;
+  return r(match[0], match[1]);
+}
+
+function fr(v) {
+  return String(v);
+}
+
+function flexUnit(v) {
+  return String(v.VAL);
 }
 
 function scalar(v) {
@@ -122,14 +192,6 @@ function length(v) {
   }
 }
 
-function pct(v) {
-  return String(v) + "%";
-}
-
-function percentage(v) {
-  return String(v.VAL) + "%";
-}
-
 function deg(v) {
   return String(v) + "deg";
 }
@@ -159,15 +221,67 @@ function angle(v) {
   }
 }
 
-function lineWidth(v) {
-  if (typeof v === "object") {
-    return length(v);
-  } else if (v === "medium") {
-    return "medium";
-  } else if (v === "thick") {
-    return "thick";
+function s(v) {
+  return String(v) + "s";
+}
+
+function ms(v) {
+  return String(v) + "ms";
+}
+
+function time(v) {
+  if (v.NAME === "ms") {
+    return String(v.VAL) + "ms";
   } else {
-    return "thin";
+    return String(v.VAL) + "s";
+  }
+}
+
+function hz(v) {
+  return String(v) + "Hz";
+}
+
+function kHz(v) {
+  return String(v) + "kHz";
+}
+
+function frequency(v) {
+  if (v.NAME === "kHz") {
+    return String(v.VAL) + "kHz";
+  } else {
+    return String(v.VAL) + "Hz";
+  }
+}
+
+function lengthPercentage(v) {
+  if (v.NAME === "pct") {
+    return percentage(v);
+  } else {
+    return length(v);
+  }
+}
+
+function frequencyPercentage(v) {
+  if (v.NAME === "pct") {
+    return percentage(v);
+  } else {
+    return frequency(v);
+  }
+}
+
+function anglePercentage(v) {
+  if (v.NAME === "pct") {
+    return percentage(v);
+  } else {
+    return angle(v);
+  }
+}
+
+function timePercentage(v) {
+  if (v.NAME === "pct") {
+    return percentage(v);
+  } else {
+    return time(v);
   }
 }
 
@@ -239,32 +353,16 @@ function color(v) {
   return hsla(match$3[0], match$3[1], match$3[2], match$3[3]);
 }
 
-function combinator(v, cb) {
-  var variant = v.NAME;
-  if (variant === "concat") {
-    var match = v.VAL;
-    return Curry._1(cb, match[0]) + " " + Curry._1(cb, match[1]);
+function lineWidth(v) {
+  if (typeof v === "object") {
+    return length(v);
+  } else if (v === "medium") {
+    return "medium";
+  } else if (v === "thick") {
+    return "thick";
+  } else {
+    return "thin";
   }
-  if (variant === "many") {
-    return Belt_Array.reduce(v.VAL, "", (function (acc, item) {
-                  if (acc.length === 0) {
-                    return Curry._1(cb, item);
-                  } else {
-                    return acc + " " + Curry._1(cb, item);
-                  }
-                }));
-  }
-  if (variant === "stack") {
-    return Belt_Array.reduce(v.VAL, "", (function (acc, item) {
-                  if (acc.length === 0) {
-                    return Curry._1(cb, item);
-                  } else {
-                    return acc + ", " + Curry._1(cb, item);
-                  }
-                }));
-  }
-  var match$1 = v.VAL;
-  return Curry._1(cb, match$1[0]) + ", " + Curry._1(cb, match$1[1]);
 }
 
 function border(v) {
@@ -280,8 +378,8 @@ function border(v) {
   var variant = v.NAME;
   if (variant === "rem" || variant === "vw" || variant === "vh" || variant === "px" || variant === "pt" || variant === "pc" || variant === "mm" || variant === "ex" || variant === "em" || variant === "cm" || variant === "ch" || variant === "vmin" || variant === "vmax" || variant === "inch") {
     return lineWidth(v);
-  } else if (variant === "stack" || variant === "many" || variant === "concat" || variant === "join") {
-    return combinator(v, border);
+  } else if (variant === "concat") {
+    return concat(v, border);
   } else if (variant === "number" || variant === "string" || variant === "int") {
     return scalar(v);
   } else {
@@ -297,12 +395,24 @@ function borderColor(v) {
   }
 }
 
-exports.num = num;
-exports.number = number;
-exports.intg = intg;
-exports.integer = integer;
+exports.concat = concat;
+exports.join = join;
+exports.stick = stick;
+exports.concatMany = concatMany;
+exports.joinMany = joinMany;
+exports.stickMany = stickMany;
 exports.string = string;
 exports.scalar = scalar;
+exports.num = num;
+exports.number = number;
+exports.$$int = $$int;
+exports.integer = integer;
+exports.pct = pct;
+exports.percentage = percentage;
+exports.r = r;
+exports.ratio = ratio;
+exports.fr = fr;
+exports.flexUnit = flexUnit;
 exports.ch = ch;
 exports.em = em;
 exports.ex = ex;
@@ -318,13 +428,21 @@ exports.inch = inch;
 exports.pc = pc;
 exports.pt = pt;
 exports.length = length;
-exports.pct = pct;
-exports.percentage = percentage;
+exports.s = s;
+exports.ms = ms;
+exports.time = time;
 exports.deg = deg;
 exports.grad = grad;
 exports.rad = rad;
 exports.turn = turn;
 exports.angle = angle;
+exports.hz = hz;
+exports.kHz = kHz;
+exports.frequency = frequency;
+exports.lengthPercentage = lengthPercentage;
+exports.frequencyPercentage = frequencyPercentage;
+exports.anglePercentage = anglePercentage;
+exports.timePercentage = timePercentage;
 exports.hue = hue;
 exports.alpha = alpha;
 exports.rgbParam = rgbParam;
@@ -334,7 +452,6 @@ exports.rgb = rgb;
 exports.rgba = rgba;
 exports.rgbHex = rgbHex;
 exports.color = color;
-exports.combinator = combinator;
 exports.lineWidth = lineWidth;
 exports.border = border;
 exports.borderColor = borderColor;

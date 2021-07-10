@@ -7,7 +7,7 @@ test("number", (.) => {
 });
 
 test("integer", (.) => {
-  expect(intg(1))->toBe("1");
+  expect(int(1))->toBe("1");
   expect(integer(Value.int(1)))->toBe("1");
 });
 

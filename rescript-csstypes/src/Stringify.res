@@ -1,26 +1,104 @@
 open Type;
 open Belt;
 
-// Global
-external global: global => string = "%identity";
+/*
+Combinator
+*/
+let concat = (v, cb) => {
+  switch v {
+    | #concat(v1, v2) => `${cb(v1)} ${cb(v2)}`
+  };
+};
+let join = (v, cb) => {
+  switch v {
+    | #join(v1, v2) => `${cb(v1)}, ${cb(v2)}`
+  };
+};
+let stick = (v, cb) => {
+  switch v {
+  | #stick(v1, v2) => `${cb(v1)} / ${cb(v2)}`
+  };
+};
+let concatMany = (v, cb) => {
+  switch v {
+  | #concatMany(v) =>
+    v
+    ->Array.reduce("", (acc, item) => 
+      if (Js.String2.length(acc) == 0) { cb(item) }
+      else { `${acc} ${cb(item)}` }
+    )
+  };
+};
+let joinMany = (v, cb) => {
+  switch v {
+  | #joinMany(v) =>
+    v
+    ->Array.reduce("", (acc, item) => 
+      if (Js.String2.length(acc) == 0) { cb(item) }
+      else { `${acc}, ${cb(item)}` }
+    )
+  };
+};
+let stickMany = (v, cb) => {
+  switch v {
+  | #stickMany(v) =>
+    v
+    ->Array.reduce("", (acc, item) => 
+      if (Js.String2.length(acc) == 0) { cb(item) }
+      else { `${acc} / ${cb(item)}` }
+    )
+  };
+};
 
+/*
+Textual data type
+*/
+external global: global => string = "%identity"; 
+
+let string = v => {
+  switch v {
+    | #string(v) => v
+  };
+};
+
+/*
+Numeric data type
+*/
 let num = v => Float.toString(v);
 let number = v => {
   switch v {
     | #number(v) => num(v)
   }
 };
-let intg = v => Int.toString(v);
+
+let int = v => Int.toString(v);
 let integer = v => {
   switch v {
-    | #int(v) => intg(v)
+    | #int(v) => int(v)
   };
 };
-let string = v => {
+
+let pct = v => `${v->Float.toString}%`;
+let percentage = v => {
   switch v {
-    | #string(v) => v
+    | #pct(v) => `${v->Float.toString}%`
+  }
+};
+
+let r = (v1, v2) => `${Int.toString(v1)}/${Int.toString(v2)}`;
+let ratio = (v) => {
+  switch v {
+  | #ratio(v1, v2) => r(v1, v2)
   };
 };
+
+let fr = v => `${Float.toString(v)}`;
+let flexUnit = v => {
+  switch v {
+  | #fr(v) => fr(v)
+  };
+};
+
 let scalar = v => {
   switch v {
     | #...number as n => number(n)
@@ -29,6 +107,9 @@ let scalar = v => {
   }
 };
 
+/*
+Quantities
+*/
 // Length
 let ch = l => `${l->Float.toString}ch`;
 let em = l => `${l->Float.toString}em`;
@@ -62,15 +143,6 @@ let length = v => {
     | #pt(l) => pt(l)
   };
 };
-
-// Percentage
-let pct = v => `${v->Float.toString}%`;
-let percentage = v => {
-  switch v {
-    | #pct(v) => `${v->Float.toString}%`
-  }
-};
-
 // Angle
 let deg = v => `${Float.toString(v)}deg`;
 let grad = v => `${Float.toString(v)}grad`;
@@ -84,19 +156,56 @@ let angle = v => {
     | #turn(a) => turn(a)
   };
 };
-
-// Line
-let lineWidth = v => {
+// Time
+let s = v => `${Float.toString(v)}s`;
+let ms = v => `${Float.toString(v)}ms`;
+let time = v => {
   switch v {
-    | #...length as l => length(l)
-    | #thin => "thin"
-    | #medium => "medium"
-    | #thick => "thick"
+  | #s(v) => s(v) 
+  | #ms(v) => ms(v)
+  }
+};
+// Frequency
+let hz = v => `${Float.toString(v)}Hz`;
+let kHz = v => `${Float.toString(v)}kHz`;
+let frequency = v => {
+  switch v {
+  | #Hz(v) => hz(v)
+  | #kHz(v) => kHz(v)
   };
-}; 
-external lineStyle: lineStyle => string = "%identity";
+};
 
-// Color
+/*
+Combination of types
+*/
+let lengthPercentage = v => {
+  switch v {
+  | #...length as l => length(l)
+  | #...percentage as p => percentage(p)
+  }
+};
+let frequencyPercentage = v => {
+  switch v {
+  | #...frequency as f => frequency(f)
+  | #...percentage as p => percentage(p)
+  }
+};
+let anglePercentage = v => {
+  switch v {
+  | #...angle as a => angle(a)
+  | #...percentage as p => percentage(p)
+  }
+};
+let timePercentage = v => {
+  switch v {
+  | #...time as t => time(t)
+  | #...percentage as p => percentage(p)
+  }
+};
+
+/*
+Color
+*/
 let hue = v => { 
   switch v {
     | #...angle as a => angle(a)
@@ -132,32 +241,27 @@ let color = v => {
   };
 };
 
-let combinator = (v, cb) => {
+
+// Line
+let lineWidth = v => {
   switch v {
-    | #many(v) =>
-      v->Array.reduce("", (acc, item) => 
-        if (Js.String2.length(acc) == 0) { cb(item) }
-        else { `${acc} ${cb(item)}` }
-      )
-    | #stack(v) =>
-      v->Array.reduce("", (acc, item) => 
-        if (Js.String2.length(acc) == 0) { cb(item) }
-        else { `${acc}, ${cb(item)}` }
-      )
-    | #join(v1, v2) => `${cb(v1)}, ${cb(v2)}`
-    | #concat(v1, v2) => `${cb(v1)} ${cb(v2)}` 
-  }
-}
+    | #...length as l => length(l)
+    | #thin => "thin"
+    | #medium => "medium"
+    | #thick => "thick"
+  };
+}; 
+external lineStyle: lineStyle => string = "%identity";
 
 // Border
 let rec border = v => {
   switch v {
-    | #...lineStyle as s => lineStyle(s)
-    | #...lineWidth as w => lineWidth(w)
-    | #...color as c => color(c)
-    | #...global as g => global(g)
-    | #...scalar as s => scalar(s)
-    | #...combinator as c => combinator(c, border)
+    | #...lineStyle as v => lineStyle(v)
+    | #...lineWidth as v => lineWidth(v)
+    | #...color as v => color(v)
+    | #...global as v => global(v)
+    | #...scalar as v => scalar(v)
+    | #...concat as v => concat(v, border)
   };
 };
 
