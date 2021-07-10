@@ -62,7 +62,7 @@ type ratio = [
 
 // flex
 type flexUnit = [
-  | #fr
+  | #fr(float)
 ];
 
 /*
@@ -102,8 +102,8 @@ type time = [
 
 // Frequency
 type frequency = [
-  | #hz(float)
-  | #khz(float)
+  | #Hz(float)
+  | #kHz(float)
 ];
 
 // Resolution
@@ -115,7 +115,7 @@ type resolution = [
 ];
 
 /*
-Cominations of types
+Combinations of types
 */
 type lengthPercentage = [
   | length
