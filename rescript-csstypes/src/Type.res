@@ -1,11 +1,28 @@
 /*
 Combinator
 */
-type combinator<'a> = [
-  | #many(array<'a>)
-  | #stack(array<'a>)
-  | #join('a, 'a)
+type concat<'a> = [
   | #concat('a, 'a)
+];
+
+type join<'a> = [
+  | #join('a, 'a)
+];
+
+type stick<'a> = [
+  | #stick('a, 'a)
+];
+
+type concatMany<'a> = [
+  | #concatMany(array<'a>)
+];
+
+type joinMany<'a> = [
+  | #joinMany(array<'a>)
+];
+
+type stickMany<'a> = [
+  | #stickMany(array<'a>)
 ];
 
 /* 
@@ -31,13 +48,6 @@ type number = [
 
 type integer = [
   | #int(int)
-];
-
-// scalar
-type scalar = [
-  | number
-  | integer
-  | string_
 ];
 
 // percentage
@@ -304,6 +314,13 @@ type color = [
   | #rgb(rgbParam, rgbParam, rgbParam)
   | #rgba(rgbParam, rgbParam, rgbParam, alpha)
   | #rgbHex(string)
+];
+
+// scalar
+type scalar = [
+  | number
+  | integer
+  | string_
 ];
 
 type width = [
@@ -723,7 +740,7 @@ type rec border = [
   | color
   | global
   | scalar
-  | combinator<border>
+  | concat<border>
 ];
 
 type borderColor = [
