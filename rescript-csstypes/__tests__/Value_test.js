@@ -2,13 +2,13 @@
 'use strict';
 
 var Value$Css = require("../src/Value.js");
-var Border$Css = require("../src/Border.js");
+var CssPropertyValue$Css = require("../src/CssPropertyValue.js");
 
 test("border", (function () {
-        expect(Border$Css.make2("dashed", "red")).toBe("dashed red");
-        expect(Border$Css.make2("solid", Value$Css.rem(1.0))).toBe("solid 1rem");
-        expect(Border$Css.make3("thick", "double", Value$Css.rgbHex("32a1ce"))).toBe("thick double #32a1ce");
-        expect(Border$Css.make3(Value$Css.mm(4), "ridge", Value$Css.rgba(Value$Css.num(170), Value$Css.num(50), Value$Css.num(220), Value$Css.num(0.6)))).toBe("4mm ridge rgba(170, 50, 220, 0.6)");
+        expect(CssPropertyValue$Css.border2("dashed", "red")).toBe("dashed red");
+        expect(CssPropertyValue$Css.border2("solid", Value$Css.rem(1.0))).toBe("solid 1rem");
+        expect(CssPropertyValue$Css.border3("thick", "double", Value$Css.rgbHex("32a1ce"))).toBe("thick double #32a1ce");
+        expect(CssPropertyValue$Css.border3(Value$Css.mm(4), "ridge", Value$Css.rgba(Value$Css.num(170), Value$Css.num(50), Value$Css.num(220), Value$Css.num(0.6)))).toBe("4mm ridge rgba(170, 50, 220, 0.6)");
         
       }));
 

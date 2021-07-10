@@ -4,17 +4,17 @@
 var Stringify$Css = require("./Stringify.js");
 var Combinator$Css = require("./Combinator.js");
 
-var make = Stringify$Css.border;
+var border = Stringify$Css.border;
 
-function make2(v1, v2) {
+function border2(v1, v2) {
   return Stringify$Css.border(Combinator$Css.concat(v1, v2));
 }
 
-function make3(v1, v2, v3) {
+function border3(v1, v2, v3) {
   return Stringify$Css.border(Combinator$Css.concat(Combinator$Css.concat(v1, v2), v3));
 }
 
-exports.make = make;
-exports.make2 = make2;
-exports.make3 = make3;
+exports.border = border;
+exports.border2 = border2;
+exports.border3 = border3;
 /* No side effect */
