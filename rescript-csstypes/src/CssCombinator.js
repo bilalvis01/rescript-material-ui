@@ -38,6 +38,6 @@ function concat(v1, v2) {
 
 exports.many = many;
 exports.stack = stack;
-exports.join = join;
 exports.concat = concat;
+exports.join = join;
 /* No side effect */
