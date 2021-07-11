@@ -231,10 +231,10 @@ function border2(v1, v2) {
         ];
 }
 
-function border3(v1, v2, v3) {
+function border3(width, style, color) {
   return [
           "border",
-          CssPropertyValue$Css.border3(v1, v2, v3)
+          CssPropertyValue$Css.border3(width, style, color)
         ];
 }
 

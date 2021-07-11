@@ -51,4 +51,5 @@ let makeProperty = (v1, v2) => (v1, PropertyValue(v2));
 
 let border = v => ("border", PropertyValue(CssPropertyValue.border(v)));
 let border2 = (v1, v2) => ("border", PropertyValue(CssPropertyValue.border2(v1, v2)));
-let border3 = (v1, v2, v3) => ("border", PropertyValue(CssPropertyValue.border3(v1, v2, v3)));
+let border3 = (~width, ~style, ~color) => 
+  ("border", PropertyValue(CssPropertyValue.border3(~width, ~style, ~color)));

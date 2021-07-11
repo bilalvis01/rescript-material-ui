@@ -52,4 +52,4 @@ let makeProperty: (string, CssPropertyValue.synthetic<'a>) => property;
 
 let border: border => property;
 let border2: (border, border) => property;
-let border3: (border, border, border) => property;
+let border3: (~width: lineWidth, ~style: lineStyle, ~color: color) => property;

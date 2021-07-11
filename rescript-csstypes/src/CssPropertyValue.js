@@ -10,8 +10,8 @@ function border2(v1, v2) {
   return CssString$Css.border(CssCombinator$Css.concat(v1, v2));
 }
 
-function border3(v1, v2, v3) {
-  return CssString$Css.border(CssCombinator$Css.concat(CssCombinator$Css.concat(v1, v2), v3));
+function border3(width, style, color) {
+  return style + " " + CssString$Css.lineWidth(width) + " " + CssString$Css.color(color);
 }
 
 exports.border = border;

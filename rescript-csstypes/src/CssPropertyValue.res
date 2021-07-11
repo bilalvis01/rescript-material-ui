@@ -12,9 +12,6 @@ let border2 = (v1, v2) =>
   ->CssCombinator.concat(v2)
   ->CssString.border
   ->string;
-let border3 = (v1, v2, v3) =>
-  v1
-  ->CssCombinator.concat(v2)
-  ->CssCombinator.concat(v3)
-  ->CssString.border
+let border3 = (~width, ~style, ~color) =>
+  `${CssString.lineStyle(style)} ${CssString.lineWidth(width)} ${CssString.color(color)}`
   ->string;
