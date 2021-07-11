@@ -1,18 +1,14 @@
-open Type;
-
-type synthetic<'a>;
+open CssType;
 
 // Number
 let num: float => [> #number(float) ];
-external number: float => synthetic<'a> = "%identity";
 
 // Integer
 let int: int => [> #int(int) ];
-external integer: int => synthetic<'a> = "%identity";
 
 // String
 let str: string => [> #string(string) ];
-external string: string => synthetic<'a> = "%identity";
+// external string: string => synthetic<'a> = "%identity";
 
 // Length
 let ch: float => [> #ch(float) ];

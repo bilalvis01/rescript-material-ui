@@ -1,9 +1,11 @@
 type synthetic<'a>;
 
 external string: string => synthetic<'a> = "%identity";
+external number: float => synthetic<'a> = "%identity";
+external integer: int => synthetic<'a> = "%identity";
 
-type border;
-type t_border = synthetic<border>;
+type tag_border;
+type t_border = synthetic<tag_border>;
 let border = v => Stringify.border(v)->string;
 let border2 = (v1, v2) => 
   v1

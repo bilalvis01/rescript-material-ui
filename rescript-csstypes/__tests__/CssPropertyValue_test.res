@@ -1,5 +1,5 @@
 open CssPropertyValue;
-open Value;
+open CssValue;
 open Jest;
 
 test("border", (.) => {

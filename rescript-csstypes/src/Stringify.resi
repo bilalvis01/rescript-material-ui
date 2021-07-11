@@ -1,4 +1,4 @@
-open Type;
+open CssType;
 
 /* 
 Combinator
