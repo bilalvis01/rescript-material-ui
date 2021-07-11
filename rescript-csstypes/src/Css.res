@@ -43,8 +43,8 @@ let rgbHex = v => #rgbHex(v);
 
 external borderColorString: string => borderColor = "%identity";
 let borderColor2 = (v1, v2) => 
-  borderColorString(`${Stringify.borderColor(v1)} ${Stringify.borderColor(v2)}`);
+  borderColorString(`${CssString.borderColor(v1)} ${CssString.borderColor(v2)}`);
 let borderColor3 = (v1, v2, v3) => 
-  borderColorString(`${Stringify.borderColor(v1)} ${Stringify.borderColor(v2)} ${Stringify.borderColor(v3)}`);
+  borderColorString(`${CssString.borderColor(v1)} ${CssString.borderColor(v2)} ${CssString.borderColor(v3)}`);
 let borderColor4 = (v1, v2, v3, v4) => 
-  borderColorString(`${Stringify.borderColor(v1)} ${Stringify.borderColor(v2)} ${Stringify.borderColor(v3)} ${Stringify.borderColor(v4)}`);
+  borderColorString(`${CssString.borderColor(v1)} ${CssString.borderColor(v2)} ${CssString.borderColor(v3)} ${CssString.borderColor(v4)}`);
