@@ -3,17 +3,17 @@ open Stringify;
 
 test("number", (.) => {
   expect(num(1.))->toBe("1");
-  expect(number(CssValue.num(1.)))->toBe("1");
+  expect(number(Css.num(1.)))->toBe("1");
 });
 
 test("integer", (.) => {
   expect(int(1))->toBe("1");
-  expect(integer(CssValue.int(1)))->toBe("1");
+  expect(integer(Css.int(1)))->toBe("1");
 });
 
 test("percentage", (.) => {
   expect(pct(1.))->toBe("1%");
-  expect(percentage(CssValue.pct(1.)))->toBe("1%");
+  expect(percentage(Css.pct(1.)))->toBe("1%");
 })
 
 test("length", (.) => {
@@ -31,8 +31,8 @@ test("length", (.) => {
   expect(inch(1.))->toBe("1in");
   expect(pc(1.))->toBe("1pc");
   expect(pt(1.))->toBe("1pt");
-  expect(length(CssValue.mm(1.)))->toBe("1mm");
-  expect(length(CssValue.cm(1.)))->toBe("1cm");
+  expect(length(Css.mm(1.)))->toBe("1mm");
+  expect(length(Css.cm(1.)))->toBe("1cm");
 });
 
 test("angle", (.) => {
@@ -40,38 +40,38 @@ test("angle", (.) => {
   expect(grad(1.))->toBe("1grad");
   expect(rad(1.))->toBe("1rad");
   expect(turn(1.))->toBe("1turn");
-  expect(angle(CssValue.deg(1.)))->toBe("1deg");
-  expect(angle(CssValue.grad(1.)))->toBe("1grad");
+  expect(angle(Css.deg(1.)))->toBe("1deg");
+  expect(angle(Css.grad(1.)))->toBe("1grad");
 }); 
 
 test("color", (.) => {
-  expect(hue(CssValue.deg(1.)))->toBe("1deg");
-  expect(hue(CssValue.num(1.)))->toBe("1");
-  expect(alpha(CssValue.pct(1.)))->toBe("1%");
-  expect(alpha(CssValue.num(1.)))->toBe("1");
-  expect(rgbParam(CssValue.pct(1.)))->toBe("1%");
-  expect(rgbParam(CssValue.num(1.)))->toBe("1");
-  expect(hsl(CssValue.num(1.), CssValue.pct(10.), CssValue.pct(10.)))
+  expect(hue(Css.deg(1.)))->toBe("1deg");
+  expect(hue(Css.num(1.)))->toBe("1");
+  expect(alpha(Css.pct(1.)))->toBe("1%");
+  expect(alpha(Css.num(1.)))->toBe("1");
+  expect(rgbParam(Css.pct(1.)))->toBe("1%");
+  expect(rgbParam(Css.num(1.)))->toBe("1");
+  expect(hsl(Css.num(1.), Css.pct(10.), Css.pct(10.)))
     ->toBe("hsl(1, 10%, 10%)");
-  expect(hsla(CssValue.num(1.), CssValue.pct(10.), CssValue.pct(10.), CssValue.num(1.)))
+  expect(hsla(Css.num(1.), Css.pct(10.), Css.pct(10.), Css.num(1.)))
     ->toBe("hsla(1, 10%, 10%, 1)");
-  expect(rgb(CssValue.num(1.), CssValue.num(1.), CssValue.pct(10.)))
+  expect(rgb(Css.num(1.), Css.num(1.), Css.pct(10.)))
     ->toBe("rgb(1, 1, 10%)");
-  expect(rgba(CssValue.num(1.), CssValue.num(1.), CssValue.pct(10.), CssValue.num(10.)))
+  expect(rgba(Css.num(1.), Css.num(1.), Css.pct(10.), Css.num(10.)))
     ->toBe("rgba(1, 1, 10%, 10)");
   expect(rgbHex("000000"))->toBe("#000000");
-  expect(color(CssValue.rgbHex("000000")))->toBe("#000000");
-  expect(color(CssValue.rgb(CssValue.num(1.), CssValue.num(1.8), CssValue.pct(10.))))
+  expect(color(Css.rgbHex("000000")))->toBe("#000000");
+  expect(color(Css.rgb(Css.num(1.), Css.num(1.8), Css.pct(10.))))
     ->toBe("rgb(1, 1.8, 10%)");
 });
 
 test("lineWidth", (.) => {
   expect(lineWidth(#thick))->toBe("thick");
-  expect(lineWidth(CssValue.mm(10.)))->toBe("10mm");
+  expect(lineWidth(Css.mm(10.)))->toBe("10mm");
 });
 
 test("borderColor", (.) => {
   expect(borderColor(#revert))->toBe("revert");
-  expect(borderColor(CssValue.hsl(CssValue.num(1.), CssValue.pct(10.), CssValue.pct(10.))))
+  expect(borderColor(Css.hsl(Css.num(1.), Css.pct(10.), Css.pct(10.))))
     ->toBe("hsl(1, 10%, 10%)");
 });
