@@ -2,20 +2,6 @@
 'use strict';
 
 
-function many(v) {
-  return {
-          NAME: "many",
-          VAL: v
-        };
-}
-
-function stack(v) {
-  return {
-          NAME: "stack",
-          VAL: v
-        };
-}
-
 function join(v1, v2) {
   return {
           NAME: "join",
@@ -36,8 +22,6 @@ function concat(v1, v2) {
         };
 }
 
-exports.many = many;
-exports.stack = stack;
 exports.concat = concat;
 exports.join = join;
 /* No side effect */
