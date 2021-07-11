@@ -1,5 +1,5 @@
 open Jest;
-open Stringify;
+open CssString;
 
 test("number", (.) => {
   expect(num(1.))->toBe("1");

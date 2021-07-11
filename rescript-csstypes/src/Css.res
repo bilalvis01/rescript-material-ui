@@ -1,5 +1,11 @@
 open CssType;
 
+@unboxed
+type rec box_propertyValue =
+  | PropertyValue(CssPropertyValue.synthetic<'a>): box_propertyValue;
+
+type property = (string, box_propertyValue);
+
 // Number
 let num = v => #number(v);
 
@@ -41,10 +47,8 @@ let rgb = (v1, v2, v3) => #rgb(v1, v2, v3);
 let rgba = (v1, v2, v3, v4) => #rgba(v1, v2, v3, v4);
 let rgbHex = v => #rgbHex(v);
 
-external borderColorString: string => borderColor = "%identity";
-let borderColor2 = (v1, v2) => 
-  borderColorString(`${CssString.borderColor(v1)} ${CssString.borderColor(v2)}`);
-let borderColor3 = (v1, v2, v3) => 
-  borderColorString(`${CssString.borderColor(v1)} ${CssString.borderColor(v2)} ${CssString.borderColor(v3)}`);
-let borderColor4 = (v1, v2, v3, v4) => 
-  borderColorString(`${CssString.borderColor(v1)} ${CssString.borderColor(v2)} ${CssString.borderColor(v3)} ${CssString.borderColor(v4)}`);
+let makeProperty = (v1, v2) => (v1, PropertyValue(v2));
+
+let border = v => ("border", PropertyValue(CssPropertyValue.border(v)));
+let border2 = (v1, v2) => ("border", PropertyValue(CssPropertyValue.border2(v1, v2)));
+let border3 = (v1, v2, v3) => ("border", PropertyValue(CssPropertyValue.border3(v1, v2, v3)));

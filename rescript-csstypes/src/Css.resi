@@ -1,5 +1,11 @@
 open CssType;
 
+@unboxed
+type rec box_propertyValue =
+  | PropertyValue(CssPropertyValue.synthetic<'a>): box_propertyValue;
+
+type property = (string, box_propertyValue);
+
 // Number
 let num: float => [> #number(float) ];
 
@@ -42,7 +48,8 @@ let rgb: (rgbParam, rgbParam, rgbParam) => [> #rgb(rgbParam, rgbParam, rgbParam)
 let rgba: (rgbParam, rgbParam, rgbParam, alpha) => [> #rgba(rgbParam, rgbParam, rgbParam, alpha) ];
 let rgbHex: string => [> #rgbHex(string) ];
 
-external borderColorString: string => borderColor = "%identity";
-let borderColor2: (borderColor, borderColor) => borderColor;
-let borderColor3: (borderColor, borderColor, borderColor) => borderColor;
-let borderColor4: (borderColor, borderColor, borderColor, borderColor) => borderColor;
+let makeProperty: (string, CssPropertyValue.synthetic<'a>) => property;
+
+let border: border => property;
+let border2: (border, border) => property;
+let border3: (border, border, border) => property;
