@@ -3,6 +3,13 @@
 
 var CssPropertyValue$Css = require("./CssPropertyValue.js");
 
+function str(v) {
+  return {
+          NAME: "string",
+          VAL: v
+        };
+}
+
 function num(v) {
   return {
           NAME: "number",
@@ -17,9 +24,19 @@ function $$int(v) {
         };
 }
 
-function str(v) {
+function ratio(v1, v2) {
   return {
-          NAME: "string",
+          NAME: "ratio",
+          VAL: [
+            v1,
+            v2
+          ]
+        };
+}
+
+function fr(v) {
+  return {
+          NAME: "fr",
           VAL: v
         };
 }
@@ -157,6 +174,62 @@ function turn(v) {
         };
 }
 
+function s(v) {
+  return {
+          NAME: "s",
+          VAL: v
+        };
+}
+
+function ms(v) {
+  return {
+          NAME: "ms",
+          VAL: v
+        };
+}
+
+function hz(v) {
+  return {
+          NAME: "Hz",
+          VAL: v
+        };
+}
+
+function kHz(v) {
+  return {
+          NAME: "kHz",
+          VAL: v
+        };
+}
+
+function dpi(v) {
+  return {
+          NAME: "dpi",
+          VAL: v
+        };
+}
+
+function dpcm(v) {
+  return {
+          NAME: "dpcm",
+          VAL: v
+        };
+}
+
+function dppx(v) {
+  return {
+          NAME: "dppx",
+          VAL: v
+        };
+}
+
+function x(v) {
+  return {
+          NAME: "x",
+          VAL: v
+        };
+}
+
 function hsl(v1, v2, v3) {
   return {
           NAME: "hsl",
@@ -238,9 +311,12 @@ function border3(width, style, color) {
         ];
 }
 
+exports.str = str;
 exports.num = num;
 exports.$$int = $$int;
-exports.str = str;
+exports.pct = pct;
+exports.ratio = ratio;
+exports.fr = fr;
 exports.ch = ch;
 exports.em = em;
 exports.ex = ex;
@@ -255,11 +331,18 @@ exports.mm = mm;
 exports.inch = inch;
 exports.pc = pc;
 exports.pt = pt;
-exports.pct = pct;
 exports.deg = deg;
 exports.grad = grad;
 exports.rad = rad;
 exports.turn = turn;
+exports.s = s;
+exports.ms = ms;
+exports.hz = hz;
+exports.kHz = kHz;
+exports.dpi = dpi;
+exports.dpcm = dpcm;
+exports.dppx = dppx;
+exports.x = x;
 exports.hsl = hsl;
 exports.hsla = hsla;
 exports.rgb = rgb;

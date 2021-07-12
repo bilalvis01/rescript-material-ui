@@ -1,21 +1,23 @@
 open CssType;
 
-@unboxed
-type rec box_propertyValue =
-  | PropertyValue(CssPropertyValue.synthetic<'a>): box_propertyValue;
-
-type property = (string, box_propertyValue);
-
-// Number
-let num = v => #number(v);
-
-// Integer
-let int = v => #integer(v);
-
+/*
+Textual data types
+*/
 // String
 let str = v => #string(v);
 
-// Length
+/*
+Numeric data types
+*/
+let num = v => #number(v);
+let int = v => #integer(v);
+let ratio = (v1, v2) => #ratio(v1, v2);
+let fr = v => #fr(v);
+
+/*
+Quantities data types
+*/
+// length
 let ch = l => #ch(l);
 let em = l => #em(l);
 let ex = l => #ex(l);
@@ -40,12 +42,37 @@ let grad = v => #grad(v);
 let rad = v => #rad(v);
 let turn = v => #turn(v);
 
-// Color
+// Time
+let s = v => #s(v);
+let ms = v => #ms(v);
+
+// Frequency
+let hz = v => #Hz(v);
+let kHz = v => #kHz(v);
+
+// Ratio
+let dpi = v => #dpi(v);
+let dpcm = v => #dpcm(v);
+let dppx = v => #dppx(v);
+let x = v => #x(v);
+
+/*
+Color data types
+*/
 let hsl = (v1, v2, v3) => #hsl(v1, v2, v3);
 let hsla = (v1, v2, v3, v4) => #hsla(v1, v2, v3, v4);
 let rgb = (v1, v2, v3) => #rgb(v1, v2, v3);
 let rgba = (v1, v2, v3, v4) => #rgba(v1, v2, v3, v4);
 let rgbHex = v => #rgbHex(v);
+
+/*
+properties
+*/
+@unboxed
+type rec box_propertyValue =
+  | PropertyValue(CssPropertyValue.synthetic<'a>): box_propertyValue;
+
+type property = (string, box_propertyValue);
 
 let makeProperty = (v1, v2) => (v1, PropertyValue(v2));
 

@@ -1,22 +1,23 @@
 open CssType;
 
-@unboxed
-type rec box_propertyValue =
-  | PropertyValue(CssPropertyValue.synthetic<'a>): box_propertyValue;
-
-type property = (string, box_propertyValue);
-
-// Number
-let num: float => [> #number(float) ];
-
-// Integer
-let int: int => [> #integer(int) ];
-
-// String
+/*
+Textual data types
+*/
 let str: string => [> #string(string) ];
-// external string: string => synthetic<'a> = "%identity";
 
-// Length
+/*
+Numeric data types
+*/
+let num: float => [> #number(float) ];
+let int: int => [> #integer(int) ];
+let pct: float => [> #pct(float) ];
+let ratio: (int, int) => [> #ratio(int, int) ];
+let fr: float => [> #fr(float) ];
+
+/*
+Quantities data types
+*/
+// length
 let ch: float => [> #ch(float) ];
 let em: float => [> #em(float) ];
 let ex: float => [> #ex(float) ];
@@ -32,21 +33,43 @@ let inch: float => [> #inch(float) ];
 let pc: float => [> #pc(float) ];
 let pt: float => [> #pt(float) ];
 
-// Percentage
-let pct: float => [> #pct(float) ];
-
 // Angle
 let deg: float => [> #deg(float) ];
 let grad: float => [> #grad(float)];
 let rad: float => [> #rad(float) ];
 let turn: float => [> #turn(float) ];
 
-// Color
+// Time
+let s: float => [> | #s(float) ];
+let ms: float => [> | #ms(float) ];
+
+// Frequency
+let hz: float => [> | #Hz(float) ];
+let kHz: float => [> | #kHz(float) ];
+
+// Resolution
+let dpi: float => [> | #dpi(float) ];
+let dpcm: float => [> | #dpcm(float) ];
+let dppx: float => [> | #dppx(float) ];
+let x: float => [> | #x(float) ];
+
+/*
+Color data types
+*/
 let hsl: (hue, percentage, percentage) => [> #hsl(hue, percentage, percentage) ];
 let hsla: (hue, percentage, percentage, alpha) => [> #hsla(hue, percentage, percentage, alpha) ];
 let rgb: (rgbParam, rgbParam, rgbParam) => [> #rgb(rgbParam, rgbParam, rgbParam) ];
 let rgba: (rgbParam, rgbParam, rgbParam, alpha) => [> #rgba(rgbParam, rgbParam, rgbParam, alpha) ];
 let rgbHex: string => [> #rgbHex(string) ];
+
+/*
+Properties
+*/
+@unboxed
+type rec box_propertyValue =
+  | PropertyValue(CssPropertyValue.synthetic<'a>): box_propertyValue;
+
+type property = (string, box_propertyValue);
 
 let makeProperty: (string, CssPropertyValue.synthetic<'a>) => property;
 
