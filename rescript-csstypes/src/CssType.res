@@ -734,15 +734,6 @@ type borderRadius_global = [
   | global
 ];
 
-type rec border = [
-  | lineStyle
-  | lineWidth
-  | color
-  | global
-  | scalar
-  | concat<border>
-];
-
 type borderColor = [
   | color
   | global

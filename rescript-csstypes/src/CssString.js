@@ -365,28 +365,6 @@ function lineWidth(v) {
   }
 }
 
-function border(v) {
-  if (typeof v !== "object") {
-    if (v === "inset" || v === "double" || v === "dotted" || v === "dashed" || v === "groove" || v === "outset" || v === "solid" || v === "ridge" || v === "hidden" || v === "none" || v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
-      return v;
-    } else if (v === "thick" || v === "medium" || v === "thin") {
-      return lineWidth(v);
-    } else {
-      return color(v);
-    }
-  }
-  var variant = v.NAME;
-  if (variant === "rem" || variant === "vw" || variant === "vh" || variant === "px" || variant === "pt" || variant === "pc" || variant === "mm" || variant === "ex" || variant === "em" || variant === "cm" || variant === "ch" || variant === "vmin" || variant === "vmax" || variant === "inch") {
-    return lineWidth(v);
-  } else if (variant === "concat") {
-    return concat(v, border);
-  } else if (variant === "number" || variant === "string" || variant === "int") {
-    return scalar(v);
-  } else {
-    return color(v);
-  }
-}
-
 function borderColor(v) {
   if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
     return color(v);
@@ -453,6 +431,5 @@ exports.rgba = rgba;
 exports.rgbHex = rgbHex;
 exports.color = color;
 exports.lineWidth = lineWidth;
-exports.border = border;
 exports.borderColor = borderColor;
 /* No side effect */

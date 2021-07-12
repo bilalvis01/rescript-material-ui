@@ -91,6 +91,5 @@ let color: color => string;
 let lineWidth: lineWidth => string;
 external lineStyle: lineStyle => string = "%identity";
 
-// Border
-let border: border => string;
+// border
 let borderColor: borderColor => string;
