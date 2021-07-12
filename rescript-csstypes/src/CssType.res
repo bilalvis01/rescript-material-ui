@@ -47,7 +47,7 @@ type number = [
 ];
 
 type integer = [
-  | #int(int)
+  | #integer(int)
 ];
 
 // percentage

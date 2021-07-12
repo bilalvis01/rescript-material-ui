@@ -10,7 +10,7 @@ type property = (string, box_propertyValue);
 let num = v => #number(v);
 
 // Integer
-let int = v => #int(v);
+let int = v => #integer(v);
 
 // String
 let str = v => #string(v);

@@ -74,7 +74,7 @@ let number = v => {
 let int = v => Int.toString(v);
 let integer = v => {
   switch v {
-    | #int(v) => int(v)
+    | #integer(v) => int(v)
   };
 };
 

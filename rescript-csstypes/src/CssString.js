@@ -96,10 +96,10 @@ function flexUnit(v) {
 
 function scalar(v) {
   var variant = v.NAME;
-  if (variant === "string") {
-    return v.VAL;
-  } else {
+  if (variant === "integer" || variant === "number") {
     return String(v.VAL);
+  } else {
+    return v.VAL;
   }
 }
 

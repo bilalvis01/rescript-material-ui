@@ -12,7 +12,7 @@ function num(v) {
 
 function $$int(v) {
   return {
-          NAME: "int",
+          NAME: "integer",
           VAL: v
         };
 }

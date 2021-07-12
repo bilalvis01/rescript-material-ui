@@ -10,7 +10,7 @@ type property = (string, box_propertyValue);
 let num: float => [> #number(float) ];
 
 // Integer
-let int: int => [> #int(int) ];
+let int: int => [> #integer(int) ];
 
 // String
 let str: string => [> #string(string) ];
