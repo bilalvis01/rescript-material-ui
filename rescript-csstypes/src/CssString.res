@@ -253,18 +253,6 @@ let lineWidth = v => {
 }; 
 external lineStyle: lineStyle => string = "%identity";
 
-// Border
-let rec border = v => {
-  switch v {
-    | #...lineStyle as v => lineStyle(v)
-    | #...lineWidth as v => lineWidth(v)
-    | #...color as v => color(v)
-    | #...global as v => global(v)
-    | #...scalar as v => scalar(v)
-    | #...concat as v => concat(v, border)
-  };
-};
-
 let borderColor = v => {
   switch v {
     | #...color as c => color(c)
