@@ -1,6 +1,9 @@
 open Jest;
 open CssString;
 
+/*
+Numeric data types
+*/
 test("number", (.) => {
   expect(num(1.))->toBe("1");
   expect(number(Css.num(1.)))->toBe("1");
@@ -14,8 +17,20 @@ test("integer", (.) => {
 test("percentage", (.) => {
   expect(pct(1.))->toBe("1%");
   expect(percentage(Css.pct(1.)))->toBe("1%");
-})
+});
 
+test ("ratio", (.) => {
+  expect(ratio(Css.ratio(10, 10)))->toBe("10/10");
+});
+
+test("flex", (.) => {
+  expect(fr(1.))->toBe("1fr");
+  expect(flexUnit(Css.fr(1.)))->toBe("1fr");
+});
+
+/*
+Quantities data types
+*/
 test("length", (.) => {
   expect(ch(1.))->toBe("1ch");
   expect(em(1.))->toBe("1em");
@@ -44,6 +59,55 @@ test("angle", (.) => {
   expect(angle(Css.grad(1.)))->toBe("1grad");
 }); 
 
+test("time", (.) => {
+  expect(s(10.))->toBe("10s");
+  expect(ms(10.))->toBe("10ms");
+  expect(time(Css.s(10.)))->toBe("10s");
+  expect(time(Css.ms(10.)))->toBe("10ms");
+});
+
+test("frequency", (.) => {
+  expect(hz(50.))->toBe("50Hz");
+  expect(kHz(100.))->toBe("100kHz");
+  expect(kHz(-100.))->toBe("-100kHz");
+  expect(frequency(Css.hz(50.)))->toBe("50Hz");
+  expect(frequency(Css.kHz(100.)))->toBe("100kHz");
+});
+
+test("resolution", (.) => {
+  expect(dpi(1.))->toBe("1dpi");
+  expect(dpcm(1.))->toBe("1dpcm");
+  expect(dppx(1.))->toBe("1dppx");
+  expect(x(1.))->toBe("1x");
+  expect(resolution(Css.dpi(1.)))->toBe("1dpi");
+})
+
+/*
+Combinations of types 
+*/
+test("length_percentage", (.) => {
+  expect(length_percentage(Css.mm(1.)))->toBe("1mm");
+  expect(length_percentage(Css.pct(1.)))->toBe("1%");
+});
+
+test("frequency_percentage", (.) => {
+  expect(frequency_percentage(Css.hz(1.)))->toBe("1Hz");
+  expect(frequency_percentage(Css.pct(1.)))->toBe("1%");
+});
+
+test("angle_percentage", (.) => {
+  expect(angle_percentage(Css.deg(1.)))->toBe("1deg");
+  expect(angle_percentage(Css.pct(1.)))->toBe("1%");
+});
+
+test("time_percentage", (.) => {
+  expect(time_percentage(Css.s(1.)))->toBe("1s");
+  expect(time_percentage(Css.pct(1.)))->toBe("1%");
+});
+
+/*
+Color data types
+*/
 test("color", (.) => {
   expect(hue(Css.deg(1.)))->toBe("1deg");
   expect(hue(Css.num(1.)))->toBe("1");
@@ -68,10 +132,4 @@ test("color", (.) => {
 test("lineWidth", (.) => {
   expect(lineWidth(#thick))->toBe("thick");
   expect(lineWidth(Css.mm(10.)))->toBe("10mm");
-});
-
-test("borderColor", (.) => {
-  expect(borderColor(#revert))->toBe("revert");
-  expect(borderColor(Css.hsl(Css.num(1.), Css.pct(10.), Css.pct(10.))))
-    ->toBe("hsl(1, 10%, 10%)");
 });

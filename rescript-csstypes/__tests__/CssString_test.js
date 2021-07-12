@@ -22,6 +22,17 @@ test("percentage", (function () {
         
       }));
 
+test("ratio", (function () {
+        expect(CssString$Css.ratio(Css$Css.ratio(10, 10))).toBe("10/10");
+        
+      }));
+
+test("flex", (function () {
+        expect(CssString$Css.fr(1)).toBe("1fr");
+        expect(CssString$Css.flexUnit(Css$Css.fr(1))).toBe("1fr");
+        
+      }));
+
 test("length", (function () {
         expect(CssString$Css.ch(1)).toBe("1ch");
         expect(CssString$Css.em(1)).toBe("1em");
@@ -52,6 +63,56 @@ test("angle", (function () {
         
       }));
 
+test("time", (function () {
+        expect(CssString$Css.s(10)).toBe("10s");
+        expect(CssString$Css.ms(10)).toBe("10ms");
+        expect(CssString$Css.time(Css$Css.s(10))).toBe("10s");
+        expect(CssString$Css.time(Css$Css.ms(10))).toBe("10ms");
+        
+      }));
+
+test("frequency", (function () {
+        expect(CssString$Css.hz(50)).toBe("50Hz");
+        expect(CssString$Css.kHz(100)).toBe("100kHz");
+        expect(CssString$Css.kHz(-100)).toBe("-100kHz");
+        expect(CssString$Css.frequency(Css$Css.hz(50))).toBe("50Hz");
+        expect(CssString$Css.frequency(Css$Css.kHz(100))).toBe("100kHz");
+        
+      }));
+
+test("resolution", (function () {
+        expect(CssString$Css.dpi(1)).toBe("1dpi");
+        expect(CssString$Css.dpcm(1)).toBe("1dpcm");
+        expect(CssString$Css.dppx(1)).toBe("1dppx");
+        expect(CssString$Css.x(1)).toBe("1x");
+        expect(CssString$Css.resolution(Css$Css.dpi(1))).toBe("1dpi");
+        
+      }));
+
+test("length_percentage", (function () {
+        expect(CssString$Css.length_percentage(Css$Css.mm(1))).toBe("1mm");
+        expect(CssString$Css.length_percentage(Css$Css.pct(1))).toBe("1%");
+        
+      }));
+
+test("frequency_percentage", (function () {
+        expect(CssString$Css.frequency_percentage(Css$Css.hz(1))).toBe("1Hz");
+        expect(CssString$Css.frequency_percentage(Css$Css.pct(1))).toBe("1%");
+        
+      }));
+
+test("angle_percentage", (function () {
+        expect(CssString$Css.angle_percentage(Css$Css.deg(1))).toBe("1deg");
+        expect(CssString$Css.angle_percentage(Css$Css.pct(1))).toBe("1%");
+        
+      }));
+
+test("time_percentage", (function () {
+        expect(CssString$Css.time_percentage(Css$Css.s(1))).toBe("1s");
+        expect(CssString$Css.time_percentage(Css$Css.pct(1))).toBe("1%");
+        
+      }));
+
 test("color", (function () {
         expect(CssString$Css.hue(Css$Css.deg(1))).toBe("1deg");
         expect(CssString$Css.hue(Css$Css.num(1))).toBe("1");
@@ -72,12 +133,6 @@ test("color", (function () {
 test("lineWidth", (function () {
         expect(CssString$Css.lineWidth("thick")).toBe("thick");
         expect(CssString$Css.lineWidth(Css$Css.mm(10))).toBe("10mm");
-        
-      }));
-
-test("borderColor", (function () {
-        expect(CssString$Css.borderColor("revert")).toBe("revert");
-        expect(CssString$Css.borderColor(Css$Css.hsl(Css$Css.num(1), Css$Css.pct(10), Css$Css.pct(10)))).toBe("hsl(1, 10%, 10%)");
         
       }));
 
