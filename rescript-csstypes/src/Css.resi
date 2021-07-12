@@ -50,6 +50,6 @@ let rgbHex: string => [> #rgbHex(string) ];
 
 let makeProperty: (string, CssPropertyValue.synthetic<'a>) => property;
 
-let border: border => property;
-let border2: (border, border) => property;
+let border: [ | global | lineWidth | lineStyle | color | string_ ] => property;
+let border2: ([ | lineWidth | lineStyle | color ], [ | lineWidth | lineStyle | color ]) => property;
 let border3: (~width: lineWidth, ~style: lineStyle, ~color: color) => property;

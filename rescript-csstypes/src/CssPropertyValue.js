@@ -2,12 +2,46 @@
 'use strict';
 
 var CssString$Css = require("./CssString.js");
-var CssCombinator$Css = require("./CssCombinator.js");
 
-var border = CssString$Css.border;
+function border(v) {
+  if (typeof v !== "object") {
+    if (v === "inset" || v === "double" || v === "dotted" || v === "dashed" || v === "groove" || v === "outset" || v === "solid" || v === "ridge" || v === "hidden" || v === "none" || v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
+      return v;
+    } else if (v === "thick" || v === "medium" || v === "thin") {
+      return CssString$Css.lineWidth(v);
+    } else {
+      return CssString$Css.color(v);
+    }
+  }
+  var variant = v.NAME;
+  if (variant === "rem" || variant === "vw" || variant === "vh" || variant === "px" || variant === "pt" || variant === "pc" || variant === "mm" || variant === "ex" || variant === "em" || variant === "cm" || variant === "ch" || variant === "vmin" || variant === "vmax" || variant === "inch") {
+    return CssString$Css.lineWidth(v);
+  } else if (variant === "string") {
+    return CssString$Css.string(v);
+  } else {
+    return CssString$Css.color(v);
+  }
+}
 
 function border2(v1, v2) {
-  return CssString$Css.border(CssCombinator$Css.concat(v1, v2));
+  var toString = function (v) {
+    if (typeof v !== "object") {
+      if (v === "inset" || v === "double" || v === "dotted" || v === "dashed" || v === "groove" || v === "outset" || v === "solid" || v === "ridge" || v === "hidden" || v === "none") {
+        return v;
+      } else if (v === "thick" || v === "medium" || v === "thin") {
+        return CssString$Css.lineWidth(v);
+      } else {
+        return CssString$Css.color(v);
+      }
+    }
+    var variant = v.NAME;
+    if (variant === "rem" || variant === "vw" || variant === "vh" || variant === "px" || variant === "pt" || variant === "pc" || variant === "mm" || variant === "ex" || variant === "em" || variant === "cm" || variant === "ch" || variant === "vmin" || variant === "vmax" || variant === "inch") {
+      return CssString$Css.lineWidth(v);
+    } else {
+      return CssString$Css.color(v);
+    }
+  };
+  return toString(v1) + " " + toString(v2);
 }
 
 function border3(width, style, color) {
