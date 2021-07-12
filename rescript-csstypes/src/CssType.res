@@ -117,22 +117,22 @@ type resolution = [
 /*
 Combinations of types
 */
-type lengthPercentage = [
+type length_percentage = [
   | length
   | percentage
 ];
 
-type frequencyPercentage = [
+type frequency_percentage = [
   | frequency
   | percentage
 ];
 
-type anglePercentage = [
+type angle_percentage = [
   | angle
   | percentage
 ];
 
-type timePercentage = [
+type time_percentage = [
   | time
   | percentage
 ];
@@ -328,7 +328,7 @@ type width = [
   | #"max-content"
   | #"fit-content"
   | #"auto"
-  | lengthPercentage
+  | length_percentage
 ];
 
 type lineWidth = [
@@ -597,7 +597,7 @@ type position_global = [
 ];
 
 type edgePosition = [
-  | lengthPercentage
+  | length_percentage
   | #auto
 ];
 
@@ -607,11 +607,11 @@ type edgePosition_global = [
 ];
 
 type sizing = [
-  | lengthPercentage
+  | length_percentage
   | #auto
   | #"max-content"
   | #"min-content"
-  | #"fit-content"(lengthPercentage)
+  | #"fit-content"(length_percentage)
 ];
 
 type sizing_global = [
@@ -620,7 +620,7 @@ type sizing_global = [
 ];
 
 type margin = [
-  | lengthPercentage
+  | length_percentage
   | #auto
 ];
 
@@ -630,11 +630,11 @@ type margin_global = [
 ];
 
 type padding = [
-  | lengthPercentage
+  | length_percentage
 ];  
 
 type padding_global = [
-  | lengthPercentage
+  | length_percentage
   | global
 ];
 
@@ -655,7 +655,7 @@ type relativeSize = [
 ];
 
 type fontSize = [
-  | lengthPercentage
+  | length_percentage
   | absoluteSize
   | relativeSize
 ];
@@ -702,7 +702,7 @@ type letterSpacing_global = [
 type lineHeight = [
   | #num(float)
   | #normal
-  | lengthPercentage
+  | length_percentage
 ];
 
 type lineHeight_global = [
@@ -726,7 +726,7 @@ type textAlign_global = [
 ];
 
 type borderRadius = [
-  | lengthPercentage
+  | length_percentage
 ];
 
 type borderRadius_global = [
