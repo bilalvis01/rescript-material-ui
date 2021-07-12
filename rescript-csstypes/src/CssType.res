@@ -313,7 +313,7 @@ type color = [
   | #hsla(hue, percentage, percentage, alpha)
   | #rgb(rgbParam, rgbParam, rgbParam)
   | #rgba(rgbParam, rgbParam, rgbParam, alpha)
-  | #rgbHex(string)
+  | #rgbx(string)
 ];
 
 // scalar

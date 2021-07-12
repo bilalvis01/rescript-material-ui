@@ -60,7 +60,7 @@ let hsl: (hue, percentage, percentage) => [> #hsl(hue, percentage, percentage) ]
 let hsla: (hue, percentage, percentage, alpha) => [> #hsla(hue, percentage, percentage, alpha) ];
 let rgb: (rgbParam, rgbParam, rgbParam) => [> #rgb(rgbParam, rgbParam, rgbParam) ];
 let rgba: (rgbParam, rgbParam, rgbParam, alpha) => [> #rgba(rgbParam, rgbParam, rgbParam, alpha) ];
-let rgbHex: string => [> #rgbHex(string) ];
+let rgbx: string => [> #rgbx(string) ];
 
 /*
 Properties

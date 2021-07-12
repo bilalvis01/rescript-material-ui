@@ -123,8 +123,8 @@ test("color", (.) => {
     ->toBe("rgb(1, 1, 10%)");
   expect(rgba(Css.num(1.), Css.num(1.), Css.pct(10.), Css.num(10.)))
     ->toBe("rgba(1, 1, 10%, 10)");
-  expect(rgbHex("000000"))->toBe("#000000");
-  expect(color(Css.rgbHex("000000")))->toBe("#000000");
+  expect(rgbx("000000"))->toBe("#000000");
+  expect(color(Css.rgbx("000000")))->toBe("#000000");
   expect(color(Css.rgb(Css.num(1.), Css.num(1.8), Css.pct(10.))))
     ->toBe("rgb(1, 1.8, 10%)");
 });

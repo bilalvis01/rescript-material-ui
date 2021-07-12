@@ -276,9 +276,9 @@ function rgba(v1, v2, v3, v4) {
         };
 }
 
-function rgbHex(v) {
+function rgbx(v) {
   return {
-          NAME: "rgbHex",
+          NAME: "rgbx",
           VAL: v
         };
 }
@@ -347,7 +347,7 @@ exports.hsl = hsl;
 exports.hsla = hsla;
 exports.rgb = rgb;
 exports.rgba = rgba;
-exports.rgbHex = rgbHex;
+exports.rgbx = rgbx;
 exports.makeProperty = makeProperty;
 exports.border = border;
 exports.border2 = border2;

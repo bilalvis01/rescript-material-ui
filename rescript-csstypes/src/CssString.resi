@@ -95,6 +95,6 @@ let hsl: (hue, percentage, percentage) => string;
 let hsla: (hue, percentage, percentage, alpha) => string;
 let rgb: (rgbParam, rgbParam, rgbParam) => string;
 let rgba: (rgbParam, rgbParam, rgbParam, alpha) => string;
-let rgbHex: string => string;
+let rgbx: string => string;
 external colorKeyword: colorKeyword => string = "%identity"; 
 let color: color => string;
