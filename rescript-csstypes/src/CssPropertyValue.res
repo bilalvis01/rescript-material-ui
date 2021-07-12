@@ -29,5 +29,5 @@ let border2 = (v1, v2) => {
   `${toString(v1)} ${toString(v2)}`->string
 }
 let border3 = (~width, ~style, ~color) =>
-  `${CssString.lineStyle(style)} ${CssString.lineWidth(width)} ${CssString.color(color)}`
+  `${CssString.lineWidth(width)} ${CssString.lineStyle(style)} ${CssString.color(color)}`
   ->string;

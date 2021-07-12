@@ -45,7 +45,7 @@ function border2(v1, v2) {
 }
 
 function border3(width, style, color) {
-  return style + " " + CssString$Css.lineWidth(width) + " " + CssString$Css.color(color);
+  return CssString$Css.lineWidth(width) + " " + style + " " + CssString$Css.color(color);
 }
 
 exports.border = border;
