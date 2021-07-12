@@ -77,30 +77,17 @@ function percentage(v) {
   return String(v.VAL) + "%";
 }
 
-function r(v1, v2) {
-  return String(v1) + "/" + String(v2);
-}
-
 function ratio(v) {
   var match = v.VAL;
-  return r(match[0], match[1]);
+  return String(match[0]) + "/" + String(match[1]);
 }
 
 function fr(v) {
-  return String(v);
+  return String(v) + "fr";
 }
 
 function flexUnit(v) {
-  return String(v.VAL);
-}
-
-function scalar(v) {
-  var variant = v.NAME;
-  if (variant === "integer" || variant === "number") {
-    return String(v.VAL);
-  } else {
-    return v.VAL;
-  }
+  return String(v.VAL) + "fr";
 }
 
 function ch(l) {
@@ -253,7 +240,36 @@ function frequency(v) {
   }
 }
 
-function lengthPercentage(v) {
+function dpi(v) {
+  return String(v) + "dpi";
+}
+
+function dpcm(v) {
+  return String(v) + "dpcm";
+}
+
+function dppx(v) {
+  return String(v) + "dppx";
+}
+
+function x(v) {
+  return String(v) + "x";
+}
+
+function resolution(v) {
+  var variant = v.NAME;
+  if (variant === "dppx") {
+    return String(v.VAL) + "dppx";
+  } else if (variant === "x") {
+    return String(v.VAL) + "x";
+  } else if (variant === "dpi") {
+    return String(v.VAL) + "dpi";
+  } else {
+    return String(v.VAL) + "dpcm";
+  }
+}
+
+function length_percentage(v) {
   if (v.NAME === "pct") {
     return percentage(v);
   } else {
@@ -261,7 +277,7 @@ function lengthPercentage(v) {
   }
 }
 
-function frequencyPercentage(v) {
+function frequency_percentage(v) {
   if (v.NAME === "pct") {
     return percentage(v);
   } else {
@@ -269,7 +285,7 @@ function frequencyPercentage(v) {
   }
 }
 
-function anglePercentage(v) {
+function angle_percentage(v) {
   if (v.NAME === "pct") {
     return percentage(v);
   } else {
@@ -277,11 +293,32 @@ function anglePercentage(v) {
   }
 }
 
-function timePercentage(v) {
+function time_percentage(v) {
   if (v.NAME === "pct") {
     return percentage(v);
   } else {
     return time(v);
+  }
+}
+
+function scalar(v) {
+  var variant = v.NAME;
+  if (variant === "integer" || variant === "number") {
+    return String(v.VAL);
+  } else {
+    return v.VAL;
+  }
+}
+
+function lineWidth(v) {
+  if (typeof v === "object") {
+    return length(v);
+  } else if (v === "medium") {
+    return "medium";
+  } else if (v === "thick") {
+    return "thick";
+  } else {
+    return "thin";
   }
 }
 
@@ -353,26 +390,6 @@ function color(v) {
   return hsla(match$3[0], match$3[1], match$3[2], match$3[3]);
 }
 
-function lineWidth(v) {
-  if (typeof v === "object") {
-    return length(v);
-  } else if (v === "medium") {
-    return "medium";
-  } else if (v === "thick") {
-    return "thick";
-  } else {
-    return "thin";
-  }
-}
-
-function borderColor(v) {
-  if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
-    return color(v);
-  } else {
-    return v;
-  }
-}
-
 exports.concat = concat;
 exports.join = join;
 exports.stick = stick;
@@ -380,14 +397,12 @@ exports.concatMany = concatMany;
 exports.joinMany = joinMany;
 exports.stickMany = stickMany;
 exports.string = string;
-exports.scalar = scalar;
 exports.num = num;
 exports.number = number;
 exports.$$int = $$int;
 exports.integer = integer;
 exports.pct = pct;
 exports.percentage = percentage;
-exports.r = r;
 exports.ratio = ratio;
 exports.fr = fr;
 exports.flexUnit = flexUnit;
@@ -417,10 +432,17 @@ exports.angle = angle;
 exports.hz = hz;
 exports.kHz = kHz;
 exports.frequency = frequency;
-exports.lengthPercentage = lengthPercentage;
-exports.frequencyPercentage = frequencyPercentage;
-exports.anglePercentage = anglePercentage;
-exports.timePercentage = timePercentage;
+exports.dpi = dpi;
+exports.dpcm = dpcm;
+exports.dppx = dppx;
+exports.x = x;
+exports.resolution = resolution;
+exports.length_percentage = length_percentage;
+exports.frequency_percentage = frequency_percentage;
+exports.angle_percentage = angle_percentage;
+exports.time_percentage = time_percentage;
+exports.scalar = scalar;
+exports.lineWidth = lineWidth;
 exports.hue = hue;
 exports.alpha = alpha;
 exports.rgbParam = rgbParam;
@@ -430,6 +452,4 @@ exports.rgb = rgb;
 exports.rgba = rgba;
 exports.rgbHex = rgbHex;
 exports.color = color;
-exports.lineWidth = lineWidth;
-exports.borderColor = borderColor;
 /* No side effect */

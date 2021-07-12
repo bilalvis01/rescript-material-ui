@@ -15,7 +15,6 @@ Textual data types
 */
 external global: global => string = "%identity";
 let string: string_ => string;
-let scalar: scalar => string;
 
 /*
 Numeric data types
@@ -26,7 +25,6 @@ let int: int => string;
 let integer: integer => string;
 let pct: float => string;
 let percentage: percentage => string;
-let r: (int, int) => string;
 let ratio: ratio => string;
 let fr: float => string;
 let flexUnit: flexUnit => string;
@@ -65,14 +63,28 @@ let angle: angle => string;
 let hz: float => string;
 let kHz: float => string;
 let frequency: frequency => string;
+// Ratio
+let dpi: float => string;
+let dpcm: float => string;
+let dppx: float => string;
+let x: float => string;
+let resolution: resolution => string;
 
 /*
 Combination of types
 */
-let lengthPercentage: lengthPercentage => string;
-let frequencyPercentage: frequencyPercentage => string;
-let anglePercentage: anglePercentage => string;
-let timePercentage: timePercentage => string;
+let length_percentage: length_percentage => string;
+let frequency_percentage: frequency_percentage => string;
+let angle_percentage: angle_percentage => string;
+let time_percentage: time_percentage => string;
+
+// Scalar
+let scalar: scalar => string;
+
+// Line
+let lineWidth: lineWidth => string;
+external lineStyle: lineStyle => string = "%identity";
+
 /*
 Color
 */
@@ -86,10 +98,3 @@ let rgba: (rgbParam, rgbParam, rgbParam, alpha) => string;
 let rgbHex: string => string;
 external colorKeyword: colorKeyword => string = "%identity"; 
 let color: color => string;
-
-// Line
-let lineWidth: lineWidth => string;
-external lineStyle: lineStyle => string = "%identity";
-
-// border
-let borderColor: borderColor => string;

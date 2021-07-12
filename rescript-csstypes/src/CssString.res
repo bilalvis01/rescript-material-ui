@@ -85,26 +85,17 @@ let percentage = v => {
   }
 };
 
-let r = (v1, v2) => `${Int.toString(v1)}/${Int.toString(v2)}`;
 let ratio = (v) => {
   switch v {
-  | #ratio(v1, v2) => r(v1, v2)
+  | #ratio(v1, v2) => `${Int.toString(v1)}/${Int.toString(v2)}`
   };
 };
 
-let fr = v => `${Float.toString(v)}`;
+let fr = v => `${Float.toString(v)}fr`;
 let flexUnit = v => {
   switch v {
   | #fr(v) => fr(v)
   };
-};
-
-let scalar = v => {
-  switch v {
-    | #...number as n => number(n)
-    | #...integer as i => integer(i)
-    | #...string_ as s => string(s)
-  }
 };
 
 /*
@@ -174,34 +165,68 @@ let frequency = v => {
   | #kHz(v) => kHz(v)
   };
 };
+// Resolution
+let dpi = v => `${Float.toString(v)}dpi`;
+let dpcm = v => `${Float.toString(v)}dpcm`;
+let dppx = v => `${Float.toString(v)}dppx`;
+let x = v => `${Float.toString(v)}x`;
+let resolution = v => {
+  switch v {
+  | #dpi(v) => dpi(v)
+  | #dpcm(v) => dpcm(v)
+  | #dppx(v) => dppx(v)
+  | #x(v) => x(v)
+  };
+};
 
 /*
 Combination of types
 */
-let lengthPercentage = v => {
+let length_percentage = v => {
   switch v {
   | #...length as l => length(l)
   | #...percentage as p => percentage(p)
   }
 };
-let frequencyPercentage = v => {
+let frequency_percentage = v => {
   switch v {
   | #...frequency as f => frequency(f)
   | #...percentage as p => percentage(p)
   }
 };
-let anglePercentage = v => {
+let angle_percentage = v => {
   switch v {
   | #...angle as a => angle(a)
   | #...percentage as p => percentage(p)
   }
 };
-let timePercentage = v => {
+let time_percentage = v => {
   switch v {
   | #...time as t => time(t)
   | #...percentage as p => percentage(p)
   }
 };
+
+// Scalar
+let scalar = v => {
+  switch v {
+    | #...number as n => number(n)
+    | #...integer as i => integer(i)
+    | #...string_ as s => string(s)
+  }
+};
+
+// Line
+let lineWidth = v => {
+  switch v {
+    | #...length as l => length(l)
+    | #thin => "thin"
+    | #medium => "medium"
+    | #thick => "thick"
+  };
+}; 
+
+external lineStyle: lineStyle => string = "%identity";
 
 /*
 Color
@@ -238,24 +263,5 @@ let color = v => {
     | #rgba(v1, v2, v3, v4) =>  rgba(v1, v2, v3, v4)
     | #rgbHex(v) => rgbHex(v)
     | #...colorKeyword as c => colorKeyword(c)
-  };
-};
-
-
-// Line
-let lineWidth = v => {
-  switch v {
-    | #...length as l => length(l)
-    | #thin => "thin"
-    | #medium => "medium"
-    | #thick => "thick"
-  };
-}; 
-external lineStyle: lineStyle => string = "%identity";
-
-let borderColor = v => {
-  switch v {
-    | #...color as c => color(c)
-    | #...global as g => global(g)
   };
 };
