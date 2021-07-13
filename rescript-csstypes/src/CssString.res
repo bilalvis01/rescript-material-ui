@@ -235,6 +235,7 @@ let hue = v => {
   switch v {
     | #...angle as a => angle(a)
     | #...number as n => number(n)
+    | #...degree as d => Obj.magic(d)->Int.toString
   };
 };
 let alpha = v => { 
@@ -247,6 +248,7 @@ let rgbParam = v => {
   switch v {
     | #...percentage as l => percentage(l)
     | #...number as n => number(n)
+    | #...rgbColorValue as c => Obj.magic(c)->Int.toString
   };
 };
 let hsl = (v1, v2, v3) => `hsl(${hue(v1)}, ${percentage(v2)}, ${percentage(v3)})`;

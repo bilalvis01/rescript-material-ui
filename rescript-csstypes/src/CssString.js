@@ -323,10 +323,14 @@ function lineWidth(v) {
 }
 
 function hue(v) {
-  if (v.NAME === "number") {
-    return String(v.VAL);
+  if (typeof v === "object") {
+    if (v.NAME === "number") {
+      return String(v.VAL);
+    } else {
+      return angle(v);
+    }
   } else {
-    return angle(v);
+    return String(v);
   }
 }
 
@@ -339,10 +343,14 @@ function alpha(v) {
 }
 
 function rgbParam(v) {
-  if (v.NAME === "number") {
-    return String(v.VAL);
+  if (typeof v === "object") {
+    if (v.NAME === "number") {
+      return String(v.VAL);
+    } else {
+      return percentage(v);
+    }
   } else {
-    return percentage(v);
+    return String(v);
   }
 }
 
