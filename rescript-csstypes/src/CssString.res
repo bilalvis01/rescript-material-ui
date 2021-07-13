@@ -253,7 +253,7 @@ let hsl = (v1, v2, v3) => `hsl(${hue(v1)}, ${percentage(v2)}, ${percentage(v3)})
 let hsla = (v1, v2, v3, v4) => `hsla(${hue(v1)}, ${percentage(v2)}, ${percentage(v3)}, ${alpha(v4)})`;
 let rgb = (v1, v2, v3) => `rgb(${rgbParam(v1)}, ${rgbParam(v2)}, ${rgbParam(v3)})`;
 let rgba = (v1, v2, v3, v4) => `rgba(${rgbParam(v1)}, ${rgbParam(v2)}, ${rgbParam(v3)}, ${alpha(v4)})`;
-let rgbx = v => `#${v}`;
+let rgbX = v => `#${v}`;
 external colorKeyword: colorKeyword => string = "%identity"; 
 let color = v => {
   switch v {
@@ -261,7 +261,7 @@ let color = v => {
     | #hsla(v1, v2, v3, v4) => hsla(v1, v2, v3, v4)
     | #rgb(v1, v2, v3) => rgb(v1, v2, v3)
     | #rgba(v1, v2, v3, v4) =>  rgba(v1, v2, v3, v4)
-    | #rgbx(v) => rgbx(v)
+    | #rgbX(v) => rgbX(v)
     | #...colorKeyword as c => colorKeyword(c)
   };
 };

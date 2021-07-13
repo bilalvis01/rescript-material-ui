@@ -63,7 +63,7 @@ let hsl = (v1, v2, v3) => #hsl(v1, v2, v3);
 let hsla = (v1, v2, v3, v4) => #hsla(v1, v2, v3, v4);
 let rgb = (v1, v2, v3) => #rgb(v1, v2, v3);
 let rgba = (v1, v2, v3, v4) => #rgba(v1, v2, v3, v4);
-let rgbx = v => #rgbx(v);
+let rgbX = v => #rgbX(v);
 
 /*
 properties

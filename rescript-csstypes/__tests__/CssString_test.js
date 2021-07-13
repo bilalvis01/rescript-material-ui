@@ -124,8 +124,8 @@ test("color", (function () {
         expect(CssString$Css.hsla(Css$Css.num(1), Css$Css.pct(10), Css$Css.pct(10), Css$Css.num(1))).toBe("hsla(1, 10%, 10%, 1)");
         expect(CssString$Css.rgb(Css$Css.num(1), Css$Css.num(1), Css$Css.pct(10))).toBe("rgb(1, 1, 10%)");
         expect(CssString$Css.rgba(Css$Css.num(1), Css$Css.num(1), Css$Css.pct(10), Css$Css.num(10))).toBe("rgba(1, 1, 10%, 10)");
-        expect(CssString$Css.rgbx("000000")).toBe("#000000");
-        expect(CssString$Css.color(Css$Css.rgbx("000000"))).toBe("#000000");
+        expect(CssString$Css.rgbX("000000")).toBe("#000000");
+        expect(CssString$Css.color(Css$Css.rgbX("000000"))).toBe("#000000");
         expect(CssString$Css.color(Css$Css.rgb(Css$Css.num(1), Css$Css.num(1.8), Css$Css.pct(10)))).toBe("rgb(1, 1.8, 10%)");
         
       }));

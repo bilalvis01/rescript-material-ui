@@ -7,7 +7,7 @@ var CssPropertyValue$Css = require("../src/CssPropertyValue.js");
 test("border", (function () {
         expect(CssPropertyValue$Css.border2("dashed", "red")).toBe("dashed red");
         expect(CssPropertyValue$Css.border2("solid", Css$Css.rem(1.0))).toBe("solid 1rem");
-        expect(CssPropertyValue$Css.border3("thick", "double", Css$Css.rgbx("32a1ce"))).toBe("thick double #32a1ce");
+        expect(CssPropertyValue$Css.border3("thick", "double", Css$Css.rgbX("32a1ce"))).toBe("thick double #32a1ce");
         expect(CssPropertyValue$Css.border3(Css$Css.mm(4), "ridge", Css$Css.rgba(Css$Css.num(170), Css$Css.num(50), Css$Css.num(220), Css$Css.num(0.6)))).toBe("4mm ridge rgba(170, 50, 220, 0.6)");
         
       }));

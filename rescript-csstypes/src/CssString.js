@@ -362,7 +362,7 @@ function rgba(v1, v2, v3, v4) {
   return "rgba(" + rgbParam(v1) + ", " + rgbParam(v2) + ", " + rgbParam(v3) + ", " + alpha(v4) + ")";
 }
 
-function rgbx(v) {
+function rgbX(v) {
   return "#" + v;
 }
 
@@ -371,12 +371,12 @@ function color(v) {
     return v;
   }
   var variant = v.NAME;
+  if (variant === "rgbX") {
+    return "#" + v.VAL;
+  }
   if (variant === "rgba") {
     var match = v.VAL;
     return rgba(match[0], match[1], match[2], match[3]);
-  }
-  if (variant === "rgbx") {
-    return "#" + v.VAL;
   }
   if (variant === "hsl") {
     var match$1 = v.VAL;
@@ -450,6 +450,6 @@ exports.hsl = hsl;
 exports.hsla = hsla;
 exports.rgb = rgb;
 exports.rgba = rgba;
-exports.rgbx = rgbx;
+exports.rgbX = rgbX;
 exports.color = color;
 /* No side effect */
