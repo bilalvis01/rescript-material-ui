@@ -119,10 +119,18 @@ test("color", (.) => {
     ->toBe("hsl(1, 10%, 10%)");
   expect(hsla(Css.num(1.), Css.pct(10.), Css.pct(10.), Css.num(1.)))
     ->toBe("hsla(1, 10%, 10%, 1)");
+  expect(hsl(#1, Css.pct(10.), Css.pct(10.)))
+    ->toBe("hsl(1, 10%, 10%)");
+  expect(hsla(#1, Css.pct(10.), Css.pct(10.), Css.num(1.)))
+    ->toBe("hsla(1, 10%, 10%, 1)");
   expect(rgb(Css.num(1.), Css.num(1.), Css.pct(10.)))
     ->toBe("rgb(1, 1, 10%)");
   expect(rgba(Css.num(1.), Css.num(1.), Css.pct(10.), Css.num(10.)))
     ->toBe("rgba(1, 1, 10%, 10)");
+  expect(rgb(#255, #255, #255))
+    ->toBe("rgb(255, 255, 255)");
+  expect(rgba(#0, #0, #0, Css.num(10.)))
+    ->toBe("rgba(0, 0, 0, 10)");
   expect(rgbX("000000"))->toBe("#000000");
   expect(color(Css.rgbX("000000")))->toBe("#000000");
   expect(color(Css.rgb(Css.num(1.), Css.num(1.8), Css.pct(10.))))

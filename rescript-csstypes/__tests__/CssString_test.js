@@ -122,8 +122,12 @@ test("color", (function () {
         expect(CssString$Css.rgbParam(Css$Css.num(1))).toBe("1");
         expect(CssString$Css.hsl(Css$Css.num(1), Css$Css.pct(10), Css$Css.pct(10))).toBe("hsl(1, 10%, 10%)");
         expect(CssString$Css.hsla(Css$Css.num(1), Css$Css.pct(10), Css$Css.pct(10), Css$Css.num(1))).toBe("hsla(1, 10%, 10%, 1)");
+        expect(CssString$Css.hsl(1, Css$Css.pct(10), Css$Css.pct(10))).toBe("hsl(1, 10%, 10%)");
+        expect(CssString$Css.hsla(1, Css$Css.pct(10), Css$Css.pct(10), Css$Css.num(1))).toBe("hsla(1, 10%, 10%, 1)");
         expect(CssString$Css.rgb(Css$Css.num(1), Css$Css.num(1), Css$Css.pct(10))).toBe("rgb(1, 1, 10%)");
         expect(CssString$Css.rgba(Css$Css.num(1), Css$Css.num(1), Css$Css.pct(10), Css$Css.num(10))).toBe("rgba(1, 1, 10%, 10)");
+        expect(CssString$Css.rgb(255, 255, 255)).toBe("rgb(255, 255, 255)");
+        expect(CssString$Css.rgba(0, 0, 0, Css$Css.num(10))).toBe("rgba(0, 0, 0, 10)");
         expect(CssString$Css.rgbX("000000")).toBe("#000000");
         expect(CssString$Css.color(Css$Css.rgbX("000000"))).toBe("#000000");
         expect(CssString$Css.color(Css$Css.rgb(Css$Css.num(1), Css$Css.num(1.8), Css$Css.pct(10)))).toBe("rgb(1, 1.8, 10%)");
