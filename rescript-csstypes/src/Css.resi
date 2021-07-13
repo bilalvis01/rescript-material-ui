@@ -74,5 +74,5 @@ type property = (string, box_propertyValue);
 let makeProperty: (string, CssPropertyValue.synthetic<'a>) => property;
 
 let border: [ | global | lineWidth | lineStyle | color | string_ ] => property;
-let border2: ([ | lineWidth | lineStyle | color ], [ | lineWidth | lineStyle | color ]) => property;
+let border2: (~style: lineStyle, [ | lineWidth | color ]) => property;
 let border3: (~width: lineWidth, ~style: lineStyle, ~color: color) => property;

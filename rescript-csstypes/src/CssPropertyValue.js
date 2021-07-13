@@ -23,25 +23,15 @@ function border(v) {
   }
 }
 
-function border2(v1, v2) {
-  var toString = function (v) {
-    if (typeof v !== "object") {
-      if (v === "inset" || v === "double" || v === "dotted" || v === "dashed" || v === "groove" || v === "outset" || v === "solid" || v === "ridge" || v === "hidden" || v === "none") {
-        return v;
-      } else if (v === "thick" || v === "medium" || v === "thin") {
-        return CssString$Css.lineWidth(v);
-      } else {
-        return CssString$Css.color(v);
-      }
-    }
-    var variant = v.NAME;
-    if (variant === "rem" || variant === "vw" || variant === "vh" || variant === "px" || variant === "pt" || variant === "pc" || variant === "mm" || variant === "ex" || variant === "em" || variant === "cm" || variant === "ch" || variant === "vmin" || variant === "vmax" || variant === "inch") {
-      return CssString$Css.lineWidth(v);
-    } else {
-      return CssString$Css.color(v);
-    }
-  };
-  return toString(v1) + " " + toString(v2);
+function border2(style, widthOrColor) {
+  var widthOrColor$1;
+  if (typeof widthOrColor === "object") {
+    var variant = widthOrColor.NAME;
+    widthOrColor$1 = variant === "rem" || variant === "vw" || variant === "vh" || variant === "px" || variant === "pt" || variant === "pc" || variant === "mm" || variant === "ex" || variant === "em" || variant === "cm" || variant === "ch" || variant === "vmin" || variant === "vmax" || variant === "inch" ? CssString$Css.lineWidth(widthOrColor) : CssString$Css.color(widthOrColor);
+  } else {
+    widthOrColor$1 = widthOrColor === "thick" || widthOrColor === "medium" || widthOrColor === "thin" ? CssString$Css.lineWidth(widthOrColor) : CssString$Css.color(widthOrColor);
+  }
+  return style + " " + widthOrColor$1;
 }
 
 function border3(width, style, color) {

@@ -276,9 +276,9 @@ function rgba(v1, v2, v3, v4) {
         };
 }
 
-function rgbx(v) {
+function rgbX(v) {
   return {
-          NAME: "rgbx",
+          NAME: "rgbX",
           VAL: v
         };
 }
@@ -297,10 +297,10 @@ function border(v) {
         ];
 }
 
-function border2(v1, v2) {
+function border2(style, widthOrColor) {
   return [
           "border",
-          CssPropertyValue$Css.border2(v1, v2)
+          CssPropertyValue$Css.border2(style, widthOrColor)
         ];
 }
 
@@ -347,7 +347,7 @@ exports.hsl = hsl;
 exports.hsla = hsla;
 exports.rgb = rgb;
 exports.rgba = rgba;
-exports.rgbx = rgbx;
+exports.rgbX = rgbX;
 exports.makeProperty = makeProperty;
 exports.border = border;
 exports.border2 = border2;

@@ -2,9 +2,9 @@ open CssPropertyValue;
 open Jest;
 
 test("border", (.) => {
-  expect(border2(#dashed, #red))
+  expect(border2(~style=#dashed, #red))
     ->toBe(string("dashed red"));
-  expect(border2(#solid, Css.rem(1.0)))
+  expect(border2(~style=#solid, Css.rem(1.0)))
     ->toBe(string("solid 1rem"));
   expect(border3(~width=#thick, ~style=#double, ~color=Css.rgbX("32a1ce")))
     ->toBe(string("thick double #32a1ce"));

@@ -9,8 +9,8 @@ type tag_border;
 type t_border = synthetic<tag_border>;
 let border: [ | global | lineWidth | lineStyle | color | string_ ] => t_border;
 let border2: (
-  [ | lineWidth | lineStyle | color ], 
-  [ | lineWidth | lineStyle | color ]
+  ~style: lineStyle, 
+  [ | lineWidth | color ]
 ) => t_border;
 let border3: (
   ~width: lineWidth,
