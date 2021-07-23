@@ -283,7 +283,7 @@ function rgbX(v) {
         };
 }
 
-function makeProperty(v1, v2) {
+function property(v1, v2) {
   return [
           v1,
           v2
@@ -642,7 +642,7 @@ exports.hsla = hsla;
 exports.rgb = rgb;
 exports.rgba = rgba;
 exports.rgbX = rgbX;
-exports.makeProperty = makeProperty;
+exports.property = property;
 exports.border = border;
 exports.border2 = border2;
 exports.border3 = border3;

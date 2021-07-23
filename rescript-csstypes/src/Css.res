@@ -74,7 +74,7 @@ type rec box_propertyValue =
 
 type property = (string, box_propertyValue);
 
-let makeProperty = (v1, v2) => (v1, PropertyValue(v2));
+let property = (v1, v2) => (v1, PropertyValue(v2));
 
 let border = v => ("border", PropertyValue(CssPropertyValue.border(v)));
 let border2 = (~style, widthOrColor) => ("border", PropertyValue(CssPropertyValue.border2(~style, widthOrColor)));
