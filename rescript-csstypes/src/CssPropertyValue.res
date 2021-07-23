@@ -2,12 +2,15 @@ open CssType;
 
 type synthetic<'a>;
 
-external string: string => synthetic<'a> = "%identity";
-external number: float => synthetic<'a> = "%identity";
-external integer: int => synthetic<'a> = "%identity";
+type tag_synthetic;
+type t_synthetic = synthetic<tag_synthetic>
+external string: string => t_synthetic = "%identity";
+external number: float => t_synthetic = "%identity";
+external integer: int => t_synthetic = "%identity";
 
 type tag_border;
 type t_border = synthetic<tag_border>;
+external borderString: string => t_border = "%identity";
 let border = v => {
   switch v {
     | #...global as g => CssString.global(g)
@@ -15,7 +18,7 @@ let border = v => {
     | #...lineStyle as s => CssString.lineStyle(s)
     | #...color as c => CssString.color(c)
   }
-  ->string
+  ->borderString
 };
 let border2 = (~style, widthOrColor) => {
   let widthOrColor = switch widthOrColor {
@@ -23,40 +26,42 @@ let border2 = (~style, widthOrColor) => {
     | #...color as c => CssString.color(c)
   };
 
-  `${CssString.lineStyle(style)} ${widthOrColor}`->string
+  `${CssString.lineStyle(style)} ${widthOrColor}`->borderString
 }
 let border3 = (~width, ~style, ~color) =>
   `${CssString.lineWidth(width)} ${CssString.lineStyle(style)} ${CssString.color(color)}`
-  ->string;
+  ->borderString;
 
 type tag_borderColor;
 type t_borderColor = synthetic<tag_borderColor>;
+external borderColorString: string => t_borderColor = "%identity";
 let borderColor = v => 
   switch v {
     | #...color as c => CssString.color(c)
     | #...global as g => CssString.global(g)
   }
-  ->string;
-let borderColor2 = (~tb, ~lr) => `${CssString.color(tb)} ${CssString.color(lr)}`->string;
+  ->borderColorString;
+let borderColor2 = (~tb, ~lr) => `${CssString.color(tb)} ${CssString.color(lr)}`->borderColorString;
 let borderColor3 = (~top, ~lr, ~bottom) => 
-  `${CssString.color(top)} ${CssString.color(lr)} ${CssString.color(bottom)}`->string;
+  `${CssString.color(top)} ${CssString.color(lr)} ${CssString.color(bottom)}`->borderColorString;
 let borderColor4 = (~top, ~right, ~bottom, ~left) =>
   `${CssString.color(top)} ${CssString.color(right)} ${CssString.color(bottom)} ${CssString.color(left)}`
-  ->string;
+  ->borderColorString;
 
 type tag_borderStyle;
 type t_borderStyle = synthetic<tag_borderStyle>;
+external borderStyleString: string => t_borderStyle = "%identity";
 let borderStyle = v =>
   switch v {
   | #...lineStyle as s => CssString.lineStyle(s)
   | #...global as g => CssString.global(g)
   }
-  ->string;
+  ->borderStyleString;
 let borderStyle2 = (~tb, ~lr) =>
-  `${CssString.lineStyle(tb)} ${CssString.lineStyle(lr)}`->string;
+  `${CssString.lineStyle(tb)} ${CssString.lineStyle(lr)}`->borderStyleString;
 let borderStyle3 = (~top, ~lr, ~bottom) =>
   `${CssString.lineStyle(top)} ${CssString.lineStyle(lr)} ${CssString.lineStyle(bottom)}`
-  ->string;
+  ->borderStyleString;
 let borderStyle4 = (~top, ~right, ~bottom, ~left) =>
   `${CssString.lineStyle(top)} ${CssString.lineStyle(right)} ${CssString.lineStyle(bottom)} ${CssString.lineStyle(left)}`
-  ->string;
+  ->borderStyleString;
