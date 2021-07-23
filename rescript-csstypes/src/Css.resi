@@ -127,3 +127,9 @@ let borderLeftColor2: (~tb: color, ~lr: color) => property;
 let borderLeftColor3: (~top: color, ~lr: color, ~bottom: color) => property;
 let borderLeftColor4: (~top: color, ~right: color, ~bottom: color, ~left: color) => property;
 let borderLeftColorS: string => property;
+
+let borderStyle: [ | lineStyle | global ] => property;
+let borderStyle2: (~tb: lineStyle, ~lr: lineStyle) => property;
+let borderStyle3: (~top: lineStyle, ~lr: lineStyle, ~bottom: lineStyle) => property;
+let borderStyle4: (~top: lineStyle, ~right: lineStyle, ~bottom: lineStyle, ~left: lineStyle) => property;
+let borderStyleS: string => property;

@@ -605,6 +605,41 @@ function borderBottomColorS(v) {
         ];
 }
 
+function borderStyle(v) {
+  return [
+          "borderStyle",
+          CssPropertyValue$Css.borderStyle(v)
+        ];
+}
+
+function borderStyle2(tb, lr) {
+  return [
+          "borderStyle",
+          CssPropertyValue$Css.borderStyle2(tb, lr)
+        ];
+}
+
+function borderStyle3(top, lr, bottom) {
+  return [
+          "borderStyle",
+          CssPropertyValue$Css.borderStyle3(top, lr, bottom)
+        ];
+}
+
+function borderStyle4(top, right, bottom, left) {
+  return [
+          "borderStyle",
+          CssPropertyValue$Css.borderStyle4(top, right, bottom, left)
+        ];
+}
+
+function borderStyleS(v) {
+  return [
+          "borderStyle",
+          v
+        ];
+}
+
 exports.str = str;
 exports.num = num;
 exports.$$int = $$int;
@@ -688,4 +723,9 @@ exports.borderLeftColor2 = borderLeftColor2;
 exports.borderLeftColor3 = borderLeftColor3;
 exports.borderLeftColor4 = borderLeftColor4;
 exports.borderLeftColorS = borderLeftColorS;
+exports.borderStyle = borderStyle;
+exports.borderStyle2 = borderStyle2;
+exports.borderStyle3 = borderStyle3;
+exports.borderStyle4 = borderStyle4;
+exports.borderStyleS = borderStyleS;
 /* No side effect */

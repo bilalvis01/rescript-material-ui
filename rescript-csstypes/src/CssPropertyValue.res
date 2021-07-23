@@ -43,3 +43,20 @@ let borderColor3 = (~top, ~lr, ~bottom) =>
 let borderColor4 = (~top, ~right, ~bottom, ~left) =>
   `${CssString.color(top)} ${CssString.color(right)} ${CssString.color(bottom)} ${CssString.color(left)}`
   ->string;
+
+type tag_borderStyle;
+type t_borderStyle = synthetic<tag_borderStyle>;
+let borderStyle = v =>
+  switch v {
+  | #...lineStyle as s => CssString.lineStyle(s)
+  | #...global as g => CssString.global(g)
+  }
+  ->string;
+let borderStyle2 = (~tb, ~lr) =>
+  `${CssString.lineStyle(tb)} ${CssString.lineStyle(lr)}`->string;
+let borderStyle3 = (~top, ~lr, ~bottom) =>
+  `${CssString.lineStyle(top)} ${CssString.lineStyle(lr)} ${CssString.lineStyle(bottom)}`
+  ->string;
+let borderStyle4 = (~top, ~right, ~bottom, ~left) =>
+  `${CssString.lineStyle(top)} ${CssString.lineStyle(right)} ${CssString.lineStyle(bottom)} ${CssString.lineStyle(left)}`
+  ->string;

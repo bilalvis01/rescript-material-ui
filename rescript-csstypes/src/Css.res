@@ -146,3 +146,11 @@ let borderBottomColor3 = (~top, ~lr, ~bottom) =>
 let borderBottomColor4 = (~top, ~right, ~bottom, ~left) =>
   ("borderBottomColor", PropertyValue(CssPropertyValue.borderColor4(~top, ~right, ~bottom, ~left)));
 let borderBottomColorS = v => ("borderBottomColor", PropertyValue(CssPropertyValue.string(v)));
+
+let borderStyle = v => ("borderStyle", PropertyValue(CssPropertyValue.borderStyle(v)));
+let borderStyle2 = (~tb, ~lr) => ("borderStyle", PropertyValue(CssPropertyValue.borderStyle2(~tb, ~lr)));
+let borderStyle3 = (~top, ~lr, ~bottom) =>
+  ("borderStyle", PropertyValue(CssPropertyValue.borderStyle3(~top, ~lr, ~bottom)));
+let borderStyle4 = (~top, ~right, ~bottom, ~left) =>
+  ("borderStyle", PropertyValue(CssPropertyValue.borderStyle4(~top, ~right, ~bottom, ~left)));
+let borderStyleS = v => ("borderStyle", PropertyValue(CssPropertyValue.string(v)));

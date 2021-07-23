@@ -56,6 +56,22 @@ function borderColor4(top, right, bottom, left) {
   return CssString$Css.color(top) + " " + CssString$Css.color(right) + " " + CssString$Css.color(bottom) + " " + CssString$Css.color(left);
 }
 
+function borderStyle(v) {
+  return v;
+}
+
+function borderStyle2(tb, lr) {
+  return tb + " " + lr;
+}
+
+function borderStyle3(top, lr, bottom) {
+  return top + " " + lr + " " + bottom;
+}
+
+function borderStyle4(top, right, bottom, left) {
+  return top + " " + right + " " + bottom + " " + left;
+}
+
 exports.border = border;
 exports.border2 = border2;
 exports.border3 = border3;
@@ -63,4 +79,8 @@ exports.borderColor = borderColor;
 exports.borderColor2 = borderColor2;
 exports.borderColor3 = borderColor3;
 exports.borderColor4 = borderColor4;
+exports.borderStyle = borderStyle;
+exports.borderStyle2 = borderStyle2;
+exports.borderStyle3 = borderStyle3;
+exports.borderStyle4 = borderStyle4;
 /* No side effect */
