@@ -133,3 +133,27 @@ let borderStyle2: (~tb: lineStyle, ~lr: lineStyle) => property;
 let borderStyle3: (~top: lineStyle, ~lr: lineStyle, ~bottom: lineStyle) => property;
 let borderStyle4: (~top: lineStyle, ~right: lineStyle, ~bottom: lineStyle, ~left: lineStyle) => property;
 let borderStyleString: string => property;
+
+let borderTopStyle: [ | lineStyle | global ] => property;
+let borderTopStyle2: (~tb: lineStyle, ~lr: lineStyle) => property;
+let borderTopStyle3: (~top: lineStyle, ~lr: lineStyle, ~bottom: lineStyle) => property;
+let borderTopStyle4: (~top: lineStyle, ~right: lineStyle, ~bottom: lineStyle, ~left: lineStyle) => property;
+let borderTopStyleString: string => property;
+
+let borderRightStyle: [ | lineStyle | global ] => property;
+let borderRightStyle2: (~tb: lineStyle, ~lr: lineStyle) => property;
+let borderRightStyle3: (~top: lineStyle, ~lr: lineStyle, ~bottom: lineStyle) => property;
+let borderRightStyle4: (~top: lineStyle, ~right: lineStyle, ~bottom: lineStyle, ~left: lineStyle) => property;
+let borderRightStyleString: string => property;
+
+let borderBottomStyle: [ | lineStyle | global ] => property;
+let borderBottomStyle2: (~tb: lineStyle, ~lr: lineStyle) => property;
+let borderBottomStyle3: (~top: lineStyle, ~lr: lineStyle, ~bottom: lineStyle) => property;
+let borderBottomStyle4: (~top: lineStyle, ~right: lineStyle, ~bottom: lineStyle, ~left: lineStyle) => property;
+let borderBottomStyleString: string => property;
+
+let borderLeftStyle: [ | lineStyle | global ] => property;
+let borderLeftStyle2: (~tb: lineStyle, ~lr: lineStyle) => property;
+let borderLeftStyle3: (~top: lineStyle, ~lr: lineStyle, ~bottom: lineStyle) => property;
+let borderLeftStyle4: (~top: lineStyle, ~right: lineStyle, ~bottom: lineStyle, ~left: lineStyle) => property;
+let borderLeftStyleString: string => property;
