@@ -283,10 +283,31 @@ function rgbX(v) {
         };
 }
 
-function property(v1, v2) {
+function property(name, value) {
   return [
-          v1,
-          v2
+          name,
+          value
+        ];
+}
+
+function propertyString(name, value) {
+  return [
+          name,
+          value
+        ];
+}
+
+function propertyNumber(name, value) {
+  return [
+          name,
+          value
+        ];
+}
+
+function propertyInteger(name, value) {
+  return [
+          name,
+          value
         ];
 }
 
@@ -993,6 +1014,9 @@ exports.rgb = rgb;
 exports.rgba = rgba;
 exports.rgbX = rgbX;
 exports.property = property;
+exports.propertyString = propertyString;
+exports.propertyNumber = propertyNumber;
+exports.propertyInteger = propertyInteger;
 exports.border = border;
 exports.border2 = border2;
 exports.border3 = border3;

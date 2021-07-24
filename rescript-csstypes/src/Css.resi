@@ -72,6 +72,9 @@ type rec box_propertyValue =
 type property = (string, box_propertyValue);
 
 let property: (string, CssPropertyValue.synthetic<'a>) => property;
+let propertyString: (string, string) => property;
+let propertyNumber: (string, float) => property;
+let propertyInteger: (string, int) => property; 
 
 let border: [ | global | lineStyle ] => property;
 let border2: (~style: lineStyle, [ | lineWidth | color ]) => property;
