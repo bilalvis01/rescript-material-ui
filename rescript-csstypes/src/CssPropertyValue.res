@@ -14,9 +14,7 @@ external borderString: string => t_border = "%identity";
 let border = v => {
   switch v {
     | #...global as g => CssString.global(g)
-    | #...lineWidth as w => CssString.lineWidth(w)
     | #...lineStyle as s => CssString.lineStyle(s)
-    | #...color as c => CssString.color(c)
   }
   ->borderString
 };

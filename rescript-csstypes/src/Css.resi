@@ -73,27 +73,27 @@ type property = (string, box_propertyValue);
 
 let property: (string, CssPropertyValue.synthetic<'a>) => property;
 
-let border: [ | global | lineWidth | lineStyle | color ] => property;
+let border: [ | global | lineStyle ] => property;
 let border2: (~style: lineStyle, [ | lineWidth | color ]) => property;
 let border3: (~width: lineWidth, ~style: lineStyle, ~color: color) => property;
 let borderString: string => property;
 
-let borderTop: [ | global | lineWidth | lineStyle | color ] => property;
+let borderTop: [ | global | lineStyle ] => property;
 let borderTop2: (~style: lineStyle, [ | lineWidth | color ]) => property;
 let borderTop3: (~width: lineWidth, ~style: lineStyle, ~color: color) => property;
 let borderTopString: string => property;
 
-let borderLeft: [ | global | lineWidth | lineStyle | color ] => property;
+let borderLeft: [ | global | lineStyle ] => property;
 let borderLeft2: (~style: lineStyle, [ | lineWidth | color ]) => property;
 let borderLeft3: (~width: lineWidth, ~style: lineStyle, ~color: color) => property;
 let borderLeftString: string => property;
 
-let borderRight: [ | global | lineWidth | lineStyle | color ] => property;
+let borderRight: [ | global | lineStyle ] => property;
 let borderRight2: (~style: lineStyle, [ | lineWidth | color ]) => property;
 let borderRight3: (~width: lineWidth, ~style: lineStyle, ~color: color) => property;
 let borderRightString: string => property;
 
-let borderBottom: [ | global | lineWidth | lineStyle | color ] => property;
+let borderBottom: [ | global | lineStyle ] => property;
 let borderBottom2: (~style: lineStyle, [ | lineWidth | color ]) => property;
 let borderBottom3: (~width: lineWidth, ~style: lineStyle, ~color: color) => property;
 let borderBottomString: string => property;

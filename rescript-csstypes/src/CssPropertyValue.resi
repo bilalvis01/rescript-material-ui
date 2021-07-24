@@ -10,7 +10,7 @@ external integer: int => t_synthetic = "%identity";
 type tag_border;
 type t_border = synthetic<tag_border>;
 external borderString: string => t_border = "%identity";
-let border: [ | global | lineWidth | lineStyle | color ] => t_border;
+let border: [ | global | lineStyle ] => t_border;
 let border2: (
   ~style: lineStyle, 
   [ | lineWidth | color ]
