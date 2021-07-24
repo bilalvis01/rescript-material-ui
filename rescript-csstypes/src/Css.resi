@@ -157,3 +157,33 @@ let borderLeftStyle2: (~tb: lineStyle, ~lr: lineStyle) => property;
 let borderLeftStyle3: (~top: lineStyle, ~lr: lineStyle, ~bottom: lineStyle) => property;
 let borderLeftStyle4: (~top: lineStyle, ~right: lineStyle, ~bottom: lineStyle, ~left: lineStyle) => property;
 let borderLeftStyleString: string => property;
+
+let borderWidth: [ | lineWidth | global ] => property;
+let borderWidth2: (~tb: lineWidth, ~lr: lineWidth) => property;
+let borderWidth3: (~top: lineWidth, ~lr: lineWidth, ~bottom: lineWidth) => property;
+let borderWidth4: (~top: lineWidth, ~right: lineWidth, ~bottom: lineWidth, ~left: lineWidth) => property;
+let borderWidthString: string => property;
+
+let borderTopWidth: [ | lineWidth | global ] => property;
+let borderTopWidth2: (~tb: lineWidth, ~lr: lineWidth) => property;
+let borderTopWidth3: (~top: lineWidth, ~lr: lineWidth, ~bottom: lineWidth) => property;
+let borderTopWidth4: (~top: lineWidth, ~right: lineWidth, ~bottom: lineWidth, ~left: lineWidth) => property;
+let borderTopWidthString: string => property;
+
+let borderRightWidth: [ | lineWidth | global ] => property;
+let borderRightWidth2: (~tb: lineWidth, ~lr: lineWidth) => property;
+let borderRightWidth3: (~top: lineWidth, ~lr: lineWidth, ~bottom: lineWidth) => property;
+let borderRightWidth4: (~top: lineWidth, ~right: lineWidth, ~bottom: lineWidth, ~left: lineWidth) => property;
+let borderRightWidthString: string => property;
+
+let borderBottomWidth: [ | lineWidth | global ] => property;
+let borderBottomWidth2: (~tb: lineWidth, ~lr: lineWidth) => property;
+let borderBottomWidth3: (~top: lineWidth, ~lr: lineWidth, ~bottom: lineWidth) => property;
+let borderBottomWidth4: (~top: lineWidth, ~right: lineWidth, ~bottom: lineWidth, ~left: lineWidth) => property;
+let borderBottomWidthString: string => property;
+
+let borderLeftWidth: [ | lineWidth | global ] => property;
+let borderLeftWidth2: (~tb: lineWidth, ~lr: lineWidth) => property;
+let borderLeftWidth3: (~top: lineWidth, ~lr: lineWidth, ~bottom: lineWidth) => property;
+let borderLeftWidth4: (~top: lineWidth, ~right: lineWidth, ~bottom: lineWidth, ~left: lineWidth) => property;
+let borderLeftWidthString: string => property;

@@ -58,6 +58,26 @@ function borderStyle4(top, right, bottom, left) {
   return top + " " + right + " " + bottom + " " + left;
 }
 
+function borderWidth(v) {
+  if (typeof v === "object" || v === "thick" || v === "medium" || v === "thin") {
+    return CssString$Css.lineWidth(v);
+  } else {
+    return v;
+  }
+}
+
+function borderWidth2(tb, lr) {
+  return CssString$Css.lineWidth(tb) + " " + CssString$Css.lineWidth(lr);
+}
+
+function borderWidth3(top, lr, bottom) {
+  return CssString$Css.lineWidth(top) + " " + CssString$Css.lineWidth(lr) + " " + CssString$Css.lineWidth(bottom);
+}
+
+function borderWidth4(top, right, bottom, left) {
+  return CssString$Css.lineWidth(top) + " " + CssString$Css.lineWidth(right) + " " + CssString$Css.lineWidth(bottom) + " " + CssString$Css.lineWidth(left);
+}
+
 exports.border = border;
 exports.border2 = border2;
 exports.border3 = border3;
@@ -69,4 +89,8 @@ exports.borderStyle = borderStyle;
 exports.borderStyle2 = borderStyle2;
 exports.borderStyle3 = borderStyle3;
 exports.borderStyle4 = borderStyle4;
+exports.borderWidth = borderWidth;
+exports.borderWidth2 = borderWidth2;
+exports.borderWidth3 = borderWidth3;
+exports.borderWidth4 = borderWidth4;
 /* No side effect */

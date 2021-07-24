@@ -36,3 +36,11 @@ let borderStyle: [ | lineStyle | global ] => t_borderStyle;
 let borderStyle2: (~tb: lineStyle, ~lr: lineStyle) => t_borderStyle;
 let borderStyle3: (~top: lineStyle, ~lr: lineStyle, ~bottom: lineStyle) => t_borderStyle;
 let borderStyle4: (~top: lineStyle, ~right: lineStyle, ~bottom: lineStyle, ~left: lineStyle) => t_borderStyle;
+
+type tag_borderWidth;
+type t_borderWidth = synthetic<tag_borderWidth>;
+external borderWidthString: string => t_borderWidth = "%identity";
+let borderWidth: [ | lineWidth | global ] => t_borderWidth;
+let borderWidth2: (~tb: lineWidth, ~lr: lineWidth) => t_borderWidth;
+let borderWidth3: (~top: lineWidth, ~lr: lineWidth, ~bottom: lineWidth) => t_borderWidth;
+let borderWidth4: (~top: lineWidth, ~right: lineWidth, ~bottom: lineWidth, ~left: lineWidth) => t_borderWidth;

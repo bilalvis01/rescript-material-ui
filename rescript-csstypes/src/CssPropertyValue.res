@@ -63,3 +63,20 @@ let borderStyle3 = (~top, ~lr, ~bottom) =>
 let borderStyle4 = (~top, ~right, ~bottom, ~left) =>
   `${CssString.lineStyle(top)} ${CssString.lineStyle(right)} ${CssString.lineStyle(bottom)} ${CssString.lineStyle(left)}`
   ->borderStyleString;
+
+type tag_borderWidth;
+type t_borderWidth = synthetic<tag_borderWidth>;
+external borderWidthString: string => t_borderWidth = "%identity";
+let borderWidth = v => 
+  switch v {
+    | #...lineWidth as w => CssString.lineWidth(w)
+    | #...global as g => CssString.global(g)
+  }
+  ->borderWidthString;
+let borderWidth2 = (~tb, ~lr) => `${CssString.lineWidth(tb)} ${CssString.lineWidth(lr)}`->borderWidthString;
+let borderWidth3 = (~top, ~lr, ~bottom) =>
+  `${CssString.lineWidth(top)} ${CssString.lineWidth(lr)} ${CssString.lineWidth(bottom)}`
+  ->borderWidthString;
+let borderWidth4 = (~top, ~right, ~bottom, ~left) =>
+  `${CssString.lineWidth(top)} ${CssString.lineWidth(right)} ${CssString.lineWidth(bottom)} ${CssString.lineWidth(left)}`
+  ->borderWidthString;

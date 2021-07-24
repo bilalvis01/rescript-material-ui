@@ -780,6 +780,181 @@ function borderLeftStyleString(v) {
         ];
 }
 
+function borderWidth(v) {
+  return [
+          "borderWidth",
+          CssPropertyValue$Css.borderWidth(v)
+        ];
+}
+
+function borderWidth2(tb, lr) {
+  return [
+          "borderWidth",
+          CssPropertyValue$Css.borderWidth2(tb, lr)
+        ];
+}
+
+function borderWidth3(top, lr, bottom) {
+  return [
+          "borderWidth",
+          CssPropertyValue$Css.borderWidth3(top, lr, bottom)
+        ];
+}
+
+function borderWidth4(top, right, bottom, left) {
+  return [
+          "borderWidth",
+          CssPropertyValue$Css.borderWidth4(top, right, bottom, left)
+        ];
+}
+
+function borderWidthString(v) {
+  return [
+          "borderWidth",
+          v
+        ];
+}
+
+function borderTopWidth(v) {
+  return [
+          "borderTopWidth",
+          CssPropertyValue$Css.borderWidth(v)
+        ];
+}
+
+function borderTopWidth2(tb, lr) {
+  return [
+          "borderTopWidth",
+          CssPropertyValue$Css.borderWidth2(tb, lr)
+        ];
+}
+
+function borderTopWidth3(top, lr, bottom) {
+  return [
+          "borderTopWidth",
+          CssPropertyValue$Css.borderWidth3(top, lr, bottom)
+        ];
+}
+
+function borderTopWidth4(top, right, bottom, left) {
+  return [
+          "borderTopWidth",
+          CssPropertyValue$Css.borderWidth4(top, right, bottom, left)
+        ];
+}
+
+function borderTopWidthString(v) {
+  return [
+          "borderTopWidth",
+          v
+        ];
+}
+
+function borderRightWidth(v) {
+  return [
+          "borderRightWidth",
+          CssPropertyValue$Css.borderWidth(v)
+        ];
+}
+
+function borderRightWidth2(tb, lr) {
+  return [
+          "borderRightWidth",
+          CssPropertyValue$Css.borderWidth2(tb, lr)
+        ];
+}
+
+function borderRightWidth3(top, lr, bottom) {
+  return [
+          "borderRightWidth",
+          CssPropertyValue$Css.borderWidth3(top, lr, bottom)
+        ];
+}
+
+function borderRightWidth4(top, right, bottom, left) {
+  return [
+          "borderRightWidth",
+          CssPropertyValue$Css.borderWidth4(top, right, bottom, left)
+        ];
+}
+
+function borderRightWidthString(v) {
+  return [
+          "borderRightWidth",
+          v
+        ];
+}
+
+function borderBottomWidth(v) {
+  return [
+          "borderBottomWidth",
+          CssPropertyValue$Css.borderWidth(v)
+        ];
+}
+
+function borderBottomWidth2(tb, lr) {
+  return [
+          "borderBottomWidth",
+          CssPropertyValue$Css.borderWidth2(tb, lr)
+        ];
+}
+
+function borderBottomWidth3(top, lr, bottom) {
+  return [
+          "borderBottomWidth",
+          CssPropertyValue$Css.borderWidth3(top, lr, bottom)
+        ];
+}
+
+function borderBottomWidth4(top, right, bottom, left) {
+  return [
+          "borderBottomWidth",
+          CssPropertyValue$Css.borderWidth4(top, right, bottom, left)
+        ];
+}
+
+function borderBottomWidthString(v) {
+  return [
+          "borderBottomWidth",
+          v
+        ];
+}
+
+function borderLeftWidth(v) {
+  return [
+          "borderLeftWidth",
+          CssPropertyValue$Css.borderWidth(v)
+        ];
+}
+
+function borderLeftWidth2(tb, lr) {
+  return [
+          "borderLeftWidth",
+          CssPropertyValue$Css.borderWidth2(tb, lr)
+        ];
+}
+
+function borderLeftWidth3(top, lr, bottom) {
+  return [
+          "borderLeftWidth",
+          CssPropertyValue$Css.borderWidth3(top, lr, bottom)
+        ];
+}
+
+function borderLeftWidth4(top, right, bottom, left) {
+  return [
+          "borderLeftWidth",
+          CssPropertyValue$Css.borderWidth4(top, right, bottom, left)
+        ];
+}
+
+function borderLeftWidthString(v) {
+  return [
+          "borderLeftWidth",
+          v
+        ];
+}
+
 exports.str = str;
 exports.num = num;
 exports.$$int = $$int;
@@ -888,4 +1063,29 @@ exports.borderLeftStyle2 = borderLeftStyle2;
 exports.borderLeftStyle3 = borderLeftStyle3;
 exports.borderLeftStyle4 = borderLeftStyle4;
 exports.borderLeftStyleString = borderLeftStyleString;
+exports.borderWidth = borderWidth;
+exports.borderWidth2 = borderWidth2;
+exports.borderWidth3 = borderWidth3;
+exports.borderWidth4 = borderWidth4;
+exports.borderWidthString = borderWidthString;
+exports.borderTopWidth = borderTopWidth;
+exports.borderTopWidth2 = borderTopWidth2;
+exports.borderTopWidth3 = borderTopWidth3;
+exports.borderTopWidth4 = borderTopWidth4;
+exports.borderTopWidthString = borderTopWidthString;
+exports.borderRightWidth = borderRightWidth;
+exports.borderRightWidth2 = borderRightWidth2;
+exports.borderRightWidth3 = borderRightWidth3;
+exports.borderRightWidth4 = borderRightWidth4;
+exports.borderRightWidthString = borderRightWidthString;
+exports.borderBottomWidth = borderBottomWidth;
+exports.borderBottomWidth2 = borderBottomWidth2;
+exports.borderBottomWidth3 = borderBottomWidth3;
+exports.borderBottomWidth4 = borderBottomWidth4;
+exports.borderBottomWidthString = borderBottomWidthString;
+exports.borderLeftWidth = borderLeftWidth;
+exports.borderLeftWidth2 = borderLeftWidth2;
+exports.borderLeftWidth3 = borderLeftWidth3;
+exports.borderLeftWidth4 = borderLeftWidth4;
+exports.borderLeftWidthString = borderLeftWidthString;
 /* No side effect */
