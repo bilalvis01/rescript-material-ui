@@ -4,11 +4,36 @@
 var Css$Css = require("../src/Css.js");
 var CssPropertyValue$Css = require("../src/CssPropertyValue.js");
 
-test("border", (function () {
-        expect(CssPropertyValue$Css.border2("dashed", "red")).toBe("dashed red");
-        expect(CssPropertyValue$Css.border2("solid", Css$Css.rem(1.0))).toBe("solid 1rem");
-        expect(CssPropertyValue$Css.border3("thick", "double", Css$Css.rgbX("32a1ce"))).toBe("thick double #32a1ce");
-        expect(CssPropertyValue$Css.border3(Css$Css.mm(4), "ridge", Css$Css.rgba(Css$Css.num(170), Css$Css.num(50), Css$Css.num(220), Css$Css.num(0.6)))).toBe("4mm ridge rgba(170, 50, 220, 0.6)");
+describe("border", (function () {
+        test("border", (function () {
+                expect(CssPropertyValue$Css.border("solid")).toBe("solid");
+                expect(CssPropertyValue$Css.border2("dashed", "red")).toBe("dashed red");
+                expect(CssPropertyValue$Css.border2("solid", Css$Css.rem(1.0))).toBe("solid 1rem");
+                expect(CssPropertyValue$Css.border3("thick", "double", Css$Css.rgbX("32a1ce"))).toBe("thick double #32a1ce");
+                expect(CssPropertyValue$Css.border3(Css$Css.mm(4), "ridge", Css$Css.rgba(Css$Css.num(170), Css$Css.num(50), Css$Css.num(220), Css$Css.num(0.6)))).toBe("4mm ridge rgba(170, 50, 220, 0.6)");
+                
+              }));
+        test("borderStyle", (function () {
+                expect(CssPropertyValue$Css.borderStyle("solid")).toBe("solid");
+                expect(CssPropertyValue$Css.borderStyle2("solid", "dashed")).toBe("solid dashed");
+                expect(CssPropertyValue$Css.borderStyle3("solid", "dashed", "dotted")).toBe("solid dashed dotted");
+                expect(CssPropertyValue$Css.borderStyle4("dashed", "solid", "dotted", "inset")).toBe("dashed solid dotted inset");
+                
+              }));
+        test("borderWidth", (function () {
+                expect(CssPropertyValue$Css.borderWidth(Css$Css.px(1))).toBe("1px");
+                expect(CssPropertyValue$Css.borderWidth2("thin", "medium")).toBe("thin medium");
+                expect(CssPropertyValue$Css.borderWidth3("thin", "medium", Css$Css.px(2))).toBe("thin medium 2px");
+                expect(CssPropertyValue$Css.borderWidth4("medium", Css$Css.px(2), "thin", Css$Css.px(4))).toBe("medium 2px thin 4px");
+                
+              }));
+        test("borderColor", (function () {
+                expect(CssPropertyValue$Css.borderColor("red")).toBe("red");
+                expect(CssPropertyValue$Css.borderColor2("red", Css$Css.rgbX("000000ff"))).toBe("red #000000ff");
+                expect(CssPropertyValue$Css.borderColor3("red", Css$Css.rgb(255, 255, 255), Css$Css.hsl(360, Css$Css.pct(100), Css$Css.pct(50)))).toBe("red rgb(255, 255, 255) hsl(360, 100%, 50%)");
+                expect(CssPropertyValue$Css.borderColor4("blue", Css$Css.rgba(0, 0, 0, Css$Css.num(0.5)), "red", Css$Css.rgb(255, 255, 255))).toBe("blue rgba(0, 0, 0, 0.5) red rgb(255, 255, 255)");
+                
+              }));
         
       }));
 
