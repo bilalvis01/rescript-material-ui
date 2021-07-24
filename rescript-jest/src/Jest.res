@@ -1,6 +1,9 @@
 type expect<'a>;
 type testCallback = (. unit) => unit;
+type decribeCallback = (. unit) => unit;
 
+@val
+external describe: (string, describeCallback) => unit = "describe";
 @val
 external test: (string, testCallback) => unit = "test";
 @val
