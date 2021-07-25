@@ -316,19 +316,21 @@ let url = v => {
 let imageSrc = v => {
   switch v {
   | #...url as v => url(v)
+  | #src(v) => `"${v}"`
   };
 };
 let image = v => {
   let imageSrcOrColor = v => 
     switch v {
-    | #...imageSrc as s => `image(${imageSrc(s)})`
-    | #...color as c => `image(${color(c)})`
+    | #...imageSrc as s => imageSrc(s)
+    | #...color as c => color(c)
     };
   switch v {
   | #...imageSrc as s => imageSrc(s)
   | #...gradient as g => gradient(g)
-  | #image(v) => `image(${imageSrcOrColor(v)})`
-  | #image2(t, v) => `image(${imageTags(t)} ${imageSrcOrColor(v)})`
-  | #image3(t, s, c) => `image(${imageTags(t)} ${imageSrc(s)}, ${color(c)})`
+  | #image(None, v) => `image(${imageSrcOrColor(v)})`
+  | #image(Some(t), v) => `image(${imageTags(t)} ${imageSrcOrColor(v)})`
+  | #image2(None, s, c) => `image(${imageSrc(s)}, ${color(c)})`
+  | #image2(Some(t), s, c) => `image(${imageTags(t)} ${imageSrc(s)}, ${color(c)})`
   }
 };

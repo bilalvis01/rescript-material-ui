@@ -74,6 +74,10 @@ let linearGradient = (~dir=?, c) => #linearGradient(dir, c);
 let linearGradient2 = (~dir=?, c1, c2) => #linearGradient2(dir, c1, c2);
 let linearGradient3 = (~dir=?, c1, c2, c3) => #linearGradient3(dir, c1, c2, c3);
 let linearGradient4 = (~dir=?, c1, c2, c3, c4) => #linearGradient4(dir, c1, c2, c3, c4);
+let url = v => #url(v);
+let src = v => #src(v);
+let image = (~dir=?, v) => #image(dir, v);
+let image2 = (~dir=?, s, c) => #image2(dir, s, c);
 
 /*
 properties

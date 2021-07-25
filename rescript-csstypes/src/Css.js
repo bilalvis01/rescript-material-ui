@@ -350,6 +350,41 @@ function linearGradient4(dir, c1, c2, c3, c4) {
         };
 }
 
+function url(v) {
+  return {
+          NAME: "url",
+          VAL: v
+        };
+}
+
+function src(v) {
+  return {
+          NAME: "src",
+          VAL: v
+        };
+}
+
+function image(dir, v) {
+  return {
+          NAME: "image",
+          VAL: [
+            dir,
+            v
+          ]
+        };
+}
+
+function image2(dir, s, c) {
+  return {
+          NAME: "image2",
+          VAL: [
+            dir,
+            s,
+            c
+          ]
+        };
+}
+
 function property(name, value) {
   return [
           name,
@@ -1086,6 +1121,10 @@ exports.linearGradient = linearGradient;
 exports.linearGradient2 = linearGradient2;
 exports.linearGradient3 = linearGradient3;
 exports.linearGradient4 = linearGradient4;
+exports.url = url;
+exports.src = src;
+exports.image = image;
+exports.image2 = image2;
 exports.property = property;
 exports.propertyString = propertyString;
 exports.propertyNumber = propertyNumber;

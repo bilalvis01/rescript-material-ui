@@ -454,36 +454,49 @@ function url(v) {
   return "url(" + v.VAL + ")";
 }
 
-var imageSrc = url;
+function imageSrc(v) {
+  if (v.NAME === "url") {
+    return url(v);
+  } else {
+    return "\"" + v.VAL + "\"";
+  }
+}
 
 function image(v) {
   var imageSrcOrColor = function (v) {
-    if (typeof v === "object") {
-      if (v.NAME === "url") {
-        return "image(" + imageSrc(v) + ")";
-      } else {
-        return "image(" + color(v) + ")";
-      }
+    if (typeof v !== "object") {
+      return color(v);
+    }
+    var variant = v.NAME;
+    if (variant === "url" || variant === "src") {
+      return imageSrc(v);
     } else {
-      return "image(" + color(v) + ")";
+      return color(v);
     }
   };
   var variant = v.NAME;
-  if (variant === "image3") {
-    var match = v.VAL;
-    return "image(" + match[0] + " " + imageSrc(match[1]) + ", " + color(match[2]) + ")";
-  }
-  if (variant === "url") {
+  if (variant === "url" || variant === "src") {
     return imageSrc(v);
   }
   if (variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2") {
     return linearGradient(v);
   }
   if (variant === "image") {
-    return "image(" + imageSrcOrColor(v.VAL) + ")";
+    var match = v.VAL;
+    var t = match[0];
+    if (t !== undefined) {
+      return "image(" + t + " " + imageSrcOrColor(match[1]) + ")";
+    } else {
+      return "image(" + imageSrcOrColor(match[1]) + ")";
+    }
   }
   var match$1 = v.VAL;
-  return "image(" + match$1[0] + " " + imageSrcOrColor(match$1[1]) + ")";
+  var t$1 = match$1[0];
+  if (t$1 !== undefined) {
+    return "image(" + t$1 + " " + imageSrc(match$1[1]) + ", " + color(match$1[2]) + ")";
+  } else {
+    return "image(" + imageSrc(match$1[1]) + ", " + color(match$1[2]) + ")";
+  }
 }
 
 exports.concat = concat;

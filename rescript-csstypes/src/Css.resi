@@ -76,6 +76,10 @@ let linearGradient3: (~dir: gradientLineDirection=?, linearColorStop, linearColo
   [> #linearGradient3(option<gradientLineDirection>, linearColorStop, linearColorStop, linearColorStop) ];
 let linearGradient4: (~dir: gradientLineDirection=?, linearColorStop, linearColorStop, linearColorStop, linearColorStop) =>
   [> #linearGradient4(option<gradientLineDirection>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
+let url: string => [> #url(string) ];
+let src: string => [> #src(string) ];
+let image: (~dir: imageTags=?, [ | imageSrc | color ]) => [> #image(option<imageTags>, [ | imageSrc | color ]) ];
+let image2: (~dir: imageTags=?, imageSrc, color) => [> #image2(option<imageTags>, imageSrc, color) ];
 
 /*
 Properties
