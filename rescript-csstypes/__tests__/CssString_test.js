@@ -176,6 +176,20 @@ describe("Image data types", (function () {
                 expect(CssString$Css.gradient(Css$Css.linearGradient4(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(40)), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60)), Css$Css.linearColorStop3("red", Css$Css.pct(70), Css$Css.pct(100))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
                 
               }));
+        test("imageSrc", (function () {
+                expect(CssString$Css.url(Css$Css.url("myimage.png"))).toBe("url(myimage.png)");
+                expect(CssString$Css.imageSrc(Css$Css.url("myimage.png"))).toBe("url(myimage.png)");
+                expect(CssString$Css.imageSrc(Css$Css.src("myimage.png"))).toBe("\"myimage.png\"");
+                
+              }));
+        test("image", (function () {
+                expect(CssString$Css.image(Css$Css.image(undefined, Css$Css.src("myimage.webp#xywh=0,20,40,60")))).toBe("image(\"myimage.webp#xywh=0,20,40,60\")");
+                expect(CssString$Css.image(Css$Css.image(undefined, Css$Css.url("myimage.png")))).toBe("image(url(myimage.png))");
+                expect(CssString$Css.image(Css$Css.image(undefined, Css$Css.rgba(0, 0, 0, Css$Css.num(0.25))))).toBe("image(rgba(0, 0, 0, 0.25))");
+                expect(CssString$Css.image(Css$Css.image("ltr", Css$Css.src("myimage.png")))).toBe("image(ltr \"myimage.png\")");
+                expect(CssString$Css.image(Css$Css.image2("ltr", Css$Css.src("myimage.png"), "red"))).toBe("image(ltr \"myimage.png\", red)");
+                
+              }));
         
       }));
 
