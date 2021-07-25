@@ -1416,3 +1416,65 @@ type image = [
   | #image(option<imageTags>, [ | imageSrc | color ])
   | #image2(option<imageTags>, imageSrc, color) 
 ];
+
+type bgImage = [
+  | #none
+  | image
+];
+
+type repeatStyle = [
+  | #"repeat-x"
+  | #"repeat-y"
+  | #repeat
+  | #space
+  | #round
+  | #"no-repeat"
+  | #"repeat repeat"
+  | #"repeat space"
+  | #"repeat round"
+  | #"repeat no-repeat"
+  | #"space repeat"
+  | #"space space"
+  | #"space round"
+  | #"space no-repeat"
+  | #"round repeat"
+  | #"round space"
+  | #"round round"
+  | #"round no-repeat"
+  | #"no-repeat repeat"
+  | #"no-repeat space"
+  | #"no-repeat round"
+  | #"no-repeat no-repeat"
+];
+
+type bgSize = [
+  | #cover
+  | #contain
+  | #auto
+  | length_percentage
+  | #bgSize2([ | #auto | length_percentage ], [ | #auto | length_percentage ])
+];
+
+type bgPosition = [
+  | #left
+  | #center
+  | #right
+  | #top
+  | #bottom
+  | length_percentage
+  | #bgPosition2([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ])
+  | #bgPosition3([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ])
+  | #bgPosition4([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage)
+];
+
+type attachment = [
+  | #scroll
+  | #fixed
+  | #local
+];
+
+ type box = [
+   | #"border-box"
+   | #"padding-box"
+   | #"content-box"
+ ];

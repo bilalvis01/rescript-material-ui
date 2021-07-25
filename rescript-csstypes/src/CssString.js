@@ -499,6 +499,96 @@ function image(v) {
   }
 }
 
+function bgImage(v) {
+  if (typeof v === "object") {
+    return image(v);
+  } else {
+    return "none";
+  }
+}
+
+function bgSize(v) {
+  var autoOrLength = function (v) {
+    if (typeof v === "object") {
+      return length_percentage(v);
+    } else {
+      return "auto";
+    }
+  };
+  if (typeof v !== "object") {
+    if (v === "cover") {
+      return "cover";
+    } else if (v === "contain") {
+      return "contain";
+    } else {
+      return "auto";
+    }
+  }
+  if (v.NAME !== "bgSize2") {
+    return length_percentage(v);
+  }
+  var match = v.VAL;
+  return autoOrLength(match[0]) + " " + autoOrLength(match[1]);
+}
+
+function bgPosition(v) {
+  if (typeof v !== "object") {
+    if (v === "bottom") {
+      return "bottom";
+    } else if (v === "right") {
+      return "right";
+    } else if (v === "top") {
+      return "top";
+    } else if (v === "center") {
+      return "center";
+    } else {
+      return "left";
+    }
+  }
+  var variant = v.NAME;
+  if (variant === "bgPosition2") {
+    var match = v.VAL;
+    var v2 = match[1];
+    var v1 = match[0];
+    var v1$1 = typeof v1 === "object" ? length_percentage(v1) : (
+        v1 === "right" ? "right" : (
+            v1 === "center" ? "center" : "left"
+          )
+      );
+    var v2$1 = typeof v2 === "object" ? length_percentage(v2) : (
+        v2 === "top" ? "top" : (
+            v2 === "center" ? "center" : "bottom"
+          )
+      );
+    return v1$1 + " " + v2$1;
+  }
+  if (variant === "bgPosition3") {
+    var match$1 = v.VAL;
+    var v3 = match$1[2];
+    var v2$2 = match$1[1];
+    var v1$2 = match$1[0];
+    var v1$3 = v1$2 === "right" ? "right" : (
+        v1$2 === "center" ? "center" : "left"
+      );
+    var v2$3 = typeof v2$2 === "object" ? length_percentage(v2$2) : (
+        v2$2 === "top" ? "top" : "bottom"
+      );
+    var v3$1 = typeof v3 === "object" ? length_percentage(v3) : (
+        v3 === "top" ? "top" : (
+            v3 === "center" ? "center" : "bottom"
+          )
+      );
+    return v1$3 + " " + v2$3 + " " + v3$1;
+  }
+  if (variant !== "bgPosition4") {
+    return length_percentage(v);
+  }
+  var match$2 = v.VAL;
+  var v1$4 = match$2[0] === "right" ? "right" : "left";
+  var v3$2 = match$2[2] === "top" ? "top" : "bottom";
+  return v1$4 + " " + length_percentage(match$2[1]) + " " + v3$2 + " " + length_percentage(match$2[3]);
+}
+
 exports.concat = concat;
 exports.join = join;
 exports.stick = stick;
@@ -568,4 +658,7 @@ exports.gradient = gradient;
 exports.url = url;
 exports.imageSrc = imageSrc;
 exports.image = image;
+exports.bgImage = bgImage;
+exports.bgSize = bgSize;
+exports.bgPosition = bgPosition;
 /* No side effect */

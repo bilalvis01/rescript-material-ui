@@ -80,3 +80,61 @@ let borderWidth3 = (~top, ~lr, ~bottom) =>
 let borderWidth4 = (~top, ~right, ~bottom, ~left) =>
   `${CssString.lineWidth(top)} ${CssString.lineWidth(right)} ${CssString.lineWidth(bottom)} ${CssString.lineWidth(left)}`
   ->borderWidthString;
+
+type tag_background;
+type t_background = synthetic<tag_background>;
+external backgroundString: string => t_background = "%identity";
+let background = v => {
+  switch v {
+  | #...global as g => CssString.global(g)
+  | #...bgImage as i => CssString.bgImage(i)
+  | #...color as c => CssString.color(c)
+  }
+  ->backgroundString;
+};
+let background2 = (
+  ~color=?,
+  ~image=?,
+  ~position=?,
+  ~size=?,
+  ~repeat=?,
+  ~attachment=?,
+  ~box=?,
+  ~box2=?,
+  ()
+) => {
+  let v = switch color {
+  | None => ""
+  | Some(c) => CssString.color(c)
+  };
+  let v = switch image {
+  | None => v
+  | Some(i) => `${v} ${CssString.bgImage(i)}`->Js.String2.trim
+  };
+  let position = switch (position, size) {
+  | (None, _) => None
+  | (Some(p), None) => Some(CssString.bgPosition(p))
+  | (Some(p), Some(s)) => Some(`${CssString.bgPosition(p)} / ${CssString.bgSize(s)}`)
+  };
+  let v = switch position {
+  | None => v
+  | Some(p) => `${v} ${p}`->Js.String2.trim
+  };
+  let v = switch repeat {
+  | None => v
+  | Some(r) => `${v} ${CssString.repeatStyle(r)}`->Js.String2.trim
+  };
+  let v = switch attachment {
+  | None => v
+  | Some(a) => `${v} ${CssString.attachment(a)}`->Js.String2.trim
+  };
+  let v = switch box {
+  | None => v
+  | Some(b) => `${v} ${CssString.box(b)}`->Js.String2.trim
+  };
+  switch box2 {
+  | None => v
+  | Some(b) => `${v} ${CssString.box(b)}`->Js.String2.trim
+  }
+  ->backgroundString;
+}

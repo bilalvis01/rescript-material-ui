@@ -80,6 +80,14 @@ let url: string => [> #url(string) ];
 let src: string => [> #src(string) ];
 let image: (~dir: imageTags=?, [ | imageSrc | color ]) => [> #image(option<imageTags>, [ | imageSrc | color ]) ];
 let image2: (~dir: imageTags=?, imageSrc, color) => [> #image2(option<imageTags>, imageSrc, color) ];
+let bgSize2: ([ | #auto | length_percentage ], [ | #auto | length_percentage ]) =>
+  [> #bgSize2([ | #auto | length_percentage ], [ | #auto | length_percentage ]) ];
+let bgPosition2: ([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ]) =>
+  [> #bgPosition2([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ]) ];
+let bgPosition3: ([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ]) =>
+  [> | #bgPosition3([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ]) ];
+let bgPosition4: ([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage) =>
+  [> | #bgPosition4([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage) ];
 
 /*
 Properties
@@ -209,3 +217,17 @@ let borderLeftWidth2: (~tb: lineWidth, ~lr: lineWidth) => property;
 let borderLeftWidth3: (~top: lineWidth, ~lr: lineWidth, ~bottom: lineWidth) => property;
 let borderLeftWidth4: (~top: lineWidth, ~right: lineWidth, ~bottom: lineWidth, ~left: lineWidth) => property;
 let borderLeftWidthString: string => property;
+
+let background: [ | global | bgImage | color] => property;
+let background2: (
+  ~color: color=?,
+  ~image: bgImage=?,
+  ~position: bgPosition=?,
+  ~size: bgSize=?,
+  ~repeat: repeatStyle=?,
+  ~attachment: attachment=?,
+  ~box: box=?,
+  ~box2: box=?,
+  unit
+) => property;
+let backgroundString: string => property;

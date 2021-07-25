@@ -334,3 +334,82 @@ let image = v => {
   | #image2(Some(t), s, c) => `image(${imageTags(t)} ${imageSrc(s)}, ${color(c)})`
   }
 };
+let bgImage = v => {
+  switch v {
+  | #...image as i => image(i)
+  | #none => "none"
+  }
+};
+let bgSize = v => {
+  let autoOrLength = v =>
+    switch v {
+    | #...length_percentage as l => length_percentage(l)
+    | #auto => "auto"
+    }
+
+  switch v {
+  | #cover => "cover"
+  | #contain => "contain"
+  | #auto => "auto"
+  | #...length_percentage as l => length_percentage(l)
+  | #bgSize2(s1, s2) => `${autoOrLength(s1)} ${autoOrLength(s2)}`
+  }
+};
+let bgPosition = v => {
+  switch v {
+  | #left => "left"
+  | #center => "center"
+  | #right => "right"
+  | #top => "top"
+  | #bottom => "bottom"
+  | #...length_percentage as l => length_percentage(l)
+  | #bgPosition2(v1, v2) => {
+    let v1 = switch v1 {
+    | #left => "left"
+    | #center => "center"
+    | #right => "right"
+    | #...length_percentage as l => length_percentage(l)
+    };
+    let v2 = switch v2 {
+    | #top => "top"
+    | #center => "center"
+    | #bottom => "bottom"
+    | #...length_percentage as l => length_percentage(l)
+    };
+    `${v1} ${v2}`
+  }
+  | #bgPosition3(v1, v2, v3) => {
+    let v1 = switch v1 {
+    | #left => "left"
+    | #center => "center"
+    | #right => "right"
+    };
+    let v2 = switch v2 {
+    | #top => "top"
+    | #bottom => "bottom"
+    | #...length_percentage as l => length_percentage(l)
+    };
+    let v3 = switch v3 {
+    | #top => "top"
+    | #center => "center"
+    | #bottom => "bottom"
+    | #...length_percentage as l => length_percentage(l)
+    };
+    `${v1} ${v2} ${v3}`
+  }
+  | #bgPosition4(v1, v2, v3, v4) => {
+    let v1 = switch v1 {
+    | #left => "left"
+    | #right => "right"
+    };
+    let v3 = switch v3 {
+    | #top => "top"
+    | #bottom => "bottom"
+    };
+    `${v1} ${length_percentage(v2)} ${v3} ${length_percentage(v4)}`
+  }
+  }
+};
+external repeatStyle: repeatStyle => string = "%identity";
+external attachment: attachment => string = "%identity";
+external box: box => string = "%identity";

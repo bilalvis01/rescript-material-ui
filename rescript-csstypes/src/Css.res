@@ -78,6 +78,10 @@ let url = v => #url(v);
 let src = v => #src(v);
 let image = (~dir=?, v) => #image(dir, v);
 let image2 = (~dir=?, s, c) => #image2(dir, s, c);
+let bgSize2 = (s1, s2) => #bgSize2(s1, s2);
+let bgPosition2 = (p1, p2) => #bgPosition2(p1, p2);
+let bgPosition3 = (p1, p2, p3) => #bgPosition3(p1, p2, p3);
+let bgPosition4 = (p1, p2, p3, p4) => #bgPosition4(p1, p2, p3, p4); 
 
 /*
 properties
@@ -243,3 +247,27 @@ let borderLeftWidth3 = (~top, ~lr, ~bottom) =>
 let borderLeftWidth4 = (~top, ~right, ~bottom, ~left) =>
   ("borderLeftWidth", PropertyValue(CssPropertyValue.borderWidth4(~top, ~right, ~bottom, ~left)));
 let borderLeftWidthString = v => ("borderLeftWidth", PropertyValue(CssPropertyValue.string(v)));
+
+let background = v => ("background", PropertyValue(CssPropertyValue.background(v)));
+let background2 = (
+  ~color=?,
+  ~image=?,
+  ~position=?,
+  ~size=?,
+  ~repeat=?,
+  ~attachment=?,
+  ~box=?,
+  ~box2=?,
+  ()
+) => ("background", PropertyValue(CssPropertyValue.background2(
+  ~color=?color,
+  ~image=?image,
+  ~position=?position,
+  ~size=?size,
+  ~repeat=?repeat,
+  ~attachment=?attachment,
+  ~box=?box,
+  ~box2=?box2,
+  ()
+)));
+let backgroundString = v => ("background", PropertyValue(CssPropertyValue.string(v)));

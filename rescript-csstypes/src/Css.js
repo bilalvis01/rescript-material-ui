@@ -385,6 +385,49 @@ function image2(dir, s, c) {
         };
 }
 
+function bgSize2(s1, s2) {
+  return {
+          NAME: "bgSize2",
+          VAL: [
+            s1,
+            s2
+          ]
+        };
+}
+
+function bgPosition2(p1, p2) {
+  return {
+          NAME: "bgPosition2",
+          VAL: [
+            p1,
+            p2
+          ]
+        };
+}
+
+function bgPosition3(p1, p2, p3) {
+  return {
+          NAME: "bgPosition3",
+          VAL: [
+            p1,
+            p2,
+            p3
+          ]
+        };
+}
+
+function bgPosition4(p1, p2, p3, p4) {
+  return {
+          NAME: "bgPosition4",
+          VAL: [
+            p1,
+            p2,
+            p3,
+            p4
+          ]
+        };
+}
+
 function property(name, value) {
   return [
           name,
@@ -1078,6 +1121,27 @@ function borderLeftWidthString(v) {
         ];
 }
 
+function background(v) {
+  return [
+          "background",
+          CssPropertyValue$Css.background(v)
+        ];
+}
+
+function background2(color, image, position, size, repeat, attachment, box, box2, param) {
+  return [
+          "background",
+          CssPropertyValue$Css.background2(color, image, position, size, repeat, attachment, box, box2, undefined)
+        ];
+}
+
+function backgroundString(v) {
+  return [
+          "background",
+          v
+        ];
+}
+
 exports.str = str;
 exports.num = num;
 exports.$$int = $$int;
@@ -1125,6 +1189,10 @@ exports.url = url;
 exports.src = src;
 exports.image = image;
 exports.image2 = image2;
+exports.bgSize2 = bgSize2;
+exports.bgPosition2 = bgPosition2;
+exports.bgPosition3 = bgPosition3;
+exports.bgPosition4 = bgPosition4;
 exports.property = property;
 exports.propertyString = propertyString;
 exports.propertyNumber = propertyNumber;
@@ -1224,4 +1292,7 @@ exports.borderLeftWidth2 = borderLeftWidth2;
 exports.borderLeftWidth3 = borderLeftWidth3;
 exports.borderLeftWidth4 = borderLeftWidth4;
 exports.borderLeftWidthString = borderLeftWidthString;
+exports.background = background;
+exports.background2 = background2;
+exports.backgroundString = backgroundString;
 /* No side effect */

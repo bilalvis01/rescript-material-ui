@@ -44,3 +44,19 @@ let borderWidth: [ | lineWidth | global ] => t_borderWidth;
 let borderWidth2: (~tb: lineWidth, ~lr: lineWidth) => t_borderWidth;
 let borderWidth3: (~top: lineWidth, ~lr: lineWidth, ~bottom: lineWidth) => t_borderWidth;
 let borderWidth4: (~top: lineWidth, ~right: lineWidth, ~bottom: lineWidth, ~left: lineWidth) => t_borderWidth;
+
+type tag_background;
+type t_background = synthetic<tag_background>;
+external backgroundString: string => t_background = "%identity";
+let background: [ | global | bgImage | color] => t_background;
+let background2: (
+  ~color: color=?,
+  ~image: bgImage=?,
+  ~position: bgPosition=?,
+  ~size: bgSize=?,
+  ~repeat: repeatStyle=?,
+  ~attachment: attachment=?,
+  ~box: box=?,
+  ~box2: box=?,
+  unit
+) => t_background;
