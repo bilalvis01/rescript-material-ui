@@ -1407,12 +1407,12 @@ type url = [
 
 type imageSrc = [
   | url
+  | #src(string)
 ];
 
 type image = [
   | imageSrc
   | gradient
-  | #image([ | imageSrc | color ])
-  | #image2(imageTags, [ | imageSrc | color ])
-  | #image3(imageTags, imageSrc, color)
+  | #image(option<imageTags>, [ | imageSrc | color ])
+  | #image2(option<imageTags>, imageSrc, color) 
 ];
