@@ -451,7 +451,7 @@ function linearGradient(v) {
 var gradient = linearGradient;
 
 function url(v) {
-  return "url(" + v.VAL + ")";
+  return "url(\"" + v.VAL + "\")";
 }
 
 function imageSrc(v) {

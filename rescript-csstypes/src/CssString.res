@@ -310,7 +310,7 @@ let gradient = v => {
 external imageTags: imageTags => string = "%identity";
 let url = v => {
   switch v {
-  | #url(v) => `url(${v})`
+  | #url(v) => `url("${v}")`
   };
 };
 let imageSrc = v => {
