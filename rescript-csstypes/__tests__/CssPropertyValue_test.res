@@ -38,4 +38,16 @@ describe("border", (.) => {
     expect(borderColor4(~bottom=#red, ~top=#blue, ~left=Css.rgb(#255, #255, #255), ~right=Css.rgba(#0, #0, #0, Css.num(0.5))))
       ->toBe(borderColorString("blue rgba(0, 0, 0, 0.5) red rgb(255, 255, 255)"));
   });
+
+  test("background", (.) => {
+    expect(background(#red))->toBe(backgroundString("red"));
+    expect(background(Css.rgb(#255, #255, #255)))->toBe(backgroundString("rgb(255, 255, 255)"));
+    expect(background2(~image=Css.url("test.jpg"), ~repeat=#"repeat-y", ()))
+      ->toBe(backgroundString(`url("test.jpg") repeat-y`))
+    expect(background2(~color=#red, ~box=#"border-box", ()))
+      ->toBe(backgroundString("red border-box"));
+    expect(background2(~repeat=#"no-repeat", ~position=#center, ~size=Css.pct(80.), ~image=Css.url("../img/image.png"), ()))
+      ->toBe(backgroundString(`url("../img/image.png") center / 80% no-repeat`));
+    expect(background(#inherit))->toBe(backgroundString("inherit"));
+  });
 });

@@ -193,6 +193,22 @@ describe("Image data types", (function () {
                 expect(CssString$Css.image(Css$Css.image2("ltr", Css$Css.src("myimage.png"), "red"))).toBe("image(ltr \"myimage.png\", red)");
                 
               }));
+        test("bgSize", (function () {
+                expect(CssString$Css.bgSize("cover")).toBe("cover");
+                expect(CssString$Css.bgSize(Css$Css.px(24))).toBe("24px");
+                expect(CssString$Css.bgSize(Css$Css.bgSize2("auto", Css$Css.px(24)))).toBe("auto 24px");
+                expect(CssString$Css.bgSize(Css$Css.bgSize2(Css$Css.px(24), Css$Css.px(24)))).toBe("24px 24px");
+                
+              }));
+        test("bgPosition", (function () {
+                expect(CssString$Css.bgPosition("center")).toBe("center");
+                expect(CssString$Css.bgPosition(Css$Css.px(20))).toBe("20px");
+                expect(CssString$Css.bgPosition(Css$Css.bgPosition2("left", "top"))).toBe("left top");
+                expect(CssString$Css.bgPosition(Css$Css.bgPosition3("left", "top", Css$Css.pct(10)))).toBe("left top 10%");
+                expect(CssString$Css.bgPosition(Css$Css.bgPosition3("left", Css$Css.pct(20), "bottom"))).toBe("left 20% bottom");
+                expect(CssString$Css.bgPosition(Css$Css.bgPosition4("right", Css$Css.pct(35), "bottom", Css$Css.pct(45)))).toBe("right 35% bottom 45%");
+                
+              }));
         
       }));
 

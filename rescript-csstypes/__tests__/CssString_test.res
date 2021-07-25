@@ -245,4 +245,21 @@ describe("Image data types", (.) => {
     expect(image(Css.image(~dir=#ltr, Css.src("myimage.png"))))->toBe(`image(ltr "myimage.png")`);
     expect(image(Css.image2(~dir=#ltr, Css.src("myimage.png"), #red)))->toBe(`image(ltr "myimage.png", red)`);
   });
+
+  test("bgSize", (.) => {
+    expect(bgSize(#cover))->toBe("cover");
+    expect(bgSize(Css.px(24.)))->toBe("24px");
+    expect(bgSize(Css.bgSize2(#auto, Css.px(24.))))->toBe("auto 24px");
+    expect(bgSize(Css.bgSize2(Css.px(24.), Css.px(24.))))->toBe("24px 24px");
+  });
+
+  test("bgPosition", (.) => {
+    expect(bgPosition(#center))->toBe("center");
+    expect(bgPosition(Css.px(20.)))->toBe("20px");
+    expect(bgPosition(Css.bgPosition2(#left, #top)))->toBe("left top");
+    expect(bgPosition(Css.bgPosition3(#left, #top, Css.pct(10.))))->toBe("left top 10%");
+    expect(bgPosition(Css.bgPosition3(#left, Css.pct(20.), #bottom)))->toBe("left 20% bottom");
+    expect(bgPosition(Css.bgPosition4(#right, Css.pct(35.), #bottom, Css.pct(45.))))
+      ->toBe("right 35% bottom 45%");
+  });
 });

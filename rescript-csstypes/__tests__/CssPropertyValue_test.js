@@ -34,6 +34,15 @@ describe("border", (function () {
                 expect(CssPropertyValue$Css.borderColor4("blue", Css$Css.rgba(0, 0, 0, Css$Css.num(0.5)), "red", Css$Css.rgb(255, 255, 255))).toBe("blue rgba(0, 0, 0, 0.5) red rgb(255, 255, 255)");
                 
               }));
+        test("background", (function () {
+                expect(CssPropertyValue$Css.background("red")).toBe("red");
+                expect(CssPropertyValue$Css.background(Css$Css.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
+                expect(CssPropertyValue$Css.background2(undefined, Css$Css.url("test.jpg"), undefined, undefined, "repeat-y", undefined, undefined, undefined, undefined)).toBe("url(\"test.jpg\") repeat-y");
+                expect(CssPropertyValue$Css.background2("red", undefined, undefined, undefined, undefined, undefined, "border-box", undefined, undefined)).toBe("red border-box");
+                expect(CssPropertyValue$Css.background2(undefined, Css$Css.url("../img/image.png"), "center", Css$Css.pct(80), "no-repeat", undefined, undefined, undefined, undefined)).toBe("url(\"../img/image.png\") center / 80% no-repeat");
+                expect(CssPropertyValue$Css.background("inherit")).toBe("inherit");
+                
+              }));
         
       }));
 
