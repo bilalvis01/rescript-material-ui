@@ -86,7 +86,7 @@ let lineWidth: lineWidth => string;
 external lineStyle: lineStyle => string = "%identity";
 
 /*
-Color
+Color data types
 */
 let hue: hue => string;
 let alpha: alpha => string;
@@ -98,3 +98,16 @@ let rgba: (rgbParam, rgbParam, rgbParam, alpha) => string;
 let rgbX: string => string;
 external colorKeyword: colorKeyword => string = "%identity"; 
 let color: color => string;
+
+/*
+Image data types
+*/
+external gradientLineStartingPoint: gradientLineStartingPoint => string = "%identity";
+let gradientLineDirection: gradientLineDirection => string;
+let linearColorStop: linearColorStop => string;
+let linearGradient: linearGradient => string;
+let gradient: gradient => string;
+external imageTags: imageTags => string = "%identity";
+let url: url => string;
+let imageSrc: imageSrc => string;
+let image: image => string;

@@ -398,6 +398,94 @@ function color(v) {
   return hsla(match$3[0], match$3[1], match$3[2], match$3[3]);
 }
 
+function gradientLineDirection(v) {
+  if (typeof v === "object") {
+    return angle(v);
+  } else {
+    return v;
+  }
+}
+
+function linearColorStop(v) {
+  if (typeof v !== "object") {
+    return color(v);
+  }
+  var variant = v.NAME;
+  if (variant === "rem" || variant === "pct" || variant === "vw" || variant === "vh" || variant === "px" || variant === "pt" || variant === "pc" || variant === "mm" || variant === "ex" || variant === "em" || variant === "cm" || variant === "ch" || variant === "vmin" || variant === "vmax" || variant === "inch") {
+    return length_percentage(v);
+  }
+  if (variant === "linearColorStop2") {
+    var match = v.VAL;
+    return color(match[0]) + " " + length_percentage(match[1]);
+  }
+  if (variant !== "linearColorStop3") {
+    return color(v);
+  }
+  var match$1 = v.VAL;
+  return color(match$1[0]) + " " + length_percentage(match$1[1]) + " " + length_percentage(match$1[2]);
+}
+
+function linearGradient(v) {
+  var variant = v.NAME;
+  var arg;
+  if (variant === "linearGradient3") {
+    var match = v.VAL;
+    var d = match[0];
+    arg = d !== undefined ? gradientLineDirection(d) + ", " + linearColorStop(match[1]) + ", " + linearColorStop(match[2]) + ", " + linearColorStop(match[3]) : linearColorStop(match[1]) + ", " + linearColorStop(match[2]) + ", " + linearColorStop(match[3]);
+  } else if (variant === "linearGradient4") {
+    var match$1 = v.VAL;
+    var d$1 = match$1[0];
+    arg = d$1 !== undefined ? gradientLineDirection(d$1) + ", " + linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) : linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]);
+  } else if (variant === "linearGradient") {
+    var match$2 = v.VAL;
+    var d$2 = match$2[0];
+    arg = d$2 !== undefined ? gradientLineDirection(d$2) + ", " + linearColorStop(match$2[1]) : linearColorStop(match$2[1]);
+  } else {
+    var match$3 = v.VAL;
+    var d$3 = match$3[0];
+    arg = d$3 !== undefined ? gradientLineDirection(d$3) + ", " + linearColorStop(match$3[1]) + ", " + linearColorStop(match$3[2]) : linearColorStop(match$3[1]) + ", " + linearColorStop(match$3[2]);
+  }
+  return "linear-gradient(" + arg + ")";
+}
+
+var gradient = linearGradient;
+
+function url(v) {
+  return "url(" + v.VAL + ")";
+}
+
+var imageSrc = url;
+
+function image(v) {
+  var imageSrcOrColor = function (v) {
+    if (typeof v === "object") {
+      if (v.NAME === "url") {
+        return "image(" + imageSrc(v) + ")";
+      } else {
+        return "image(" + color(v) + ")";
+      }
+    } else {
+      return "image(" + color(v) + ")";
+    }
+  };
+  var variant = v.NAME;
+  if (variant === "image3") {
+    var match = v.VAL;
+    return "image(" + match[0] + " " + imageSrc(match[1]) + ", " + color(match[2]) + ")";
+  }
+  if (variant === "url") {
+    return imageSrc(v);
+  }
+  if (variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2") {
+    return linearGradient(v);
+  }
+  if (variant === "image") {
+    return "image(" + imageSrcOrColor(v.VAL) + ")";
+  }
+  var match$1 = v.VAL;
+  return "image(" + match$1[0] + " " + imageSrcOrColor(match$1[1]) + ")";
+}
+
 exports.concat = concat;
 exports.join = join;
 exports.stick = stick;
@@ -460,4 +548,11 @@ exports.rgb = rgb;
 exports.rgba = rgba;
 exports.rgbX = rgbX;
 exports.color = color;
+exports.gradientLineDirection = gradientLineDirection;
+exports.linearColorStop = linearColorStop;
+exports.linearGradient = linearGradient;
+exports.gradient = gradient;
+exports.url = url;
+exports.imageSrc = imageSrc;
+exports.image = image;
 /* No side effect */

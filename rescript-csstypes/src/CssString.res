@@ -267,3 +267,68 @@ let color = v => {
     | #...colorKeyword as c => colorKeyword(c)
   };
 };
+
+/*
+Image data types
+*/
+external gradientLineStartingPoint: gradientLineStartingPoint => string = "%identity";
+let gradientLineDirection = v => {
+  switch v {
+  | #...angle as a => angle(a)
+  | #...gradientLineStartingPoint as s => gradientLineStartingPoint(s) 
+  };
+};
+let linearColorStop = v => {
+  switch v {
+  | #...color as c => color(c)
+  | #...length_percentage as l => length_percentage(l)
+  | #linearColorStop2(c, l) => `${color(c)} ${length_percentage(l)}`
+  | #linearColorStop3(c, l1, l2) => `${color(c)} ${length_percentage(l1)} ${length_percentage(l2)}`
+  };
+};
+let linearGradient = v => {
+  let arg = switch v {
+  | #linearGradient(None, c) => linearColorStop(c)
+  | #linearGradient(Some(d), c) => `${gradientLineDirection(d)}, ${linearColorStop(c)}`
+  | #linearGradient2(None, c1, c2) => `${linearColorStop(c1)}, ${linearColorStop(c2)}`
+  | #linearGradient2(Some(d), c1, c2) => `${gradientLineDirection(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}`
+  | #linearGradient3(None, c1, c2, c3) => `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
+  | #linearGradient3(Some(d), c1, c2, c3) => 
+    `${gradientLineDirection(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
+  | #linearGradient4(None, c1, c2, c3, c4) => 
+    `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
+  | #linearGradient4(Some(d), c1, c2, c3, c4) => 
+    `${gradientLineDirection(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
+  };
+  `linear-gradient(${arg})`;
+};
+let gradient = v => {
+  switch v {
+  | #...linearGradient as l => linearGradient(l)
+  };
+};
+external imageTags: imageTags => string = "%identity";
+let url = v => {
+  switch v {
+  | #url(v) => `url(${v})`
+  };
+};
+let imageSrc = v => {
+  switch v {
+  | #...url as v => url(v)
+  };
+};
+let image = v => {
+  let imageSrcOrColor = v => 
+    switch v {
+    | #...imageSrc as s => `image(${imageSrc(s)})`
+    | #...color as c => `image(${color(c)})`
+    };
+  switch v {
+  | #...imageSrc as s => imageSrc(s)
+  | #...gradient as g => gradient(g)
+  | #image(v) => `image(${imageSrcOrColor(v)})`
+  | #image2(t, v) => `image(${imageTags(t)} ${imageSrcOrColor(v)})`
+  | #image3(t, s, c) => `image(${imageTags(t)} ${imageSrc(s)}, ${color(c)})`
+  }
+};
