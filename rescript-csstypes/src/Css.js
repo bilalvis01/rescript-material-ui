@@ -283,6 +283,73 @@ function rgbX(v) {
         };
 }
 
+function linearColorStop2(c, l) {
+  return {
+          NAME: "linearColorStop2",
+          VAL: [
+            c,
+            l
+          ]
+        };
+}
+
+function linearColorStop3(c, l1, l2) {
+  return {
+          NAME: "linearColorStop3",
+          VAL: [
+            c,
+            l1,
+            l2
+          ]
+        };
+}
+
+function linearGradient(dir, c) {
+  return {
+          NAME: "linearGradient",
+          VAL: [
+            dir,
+            c
+          ]
+        };
+}
+
+function linearGradient2(dir, c1, c2) {
+  return {
+          NAME: "linearGradient2",
+          VAL: [
+            dir,
+            c1,
+            c2
+          ]
+        };
+}
+
+function linearGradient3(dir, c1, c2, c3) {
+  return {
+          NAME: "linearGradient3",
+          VAL: [
+            dir,
+            c1,
+            c2,
+            c3
+          ]
+        };
+}
+
+function linearGradient4(dir, c1, c2, c3, c4) {
+  return {
+          NAME: "linearGradient4",
+          VAL: [
+            dir,
+            c1,
+            c2,
+            c3,
+            c4
+          ]
+        };
+}
+
 function property(name, value) {
   return [
           name,
@@ -1013,6 +1080,12 @@ exports.hsla = hsla;
 exports.rgb = rgb;
 exports.rgba = rgba;
 exports.rgbX = rgbX;
+exports.linearColorStop2 = linearColorStop2;
+exports.linearColorStop3 = linearColorStop3;
+exports.linearGradient = linearGradient;
+exports.linearGradient2 = linearGradient2;
+exports.linearGradient3 = linearGradient3;
+exports.linearGradient4 = linearGradient4;
 exports.property = property;
 exports.propertyString = propertyString;
 exports.propertyNumber = propertyNumber;

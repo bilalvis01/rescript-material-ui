@@ -63,6 +63,21 @@ let rgba: (rgbParam, rgbParam, rgbParam, alpha) => [> #rgba(rgbParam, rgbParam, 
 let rgbX: string => [> #rgbX(string) ];
 
 /*
+Image data types
+*/
+let linearColorStop2: (color, length_percentage) => [> #linearColorStop2(color, length_percentage) ];
+let linearColorStop3: (color, length_percentage, length_percentage) =>
+  [> #linearColorStop3(color, length_percentage, length_percentage) ];
+let linearGradient: (~dir: gradientLineDirection=?, linearColorStop) =>
+  [> #linearGradient(option<gradientLineDirection>, linearColorStop) ];
+let linearGradient2: (~dir: gradientLineDirection=?, linearColorStop, linearColorStop) =>
+  [> #linearGradient2(option<gradientLineDirection>, linearColorStop, linearColorStop) ];
+let linearGradient3: (~dir: gradientLineDirection=?, linearColorStop, linearColorStop, linearColorStop) =>
+  [> #linearGradient3(option<gradientLineDirection>, linearColorStop, linearColorStop, linearColorStop) ];
+let linearGradient4: (~dir: gradientLineDirection=?, linearColorStop, linearColorStop, linearColorStop, linearColorStop) =>
+  [> #linearGradient4(option<gradientLineDirection>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
+
+/*
 Properties
 */
 @unboxed
