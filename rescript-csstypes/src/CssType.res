@@ -1359,8 +1359,60 @@ type borderRadius_global = [
   | global
 ];
 
-type borderColor = [
+/*
+Image data types
+*/
+type gradientLineStartingPoint = [
+  | #"to top"
+  | #"to bottom"
+  | #"to left"
+  | #"to right"
+  | #"to top left"
+  | #"to top right"
+  | #"to bottom left"
+  | #"to bottom right"
+];
+
+type gradientLineDirection = [
+  | angle
+  | gradientLineStartingPoint
+];
+
+type linearColorStop = [
   | color
-  | global
-  | #revert
+  | length_percentage
+  | #linearColorStop2(color, length_percentage)
+  | #linearColorStop3(color, length_percentage, length_percentage)
+];
+
+type linearGradient = [
+  | #linearGradient(option<gradientLineDirection>, linearColorStop)
+  | #linearGradient2(option<gradientLineDirection>, linearColorStop, linearColorStop)
+  | #linearGradient3(option<gradientLineDirection>, linearColorStop, linearColorStop, linearColorStop)
+  | #linearGradient4(option<gradientLineDirection>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
+];
+
+type gradient = [
+  | linearGradient
+];
+
+type imageTags = [
+  | #ltr
+  | #rtl
+];
+
+type url = [
+  | #url(string)
+];
+
+type imageSrc = [
+  | url
+];
+
+type image = [
+  | imageSrc
+  | gradient
+  | #image([ | imageSrc | color ])
+  | #image2(imageTags, [ | imageSrc | color ])
+  | #image3(imageTags, imageSrc, color)
 ];
