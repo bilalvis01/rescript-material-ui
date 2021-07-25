@@ -4,139 +4,178 @@
 var Css$Css = require("../src/Css.js");
 var CssString$Css = require("../src/CssString.js");
 
-test("number", (function () {
-        expect(CssString$Css.num(1)).toBe("1");
-        expect(CssString$Css.number(Css$Css.num(1))).toBe("1");
+describe("Numeric data types", (function () {
+        test("number", (function () {
+                expect(CssString$Css.num(1)).toBe("1");
+                expect(CssString$Css.number(Css$Css.num(1))).toBe("1");
+                
+              }));
+        test("integer", (function () {
+                expect(CssString$Css.$$int(1)).toBe("1");
+                expect(CssString$Css.integer(Css$Css.$$int(1))).toBe("1");
+                
+              }));
+        test("percentage", (function () {
+                expect(CssString$Css.pct(1)).toBe("1%");
+                expect(CssString$Css.percentage(Css$Css.pct(1))).toBe("1%");
+                
+              }));
+        test("ratio", (function () {
+                expect(CssString$Css.ratio(Css$Css.ratio(10, 10))).toBe("10/10");
+                
+              }));
+        test("flex", (function () {
+                expect(CssString$Css.fr(1)).toBe("1fr");
+                expect(CssString$Css.flexUnit(Css$Css.fr(1))).toBe("1fr");
+                
+              }));
         
       }));
 
-test("integer", (function () {
-        expect(CssString$Css.$$int(1)).toBe("1");
-        expect(CssString$Css.integer(Css$Css.$$int(1))).toBe("1");
+describe("Quantities data types", (function () {
+        test("length", (function () {
+                expect(CssString$Css.ch(1)).toBe("1ch");
+                expect(CssString$Css.em(1)).toBe("1em");
+                expect(CssString$Css.ex(1)).toBe("1ex");
+                expect(CssString$Css.rem(1)).toBe("1rem");
+                expect(CssString$Css.vh(1)).toBe("1vh");
+                expect(CssString$Css.vw(1)).toBe("1vw");
+                expect(CssString$Css.vmin(1)).toBe("1vmin");
+                expect(CssString$Css.vmax(1)).toBe("1vmax");
+                expect(CssString$Css.px(1)).toBe("1px");
+                expect(CssString$Css.cm(1)).toBe("1cm");
+                expect(CssString$Css.mm(1)).toBe("1mm");
+                expect(CssString$Css.inch(1)).toBe("1in");
+                expect(CssString$Css.pc(1)).toBe("1pc");
+                expect(CssString$Css.pt(1)).toBe("1pt");
+                expect(CssString$Css.length(Css$Css.mm(1))).toBe("1mm");
+                expect(CssString$Css.length(Css$Css.cm(1))).toBe("1cm");
+                
+              }));
+        test("angle", (function () {
+                expect(CssString$Css.deg(1)).toBe("1deg");
+                expect(CssString$Css.grad(1)).toBe("1grad");
+                expect(CssString$Css.rad(1)).toBe("1rad");
+                expect(CssString$Css.turn(1)).toBe("1turn");
+                expect(CssString$Css.angle(Css$Css.deg(1))).toBe("1deg");
+                expect(CssString$Css.angle(Css$Css.grad(1))).toBe("1grad");
+                
+              }));
+        test("time", (function () {
+                expect(CssString$Css.s(10)).toBe("10s");
+                expect(CssString$Css.ms(10)).toBe("10ms");
+                expect(CssString$Css.time(Css$Css.s(10))).toBe("10s");
+                expect(CssString$Css.time(Css$Css.ms(10))).toBe("10ms");
+                
+              }));
+        test("frequency", (function () {
+                expect(CssString$Css.hz(50)).toBe("50Hz");
+                expect(CssString$Css.kHz(100)).toBe("100kHz");
+                expect(CssString$Css.kHz(-100)).toBe("-100kHz");
+                expect(CssString$Css.frequency(Css$Css.hz(50))).toBe("50Hz");
+                expect(CssString$Css.frequency(Css$Css.kHz(100))).toBe("100kHz");
+                
+              }));
+        test("resolution", (function () {
+                expect(CssString$Css.dpi(1)).toBe("1dpi");
+                expect(CssString$Css.dpcm(1)).toBe("1dpcm");
+                expect(CssString$Css.dppx(1)).toBe("1dppx");
+                expect(CssString$Css.x(1)).toBe("1x");
+                expect(CssString$Css.resolution(Css$Css.dpi(1))).toBe("1dpi");
+                
+              }));
         
       }));
 
-test("percentage", (function () {
-        expect(CssString$Css.pct(1)).toBe("1%");
-        expect(CssString$Css.percentage(Css$Css.pct(1))).toBe("1%");
+describe("Combination data types", (function () {
+        test("length_percentage", (function () {
+                expect(CssString$Css.length_percentage(Css$Css.mm(1))).toBe("1mm");
+                expect(CssString$Css.length_percentage(Css$Css.pct(1))).toBe("1%");
+                
+              }));
+        test("frequency_percentage", (function () {
+                expect(CssString$Css.frequency_percentage(Css$Css.hz(1))).toBe("1Hz");
+                expect(CssString$Css.frequency_percentage(Css$Css.pct(1))).toBe("1%");
+                
+              }));
+        test("angle_percentage", (function () {
+                expect(CssString$Css.angle_percentage(Css$Css.deg(1))).toBe("1deg");
+                expect(CssString$Css.angle_percentage(Css$Css.pct(1))).toBe("1%");
+                
+              }));
+        test("time_percentage", (function () {
+                expect(CssString$Css.time_percentage(Css$Css.s(1))).toBe("1s");
+                expect(CssString$Css.time_percentage(Css$Css.pct(1))).toBe("1%");
+                
+              }));
         
       }));
 
-test("ratio", (function () {
-        expect(CssString$Css.ratio(Css$Css.ratio(10, 10))).toBe("10/10");
+describe("Color data types", (function () {
+        test("color", (function () {
+                expect(CssString$Css.hue(Css$Css.deg(1))).toBe("1deg");
+                expect(CssString$Css.hue(Css$Css.num(1))).toBe("1");
+                expect(CssString$Css.alpha(Css$Css.pct(1))).toBe("1%");
+                expect(CssString$Css.alpha(Css$Css.num(1))).toBe("1");
+                expect(CssString$Css.rgbParam(Css$Css.pct(1))).toBe("1%");
+                expect(CssString$Css.rgbParam(Css$Css.num(1))).toBe("1");
+                expect(CssString$Css.hsl(Css$Css.num(1), Css$Css.pct(10), Css$Css.pct(10))).toBe("hsl(1, 10%, 10%)");
+                expect(CssString$Css.hsla(Css$Css.num(1), Css$Css.pct(10), Css$Css.pct(10), Css$Css.num(1))).toBe("hsla(1, 10%, 10%, 1)");
+                expect(CssString$Css.hsl(1, Css$Css.pct(10), Css$Css.pct(10))).toBe("hsl(1, 10%, 10%)");
+                expect(CssString$Css.hsla(1, Css$Css.pct(10), Css$Css.pct(10), Css$Css.num(1))).toBe("hsla(1, 10%, 10%, 1)");
+                expect(CssString$Css.rgb(Css$Css.num(1), Css$Css.num(1), Css$Css.pct(10))).toBe("rgb(1, 1, 10%)");
+                expect(CssString$Css.rgba(Css$Css.num(1), Css$Css.num(1), Css$Css.pct(10), Css$Css.num(10))).toBe("rgba(1, 1, 10%, 10)");
+                expect(CssString$Css.rgb(255, 255, 255)).toBe("rgb(255, 255, 255)");
+                expect(CssString$Css.rgba(0, 0, 0, Css$Css.num(10))).toBe("rgba(0, 0, 0, 10)");
+                expect(CssString$Css.rgbX("000000")).toBe("#000000");
+                expect(CssString$Css.color(Css$Css.rgbX("000000"))).toBe("#000000");
+                expect(CssString$Css.color(Css$Css.rgb(Css$Css.num(1), Css$Css.num(1.8), Css$Css.pct(10)))).toBe("rgb(1, 1.8, 10%)");
+                
+              }));
         
       }));
 
-test("flex", (function () {
-        expect(CssString$Css.fr(1)).toBe("1fr");
-        expect(CssString$Css.flexUnit(Css$Css.fr(1))).toBe("1fr");
+describe("Line", (function () {
+        test("lineWidth", (function () {
+                expect(CssString$Css.lineWidth("thick")).toBe("thick");
+                expect(CssString$Css.lineWidth(Css$Css.mm(10))).toBe("10mm");
+                
+              }));
         
       }));
 
-test("length", (function () {
-        expect(CssString$Css.ch(1)).toBe("1ch");
-        expect(CssString$Css.em(1)).toBe("1em");
-        expect(CssString$Css.ex(1)).toBe("1ex");
-        expect(CssString$Css.rem(1)).toBe("1rem");
-        expect(CssString$Css.vh(1)).toBe("1vh");
-        expect(CssString$Css.vw(1)).toBe("1vw");
-        expect(CssString$Css.vmin(1)).toBe("1vmin");
-        expect(CssString$Css.vmax(1)).toBe("1vmax");
-        expect(CssString$Css.px(1)).toBe("1px");
-        expect(CssString$Css.cm(1)).toBe("1cm");
-        expect(CssString$Css.mm(1)).toBe("1mm");
-        expect(CssString$Css.inch(1)).toBe("1in");
-        expect(CssString$Css.pc(1)).toBe("1pc");
-        expect(CssString$Css.pt(1)).toBe("1pt");
-        expect(CssString$Css.length(Css$Css.mm(1))).toBe("1mm");
-        expect(CssString$Css.length(Css$Css.cm(1))).toBe("1cm");
-        
-      }));
-
-test("angle", (function () {
-        expect(CssString$Css.deg(1)).toBe("1deg");
-        expect(CssString$Css.grad(1)).toBe("1grad");
-        expect(CssString$Css.rad(1)).toBe("1rad");
-        expect(CssString$Css.turn(1)).toBe("1turn");
-        expect(CssString$Css.angle(Css$Css.deg(1))).toBe("1deg");
-        expect(CssString$Css.angle(Css$Css.grad(1))).toBe("1grad");
-        
-      }));
-
-test("time", (function () {
-        expect(CssString$Css.s(10)).toBe("10s");
-        expect(CssString$Css.ms(10)).toBe("10ms");
-        expect(CssString$Css.time(Css$Css.s(10))).toBe("10s");
-        expect(CssString$Css.time(Css$Css.ms(10))).toBe("10ms");
-        
-      }));
-
-test("frequency", (function () {
-        expect(CssString$Css.hz(50)).toBe("50Hz");
-        expect(CssString$Css.kHz(100)).toBe("100kHz");
-        expect(CssString$Css.kHz(-100)).toBe("-100kHz");
-        expect(CssString$Css.frequency(Css$Css.hz(50))).toBe("50Hz");
-        expect(CssString$Css.frequency(Css$Css.kHz(100))).toBe("100kHz");
-        
-      }));
-
-test("resolution", (function () {
-        expect(CssString$Css.dpi(1)).toBe("1dpi");
-        expect(CssString$Css.dpcm(1)).toBe("1dpcm");
-        expect(CssString$Css.dppx(1)).toBe("1dppx");
-        expect(CssString$Css.x(1)).toBe("1x");
-        expect(CssString$Css.resolution(Css$Css.dpi(1))).toBe("1dpi");
-        
-      }));
-
-test("length_percentage", (function () {
-        expect(CssString$Css.length_percentage(Css$Css.mm(1))).toBe("1mm");
-        expect(CssString$Css.length_percentage(Css$Css.pct(1))).toBe("1%");
-        
-      }));
-
-test("frequency_percentage", (function () {
-        expect(CssString$Css.frequency_percentage(Css$Css.hz(1))).toBe("1Hz");
-        expect(CssString$Css.frequency_percentage(Css$Css.pct(1))).toBe("1%");
-        
-      }));
-
-test("angle_percentage", (function () {
-        expect(CssString$Css.angle_percentage(Css$Css.deg(1))).toBe("1deg");
-        expect(CssString$Css.angle_percentage(Css$Css.pct(1))).toBe("1%");
-        
-      }));
-
-test("time_percentage", (function () {
-        expect(CssString$Css.time_percentage(Css$Css.s(1))).toBe("1s");
-        expect(CssString$Css.time_percentage(Css$Css.pct(1))).toBe("1%");
-        
-      }));
-
-test("color", (function () {
-        expect(CssString$Css.hue(Css$Css.deg(1))).toBe("1deg");
-        expect(CssString$Css.hue(Css$Css.num(1))).toBe("1");
-        expect(CssString$Css.alpha(Css$Css.pct(1))).toBe("1%");
-        expect(CssString$Css.alpha(Css$Css.num(1))).toBe("1");
-        expect(CssString$Css.rgbParam(Css$Css.pct(1))).toBe("1%");
-        expect(CssString$Css.rgbParam(Css$Css.num(1))).toBe("1");
-        expect(CssString$Css.hsl(Css$Css.num(1), Css$Css.pct(10), Css$Css.pct(10))).toBe("hsl(1, 10%, 10%)");
-        expect(CssString$Css.hsla(Css$Css.num(1), Css$Css.pct(10), Css$Css.pct(10), Css$Css.num(1))).toBe("hsla(1, 10%, 10%, 1)");
-        expect(CssString$Css.hsl(1, Css$Css.pct(10), Css$Css.pct(10))).toBe("hsl(1, 10%, 10%)");
-        expect(CssString$Css.hsla(1, Css$Css.pct(10), Css$Css.pct(10), Css$Css.num(1))).toBe("hsla(1, 10%, 10%, 1)");
-        expect(CssString$Css.rgb(Css$Css.num(1), Css$Css.num(1), Css$Css.pct(10))).toBe("rgb(1, 1, 10%)");
-        expect(CssString$Css.rgba(Css$Css.num(1), Css$Css.num(1), Css$Css.pct(10), Css$Css.num(10))).toBe("rgba(1, 1, 10%, 10)");
-        expect(CssString$Css.rgb(255, 255, 255)).toBe("rgb(255, 255, 255)");
-        expect(CssString$Css.rgba(0, 0, 0, Css$Css.num(10))).toBe("rgba(0, 0, 0, 10)");
-        expect(CssString$Css.rgbX("000000")).toBe("#000000");
-        expect(CssString$Css.color(Css$Css.rgbX("000000"))).toBe("#000000");
-        expect(CssString$Css.color(Css$Css.rgb(Css$Css.num(1), Css$Css.num(1.8), Css$Css.pct(10)))).toBe("rgb(1, 1.8, 10%)");
-        
-      }));
-
-test("lineWidth", (function () {
-        expect(CssString$Css.lineWidth("thick")).toBe("thick");
-        expect(CssString$Css.lineWidth(Css$Css.mm(10))).toBe("10mm");
+describe("Image data types", (function () {
+        test("gradientLineDirection", (function () {
+                expect(CssString$Css.gradientLineDirection("to top")).toBe("to top");
+                expect(CssString$Css.gradientLineDirection("to top left")).toBe("to top left");
+                expect(CssString$Css.gradientLineDirection(Css$Css.turn(0.25))).toBe("0.25turn");
+                
+              }));
+        test("linearColorStop", (function () {
+                expect(CssString$Css.linearColorStop("red")).toBe("red");
+                expect(CssString$Css.linearColorStop(Css$Css.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
+                expect(CssString$Css.linearColorStop(Css$Css.pct(10))).toBe("10%");
+                expect(CssString$Css.linearColorStop(Css$Css.px(25))).toBe("25px");
+                expect(CssString$Css.linearColorStop(Css$Css.linearColorStop2("red", Css$Css.pct(10)))).toBe("red 10%");
+                expect(CssString$Css.linearColorStop(Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(10), Css$Css.pct(50)))).toBe("rgb(255, 255, 255) 10% 50%");
+                
+              }));
+        test("linearGradient", (function () {
+                expect(CssString$Css.linearGradient(Css$Css.linearGradient(undefined, Css$Css.rgb(0, 0, 0)))).toBe("linear-gradient(rgb(0, 0, 0))");
+                expect(CssString$Css.linearGradient(Css$Css.linearGradient(Css$Css.turn(0.25), Css$Css.rgb(0, 0, 0)))).toBe("linear-gradient(0.25turn, rgb(0, 0, 0))");
+                expect(CssString$Css.linearGradient(Css$Css.linearGradient(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%)");
+                expect(CssString$Css.linearGradient(Css$Css.linearGradient2(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(40))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%)");
+                expect(CssString$Css.linearGradient(Css$Css.linearGradient3(undefined, Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(40)), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60))))).toBe("linear-gradient(rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
+                expect(CssString$Css.linearGradient(Css$Css.linearGradient3(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(40)), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
+                expect(CssString$Css.linearGradient(Css$Css.linearGradient3(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.pct(30), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
+                expect(CssString$Css.linearGradient(Css$Css.linearGradient4(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(40)), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60)), Css$Css.linearColorStop3("red", Css$Css.pct(70), Css$Css.pct(100))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
+                
+              }));
+        test("gradient", (function () {
+                expect(CssString$Css.gradient(Css$Css.linearGradient3(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.pct(30), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
+                expect(CssString$Css.gradient(Css$Css.linearGradient4(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(40)), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60)), Css$Css.linearColorStop3("red", Css$Css.pct(70), Css$Css.pct(100))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
+                
+              }));
         
       }));
 
