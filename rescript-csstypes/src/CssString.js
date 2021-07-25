@@ -50,7 +50,7 @@ function stickMany(v, cb) {
 }
 
 function string(v) {
-  return v.VAL;
+  return "\"" + v.VAL + "\"";
 }
 
 function num(v) {
@@ -306,7 +306,7 @@ function scalar(v) {
   if (variant === "integer" || variant === "number") {
     return String(v.VAL);
   } else {
-    return v.VAL;
+    return string(v);
   }
 }
 

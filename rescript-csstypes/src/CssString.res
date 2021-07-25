@@ -57,7 +57,7 @@ external global: global => string = "%identity";
 
 let string = v => {
   switch v {
-    | #string(v) => v
+    | #string(v) => `"${v}"`
   };
 };
 
