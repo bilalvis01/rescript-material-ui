@@ -163,12 +163,9 @@ describe("border", (function () {
                 
               }));
         test("background", (function () {
-                expect(Css$Css.background("red")).toEqual(Css$Css.propertyString("background", "red"));
-                expect(Css$Css.background(Css$Css.rgb(255, 255, 255))).toEqual(Css$Css.propertyString("background", "rgb(255, 255, 255)"));
-                expect(Css$Css.background2(undefined, Css$Css.url("test.jpg"), undefined, undefined, "repeat-y", undefined, undefined, undefined, undefined)).toEqual(Css$Css.propertyString("background", "url(\"test.jpg\") repeat-y"));
-                expect(Css$Css.background2("red", undefined, undefined, undefined, undefined, undefined, "border-box", undefined, undefined)).toEqual(Css$Css.propertyString("background", "red border-box"));
-                expect(Css$Css.background2(undefined, Css$Css.url("../img/image.png"), "center", Css$Css.pct(80), "no-repeat", undefined, undefined, undefined, undefined)).toEqual(Css$Css.propertyString("background", "url(\"../img/image.png\") center / 80% no-repeat"));
-                expect(Css$Css.background("inherit")).toEqual(Css$Css.propertyString("background", "inherit"));
+                expect(Css$Css.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "red")).toEqual(Css$Css.propertyString("background", "red"));
+                expect(Css$Css.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Css.rgb(255, 255, 255))).toEqual(Css$Css.propertyString("background", "rgb(255, 255, 255)"));
+                expect(Css$Css.background(undefined, undefined, undefined, undefined, "repeat-y", undefined, undefined, undefined, Css$Css.url("test.jpg"))).toEqual(Css$Css.propertyString("background", "url(\"test.jpg\") repeat-y"));
                 
               }));
         

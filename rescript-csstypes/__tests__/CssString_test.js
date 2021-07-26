@@ -146,9 +146,9 @@ describe("Line", (function () {
 
 describe("Image data types", (function () {
         test("gradientLineDirection", (function () {
-                expect(CssString$Css.gradientLineDirection("to top")).toBe("to top");
-                expect(CssString$Css.gradientLineDirection("to top left")).toBe("to top left");
-                expect(CssString$Css.gradientLineDirection(Css$Css.turn(0.25))).toBe("0.25turn");
+                expect(CssString$Css.gradientLineAngle("to top")).toBe("to top");
+                expect(CssString$Css.gradientLineAngle("to top left")).toBe("to top left");
+                expect(CssString$Css.gradientLineAngle(Css$Css.turn(0.25))).toBe("0.25turn");
                 
               }));
         test("linearColorStop", (function () {
@@ -207,6 +207,28 @@ describe("Image data types", (function () {
                 expect(CssString$Css.bgPosition(Css$Css.bgPosition3("left", "top", Css$Css.pct(10)))).toBe("left top 10%");
                 expect(CssString$Css.bgPosition(Css$Css.bgPosition3("left", Css$Css.pct(20), "bottom"))).toBe("left 20% bottom");
                 expect(CssString$Css.bgPosition(Css$Css.bgPosition4("right", Css$Css.pct(35), "bottom", Css$Css.pct(45)))).toBe("right 35% bottom 45%");
+                
+              }));
+        
+      }));
+
+describe("background", (function () {
+        test("background", (function () {
+                expect(CssString$Css.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "red")).toBe("red");
+                expect(CssString$Css.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Css.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
+                expect(CssString$Css.background("red", undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Css.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
+                expect(CssString$Css.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Css.url("myimage.png"))).toBe("url(\"myimage.png\")");
+                expect(CssString$Css.background(undefined, Css$Css.url("test.jpg"), undefined, undefined, undefined, undefined, undefined, undefined, Css$Css.url("myimage.png"))).toBe("url(\"myimage.png\")");
+                expect(CssString$Css.background(undefined, undefined, undefined, undefined, "repeat-y", undefined, undefined, undefined, Css$Css.url("test.jpg"))).toBe("url(\"test.jpg\") repeat-y");
+                expect(CssString$Css.background(undefined, undefined, undefined, undefined, undefined, undefined, "border-box", undefined, "red")).toBe("red border-box");
+                expect(CssString$Css.background(undefined, undefined, undefined, undefined, undefined, undefined, "border-box", "padding-box", "red")).toBe("red border-box padding-box");
+                expect(CssString$Css.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "padding-box", "red")).toBe("red");
+                expect(CssString$Css.background(undefined, undefined, "center", Css$Css.pct(80), "no-repeat", undefined, undefined, undefined, Css$Css.url("../img/image.png"))).toBe("url(\"../img/image.png\") center / 80% no-repeat");
+                expect(CssString$Css.background(undefined, undefined, undefined, Css$Css.pct(80), "no-repeat", undefined, undefined, undefined, Css$Css.url("../img/image.png"))).toBe("url(\"../img/image.png\") no-repeat");
+                expect(CssString$Css.bgLayer("red")).toBe("red");
+                expect(CssString$Css.bgLayer(Css$Css.url("myimage.png"))).toBe("url(\"myimage.png\")");
+                expect(CssString$Css.bgLayer(Css$Css.bgLayer(undefined, undefined, undefined, undefined, "repeat-y", undefined, undefined, undefined, Css$Css.url("test.jpg")))).toBe("url(\"test.jpg\") repeat-y");
+                expect(CssString$Css.bgLayer(Css$Css.bgLayer(undefined, undefined, "center", Css$Css.pct(80), "no-repeat", undefined, undefined, undefined, Css$Css.url("../img/image.png")))).toBe("url(\"../img/image.png\") center / 80% no-repeat");
                 
               }));
         

@@ -154,9 +154,9 @@ describe("Line", (.) => {
 
 describe("Image data types", (.) => {
   test("gradientLineDirection", (.) => {
-    expect(gradientLineDirection(#"to top"))->toBe("to top");
-    expect(gradientLineDirection(#"to top left"))->toBe("to top left");
-    expect(gradientLineDirection(Css.turn(0.25)))->toBe("0.25turn");
+    expect(gradientLineAngle(#"to top"))->toBe("to top");
+    expect(gradientLineAngle(#"to top left"))->toBe("to top left");
+    expect(gradientLineAngle(Css.turn(0.25)))->toBe("0.25turn");
   });
 
   test("linearColorStop", (.) => {
@@ -171,12 +171,12 @@ describe("Image data types", (.) => {
 
   test("linearGradient", (.) => {
     expect(linearGradient(Css.linearGradient(Css.rgb(#0, #0, #0))))->toBe("linear-gradient(rgb(0, 0, 0))");
-    expect(linearGradient(Css.linearGradient(~dir=Css.turn(0.25), Css.rgb(#0, #0, #0))))
+    expect(linearGradient(Css.linearGradient(~angle=Css.turn(0.25), Css.rgb(#0, #0, #0))))
       ->toBe("linear-gradient(0.25turn, rgb(0, 0, 0))");
-    expect(linearGradient(Css.linearGradient(~dir=Css.turn(0.25), Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)))))
+    expect(linearGradient(Css.linearGradient(~angle=Css.turn(0.25), Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)))))
       ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%)");
     expect(linearGradient(Css.linearGradient2(
-      ~dir=Css.turn(0.25), 
+      ~angle=Css.turn(0.25), 
       Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)),
       Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(40.)),
     )))
@@ -188,21 +188,21 @@ describe("Image data types", (.) => {
     )))
     ->toBe("linear-gradient(rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
     expect(linearGradient(Css.linearGradient3(
-      ~dir=Css.turn(0.25), 
+      ~angle=Css.turn(0.25), 
       Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)),
       Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(40.)),
       Css.linearColorStop3(Css.rgb(#255, #255, #255), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
     expect(linearGradient(Css.linearGradient3(
-      ~dir=Css.turn(0.25), 
+      ~angle=Css.turn(0.25), 
       Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)),
       Css.pct(30.),
       Css.linearColorStop3(Css.rgb(#255, #255, #255), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
     expect(linearGradient(Css.linearGradient4(
-      ~dir=Css.turn(0.25), 
+      ~angle=Css.turn(0.25), 
       Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)),
       Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(40.)),
       Css.linearColorStop3(Css.rgb(#255, #255, #255), Css.pct(50.), Css.pct(60.)),
@@ -213,14 +213,14 @@ describe("Image data types", (.) => {
 
   test("gradient", (.) => {
     expect(gradient(Css.linearGradient3(
-      ~dir=Css.turn(0.25), 
+      ~angle=Css.turn(0.25), 
       Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)),
       Css.pct(30.),
       Css.linearColorStop3(Css.rgb(#255, #255, #255), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
     expect(gradient(Css.linearGradient4(
-      ~dir=Css.turn(0.25), 
+      ~angle=Css.turn(0.25), 
       Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)),
       Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(40.)),
       Css.linearColorStop3(Css.rgb(#255, #255, #255), Css.pct(50.), Css.pct(60.)),
@@ -261,5 +261,32 @@ describe("Image data types", (.) => {
     expect(bgPosition(Css.bgPosition3(#left, Css.pct(20.), #bottom)))->toBe("left 20% bottom");
     expect(bgPosition(Css.bgPosition4(#right, Css.pct(35.), #bottom, Css.pct(45.))))
       ->toBe("right 35% bottom 45%");
+  });
+});
+
+describe("background", (.) => {
+  test("background", (.) => {
+    expect(background(#red))->toBe("red");
+    expect(background(Css.rgb(#255, #255, #255)))->toBe("rgb(255, 255, 255)");
+    expect(background(~color=#red, Css.rgb(#255, #255, #255)))->toBe("rgb(255, 255, 255)");
+    expect(background(Css.url("myimage.png")))->toBe(`url("myimage.png")`);
+    expect(background(~image=Css.url("test.jpg"), Css.url("myimage.png")))->toBe(`url("myimage.png")`);
+    expect(background(~repeat=#"repeat-y", Css.url("test.jpg")))
+      ->toBe(`url("test.jpg") repeat-y`)
+    expect(background(~origin=#"border-box", #red))
+      ->toBe("red border-box");
+    expect(background(~origin=#"border-box", ~clip=#"padding-box", #red))
+      ->toBe("red border-box padding-box");
+    expect(background(~clip=#"padding-box", #red))
+      ->toBe("red");
+    expect(background(~repeat=#"no-repeat", ~position=#center, ~size=Css.pct(80.), Css.url("../img/image.png")))
+      ->toBe(`url("../img/image.png") center / 80% no-repeat`);
+    expect(background(~repeat=#"no-repeat", ~size=Css.pct(80.), Css.url("../img/image.png")))
+      ->toBe(`url("../img/image.png") no-repeat`);
+    expect(bgLayer(#red))->toBe("red");
+    expect(bgLayer(Css.url("myimage.png")))->toBe(`url("myimage.png")`);
+    expect(bgLayer(Css.bgLayer(~repeat=#"repeat-y", Css.url("test.jpg"))))->toBe(`url("test.jpg") repeat-y`);
+    expect(bgLayer(Css.bgLayer(~repeat=#"no-repeat", ~position=#center, ~size=Css.pct(80.), Css.url("../img/image.png"))))
+      ->toBe(`url("../img/image.png") center / 80% no-repeat`);
   });
 });

@@ -304,32 +304,32 @@ function linearColorStop3(c, l1, l2) {
         };
 }
 
-function linearGradient(dir, c) {
+function linearGradient(angle, c) {
   return {
           NAME: "linearGradient",
           VAL: [
-            dir,
+            angle,
             c
           ]
         };
 }
 
-function linearGradient2(dir, c1, c2) {
+function linearGradient2(angle, c1, c2) {
   return {
           NAME: "linearGradient2",
           VAL: [
-            dir,
+            angle,
             c1,
             c2
           ]
         };
 }
 
-function linearGradient3(dir, c1, c2, c3) {
+function linearGradient3(angle, c1, c2, c3) {
   return {
           NAME: "linearGradient3",
           VAL: [
-            dir,
+            angle,
             c1,
             c2,
             c3
@@ -337,11 +337,11 @@ function linearGradient3(dir, c1, c2, c3) {
         };
 }
 
-function linearGradient4(dir, c1, c2, c3, c4) {
+function linearGradient4(angle, c1, c2, c3, c4) {
   return {
           NAME: "linearGradient4",
           VAL: [
-            dir,
+            angle,
             c1,
             c2,
             c3,
@@ -424,6 +424,23 @@ function bgPosition4(p1, p2, p3, p4) {
             p2,
             p3,
             p4
+          ]
+        };
+}
+
+function bgLayer(color, image, position, size, repeat, attachment, origin, clip, imageOrColor) {
+  return {
+          NAME: "bgLayer",
+          VAL: [
+            color,
+            image,
+            position,
+            size,
+            repeat,
+            attachment,
+            origin,
+            clip,
+            imageOrColor
           ]
         };
 }
@@ -1121,17 +1138,31 @@ function borderLeftWidthString(v) {
         ];
 }
 
-function background(v) {
+function background(color, image, position, size, repeat, attachment, origin, clip, imageOrColor) {
   return [
           "background",
-          CssPropertyValue$Css.background(v)
+          CssPropertyValue$Css.background(color, image, position, size, repeat, attachment, origin, clip, imageOrColor)
         ];
 }
 
-function background2(color, image, position, size, repeat, attachment, box, box2, param) {
+function background2(l1, l2) {
   return [
           "background",
-          CssPropertyValue$Css.background2(color, image, position, size, repeat, attachment, box, box2, undefined)
+          CssPropertyValue$Css.background2(l1, l2)
+        ];
+}
+
+function background3(l1, l2, l3) {
+  return [
+          "background",
+          CssPropertyValue$Css.background3(l1, l2, l3)
+        ];
+}
+
+function background4(l1, l2, l3, l4) {
+  return [
+          "background",
+          CssPropertyValue$Css.background4(l1, l2, l3, l4)
         ];
 }
 
@@ -1193,6 +1224,7 @@ exports.bgSize2 = bgSize2;
 exports.bgPosition2 = bgPosition2;
 exports.bgPosition3 = bgPosition3;
 exports.bgPosition4 = bgPosition4;
+exports.bgLayer = bgLayer;
 exports.property = property;
 exports.propertyString = propertyString;
 exports.propertyNumber = propertyNumber;
@@ -1293,6 +1325,8 @@ exports.borderLeftWidth3 = borderLeftWidth3;
 exports.borderLeftWidth4 = borderLeftWidth4;
 exports.borderLeftWidthString = borderLeftWidthString;
 exports.background = background;
-exports.background2 = background2;
 exports.backgroundString = backgroundString;
+exports.background2 = background2;
+exports.background3 = background3;
+exports.background4 = background4;
 /* No side effect */

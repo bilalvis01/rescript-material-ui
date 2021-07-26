@@ -70,10 +70,10 @@ Image data types
 */
 let linearColorStop2 = (c, l) => #linearColorStop2(c, l);
 let linearColorStop3 = (c, l1, l2) => #linearColorStop3(c, l1, l2);
-let linearGradient = (~dir=?, c) => #linearGradient(dir, c);
-let linearGradient2 = (~dir=?, c1, c2) => #linearGradient2(dir, c1, c2);
-let linearGradient3 = (~dir=?, c1, c2, c3) => #linearGradient3(dir, c1, c2, c3);
-let linearGradient4 = (~dir=?, c1, c2, c3, c4) => #linearGradient4(dir, c1, c2, c3, c4);
+let linearGradient = (~angle=?, c) => #linearGradient(angle, c);
+let linearGradient2 = (~angle=?, c1, c2) => #linearGradient2(angle, c1, c2);
+let linearGradient3 = (~angle=?, c1, c2, c3) => #linearGradient3(angle, c1, c2, c3);
+let linearGradient4 = (~angle=?, c1, c2, c3, c4) => #linearGradient4(angle, c1, c2, c3, c4);
 let url = v => #url(v);
 let src = v => #src(v);
 let image = (~dir=?, v) => #image(dir, v);
@@ -82,6 +82,32 @@ let bgSize2 = (s1, s2) => #bgSize2(s1, s2);
 let bgPosition2 = (p1, p2) => #bgPosition2(p1, p2);
 let bgPosition3 = (p1, p2, p3) => #bgPosition3(p1, p2, p3);
 let bgPosition4 = (p1, p2, p3, p4) => #bgPosition4(p1, p2, p3, p4); 
+
+/*
+Background layer
+*/
+let bgLayer = (
+  ~color=?,
+  ~image=?,
+  ~position=?,
+  ~size=?,
+  ~repeat=?,
+  ~attachment=?,
+  ~origin=?,
+  ~clip=?,
+  imageOrColor
+) => 
+  #bgLayer(
+    color,
+    image,
+    position,
+    size,
+    repeat,
+    attachment,
+    origin,
+    clip,
+    imageOrColor
+  );
 
 /*
 properties
@@ -248,26 +274,34 @@ let borderLeftWidth4 = (~top, ~right, ~bottom, ~left) =>
   ("borderLeftWidth", PropertyValue(CssPropertyValue.borderWidth4(~top, ~right, ~bottom, ~left)));
 let borderLeftWidthString = v => ("borderLeftWidth", PropertyValue(CssPropertyValue.string(v)));
 
-let background = v => ("background", PropertyValue(CssPropertyValue.background(v)));
-let background2 = (
+let background = (
   ~color=?,
   ~image=?,
   ~position=?,
   ~size=?,
   ~repeat=?,
   ~attachment=?,
-  ~box=?,
-  ~box2=?,
-  ()
-) => ("background", PropertyValue(CssPropertyValue.background2(
-  ~color=?color,
-  ~image=?image,
-  ~position=?position,
-  ~size=?size,
-  ~repeat=?repeat,
-  ~attachment=?attachment,
-  ~box=?box,
-  ~box2=?box2,
-  ()
-)));
+  ~origin=?,
+  ~clip=?,
+  imageOrColor
+) => 
+  (
+    "background", 
+    PropertyValue(CssPropertyValue.background(
+      ~color=?color,
+      ~image=?image,
+      ~position=?position,
+      ~size=?size,
+      ~repeat=?repeat,
+      ~attachment=?attachment,
+      ~origin=?origin,
+      ~clip=?clip,
+      imageOrColor
+    ))
+  );
+let background2 = (l1, l2) => ("background", PropertyValue(CssPropertyValue.background2(l1, l2)));
+let background3 = (l1, l2, l3) => 
+  ("background", PropertyValue(CssPropertyValue.background3(l1, l2, l3)));
+let background4 = (l1, l2, l3, l4) => 
+  ("background", PropertyValue(CssPropertyValue.background4(l1, l2, l3, l4)));
 let backgroundString = v => ("background", PropertyValue(CssPropertyValue.string(v)));

@@ -188,12 +188,7 @@ describe("border", (.) => {
   test("background", (.) => {
     expect(background(#red))->toEqual(propertyString("background", "red"));
     expect(background(Css.rgb(#255, #255, #255)))->toEqual(propertyString("background", "rgb(255, 255, 255)"));
-    expect(background2(~image=Css.url("test.jpg"), ~repeat=#"repeat-y", ()))
-      ->toEqual(propertyString("background", `url("test.jpg") repeat-y`))
-    expect(background2(~color=#red, ~box=#"border-box", ()))
-      ->toEqual(propertyString("background", "red border-box"));
-    expect(background2(~repeat=#"no-repeat", ~position=#center, ~size=Css.pct(80.), ~image=Css.url("../img/image.png"), ()))
-      ->toEqual(propertyString("background", `url("../img/image.png") center / 80% no-repeat`));
-    expect(background(#inherit))->toEqual(propertyString("background", "inherit"));
+    expect(background(~repeat=#"repeat-y", Css.url("test.jpg")))
+      ->toEqual(propertyString("background", `url("test.jpg") repeat-y`));
   });
 });

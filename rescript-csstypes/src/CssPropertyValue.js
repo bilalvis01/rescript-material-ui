@@ -78,39 +78,29 @@ function borderWidth4(top, right, bottom, left) {
   return CssString$Css.lineWidth(top) + " " + CssString$Css.lineWidth(right) + " " + CssString$Css.lineWidth(bottom) + " " + CssString$Css.lineWidth(left);
 }
 
-function background(v) {
-  if (typeof v !== "object") {
-    if (v === "none") {
-      return CssString$Css.bgImage(v);
-    } else if (v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
-      return v;
-    } else {
-      return CssString$Css.color(v);
-    }
-  }
-  var variant = v.NAME;
-  if (variant === "image" || variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "image2") {
-    return CssString$Css.bgImage(v);
+function background(color, image, position, size, repeat, attachment, origin, clip, imageOrColor) {
+  var imageOrColor$1;
+  if (typeof imageOrColor === "object") {
+    imageOrColor$1 = imageOrColor;
   } else {
-    return CssString$Css.color(v);
+    if (imageOrColor === "inherit" || imageOrColor === "unset" || imageOrColor === "revert" || imageOrColor === "initial") {
+      return imageOrColor;
+    }
+    imageOrColor$1 = imageOrColor;
   }
+  return CssString$Css.background(color, image, position, size, repeat, attachment, origin, clip, imageOrColor$1);
 }
 
-function background2(color, image, position, size, repeat, attachment, box, box2, param) {
-  var v = color !== undefined ? CssString$Css.color(color) : "";
-  var v$1 = image !== undefined ? (v + " " + CssString$Css.bgImage(image)).trim() : v;
-  var position$1 = position !== undefined ? (
-      size !== undefined ? CssString$Css.bgPosition(position) + " / " + CssString$Css.bgSize(size) : CssString$Css.bgPosition(position)
-    ) : undefined;
-  var v$2 = position$1 !== undefined ? (v$1 + " " + position$1).trim() : v$1;
-  var v$3 = repeat !== undefined ? (v$2 + " " + repeat).trim() : v$2;
-  var v$4 = attachment !== undefined ? (v$3 + " " + attachment).trim() : v$3;
-  var v$5 = box !== undefined ? (v$4 + " " + box).trim() : v$4;
-  if (box2 !== undefined) {
-    return (v$5 + " " + box2).trim();
-  } else {
-    return v$5;
-  }
+function background2(l1, l2) {
+  return CssString$Css.bgLayer(l1) + ", " + CssString$Css.bgLayer(l2);
+}
+
+function background3(l1, l2, l3) {
+  return CssString$Css.bgLayer(l1) + ", " + CssString$Css.bgLayer(l2) + ", " + CssString$Css.bgLayer(l3);
+}
+
+function background4(l1, l2, l3, l4) {
+  return CssString$Css.bgLayer(l1) + ", " + CssString$Css.bgLayer(l2) + ", " + CssString$Css.bgLayer(l3) + ", " + CssString$Css.bgLayer(l4);
 }
 
 exports.border = border;
@@ -130,4 +120,6 @@ exports.borderWidth3 = borderWidth3;
 exports.borderWidth4 = borderWidth4;
 exports.background = background;
 exports.background2 = background2;
+exports.background3 = background3;
+exports.background4 = background4;
 /* No side effect */

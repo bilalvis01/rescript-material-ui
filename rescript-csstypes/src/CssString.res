@@ -272,7 +272,7 @@ let color = v => {
 Image data types
 */
 external gradientLineStartingPoint: gradientLineStartingPoint => string = "%identity";
-let gradientLineDirection = v => {
+let gradientLineAngle = v => {
   switch v {
   | #...angle as a => angle(a)
   | #...gradientLineStartingPoint as s => gradientLineStartingPoint(s) 
@@ -289,16 +289,16 @@ let linearColorStop = v => {
 let linearGradient = v => {
   let arg = switch v {
   | #linearGradient(None, c) => linearColorStop(c)
-  | #linearGradient(Some(d), c) => `${gradientLineDirection(d)}, ${linearColorStop(c)}`
+  | #linearGradient(Some(d), c) => `${gradientLineAngle(d)}, ${linearColorStop(c)}`
   | #linearGradient2(None, c1, c2) => `${linearColorStop(c1)}, ${linearColorStop(c2)}`
-  | #linearGradient2(Some(d), c1, c2) => `${gradientLineDirection(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}`
+  | #linearGradient2(Some(d), c1, c2) => `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}`
   | #linearGradient3(None, c1, c2, c3) => `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
   | #linearGradient3(Some(d), c1, c2, c3) => 
-    `${gradientLineDirection(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
+    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
   | #linearGradient4(None, c1, c2, c3, c4) => 
     `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
   | #linearGradient4(Some(d), c1, c2, c3, c4) => 
-    `${gradientLineDirection(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
+    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
   };
   `linear-gradient(${arg})`;
 };
@@ -413,3 +413,75 @@ let bgPosition = v => {
 external repeatStyle: repeatStyle => string = "%identity";
 external attachment: attachment => string = "%identity";
 external box: box => string = "%identity";
+
+/*
+Background
+*/
+let background = (
+  ~color as col=?,
+  ~image as img=?,
+  ~position=?,
+  ~size=?,
+  ~repeat=?,
+  ~attachment as att=?,
+  ~origin=?,
+  ~clip=?,
+  imageOrColor
+) => {
+  let position = switch (position, size) {
+  | (None, _) => None
+  | (Some(p), None) => Some(bgPosition(p))
+  | (Some(p), Some(s)) => Some(`${bgPosition(p)} / ${bgSize(s)}`)
+  };
+  let bg = switch (position, repeat) {
+  | (None, None) => None
+  | (Some(p), None) => Some(p)
+  | (None, Some(r)) => Some(repeatStyle(r))
+  | (Some(p), Some(r)) => Some(`${p} ${repeatStyle(r)}`)
+  };
+  let bg = switch (bg, att) {
+  | (None, None) => None
+  | (Some(bg), None) => Some(bg)
+  | (None, Some(a)) => Some(attachment(a))
+  | (Some(bg), Some(a)) => Some(`${bg} ${attachment(a)}`)
+  };
+  let box = switch (origin, clip) {
+  | (None, _) => None
+  | (Some(o), None) => Some(box(o))
+  | (Some(o), Some(c)) => Some(`${box(o)} ${box(c)}`)
+  }
+  let bg = switch (bg, box) {
+  | (None, None) => None
+  | (Some(bg), None) => Some(bg)
+  | (None, Some(b)) => Some(b)
+  | (Some(bg), Some(b)) => Some(`${bg} ${b}`)
+  };
+  switch (imageOrColor, col, img, bg) {
+  | (#...bgImage as i, None, _, None) => bgImage(i)
+  | (#...bgImage as i, Some(c), _, None) => `${color(c)} ${bgImage(i)}`
+  | (#...bgImage as i, None, _, Some(bg)) => `${bgImage(i)} ${bg}`
+  | (#...bgImage as i, Some(c), _, Some(bg)) => `${color(c)} ${bgImage(i)} ${bg}`
+  | (#...color as c, _, None, None) => color(c)
+  | (#...color as c, _, Some(i), None) => `${color(c)} ${bgImage(i)}`
+  | (#...color as c, _, None, Some(bg)) => `${color(c)} ${bg}`
+  | (#...color as c, _, Some(i), Some(bg)) => `${color(c)} ${bgImage(i)} ${bg}`
+  };
+};
+let bgLayer = v => {
+  switch v {
+  | #...color as c => color(c)
+  | #...bgImage as i => bgImage(i)
+  | #bgLayer(col, img, position, size, repeat, att, origin, clip, imageOrColor) =>
+    background(
+      ~color=?col, 
+      ~image=?img, 
+      ~position=?position, 
+      ~size=?size, 
+      ~repeat=?repeat,
+      ~attachment=?att,
+      ~origin=?origin,
+      ~clip=?clip,
+      imageOrColor
+    );
+  };
+};

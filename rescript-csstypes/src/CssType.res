@@ -1373,7 +1373,7 @@ type gradientLineStartingPoint = [
   | #"to bottom right"
 ];
 
-type gradientLineDirection = [
+type gradientLineAngle = [
   | angle
   | gradientLineStartingPoint
 ];
@@ -1386,10 +1386,10 @@ type linearColorStop = [
 ];
 
 type linearGradient = [
-  | #linearGradient(option<gradientLineDirection>, linearColorStop)
-  | #linearGradient2(option<gradientLineDirection>, linearColorStop, linearColorStop)
-  | #linearGradient3(option<gradientLineDirection>, linearColorStop, linearColorStop, linearColorStop)
-  | #linearGradient4(option<gradientLineDirection>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
+  | #linearGradient(option<gradientLineAngle>, linearColorStop)
+  | #linearGradient2(option<gradientLineAngle>, linearColorStop, linearColorStop)
+  | #linearGradient3(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop)
+  | #linearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
 ];
 
 type gradient = [
@@ -1478,3 +1478,22 @@ type attachment = [
    | #"padding-box"
    | #"content-box"
  ];
+
+ /*
+ Background layer
+ */
+ type bgLayer = [
+  | bgImage
+  | color
+  | #bgLayer(
+      option<color>, 
+      option<bgImage>, 
+      option<bgPosition>, 
+      option<bgSize>,
+      option<repeatStyle>,
+      option<attachment>,
+      option<box>,
+      option<box>,
+      [ | bgImage | color  ]
+    )
+];

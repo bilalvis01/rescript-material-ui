@@ -48,15 +48,17 @@ let borderWidth4: (~top: lineWidth, ~right: lineWidth, ~bottom: lineWidth, ~left
 type tag_background;
 type t_background = synthetic<tag_background>;
 external backgroundString: string => t_background = "%identity";
-let background: [ | global | bgImage | color] => t_background;
-let background2: (
+let background: (
   ~color: color=?,
   ~image: bgImage=?,
   ~position: bgPosition=?,
   ~size: bgSize=?,
   ~repeat: repeatStyle=?,
   ~attachment: attachment=?,
-  ~box: box=?,
-  ~box2: box=?,
-  unit
+  ~origin: box=?,
+  ~clip: box=?,
+  [ | global | bgImage | color ]
 ) => t_background;
+let background2: (bgLayer, bgLayer) => t_background;
+let background3: (bgLayer, bgLayer, bgLayer) => t_background;
+let background4: (bgLayer, bgLayer, bgLayer, bgLayer) => t_background;

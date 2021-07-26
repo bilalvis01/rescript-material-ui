@@ -103,7 +103,7 @@ let color: color => string;
 Image data types
 */
 external gradientLineStartingPoint: gradientLineStartingPoint => string = "%identity";
-let gradientLineDirection: gradientLineDirection => string;
+let gradientLineAngle: gradientLineAngle => string;
 let linearColorStop: linearColorStop => string;
 let linearGradient: linearGradient => string;
 let gradient: gradient => string;
@@ -117,3 +117,19 @@ let bgPosition: bgPosition => string;
 external repeatStyle: repeatStyle => string = "%identity";
 external attachment: attachment => string = "%identity";
 external box: box => string = "%identity";
+
+/*
+Background
+*/
+let background: (
+  ~color: color=?,
+  ~image: bgImage=?,
+  ~position: bgPosition=?,
+  ~size: bgSize=?,
+  ~repeat: repeatStyle=?,
+  ~attachment: attachment=?,
+  ~origin: box=?,
+  ~clip: box=?,
+  [ | bgImage | color ]
+) => string;
+let bgLayer: bgLayer => string;

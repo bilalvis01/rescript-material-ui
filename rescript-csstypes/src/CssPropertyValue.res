@@ -84,57 +84,39 @@ let borderWidth4 = (~top, ~right, ~bottom, ~left) =>
 type tag_background;
 type t_background = synthetic<tag_background>;
 external backgroundString: string => t_background = "%identity";
-let background = v => {
-  switch v {
-  | #...global as g => CssString.global(g)
-  | #...bgImage as i => CssString.bgImage(i)
-  | #...color as c => CssString.color(c)
-  }
-  ->backgroundString;
-};
-let background2 = (
+let background = (
   ~color=?,
   ~image=?,
   ~position=?,
   ~size=?,
   ~repeat=?,
   ~attachment=?,
-  ~box=?,
-  ~box2=?,
-  ()
+  ~origin=?,
+  ~clip=?,
+  imageOrColor
 ) => {
-  let v = switch color {
-  | None => ""
-  | Some(c) => CssString.color(c)
-  };
-  let v = switch image {
-  | None => v
-  | Some(i) => `${v} ${CssString.bgImage(i)}`->Js.String2.trim
-  };
-  let position = switch (position, size) {
-  | (None, _) => None
-  | (Some(p), None) => Some(CssString.bgPosition(p))
-  | (Some(p), Some(s)) => Some(`${CssString.bgPosition(p)} / ${CssString.bgSize(s)}`)
-  };
-  let v = switch position {
-  | None => v
-  | Some(p) => `${v} ${p}`->Js.String2.trim
-  };
-  let v = switch repeat {
-  | None => v
-  | Some(r) => `${v} ${CssString.repeatStyle(r)}`->Js.String2.trim
-  };
-  let v = switch attachment {
-  | None => v
-  | Some(a) => `${v} ${CssString.attachment(a)}`->Js.String2.trim
-  };
-  let v = switch box {
-  | None => v
-  | Some(b) => `${v} ${CssString.box(b)}`->Js.String2.trim
-  };
-  switch box2 {
-  | None => v
-  | Some(b) => `${v} ${CssString.box(b)}`->Js.String2.trim
+  switch imageOrColor {
+  | #...global as g => CssString.global(g)
+  | #...bgImage as imageOrColor
+  | #...color as imageOrColor =>
+    CssString.background(
+      ~color=?color,
+      ~image=?image,
+      ~position=?position,
+      ~size=?size,
+      ~repeat=?repeat,
+      ~attachment=?attachment,
+      ~origin=?origin,
+      ~clip=?clip,
+      imageOrColor
+    );
   }
   ->backgroundString;
-}
+};
+let background2 = (l1, l2) => 
+  `${CssString.bgLayer(l1)}, ${CssString.bgLayer(l2)}`->backgroundString;
+let background3 = (l1, l2, l3) =>
+  `${CssString.bgLayer(l1)}, ${CssString.bgLayer(l2)}, ${CssString.bgLayer(l3)}`->backgroundString;
+let background4 = (l1, l2, l3, l4) =>
+  `${CssString.bgLayer(l1)}, ${CssString.bgLayer(l2)}, ${CssString.bgLayer(l3)}, ${CssString.bgLayer(l4)}`
+  ->backgroundString;

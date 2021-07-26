@@ -35,12 +35,10 @@ describe("border", (function () {
                 
               }));
         test("background", (function () {
-                expect(CssPropertyValue$Css.background("red")).toBe("red");
-                expect(CssPropertyValue$Css.background(Css$Css.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
-                expect(CssPropertyValue$Css.background2(undefined, Css$Css.url("test.jpg"), undefined, undefined, "repeat-y", undefined, undefined, undefined, undefined)).toBe("url(\"test.jpg\") repeat-y");
-                expect(CssPropertyValue$Css.background2("red", undefined, undefined, undefined, undefined, undefined, "border-box", undefined, undefined)).toBe("red border-box");
-                expect(CssPropertyValue$Css.background2(undefined, Css$Css.url("../img/image.png"), "center", Css$Css.pct(80), "no-repeat", undefined, undefined, undefined, undefined)).toBe("url(\"../img/image.png\") center / 80% no-repeat");
-                expect(CssPropertyValue$Css.background("inherit")).toBe("inherit");
+                expect(CssPropertyValue$Css.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "red")).toBe("red");
+                expect(CssPropertyValue$Css.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Css.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
+                expect(CssPropertyValue$Css.background(undefined, undefined, undefined, undefined, "repeat-y", undefined, undefined, undefined, Css$Css.url("test.jpg"))).toBe("url(\"test.jpg\") repeat-y");
+                expect(CssPropertyValue$Css.background2(Css$Css.linearGradient2(Css$Css.deg(217), Css$Css.rgba(255, 0, 0, Css$Css.num(0.8)), Css$Css.linearColorStop2(Css$Css.rgba(255, 0, 0, Css$Css.num(0)), Css$Css.pct(70.71))), Css$Css.linearGradient2(Css$Css.deg(127), Css$Css.rgba(0, 255, 0, Css$Css.num(0.8)), Css$Css.linearColorStop2(Css$Css.rgba(0, 255, 0, Css$Css.num(0)), Css$Css.pct(70.71))))).toBe("linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%)");
                 
               }));
         

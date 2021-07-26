@@ -42,12 +42,12 @@ describe("border", (.) => {
   test("background", (.) => {
     expect(background(#red))->toBe(backgroundString("red"));
     expect(background(Css.rgb(#255, #255, #255)))->toBe(backgroundString("rgb(255, 255, 255)"));
-    expect(background2(~image=Css.url("test.jpg"), ~repeat=#"repeat-y", ()))
+    expect(background(~repeat=#"repeat-y", Css.url("test.jpg")))
       ->toBe(backgroundString(`url("test.jpg") repeat-y`))
-    expect(background2(~color=#red, ~box=#"border-box", ()))
-      ->toBe(backgroundString("red border-box"));
-    expect(background2(~repeat=#"no-repeat", ~position=#center, ~size=Css.pct(80.), ~image=Css.url("../img/image.png"), ()))
-      ->toBe(backgroundString(`url("../img/image.png") center / 80% no-repeat`));
-    expect(background(#inherit))->toBe(backgroundString("inherit"));
+    expect(background2(
+      Css.linearGradient2(~angle=Css.deg(217.), Css.rgba(#255, #0, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#255, #0, #0, Css.num(0.)), Css.pct(70.71))),
+      Css.linearGradient2(~angle=Css.deg(127.), Css.rgba(#0, #255, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#0, #255, #0, Css.num(0.)), Css.pct(70.71))),
+    ))
+    ->toBe(backgroundString("linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%)"));
   });
 });

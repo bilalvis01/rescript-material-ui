@@ -398,7 +398,7 @@ function color(v) {
   return hsla(match$3[0], match$3[1], match$3[2], match$3[3]);
 }
 
-function gradientLineDirection(v) {
+function gradientLineAngle(v) {
   if (typeof v === "object") {
     return angle(v);
   } else {
@@ -431,19 +431,19 @@ function linearGradient(v) {
   if (variant === "linearGradient3") {
     var match = v.VAL;
     var d = match[0];
-    arg = d !== undefined ? gradientLineDirection(d) + ", " + linearColorStop(match[1]) + ", " + linearColorStop(match[2]) + ", " + linearColorStop(match[3]) : linearColorStop(match[1]) + ", " + linearColorStop(match[2]) + ", " + linearColorStop(match[3]);
+    arg = d !== undefined ? gradientLineAngle(d) + ", " + linearColorStop(match[1]) + ", " + linearColorStop(match[2]) + ", " + linearColorStop(match[3]) : linearColorStop(match[1]) + ", " + linearColorStop(match[2]) + ", " + linearColorStop(match[3]);
   } else if (variant === "linearGradient4") {
     var match$1 = v.VAL;
     var d$1 = match$1[0];
-    arg = d$1 !== undefined ? gradientLineDirection(d$1) + ", " + linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) : linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]);
+    arg = d$1 !== undefined ? gradientLineAngle(d$1) + ", " + linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) : linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]);
   } else if (variant === "linearGradient") {
     var match$2 = v.VAL;
     var d$2 = match$2[0];
-    arg = d$2 !== undefined ? gradientLineDirection(d$2) + ", " + linearColorStop(match$2[1]) : linearColorStop(match$2[1]);
+    arg = d$2 !== undefined ? gradientLineAngle(d$2) + ", " + linearColorStop(match$2[1]) : linearColorStop(match$2[1]);
   } else {
     var match$3 = v.VAL;
     var d$3 = match$3[0];
-    arg = d$3 !== undefined ? gradientLineDirection(d$3) + ", " + linearColorStop(match$3[1]) + ", " + linearColorStop(match$3[2]) : linearColorStop(match$3[1]) + ", " + linearColorStop(match$3[2]);
+    arg = d$3 !== undefined ? gradientLineAngle(d$3) + ", " + linearColorStop(match$3[1]) + ", " + linearColorStop(match$3[2]) : linearColorStop(match$3[1]) + ", " + linearColorStop(match$3[2]);
   }
   return "linear-gradient(" + arg + ")";
 }
@@ -589,6 +589,83 @@ function bgPosition(v) {
   return v1$4 + " " + length_percentage(match$2[1]) + " " + v3$2 + " " + length_percentage(match$2[3]);
 }
 
+function background(col, img, position, size, repeat, att, origin, clip, imageOrColor) {
+  var position$1 = position !== undefined ? (
+      size !== undefined ? bgPosition(position) + " / " + bgSize(size) : bgPosition(position)
+    ) : undefined;
+  var bg = position$1 !== undefined ? (
+      repeat !== undefined ? position$1 + " " + repeat : position$1
+    ) : (
+      repeat !== undefined ? repeat : undefined
+    );
+  var bg$1 = bg !== undefined ? (
+      att !== undefined ? bg + " " + att : bg
+    ) : (
+      att !== undefined ? att : undefined
+    );
+  var box = origin !== undefined ? (
+      clip !== undefined ? origin + " " + clip : origin
+    ) : undefined;
+  var bg$2 = bg$1 !== undefined ? (
+      box !== undefined ? bg$1 + " " + box : bg$1
+    ) : (
+      box !== undefined ? box : undefined
+    );
+  var exit = 0;
+  if (typeof imageOrColor === "object") {
+    var variant = imageOrColor.NAME;
+    exit = variant === "image" || variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "image2" ? 1 : 2;
+  } else {
+    exit = imageOrColor === "none" ? 1 : 2;
+  }
+  switch (exit) {
+    case 1 :
+        if (col !== undefined) {
+          if (bg$2 !== undefined) {
+            return color(col) + " " + bgImage(imageOrColor) + " " + bg$2;
+          } else {
+            return color(col) + " " + bgImage(imageOrColor);
+          }
+        } else if (bg$2 !== undefined) {
+          return bgImage(imageOrColor) + " " + bg$2;
+        } else {
+          return bgImage(imageOrColor);
+        }
+    case 2 :
+        if (img !== undefined) {
+          if (bg$2 !== undefined) {
+            return color(imageOrColor) + " " + bgImage(img) + " " + bg$2;
+          } else {
+            return color(imageOrColor) + " " + bgImage(img);
+          }
+        } else if (bg$2 !== undefined) {
+          return color(imageOrColor) + " " + bg$2;
+        } else {
+          return color(imageOrColor);
+        }
+    
+  }
+}
+
+function bgLayer(v) {
+  if (typeof v !== "object") {
+    if (v === "none") {
+      return bgImage(v);
+    } else {
+      return color(v);
+    }
+  }
+  var variant = v.NAME;
+  if (variant === "image" || variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "image2") {
+    return bgImage(v);
+  }
+  if (variant !== "bgLayer") {
+    return color(v);
+  }
+  var match = v.VAL;
+  return background(match[0], match[1], match[2], match[3], match[4], match[5], match[6], match[7], match[8]);
+}
+
 exports.concat = concat;
 exports.join = join;
 exports.stick = stick;
@@ -651,7 +728,7 @@ exports.rgb = rgb;
 exports.rgba = rgba;
 exports.rgbX = rgbX;
 exports.color = color;
-exports.gradientLineDirection = gradientLineDirection;
+exports.gradientLineAngle = gradientLineAngle;
 exports.linearColorStop = linearColorStop;
 exports.linearGradient = linearGradient;
 exports.gradient = gradient;
@@ -661,4 +738,6 @@ exports.image = image;
 exports.bgImage = bgImage;
 exports.bgSize = bgSize;
 exports.bgPosition = bgPosition;
+exports.background = background;
+exports.bgLayer = bgLayer;
 /* No side effect */

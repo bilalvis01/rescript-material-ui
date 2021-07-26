@@ -68,14 +68,14 @@ Image data types
 let linearColorStop2: (color, length_percentage) => [> #linearColorStop2(color, length_percentage) ];
 let linearColorStop3: (color, length_percentage, length_percentage) =>
   [> #linearColorStop3(color, length_percentage, length_percentage) ];
-let linearGradient: (~dir: gradientLineDirection=?, linearColorStop) =>
-  [> #linearGradient(option<gradientLineDirection>, linearColorStop) ];
-let linearGradient2: (~dir: gradientLineDirection=?, linearColorStop, linearColorStop) =>
-  [> #linearGradient2(option<gradientLineDirection>, linearColorStop, linearColorStop) ];
-let linearGradient3: (~dir: gradientLineDirection=?, linearColorStop, linearColorStop, linearColorStop) =>
-  [> #linearGradient3(option<gradientLineDirection>, linearColorStop, linearColorStop, linearColorStop) ];
-let linearGradient4: (~dir: gradientLineDirection=?, linearColorStop, linearColorStop, linearColorStop, linearColorStop) =>
-  [> #linearGradient4(option<gradientLineDirection>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
+let linearGradient: (~angle: gradientLineAngle=?, linearColorStop) =>
+  [> #linearGradient(option<gradientLineAngle>, linearColorStop) ];
+let linearGradient2: (~angle: gradientLineAngle=?, linearColorStop, linearColorStop) =>
+  [> #linearGradient2(option<gradientLineAngle>, linearColorStop, linearColorStop) ];
+let linearGradient3: (~angle: gradientLineAngle=?, linearColorStop, linearColorStop, linearColorStop) =>
+  [> #linearGradient3(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop) ];
+let linearGradient4: (~angle: gradientLineAngle=?, linearColorStop, linearColorStop, linearColorStop, linearColorStop) =>
+  [> #linearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
 let url: string => [> #url(string) ];
 let src: string => [> #src(string) ];
 let image: (~dir: imageTags=?, [ | imageSrc | color ]) => [> #image(option<imageTags>, [ | imageSrc | color ]) ];
@@ -88,6 +88,35 @@ let bgPosition3: ([ | #center | #left | #right ], [ | #top | #bottom | length_pe
   [> | #bgPosition3([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ]) ];
 let bgPosition4: ([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage) =>
   [> | #bgPosition4([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage) ];
+
+
+/*
+Background layer
+*/
+let bgLayer: (
+  ~color: color=?,
+  ~image: bgImage=?,
+  ~position: bgPosition=?,
+  ~size: bgSize=?,
+  ~repeat: repeatStyle=?,
+  ~attachment: attachment=?,
+  ~origin: box=?,
+  ~clip: box=?,
+  [ | bgImage | color ]
+) => 
+  [> 
+    | #bgLayer(
+        option<color>, 
+        option<bgImage>, 
+        option<bgPosition>, 
+        option<bgSize>,
+        option<repeatStyle>,
+        option<attachment>,
+        option<box>,
+        option<box>,
+        [ | bgImage | color  ]
+      )
+  ];
 
 /*
 Properties
@@ -218,16 +247,18 @@ let borderLeftWidth3: (~top: lineWidth, ~lr: lineWidth, ~bottom: lineWidth) => p
 let borderLeftWidth4: (~top: lineWidth, ~right: lineWidth, ~bottom: lineWidth, ~left: lineWidth) => property;
 let borderLeftWidthString: string => property;
 
-let background: [ | global | bgImage | color] => property;
-let background2: (
+let background: (
   ~color: color=?,
   ~image: bgImage=?,
   ~position: bgPosition=?,
   ~size: bgSize=?,
   ~repeat: repeatStyle=?,
   ~attachment: attachment=?,
-  ~box: box=?,
-  ~box2: box=?,
-  unit
+  ~origin: box=?,
+  ~clip: box=?,
+  [ | global | bgImage | color]
 ) => property;
 let backgroundString: string => property;
+let background2: (bgLayer, bgLayer) => property;
+let background3: (bgLayer, bgLayer, bgLayer) => property;
+let background4: (bgLayer, bgLayer, bgLayer, bgLayer) => property;
