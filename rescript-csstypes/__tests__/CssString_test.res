@@ -132,16 +132,16 @@ describe("Color data types", (.) => {
       ->toBe("hsla(1, 10%, 10%, 1)");
     expect(rgb(Css.num(1.), Css.num(1.), Css.pct(10.)))
       ->toBe("rgb(1, 1, 10%)");
-    expect(rgba(Css.num(1.), Css.num(1.), Css.pct(10.), Css.num(10.)))
-      ->toBe("rgba(1, 1, 10%, 10)");
+    expect(rgba(Css.num(1.), Css.num(1.), Css.pct(10.), Css.num(1.)))
+      ->toBe("rgba(1, 1, 10%, 1)");
     expect(rgb(#255, #255, #255))
       ->toBe("rgb(255, 255, 255)");
-    expect(rgba(#0, #0, #0, Css.num(10.)))
-      ->toBe("rgba(0, 0, 0, 10)");
+    expect(rgba(Css.num(0.), Css.num(0.), Css.num(0.), Css.num(1.)))
+      ->toBe("rgba(0, 0, 0, 1)");
     expect(rgbX("000000"))->toBe("#000000");
     expect(color(Css.rgbX("000000")))->toBe("#000000");
-    expect(color(Css.rgb(Css.num(1.), Css.num(1.8), Css.pct(10.))))
-      ->toBe("rgb(1, 1.8, 10%)");
+    expect(color(Css.rgb(10., 10., 10.)))
+      ->toBe("rgb(10, 10, 10)");
   });
 });
 
@@ -161,51 +161,51 @@ describe("Image data types", (.) => {
 
   test("linearColorStop", (.) => {
     expect(linearColorStop(#red))->toBe("red");
-    expect(linearColorStop(Css.rgb(#255, #255, #255)))->toBe("rgb(255, 255, 255)");
+    expect(linearColorStop(Css.rgb(255., 255., 255.)))->toBe("rgb(255, 255, 255)");
     expect(linearColorStop(Css.pct(10.)))->toBe("10%");
     expect(linearColorStop(Css.px(25.)))->toBe("25px");
     expect(linearColorStop(Css.linearColorStop2(#red, Css.pct(10.))))->toBe("red 10%");
-    expect(linearColorStop(Css.linearColorStop3(Css.rgb(#255, #255, #255), Css.pct(10.), Css.pct(50.))))
+    expect(linearColorStop(Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(10.), Css.pct(50.))))
       ->toBe("rgb(255, 255, 255) 10% 50%");
   });
 
   test("linearGradient", (.) => {
-    expect(linearGradient(Css.linearGradient(Css.rgb(#0, #0, #0))))->toBe("linear-gradient(rgb(0, 0, 0))");
-    expect(linearGradient(Css.linearGradient(~angle=Css.turn(0.25), Css.rgb(#0, #0, #0))))
+    expect(linearGradient(Css.linearGradient(Css.rgb(0., 0., 0.))))->toBe("linear-gradient(rgb(0, 0, 0))");
+    expect(linearGradient(Css.linearGradient(~angle=Css.turn(0.25), Css.rgb(0., 0., 0.))))
       ->toBe("linear-gradient(0.25turn, rgb(0, 0, 0))");
-    expect(linearGradient(Css.linearGradient(~angle=Css.turn(0.25), Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)))))
+    expect(linearGradient(Css.linearGradient(~angle=Css.turn(0.25), Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)))))
       ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%)");
     expect(linearGradient(Css.linearGradient2(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(40.)),
+      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%)");
     expect(linearGradient(Css.linearGradient3(
-      Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(40.)),
-      Css.linearColorStop3(Css.rgb(#255, #255, #255), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
+      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("linear-gradient(rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
     expect(linearGradient(Css.linearGradient3(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(40.)),
-      Css.linearColorStop3(Css.rgb(#255, #255, #255), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
+      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
     expect(linearGradient(Css.linearGradient3(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
       Css.pct(30.),
-      Css.linearColorStop3(Css.rgb(#255, #255, #255), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
     expect(linearGradient(Css.linearGradient4(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(40.)),
-      Css.linearColorStop3(Css.rgb(#255, #255, #255), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
+      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
       Css.linearColorStop3(#red, Css.pct(70.), Css.pct(100.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
@@ -214,16 +214,16 @@ describe("Image data types", (.) => {
   test("gradient", (.) => {
     expect(gradient(Css.linearGradient3(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
       Css.pct(30.),
-      Css.linearColorStop3(Css.rgb(#255, #255, #255), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
     expect(gradient(Css.linearGradient4(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(#255, #255, #255), Css.pct(40.)),
-      Css.linearColorStop3(Css.rgb(#255, #255, #255), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
+      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
       Css.linearColorStop3(#red, Css.pct(70.), Css.pct(100.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
@@ -241,7 +241,7 @@ describe("Image data types", (.) => {
   test("image", (.) => {
     expect(image(Css.image(Css.src("myimage.webp#xywh=0,20,40,60"))))->toBe(`image("myimage.webp#xywh=0,20,40,60")`);
     expect(image(Css.image(Css.url("myimage.png"))))->toBe(`image(url("myimage.png"))`);
-    expect(image(Css.image(Css.rgba(#0, #0, #0, Css.num(0.25)))))->toBe("image(rgba(0, 0, 0, 0.25))");
+    expect(image(Css.image(Css.rgba(0., 0., 0., 0.25))))->toBe("image(rgba(0, 0, 0, 0.25))");
     expect(image(Css.image(~dir=#ltr, Css.src("myimage.png"))))->toBe(`image(ltr "myimage.png")`);
     expect(image(Css.image2(~dir=#ltr, Css.src("myimage.png"), #red)))->toBe(`image(ltr "myimage.png", red)`);
   });
@@ -267,8 +267,8 @@ describe("Image data types", (.) => {
 describe("background", (.) => {
   test("background", (.) => {
     expect(background(#red))->toBe("red");
-    expect(background(Css.rgb(#255, #255, #255)))->toBe("rgb(255, 255, 255)");
-    expect(background(~color=#red, Css.rgb(#255, #255, #255)))->toBe("rgb(255, 255, 255)");
+    expect(background(Css.rgb(255., 255., 255.)))->toBe("rgb(255, 255, 255)");
+    expect(background(~color=#red, Css.rgb(255., 255., 255.)))->toBe("rgb(255, 255, 255)");
     expect(background(Css.url("myimage.png")))->toBe(`url("myimage.png")`);
     expect(background(~image=Css.url("test.jpg"), Css.url("myimage.png")))->toBe(`url("myimage.png")`);
     expect(background(~repeat=#"repeat-y", Css.url("test.jpg")))

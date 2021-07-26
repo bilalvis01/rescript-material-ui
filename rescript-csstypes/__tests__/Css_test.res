@@ -18,35 +18,35 @@ describe("border", (.) => {
   test("border", (.) => {
     expect(border(#dotted))->toEqual(propertyString("border", "dotted"));
     expect(border2(~style=#solid, px(1.)))->toEqual(propertyString("border", "solid 1px"));
-    expect(border3(~style=#dotted, ~width=px(1.), ~color=rgb(#255, #255, #255)))
+    expect(border3(~style=#dotted, ~width=px(1.), ~color=rgb(255., 255., 255.)))
       ->toEqual(propertyString("border", "1px dotted rgb(255, 255, 255)"));
   });
 
   test("borderTop", (.) => {
     expect(borderTop(#dotted))->toEqual(propertyString("borderTop", "dotted"));
     expect(borderTop2(~style=#solid, px(1.)))->toEqual(propertyString("borderTop", "solid 1px"));
-    expect(borderTop3(~style=#dotted, ~width=px(1.), ~color=rgb(#255, #255, #255)))
+    expect(borderTop3(~style=#dotted, ~width=px(1.), ~color=rgb(255., 255., 255.)))
       ->toEqual(propertyString("borderTop", "1px dotted rgb(255, 255, 255)"));
   });
 
   test("borderRight", (.) => {
     expect(borderRight(#dotted))->toEqual(propertyString("borderRight", "dotted"));
     expect(borderRight2(~style=#solid, px(1.)))->toEqual(propertyString("borderRight", "solid 1px"));
-    expect(borderRight3(~style=#dotted, ~width=px(1.), ~color=rgb(#255, #255, #255)))
+    expect(borderRight3(~style=#dotted, ~width=px(1.), ~color=rgb(255., 255., 255.)))
       ->toEqual(propertyString("borderRight", "1px dotted rgb(255, 255, 255)"));
   });
 
   test("borderBottom", (.) => {
     expect(borderBottom(#dotted))->toEqual(propertyString("borderBottom", "dotted"));
     expect(borderBottom2(~style=#solid, px(1.)))->toEqual(propertyString("borderBottom", "solid 1px"));
-    expect(borderBottom3(~style=#dotted, ~width=px(1.), ~color=rgb(#255, #255, #255)))
+    expect(borderBottom3(~style=#dotted, ~width=px(1.), ~color=rgb(255., 255., 255.)))
       ->toEqual(propertyString("borderBottom", "1px dotted rgb(255, 255, 255)"));
   });
 
   test("borderLeft", (.) => {
     expect(borderLeft(#dotted))->toEqual(propertyString("borderLeft", "dotted"));
     expect(borderLeft2(~style=#solid, px(1.)))->toEqual(propertyString("borderLeft", "solid 1px"));
-    expect(borderLeft3(~style=#dotted, ~width=px(1.), ~color=rgb(#255, #255, #255)))
+    expect(borderLeft3(~style=#dotted, ~width=px(1.), ~color=rgb(255., 255., 255.)))
       ->toEqual(propertyString("borderLeft", "1px dotted rgb(255, 255, 255)"));
   });
 
@@ -141,7 +141,7 @@ describe("border", (.) => {
   });
 
   test("borderColor", (.) => {
-    expect(borderColor(hsl(#360, pct(50.), pct(50.))))->toEqual(propertyString("borderColor", "hsl(360, 50%, 50%)"));
+    expect(borderColor(hsl(360., pct(50.), pct(50.))))->toEqual(propertyString("borderColor", "hsl(360, 50%, 50%)"));
     expect(borderColor2(~tb=#red, ~lr=#blue))->toEqual(propertyString("borderColor", "red blue"));
     expect(borderColor3(~top=rgbX("000000"), ~lr=rgbX("000000"), ~bottom=rgbX("111111")))
       ->toEqual(propertyString("borderColor", "#000000 #000000 #111111"));
@@ -150,7 +150,7 @@ describe("border", (.) => {
   });
 
   test("borderTopColor", (.) => {
-    expect(borderTopColor(hsl(#360, pct(50.), pct(50.))))->toEqual(propertyString("borderTopColor", "hsl(360, 50%, 50%)"));
+    expect(borderTopColor(hsl(360., pct(50.), pct(50.))))->toEqual(propertyString("borderTopColor", "hsl(360, 50%, 50%)"));
     expect(borderTopColor2(~tb=#red, ~lr=#blue))->toEqual(propertyString("borderTopColor", "red blue"));
     expect(borderTopColor3(~top=rgbX("000000"), ~lr=rgbX("000000"), ~bottom=rgbX("111111")))
       ->toEqual(propertyString("borderTopColor", "#000000 #000000 #111111"));
@@ -159,7 +159,7 @@ describe("border", (.) => {
   });
 
   test("borderRightColor", (.) => {
-    expect(borderRightColor(hsl(#360, pct(50.), pct(50.))))->toEqual(propertyString("borderRightColor", "hsl(360, 50%, 50%)"));
+    expect(borderRightColor(hsl(360., pct(50.), pct(50.))))->toEqual(propertyString("borderRightColor", "hsl(360, 50%, 50%)"));
     expect(borderRightColor2(~tb=#red, ~lr=#blue))->toEqual(propertyString("borderRightColor", "red blue"));
     expect(borderRightColor3(~top=rgbX("000000"), ~lr=rgbX("000000"), ~bottom=rgbX("111111")))
       ->toEqual(propertyString("borderRightColor", "#000000 #000000 #111111"));
@@ -168,7 +168,7 @@ describe("border", (.) => {
   });
 
   test("borderBottomColor", (.) => {
-    expect(borderBottomColor(hsl(#360, pct(50.), pct(50.))))->toEqual(propertyString("borderBottomColor", "hsl(360, 50%, 50%)"));
+    expect(borderBottomColor(hsl(360., pct(50.), pct(50.))))->toEqual(propertyString("borderBottomColor", "hsl(360, 50%, 50%)"));
     expect(borderBottomColor2(~tb=#red, ~lr=#blue))->toEqual(propertyString("borderBottomColor", "red blue"));
     expect(borderBottomColor3(~top=rgbX("000000"), ~lr=rgbX("000000"), ~bottom=rgbX("111111")))
       ->toEqual(propertyString("borderBottomColor", "#000000 #000000 #111111"));
@@ -177,7 +177,7 @@ describe("border", (.) => {
   });
 
   test("borderLeftColor", (.) => {
-    expect(borderLeftColor(hsl(#360, pct(50.), pct(50.))))->toEqual(propertyString("borderLeftColor", "hsl(360, 50%, 50%)"));
+    expect(borderLeftColor(hsl(360., pct(50.), pct(50.))))->toEqual(propertyString("borderLeftColor", "hsl(360, 50%, 50%)"));
     expect(borderLeftColor2(~tb=#red, ~lr=#blue))->toEqual(propertyString("borderLeftColor", "red blue"));
     expect(borderLeftColor3(~top=rgbX("000000"), ~lr=rgbX("000000"), ~bottom=rgbX("111111")))
       ->toEqual(propertyString("borderLeftColor", "#000000 #000000 #111111"));
@@ -187,32 +187,32 @@ describe("border", (.) => {
 
   test("background", (.) => {
     expect(background(#red))->toEqual(propertyString("background", "red"));
-    expect(background(Css.rgb(#255, #255, #255)))->toEqual(propertyString("background", "rgb(255, 255, 255)"));
-    expect(background(~repeat=#"repeat-y", Css.url("test.jpg")))
+    expect(background(rgb(255., 255., 255.)))->toEqual(propertyString("background", "rgb(255, 255, 255)"));
+    expect(background(~repeat=#"repeat-y", url("test.jpg")))
       ->toEqual(propertyString("background", `url("test.jpg") repeat-y`));
     expect(background2(
-      Css.linearGradient2(~angle=Css.deg(217.), Css.rgba(#255, #0, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#255, #0, #0, Css.num(0.)), Css.pct(70.71))),
-      Css.linearGradient2(~angle=Css.deg(127.), Css.rgba(#0, #255, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#0, #255, #0, Css.num(0.)), Css.pct(70.71))),
+      linearGradient2(~angle=deg(217.), rgba(255., 0., 0., 0.8), linearColorStop2(rgba(255., 0., 0., 0.), pct(70.71))),
+      linearGradient2(~angle=deg(127.), rgba(0., 255., 0., 0.8), linearColorStop2(rgba(0., 255., 0., 0.), pct(70.71))),
     ))
     ->toEqual(propertyString("background", "linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%)"));
     expect(background3(
-      Css.linearGradient2(~angle=Css.deg(217.), Css.rgba(#255, #0, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#255, #0, #0, Css.num(0.)), Css.pct(70.71))),
-      Css.linearGradient2(~angle=Css.deg(127.), Css.rgba(#0, #255, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#0, #255, #0, Css.num(0.)), Css.pct(70.71))),
-      Css.linearGradient2(~angle=Css.deg(217.), Css.rgba(#255, #0, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#255, #0, #0, Css.num(0.)), Css.pct(70.71))),
+      linearGradient2(~angle=deg(217.), rgba(255., 0., 0., 0.8), linearColorStop2(rgba(255., 0., 0., 0.), pct(70.71))),
+      linearGradient2(~angle=deg(127.), rgba(0., 255., 0., 0.8), linearColorStop2(rgba(0., 255., 0., 0.), pct(70.71))),
+      linearGradient2(~angle=deg(217.), rgba(255., 0., 0., 0.8), linearColorStop2(rgba(255., 0., 0., 0.), pct(70.71))),
     ))
     ->toEqual(propertyString("background", "linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%)"));
     expect(background4(
-      Css.linearGradient2(~angle=Css.deg(217.), Css.rgba(#255, #0, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#255, #0, #0, Css.num(0.)), Css.pct(70.71))),
-      Css.linearGradient2(~angle=Css.deg(127.), Css.rgba(#0, #255, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#0, #255, #0, Css.num(0.)), Css.pct(70.71))),
-      Css.linearGradient2(~angle=Css.deg(217.), Css.rgba(#255, #0, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#255, #0, #0, Css.num(0.)), Css.pct(70.71))),
-      Css.linearGradient2(~angle=Css.deg(127.), Css.rgba(#0, #255, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#0, #255, #0, Css.num(0.)), Css.pct(70.71))),
+      linearGradient2(~angle=deg(217.), rgba(255., 0., 0., 0.8), linearColorStop2(rgba(255., 0., 0., 0.), pct(70.71))),
+      linearGradient2(~angle=deg(127.), rgba(0., 255., 0., 0.8), linearColorStop2(rgba(0., 255., 0., 0.), pct(70.71))),
+      linearGradient2(~angle=deg(217.), rgba(255., 0., 0., 0.8), linearColorStop2(rgba(255., 0., 0., 0.), pct(70.71))),
+      linearGradient2(~angle=deg(127.), rgba(0., 255., 0., 0.8), linearColorStop2(rgba(0., 255., 0., 0.), pct(70.71))),
     ))
     ->toEqual(propertyString("background","linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%)"));
     expect(background4(
-      Css.bgLayer(~repeat=#repeat, Css.url("myimage.png")),
-      Css.bgLayer(~repeat=#repeat, Css.url("myimage.png")),
-      Css.bgLayer(~repeat=#repeat, Css.url("myimage.png")),
-      Css.bgLayer(~repeat=#repeat, Css.url("myimage.png")),
+      bgLayer(~repeat=#repeat, url("myimage.png")),
+      bgLayer(~repeat=#repeat, url("myimage.png")),
+      bgLayer(~repeat=#repeat, url("myimage.png")),
+      bgLayer(~repeat=#repeat, url("myimage.png")),
     ))
     ->toEqual(propertyString("background", `url("myimage.png") repeat, url("myimage.png") repeat, url("myimage.png") repeat, url("myimage.png") repeat`));
   });

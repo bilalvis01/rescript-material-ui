@@ -124,12 +124,12 @@ describe("Color data types", (function () {
                 expect(CssString$Css.hsl(1, Css$Css.pct(10), Css$Css.pct(10))).toBe("hsl(1, 10%, 10%)");
                 expect(CssString$Css.hsla(1, Css$Css.pct(10), Css$Css.pct(10), Css$Css.num(1))).toBe("hsla(1, 10%, 10%, 1)");
                 expect(CssString$Css.rgb(Css$Css.num(1), Css$Css.num(1), Css$Css.pct(10))).toBe("rgb(1, 1, 10%)");
-                expect(CssString$Css.rgba(Css$Css.num(1), Css$Css.num(1), Css$Css.pct(10), Css$Css.num(10))).toBe("rgba(1, 1, 10%, 10)");
+                expect(CssString$Css.rgba(Css$Css.num(1), Css$Css.num(1), Css$Css.pct(10), Css$Css.num(1))).toBe("rgba(1, 1, 10%, 1)");
                 expect(CssString$Css.rgb(255, 255, 255)).toBe("rgb(255, 255, 255)");
-                expect(CssString$Css.rgba(0, 0, 0, Css$Css.num(10))).toBe("rgba(0, 0, 0, 10)");
+                expect(CssString$Css.rgba(Css$Css.num(0), Css$Css.num(0), Css$Css.num(0), Css$Css.num(1))).toBe("rgba(0, 0, 0, 1)");
                 expect(CssString$Css.rgbX("000000")).toBe("#000000");
                 expect(CssString$Css.color(Css$Css.rgbX("000000"))).toBe("#000000");
-                expect(CssString$Css.color(Css$Css.rgb(Css$Css.num(1), Css$Css.num(1.8), Css$Css.pct(10)))).toBe("rgb(1, 1.8, 10%)");
+                expect(CssString$Css.color(Css$Css.rgb(10, 10, 10))).toBe("rgb(10, 10, 10)");
                 
               }));
         
@@ -188,7 +188,7 @@ describe("Image data types", (function () {
         test("image", (function () {
                 expect(CssString$Css.image(Css$Css.image(undefined, Css$Css.src("myimage.webp#xywh=0,20,40,60")))).toBe("image(\"myimage.webp#xywh=0,20,40,60\")");
                 expect(CssString$Css.image(Css$Css.image(undefined, Css$Css.url("myimage.png")))).toBe("image(url(\"myimage.png\"))");
-                expect(CssString$Css.image(Css$Css.image(undefined, Css$Css.rgba(0, 0, 0, Css$Css.num(0.25))))).toBe("image(rgba(0, 0, 0, 0.25))");
+                expect(CssString$Css.image(Css$Css.image(undefined, Css$Css.rgba(0, 0, 0, 0.25)))).toBe("image(rgba(0, 0, 0, 0.25))");
                 expect(CssString$Css.image(Css$Css.image("ltr", Css$Css.src("myimage.png")))).toBe("image(ltr \"myimage.png\")");
                 expect(CssString$Css.image(Css$Css.image2("ltr", Css$Css.src("myimage.png"), "red"))).toBe("image(ltr \"myimage.png\", red)");
                 

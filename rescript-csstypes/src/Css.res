@@ -59,10 +59,10 @@ let x = v => #x(v);
 /*
 Color data types
 */
-let hsl = (v1, v2, v3) => #hsl(v1, v2, v3);
-let hsla = (v1, v2, v3, v4) => #hsla(v1, v2, v3, v4);
-let rgb = (v1, v2, v3) => #rgb(v1, v2, v3);
-let rgba = (v1, v2, v3, v4) => #rgba(v1, v2, v3, v4);
+let hsl = (v1, v2, v3) => #hsl(num(v1), v2, v3);
+let hsla = (v1, v2, v3, v4) => #hsla(num(v1), v2, v3, num(v4));
+let rgb = (v1, v2, v3) => #rgb(num(v1), num(v2), num(v3));
+let rgba = (v1, v2, v3, v4) => #rgba(num(v1), num(v2), num(v3), num(v4));
 let rgbX = v => #rgbX(v);
 
 /*

@@ -234,7 +234,10 @@ function hsl(v1, v2, v3) {
   return {
           NAME: "hsl",
           VAL: [
-            v1,
+            {
+              NAME: "number",
+              VAL: v1
+            },
             v2,
             v3
           ]
@@ -245,10 +248,16 @@ function hsla(v1, v2, v3, v4) {
   return {
           NAME: "hsla",
           VAL: [
-            v1,
+            {
+              NAME: "number",
+              VAL: v1
+            },
             v2,
             v3,
-            v4
+            {
+              NAME: "number",
+              VAL: v4
+            }
           ]
         };
 }
@@ -257,9 +266,18 @@ function rgb(v1, v2, v3) {
   return {
           NAME: "rgb",
           VAL: [
-            v1,
-            v2,
-            v3
+            {
+              NAME: "number",
+              VAL: v1
+            },
+            {
+              NAME: "number",
+              VAL: v2
+            },
+            {
+              NAME: "number",
+              VAL: v3
+            }
           ]
         };
 }
@@ -268,10 +286,22 @@ function rgba(v1, v2, v3, v4) {
   return {
           NAME: "rgba",
           VAL: [
-            v1,
-            v2,
-            v3,
-            v4
+            {
+              NAME: "number",
+              VAL: v1
+            },
+            {
+              NAME: "number",
+              VAL: v2
+            },
+            {
+              NAME: "number",
+              VAL: v3
+            },
+            {
+              NAME: "number",
+              VAL: v4
+            }
           ]
         };
 }

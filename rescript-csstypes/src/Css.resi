@@ -54,12 +54,12 @@ let dppx: float => [> | #dppx(float) ];
 let x: float => [> | #x(float) ];
 
 /*
-Color data types
+Color functions
 */
-let hsl: (hue, percentage, percentage) => [> #hsl(hue, percentage, percentage) ];
-let hsla: (hue, percentage, percentage, alpha) => [> #hsla(hue, percentage, percentage, alpha) ];
-let rgb: (rgbParam, rgbParam, rgbParam) => [> #rgb(rgbParam, rgbParam, rgbParam) ];
-let rgba: (rgbParam, rgbParam, rgbParam, alpha) => [> #rgba(rgbParam, rgbParam, rgbParam, alpha) ];
+let hsl: (float, percentage, percentage) => [> #hsl(hue, percentage, percentage) ];
+let hsla: (float, percentage, percentage, float) => [> #hsla(hue, percentage, percentage, alpha) ];
+let rgb: (float, float, float) => [> #rgb(rgbParam, rgbParam, rgbParam) ];
+let rgba: (float, float, float, float) => [> #rgba(rgbParam, rgbParam, rgbParam, alpha) ];
 let rgbX: string => [> #rgbX(string) ];
 
 /*
