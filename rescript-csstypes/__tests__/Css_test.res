@@ -190,5 +190,30 @@ describe("border", (.) => {
     expect(background(Css.rgb(#255, #255, #255)))->toEqual(propertyString("background", "rgb(255, 255, 255)"));
     expect(background(~repeat=#"repeat-y", Css.url("test.jpg")))
       ->toEqual(propertyString("background", `url("test.jpg") repeat-y`));
+    expect(background2(
+      Css.linearGradient2(~angle=Css.deg(217.), Css.rgba(#255, #0, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#255, #0, #0, Css.num(0.)), Css.pct(70.71))),
+      Css.linearGradient2(~angle=Css.deg(127.), Css.rgba(#0, #255, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#0, #255, #0, Css.num(0.)), Css.pct(70.71))),
+    ))
+    ->toEqual(propertyString("background", "linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%)"));
+    expect(background3(
+      Css.linearGradient2(~angle=Css.deg(217.), Css.rgba(#255, #0, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#255, #0, #0, Css.num(0.)), Css.pct(70.71))),
+      Css.linearGradient2(~angle=Css.deg(127.), Css.rgba(#0, #255, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#0, #255, #0, Css.num(0.)), Css.pct(70.71))),
+      Css.linearGradient2(~angle=Css.deg(217.), Css.rgba(#255, #0, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#255, #0, #0, Css.num(0.)), Css.pct(70.71))),
+    ))
+    ->toEqual(propertyString("background", "linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%)"));
+    expect(background4(
+      Css.linearGradient2(~angle=Css.deg(217.), Css.rgba(#255, #0, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#255, #0, #0, Css.num(0.)), Css.pct(70.71))),
+      Css.linearGradient2(~angle=Css.deg(127.), Css.rgba(#0, #255, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#0, #255, #0, Css.num(0.)), Css.pct(70.71))),
+      Css.linearGradient2(~angle=Css.deg(217.), Css.rgba(#255, #0, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#255, #0, #0, Css.num(0.)), Css.pct(70.71))),
+      Css.linearGradient2(~angle=Css.deg(127.), Css.rgba(#0, #255, #0, Css.num(0.8)), Css.linearColorStop2(Css.rgba(#0, #255, #0, Css.num(0.)), Css.pct(70.71))),
+    ))
+    ->toEqual(propertyString("background","linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%)"));
+    expect(background4(
+      Css.bgLayer(~repeat=#repeat, Css.url("myimage.png")),
+      Css.bgLayer(~repeat=#repeat, Css.url("myimage.png")),
+      Css.bgLayer(~repeat=#repeat, Css.url("myimage.png")),
+      Css.bgLayer(~repeat=#repeat, Css.url("myimage.png")),
+    ))
+    ->toEqual(propertyString("background", `url("myimage.png") repeat, url("myimage.png") repeat, url("myimage.png") repeat, url("myimage.png") repeat`));
   });
 });
