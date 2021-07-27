@@ -602,7 +602,7 @@ function bgPosition(v) {
   return v1$4 + " " + length_percentage(match$2[1]) + " " + v3$2 + " " + length_percentage(match$2[3]);
 }
 
-function background(col, img, position, size, repeat, att, origin, clip, imageOrColor) {
+function background(col, position, size, repeat, att, origin, clip, imageOrColor) {
   var position$1 = position !== undefined ? (
       size !== undefined ? bgPosition(position) + " / " + bgSize(size) : bgPosition(position)
     ) : undefined;
@@ -645,13 +645,7 @@ function background(col, img, position, size, repeat, att, origin, clip, imageOr
           return bgImage(imageOrColor);
         }
     case 2 :
-        if (img !== undefined) {
-          if (bg$2 !== undefined) {
-            return color(imageOrColor) + " " + bgImage(img) + " " + bg$2;
-          } else {
-            return color(imageOrColor) + " " + bgImage(img);
-          }
-        } else if (bg$2 !== undefined) {
+        if (bg$2 !== undefined) {
           return color(imageOrColor) + " " + bg$2;
         } else {
           return color(imageOrColor);
@@ -676,7 +670,7 @@ function bgLayer(v) {
     return color(v);
   }
   var match = v.VAL;
-  return background(match[0], match[1], match[2], match[3], match[4], match[5], match[6], match[7], match[8]);
+  return background(match[0], match[1], match[2], match[3], match[4], match[5], match[6], match[7]);
 }
 
 exports.concat = concat;

@@ -1486,7 +1486,6 @@ type attachment = [
   | color
   | #bgLayer(
       option<color>, 
-      option<bgImage>, 
       option<bgPosition>, 
       option<bgSize>,
       option<repeatStyle>,

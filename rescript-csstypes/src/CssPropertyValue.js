@@ -72,7 +72,7 @@ function borderWidth4(top, right, bottom, left) {
   return CssString$Css.lineWidth(top) + " " + CssString$Css.lineWidth(right) + " " + CssString$Css.lineWidth(bottom) + " " + CssString$Css.lineWidth(left);
 }
 
-function background(color, image, position, size, repeat, attachment, origin, clip, imageOrColor) {
+function background(color, position, size, repeat, attachment, origin, clip, imageOrColor) {
   var imageOrColor$1;
   if (typeof imageOrColor === "object") {
     imageOrColor$1 = imageOrColor;
@@ -82,7 +82,7 @@ function background(color, image, position, size, repeat, attachment, origin, cl
     }
     imageOrColor$1 = imageOrColor;
   }
-  return CssString$Css.background(color, image, position, size, repeat, attachment, origin, clip, imageOrColor$1);
+  return CssString$Css.background(color, position, size, repeat, attachment, origin, clip, imageOrColor$1);
 }
 
 function background2(l1, l2) {

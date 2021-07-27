@@ -82,7 +82,6 @@ type t_background = synthetic<tag_background>;
 external backgroundString: string => t_background = "%identity";
 let background = (
   ~color=?,
-  ~image=?,
   ~position=?,
   ~size=?,
   ~repeat=?,
@@ -97,7 +96,6 @@ let background = (
   | #...color as imageOrColor =>
     CssString.background(
       ~color=?color,
-      ~image=?image,
       ~position=?position,
       ~size=?size,
       ~repeat=?repeat,

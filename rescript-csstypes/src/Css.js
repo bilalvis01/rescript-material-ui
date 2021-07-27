@@ -448,12 +448,11 @@ function bgPosition4(p1, p2, p3, p4) {
         };
 }
 
-function bgLayer(color, image, position, size, repeat, attachment, origin, clip, imageOrColor) {
+function bgLayer(color, position, size, repeat, attachment, origin, clip, imageOrColor) {
   return {
           NAME: "bgLayer",
           VAL: [
             color,
-            image,
             position,
             size,
             repeat,
@@ -1088,10 +1087,10 @@ function borderLeftWidthString(v) {
         ];
 }
 
-function background(color, image, position, size, repeat, attachment, origin, clip, imageOrColor) {
+function background(color, position, size, repeat, attachment, origin, clip, imageOrColor) {
   return [
           "background",
-          CssPropertyValue$Css.background(color, image, position, size, repeat, attachment, origin, clip, imageOrColor)
+          CssPropertyValue$Css.background(color, position, size, repeat, attachment, origin, clip, imageOrColor)
         ];
 }
 

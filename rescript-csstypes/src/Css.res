@@ -87,7 +87,6 @@ Background layer
 */
 let bgLayer = (
   ~color=?,
-  ~image=?,
   ~position=?,
   ~size=?,
   ~repeat=?,
@@ -98,7 +97,6 @@ let bgLayer = (
 ) => 
   #bgLayer(
     color,
-    image,
     position,
     size,
     repeat,
@@ -264,7 +262,6 @@ let borderLeftWidthString = v => ("borderLeftWidth", PropertyValue(CssPropertyVa
 
 let background = (
   ~color=?,
-  ~image=?,
   ~position=?,
   ~size=?,
   ~repeat=?,
@@ -277,7 +274,6 @@ let background = (
     "background", 
     PropertyValue(CssPropertyValue.background(
       ~color=?color,
-      ~image=?image,
       ~position=?position,
       ~size=?size,
       ~repeat=?repeat,

@@ -186,6 +186,8 @@ describe("border", (.) => {
   });
 
   test("background", (.) => {
+    expect(background(#initial))->toEqual(propertyString("background", "initial"));
+    expect(background(~color=#red, #initial))->toEqual(propertyString("background", "initial"));
     expect(background(#red))->toEqual(propertyString("background", "red"));
     expect(background(rgb(255., 255., 255.)))->toEqual(propertyString("background", "rgb(255, 255, 255)"));
     expect(background(~repeat=#"repeat-y", url("test.jpg")))

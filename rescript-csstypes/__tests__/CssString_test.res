@@ -271,7 +271,6 @@ describe("background", (.) => {
     expect(background(Css.rgb(255., 255., 255.)))->toBe("rgb(255, 255, 255)");
     expect(background(~color=#red, Css.rgb(255., 255., 255.)))->toBe("rgb(255, 255, 255)");
     expect(background(Css.url("myimage.png")))->toBe(`url("myimage.png")`);
-    expect(background(~image=Css.url("test.jpg"), Css.url("myimage.png")))->toBe(`url("myimage.png")`);
     expect(background(~repeat=#"repeat-y", Css.url("test.jpg")))
       ->toBe(`url("test.jpg") repeat-y`)
     expect(background(~origin=#"border-box", #red))

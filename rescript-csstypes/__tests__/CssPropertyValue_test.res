@@ -40,6 +40,8 @@ describe("border", (.) => {
   });
 
   test("background", (.) => {
+    expect(background(#initial))->toBe(backgroundString("initial"));
+    expect(background(~color=#red, #initial))->toBe(backgroundString("initial"));
     expect(background(#red))->toBe(backgroundString("red"));
     expect(background(Css.rgb(255., 255., 255.)))->toBe(backgroundString("rgb(255, 255, 255)"));
     expect(background(~repeat=#"repeat-y", Css.url("test.jpg")))

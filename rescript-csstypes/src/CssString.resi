@@ -123,7 +123,6 @@ Background
 */
 let background: (
   ~color: color=?,
-  ~image: bgImage=?,
   ~position: bgPosition=?,
   ~size: bgSize=?,
   ~repeat: repeatStyle=?,

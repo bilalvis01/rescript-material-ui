@@ -95,7 +95,6 @@ Background layer
 */
 let bgLayer: (
   ~color: color=?,
-  ~image: bgImage=?,
   ~position: bgPosition=?,
   ~size: bgSize=?,
   ~repeat: repeatStyle=?,
@@ -107,7 +106,6 @@ let bgLayer: (
   [> 
     | #bgLayer(
         option<color>, 
-        option<bgImage>, 
         option<bgPosition>, 
         option<bgSize>,
         option<repeatStyle>,
@@ -239,7 +237,6 @@ let borderLeftWidthString: string => property;
 
 let background: (
   ~color: color=?,
-  ~image: bgImage=?,
   ~position: bgPosition=?,
   ~size: bgSize=?,
   ~repeat: repeatStyle=?,

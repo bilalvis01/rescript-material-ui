@@ -416,7 +416,6 @@ Background
 */
 let background = (
   ~color as col=?,
-  ~image as img=?,
   ~position=?,
   ~size=?,
   ~repeat=?,
@@ -453,29 +452,26 @@ let background = (
   | (None, Some(b)) => Some(b)
   | (Some(bg), Some(b)) => Some(`${bg} ${b}`)
   };
-  switch (imageOrColor, col, img, bg) {
-  | (#...bgImage as i, None, _, None) => bgImage(i)
-  | (#...bgImage as i, Some(c), _, None) => `${color(c)} ${bgImage(i)}`
-  | (#...bgImage as i, None, _, Some(bg)) => `${bgImage(i)} ${bg}`
-  | (#...bgImage as i, Some(c), _, Some(bg)) => `${color(c)} ${bgImage(i)} ${bg}`
-  | (#...color as c, _, None, None) => color(c)
-  | (#...color as c, _, Some(i), None) => `${color(c)} ${bgImage(i)}`
-  | (#...color as c, _, None, Some(bg)) => `${color(c)} ${bg}`
-  | (#...color as c, _, Some(i), Some(bg)) => `${color(c)} ${bgImage(i)} ${bg}`
+  switch (imageOrColor, col, bg) {
+  | (#...bgImage as i, None, None) => bgImage(i)
+  | (#...bgImage as i, Some(c), None) => `${color(c)} ${bgImage(i)}`
+  | (#...bgImage as i, None, Some(bg)) => `${bgImage(i)} ${bg}`
+  | (#...bgImage as i, Some(c), Some(bg)) => `${color(c)} ${bgImage(i)} ${bg}`
+  | (#...color as c, _, None) => color(c)
+  | (#...color as c, _, Some(bg)) => `${color(c)} ${bg}`
   };
 };
 let bgLayer = v => {
   switch v {
   | #...color as c => color(c)
   | #...bgImage as i => bgImage(i)
-  | #bgLayer(col, img, position, size, repeat, att, origin, clip, imageOrColor) =>
+  | #bgLayer(color, position, size, repeat, attachment, origin, clip, imageOrColor) =>
     background(
-      ~color=?col, 
-      ~image=?img, 
+      ~color=?color, 
       ~position=?position, 
       ~size=?size, 
       ~repeat=?repeat,
-      ~attachment=?att,
+      ~attachment=?attachment,
       ~origin=?origin,
       ~clip=?clip,
       imageOrColor
