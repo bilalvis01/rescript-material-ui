@@ -228,6 +228,34 @@ let lineWidth = v => {
 
 external lineStyle: lineStyle => string = "%identity";
 
+// transform-origin
+let transformOrigin = v => {
+  let xToString = x =>
+    switch x {
+    | #...length_percentage as l => length_percentage(l)
+    | #left => "left"
+    | #center => "center"
+    | #right => "right"
+    };
+  let yToString = y =>
+    switch y {
+    | #...length_percentage as l => length_percentage(l)
+    | #top => "top"
+    | #center => "center"
+    | #bottom => "bottom"
+    };
+  switch v {
+  | #...length_percentage as l => length_percentage(l)
+  | #left => "left"
+  | #center => "center"
+  | #right => "right"
+  | #top => "top"
+  | #bottom => "bottom"
+  | #transformOrigin2(x, y, None) => `${xToString(x)} ${yToString(y)}`
+  | #transformOrigin2(x, y, Some(l)) => `${xToString(x)} ${yToString(y)} ${length(l)}`
+  }
+};
+
 /*
 Color
 */

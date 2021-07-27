@@ -56,6 +56,9 @@ let dpcm = v => #dpcm(v);
 let dppx = v => #dppx(v);
 let x = v => #x(v);
 
+// TransformOrigin
+let transformOrigin2 = (~length=?, x, y) => #transformOrigin2(x, y, length);
+
 /*
 Color data types
 */

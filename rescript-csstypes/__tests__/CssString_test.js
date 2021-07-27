@@ -144,6 +144,17 @@ describe("Line", (function () {
         
       }));
 
+describe("transformOrigin", (function () {
+        test("transformOrigin", (function () {
+                expect(CssString$Css.transformOrigin("left")).toBe("left");
+                expect(CssString$Css.transformOrigin(Css$Css.px(20))).toBe("20px");
+                expect(CssString$Css.transformOrigin(Css$Css.transformOrigin2(undefined, "left", "top"))).toBe("left top");
+                expect(CssString$Css.transformOrigin(Css$Css.transformOrigin2(Css$Css.px(10), "left", "top"))).toBe("left top 10px");
+                
+              }));
+        
+      }));
+
 describe("Image data types", (function () {
         test("gradientLineDirection", (function () {
                 expect(CssString$Css.gradientLineAngle("to top")).toBe("to top");

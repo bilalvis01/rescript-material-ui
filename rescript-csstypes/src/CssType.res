@@ -1359,6 +1359,16 @@ type borderRadius_global = [
   | global
 ];
 
+type transformOrigin = [
+  | length_percentage
+  | #left
+  | #center
+  | #right
+  | #top
+  | #bottom
+  | #transformOrigin2([ | length_percentage | #left | #center | #right ], [ | length_percentage | #top | #center | #bottom ], option<length>)
+];
+
 /*
 Image data types
 */
@@ -1398,6 +1408,12 @@ type repeatingLinearGradient = [
   | #repeatingLinearGradient3(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop)
   | #repeatingLinearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
 ];
+
+/*
+type radialGradient = [
+  | #radialGradient(option<>)
+];
+*/
 
 type gradient = [
   | linearGradient

@@ -85,6 +85,9 @@ let scalar: scalar => string;
 let lineWidth: lineWidth => string;
 external lineStyle: lineStyle => string = "%identity";
 
+// transform-origin
+let transformOrigin: transformOrigin => string;
+
 /*
 Color data types
 */

@@ -322,6 +322,56 @@ function lineWidth(v) {
   }
 }
 
+function transformOrigin(v) {
+  var xToString = function (x) {
+    if (typeof x === "object") {
+      return length_percentage(x);
+    } else if (x === "right") {
+      return "right";
+    } else if (x === "center") {
+      return "center";
+    } else {
+      return "left";
+    }
+  };
+  var yToString = function (y) {
+    if (typeof y === "object") {
+      return length_percentage(y);
+    } else if (y === "top") {
+      return "top";
+    } else if (y === "center") {
+      return "center";
+    } else {
+      return "bottom";
+    }
+  };
+  if (typeof v !== "object") {
+    if (v === "bottom") {
+      return "bottom";
+    } else if (v === "right") {
+      return "right";
+    } else if (v === "top") {
+      return "top";
+    } else if (v === "center") {
+      return "center";
+    } else {
+      return "left";
+    }
+  }
+  if (v.NAME !== "transformOrigin2") {
+    return length_percentage(v);
+  }
+  var match = v.VAL;
+  var l = match[2];
+  var y = match[1];
+  var x = match[0];
+  if (l !== undefined) {
+    return xToString(x) + " " + yToString(y) + " " + length(l);
+  } else {
+    return xToString(x) + " " + yToString(y);
+  }
+}
+
 function hue(v) {
   if (typeof v === "object") {
     if (v.NAME === "number") {
@@ -756,6 +806,7 @@ exports.angle_percentage = angle_percentage;
 exports.time_percentage = time_percentage;
 exports.scalar = scalar;
 exports.lineWidth = lineWidth;
+exports.transformOrigin = transformOrigin;
 exports.hue = hue;
 exports.alpha = alpha;
 exports.rgbParam = rgbParam;
