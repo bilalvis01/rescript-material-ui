@@ -4,14 +4,14 @@ open Jest;
 describe("border", (.) => {
   test("border", (.) => {
     expect(border(#solid))->toBe(borderString("solid"));
-    expect(border2(~style=#dashed, #red))
-      ->toBe(borderString("dashed red"));
-    expect(border2(~style=#solid, Css.rem(1.0)))
-      ->toBe(borderString("solid 1rem"));
-    expect(border3(~width=#thick, ~style=#double, ~color=Css.rgbX("32a1ce")))
-      ->toBe(borderString("thick double #32a1ce"));
-    expect(border3(~width=Css.mm(4.), ~style=#ridge, ~color=Css.rgba(170., 50., 220., 0.6)))
-      ->toBe(borderString("4mm ridge rgba(170, 50, 220, 0.6)"));
+    expect(border(~color=#red, #dashed))
+      ->toBe(borderString("red dashed"));
+    expect(border(~width=Css.rem(1.0), #solid))
+      ->toBe(borderString("1rem solid"));
+    expect(border(~width=#thick, ~color=Css.rgbX("32a1ce"), #double))
+      ->toBe(borderString("thick #32a1ce double"));
+    expect(border(~width=Css.mm(4.), ~color=Css.rgba(170., 50., 220., 0.6), #ridge))
+      ->toBe(borderString("4mm rgba(170, 50, 220, 0.6) ridge"));
   });
 
   test("borderStyle", (.) => {

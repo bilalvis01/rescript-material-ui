@@ -10,15 +10,10 @@ external integer: int => t_synthetic = "%identity";
 type tag_border;
 type t_border = synthetic<tag_border>;
 external borderString: string => t_border = "%identity";
-let border: [ | global | lineStyle ] => t_border;
-let border2: (
-  ~style: lineStyle, 
-  [ | lineWidth | color ]
-) => t_border;
-let border3: (
-  ~width: lineWidth,
-  ~style: lineStyle,  
-  ~color: color,
+let border: (
+  ~width: lineWidth=?,
+  ~color: color=?,
+  [ | global | lineStyle ]
 ) => t_border;
 
 type tag_borderColor;

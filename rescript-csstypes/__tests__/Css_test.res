@@ -17,37 +17,37 @@ describe("property", (.) => {
 describe("border", (.) => {
   test("border", (.) => {
     expect(border(#dotted))->toEqual(propertyString("border", "dotted"));
-    expect(border2(~style=#solid, px(1.)))->toEqual(propertyString("border", "solid 1px"));
-    expect(border3(~style=#dotted, ~width=px(1.), ~color=rgb(255., 255., 255.)))
-      ->toEqual(propertyString("border", "1px dotted rgb(255, 255, 255)"));
+    expect(border(~width=px(1.), #solid))->toEqual(propertyString("border", "1px solid"));
+    expect(border(~width=px(1.), ~color=rgb(255., 255., 255.), #dotted))
+      ->toEqual(propertyString("border", "1px rgb(255, 255, 255) dotted"));
   });
 
   test("borderTop", (.) => {
     expect(borderTop(#dotted))->toEqual(propertyString("borderTop", "dotted"));
-    expect(borderTop2(~style=#solid, px(1.)))->toEqual(propertyString("borderTop", "solid 1px"));
-    expect(borderTop3(~style=#dotted, ~width=px(1.), ~color=rgb(255., 255., 255.)))
-      ->toEqual(propertyString("borderTop", "1px dotted rgb(255, 255, 255)"));
+    expect(borderTop(~width=px(1.), #solid))->toEqual(propertyString("borderTop", "1px solid"));
+    expect(borderTop(~width=px(1.), ~color=rgb(255., 255., 255.), #dotted))
+      ->toEqual(propertyString("borderTop", "1px rgb(255, 255, 255) dotted"));
   });
 
   test("borderRight", (.) => {
     expect(borderRight(#dotted))->toEqual(propertyString("borderRight", "dotted"));
-    expect(borderRight2(~style=#solid, px(1.)))->toEqual(propertyString("borderRight", "solid 1px"));
-    expect(borderRight3(~style=#dotted, ~width=px(1.), ~color=rgb(255., 255., 255.)))
-      ->toEqual(propertyString("borderRight", "1px dotted rgb(255, 255, 255)"));
+    expect(borderRight(~width=px(1.), #solid))->toEqual(propertyString("borderRight", "1px solid"));
+    expect(borderRight(~width=px(1.), ~color=rgb(255., 255., 255.), #dotted))
+      ->toEqual(propertyString("borderRight", "1px rgb(255, 255, 255) dotted"));
   });
 
   test("borderBottom", (.) => {
     expect(borderBottom(#dotted))->toEqual(propertyString("borderBottom", "dotted"));
-    expect(borderBottom2(~style=#solid, px(1.)))->toEqual(propertyString("borderBottom", "solid 1px"));
-    expect(borderBottom3(~style=#dotted, ~width=px(1.), ~color=rgb(255., 255., 255.)))
-      ->toEqual(propertyString("borderBottom", "1px dotted rgb(255, 255, 255)"));
+    expect(borderBottom(~width=px(1.), #solid))->toEqual(propertyString("borderBottom", "1px solid"));
+    expect(borderBottom(~width=px(1.), ~color=rgb(255., 255., 255.), #dotted))
+      ->toEqual(propertyString("borderBottom", "1px rgb(255, 255, 255) dotted"));
   });
 
   test("borderLeft", (.) => {
     expect(borderLeft(#dotted))->toEqual(propertyString("borderLeft", "dotted"));
-    expect(borderLeft2(~style=#solid, px(1.)))->toEqual(propertyString("borderLeft", "solid 1px"));
-    expect(borderLeft3(~style=#dotted, ~width=px(1.), ~color=rgb(255., 255., 255.)))
-      ->toEqual(propertyString("borderLeft", "1px dotted rgb(255, 255, 255)"));
+    expect(borderLeft(~width=px(1.), #solid))->toEqual(propertyString("borderLeft", "1px solid"));
+    expect(borderLeft(~width=px(1.), ~color=rgb(255., 255., 255.), #dotted))
+      ->toEqual(propertyString("borderLeft", "1px rgb(255, 255, 255) dotted"));
   });
 
   test("borderWidth", (.) => {

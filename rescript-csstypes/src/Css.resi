@@ -132,29 +132,19 @@ let propertyString: (string, string) => property;
 let propertyNumber: (string, float) => property;
 let propertyInteger: (string, int) => property; 
 
-let border: [ | global | lineStyle ] => property;
-let border2: (~style: lineStyle, [ | lineWidth | color ]) => property;
-let border3: (~width: lineWidth, ~style: lineStyle, ~color: color) => property;
+let border: (~width: lineWidth=?, ~color: color=?, [ | global | lineStyle ]) => property;
 let borderString: string => property;
 
-let borderTop: [ | global | lineStyle ] => property;
-let borderTop2: (~style: lineStyle, [ | lineWidth | color ]) => property;
-let borderTop3: (~width: lineWidth, ~style: lineStyle, ~color: color) => property;
+let borderTop: (~width: lineWidth=?, ~color: color=?, [ | global | lineStyle ]) => property;
 let borderTopString: string => property;
 
-let borderLeft: [ | global | lineStyle ] => property;
-let borderLeft2: (~style: lineStyle, [ | lineWidth | color ]) => property;
-let borderLeft3: (~width: lineWidth, ~style: lineStyle, ~color: color) => property;
+let borderLeft: (~width: lineWidth=?, ~color: color=?, [ | global | lineStyle ]) => property;
 let borderLeftString: string => property;
 
-let borderRight: [ | global | lineStyle ] => property;
-let borderRight2: (~style: lineStyle, [ | lineWidth | color ]) => property;
-let borderRight3: (~width: lineWidth, ~style: lineStyle, ~color: color) => property;
+let borderRight: (~width: lineWidth=?, ~color: color=?, [ | global | lineStyle ]) => property;
 let borderRightString: string => property;
 
-let borderBottom: [ | global | lineStyle ] => property;
-let borderBottom2: (~style: lineStyle, [ | lineWidth | color ]) => property;
-let borderBottom3: (~width: lineWidth, ~style: lineStyle, ~color: color) => property;
+let borderBottom: (~width: lineWidth=?, ~color: color=?, [ | global | lineStyle ]) => property;
 let borderBottomString: string => property;
 
 let borderColor: [ | color | global ] => property;

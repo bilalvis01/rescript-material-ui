@@ -503,24 +503,10 @@ function propertyInteger(name, value) {
         ];
 }
 
-function border(v) {
+function border(width, color, style) {
   return [
           "border",
-          CssPropertyValue$Css.border(v)
-        ];
-}
-
-function border2(style, widthOrColor) {
-  return [
-          "border",
-          CssPropertyValue$Css.border2(style, widthOrColor)
-        ];
-}
-
-function border3(width, style, color) {
-  return [
-          "border",
-          CssPropertyValue$Css.border3(width, style, color)
+          CssPropertyValue$Css.border(width, color, style)
         ];
 }
 
@@ -531,24 +517,10 @@ function borderString(v) {
         ];
 }
 
-function borderTop(v) {
+function borderTop(width, color, style) {
   return [
           "borderTop",
-          CssPropertyValue$Css.border(v)
-        ];
-}
-
-function borderTop2(style, widthOrColor) {
-  return [
-          "borderTop",
-          CssPropertyValue$Css.border2(style, widthOrColor)
-        ];
-}
-
-function borderTop3(width, style, color) {
-  return [
-          "borderTop",
-          CssPropertyValue$Css.border3(width, style, color)
+          CssPropertyValue$Css.border(width, color, style)
         ];
 }
 
@@ -559,24 +531,10 @@ function borderTopString(v) {
         ];
 }
 
-function borderLeft(v) {
+function borderLeft(width, color, style) {
   return [
           "borderLeft",
-          CssPropertyValue$Css.border(v)
-        ];
-}
-
-function borderLeft2(style, widthOrColor) {
-  return [
-          "borderLeft",
-          CssPropertyValue$Css.border2(style, widthOrColor)
-        ];
-}
-
-function borderLeft3(width, style, color) {
-  return [
-          "borderLeft",
-          CssPropertyValue$Css.border3(width, style, color)
+          CssPropertyValue$Css.border(width, color, style)
         ];
 }
 
@@ -587,24 +545,10 @@ function borderLeftString(v) {
         ];
 }
 
-function borderRight(v) {
+function borderRight(width, color, style) {
   return [
           "borderRight",
-          CssPropertyValue$Css.border(v)
-        ];
-}
-
-function borderRight2(style, widthOrColor) {
-  return [
-          "borderRight",
-          CssPropertyValue$Css.border2(style, widthOrColor)
-        ];
-}
-
-function borderRight3(width, style, color) {
-  return [
-          "borderRight",
-          CssPropertyValue$Css.border3(width, style, color)
+          CssPropertyValue$Css.border(width, color, style)
         ];
 }
 
@@ -615,24 +559,10 @@ function borderRightString(v) {
         ];
 }
 
-function borderBottom(v) {
+function borderBottom(width, color, style) {
   return [
           "borderBottom",
-          CssPropertyValue$Css.border(v)
-        ];
-}
-
-function borderBottom2(style, widthOrColor) {
-  return [
-          "borderBottom",
-          CssPropertyValue$Css.border2(style, widthOrColor)
-        ];
-}
-
-function borderBottom3(width, style, color) {
-  return [
-          "borderBottom",
-          CssPropertyValue$Css.border3(width, style, color)
+          CssPropertyValue$Css.border(width, color, style)
         ];
 }
 
@@ -1260,24 +1190,14 @@ exports.propertyString = propertyString;
 exports.propertyNumber = propertyNumber;
 exports.propertyInteger = propertyInteger;
 exports.border = border;
-exports.border2 = border2;
-exports.border3 = border3;
 exports.borderString = borderString;
 exports.borderTop = borderTop;
-exports.borderTop2 = borderTop2;
-exports.borderTop3 = borderTop3;
 exports.borderTopString = borderTopString;
 exports.borderLeft = borderLeft;
-exports.borderLeft2 = borderLeft2;
-exports.borderLeft3 = borderLeft3;
 exports.borderLeftString = borderLeftString;
 exports.borderRight = borderRight;
-exports.borderRight2 = borderRight2;
-exports.borderRight3 = borderRight3;
 exports.borderRightString = borderRightString;
 exports.borderBottom = borderBottom;
-exports.borderBottom2 = borderBottom2;
-exports.borderBottom3 = borderBottom3;
 exports.borderBottomString = borderBottomString;
 exports.borderColor = borderColor;
 exports.borderColor2 = borderColor2;

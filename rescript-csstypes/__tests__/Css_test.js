@@ -28,33 +28,33 @@ describe("property", (function () {
 
 describe("border", (function () {
         test("border", (function () {
-                expect(Css$Css.border("dotted")).toEqual(Css$Css.propertyString("border", "dotted"));
-                expect(Css$Css.border2("solid", Css$Css.px(1))).toEqual(Css$Css.propertyString("border", "solid 1px"));
-                expect(Css$Css.border3(Css$Css.px(1), "dotted", Css$Css.rgb(255, 255, 255))).toEqual(Css$Css.propertyString("border", "1px dotted rgb(255, 255, 255)"));
+                expect(Css$Css.border(undefined, undefined, "dotted")).toEqual(Css$Css.propertyString("border", "dotted"));
+                expect(Css$Css.border(Css$Css.px(1), undefined, "solid")).toEqual(Css$Css.propertyString("border", "1px solid"));
+                expect(Css$Css.border(Css$Css.px(1), Css$Css.rgb(255, 255, 255), "dotted")).toEqual(Css$Css.propertyString("border", "1px rgb(255, 255, 255) dotted"));
                 
               }));
         test("borderTop", (function () {
-                expect(Css$Css.borderTop("dotted")).toEqual(Css$Css.propertyString("borderTop", "dotted"));
-                expect(Css$Css.borderTop2("solid", Css$Css.px(1))).toEqual(Css$Css.propertyString("borderTop", "solid 1px"));
-                expect(Css$Css.borderTop3(Css$Css.px(1), "dotted", Css$Css.rgb(255, 255, 255))).toEqual(Css$Css.propertyString("borderTop", "1px dotted rgb(255, 255, 255)"));
+                expect(Css$Css.borderTop(undefined, undefined, "dotted")).toEqual(Css$Css.propertyString("borderTop", "dotted"));
+                expect(Css$Css.borderTop(Css$Css.px(1), undefined, "solid")).toEqual(Css$Css.propertyString("borderTop", "1px solid"));
+                expect(Css$Css.borderTop(Css$Css.px(1), Css$Css.rgb(255, 255, 255), "dotted")).toEqual(Css$Css.propertyString("borderTop", "1px rgb(255, 255, 255) dotted"));
                 
               }));
         test("borderRight", (function () {
-                expect(Css$Css.borderRight("dotted")).toEqual(Css$Css.propertyString("borderRight", "dotted"));
-                expect(Css$Css.borderRight2("solid", Css$Css.px(1))).toEqual(Css$Css.propertyString("borderRight", "solid 1px"));
-                expect(Css$Css.borderRight3(Css$Css.px(1), "dotted", Css$Css.rgb(255, 255, 255))).toEqual(Css$Css.propertyString("borderRight", "1px dotted rgb(255, 255, 255)"));
+                expect(Css$Css.borderRight(undefined, undefined, "dotted")).toEqual(Css$Css.propertyString("borderRight", "dotted"));
+                expect(Css$Css.borderRight(Css$Css.px(1), undefined, "solid")).toEqual(Css$Css.propertyString("borderRight", "1px solid"));
+                expect(Css$Css.borderRight(Css$Css.px(1), Css$Css.rgb(255, 255, 255), "dotted")).toEqual(Css$Css.propertyString("borderRight", "1px rgb(255, 255, 255) dotted"));
                 
               }));
         test("borderBottom", (function () {
-                expect(Css$Css.borderBottom("dotted")).toEqual(Css$Css.propertyString("borderBottom", "dotted"));
-                expect(Css$Css.borderBottom2("solid", Css$Css.px(1))).toEqual(Css$Css.propertyString("borderBottom", "solid 1px"));
-                expect(Css$Css.borderBottom3(Css$Css.px(1), "dotted", Css$Css.rgb(255, 255, 255))).toEqual(Css$Css.propertyString("borderBottom", "1px dotted rgb(255, 255, 255)"));
+                expect(Css$Css.borderBottom(undefined, undefined, "dotted")).toEqual(Css$Css.propertyString("borderBottom", "dotted"));
+                expect(Css$Css.borderBottom(Css$Css.px(1), undefined, "solid")).toEqual(Css$Css.propertyString("borderBottom", "1px solid"));
+                expect(Css$Css.borderBottom(Css$Css.px(1), Css$Css.rgb(255, 255, 255), "dotted")).toEqual(Css$Css.propertyString("borderBottom", "1px rgb(255, 255, 255) dotted"));
                 
               }));
         test("borderLeft", (function () {
-                expect(Css$Css.borderLeft("dotted")).toEqual(Css$Css.propertyString("borderLeft", "dotted"));
-                expect(Css$Css.borderLeft2("solid", Css$Css.px(1))).toEqual(Css$Css.propertyString("borderLeft", "solid 1px"));
-                expect(Css$Css.borderLeft3(Css$Css.px(1), "dotted", Css$Css.rgb(255, 255, 255))).toEqual(Css$Css.propertyString("borderLeft", "1px dotted rgb(255, 255, 255)"));
+                expect(Css$Css.borderLeft(undefined, undefined, "dotted")).toEqual(Css$Css.propertyString("borderLeft", "dotted"));
+                expect(Css$Css.borderLeft(Css$Css.px(1), undefined, "solid")).toEqual(Css$Css.propertyString("borderLeft", "1px solid"));
+                expect(Css$Css.borderLeft(Css$Css.px(1), Css$Css.rgb(255, 255, 255), "dotted")).toEqual(Css$Css.propertyString("borderLeft", "1px rgb(255, 255, 255) dotted"));
                 
               }));
         test("borderWidth", (function () {

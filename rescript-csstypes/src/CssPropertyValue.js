@@ -3,23 +3,17 @@
 
 var CssString$Css = require("./CssString.js");
 
-function border(v) {
-  return v;
-}
-
-function border2(style, widthOrColor) {
-  var widthOrColor$1;
-  if (typeof widthOrColor === "object") {
-    var variant = widthOrColor.NAME;
-    widthOrColor$1 = variant === "rem" || variant === "vw" || variant === "vh" || variant === "px" || variant === "pt" || variant === "pc" || variant === "mm" || variant === "ex" || variant === "em" || variant === "cm" || variant === "ch" || variant === "vmin" || variant === "vmax" || variant === "inch" ? CssString$Css.lineWidth(widthOrColor) : CssString$Css.color(widthOrColor);
+function border(width, color, style) {
+  var border$1 = width !== undefined ? (
+      color !== undefined ? CssString$Css.lineWidth(width) + " " + CssString$Css.color(color) : CssString$Css.lineWidth(width)
+    ) : (
+      color !== undefined ? CssString$Css.color(color) : undefined
+    );
+  if (style === "inherit" || style === "unset" || style === "revert" || style === "initial" || border$1 === undefined) {
+    return style;
   } else {
-    widthOrColor$1 = widthOrColor === "thick" || widthOrColor === "medium" || widthOrColor === "thin" ? CssString$Css.lineWidth(widthOrColor) : CssString$Css.color(widthOrColor);
+    return border$1 + " " + style;
   }
-  return style + " " + widthOrColor$1;
-}
-
-function border3(width, style, color) {
-  return CssString$Css.lineWidth(width) + " " + style + " " + CssString$Css.color(color);
 }
 
 function borderColor(v) {
@@ -104,8 +98,6 @@ function background4(l1, l2, l3, l4) {
 }
 
 exports.border = border;
-exports.border2 = border2;
-exports.border3 = border3;
 exports.borderColor = borderColor;
 exports.borderColor2 = borderColor2;
 exports.borderColor3 = borderColor3;
