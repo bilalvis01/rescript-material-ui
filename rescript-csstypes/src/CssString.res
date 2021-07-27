@@ -296,92 +296,6 @@ let color = v => {
   };
 };
 
-/*
-Image data types
-*/
-external gradientLineStartingPoint: gradientLineStartingPoint => string = "%identity";
-let gradientLineAngle = v => {
-  switch v {
-  | #...angle as a => angle(a)
-  | #...gradientLineStartingPoint as s => gradientLineStartingPoint(s) 
-  };
-};
-let linearColorStop = v => {
-  switch v {
-  | #...color as c => color(c)
-  | #...length_percentage as l => length_percentage(l)
-  | #linearColorStop2(c, l) => `${color(c)} ${length_percentage(l)}`
-  | #linearColorStop3(c, l1, l2) => `${color(c)} ${length_percentage(l1)} ${length_percentage(l2)}`
-  };
-};
-let linearGradient = v => {
-  let arg = switch v {
-  | #linearGradient(None, c) => linearColorStop(c)
-  | #linearGradient(Some(d), c) => `${gradientLineAngle(d)}, ${linearColorStop(c)}`
-  | #linearGradient2(None, c1, c2) => `${linearColorStop(c1)}, ${linearColorStop(c2)}`
-  | #linearGradient2(Some(d), c1, c2) => `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}`
-  | #linearGradient3(None, c1, c2, c3) => `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
-  | #linearGradient3(Some(d), c1, c2, c3) => 
-    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
-  | #linearGradient4(None, c1, c2, c3, c4) => 
-    `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
-  | #linearGradient4(Some(d), c1, c2, c3, c4) => 
-    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
-  };
-  `linear-gradient(${arg})`;
-};
-let repeatingLinearGradient = v => {
-  let arg = switch v {
-  | #repeatingLinearGradient(None, c) => linearColorStop(c)
-  | #repeatingLinearGradient(Some(d), c) => `${gradientLineAngle(d)}, ${linearColorStop(c)}`
-  | #repeatingLinearGradient2(None, c1, c2) => `${linearColorStop(c1)}, ${linearColorStop(c2)}`
-  | #repeatingLinearGradient2(Some(d), c1, c2) => `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}`
-  | #repeatingLinearGradient3(None, c1, c2, c3) => `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
-  | #repeatingLinearGradient3(Some(d), c1, c2, c3) => 
-    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
-  | #repeatingLinearGradient4(None, c1, c2, c3, c4) => 
-    `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
-  | #repeatingLinearGradient4(Some(d), c1, c2, c3, c4) => 
-    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
-  };
-  `repeating-linear-gradient(${arg})`;
-};
-let gradient = v => {
-  switch v {
-  | #...linearGradient as g => linearGradient(g)
-  | #...repeatingLinearGradient as g => repeatingLinearGradient(g)
-  };
-};
-external imageTags: imageTags => string = "%identity";
-let url = v => {
-  switch v {
-  | #url(v) => `url("${v}")`
-  };
-};
-let imageSrc = v => {
-  switch v {
-  | #...url as v => url(v)
-  | #src(v) => `"${v}"`
-  };
-};
-let image = v => {
-  switch v {
-  | #...imageSrc as s => imageSrc(s)
-  | #...gradient as g => gradient(g)
-  | #image(None, _, #...color as c) => `image(${color(c)})`
-  | #image(Some(t), _, #...color as c) => `image(${imageTags(t)} ${color(c)})`
-  | #image(None, None, #...imageSrc as s) => `image(${imageSrc(s)})`
-  | #image(Some(t), None, #...imageSrc as s) => `image(${imageTags(t)} ${imageSrc(s)})`
-  | #image(None, Some(c), #...imageSrc as s) => `image(${imageSrc(s)}, ${color(c)})`
-  | #image(Some(t), Some(c), #...imageSrc as s) => `image(${imageTags(t)} ${imageSrc(s)}, ${color(c)})`
-  }
-};
-let bgImage = v => {
-  switch v {
-  | #...image as i => image(i)
-  | #none => "none"
-  }
-};
 let bgSize = v => {
   let autoOrLength = v =>
     switch v {
@@ -450,6 +364,153 @@ let bgPosition = v => {
     };
     `${v1} ${length_percentage(v2)} ${v3} ${length_percentage(v4)}`
   }
+  }
+};
+
+/*
+Image data types
+*/
+external gradientLineStartingPoint: gradientLineStartingPoint => string = "%identity";
+let gradientLineAngle = v => {
+  switch v {
+  | #...angle as a => angle(a)
+  | #...gradientLineStartingPoint as s => gradientLineStartingPoint(s) 
+  };
+};
+let linearColorStop = v => {
+  switch v {
+  | #...color as c => color(c)
+  | #...length_percentage as l => length_percentage(l)
+  | #linearColorStop2(c, l) => `${color(c)} ${length_percentage(l)}`
+  | #linearColorStop3(c, l1, l2) => `${color(c)} ${length_percentage(l1)} ${length_percentage(l2)}`
+  };
+};
+let linearGradient = v => {
+  let arg = switch v {
+  | #linearGradient(None, c) => linearColorStop(c)
+  | #linearGradient(Some(d), c) => `${gradientLineAngle(d)}, ${linearColorStop(c)}`
+  | #linearGradient2(None, c1, c2) => `${linearColorStop(c1)}, ${linearColorStop(c2)}`
+  | #linearGradient2(Some(d), c1, c2) => `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}`
+  | #linearGradient3(None, c1, c2, c3) => `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
+  | #linearGradient3(Some(d), c1, c2, c3) => 
+    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
+  | #linearGradient4(None, c1, c2, c3, c4) => 
+    `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
+  | #linearGradient4(Some(d), c1, c2, c3, c4) => 
+    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
+  };
+  `linear-gradient(${arg})`;
+};
+
+let radialGradientSize = (v: radialGradientSize) => {
+  switch v {
+  | #"closest-side" => "closest-side"
+  | #"closest-corner" => "closest-corner"
+  | #"farthest-side" => "farthest-side"
+  | #"farthest-corner" => "farthes-corner"
+  | #circle(l) => length(l)
+  | #ellipse(x, y) => `${length_percentage(x)} ${length_percentage(y)}`
+  };
+};
+
+let radialGradientPosition = (v: radialGradientPosition) =>
+  switch v {
+  | #...bgPosition as p => bgPosition(p)
+  | #...transformOrigin as t => transformOrigin(t)
+  };
+
+let radialGradient = v => {
+  let endingShape = (
+    position: option<radialGradientPosition>, 
+    endingShape: option<radialGradientEndingShape>, 
+    size: option<radialGradientSize>,
+  ) => {
+    let endingShape = switch (endingShape, size) {
+    | (None, None) => None
+    | (Some(s), None) => Some(Obj.magic(s))
+    | (None, Some(#circle(_))) => None
+    | (None, Some(sz)) => Some(radialGradientSize(sz))
+    | (Some(#ellipse as s), Some(#circle(_) as sz)) => Some("ellipse")
+    | (Some(#ellipse as s), Some(sz)) => Some(`ellipse ${radialGradientSize(sz)}`)
+    | (Some(#circle as s), Some(#ellipse(_, _) as sz)) => Some("circle")
+    | (Some(#circle as s), Some(sz)) => Some(`circle ${radialGradientSize(sz)}`)
+    };
+    switch (endingShape, position) {
+    | (None, None) => None
+    | (Some(s), None) => Some(s)
+    | (None, Some(p)) => Some(`at ${radialGradientPosition(p)}`)
+    | (Some(s), Some(p)) => Some(`${s} at ${radialGradientPosition(p)}`)
+    };
+  };
+  let radialGradient = (endingShape: option<string>, linearColorStop: string) => {
+    switch endingShape {
+    | None => linearColorStop
+    | Some(endingShape) => `${endingShape}, ${linearColorStop}` 
+    };
+  };
+  let arg = switch v {
+  | #radialGradient(p, s, sz, c) => endingShape(p, s, sz)->radialGradient(linearColorStop(c))
+  | #radialGradient2(p, s, sz, c1, c2) => 
+    endingShape(p, s, sz)->radialGradient(`${linearColorStop(c1)}, ${linearColorStop(c2)}`)
+  | #radialGradient3(p, s, sz, c1, c2, c3) => 
+    endingShape(p, s, sz)
+    ->radialGradient(`${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`)
+  | #radialGradient4(p, s, sz, c1, c2, c3, c4) => 
+    endingShape(p, s, sz)
+    ->radialGradient(`${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`)
+  };
+  `radial-gradient(arg)`;
+};
+let repeatingLinearGradient = v => {
+  let arg = switch v {
+  | #repeatingLinearGradient(None, c) => linearColorStop(c)
+  | #repeatingLinearGradient(Some(d), c) => `${gradientLineAngle(d)}, ${linearColorStop(c)}`
+  | #repeatingLinearGradient2(None, c1, c2) => `${linearColorStop(c1)}, ${linearColorStop(c2)}`
+  | #repeatingLinearGradient2(Some(d), c1, c2) => `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}`
+  | #repeatingLinearGradient3(None, c1, c2, c3) => `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
+  | #repeatingLinearGradient3(Some(d), c1, c2, c3) => 
+    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
+  | #repeatingLinearGradient4(None, c1, c2, c3, c4) => 
+    `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
+  | #repeatingLinearGradient4(Some(d), c1, c2, c3, c4) => 
+    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
+  };
+  `repeating-linear-gradient(${arg})`;
+};
+let gradient = v => {
+  switch v {
+  | #...linearGradient as g => linearGradient(g)
+  | #...repeatingLinearGradient as g => repeatingLinearGradient(g)
+  };
+};
+external imageTags: imageTags => string = "%identity";
+let url = v => {
+  switch v {
+  | #url(v) => `url("${v}")`
+  };
+};
+let imageSrc = v => {
+  switch v {
+  | #...url as v => url(v)
+  | #src(v) => `"${v}"`
+  };
+};
+let image = v => {
+  switch v {
+  | #...imageSrc as s => imageSrc(s)
+  | #...gradient as g => gradient(g)
+  | #image(None, _, #...color as c) => `image(${color(c)})`
+  | #image(Some(t), _, #...color as c) => `image(${imageTags(t)} ${color(c)})`
+  | #image(None, None, #...imageSrc as s) => `image(${imageSrc(s)})`
+  | #image(Some(t), None, #...imageSrc as s) => `image(${imageTags(t)} ${imageSrc(s)})`
+  | #image(None, Some(c), #...imageSrc as s) => `image(${imageSrc(s)}, ${color(c)})`
+  | #image(Some(t), Some(c), #...imageSrc as s) => `image(${imageTags(t)} ${imageSrc(s)}, ${color(c)})`
+  }
+};
+let bgImage = v => {
+  switch v {
+  | #...image as i => image(i)
+  | #none => "none"
   }
 };
 external repeatStyle: repeatStyle => string = "%identity";

@@ -448,6 +448,88 @@ function color(v) {
   return hsla(match$3[0], match$3[1], match$3[2], match$3[3]);
 }
 
+function bgSize(v) {
+  var autoOrLength = function (v) {
+    if (typeof v === "object") {
+      return length_percentage(v);
+    } else {
+      return "auto";
+    }
+  };
+  if (typeof v !== "object") {
+    if (v === "cover") {
+      return "cover";
+    } else if (v === "contain") {
+      return "contain";
+    } else {
+      return "auto";
+    }
+  }
+  if (v.NAME !== "bgSize2") {
+    return length_percentage(v);
+  }
+  var match = v.VAL;
+  return autoOrLength(match[0]) + " " + autoOrLength(match[1]);
+}
+
+function bgPosition(v) {
+  if (typeof v !== "object") {
+    if (v === "bottom") {
+      return "bottom";
+    } else if (v === "right") {
+      return "right";
+    } else if (v === "top") {
+      return "top";
+    } else if (v === "center") {
+      return "center";
+    } else {
+      return "left";
+    }
+  }
+  var variant = v.NAME;
+  if (variant === "bgPosition2") {
+    var match = v.VAL;
+    var v2 = match[1];
+    var v1 = match[0];
+    var v1$1 = typeof v1 === "object" ? length_percentage(v1) : (
+        v1 === "right" ? "right" : (
+            v1 === "center" ? "center" : "left"
+          )
+      );
+    var v2$1 = typeof v2 === "object" ? length_percentage(v2) : (
+        v2 === "top" ? "top" : (
+            v2 === "center" ? "center" : "bottom"
+          )
+      );
+    return v1$1 + " " + v2$1;
+  }
+  if (variant === "bgPosition3") {
+    var match$1 = v.VAL;
+    var v3 = match$1[2];
+    var v2$2 = match$1[1];
+    var v1$2 = match$1[0];
+    var v1$3 = v1$2 === "right" ? "right" : (
+        v1$2 === "center" ? "center" : "left"
+      );
+    var v2$3 = typeof v2$2 === "object" ? length_percentage(v2$2) : (
+        v2$2 === "top" ? "top" : "bottom"
+      );
+    var v3$1 = typeof v3 === "object" ? length_percentage(v3) : (
+        v3 === "top" ? "top" : (
+            v3 === "center" ? "center" : "bottom"
+          )
+      );
+    return v1$3 + " " + v2$3 + " " + v3$1;
+  }
+  if (variant !== "bgPosition4") {
+    return length_percentage(v);
+  }
+  var match$2 = v.VAL;
+  var v1$4 = match$2[0] === "right" ? "right" : "left";
+  var v3$2 = match$2[2] === "top" ? "top" : "bottom";
+  return v1$4 + " " + length_percentage(match$2[1]) + " " + v3$2 + " " + length_percentage(match$2[3]);
+}
+
 function gradientLineAngle(v) {
   if (typeof v === "object") {
     return angle(v);
@@ -496,6 +578,86 @@ function linearGradient(v) {
     arg = d$3 !== undefined ? gradientLineAngle(d$3) + ", " + linearColorStop(match$3[1]) + ", " + linearColorStop(match$3[2]) : linearColorStop(match$3[1]) + ", " + linearColorStop(match$3[2]);
   }
   return "linear-gradient(" + arg + ")";
+}
+
+function radialGradientSize(v) {
+  if (typeof v !== "object") {
+    if (v === "farthest-side") {
+      return "farthest-side";
+    } else if (v === "closest-side") {
+      return "closest-side";
+    } else if (v === "farthest-corner") {
+      return "farthes-corner";
+    } else {
+      return "closest-corner";
+    }
+  }
+  if (v.NAME !== "ellipse") {
+    return length(v.VAL);
+  }
+  var match = v.VAL;
+  return length_percentage(match[0]) + " " + length_percentage(match[1]);
+}
+
+function radialGradientPosition(v) {
+  if (typeof v === "object" && v.NAME === "transformOrigin2") {
+    return transformOrigin(v);
+  } else {
+    return bgPosition(v);
+  }
+}
+
+function radialGradient(v) {
+  var endingShape = function (position, endingShape$1, size) {
+    var endingShape$2 = endingShape$1 !== undefined ? (
+        size !== undefined ? (
+            endingShape$1 === "ellipse" ? (
+                typeof size === "object" ? (
+                    size.NAME === "circle" ? "ellipse" : "ellipse " + radialGradientSize(size)
+                  ) : "ellipse " + radialGradientSize(size)
+              ) : (
+                typeof size === "object" ? (
+                    size.NAME === "ellipse" ? "circle" : "circle " + radialGradientSize(size)
+                  ) : "circle " + radialGradientSize(size)
+              )
+          ) : endingShape$1
+      ) : (
+        size !== undefined && !(typeof size === "object" && size.NAME === "circle") ? radialGradientSize(size) : undefined
+      );
+    if (endingShape$2 !== undefined) {
+      if (position !== undefined) {
+        return endingShape$2 + " at " + radialGradientPosition(position);
+      } else {
+        return endingShape$2;
+      }
+    } else if (position !== undefined) {
+      return "at " + radialGradientPosition(position);
+    } else {
+      return ;
+    }
+  };
+  var radialGradient$1 = function (endingShape, linearColorStop) {
+    if (endingShape !== undefined) {
+      return endingShape + ", " + linearColorStop;
+    } else {
+      return linearColorStop;
+    }
+  };
+  var variant = v.NAME;
+  if (variant === "radialGradient2") {
+    var match = v.VAL;
+    radialGradient$1(endingShape(match[0], match[1], match[2]), linearColorStop(match[3]) + ", " + linearColorStop(match[4]));
+  } else if (variant === "radialGradient3") {
+    var match$1 = v.VAL;
+    radialGradient$1(endingShape(match$1[0], match$1[1], match$1[2]), linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) + ", " + linearColorStop(match$1[5]));
+  } else if (variant === "radialGradient4") {
+    var match$2 = v.VAL;
+    radialGradient$1(endingShape(match$2[0], match$2[1], match$2[2]), linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) + ", " + linearColorStop(match$2[5]) + ", " + linearColorStop(match$2[6]));
+  } else {
+    var match$3 = v.VAL;
+    radialGradient$1(endingShape(match$3[0], match$3[1], match$3[2]), linearColorStop(match$3[3]));
+  }
+  return "radial-gradient(arg)";
 }
 
 function repeatingLinearGradient(v) {
@@ -598,88 +760,6 @@ function bgImage(v) {
   } else {
     return "none";
   }
-}
-
-function bgSize(v) {
-  var autoOrLength = function (v) {
-    if (typeof v === "object") {
-      return length_percentage(v);
-    } else {
-      return "auto";
-    }
-  };
-  if (typeof v !== "object") {
-    if (v === "cover") {
-      return "cover";
-    } else if (v === "contain") {
-      return "contain";
-    } else {
-      return "auto";
-    }
-  }
-  if (v.NAME !== "bgSize2") {
-    return length_percentage(v);
-  }
-  var match = v.VAL;
-  return autoOrLength(match[0]) + " " + autoOrLength(match[1]);
-}
-
-function bgPosition(v) {
-  if (typeof v !== "object") {
-    if (v === "bottom") {
-      return "bottom";
-    } else if (v === "right") {
-      return "right";
-    } else if (v === "top") {
-      return "top";
-    } else if (v === "center") {
-      return "center";
-    } else {
-      return "left";
-    }
-  }
-  var variant = v.NAME;
-  if (variant === "bgPosition2") {
-    var match = v.VAL;
-    var v2 = match[1];
-    var v1 = match[0];
-    var v1$1 = typeof v1 === "object" ? length_percentage(v1) : (
-        v1 === "right" ? "right" : (
-            v1 === "center" ? "center" : "left"
-          )
-      );
-    var v2$1 = typeof v2 === "object" ? length_percentage(v2) : (
-        v2 === "top" ? "top" : (
-            v2 === "center" ? "center" : "bottom"
-          )
-      );
-    return v1$1 + " " + v2$1;
-  }
-  if (variant === "bgPosition3") {
-    var match$1 = v.VAL;
-    var v3 = match$1[2];
-    var v2$2 = match$1[1];
-    var v1$2 = match$1[0];
-    var v1$3 = v1$2 === "right" ? "right" : (
-        v1$2 === "center" ? "center" : "left"
-      );
-    var v2$3 = typeof v2$2 === "object" ? length_percentage(v2$2) : (
-        v2$2 === "top" ? "top" : "bottom"
-      );
-    var v3$1 = typeof v3 === "object" ? length_percentage(v3) : (
-        v3 === "top" ? "top" : (
-            v3 === "center" ? "center" : "bottom"
-          )
-      );
-    return v1$3 + " " + v2$3 + " " + v3$1;
-  }
-  if (variant !== "bgPosition4") {
-    return length_percentage(v);
-  }
-  var match$2 = v.VAL;
-  var v1$4 = match$2[0] === "right" ? "right" : "left";
-  var v3$2 = match$2[2] === "top" ? "top" : "bottom";
-  return v1$4 + " " + length_percentage(match$2[1]) + " " + v3$2 + " " + length_percentage(match$2[3]);
 }
 
 function background(col, position, size, repeat, att, origin, clip, imageOrColor) {
@@ -820,6 +900,7 @@ exports.gradientLineAngle = gradientLineAngle;
 exports.linearColorStop = linearColorStop;
 exports.linearGradient = linearGradient;
 exports.repeatingLinearGradient = repeatingLinearGradient;
+exports.radialGradient = radialGradient;
 exports.gradient = gradient;
 exports.url = url;
 exports.imageSrc = imageSrc;

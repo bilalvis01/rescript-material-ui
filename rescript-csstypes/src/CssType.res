@@ -1369,6 +1369,26 @@ type transformOrigin = [
   | #transformOrigin2([ | length_percentage | #left | #center | #right ], [ | length_percentage | #top | #center | #bottom ], option<length>)
 ];
 
+type bgSize = [
+  | #cover
+  | #contain
+  | #auto
+  | length_percentage
+  | #bgSize2([ | #auto | length_percentage ], [ | #auto | length_percentage ])
+];
+
+type bgPosition = [
+  | #left
+  | #center
+  | #right
+  | #top
+  | #bottom
+  | length_percentage
+  | #bgPosition2([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ])
+  | #bgPosition3([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ])
+  | #bgPosition4([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage)
+];
+
 /*
 Image data types
 */
@@ -1409,11 +1429,25 @@ type repeatingLinearGradient = [
   | #repeatingLinearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
 ];
 
-/*
-type radialGradient = [
-  | #radialGradient(option<>)
+type radialGradientPosition = [ | bgPosition | transformOrigin ];
+
+type radialGradientEndingShape = [ | #circle | #ellipse ];
+
+type radialGradientSize = [
+  | #"closest-side"
+  | #"closest-corner"
+  | #"farthest-side"
+  | #"farthest-corner"
+  | #circle(length)
+  | #ellipse(length_percentage, length_percentage)
 ];
-*/
+
+type radialGradient = [
+  | #radialGradient(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop)
+  | #radialGradient2(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop)
+  | #radialGradient3(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop, linearColorStop)
+  | #radialGradient4(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
+];
 
 type gradient = [
   | linearGradient
@@ -1468,26 +1502,6 @@ type repeatStyle = [
   | #"no-repeat space"
   | #"no-repeat round"
   | #"no-repeat no-repeat"
-];
-
-type bgSize = [
-  | #cover
-  | #contain
-  | #auto
-  | length_percentage
-  | #bgSize2([ | #auto | length_percentage ], [ | #auto | length_percentage ])
-];
-
-type bgPosition = [
-  | #left
-  | #center
-  | #right
-  | #top
-  | #bottom
-  | length_percentage
-  | #bgPosition2([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ])
-  | #bgPosition3([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ])
-  | #bgPosition4([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage)
 ];
 
 type attachment = [
