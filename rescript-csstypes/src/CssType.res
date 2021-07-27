@@ -1392,8 +1392,16 @@ type linearGradient = [
   | #linearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
 ];
 
+type repeatingLinearGradient = [
+  | #repeatingLinearGradient(option<gradientLineAngle>, linearColorStop)
+  | #repeatingLinearGradient2(option<gradientLineAngle>, linearColorStop, linearColorStop)
+  | #repeatingLinearGradient3(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop)
+  | #repeatingLinearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
+];
+
 type gradient = [
   | linearGradient
+  | repeatingLinearGradient
 ];
 
 type imageTags = [

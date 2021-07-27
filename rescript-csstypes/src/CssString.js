@@ -448,7 +448,37 @@ function linearGradient(v) {
   return "linear-gradient(" + arg + ")";
 }
 
-var gradient = linearGradient;
+function repeatingLinearGradient(v) {
+  var variant = v.NAME;
+  var arg;
+  if (variant === "repeatingLinearGradient2") {
+    var match = v.VAL;
+    var d = match[0];
+    arg = d !== undefined ? gradientLineAngle(d) + ", " + linearColorStop(match[1]) + ", " + linearColorStop(match[2]) : linearColorStop(match[1]) + ", " + linearColorStop(match[2]);
+  } else if (variant === "repeatingLinearGradient3") {
+    var match$1 = v.VAL;
+    var d$1 = match$1[0];
+    arg = d$1 !== undefined ? gradientLineAngle(d$1) + ", " + linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) : linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]);
+  } else if (variant === "repeatingLinearGradient4") {
+    var match$2 = v.VAL;
+    var d$2 = match$2[0];
+    arg = d$2 !== undefined ? gradientLineAngle(d$2) + ", " + linearColorStop(match$2[1]) + ", " + linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) : linearColorStop(match$2[1]) + ", " + linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]);
+  } else {
+    var match$3 = v.VAL;
+    var d$3 = match$3[0];
+    arg = d$3 !== undefined ? gradientLineAngle(d$3) + ", " + linearColorStop(match$3[1]) : linearColorStop(match$3[1]);
+  }
+  return "repeating-linear-gradient(" + arg + ")";
+}
+
+function gradient(v) {
+  var variant = v.NAME;
+  if (variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2") {
+    return linearGradient(v);
+  } else {
+    return repeatingLinearGradient(v);
+  }
+}
 
 function url(v) {
   return "url(\"" + v.VAL + "\")";
@@ -464,11 +494,11 @@ function imageSrc(v) {
 
 function image(v) {
   var variant = v.NAME;
-  if (variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2") {
-    return linearGradient(v);
+  if (variant === "url" || variant === "src") {
+    return imageSrc(v);
   }
   if (variant !== "image") {
-    return imageSrc(v);
+    return gradient(v);
   }
   var match = v.VAL;
   var t = match[0];
@@ -627,7 +657,7 @@ function background(col, position, size, repeat, att, origin, clip, imageOrColor
   var exit = 0;
   if (typeof imageOrColor === "object") {
     var variant = imageOrColor.NAME;
-    exit = variant === "image" || variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" ? 1 : 2;
+    exit = variant === "image" || variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "repeatingLinearGradient" ? 1 : 2;
   } else {
     exit = imageOrColor === "none" ? 1 : 2;
   }
@@ -663,7 +693,7 @@ function bgLayer(v) {
     }
   }
   var variant = v.NAME;
-  if (variant === "image" || variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src") {
+  if (variant === "image" || variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "repeatingLinearGradient") {
     return bgImage(v);
   }
   if (variant !== "bgLayer") {
@@ -738,6 +768,7 @@ exports.color = color;
 exports.gradientLineAngle = gradientLineAngle;
 exports.linearColorStop = linearColorStop;
 exports.linearGradient = linearGradient;
+exports.repeatingLinearGradient = repeatingLinearGradient;
 exports.gradient = gradient;
 exports.url = url;
 exports.imageSrc = imageSrc;

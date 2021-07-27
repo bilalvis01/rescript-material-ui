@@ -76,6 +76,14 @@ let linearGradient3: (~angle: gradientLineAngle=?, linearColorStop, linearColorS
   [> #linearGradient3(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop) ];
 let linearGradient4: (~angle: gradientLineAngle=?, linearColorStop, linearColorStop, linearColorStop, linearColorStop) =>
   [> #linearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
+let repeatingLinearGradient: (~angle: gradientLineAngle=?, linearColorStop) =>
+  [> #repeatingLinearGradient(option<gradientLineAngle>, linearColorStop) ];
+let repeatingLinearGradient2: (~angle: gradientLineAngle=?, linearColorStop, linearColorStop) =>
+  [> #repeatingLinearGradient2(option<gradientLineAngle>, linearColorStop, linearColorStop) ];
+let repeatingLinearGradient3: (~angle: gradientLineAngle=?, linearColorStop, linearColorStop, linearColorStop) =>
+  [> #repeatingLinearGradient3(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop) ];
+let repeatingLinearGradient4: (~angle: gradientLineAngle=?, linearColorStop, linearColorStop, linearColorStop, linearColorStop) =>
+  [> #repeatingLinearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
 let url: string => [> #url(string) ];
 let src: string => [> #src(string) ];
 let image: (~dir: imageTags=?, ~color: color=?, [ | imageSrc | color ]) => 

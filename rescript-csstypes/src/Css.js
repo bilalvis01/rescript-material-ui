@@ -380,6 +380,52 @@ function linearGradient4(angle, c1, c2, c3, c4) {
         };
 }
 
+function repeatingLinearGradient(angle, c) {
+  return {
+          NAME: "repeatingLinearGradient",
+          VAL: [
+            angle,
+            c
+          ]
+        };
+}
+
+function repeatingLinearGradient2(angle, c1, c2) {
+  return {
+          NAME: "repeatingLinearGradient2",
+          VAL: [
+            angle,
+            c1,
+            c2
+          ]
+        };
+}
+
+function repeatingLinearGradient3(angle, c1, c2, c3) {
+  return {
+          NAME: "repeatingLinearGradient3",
+          VAL: [
+            angle,
+            c1,
+            c2,
+            c3
+          ]
+        };
+}
+
+function repeatingLinearGradient4(angle, c1, c2, c3, c4) {
+  return {
+          NAME: "repeatingLinearGradient4",
+          VAL: [
+            angle,
+            c1,
+            c2,
+            c3,
+            c4
+          ]
+        };
+}
+
 function url(v) {
   return {
           NAME: "url",
@@ -1165,6 +1211,10 @@ exports.linearGradient = linearGradient;
 exports.linearGradient2 = linearGradient2;
 exports.linearGradient3 = linearGradient3;
 exports.linearGradient4 = linearGradient4;
+exports.repeatingLinearGradient = repeatingLinearGradient;
+exports.repeatingLinearGradient2 = repeatingLinearGradient2;
+exports.repeatingLinearGradient3 = repeatingLinearGradient3;
+exports.repeatingLinearGradient4 = repeatingLinearGradient4;
 exports.url = url;
 exports.src = src;
 exports.image = image;
