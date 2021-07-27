@@ -463,39 +463,52 @@ function imageSrc(v) {
 }
 
 function image(v) {
-  var imageSrcOrColor = function (v) {
-    if (typeof v !== "object") {
-      return color(v);
-    }
-    var variant = v.NAME;
-    if (variant === "url" || variant === "src") {
-      return imageSrc(v);
-    } else {
-      return color(v);
-    }
-  };
   var variant = v.NAME;
-  if (variant === "url" || variant === "src") {
-    return imageSrc(v);
-  }
   if (variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2") {
     return linearGradient(v);
   }
-  if (variant === "image") {
-    var match = v.VAL;
-    var t = match[0];
-    if (t !== undefined) {
-      return "image(" + t + " " + imageSrcOrColor(match[1]) + ")";
+  if (variant !== "image") {
+    return imageSrc(v);
+  }
+  var match = v.VAL;
+  var t = match[0];
+  if (t !== undefined) {
+    var c = match[1];
+    var c$1 = match[2];
+    var exit = 0;
+    if (typeof c$1 === "object") {
+      var variant$1 = c$1.NAME;
+      if (variant$1 === "rgb" || variant$1 === "hsl" || variant$1 === "rgba" || variant$1 === "rgbX" || variant$1 === "hsla") {
+        exit = 2;
+      }
+      
+    } else if (c$1 === "olivedrab" || c$1 === "paleturquoise" || c$1 === "sandybrown" || c$1 === "maroon" || c$1 === "brown" || c$1 === "moccasin" || c$1 === "lightcoral" || c$1 === "silver" || c$1 === "honeydew" || c$1 === "ghostwhite" || c$1 === "black" || c$1 === "sienna" || c$1 === "powderblue" || c$1 === "cornflowerblue" || c$1 === "olive" || c$1 === "beige" || c$1 === "thistle" || c$1 === "darkorchid" || c$1 === "azure" || c$1 === "darkorange" || c$1 === "mediumslateblue" || c$1 === "saddlebrown" || c$1 === "limegreen" || c$1 === "goldenrod" || c$1 === "transparent" || c$1 === "mediumseagreen" || c$1 === "firebrick" || c$1 === "floralwhite" || c$1 === "lightslategrey" || c$1 === "lightslategray" || c$1 === "fuchsia" || c$1 === "chocolate" || c$1 === "royalblue" || c$1 === "salmon" || c$1 === "yellowgreen" || c$1 === "aliceblue" || c$1 === "green" || c$1 === "darkmagenta" || c$1 === "aquamarine" || c$1 === "darkolivegreen" || c$1 === "mediumorchid" || c$1 === "rebeccapurple" || c$1 === "mediumvioletred" || c$1 === "lightsteelblue" || c$1 === "indigo" || c$1 === "turquoise" || c$1 === "lawngreen" || c$1 === "blueviolet" || c$1 === "tomato" || c$1 === "oldlace" || c$1 === "burlywood" || c$1 === "currentColor" || c$1 === "springgreen" || c$1 === "magenta" || c$1 === "darkgray" || c$1 === "darkgoldenrod" || c$1 === "gainsboro" || c$1 === "darkcyan" || c$1 === "darkblue" || c$1 === "lightgreen" || c$1 === "chartreuse" || c$1 === "navajowhite" || c$1 === "palevioletred" || c$1 === "rosybrown" || c$1 === "lavender" || c$1 === "darksalmon" || c$1 === "tan" || c$1 === "red" || c$1 === "lightyellow" || c$1 === "darkturquoise" || c$1 === "palegreen" || c$1 === "seagreen" || c$1 === "darkgreen" || c$1 === "lightskyblue" || c$1 === "indianred" || c$1 === "linen" || c$1 === "greenyellow" || c$1 === "slategrey" || c$1 === "slategray" || c$1 === "darkred" || c$1 === "purple" || c$1 === "bisque" || c$1 === "slateblue" || c$1 === "lightseagreen" || c$1 === "dodgerblue" || c$1 === "violet" || c$1 === "midnightblue" || c$1 === "cadetblue" || c$1 === "deeppink" || c$1 === "steelblue" || c$1 === "crimson" || c$1 === "oranngered" || c$1 === "skyblue" || c$1 === "forestgreen" || c$1 === "lemonchiffon" || c$1 === "khaki" || c$1 === "papayawhip" || c$1 === "seashell" || c$1 === "darkslategrey" || c$1 === "darkslategray" || c$1 === "peachpuff" || c$1 === "cornsilk" || c$1 === "antiquewhite" || c$1 === "hotpink" || c$1 === "blanchedalmond" || c$1 === "darkslateblue" || c$1 === "lightgoldenrodyellow" || c$1 === "lightpink" || c$1 === "deepskyblue" || c$1 === "mediumspringgreen" || c$1 === "lightgrey" || c$1 === "lightgray" || c$1 === "mintcream" || c$1 === "darkviolet" || c$1 === "yellow" || c$1 === "lightcyan" || c$1 === "lightblue" || c$1 === "mediumturquoise" || c$1 === "mistyrose" || c$1 === "teal" || c$1 === "lightsalmon" || c$1 === "snow" || c$1 === "palegoldenrod" || c$1 === "darkseagreen" || c$1 === "mediumblue" || c$1 === "coral" || c$1 === "plum" || c$1 === "pink" || c$1 === "peru" || c$1 === "white" || c$1 === "wheat" || c$1 === "navy" || c$1 === "lavenderblush" || c$1 === "lime" || c$1 === "orchid" || c$1 === "orange" || c$1 === "grey" || c$1 === "gray" || c$1 === "gold" || c$1 === "whitesmoke" || c$1 === "ivory" || c$1 === "mediumpurple" || c$1 === "mediumaquamarine" || c$1 === "cyan" || c$1 === "blue" || c$1 === "dimgrey" || c$1 === "dimgray" || c$1 === "aqua" || c$1 === "darkkhaki") {
+      exit = 2;
+    }
+    if (exit === 2) {
+      return "image(" + t + " " + color(c$1) + ")";
+    }
+    if (c !== undefined) {
+      return "image(" + t + " " + imageSrc(match[2]) + ", " + color(c) + ")";
     } else {
-      return "image(" + imageSrcOrColor(match[1]) + ")";
+      return "image(" + t + " " + imageSrc(match[2]) + ")";
     }
   }
-  var match$1 = v.VAL;
-  var t$1 = match$1[0];
-  if (t$1 !== undefined) {
-    return "image(" + t$1 + " " + imageSrc(match$1[1]) + ", " + color(match$1[2]) + ")";
+  var c$2 = match[1];
+  var c$3 = match[2];
+  if (typeof c$3 === "object") {
+    var variant$2 = c$3.NAME;
+    if (variant$2 === "rgb" || variant$2 === "hsl" || variant$2 === "rgba" || variant$2 === "rgbX" || variant$2 === "hsla") {
+      return "image(" + color(c$3) + ")";
+    }
+    
+  } else if (c$3 === "olivedrab" || c$3 === "paleturquoise" || c$3 === "sandybrown" || c$3 === "maroon" || c$3 === "brown" || c$3 === "moccasin" || c$3 === "lightcoral" || c$3 === "silver" || c$3 === "honeydew" || c$3 === "ghostwhite" || c$3 === "black" || c$3 === "sienna" || c$3 === "powderblue" || c$3 === "cornflowerblue" || c$3 === "olive" || c$3 === "beige" || c$3 === "thistle" || c$3 === "darkorchid" || c$3 === "azure" || c$3 === "darkorange" || c$3 === "mediumslateblue" || c$3 === "saddlebrown" || c$3 === "limegreen" || c$3 === "goldenrod" || c$3 === "transparent" || c$3 === "mediumseagreen" || c$3 === "firebrick" || c$3 === "floralwhite" || c$3 === "lightslategrey" || c$3 === "lightslategray" || c$3 === "fuchsia" || c$3 === "chocolate" || c$3 === "royalblue" || c$3 === "salmon" || c$3 === "yellowgreen" || c$3 === "aliceblue" || c$3 === "green" || c$3 === "darkmagenta" || c$3 === "aquamarine" || c$3 === "darkolivegreen" || c$3 === "mediumorchid" || c$3 === "rebeccapurple" || c$3 === "mediumvioletred" || c$3 === "lightsteelblue" || c$3 === "indigo" || c$3 === "turquoise" || c$3 === "lawngreen" || c$3 === "blueviolet" || c$3 === "tomato" || c$3 === "oldlace" || c$3 === "burlywood" || c$3 === "currentColor" || c$3 === "springgreen" || c$3 === "magenta" || c$3 === "darkgray" || c$3 === "darkgoldenrod" || c$3 === "gainsboro" || c$3 === "darkcyan" || c$3 === "darkblue" || c$3 === "lightgreen" || c$3 === "chartreuse" || c$3 === "navajowhite" || c$3 === "palevioletred" || c$3 === "rosybrown" || c$3 === "lavender" || c$3 === "darksalmon" || c$3 === "tan" || c$3 === "red" || c$3 === "lightyellow" || c$3 === "darkturquoise" || c$3 === "palegreen" || c$3 === "seagreen" || c$3 === "darkgreen" || c$3 === "lightskyblue" || c$3 === "indianred" || c$3 === "linen" || c$3 === "greenyellow" || c$3 === "slategrey" || c$3 === "slategray" || c$3 === "darkred" || c$3 === "purple" || c$3 === "bisque" || c$3 === "slateblue" || c$3 === "lightseagreen" || c$3 === "dodgerblue" || c$3 === "violet" || c$3 === "midnightblue" || c$3 === "cadetblue" || c$3 === "deeppink" || c$3 === "steelblue" || c$3 === "crimson" || c$3 === "oranngered" || c$3 === "skyblue" || c$3 === "forestgreen" || c$3 === "lemonchiffon" || c$3 === "khaki" || c$3 === "papayawhip" || c$3 === "seashell" || c$3 === "darkslategrey" || c$3 === "darkslategray" || c$3 === "peachpuff" || c$3 === "cornsilk" || c$3 === "antiquewhite" || c$3 === "hotpink" || c$3 === "blanchedalmond" || c$3 === "darkslateblue" || c$3 === "lightgoldenrodyellow" || c$3 === "lightpink" || c$3 === "deepskyblue" || c$3 === "mediumspringgreen" || c$3 === "lightgrey" || c$3 === "lightgray" || c$3 === "mintcream" || c$3 === "darkviolet" || c$3 === "yellow" || c$3 === "lightcyan" || c$3 === "lightblue" || c$3 === "mediumturquoise" || c$3 === "mistyrose" || c$3 === "teal" || c$3 === "lightsalmon" || c$3 === "snow" || c$3 === "palegoldenrod" || c$3 === "darkseagreen" || c$3 === "mediumblue" || c$3 === "coral" || c$3 === "plum" || c$3 === "pink" || c$3 === "peru" || c$3 === "white" || c$3 === "wheat" || c$3 === "navy" || c$3 === "lavenderblush" || c$3 === "lime" || c$3 === "orchid" || c$3 === "orange" || c$3 === "grey" || c$3 === "gray" || c$3 === "gold" || c$3 === "whitesmoke" || c$3 === "ivory" || c$3 === "mediumpurple" || c$3 === "mediumaquamarine" || c$3 === "cyan" || c$3 === "blue" || c$3 === "dimgrey" || c$3 === "dimgray" || c$3 === "aqua" || c$3 === "darkkhaki") {
+    return "image(" + color(c$3) + ")";
+  }
+  if (c$2 !== undefined) {
+    return "image(" + imageSrc(match[2]) + ", " + color(c$2) + ")";
   } else {
-    return "image(" + imageSrc(match$1[1]) + ", " + color(match$1[2]) + ")";
+    return "image(" + imageSrc(match[2]) + ")";
   }
 }
 
@@ -614,7 +627,7 @@ function background(col, img, position, size, repeat, att, origin, clip, imageOr
   var exit = 0;
   if (typeof imageOrColor === "object") {
     var variant = imageOrColor.NAME;
-    exit = variant === "image" || variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "image2" ? 1 : 2;
+    exit = variant === "image" || variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" ? 1 : 2;
   } else {
     exit = imageOrColor === "none" ? 1 : 2;
   }
@@ -656,7 +669,7 @@ function bgLayer(v) {
     }
   }
   var variant = v.NAME;
-  if (variant === "image" || variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "image2") {
+  if (variant === "image" || variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src") {
     return bgImage(v);
   }
   if (variant !== "bgLayer") {

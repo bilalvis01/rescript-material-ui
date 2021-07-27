@@ -76,8 +76,7 @@ let linearGradient3 = (~angle=?, c1, c2, c3) => #linearGradient3(angle, c1, c2, 
 let linearGradient4 = (~angle=?, c1, c2, c3, c4) => #linearGradient4(angle, c1, c2, c3, c4);
 let url = v => #url(v);
 let src = v => #src(v);
-let image = (~dir=?, v) => #image(dir, v);
-let image2 = (~dir=?, s, c) => #image2(dir, s, c);
+let image = (~dir=?, ~color=?, imageSrcOrColor) => #image(dir, color, imageSrcOrColor);
 let bgSize2 = (s1, s2) => #bgSize2(s1, s2);
 let bgPosition2 = (p1, p2) => #bgPosition2(p1, p2);
 let bgPosition3 = (p1, p2, p3) => #bgPosition3(p1, p2, p3);

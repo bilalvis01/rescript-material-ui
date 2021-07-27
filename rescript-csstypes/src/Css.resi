@@ -78,8 +78,8 @@ let linearGradient4: (~angle: gradientLineAngle=?, linearColorStop, linearColorS
   [> #linearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
 let url: string => [> #url(string) ];
 let src: string => [> #src(string) ];
-let image: (~dir: imageTags=?, [ | imageSrc | color ]) => [> #image(option<imageTags>, [ | imageSrc | color ]) ];
-let image2: (~dir: imageTags=?, imageSrc, color) => [> #image2(option<imageTags>, imageSrc, color) ];
+let image: (~dir: imageTags=?, ~color: color=?, [ | imageSrc | color ]) => 
+  [> #image(option<imageTags>, option<color>, [ | imageSrc | color ]) ];
 let bgSize2: ([ | #auto | length_percentage ], [ | #auto | length_percentage ]) =>
   [> #bgSize2([ | #auto | length_percentage ], [ | #auto | length_percentage ]) ];
 let bgPosition2: ([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ]) =>

@@ -394,23 +394,13 @@ function src(v) {
         };
 }
 
-function image(dir, v) {
+function image(dir, color, imageSrcOrColor) {
   return {
           NAME: "image",
           VAL: [
             dir,
-            v
-          ]
-        };
-}
-
-function image2(dir, s, c) {
-  return {
-          NAME: "image2",
-          VAL: [
-            dir,
-            s,
-            c
+            color,
+            imageSrcOrColor
           ]
         };
 }
@@ -1179,7 +1169,6 @@ exports.linearGradient4 = linearGradient4;
 exports.url = url;
 exports.src = src;
 exports.image = image;
-exports.image2 = image2;
 exports.bgSize2 = bgSize2;
 exports.bgPosition2 = bgPosition2;
 exports.bgPosition3 = bgPosition3;

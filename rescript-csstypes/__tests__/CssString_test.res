@@ -242,8 +242,9 @@ describe("Image data types", (.) => {
     expect(image(Css.image(Css.src("myimage.webp#xywh=0,20,40,60"))))->toBe(`image("myimage.webp#xywh=0,20,40,60")`);
     expect(image(Css.image(Css.url("myimage.png"))))->toBe(`image(url("myimage.png"))`);
     expect(image(Css.image(Css.rgba(0., 0., 0., 0.25))))->toBe("image(rgba(0, 0, 0, 0.25))");
+    expect(image(Css.image(~color=Css.rgba(0., 0., 0., 0.25), #red)))->toBe("image(red)");
     expect(image(Css.image(~dir=#ltr, Css.src("myimage.png"))))->toBe(`image(ltr "myimage.png")`);
-    expect(image(Css.image2(~dir=#ltr, Css.src("myimage.png"), #red)))->toBe(`image(ltr "myimage.png", red)`);
+    expect(image(Css.image(~dir=#ltr, ~color=#red, Css.src("myimage.png"))))->toBe(`image(ltr "myimage.png", red)`);
   });
 
   test("bgSize", (.) => {

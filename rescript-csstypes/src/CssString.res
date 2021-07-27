@@ -320,18 +320,15 @@ let imageSrc = v => {
   };
 };
 let image = v => {
-  let imageSrcOrColor = v => 
-    switch v {
-    | #...imageSrc as s => imageSrc(s)
-    | #...color as c => color(c)
-    };
   switch v {
   | #...imageSrc as s => imageSrc(s)
   | #...gradient as g => gradient(g)
-  | #image(None, v) => `image(${imageSrcOrColor(v)})`
-  | #image(Some(t), v) => `image(${imageTags(t)} ${imageSrcOrColor(v)})`
-  | #image2(None, s, c) => `image(${imageSrc(s)}, ${color(c)})`
-  | #image2(Some(t), s, c) => `image(${imageTags(t)} ${imageSrc(s)}, ${color(c)})`
+  | #image(None, _, #...color as c) => `image(${color(c)})`
+  | #image(Some(t), _, #...color as c) => `image(${imageTags(t)} ${color(c)})`
+  | #image(None, None, #...imageSrc as s) => `image(${imageSrc(s)})`
+  | #image(Some(t), None, #...imageSrc as s) => `image(${imageTags(t)} ${imageSrc(s)})`
+  | #image(None, Some(c), #...imageSrc as s) => `image(${imageSrc(s)}, ${color(c)})`
+  | #image(Some(t), Some(c), #...imageSrc as s) => `image(${imageTags(t)} ${imageSrc(s)}, ${color(c)})`
   }
 };
 let bgImage = v => {

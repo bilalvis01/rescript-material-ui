@@ -1413,8 +1413,7 @@ type imageSrc = [
 type image = [
   | imageSrc
   | gradient
-  | #image(option<imageTags>, [ | imageSrc | color ])
-  | #image2(option<imageTags>, imageSrc, color) 
+  | #image(option<imageTags>, option<color>,  [ | imageSrc | color ])
 ];
 
 type bgImage = [

@@ -186,11 +186,12 @@ describe("Image data types", (function () {
                 
               }));
         test("image", (function () {
-                expect(CssString$Css.image(Css$Css.image(undefined, Css$Css.src("myimage.webp#xywh=0,20,40,60")))).toBe("image(\"myimage.webp#xywh=0,20,40,60\")");
-                expect(CssString$Css.image(Css$Css.image(undefined, Css$Css.url("myimage.png")))).toBe("image(url(\"myimage.png\"))");
-                expect(CssString$Css.image(Css$Css.image(undefined, Css$Css.rgba(0, 0, 0, 0.25)))).toBe("image(rgba(0, 0, 0, 0.25))");
-                expect(CssString$Css.image(Css$Css.image("ltr", Css$Css.src("myimage.png")))).toBe("image(ltr \"myimage.png\")");
-                expect(CssString$Css.image(Css$Css.image2("ltr", Css$Css.src("myimage.png"), "red"))).toBe("image(ltr \"myimage.png\", red)");
+                expect(CssString$Css.image(Css$Css.image(undefined, undefined, Css$Css.src("myimage.webp#xywh=0,20,40,60")))).toBe("image(\"myimage.webp#xywh=0,20,40,60\")");
+                expect(CssString$Css.image(Css$Css.image(undefined, undefined, Css$Css.url("myimage.png")))).toBe("image(url(\"myimage.png\"))");
+                expect(CssString$Css.image(Css$Css.image(undefined, undefined, Css$Css.rgba(0, 0, 0, 0.25)))).toBe("image(rgba(0, 0, 0, 0.25))");
+                expect(CssString$Css.image(Css$Css.image(undefined, Css$Css.rgba(0, 0, 0, 0.25), "red"))).toBe("image(red)");
+                expect(CssString$Css.image(Css$Css.image("ltr", undefined, Css$Css.src("myimage.png")))).toBe("image(ltr \"myimage.png\")");
+                expect(CssString$Css.image(Css$Css.image("ltr", "red", Css$Css.src("myimage.png")))).toBe("image(ltr \"myimage.png\", red)");
                 
               }));
         test("bgSize", (function () {
