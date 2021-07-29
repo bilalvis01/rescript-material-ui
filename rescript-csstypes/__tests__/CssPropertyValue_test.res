@@ -38,7 +38,9 @@ describe("border", (.) => {
     expect(borderColor4(~bottom=#red, ~top=#blue, ~left=Css.rgb(255., 255., 255.), ~right=Css.rgba(0., 0., 0., 0.5)))
       ->toBe(borderColorString("blue rgba(0, 0, 0, 0.5) red rgb(255, 255, 255)"));
   });
+});
 
+describe("background", (.) => {
   test("background", (.) => {
     expect(background(#initial))->toBe(backgroundString("initial"));
     expect(background(~color=#red, #initial))->toBe(backgroundString("initial"));
@@ -71,5 +73,12 @@ describe("border", (.) => {
       Css.bgLayer(~repeat=#repeat, Css.url("myimage.png")),
     ))
     ->toBe(backgroundString(`url("myimage.png") repeat, url("myimage.png") repeat, url("myimage.png") repeat, url("myimage.png") repeat`));
+  });
+
+  test("backgroundAttachment", (.) => {
+    expect(backgroundAttachment(#scroll))->toBe(backgroundAttachmentString("scroll"));
+    expect(backgroundAttachment2(#scroll, #fixed))->toBe(backgroundAttachmentString("scroll, fixed"));
+    expect(backgroundAttachment3(#scroll, #fixed, #fixed))->toBe(backgroundAttachmentString("scroll, fixed, fixed"));
+    expect(backgroundAttachment4(#scroll, #fixed, #fixed, #local))->toBe(backgroundAttachmentString("scroll, fixed, fixed, local"));
   });
 });

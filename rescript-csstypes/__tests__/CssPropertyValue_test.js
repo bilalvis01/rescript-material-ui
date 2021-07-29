@@ -34,6 +34,10 @@ describe("border", (function () {
                 expect(CssPropertyValue$Css.borderColor4("blue", Css$Css.rgba(0, 0, 0, 0.5), "red", Css$Css.rgb(255, 255, 255))).toBe("blue rgba(0, 0, 0, 0.5) red rgb(255, 255, 255)");
                 
               }));
+        
+      }));
+
+describe("background", (function () {
         test("background", (function () {
                 expect(CssPropertyValue$Css.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "initial")).toBe("initial");
                 expect(CssPropertyValue$Css.background("red", undefined, undefined, undefined, undefined, undefined, undefined, "initial")).toBe("initial");
@@ -44,6 +48,13 @@ describe("border", (function () {
                 expect(CssPropertyValue$Css.background3(Css$Css.linearGradient2(Css$Css.deg(217), Css$Css.rgba(255, 0, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(255, 0, 0, 0), Css$Css.pct(70.71))), Css$Css.linearGradient2(Css$Css.deg(127), Css$Css.rgba(0, 255, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(0, 255, 0, 0), Css$Css.pct(70.71))), Css$Css.linearGradient2(Css$Css.deg(217), Css$Css.rgba(255, 0, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(255, 0, 0, 0), Css$Css.pct(70.71))))).toBe("linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%)");
                 expect(CssPropertyValue$Css.background4(Css$Css.linearGradient2(Css$Css.deg(217), Css$Css.rgba(255, 0, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(255, 0, 0, 0), Css$Css.pct(70.71))), Css$Css.linearGradient2(Css$Css.deg(127), Css$Css.rgba(0, 255, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(0, 255, 0, 0), Css$Css.pct(70.71))), Css$Css.linearGradient2(Css$Css.deg(217), Css$Css.rgba(255, 0, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(255, 0, 0, 0), Css$Css.pct(70.71))), Css$Css.linearGradient2(Css$Css.deg(127), Css$Css.rgba(0, 255, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(0, 255, 0, 0), Css$Css.pct(70.71))))).toBe("linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%)");
                 expect(CssPropertyValue$Css.background4(Css$Css.bgLayer(undefined, undefined, undefined, "repeat", undefined, undefined, undefined, Css$Css.url("myimage.png")), Css$Css.bgLayer(undefined, undefined, undefined, "repeat", undefined, undefined, undefined, Css$Css.url("myimage.png")), Css$Css.bgLayer(undefined, undefined, undefined, "repeat", undefined, undefined, undefined, Css$Css.url("myimage.png")), Css$Css.bgLayer(undefined, undefined, undefined, "repeat", undefined, undefined, undefined, Css$Css.url("myimage.png")))).toBe("url(\"myimage.png\") repeat, url(\"myimage.png\") repeat, url(\"myimage.png\") repeat, url(\"myimage.png\") repeat");
+                
+              }));
+        test("backgroundAttachment", (function () {
+                expect(CssPropertyValue$Css.backgroundAttachment("scroll")).toBe("scroll");
+                expect(CssPropertyValue$Css.backgroundAttachment2("scroll", "fixed")).toBe("scroll, fixed");
+                expect(CssPropertyValue$Css.backgroundAttachment3("scroll", "fixed", "fixed")).toBe("scroll, fixed, fixed");
+                expect(CssPropertyValue$Css.backgroundAttachment4("scroll", "fixed", "fixed", "local")).toBe("scroll, fixed, fixed, local");
                 
               }));
         
