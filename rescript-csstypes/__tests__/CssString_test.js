@@ -219,6 +219,32 @@ describe("Image data types", (function () {
                 expect(CssString$Css.radialGradient(Css$Css.radialGradient4(undefined, "circle", undefined, Css$Css.rgbX("9198e5"), "red", Css$Css.rgb(255, 255, 255), Css$Css.linearColorStop2("blue", Css$Css.pct(10))))).toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
                 
               }));
+        test("repeatingRadialGradient", (function () {
+                expect(CssString$Css.repeatingRadialGradient(Css$Css.repeatingRadialGradient(undefined, undefined, undefined, Css$Css.rgbX("9198e5")))).toBe("repeating-radial-gradient(#9198e5)");
+                expect(CssString$Css.repeatingRadialGradient(Css$Css.repeatingRadialGradient(undefined, "circle", undefined, Css$Css.rgbX("9198e5")))).toBe("repeating-radial-gradient(circle, #9198e5)");
+                expect(CssString$Css.repeatingRadialGradient(Css$Css.repeatingRadialGradient("center", "circle", undefined, Css$Css.rgbX("9198e5")))).toBe("repeating-radial-gradient(circle at center, #9198e5)");
+                expect(CssString$Css.repeatingRadialGradient(Css$Css.repeatingRadialGradient("center", "circle", Css$Css.px(10), Css$Css.rgbX("9198e5")))).toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
+                expect(CssString$Css.repeatingRadialGradient(Css$Css.repeatingRadialGradient("center", "ellipse", Css$Css.px(10), Css$Css.rgbX("9198e5")))).toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
+                expect(CssString$Css.repeatingRadialGradient(Css$Css.repeatingRadialGradient("center", undefined, {
+                                NAME: "ellipse",
+                                VAL: [
+                                  Css$Css.px(10),
+                                  Css$Css.px(10)
+                                ]
+                              }, Css$Css.rgbX("9198e5")))).toBe("repeating-radial-gradient(10px 10px at center, #9198e5)");
+                expect(CssString$Css.repeatingRadialGradient(Css$Css.repeatingRadialGradient("center", "ellipse", {
+                                NAME: "ellipse",
+                                VAL: [
+                                  Css$Css.px(10),
+                                  Css$Css.px(10)
+                                ]
+                              }, Css$Css.rgbX("9198e5")))).toBe("repeating-radial-gradient(ellipse 10px 10px at center, #9198e5)");
+                expect(CssString$Css.repeatingRadialGradient(Css$Css.repeatingRadialGradient("center", "ellipse", Css$Css.px(10), Css$Css.rgbX("9198e5")))).toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
+                expect(CssString$Css.repeatingRadialGradient(Css$Css.repeatingRadialGradient2(undefined, "circle", undefined, Css$Css.rgbX("9198e5"), "red"))).toBe("repeating-radial-gradient(circle, #9198e5, red)");
+                expect(CssString$Css.repeatingRadialGradient(Css$Css.repeatingRadialGradient3(undefined, "circle", undefined, Css$Css.rgbX("9198e5"), "red", Css$Css.rgb(255, 255, 255)))).toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
+                expect(CssString$Css.repeatingRadialGradient(Css$Css.repeatingRadialGradient4(undefined, "circle", undefined, Css$Css.rgbX("9198e5"), "red", Css$Css.rgb(255, 255, 255), Css$Css.linearColorStop2("blue", Css$Css.pct(10))))).toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
+                
+              }));
         test("gradient", (function () {
                 expect(CssString$Css.gradient(Css$Css.linearGradient3(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.pct(30), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
                 expect(CssString$Css.gradient(Css$Css.linearGradient4(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(40)), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60)), Css$Css.linearColorStop3("red", Css$Css.pct(70), Css$Css.pct(100))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
