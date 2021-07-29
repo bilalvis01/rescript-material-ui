@@ -114,3 +114,17 @@ let background3 = (l1, l2, l3) =>
 let background4 = (l1, l2, l3, l4) =>
   `${CssString.bgLayer(l1)}, ${CssString.bgLayer(l2)}, ${CssString.bgLayer(l3)}, ${CssString.bgLayer(l4)}`
   ->backgroundString;
+
+type tag_backgroundAttachment;
+type t_backgroundAttachment = synthetic<tag_backgroundAttachment>;
+external backgroundAttachmentString: string => t_backgroundAttachment = "%identity";
+let backgroundAttachment = v => CssString.attachment(v)->backgroundAttachmentString;
+let backgroundAttachment2 = (v1, v2) => 
+  `${CssString.attachment(v1)}, ${CssString.attachment(v2)}`
+  ->backgroundAttachmentString;
+let backgroundAttachment3 = (v1, v2, v3) => 
+  `${CssString.attachment(v1)}, ${CssString.attachment(v2)}, ${CssString.attachment(v3)}`
+  ->backgroundAttachmentString;
+let backgroundAttachment4 = (v1, v2, v3, v4) => 
+  `${CssString.attachment(v1)}, ${CssString.attachment(v2)}, ${CssString.attachment(v3)}, ${CssString.attachment(v4)}`
+  ->backgroundAttachmentString;

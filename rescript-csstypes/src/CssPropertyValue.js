@@ -97,6 +97,22 @@ function background4(l1, l2, l3, l4) {
   return CssString$Css.bgLayer(l1) + ", " + CssString$Css.bgLayer(l2) + ", " + CssString$Css.bgLayer(l3) + ", " + CssString$Css.bgLayer(l4);
 }
 
+function backgroundAttachment(v) {
+  return v;
+}
+
+function backgroundAttachment2(v1, v2) {
+  return v1 + ", " + v2;
+}
+
+function backgroundAttachment3(v1, v2, v3) {
+  return v1 + ", " + v2 + ", " + v3;
+}
+
+function backgroundAttachment4(v1, v2, v3, v4) {
+  return v1 + ", " + v2 + ", " + v3 + ", " + v4;
+}
+
 exports.border = border;
 exports.borderColor = borderColor;
 exports.borderColor2 = borderColor2;
@@ -114,4 +130,8 @@ exports.background = background;
 exports.background2 = background2;
 exports.background3 = background3;
 exports.background4 = background4;
+exports.backgroundAttachment = backgroundAttachment;
+exports.backgroundAttachment2 = backgroundAttachment2;
+exports.backgroundAttachment3 = backgroundAttachment3;
+exports.backgroundAttachment4 = backgroundAttachment4;
 /* No side effect */

@@ -56,3 +56,13 @@ let background: (
 let background2: (bgLayer, bgLayer) => t_background;
 let background3: (bgLayer, bgLayer, bgLayer) => t_background;
 let background4: (bgLayer, bgLayer, bgLayer, bgLayer) => t_background;
+
+type tag_backgroundAttachment;
+type t_backgroundAttachment = synthetic<tag_backgroundAttachment>;
+external backgroundAttachmentString: string => t_backgroundAttachment = "%identity";
+let backgroundAttachment: attachment => t_backgroundAttachment;
+let backgroundAttachment2: (attachment, attachment) => t_backgroundAttachment;
+let backgroundAttachment3: (attachment, attachment, attachment) => 
+  t_backgroundAttachment;
+let backgroundAttachment4: (attachment, attachment, attachment, attachment) => 
+  t_backgroundAttachment;
