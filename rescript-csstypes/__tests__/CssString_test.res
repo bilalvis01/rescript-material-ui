@@ -262,6 +262,30 @@ describe("Image data types", (.) => {
     ->toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
   });
 
+  test("radialGradient", (.) => {
+    expect(radialGradient(Css.radialGradient(Css.rgbX("9198e5"))))->toBe("radial-gradient(#9198e5)");
+    expect(radialGradient(Css.radialGradient(~endingShape=#circle, Css.rgbX("9198e5"))))
+    ->toBe("radial-gradient(circle, #9198e5)");
+    expect(radialGradient(Css.radialGradient(~endingShape=#circle, ~position=#center, Css.rgbX("9198e5"))))
+    ->toBe("radial-gradient(circle at center, #9198e5)");
+    expect(radialGradient(Css.radialGradient(~endingShape=#circle, ~size=#circle(Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
+    ->toBe("radial-gradient(circle 10px at center, #9198e5)");
+    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=#circle(Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
+    ->toBe("radial-gradient(ellipse at center, #9198e5)");
+    expect(radialGradient(Css.radialGradient(~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
+    ->toBe("radial-gradient(10px 10px at center, #9198e5)");
+    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
+    ->toBe("radial-gradient(ellipse 10px 10px at center, #9198e5)");
+    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=#circle(Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
+    ->toBe("radial-gradient(ellipse at center, #9198e5)");
+    expect(radialGradient(Css.radialGradient2(~endingShape=#circle, Css.rgbX("9198e5"), #red)))
+    ->toBe("radial-gradient(circle, #9198e5, red)");
+    expect(radialGradient(Css.radialGradient3(~endingShape=#circle, Css.rgbX("9198e5"), #red, Css.rgb(255., 255., 255.))))
+    ->toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
+    expect(radialGradient(Css.radialGradient4(~endingShape=#circle, Css.rgbX("9198e5"), #red, Css.rgb(255., 255., 255.), Css.linearColorStop2(#blue, Css.pct(10.)))))
+    ->toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
+  });
+
   test("gradient", (.) => {
     expect(gradient(Css.linearGradient3(
       ~angle=Css.turn(0.25), 

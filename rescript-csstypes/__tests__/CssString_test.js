@@ -193,6 +193,41 @@ describe("Image data types", (function () {
                 expect(CssString$Css.repeatingLinearGradient(Css$Css.repeatingLinearGradient4(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(40)), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60)), Css$Css.linearColorStop3("red", Css$Css.pct(70), Css$Css.pct(100))))).toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
                 
               }));
+        test("radialGradient", (function () {
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient(undefined, undefined, undefined, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(#9198e5)");
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient(undefined, "circle", undefined, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(circle, #9198e5)");
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", "circle", undefined, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(circle at center, #9198e5)");
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", "circle", {
+                                NAME: "circle",
+                                VAL: Css$Css.px(10)
+                              }, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(circle 10px at center, #9198e5)");
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", "ellipse", {
+                                NAME: "circle",
+                                VAL: Css$Css.px(10)
+                              }, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", undefined, {
+                                NAME: "ellipse",
+                                VAL: [
+                                  Css$Css.px(10),
+                                  Css$Css.px(10)
+                                ]
+                              }, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(10px 10px at center, #9198e5)");
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", "ellipse", {
+                                NAME: "ellipse",
+                                VAL: [
+                                  Css$Css.px(10),
+                                  Css$Css.px(10)
+                                ]
+                              }, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(ellipse 10px 10px at center, #9198e5)");
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", "ellipse", {
+                                NAME: "circle",
+                                VAL: Css$Css.px(10)
+                              }, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient2(undefined, "circle", undefined, Css$Css.rgbX("9198e5"), "red"))).toBe("radial-gradient(circle, #9198e5, red)");
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient3(undefined, "circle", undefined, Css$Css.rgbX("9198e5"), "red", Css$Css.rgb(255, 255, 255)))).toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient4(undefined, "circle", undefined, Css$Css.rgbX("9198e5"), "red", Css$Css.rgb(255, 255, 255), Css$Css.linearColorStop2("blue", Css$Css.pct(10))))).toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
+                
+              }));
         test("gradient", (function () {
                 expect(CssString$Css.gradient(Css$Css.linearGradient3(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.pct(30), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
                 expect(CssString$Css.gradient(Css$Css.linearGradient4(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(40)), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60)), Css$Css.linearColorStop3("red", Css$Css.pct(70), Css$Css.pct(100))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
