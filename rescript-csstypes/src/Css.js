@@ -437,6 +437,60 @@ function repeatingLinearGradient4(angle, c1, c2, c3, c4) {
         };
 }
 
+function radialGradient(position, endingShape, size, c) {
+  return {
+          NAME: "radialGradient",
+          VAL: [
+            position,
+            endingShape,
+            size,
+            c
+          ]
+        };
+}
+
+function radialGradient2(position, endingShape, size, c1, c2) {
+  return {
+          NAME: "radialGradient2",
+          VAL: [
+            position,
+            endingShape,
+            size,
+            c1,
+            c2
+          ]
+        };
+}
+
+function radialGradient3(position, endingShape, size, c1, c2, c3) {
+  return {
+          NAME: "radialGradient3",
+          VAL: [
+            position,
+            endingShape,
+            size,
+            c1,
+            c2,
+            c3
+          ]
+        };
+}
+
+function radialGradient4(position, endingShape, size, c1, c2, c3, c4) {
+  return {
+          NAME: "radialGradient4",
+          VAL: [
+            position,
+            endingShape,
+            size,
+            c1,
+            c2,
+            c3,
+            c4
+          ]
+        };
+}
+
 function url(v) {
   return {
           NAME: "url",
@@ -1227,6 +1281,10 @@ exports.repeatingLinearGradient = repeatingLinearGradient;
 exports.repeatingLinearGradient2 = repeatingLinearGradient2;
 exports.repeatingLinearGradient3 = repeatingLinearGradient3;
 exports.repeatingLinearGradient4 = repeatingLinearGradient4;
+exports.radialGradient = radialGradient;
+exports.radialGradient2 = radialGradient2;
+exports.radialGradient3 = radialGradient3;
+exports.radialGradient4 = radialGradient4;
 exports.url = url;
 exports.src = src;
 exports.image = image;
