@@ -595,6 +595,56 @@ function conicGradient4(angle, position, c1, c2, c3, c4) {
         };
 }
 
+function repeatingConicGradient(angle, position, c) {
+  return {
+          NAME: "repeatingConicGradient",
+          VAL: [
+            angle,
+            position,
+            c
+          ]
+        };
+}
+
+function repeatingConicGradient2(angle, position, c1, c2) {
+  return {
+          NAME: "repeatingConicGradient2",
+          VAL: [
+            angle,
+            position,
+            c1,
+            c2
+          ]
+        };
+}
+
+function repeatingConicGradient3(angle, position, c1, c2, c3) {
+  return {
+          NAME: "repeatingConicGradient3",
+          VAL: [
+            angle,
+            position,
+            c1,
+            c2,
+            c3
+          ]
+        };
+}
+
+function repeatingConicGradient4(angle, position, c1, c2, c3, c4) {
+  return {
+          NAME: "repeatingConicGradient4",
+          VAL: [
+            angle,
+            position,
+            c1,
+            c2,
+            c3,
+            c4
+          ]
+        };
+}
+
 function url(v) {
   return {
           NAME: "url",
@@ -1397,6 +1447,10 @@ exports.conicGradient = conicGradient;
 exports.conicGradient2 = conicGradient2;
 exports.conicGradient3 = conicGradient3;
 exports.conicGradient4 = conicGradient4;
+exports.repeatingConicGradient = repeatingConicGradient;
+exports.repeatingConicGradient2 = repeatingConicGradient2;
+exports.repeatingConicGradient3 = repeatingConicGradient3;
+exports.repeatingConicGradient4 = repeatingConicGradient4;
 exports.url = url;
 exports.src = src;
 exports.image = image;

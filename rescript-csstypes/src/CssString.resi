@@ -113,6 +113,7 @@ let repeatingLinearGradient: repeatingLinearGradient => string;
 let radialGradient: radialGradient => string;
 let repeatingRadialGradient: repeatingRadialGradient => string;
 let conicGradient: conicGradient => string;
+let repeatingConicGradient: repeatingConicGradient => string;
 let gradient: gradient => string;
 external imageTags: imageTags => string = "%identity";
 let url: url => string;

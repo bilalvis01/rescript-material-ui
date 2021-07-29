@@ -528,6 +528,22 @@ let conicGradient = v => {
   `conic-gradient(${arg})`;
 };
 
+let repeatingConicGradient = v => {
+  let arg = switch v {
+  | #repeatingConicGradient(a, p, c) => 
+    conicGradientAngle(a, p)->conicGradient_(linearColorStop(c))
+  | #repeatingConicGradient2(a, p, c1, c2) => 
+    conicGradientAngle(a, p)->conicGradient_(`${linearColorStop(c1)}, ${linearColorStop(c2)}`)
+  | #repeatingConicGradient3(a, p, c1, c2, c3) => 
+    conicGradientAngle(a, p)
+    ->conicGradient_(`${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`)
+  | #repeatingConicGradient4(a, p, c1, c2, c3, c4) => 
+    conicGradientAngle(a, p)
+    ->conicGradient_(`${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`)
+  };
+  `repeating-conic-gradient(${arg})`;
+};
+
 let gradient = v => {
   switch v {
   | #...linearGradient as g => linearGradient(g)
@@ -535,6 +551,7 @@ let gradient = v => {
   | #...radialGradient as g => radialGradient(g)
   | #...repeatingRadialGradient as g => repeatingRadialGradient(g)
   | #...conicGradient as g => conicGradient(g)
+  | #...repeatingConicGradient as g => repeatingConicGradient(g)
   };
 };
 external imageTags: imageTags => string = "%identity";

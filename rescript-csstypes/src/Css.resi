@@ -115,6 +115,14 @@ let conicGradient3: (~angle: gradientLineAngle=?, ~position: position=?, linearC
   [> #conicGradient3(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop) ];
 let conicGradient4: (~angle: gradientLineAngle=?, ~position: position=?, linearColorStop, linearColorStop, linearColorStop, linearColorStop) =>
   [> #conicGradient4(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
+  let repeatingConicGradient: (~angle: gradientLineAngle=?, ~position: position=?, linearColorStop) =>
+  [> #repeatingConicGradient(option<gradientLineAngle>, option<position>, linearColorStop) ];
+let repeatingConicGradient2: (~angle: gradientLineAngle=?, ~position: position=?, linearColorStop, linearColorStop) =>
+  [> #repeatingConicGradient2(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop) ];
+let repeatingConicGradient3: (~angle: gradientLineAngle=?, ~position: position=?, linearColorStop, linearColorStop, linearColorStop) =>
+  [> #repeatingConicGradient3(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop) ];
+let repeatingConicGradient4: (~angle: gradientLineAngle=?, ~position: position=?, linearColorStop, linearColorStop, linearColorStop, linearColorStop) =>
+  [> #repeatingConicGradient4(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
 let url: string => [> #url(string) ];
 let src: string => [> #src(string) ];
 let image: (~dir: imageTags=?, ~color: color=?, [ | imageSrc | color ]) => 

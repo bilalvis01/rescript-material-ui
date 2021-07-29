@@ -1458,12 +1458,20 @@ type conicGradient = [
   | #conicGradient4(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
 ];
 
+type repeatingConicGradient = [
+  | #repeatingConicGradient(option<gradientLineAngle>, option<position>, linearColorStop)
+  | #repeatingConicGradient2(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop)
+  | #repeatingConicGradient3(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop)
+  | #repeatingConicGradient4(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
+];
+
 type gradient = [
   | linearGradient
   | repeatingLinearGradient
   | radialGradient
   | repeatingRadialGradient
   | conicGradient
+  | repeatingConicGradient
 ];
 
 type imageTags = [
