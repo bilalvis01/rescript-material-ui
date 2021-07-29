@@ -66,3 +66,32 @@ let backgroundAttachment3: (attachment, attachment, attachment) =>
   t_backgroundAttachment;
 let backgroundAttachment4: (attachment, attachment, attachment, attachment) => 
   t_backgroundAttachment;
+
+type tag_backgroundColor;
+type t_backgroundColor = synthetic<tag_backgroundColor>;
+external backgroundColorString: string => t_backgroundColor = "%identity";
+let backgroundColor: color => t_backgroundColor;
+
+type tag_backgroundImage;
+type t_backgroundImage = synthetic<tag_backgroundImage>;
+external backgroundImageString: string => t_backgroundImage = "%identity";
+let backgroundImage: bgImage => t_backgroundImage;
+let backgroundImage2: (bgImage, bgImage) => t_backgroundImage;
+let backgroundImage3: (bgImage, bgImage, bgImage) => t_backgroundImage;
+let backgroundImage4: (bgImage, bgImage, bgImage, bgImage) => t_backgroundImage;
+
+type tag_backgroundPosition;
+type t_backgroundPosition = synthetic<tag_backgroundPosition>;
+external backgroundPositionString: string => t_backgroundPosition = "%identity";
+let backgroundPosition: position => t_backgroundPosition;
+let backgroundPosition2: (position, position) => t_backgroundPosition;
+let backgroundPosition3: (position, position, position) => t_backgroundPosition;
+let backgroundPosition4: (position, position, position, position) => t_backgroundPosition;
+
+type tag_backgroundStyle;
+type t_backgroundStyle = synthetic<tag_backgroundStyle>;
+external backgroundStyleString: string => t_backgroundStyle = "%identity";
+let backgroundStyle: repeatStyle => t_backgroundStyle;
+let backgroundStyle2: (repeatStyle, repeatStyle) => t_backgroundStyle;
+let backgroundStyle3: (repeatStyle, repeatStyle, repeatStyle) => t_backgroundStyle;
+let backgroundStyle4: (repeatStyle, repeatStyle, repeatStyle, repeatStyle) => t_backgroundStyle;

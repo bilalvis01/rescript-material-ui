@@ -113,6 +113,52 @@ function backgroundAttachment4(v1, v2, v3, v4) {
   return v1 + ", " + v2 + ", " + v3 + ", " + v4;
 }
 
+var backgroundColor = CssString$Css.color;
+
+var backgroundImage = CssString$Css.bgImage;
+
+function backgroundImage2(v1, v2) {
+  return CssString$Css.bgImage(v1) + ", " + CssString$Css.bgImage(v2);
+}
+
+function backgroundImage3(v1, v2, v3) {
+  return CssString$Css.bgImage(v1) + ", " + CssString$Css.bgImage(v2) + ", " + CssString$Css.bgImage(v3);
+}
+
+function backgroundImage4(v1, v2, v3, v4) {
+  return CssString$Css.bgImage(v1) + ", " + CssString$Css.bgImage(v2) + ", " + CssString$Css.bgImage(v3) + ", " + CssString$Css.bgImage(v4);
+}
+
+var backgroundPosition = CssString$Css.position;
+
+function backgroundPosition2(v1, v2) {
+  return CssString$Css.position(v1) + ", " + CssString$Css.position(v2);
+}
+
+function backgroundPosition3(v1, v2, v3) {
+  return CssString$Css.position(v1) + ", " + CssString$Css.position(v2) + ", " + CssString$Css.position(v3);
+}
+
+function backgroundPosition4(v1, v2, v3, v4) {
+  return CssString$Css.position(v1) + ", " + CssString$Css.position(v2) + ", " + CssString$Css.position(v3) + ", " + CssString$Css.position(v3);
+}
+
+function backgroundStyle(v) {
+  return v;
+}
+
+function backgroundStyle2(v1, v2) {
+  return v1 + ", " + v2;
+}
+
+function backgroundStyle3(v1, v2, v3) {
+  return v1 + ", " + v2 + ", " + v3;
+}
+
+function backgroundStyle4(v1, v2, v3, v4) {
+  return v1 + ", " + v2 + ", " + v3 + ", " + v4;
+}
+
 exports.border = border;
 exports.borderColor = borderColor;
 exports.borderColor2 = borderColor2;
@@ -134,4 +180,17 @@ exports.backgroundAttachment = backgroundAttachment;
 exports.backgroundAttachment2 = backgroundAttachment2;
 exports.backgroundAttachment3 = backgroundAttachment3;
 exports.backgroundAttachment4 = backgroundAttachment4;
+exports.backgroundColor = backgroundColor;
+exports.backgroundImage = backgroundImage;
+exports.backgroundImage2 = backgroundImage2;
+exports.backgroundImage3 = backgroundImage3;
+exports.backgroundImage4 = backgroundImage4;
+exports.backgroundPosition = backgroundPosition;
+exports.backgroundPosition2 = backgroundPosition2;
+exports.backgroundPosition3 = backgroundPosition3;
+exports.backgroundPosition4 = backgroundPosition4;
+exports.backgroundStyle = backgroundStyle;
+exports.backgroundStyle2 = backgroundStyle2;
+exports.backgroundStyle3 = backgroundStyle3;
+exports.backgroundStyle4 = backgroundStyle4;
 /* No side effect */

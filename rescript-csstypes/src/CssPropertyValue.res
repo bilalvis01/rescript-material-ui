@@ -128,3 +128,50 @@ let backgroundAttachment3 = (v1, v2, v3) =>
 let backgroundAttachment4 = (v1, v2, v3, v4) => 
   `${CssString.attachment(v1)}, ${CssString.attachment(v2)}, ${CssString.attachment(v3)}, ${CssString.attachment(v4)}`
   ->backgroundAttachmentString;
+
+type tag_backgroundColor
+type t_backgroundColor = synthetic<tag_backgroundColor>;
+external backgroundColorString: string => t_backgroundColor = "%identity";
+let backgroundColor = v => CssString.color(v)->backgroundColorString;
+
+type tag_backgroundImage
+type t_backgroundImage = synthetic<tag_backgroundImage>;
+external backgroundImageString: string => t_backgroundImage = "%identity";
+let backgroundImage = v => CssString.bgImage(v)->backgroundImageString;
+let backgroundImage2 = (v1, v2) => 
+  `${CssString.bgImage(v1)}, ${CssString.bgImage(v2)}`
+  ->backgroundImageString;
+let backgroundImage3 = (v1, v2, v3) => 
+  `${CssString.bgImage(v1)}, ${CssString.bgImage(v2)}, ${CssString.bgImage(v3)}`
+  ->backgroundImageString;
+let backgroundImage4 = (v1, v2, v3, v4) => 
+  `${CssString.bgImage(v1)}, ${CssString.bgImage(v2)}, ${CssString.bgImage(v3)}, ${CssString.bgImage(v4)}`
+  ->backgroundImageString;
+
+type tag_backgroundPosition;
+type t_backgroundPosition = synthetic<tag_backgroundPosition>;
+external backgroundPositionString: string => t_backgroundPosition = "%identity";
+let backgroundPosition = v => CssString.position(v)->backgroundPositionString;
+let backgroundPosition2 = (v1, v2) => 
+  `${CssString.position(v1)}, ${CssString.position(v2)}`
+  ->backgroundPositionString;
+let backgroundPosition3 = (v1, v2, v3) => 
+  `${CssString.position(v1)}, ${CssString.position(v2)}, ${CssString.position(v3)}`
+  ->backgroundPositionString;
+let backgroundPosition4 = (v1, v2, v3, v4) => 
+  `${CssString.position(v1)}, ${CssString.position(v2)}, ${CssString.position(v3)}, ${CssString.position(v3)}`
+  ->backgroundPositionString;
+
+type tag_backgroundStyle;
+type t_backgroundStyle = synthetic<tag_backgroundStyle>;
+external backgroundStyleString: string => t_backgroundStyle = "%identity";
+let backgroundStyle = v => CssString.repeatStyle(v)->backgroundStyleString;
+let backgroundStyle2 = (v1, v2) => 
+  `${CssString.repeatStyle(v1)}, ${CssString.repeatStyle(v2)}`
+  ->backgroundStyleString;
+let backgroundStyle3 = (v1, v2, v3) => 
+  `${CssString.repeatStyle(v1)}, ${CssString.repeatStyle(v2)}, ${CssString.repeatStyle(v3)}`
+  ->backgroundStyleString;
+let backgroundStyle4 = (v1, v2, v3, v4) => 
+  `${CssString.repeatStyle(v1)}, ${CssString.repeatStyle(v2)}, ${CssString.repeatStyle(v3)}, ${CssString.repeatStyle(v4)}`
+  ->backgroundStyleString;
