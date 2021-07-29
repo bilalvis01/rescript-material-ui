@@ -1387,6 +1387,160 @@ function backgroundString(v) {
         ];
 }
 
+function backgroundAttachment(v) {
+  return [
+          "backgroundAttachment",
+          CssPropertyValue$Css.backgroundAttachment(v)
+        ];
+}
+
+function backgroundAttachment2(v1, v2) {
+  return [
+          "backgroundAttachment",
+          CssPropertyValue$Css.backgroundAttachment2(v1, v2)
+        ];
+}
+
+function backgroundAttachment3(v1, v2, v3) {
+  return [
+          "backgroundAttachment",
+          CssPropertyValue$Css.backgroundAttachment3(v1, v2, v3)
+        ];
+}
+
+function backgroundAttachment4(v1, v2, v3, v4) {
+  return [
+          "backgroundAttachment",
+          CssPropertyValue$Css.backgroundAttachment4(v1, v2, v3, v4)
+        ];
+}
+
+function backgroundAttachmentString(v) {
+  return [
+          "backgroundAttachment",
+          v
+        ];
+}
+
+function backgroundColor(v) {
+  return [
+          "backgroundColor",
+          CssPropertyValue$Css.backgroundColor(v)
+        ];
+}
+
+function backgroundColorString(v) {
+  return [
+          "backgroundColor",
+          v
+        ];
+}
+
+function backgroundImage(v) {
+  return [
+          "backgroundImage",
+          CssPropertyValue$Css.backgroundImage(v)
+        ];
+}
+
+function backgroundImage2(v1, v2) {
+  return [
+          "backgroundImage",
+          CssPropertyValue$Css.backgroundImage2(v1, v2)
+        ];
+}
+
+function backgroundImage3(v1, v2, v3) {
+  return [
+          "backgroundImage",
+          CssPropertyValue$Css.backgroundImage3(v1, v2, v3)
+        ];
+}
+
+function backgroundImage4(v1, v2, v3, v4) {
+  return [
+          "backgroundImage",
+          CssPropertyValue$Css.backgroundImage4(v1, v2, v3, v4)
+        ];
+}
+
+function backgroundImageString(v) {
+  return [
+          "backgroundImage",
+          v
+        ];
+}
+
+function backgroundPosition(v) {
+  return [
+          "backgroundPosition",
+          CssPropertyValue$Css.backgroundPosition(v)
+        ];
+}
+
+function backgroundPosition2(v1, v2) {
+  return [
+          "backgroundPosition",
+          CssPropertyValue$Css.backgroundPosition2(v1, v2)
+        ];
+}
+
+function backgroundPosition3(v1, v2, v3) {
+  return [
+          "backgroundPosition",
+          CssPropertyValue$Css.backgroundPosition3(v1, v2, v3)
+        ];
+}
+
+function backgroundPosition4(v1, v2, v3, v4) {
+  return [
+          "backgroundPosition",
+          CssPropertyValue$Css.backgroundPosition4(v1, v2, v3, v4)
+        ];
+}
+
+function backgroundPositionString(v) {
+  return [
+          "backgroundPosition",
+          v
+        ];
+}
+
+function backgroundStyle(v) {
+  return [
+          "backgroundStyle",
+          CssPropertyValue$Css.backgroundStyle(v)
+        ];
+}
+
+function backgroundStyle2(v1, v2) {
+  return [
+          "backgroundStyle",
+          CssPropertyValue$Css.backgroundStyle2(v1, v2)
+        ];
+}
+
+function backgroundStyle3(v1, v2, v3) {
+  return [
+          "backgroundStyle",
+          CssPropertyValue$Css.backgroundStyle3(v1, v2, v3)
+        ];
+}
+
+function backgroundStyle4(v1, v2, v3, v4) {
+  return [
+          "backgroundStyle",
+          CssPropertyValue$Css.backgroundStyle4(v1, v2, v3, v4)
+        ];
+}
+
+function backgroundStyleString(v) {
+  return [
+          "backgroundStyle",
+          v
+        ];
+}
+
 exports.str = str;
 exports.num = num;
 exports.$$int = $$int;
@@ -1553,4 +1707,26 @@ exports.backgroundString = backgroundString;
 exports.background2 = background2;
 exports.background3 = background3;
 exports.background4 = background4;
+exports.backgroundAttachment = backgroundAttachment;
+exports.backgroundAttachment2 = backgroundAttachment2;
+exports.backgroundAttachment3 = backgroundAttachment3;
+exports.backgroundAttachment4 = backgroundAttachment4;
+exports.backgroundAttachmentString = backgroundAttachmentString;
+exports.backgroundColor = backgroundColor;
+exports.backgroundColorString = backgroundColorString;
+exports.backgroundImage = backgroundImage;
+exports.backgroundImage2 = backgroundImage2;
+exports.backgroundImage3 = backgroundImage3;
+exports.backgroundImage4 = backgroundImage4;
+exports.backgroundImageString = backgroundImageString;
+exports.backgroundPosition = backgroundPosition;
+exports.backgroundPosition2 = backgroundPosition2;
+exports.backgroundPosition3 = backgroundPosition3;
+exports.backgroundPosition4 = backgroundPosition4;
+exports.backgroundPositionString = backgroundPositionString;
+exports.backgroundStyle = backgroundStyle;
+exports.backgroundStyle2 = backgroundStyle2;
+exports.backgroundStyle3 = backgroundStyle3;
+exports.backgroundStyle4 = backgroundStyle4;
+exports.backgroundStyleString = backgroundStyleString;
 /* No side effect */

@@ -320,3 +320,52 @@ let background3 = (l1, l2, l3) =>
 let background4 = (l1, l2, l3, l4) => 
   ("background", PropertyValue(CssPropertyValue.background4(l1, l2, l3, l4)));
 let backgroundString = v => ("background", PropertyValue(CssPropertyValue.string(v)));
+
+let backgroundAttachment = v => 
+  ("backgroundAttachment", PropertyValue(CssPropertyValue.backgroundAttachment(v)));
+let backgroundAttachment2 = (v1, v2) =>
+  ("backgroundAttachment", PropertyValue(CssPropertyValue.backgroundAttachment2(v1, v2)));
+let backgroundAttachment3 = (v1, v2, v3) =>
+  ("backgroundAttachment", PropertyValue(CssPropertyValue.backgroundAttachment3(v1, v2, v3)));
+let backgroundAttachment4 = (v1, v2, v3, v4) =>
+  ("backgroundAttachment", PropertyValue(CssPropertyValue.backgroundAttachment4(v1, v2, v3, v4)));
+let backgroundAttachmentString = v => 
+  ("backgroundAttachment", PropertyValue(CssPropertyValue.string(v)));
+
+let backgroundColor = v =>
+  ("backgroundColor", PropertyValue(CssPropertyValue.backgroundColor(v)));
+let backgroundColorString = v =>
+  ("backgroundColor", PropertyValue(CssPropertyValue.string(v)));
+
+let backgroundImage = v =>
+  ("backgroundImage", PropertyValue(CssPropertyValue.backgroundImage(v)));
+let backgroundImage2 = (v1, v2) =>
+  ("backgroundImage", PropertyValue(CssPropertyValue.backgroundImage2(v1, v2)));
+let backgroundImage3 = (v1, v2, v3) =>
+  ("backgroundImage", PropertyValue(CssPropertyValue.backgroundImage3(v1, v2, v3)));
+let backgroundImage4 = (v1, v2, v3, v4) =>
+  ("backgroundImage", PropertyValue(CssPropertyValue.backgroundImage4(v1, v2, v3, v4)));
+let backgroundImageString = v =>
+  ("backgroundImage", PropertyValue(CssPropertyValue.string(v)));
+
+let backgroundPosition = v =>
+  ("backgroundPosition", PropertyValue(CssPropertyValue.backgroundPosition(v)));
+let backgroundPosition2 = (v1, v2) =>
+  ("backgroundPosition", PropertyValue(CssPropertyValue.backgroundPosition2(v1, v2)));
+let backgroundPosition3 = (v1, v2, v3) =>
+  ("backgroundPosition", PropertyValue(CssPropertyValue.backgroundPosition3(v1, v2, v3)));
+let backgroundPosition4 = (v1, v2, v3, v4) =>
+  ("backgroundPosition", PropertyValue(CssPropertyValue.backgroundPosition4(v1, v2, v3, v4)));
+let backgroundPositionString = v =>
+  ("backgroundPosition", PropertyValue(CssPropertyValue.string(v)));
+
+let backgroundStyle = v =>
+  ("backgroundStyle", PropertyValue(CssPropertyValue.backgroundStyle(v)));
+let backgroundStyle2 = (v1, v2) =>
+  ("backgroundStyle", PropertyValue(CssPropertyValue.backgroundStyle2(v1, v2)));
+let backgroundStyle3 = (v1, v2, v3) =>
+  ("backgroundStyle", PropertyValue(CssPropertyValue.backgroundStyle3(v1, v2, v3)));
+let backgroundStyle4 = (v1, v2, v3, v4) =>
+  ("backgroundStyle", PropertyValue(CssPropertyValue.backgroundStyle4(v1, v2, v3, v4)));
+let backgroundStyleString = v =>
+  ("backgroundStyle", PropertyValue(CssPropertyValue.string(v)));

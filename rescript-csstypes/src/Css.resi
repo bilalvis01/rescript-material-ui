@@ -296,3 +296,32 @@ let backgroundString: string => property;
 let background2: (bgLayer, bgLayer) => property;
 let background3: (bgLayer, bgLayer, bgLayer) => property;
 let background4: (bgLayer, bgLayer, bgLayer, bgLayer) => property;
+
+let backgroundAttachment: attachment => property;
+let backgroundAttachment2: (attachment, attachment) => property;
+let backgroundAttachment3: (attachment, attachment, attachment) => 
+  property;
+let backgroundAttachment4: (attachment, attachment, attachment, attachment) => 
+  property;
+let backgroundAttachmentString: string => property
+
+let backgroundColor: color => property;
+let backgroundColorString: string => property;
+
+let backgroundImage: bgImage => property;
+let backgroundImage2: (bgImage, bgImage) => property;
+let backgroundImage3: (bgImage, bgImage, bgImage) => property;
+let backgroundImage4: (bgImage, bgImage, bgImage, bgImage) => property;
+let backgroundImageString: string => property;
+
+let backgroundPosition: position => property;
+let backgroundPosition2: (position, position) => property;
+let backgroundPosition3: (position, position, position) => property;
+let backgroundPosition4: (position, position, position, position) => property;
+let backgroundPositionString: string => property;
+
+let backgroundStyle: repeatStyle => property;
+let backgroundStyle2: (repeatStyle, repeatStyle) => property;
+let backgroundStyle3: (repeatStyle, repeatStyle, repeatStyle) => property;
+let backgroundStyle4: (repeatStyle, repeatStyle, repeatStyle, repeatStyle) => property;
+let backgroundStyleString: string => property;
