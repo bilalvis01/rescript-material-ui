@@ -89,6 +89,14 @@ let radialGradient3 = (~position=?, ~endingShape=?, ~size=?, c1, c2, c3) =>
   #radialGradient3(position, endingShape, size, c1, c2, c3);
 let radialGradient4 = (~position=?, ~endingShape=?, ~size=?, c1, c2, c3, c4) => 
   #radialGradient4(position, endingShape, size, c1, c2, c3, c4);
+let repeatingRadialGradient = (~position=?, ~endingShape=?, ~size=?, c) => 
+  #repeatingRadialGradient(position, endingShape, size, c);
+let repeatingRadialGradient2 = (~position=?, ~endingShape=?, ~size=?, c1, c2) => 
+  #repeatingRadialGradient2(position, endingShape, size, c1, c2);
+let repeatingRadialGradient3 = (~position=?, ~endingShape=?, ~size=?, c1, c2, c3) => 
+  #repeatingRadialGradient3(position, endingShape, size, c1, c2, c3);
+let repeatingRadialGradient4 = (~position=?, ~endingShape=?, ~size=?, c1, c2, c3, c4) => 
+  #repeatingRadialGradient4(position, endingShape, size, c1, c2, c3, c4);
 let url = v => #url(v);
 let src = v => #src(v);
 let image = (~dir=?, ~color=?, imageSrcOrColor) => #image(dir, color, imageSrcOrColor);

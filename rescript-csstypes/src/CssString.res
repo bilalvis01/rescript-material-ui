@@ -478,6 +478,23 @@ let radialGradient = v => {
   };
   `radial-gradient(${arg})`;
 };
+
+let repeatingRadialGradient = v => {
+  let arg = switch v {
+  | #repeatingRadialGradient(p, s, sz, c) => 
+    radialGradientEndingShape(p, s, sz)->radialGradient_(linearColorStop(c))
+  | #repeatingRadialGradient2(p, s, sz, c1, c2) => 
+    radialGradientEndingShape(p, s, sz)->radialGradient_(`${linearColorStop(c1)}, ${linearColorStop(c2)}`)
+  | #repeatingRadialGradient3(p, s, sz, c1, c2, c3) => 
+    radialGradientEndingShape(p, s, sz)
+    ->radialGradient_(`${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`)
+  | #repeatingRadialGradient4(p, s, sz, c1, c2, c3, c4) => 
+    radialGradientEndingShape(p, s, sz)
+    ->radialGradient_(`${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`)
+  };
+  `repeating-radial-gradient(${arg})`;
+};
+
 let gradient = v => {
   switch v {
   | #...linearGradient as g => linearGradient(g)

@@ -699,6 +699,25 @@ function radialGradient(v) {
   return "radial-gradient(" + arg + ")";
 }
 
+function repeatingRadialGradient(v) {
+  var variant = v.NAME;
+  var arg;
+  if (variant === "repeatingRadialGradient2") {
+    var match = v.VAL;
+    arg = radialGradient_(radialGradientEndingShape(match[0], match[1], match[2]), linearColorStop(match[3]) + ", " + linearColorStop(match[4]));
+  } else if (variant === "repeatingRadialGradient3") {
+    var match$1 = v.VAL;
+    arg = radialGradient_(radialGradientEndingShape(match$1[0], match$1[1], match$1[2]), linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) + ", " + linearColorStop(match$1[5]));
+  } else if (variant === "repeatingRadialGradient4") {
+    var match$2 = v.VAL;
+    arg = radialGradient_(radialGradientEndingShape(match$2[0], match$2[1], match$2[2]), linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) + ", " + linearColorStop(match$2[5]) + ", " + linearColorStop(match$2[6]));
+  } else {
+    var match$3 = v.VAL;
+    arg = radialGradient_(radialGradientEndingShape(match$3[0], match$3[1], match$3[2]), linearColorStop(match$3[3]));
+  }
+  return "repeating-radial-gradient(" + arg + ")";
+}
+
 function gradient(v) {
   var variant = v.NAME;
   if (variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2") {
@@ -917,6 +936,7 @@ exports.linearColorStop = linearColorStop;
 exports.linearGradient = linearGradient;
 exports.repeatingLinearGradient = repeatingLinearGradient;
 exports.radialGradient = radialGradient;
+exports.repeatingRadialGradient = repeatingRadialGradient;
 exports.gradient = gradient;
 exports.url = url;
 exports.imageSrc = imageSrc;
