@@ -159,7 +159,7 @@ let backgroundPosition3 = (v1, v2, v3) =>
   `${CssString.position(v1)}, ${CssString.position(v2)}, ${CssString.position(v3)}`
   ->backgroundPositionString;
 let backgroundPosition4 = (v1, v2, v3, v4) => 
-  `${CssString.position(v1)}, ${CssString.position(v2)}, ${CssString.position(v3)}, ${CssString.position(v3)}`
+  `${CssString.position(v1)}, ${CssString.position(v2)}, ${CssString.position(v3)}, ${CssString.position(v4)}`
   ->backgroundPositionString;
 
 type tag_backgroundStyle;

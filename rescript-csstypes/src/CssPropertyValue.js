@@ -140,7 +140,7 @@ function backgroundPosition3(v1, v2, v3) {
 }
 
 function backgroundPosition4(v1, v2, v3, v4) {
-  return CssString$Css.position(v1) + ", " + CssString$Css.position(v2) + ", " + CssString$Css.position(v3) + ", " + CssString$Css.position(v3);
+  return CssString$Css.position(v1) + ", " + CssString$Css.position(v2) + ", " + CssString$Css.position(v3) + ", " + CssString$Css.position(v4);
 }
 
 function backgroundStyle(v) {
