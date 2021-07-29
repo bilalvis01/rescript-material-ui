@@ -57,6 +57,31 @@ describe("background", (function () {
                 expect(CssPropertyValue$Css.backgroundAttachment4("scroll", "fixed", "fixed", "local")).toBe("scroll, fixed, fixed, local");
                 
               }));
+        test("backgroundColor", (function () {
+                expect(CssPropertyValue$Css.backgroundColor(Css$Css.rgb(200, 200, 200))).toBe("rgb(200, 200, 200)");
+                
+              }));
+        test("backgroundImage", (function () {
+                expect(CssPropertyValue$Css.backgroundImage(Css$Css.url("image.png"))).toBe("url(\"image.png\")");
+                expect(CssPropertyValue$Css.backgroundImage2(Css$Css.url("image.png"), Css$Css.image(undefined, undefined, Css$Css.url("myimage.jpg")))).toBe("url(\"image.png\"), image(url(\"myimage.jpg\"))");
+                expect(CssPropertyValue$Css.backgroundImage3(Css$Css.url("image.png"), Css$Css.image(undefined, undefined, Css$Css.url("myimage.jpg")), Css$Css.linearGradient(undefined, "red"))).toBe("url(\"image.png\"), image(url(\"myimage.jpg\")), linear-gradient(red)");
+                expect(CssPropertyValue$Css.backgroundImage4(Css$Css.url("image.png"), Css$Css.image(undefined, undefined, Css$Css.url("myimage.jpg")), Css$Css.linearGradient(undefined, "red"), Css$Css.radialGradient(undefined, undefined, undefined, "blue"))).toBe("url(\"image.png\"), image(url(\"myimage.jpg\")), linear-gradient(red), radial-gradient(blue)");
+                
+              }));
+        test("backgroundPosition", (function () {
+                expect(CssPropertyValue$Css.backgroundPosition(Css$Css.px(10))).toBe("10px");
+                expect(CssPropertyValue$Css.backgroundPosition2(Css$Css.px(10), Css$Css.position2("center", "bottom"))).toBe("10px, center bottom");
+                expect(CssPropertyValue$Css.backgroundPosition3(Css$Css.px(10), Css$Css.position2("center", "bottom"), "center")).toBe("10px, center bottom, center");
+                expect(CssPropertyValue$Css.backgroundPosition4(Css$Css.px(10), Css$Css.position2("center", "bottom"), Css$Css.pct(10), Css$Css.position4("left", Css$Css.px(10), "top", Css$Css.pct(10)))).toBe("10px, center bottom, 10%, left 10px top 10%");
+                
+              }));
+        test("backgroundStyle", (function () {
+                expect(CssPropertyValue$Css.backgroundStyle("repeat-x")).toBe("repeat-x");
+                expect(CssPropertyValue$Css.backgroundStyle2("repeat-x", "repeat repeat")).toBe("repeat-x, repeat repeat");
+                expect(CssPropertyValue$Css.backgroundStyle3("repeat-x", "repeat repeat", "no-repeat")).toBe("repeat-x, repeat repeat, no-repeat");
+                expect(CssPropertyValue$Css.backgroundStyle4("repeat-x", "repeat repeat", "no-repeat", "space")).toBe("repeat-x, repeat repeat, no-repeat, space");
+                
+              }));
         
       }));
 
