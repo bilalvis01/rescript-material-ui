@@ -254,9 +254,23 @@ describe("Image data types", (function () {
                 expect(CssString$Css.conicGradient(Css$Css.conicGradient4(undefined, undefined, "red", "blue", "yellow", Css$Css.rgb(250, 250, 250)))).toBe("conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
                 
               }));
+        test("repeatingConicGradient", (function () {
+                expect(CssString$Css.repeatingConicGradient(Css$Css.repeatingConicGradient(undefined, undefined, "red"))).toBe("repeating-conic-gradient(red)");
+                expect(CssString$Css.repeatingConicGradient(Css$Css.repeatingConicGradient(Css$Css.deg(360), undefined, "red"))).toBe("repeating-conic-gradient(from 360deg, red)");
+                expect(CssString$Css.repeatingConicGradient(Css$Css.repeatingConicGradient(Css$Css.deg(360), Css$Css.px(10), "red"))).toBe("repeating-conic-gradient(from 360deg at 10px, red)");
+                expect(CssString$Css.repeatingConicGradient(Css$Css.repeatingConicGradient2(undefined, undefined, "red", "blue"))).toBe("repeating-conic-gradient(red, blue)");
+                expect(CssString$Css.repeatingConicGradient(Css$Css.repeatingConicGradient3(undefined, undefined, "red", "blue", "yellow"))).toBe("repeating-conic-gradient(red, blue, yellow)");
+                expect(CssString$Css.repeatingConicGradient(Css$Css.repeatingConicGradient4(undefined, undefined, "red", "blue", "yellow", Css$Css.rgb(250, 250, 250)))).toBe("repeating-conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
+                
+              }));
         test("gradient", (function () {
                 expect(CssString$Css.gradient(Css$Css.linearGradient3(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.pct(30), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
                 expect(CssString$Css.gradient(Css$Css.linearGradient4(Css$Css.turn(0.25), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(10)), Css$Css.linearColorStop2(Css$Css.rgb(255, 255, 255), Css$Css.pct(40)), Css$Css.linearColorStop3(Css$Css.rgb(255, 255, 255), Css$Css.pct(50), Css$Css.pct(60)), Css$Css.linearColorStop3("red", Css$Css.pct(70), Css$Css.pct(100))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
+                expect(CssString$Css.gradient(Css$Css.repeatingLinearGradient(Css$Css.deg(360), "red"))).toBe("repeating-linear-gradient(360deg, red)");
+                expect(CssString$Css.gradient(Css$Css.radialGradient("center", "circle", undefined, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(circle at center, #9198e5)");
+                expect(CssString$Css.gradient(Css$Css.repeatingRadialGradient("center", "circle", Css$Css.px(10), Css$Css.rgbX("9198e5")))).toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
+                expect(CssString$Css.gradient(Css$Css.conicGradient(Css$Css.deg(360), Css$Css.px(10), "red"))).toBe("conic-gradient(from 360deg at 10px, red)");
+                expect(CssString$Css.gradient(Css$Css.repeatingConicGradient(Css$Css.deg(360), Css$Css.px(10), "red"))).toBe("repeating-conic-gradient(from 360deg at 10px, red)");
                 
               }));
         test("url", (function () {

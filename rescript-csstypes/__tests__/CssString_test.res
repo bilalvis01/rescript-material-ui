@@ -319,6 +319,15 @@ describe("Image data types", (.) => {
     expect(conicGradient(Css.conicGradient4(#red, #blue, #yellow, Css.rgb(250., 250., 250.))))->toBe("conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
   });
 
+  test("repeatingConicGradient", (.) => {
+    expect(repeatingConicGradient(Css.repeatingConicGradient(#red)))->toBe("repeating-conic-gradient(red)");
+    expect(repeatingConicGradient(Css.repeatingConicGradient(~angle=Css.deg(360.), #red)))->toBe("repeating-conic-gradient(from 360deg, red)");
+    expect(repeatingConicGradient(Css.repeatingConicGradient(~angle=Css.deg(360.), ~position=Css.px(10.), #red)))->toBe("repeating-conic-gradient(from 360deg at 10px, red)");
+    expect(repeatingConicGradient(Css.repeatingConicGradient2(#red, #blue)))->toBe("repeating-conic-gradient(red, blue)");
+    expect(repeatingConicGradient(Css.repeatingConicGradient3(#red, #blue, #yellow)))->toBe("repeating-conic-gradient(red, blue, yellow)");
+    expect(repeatingConicGradient(Css.repeatingConicGradient4(#red, #blue, #yellow, Css.rgb(250., 250., 250.))))->toBe("repeating-conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
+  });
+
   test("gradient", (.) => {
     expect(gradient(Css.linearGradient3(
       ~angle=Css.turn(0.25), 
@@ -335,6 +344,14 @@ describe("Image data types", (.) => {
       Css.linearColorStop3(#red, Css.pct(70.), Css.pct(100.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
+    expect(gradient(Css.repeatingLinearGradient(~angle=Css.deg(360.), #red)))->toBe("repeating-linear-gradient(360deg, red)");
+    expect(gradient(Css.radialGradient(~endingShape=#circle, ~position=#center, Css.rgbX("9198e5"))))
+    ->toBe("radial-gradient(circle at center, #9198e5)");
+    expect(gradient(Css.repeatingRadialGradient(~endingShape=#circle, ~size=Css.px(10.), ~position=#center, Css.rgbX("9198e5"))))
+    ->toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
+    expect(gradient(Css.conicGradient(~angle=Css.deg(360.), ~position=Css.px(10.), #red)))->toBe("conic-gradient(from 360deg at 10px, red)");
+    expect(gradient(Css.repeatingConicGradient(~angle=Css.deg(360.), ~position=Css.px(10.), #red)))
+    ->toBe("repeating-conic-gradient(from 360deg at 10px, red)");
   });
 
   test("url", (.) => {
