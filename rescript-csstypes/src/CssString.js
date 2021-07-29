@@ -720,10 +720,14 @@ function repeatingRadialGradient(v) {
 
 function gradient(v) {
   var variant = v.NAME;
-  if (variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2") {
-    return linearGradient(v);
-  } else {
+  if (variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "repeatingLinearGradient") {
     return repeatingLinearGradient(v);
+  } else if (variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2") {
+    return linearGradient(v);
+  } else if (variant === "radialGradient4" || variant === "radialGradient3" || variant === "radialGradient2" || variant === "radialGradient") {
+    return radialGradient(v);
+  } else {
+    return repeatingRadialGradient(v);
   }
 }
 
@@ -822,7 +826,7 @@ function background(col, pos, size, repeat, att, origin, clip, imageOrColor) {
   var exit = 0;
   if (typeof imageOrColor === "object") {
     var variant = imageOrColor.NAME;
-    exit = variant === "image" || variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "repeatingLinearGradient" ? 1 : 2;
+    exit = variant === "image" || variant === "radialGradient4" || variant === "radialGradient3" || variant === "radialGradient2" || variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "linearGradient" || variant === "radialGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "repeatingLinearGradient" || variant === "repeatingRadialGradient4" || variant === "repeatingRadialGradient3" || variant === "repeatingRadialGradient2" || variant === "repeatingRadialGradient" ? 1 : 2;
   } else {
     exit = imageOrColor === "none" ? 1 : 2;
   }
@@ -858,7 +862,7 @@ function bgLayer(v) {
     }
   }
   var variant = v.NAME;
-  if (variant === "image" || variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "repeatingLinearGradient") {
+  if (variant === "image" || variant === "radialGradient4" || variant === "radialGradient3" || variant === "radialGradient2" || variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "linearGradient" || variant === "radialGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "repeatingLinearGradient" || variant === "repeatingRadialGradient4" || variant === "repeatingRadialGradient3" || variant === "repeatingRadialGradient2" || variant === "repeatingRadialGradient") {
     return bgImage(v);
   }
   if (variant !== "bgLayer") {

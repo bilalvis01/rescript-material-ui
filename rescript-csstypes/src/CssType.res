@@ -1454,6 +1454,8 @@ type repeatingRadialGradient = [
 type gradient = [
   | linearGradient
   | repeatingLinearGradient
+  | radialGradient
+  | repeatingRadialGradient
 ];
 
 type imageTags = [

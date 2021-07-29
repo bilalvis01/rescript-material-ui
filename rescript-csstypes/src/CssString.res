@@ -499,6 +499,8 @@ let gradient = v => {
   switch v {
   | #...linearGradient as g => linearGradient(g)
   | #...repeatingLinearGradient as g => repeatingLinearGradient(g)
+  | #...radialGradient as g => radialGradient(g)
+  | #...repeatingRadialGradient as g => repeatingRadialGradient(g)
   };
 };
 external imageTags: imageTags => string = "%identity";
