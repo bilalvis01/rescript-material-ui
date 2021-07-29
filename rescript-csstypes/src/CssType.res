@@ -1451,11 +1451,19 @@ type repeatingRadialGradient = [
   | #repeatingRadialGradient4(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
 ];
 
+type conicGradient = [
+  | #conicGradient(option<gradientLineAngle>, option<position>, linearColorStop)
+  | #conicGradient2(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop)
+  | #conicGradient3(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop)
+  | #conicGradient4(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
+];
+
 type gradient = [
   | linearGradient
   | repeatingLinearGradient
   | radialGradient
   | repeatingRadialGradient
+  | conicGradient
 ];
 
 type imageTags = [

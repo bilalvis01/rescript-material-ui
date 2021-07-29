@@ -545,6 +545,56 @@ function repeatingRadialGradient4(position, endingShape, size, c1, c2, c3, c4) {
         };
 }
 
+function conicGradient(angle, position, c) {
+  return {
+          NAME: "conicGradient",
+          VAL: [
+            angle,
+            position,
+            c
+          ]
+        };
+}
+
+function conicGradient2(angle, position, c1, c2) {
+  return {
+          NAME: "conicGradient2",
+          VAL: [
+            angle,
+            position,
+            c1,
+            c2
+          ]
+        };
+}
+
+function conicGradient3(angle, position, c1, c2, c3) {
+  return {
+          NAME: "conicGradient3",
+          VAL: [
+            angle,
+            position,
+            c1,
+            c2,
+            c3
+          ]
+        };
+}
+
+function conicGradient4(angle, position, c1, c2, c3, c4) {
+  return {
+          NAME: "conicGradient4",
+          VAL: [
+            angle,
+            position,
+            c1,
+            c2,
+            c3,
+            c4
+          ]
+        };
+}
+
 function url(v) {
   return {
           NAME: "url",
@@ -1343,6 +1393,10 @@ exports.repeatingRadialGradient = repeatingRadialGradient;
 exports.repeatingRadialGradient2 = repeatingRadialGradient2;
 exports.repeatingRadialGradient3 = repeatingRadialGradient3;
 exports.repeatingRadialGradient4 = repeatingRadialGradient4;
+exports.conicGradient = conicGradient;
+exports.conicGradient2 = conicGradient2;
+exports.conicGradient3 = conicGradient3;
+exports.conicGradient4 = conicGradient4;
 exports.url = url;
 exports.src = src;
 exports.image = image;

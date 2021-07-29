@@ -97,6 +97,10 @@ let repeatingRadialGradient3 = (~position=?, ~endingShape=?, ~size=?, c1, c2, c3
   #repeatingRadialGradient3(position, endingShape, size, c1, c2, c3);
 let repeatingRadialGradient4 = (~position=?, ~endingShape=?, ~size=?, c1, c2, c3, c4) => 
   #repeatingRadialGradient4(position, endingShape, size, c1, c2, c3, c4);
+let conicGradient = (~angle=?, ~position=?, c) => #conicGradient(angle, position, c);
+let conicGradient2 = (~angle=?, ~position=?, c1, c2) => #conicGradient2(angle, position, c1, c2);
+let conicGradient3 = (~angle=?, ~position=?, c1, c2, c3) => #conicGradient3(angle, position, c1, c2, c3);
+let conicGradient4 = (~angle=?, ~position=?, c1, c2, c3, c4) => #conicGradient4(angle, position, c1, c2, c3, c4);
 let url = v => #url(v);
 let src = v => #src(v);
 let image = (~dir=?, ~color=?, imageSrcOrColor) => #image(dir, color, imageSrcOrColor);

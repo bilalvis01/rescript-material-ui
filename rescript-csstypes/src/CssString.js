@@ -718,16 +718,59 @@ function repeatingRadialGradient(v) {
   return "repeating-radial-gradient(" + arg + ")";
 }
 
+function conicGradientAngle(angle, pos) {
+  if (angle !== undefined) {
+    if (pos !== undefined) {
+      return "from " + gradientLineAngle(angle) + " at " + position(pos);
+    } else {
+      return "from " + gradientLineAngle(angle);
+    }
+  } else if (pos !== undefined) {
+    return "at " + position(pos);
+  } else {
+    return ;
+  }
+}
+
+function conicGradient_(angle, linearColorStop) {
+  if (angle !== undefined) {
+    return angle + ", " + linearColorStop;
+  } else {
+    return linearColorStop;
+  }
+}
+
+function conicGradient(v) {
+  var variant = v.NAME;
+  var arg;
+  if (variant === "conicGradient2") {
+    var match = v.VAL;
+    arg = conicGradient_(conicGradientAngle(match[0], match[1]), linearColorStop(match[2]) + ", " + linearColorStop(match[3]));
+  } else if (variant === "conicGradient3") {
+    var match$1 = v.VAL;
+    arg = conicGradient_(conicGradientAngle(match$1[0], match$1[1]), linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]));
+  } else if (variant === "conicGradient4") {
+    var match$2 = v.VAL;
+    arg = conicGradient_(conicGradientAngle(match$2[0], match$2[1]), linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) + ", " + linearColorStop(match$2[5]));
+  } else {
+    var match$3 = v.VAL;
+    arg = conicGradient_(conicGradientAngle(match$3[0], match$3[1]), linearColorStop(match$3[2]));
+  }
+  return "conic-gradient(" + arg + ")";
+}
+
 function gradient(v) {
   var variant = v.NAME;
-  if (variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "repeatingLinearGradient") {
+  if (variant === "repeatingRadialGradient4" || variant === "repeatingRadialGradient3" || variant === "repeatingRadialGradient2" || variant === "repeatingRadialGradient") {
+    return repeatingRadialGradient(v);
+  } else if (variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "repeatingLinearGradient") {
     return repeatingLinearGradient(v);
   } else if (variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2") {
     return linearGradient(v);
   } else if (variant === "radialGradient4" || variant === "radialGradient3" || variant === "radialGradient2" || variant === "radialGradient") {
     return radialGradient(v);
   } else {
-    return repeatingRadialGradient(v);
+    return conicGradient(v);
   }
 }
 
@@ -826,7 +869,7 @@ function background(col, pos, size, repeat, att, origin, clip, imageOrColor) {
   var exit = 0;
   if (typeof imageOrColor === "object") {
     var variant = imageOrColor.NAME;
-    exit = variant === "image" || variant === "radialGradient4" || variant === "radialGradient3" || variant === "radialGradient2" || variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "linearGradient" || variant === "radialGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "repeatingLinearGradient" || variant === "repeatingRadialGradient4" || variant === "repeatingRadialGradient3" || variant === "repeatingRadialGradient2" || variant === "repeatingRadialGradient" ? 1 : 2;
+    exit = variant === "image" || variant === "radialGradient4" || variant === "radialGradient3" || variant === "radialGradient2" || variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "linearGradient" || variant === "radialGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "repeatingLinearGradient" || variant === "conicGradient4" || variant === "conicGradient3" || variant === "conicGradient2" || variant === "repeatingRadialGradient4" || variant === "repeatingRadialGradient3" || variant === "repeatingRadialGradient2" || variant === "repeatingRadialGradient" || variant === "conicGradient" ? 1 : 2;
   } else {
     exit = imageOrColor === "none" ? 1 : 2;
   }
@@ -862,7 +905,7 @@ function bgLayer(v) {
     }
   }
   var variant = v.NAME;
-  if (variant === "image" || variant === "radialGradient4" || variant === "radialGradient3" || variant === "radialGradient2" || variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "linearGradient" || variant === "radialGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "repeatingLinearGradient" || variant === "repeatingRadialGradient4" || variant === "repeatingRadialGradient3" || variant === "repeatingRadialGradient2" || variant === "repeatingRadialGradient") {
+  if (variant === "image" || variant === "radialGradient4" || variant === "radialGradient3" || variant === "radialGradient2" || variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "linearGradient" || variant === "radialGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2" || variant === "url" || variant === "src" || variant === "repeatingLinearGradient" || variant === "conicGradient4" || variant === "conicGradient3" || variant === "conicGradient2" || variant === "repeatingRadialGradient4" || variant === "repeatingRadialGradient3" || variant === "repeatingRadialGradient2" || variant === "repeatingRadialGradient" || variant === "conicGradient") {
     return bgImage(v);
   }
   if (variant !== "bgLayer") {
@@ -941,6 +984,7 @@ exports.linearGradient = linearGradient;
 exports.repeatingLinearGradient = repeatingLinearGradient;
 exports.radialGradient = radialGradient;
 exports.repeatingRadialGradient = repeatingRadialGradient;
+exports.conicGradient = conicGradient;
 exports.gradient = gradient;
 exports.url = url;
 exports.imageSrc = imageSrc;

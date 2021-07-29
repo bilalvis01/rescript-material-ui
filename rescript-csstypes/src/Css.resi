@@ -107,6 +107,14 @@ let repeatingRadialGradient3: (~position: radialGradientPosition=?, ~endingShape
   [> | #repeatingRadialGradient3(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop, linearColorStop) ];
 let repeatingRadialGradient4: (~position: radialGradientPosition=?, ~endingShape: radialGradientEndingShape=?, ~size: radialGradientSize=?, linearColorStop, linearColorStop, linearColorStop, linearColorStop) =>
   [> | #repeatingRadialGradient4(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
+let conicGradient: (~angle: gradientLineAngle=?, ~position: position=?, linearColorStop) =>
+  [> #conicGradient(option<gradientLineAngle>, option<position>, linearColorStop) ];
+let conicGradient2: (~angle: gradientLineAngle=?, ~position: position=?, linearColorStop, linearColorStop) =>
+  [> #conicGradient2(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop) ];
+let conicGradient3: (~angle: gradientLineAngle=?, ~position: position=?, linearColorStop, linearColorStop, linearColorStop) =>
+  [> #conicGradient3(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop) ];
+let conicGradient4: (~angle: gradientLineAngle=?, ~position: position=?, linearColorStop, linearColorStop, linearColorStop, linearColorStop) =>
+  [> #conicGradient4(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
 let url: string => [> #url(string) ];
 let src: string => [> #src(string) ];
 let image: (~dir: imageTags=?, ~color: color=?, [ | imageSrc | color ]) => 

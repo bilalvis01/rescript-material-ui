@@ -310,6 +310,15 @@ describe("Image data types", (.) => {
     ->toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
   });
 
+  test("conicGradient", (.) => {
+    expect(conicGradient(Css.conicGradient(#red)))->toBe("conic-gradient(red)");
+    expect(conicGradient(Css.conicGradient(~angle=Css.deg(360.), #red)))->toBe("conic-gradient(from 360deg, red)");
+    expect(conicGradient(Css.conicGradient(~angle=Css.deg(360.), ~position=Css.px(10.), #red)))->toBe("conic-gradient(from 360deg at 10px, red)");
+    expect(conicGradient(Css.conicGradient2(#red, #blue)))->toBe("conic-gradient(red, blue)");
+    expect(conicGradient(Css.conicGradient3(#red, #blue, #yellow)))->toBe("conic-gradient(red, blue, yellow)");
+    expect(conicGradient(Css.conicGradient4(#red, #blue, #yellow, Css.rgb(250., 250., 250.))))->toBe("conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
+  });
+
   test("gradient", (.) => {
     expect(gradient(Css.linearGradient3(
       ~angle=Css.turn(0.25), 
