@@ -197,14 +197,8 @@ describe("Image data types", (function () {
                 expect(CssString$Css.radialGradient(Css$Css.radialGradient(undefined, undefined, undefined, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(#9198e5)");
                 expect(CssString$Css.radialGradient(Css$Css.radialGradient(undefined, "circle", undefined, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(circle, #9198e5)");
                 expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", "circle", undefined, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(circle at center, #9198e5)");
-                expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", "circle", {
-                                NAME: "circle",
-                                VAL: Css$Css.px(10)
-                              }, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(circle 10px at center, #9198e5)");
-                expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", "ellipse", {
-                                NAME: "circle",
-                                VAL: Css$Css.px(10)
-                              }, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", "circle", Css$Css.px(10), Css$Css.rgbX("9198e5")))).toBe("radial-gradient(circle 10px at center, #9198e5)");
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", "ellipse", Css$Css.px(10), Css$Css.rgbX("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
                 expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", undefined, {
                                 NAME: "ellipse",
                                 VAL: [
@@ -219,10 +213,7 @@ describe("Image data types", (function () {
                                   Css$Css.px(10)
                                 ]
                               }, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(ellipse 10px 10px at center, #9198e5)");
-                expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", "ellipse", {
-                                NAME: "circle",
-                                VAL: Css$Css.px(10)
-                              }, Css$Css.rgbX("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
+                expect(CssString$Css.radialGradient(Css$Css.radialGradient("center", "ellipse", Css$Css.px(10), Css$Css.rgbX("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
                 expect(CssString$Css.radialGradient(Css$Css.radialGradient2(undefined, "circle", undefined, Css$Css.rgbX("9198e5"), "red"))).toBe("radial-gradient(circle, #9198e5, red)");
                 expect(CssString$Css.radialGradient(Css$Css.radialGradient3(undefined, "circle", undefined, Css$Css.rgbX("9198e5"), "red", Css$Css.rgb(255, 255, 255)))).toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
                 expect(CssString$Css.radialGradient(Css$Css.radialGradient4(undefined, "circle", undefined, Css$Css.rgbX("9198e5"), "red", Css$Css.rgb(255, 255, 255), Css$Css.linearColorStop2("blue", Css$Css.pct(10))))).toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
@@ -258,13 +249,13 @@ describe("Image data types", (function () {
                 expect(CssString$Css.bgSize(Css$Css.bgSize2(Css$Css.px(24), Css$Css.px(24)))).toBe("24px 24px");
                 
               }));
-        test("bgPosition", (function () {
-                expect(CssString$Css.bgPosition("center")).toBe("center");
-                expect(CssString$Css.bgPosition(Css$Css.px(20))).toBe("20px");
-                expect(CssString$Css.bgPosition(Css$Css.bgPosition2("left", "top"))).toBe("left top");
-                expect(CssString$Css.bgPosition(Css$Css.bgPosition3("left", "top", Css$Css.pct(10)))).toBe("left top 10%");
-                expect(CssString$Css.bgPosition(Css$Css.bgPosition3("left", Css$Css.pct(20), "bottom"))).toBe("left 20% bottom");
-                expect(CssString$Css.bgPosition(Css$Css.bgPosition4("right", Css$Css.pct(35), "bottom", Css$Css.pct(45)))).toBe("right 35% bottom 45%");
+        test("position", (function () {
+                expect(CssString$Css.position("center")).toBe("center");
+                expect(CssString$Css.position(Css$Css.px(20))).toBe("20px");
+                expect(CssString$Css.position(Css$Css.position2("left", "top"))).toBe("left top");
+                expect(CssString$Css.position(Css$Css.position3("left", "top", Css$Css.pct(10)))).toBe("left top 10%");
+                expect(CssString$Css.position(Css$Css.position3("left", Css$Css.pct(20), "bottom"))).toBe("left 20% bottom");
+                expect(CssString$Css.position(Css$Css.position4("right", Css$Css.pct(35), "bottom", Css$Css.pct(45)))).toBe("right 35% bottom 45%");
                 
               }));
         

@@ -93,9 +93,9 @@ let url = v => #url(v);
 let src = v => #src(v);
 let image = (~dir=?, ~color=?, imageSrcOrColor) => #image(dir, color, imageSrcOrColor);
 let bgSize2 = (s1, s2) => #bgSize2(s1, s2);
-let bgPosition2 = (p1, p2) => #bgPosition2(p1, p2);
-let bgPosition3 = (p1, p2, p3) => #bgPosition3(p1, p2, p3);
-let bgPosition4 = (p1, p2, p3, p4) => #bgPosition4(p1, p2, p3, p4); 
+let position2 = (p1, p2) => #position2(p1, p2);
+let position3 = (p1, p2, p3) => #position3(p1, p2, p3);
+let position4 = (p1, p2, p3, p4) => #position4(p1, p2, p3, p4); 
 
 /*
 Background layer

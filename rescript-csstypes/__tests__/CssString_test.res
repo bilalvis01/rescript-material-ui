@@ -268,15 +268,15 @@ describe("Image data types", (.) => {
     ->toBe("radial-gradient(circle, #9198e5)");
     expect(radialGradient(Css.radialGradient(~endingShape=#circle, ~position=#center, Css.rgbX("9198e5"))))
     ->toBe("radial-gradient(circle at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#circle, ~size=#circle(Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~endingShape=#circle, ~size=Css.px(10.), ~position=#center, Css.rgbX("9198e5"))))
     ->toBe("radial-gradient(circle 10px at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=#circle(Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.rgbX("9198e5"))))
     ->toBe("radial-gradient(ellipse at center, #9198e5)");
     expect(radialGradient(Css.radialGradient(~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
     ->toBe("radial-gradient(10px 10px at center, #9198e5)");
     expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
     ->toBe("radial-gradient(ellipse 10px 10px at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=#circle(Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.rgbX("9198e5"))))
     ->toBe("radial-gradient(ellipse at center, #9198e5)");
     expect(radialGradient(Css.radialGradient2(~endingShape=#circle, Css.rgbX("9198e5"), #red)))
     ->toBe("radial-gradient(circle, #9198e5, red)");
@@ -329,13 +329,13 @@ describe("Image data types", (.) => {
     expect(bgSize(Css.bgSize2(Css.px(24.), Css.px(24.))))->toBe("24px 24px");
   });
 
-  test("bgPosition", (.) => {
-    expect(bgPosition(#center))->toBe("center");
-    expect(bgPosition(Css.px(20.)))->toBe("20px");
-    expect(bgPosition(Css.bgPosition2(#left, #top)))->toBe("left top");
-    expect(bgPosition(Css.bgPosition3(#left, #top, Css.pct(10.))))->toBe("left top 10%");
-    expect(bgPosition(Css.bgPosition3(#left, Css.pct(20.), #bottom)))->toBe("left 20% bottom");
-    expect(bgPosition(Css.bgPosition4(#right, Css.pct(35.), #bottom, Css.pct(45.))))
+  test("position", (.) => {
+    expect(position(#center))->toBe("center");
+    expect(position(Css.px(20.)))->toBe("20px");
+    expect(position(Css.position2(#left, #top)))->toBe("left top");
+    expect(position(Css.position3(#left, #top, Css.pct(10.))))->toBe("left top 10%");
+    expect(position(Css.position3(#left, Css.pct(20.), #bottom)))->toBe("left 20% bottom");
+    expect(position(Css.position4(#right, Css.pct(35.), #bottom, Css.pct(45.))))
       ->toBe("right 35% bottom 45%");
   });
 });

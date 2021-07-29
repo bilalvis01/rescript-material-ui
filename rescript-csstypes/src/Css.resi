@@ -105,12 +105,12 @@ let image: (~dir: imageTags=?, ~color: color=?, [ | imageSrc | color ]) =>
   [> #image(option<imageTags>, option<color>, [ | imageSrc | color ]) ];
 let bgSize2: ([ | #auto | length_percentage ], [ | #auto | length_percentage ]) =>
   [> #bgSize2([ | #auto | length_percentage ], [ | #auto | length_percentage ]) ];
-let bgPosition2: ([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ]) =>
-  [> #bgPosition2([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ]) ];
-let bgPosition3: ([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ]) =>
-  [> | #bgPosition3([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ]) ];
-let bgPosition4: ([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage) =>
-  [> | #bgPosition4([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage) ];
+let position2: ([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ]) =>
+  [> #position2([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ]) ];
+let position3: ([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ]) =>
+  [> | #position3([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ]) ];
+let position4: ([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage) =>
+  [> | #position4([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage) ];
 
 
 /*
@@ -118,7 +118,7 @@ Background layer
 */
 let bgLayer: (
   ~color: color=?,
-  ~position: bgPosition=?,
+  ~position: position=?,
   ~size: bgSize=?,
   ~repeat: repeatStyle=?,
   ~attachment: attachment=?,
@@ -129,7 +129,7 @@ let bgLayer: (
   [> 
     | #bgLayer(
         option<color>, 
-        option<bgPosition>, 
+        option<position>, 
         option<bgSize>,
         option<repeatStyle>,
         option<attachment>,
@@ -260,7 +260,7 @@ let borderLeftWidthString: string => property;
 
 let background: (
   ~color: color=?,
-  ~position: bgPosition=?,
+  ~position: position=?,
   ~size: bgSize=?,
   ~repeat: repeatStyle=?,
   ~attachment: attachment=?,

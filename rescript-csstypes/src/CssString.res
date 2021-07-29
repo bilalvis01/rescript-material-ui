@@ -311,7 +311,7 @@ let bgSize = v => {
   | #bgSize2(s1, s2) => `${autoOrLength(s1)} ${autoOrLength(s2)}`
   }
 };
-let bgPosition = v => {
+let position = v => {
   switch v {
   | #left => "left"
   | #center => "center"
@@ -319,7 +319,7 @@ let bgPosition = v => {
   | #top => "top"
   | #bottom => "bottom"
   | #...length_percentage as l => length_percentage(l)
-  | #bgPosition2(v1, v2) => {
+  | #position2(v1, v2) => {
     let v1 = switch v1 {
     | #left => "left"
     | #center => "center"
@@ -334,7 +334,7 @@ let bgPosition = v => {
     };
     `${v1} ${v2}`
   }
-  | #bgPosition3(v1, v2, v3) => {
+  | #position3(v1, v2, v3) => {
     let v1 = switch v1 {
     | #left => "left"
     | #center => "center"
@@ -353,7 +353,7 @@ let bgPosition = v => {
     };
     `${v1} ${v2} ${v3}`
   }
-  | #bgPosition4(v1, v2, v3, v4) => {
+  | #position4(v1, v2, v3, v4) => {
     let v1 = switch v1 {
     | #left => "left"
     | #right => "right"
@@ -385,21 +385,35 @@ let linearColorStop = v => {
   | #linearColorStop3(c, l1, l2) => `${color(c)} ${length_percentage(l1)} ${length_percentage(l2)}`
   };
 };
+
+let linearGradient_ = (angle: option<gradientLineAngle>, linearColorStop: string) => {
+  switch angle {
+  | None => linearColorStop
+  | Some(a) => `${gradientLineAngle(a)}, ${linearColorStop}` 
+  };
+};
+
 let linearGradient = v => {
   let arg = switch v {
-  | #linearGradient(None, c) => linearColorStop(c)
-  | #linearGradient(Some(d), c) => `${gradientLineAngle(d)}, ${linearColorStop(c)}`
-  | #linearGradient2(None, c1, c2) => `${linearColorStop(c1)}, ${linearColorStop(c2)}`
-  | #linearGradient2(Some(d), c1, c2) => `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}`
-  | #linearGradient3(None, c1, c2, c3) => `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
-  | #linearGradient3(Some(d), c1, c2, c3) => 
-    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
-  | #linearGradient4(None, c1, c2, c3, c4) => 
-    `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
-  | #linearGradient4(Some(d), c1, c2, c3, c4) => 
-    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
+  | #linearGradient(a, c) => linearGradient_(a, linearColorStop(c))
+  | #linearGradient2(a, c1, c2) => linearGradient_(a, `${linearColorStop(c1)}, ${linearColorStop(c2)}`)
+  | #linearGradient3(a, c1, c2, c3) => 
+    linearGradient_(a, `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`)
+  | #linearGradient4(a, c1, c2, c3, c4) => 
+    linearGradient_(a, `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`)
   };
   `linear-gradient(${arg})`;
+};
+let repeatingLinearGradient = v => {
+  let arg = switch v {
+  | #repeatingLinearGradient(a, c) => linearGradient_(a, linearColorStop(c))
+  | #repeatingLinearGradient2(a, c1, c2) => linearGradient_(a, `${linearColorStop(c1)}, ${linearColorStop(c2)}`)
+  | #repeatingLinearGradient3(a, c1, c2, c3) => 
+    linearGradient_(a, `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`)
+  | #repeatingLinearGradient4(a, c1, c2, c3, c4) => 
+    linearGradient_(a, `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`)
+  };
+  `repeating-linear-gradient(${arg})`;
 };
 
 let radialGradientSize = (v: radialGradientSize) => {
@@ -408,74 +422,61 @@ let radialGradientSize = (v: radialGradientSize) => {
   | #"closest-corner" => "closest-corner"
   | #"farthest-side" => "farthest-side"
   | #"farthest-corner" => "farthes-corner"
-  | #circle(l) => length(l)
+  | #...length as l => length(l)
   | #ellipse(x, y) => `${length_percentage(x)} ${length_percentage(y)}`
   };
 };
 
 let radialGradientPosition = (v: radialGradientPosition) =>
   switch v {
-  | #...bgPosition as p => bgPosition(p)
+  | #...position as p => position(p)
   | #...transformOrigin as t => transformOrigin(t)
   };
 
+let radialGradientEndingShape = (
+  position: option<radialGradientPosition>, 
+  endingShape: option<radialGradientEndingShape>, 
+  size: option<radialGradientSize>,
+) => {
+  let endingShape = switch (endingShape, size) {
+  | (None, None) => None
+  | (Some(s), None) => Some(Obj.magic(s))
+  | (None, Some(#...length)) => None
+  | (None, Some(sz)) => Some(radialGradientSize(sz))
+  | (Some(#ellipse), Some(#...length)) => Some("ellipse")
+  | (Some(#ellipse), Some(sz)) => Some(`ellipse ${radialGradientSize(sz)}`)
+  | (Some(#circle), Some(#ellipse(_, _))) => Some("circle")
+  | (Some(#circle), Some(sz)) => Some(`circle ${radialGradientSize(sz)}`)
+  };
+  switch (endingShape, position) {
+  | (None, None) => None
+  | (Some(s), None) => Some(s)
+  | (None, Some(p)) => Some(`at ${radialGradientPosition(p)}`)
+  | (Some(s), Some(p)) => Some(`${s} at ${radialGradientPosition(p)}`)
+  };
+};
+
+let radialGradient_ = (endingShape: option<string>, linearColorStop: string) => {
+  switch endingShape {
+  | None => linearColorStop
+  | Some(endingShape) => `${endingShape}, ${linearColorStop}` 
+  };
+};
+
 let radialGradient = v => {
-  let endingShape = (
-    position: option<radialGradientPosition>, 
-    endingShape: option<radialGradientEndingShape>, 
-    size: option<radialGradientSize>,
-  ) => {
-    let endingShape = switch (endingShape, size) {
-    | (None, None) => None
-    | (Some(s), None) => Some(Obj.magic(s))
-    | (None, Some(#circle(_))) => None
-    | (None, Some(sz)) => Some(radialGradientSize(sz))
-    | (Some(#ellipse as s), Some(#circle(_) as sz)) => Some("ellipse")
-    | (Some(#ellipse as s), Some(sz)) => Some(`ellipse ${radialGradientSize(sz)}`)
-    | (Some(#circle as s), Some(#ellipse(_, _) as sz)) => Some("circle")
-    | (Some(#circle as s), Some(sz)) => Some(`circle ${radialGradientSize(sz)}`)
-    };
-    switch (endingShape, position) {
-    | (None, None) => None
-    | (Some(s), None) => Some(s)
-    | (None, Some(p)) => Some(`at ${radialGradientPosition(p)}`)
-    | (Some(s), Some(p)) => Some(`${s} at ${radialGradientPosition(p)}`)
-    };
-  };
-  let radialGradient = (endingShape: option<string>, linearColorStop: string) => {
-    switch endingShape {
-    | None => linearColorStop
-    | Some(endingShape) => `${endingShape}, ${linearColorStop}` 
-    };
-  };
   let arg = switch v {
-  | #radialGradient(p, s, sz, c) => endingShape(p, s, sz)->radialGradient(linearColorStop(c))
+  | #radialGradient(p, s, sz, c) => 
+    radialGradientEndingShape(p, s, sz)->radialGradient_(linearColorStop(c))
   | #radialGradient2(p, s, sz, c1, c2) => 
-    endingShape(p, s, sz)->radialGradient(`${linearColorStop(c1)}, ${linearColorStop(c2)}`)
+    radialGradientEndingShape(p, s, sz)->radialGradient_(`${linearColorStop(c1)}, ${linearColorStop(c2)}`)
   | #radialGradient3(p, s, sz, c1, c2, c3) => 
-    endingShape(p, s, sz)
-    ->radialGradient(`${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`)
+    radialGradientEndingShape(p, s, sz)
+    ->radialGradient_(`${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`)
   | #radialGradient4(p, s, sz, c1, c2, c3, c4) => 
-    endingShape(p, s, sz)
-    ->radialGradient(`${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`)
+    radialGradientEndingShape(p, s, sz)
+    ->radialGradient_(`${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`)
   };
   `radial-gradient(${arg})`;
-};
-let repeatingLinearGradient = v => {
-  let arg = switch v {
-  | #repeatingLinearGradient(None, c) => linearColorStop(c)
-  | #repeatingLinearGradient(Some(d), c) => `${gradientLineAngle(d)}, ${linearColorStop(c)}`
-  | #repeatingLinearGradient2(None, c1, c2) => `${linearColorStop(c1)}, ${linearColorStop(c2)}`
-  | #repeatingLinearGradient2(Some(d), c1, c2) => `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}`
-  | #repeatingLinearGradient3(None, c1, c2, c3) => `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
-  | #repeatingLinearGradient3(Some(d), c1, c2, c3) => 
-    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}`
-  | #repeatingLinearGradient4(None, c1, c2, c3, c4) => 
-    `${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
-  | #repeatingLinearGradient4(Some(d), c1, c2, c3, c4) => 
-    `${gradientLineAngle(d)}, ${linearColorStop(c1)}, ${linearColorStop(c2)}, ${linearColorStop(c3)}, ${linearColorStop(c4)}`
-  };
-  `repeating-linear-gradient(${arg})`;
 };
 let gradient = v => {
   switch v {
@@ -522,7 +523,7 @@ Background
 */
 let background = (
   ~color as col=?,
-  ~position=?,
+  ~position as pos=?,
   ~size=?,
   ~repeat=?,
   ~attachment as att=?,
@@ -530,12 +531,12 @@ let background = (
   ~clip=?,
   imageOrColor
 ) => {
-  let position = switch (position, size) {
+  let pos = switch (pos, size) {
   | (None, _) => None
-  | (Some(p), None) => Some(bgPosition(p))
-  | (Some(p), Some(s)) => Some(`${bgPosition(p)} / ${bgSize(s)}`)
+  | (Some(p), None) => Some(position(p))
+  | (Some(p), Some(s)) => Some(`${position(p)} / ${bgSize(s)}`)
   };
-  let bg = switch (position, repeat) {
+  let bg = switch (pos, repeat) {
   | (None, None) => None
   | (Some(p), None) => Some(p)
   | (None, Some(r)) => Some(repeatStyle(r))

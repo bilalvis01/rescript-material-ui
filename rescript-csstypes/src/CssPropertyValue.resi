@@ -45,7 +45,7 @@ type t_background = synthetic<tag_background>;
 external backgroundString: string => t_background = "%identity";
 let background: (
   ~color: color=?,
-  ~position: bgPosition=?,
+  ~position: position=?,
   ~size: bgSize=?,
   ~repeat: repeatStyle=?,
   ~attachment: attachment=?,

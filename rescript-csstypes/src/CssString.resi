@@ -118,7 +118,7 @@ let imageSrc: imageSrc => string;
 let image: image => string;
 let bgImage: bgImage => string;
 let bgSize: bgSize => string;
-let bgPosition: bgPosition => string;
+let position: position => string;
 external repeatStyle: repeatStyle => string = "%identity";
 external attachment: attachment => string = "%identity";
 external box: box => string = "%identity";
@@ -128,7 +128,7 @@ Background
 */
 let background: (
   ~color: color=?,
-  ~position: bgPosition=?,
+  ~position: position=?,
   ~size: bgSize=?,
   ~repeat: repeatStyle=?,
   ~attachment: attachment=?,

@@ -1208,17 +1208,12 @@ type alignSelf_global = [
   | global
 ];
 
-type position = [
+type propertyPosition = [
   | #static
   | #relative
   | #absolute
   | #sticky
   | #fixed
-];
-
-type position_global = [
-  | position
-  | global
 ];
 
 type edgePosition = [
@@ -1377,16 +1372,16 @@ type bgSize = [
   | #bgSize2([ | #auto | length_percentage ], [ | #auto | length_percentage ])
 ];
 
-type bgPosition = [
+type position = [
   | #left
   | #center
   | #right
   | #top
   | #bottom
   | length_percentage
-  | #bgPosition2([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ])
-  | #bgPosition3([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ])
-  | #bgPosition4([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage)
+  | #position2([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ])
+  | #position3([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ])
+  | #position4([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage)
 ];
 
 /*
@@ -1429,7 +1424,7 @@ type repeatingLinearGradient = [
   | #repeatingLinearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
 ];
 
-type radialGradientPosition = [ | bgPosition | transformOrigin ];
+type radialGradientPosition = [ | position | transformOrigin ];
 
 type radialGradientEndingShape = [ | #circle | #ellipse ];
 
@@ -1438,7 +1433,7 @@ type radialGradientSize = [
   | #"closest-corner"
   | #"farthest-side"
   | #"farthest-corner"
-  | #circle(length)
+  | length
   | #ellipse(length_percentage, length_percentage)
 ];
 
@@ -1524,7 +1519,7 @@ type attachment = [
   | color
   | #bgLayer(
       option<color>, 
-      option<bgPosition>, 
+      option<position>, 
       option<bgSize>,
       option<repeatStyle>,
       option<attachment>,

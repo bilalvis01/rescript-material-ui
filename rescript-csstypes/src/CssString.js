@@ -472,7 +472,7 @@ function bgSize(v) {
   return autoOrLength(match[0]) + " " + autoOrLength(match[1]);
 }
 
-function bgPosition(v) {
+function position(v) {
   if (typeof v !== "object") {
     if (v === "bottom") {
       return "bottom";
@@ -487,7 +487,7 @@ function bgPosition(v) {
     }
   }
   var variant = v.NAME;
-  if (variant === "bgPosition2") {
+  if (variant === "position2") {
     var match = v.VAL;
     var v2 = match[1];
     var v1 = match[0];
@@ -503,7 +503,7 @@ function bgPosition(v) {
       );
     return v1$1 + " " + v2$1;
   }
-  if (variant === "bgPosition3") {
+  if (variant === "position3") {
     var match$1 = v.VAL;
     var v3 = match$1[2];
     var v2$2 = match$1[1];
@@ -521,7 +521,7 @@ function bgPosition(v) {
       );
     return v1$3 + " " + v2$3 + " " + v3$1;
   }
-  if (variant !== "bgPosition4") {
+  if (variant !== "position4") {
     return length_percentage(v);
   }
   var match$2 = v.VAL;
@@ -557,27 +557,50 @@ function linearColorStop(v) {
   return color(match$1[0]) + " " + length_percentage(match$1[1]) + " " + length_percentage(match$1[2]);
 }
 
+function linearGradient_(angle, linearColorStop) {
+  if (angle !== undefined) {
+    return gradientLineAngle(angle) + ", " + linearColorStop;
+  } else {
+    return linearColorStop;
+  }
+}
+
 function linearGradient(v) {
   var variant = v.NAME;
   var arg;
   if (variant === "linearGradient3") {
     var match = v.VAL;
-    var d = match[0];
-    arg = d !== undefined ? gradientLineAngle(d) + ", " + linearColorStop(match[1]) + ", " + linearColorStop(match[2]) + ", " + linearColorStop(match[3]) : linearColorStop(match[1]) + ", " + linearColorStop(match[2]) + ", " + linearColorStop(match[3]);
+    arg = linearGradient_(match[0], linearColorStop(match[1]) + ", " + linearColorStop(match[2]) + ", " + linearColorStop(match[3]));
   } else if (variant === "linearGradient4") {
     var match$1 = v.VAL;
-    var d$1 = match$1[0];
-    arg = d$1 !== undefined ? gradientLineAngle(d$1) + ", " + linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) : linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]);
+    arg = linearGradient_(match$1[0], linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]));
   } else if (variant === "linearGradient") {
     var match$2 = v.VAL;
-    var d$2 = match$2[0];
-    arg = d$2 !== undefined ? gradientLineAngle(d$2) + ", " + linearColorStop(match$2[1]) : linearColorStop(match$2[1]);
+    arg = linearGradient_(match$2[0], linearColorStop(match$2[1]));
   } else {
     var match$3 = v.VAL;
-    var d$3 = match$3[0];
-    arg = d$3 !== undefined ? gradientLineAngle(d$3) + ", " + linearColorStop(match$3[1]) + ", " + linearColorStop(match$3[2]) : linearColorStop(match$3[1]) + ", " + linearColorStop(match$3[2]);
+    arg = linearGradient_(match$3[0], linearColorStop(match$3[1]) + ", " + linearColorStop(match$3[2]));
   }
   return "linear-gradient(" + arg + ")";
+}
+
+function repeatingLinearGradient(v) {
+  var variant = v.NAME;
+  var arg;
+  if (variant === "repeatingLinearGradient2") {
+    var match = v.VAL;
+    arg = linearGradient_(match[0], linearColorStop(match[1]) + ", " + linearColorStop(match[2]));
+  } else if (variant === "repeatingLinearGradient3") {
+    var match$1 = v.VAL;
+    arg = linearGradient_(match$1[0], linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]));
+  } else if (variant === "repeatingLinearGradient4") {
+    var match$2 = v.VAL;
+    arg = linearGradient_(match$2[0], linearColorStop(match$2[1]) + ", " + linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]));
+  } else {
+    var match$3 = v.VAL;
+    arg = linearGradient_(match$3[0], linearColorStop(match$3[1]));
+  }
+  return "repeating-linear-gradient(" + arg + ")";
 }
 
 function radialGradientSize(v) {
@@ -593,7 +616,7 @@ function radialGradientSize(v) {
     }
   }
   if (v.NAME !== "ellipse") {
-    return length(v.VAL);
+    return length(v);
   }
   var match = v.VAL;
   return length_percentage(match[0]) + " " + length_percentage(match[1]);
@@ -603,85 +626,77 @@ function radialGradientPosition(v) {
   if (typeof v === "object" && v.NAME === "transformOrigin2") {
     return transformOrigin(v);
   } else {
-    return bgPosition(v);
+    return position(v);
+  }
+}
+
+function radialGradientEndingShape(position, endingShape, size) {
+  var endingShape$1;
+  if (endingShape !== undefined) {
+    if (size !== undefined) {
+      if (endingShape === "ellipse") {
+        if (typeof size === "object") {
+          var variant = size.NAME;
+          endingShape$1 = variant === "rem" || variant === "vw" || variant === "vh" || variant === "px" || variant === "pt" || variant === "pc" || variant === "mm" || variant === "ex" || variant === "em" || variant === "cm" || variant === "ch" || variant === "vmin" || variant === "vmax" || variant === "inch" ? "ellipse" : "ellipse " + radialGradientSize(size);
+        } else {
+          endingShape$1 = "ellipse " + radialGradientSize(size);
+        }
+      } else {
+        endingShape$1 = typeof size === "object" ? (
+            size.NAME === "ellipse" ? "circle" : "circle " + radialGradientSize(size)
+          ) : "circle " + radialGradientSize(size);
+      }
+    } else {
+      endingShape$1 = endingShape;
+    }
+  } else if (size !== undefined) {
+    if (typeof size === "object") {
+      var variant$1 = size.NAME;
+      endingShape$1 = variant$1 === "rem" || variant$1 === "vw" || variant$1 === "vh" || variant$1 === "px" || variant$1 === "pt" || variant$1 === "pc" || variant$1 === "mm" || variant$1 === "ex" || variant$1 === "em" || variant$1 === "cm" || variant$1 === "ch" || variant$1 === "vmin" || variant$1 === "vmax" || variant$1 === "inch" ? undefined : radialGradientSize(size);
+    } else {
+      endingShape$1 = radialGradientSize(size);
+    }
+  } else {
+    endingShape$1 = undefined;
+  }
+  if (endingShape$1 !== undefined) {
+    if (position !== undefined) {
+      return endingShape$1 + " at " + radialGradientPosition(position);
+    } else {
+      return endingShape$1;
+    }
+  } else if (position !== undefined) {
+    return "at " + radialGradientPosition(position);
+  } else {
+    return ;
+  }
+}
+
+function radialGradient_(endingShape, linearColorStop) {
+  if (endingShape !== undefined) {
+    return endingShape + ", " + linearColorStop;
+  } else {
+    return linearColorStop;
   }
 }
 
 function radialGradient(v) {
-  var endingShape = function (position, endingShape$1, size) {
-    var endingShape$2 = endingShape$1 !== undefined ? (
-        size !== undefined ? (
-            endingShape$1 === "ellipse" ? (
-                typeof size === "object" ? (
-                    size.NAME === "circle" ? "ellipse" : "ellipse " + radialGradientSize(size)
-                  ) : "ellipse " + radialGradientSize(size)
-              ) : (
-                typeof size === "object" ? (
-                    size.NAME === "ellipse" ? "circle" : "circle " + radialGradientSize(size)
-                  ) : "circle " + radialGradientSize(size)
-              )
-          ) : endingShape$1
-      ) : (
-        size !== undefined && !(typeof size === "object" && size.NAME === "circle") ? radialGradientSize(size) : undefined
-      );
-    if (endingShape$2 !== undefined) {
-      if (position !== undefined) {
-        return endingShape$2 + " at " + radialGradientPosition(position);
-      } else {
-        return endingShape$2;
-      }
-    } else if (position !== undefined) {
-      return "at " + radialGradientPosition(position);
-    } else {
-      return ;
-    }
-  };
-  var radialGradient$1 = function (endingShape, linearColorStop) {
-    if (endingShape !== undefined) {
-      return endingShape + ", " + linearColorStop;
-    } else {
-      return linearColorStop;
-    }
-  };
   var variant = v.NAME;
   var arg;
   if (variant === "radialGradient2") {
     var match = v.VAL;
-    arg = radialGradient$1(endingShape(match[0], match[1], match[2]), linearColorStop(match[3]) + ", " + linearColorStop(match[4]));
+    arg = radialGradient_(radialGradientEndingShape(match[0], match[1], match[2]), linearColorStop(match[3]) + ", " + linearColorStop(match[4]));
   } else if (variant === "radialGradient3") {
     var match$1 = v.VAL;
-    arg = radialGradient$1(endingShape(match$1[0], match$1[1], match$1[2]), linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) + ", " + linearColorStop(match$1[5]));
+    arg = radialGradient_(radialGradientEndingShape(match$1[0], match$1[1], match$1[2]), linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) + ", " + linearColorStop(match$1[5]));
   } else if (variant === "radialGradient4") {
     var match$2 = v.VAL;
-    arg = radialGradient$1(endingShape(match$2[0], match$2[1], match$2[2]), linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) + ", " + linearColorStop(match$2[5]) + ", " + linearColorStop(match$2[6]));
+    arg = radialGradient_(radialGradientEndingShape(match$2[0], match$2[1], match$2[2]), linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) + ", " + linearColorStop(match$2[5]) + ", " + linearColorStop(match$2[6]));
   } else {
     var match$3 = v.VAL;
-    arg = radialGradient$1(endingShape(match$3[0], match$3[1], match$3[2]), linearColorStop(match$3[3]));
+    arg = radialGradient_(radialGradientEndingShape(match$3[0], match$3[1], match$3[2]), linearColorStop(match$3[3]));
   }
   return "radial-gradient(" + arg + ")";
-}
-
-function repeatingLinearGradient(v) {
-  var variant = v.NAME;
-  var arg;
-  if (variant === "repeatingLinearGradient2") {
-    var match = v.VAL;
-    var d = match[0];
-    arg = d !== undefined ? gradientLineAngle(d) + ", " + linearColorStop(match[1]) + ", " + linearColorStop(match[2]) : linearColorStop(match[1]) + ", " + linearColorStop(match[2]);
-  } else if (variant === "repeatingLinearGradient3") {
-    var match$1 = v.VAL;
-    var d$1 = match$1[0];
-    arg = d$1 !== undefined ? gradientLineAngle(d$1) + ", " + linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) : linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]);
-  } else if (variant === "repeatingLinearGradient4") {
-    var match$2 = v.VAL;
-    var d$2 = match$2[0];
-    arg = d$2 !== undefined ? gradientLineAngle(d$2) + ", " + linearColorStop(match$2[1]) + ", " + linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) : linearColorStop(match$2[1]) + ", " + linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]);
-  } else {
-    var match$3 = v.VAL;
-    var d$3 = match$3[0];
-    arg = d$3 !== undefined ? gradientLineAngle(d$3) + ", " + linearColorStop(match$3[1]) : linearColorStop(match$3[1]);
-  }
-  return "repeating-linear-gradient(" + arg + ")";
 }
 
 function gradient(v) {
@@ -763,12 +778,12 @@ function bgImage(v) {
   }
 }
 
-function background(col, position, size, repeat, att, origin, clip, imageOrColor) {
-  var position$1 = position !== undefined ? (
-      size !== undefined ? bgPosition(position) + " / " + bgSize(size) : bgPosition(position)
+function background(col, pos, size, repeat, att, origin, clip, imageOrColor) {
+  var pos$1 = pos !== undefined ? (
+      size !== undefined ? position(pos) + " / " + bgSize(size) : position(pos)
     ) : undefined;
-  var bg = position$1 !== undefined ? (
-      repeat !== undefined ? position$1 + " " + repeat : position$1
+  var bg = pos$1 !== undefined ? (
+      repeat !== undefined ? pos$1 + " " + repeat : pos$1
     ) : (
       repeat !== undefined ? repeat : undefined
     );
@@ -908,7 +923,7 @@ exports.imageSrc = imageSrc;
 exports.image = image;
 exports.bgImage = bgImage;
 exports.bgSize = bgSize;
-exports.bgPosition = bgPosition;
+exports.position = position;
 exports.background = background;
 exports.bgLayer = bgLayer;
 /* No side effect */
