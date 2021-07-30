@@ -75,10 +75,30 @@ let borderLeftStyle: lineStyle_global => t_borderLeftStyle;
 type tag_borderWidth;
 type t_borderWidth = synthetic<tag_borderWidth>;
 external borderWidthString: string => t_borderWidth = "%identity";
-let borderWidth: [ | lineWidth | global ] => t_borderWidth;
+let borderWidth: lineWidth_global => t_borderWidth;
 let borderWidth2: (~tb: lineWidth, ~lr: lineWidth) => t_borderWidth;
 let borderWidth3: (~top: lineWidth, ~lr: lineWidth, ~bottom: lineWidth) => t_borderWidth;
 let borderWidth4: (~top: lineWidth, ~right: lineWidth, ~bottom: lineWidth, ~left: lineWidth) => t_borderWidth;
+
+type tag_borderTopWidth;
+type t_borderTopWidth = synthetic<tag_borderTopWidth>;
+external borderTopWidthString: string => t_borderTopWidth = "%identity";
+let borderTopWidth: lineWidth_global => t_borderTopWidth;
+
+type tag_borderRightWidth;
+type t_borderRightWidth = synthetic<tag_borderRightWidth>;
+external borderRightWidthString: string => t_borderRightWidth = "%identity";
+let borderRightWidth: lineWidth_global => t_borderRightWidth;
+
+type tag_borderBottomWidth;
+type t_borderBottomWidth = synthetic<tag_borderBottomWidth>;
+external borderBottomWidthString: string => t_borderBottomWidth = "%identity";
+let borderBottomWidth: lineWidth_global => t_borderBottomWidth;
+
+type tag_borderLeftWidth;
+type t_borderLeftWidth = synthetic<tag_borderLeftWidth>;
+external borderLeftWidthString: string => t_borderLeftWidth = "%identity";
+let borderLeftWidth: lineWidth_global => t_borderLeftWidth;
 
 type tag_background;
 type t_background = synthetic<tag_background>;

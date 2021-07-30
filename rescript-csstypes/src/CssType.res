@@ -968,7 +968,11 @@ type lineWidth = [
   | #thick
 ];
 
-// Line
+type lineWidth_global = [
+  | lineWidth
+  | global
+];
+
 type lineStyle = [
   | #none
   | #hidden

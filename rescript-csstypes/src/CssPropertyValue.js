@@ -70,13 +70,7 @@ function borderLeftStyle(v) {
   return v;
 }
 
-function borderWidth(v) {
-  if (typeof v === "object" || v === "thick" || v === "medium" || v === "thin") {
-    return CssString$Css.lineWidth(v);
-  } else {
-    return v;
-  }
-}
+var borderWidth = CssString$Css.lineWidth_global;
 
 function borderWidth2(tb, lr) {
   return CssString$Css.lineWidth(tb) + " " + CssString$Css.lineWidth(lr);
@@ -89,6 +83,14 @@ function borderWidth3(top, lr, bottom) {
 function borderWidth4(top, right, bottom, left) {
   return CssString$Css.lineWidth(top) + " " + CssString$Css.lineWidth(right) + " " + CssString$Css.lineWidth(bottom) + " " + CssString$Css.lineWidth(left);
 }
+
+var borderTopWidth = CssString$Css.lineWidth_global;
+
+var borderRightWidth = CssString$Css.lineWidth_global;
+
+var borderBottomWidth = CssString$Css.lineWidth_global;
+
+var borderLeftWidth = CssString$Css.lineWidth_global;
 
 function background(color, position, size, repeat, attachment, origin, clip, imageOrColor) {
   var imageOrColor$1;
@@ -220,6 +222,10 @@ exports.borderWidth = borderWidth;
 exports.borderWidth2 = borderWidth2;
 exports.borderWidth3 = borderWidth3;
 exports.borderWidth4 = borderWidth4;
+exports.borderTopWidth = borderTopWidth;
+exports.borderRightWidth = borderRightWidth;
+exports.borderBottomWidth = borderBottomWidth;
+exports.borderLeftWidth = borderLeftWidth;
 exports.background = background;
 exports.background2 = background2;
 exports.background3 = background3;

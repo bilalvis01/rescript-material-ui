@@ -225,6 +225,12 @@ let lineWidth = v => {
     | #thick => "thick"
   };
 }; 
+let lineWidth_global = v => {
+  switch v {
+  | #...lineWidth as w => lineWidth(w)
+  | #...global as g => global(g)
+  };
+};
 
 external lineStyle: lineStyle => string = "%identity";
 external lineStyle_global: lineStyle_global => string = "%identity"; 

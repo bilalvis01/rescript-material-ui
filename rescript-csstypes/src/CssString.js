@@ -322,6 +322,14 @@ function lineWidth(v) {
   }
 }
 
+function lineWidth_global(v) {
+  if (typeof v === "object" || v === "thick" || v === "medium" || v === "thin") {
+    return lineWidth(v);
+  } else {
+    return v;
+  }
+}
+
 function transformOrigin(v) {
   var xToString = function (x) {
     if (typeof x === "object") {
@@ -1013,6 +1021,7 @@ exports.angle_percentage = angle_percentage;
 exports.time_percentage = time_percentage;
 exports.scalar = scalar;
 exports.lineWidth = lineWidth;
+exports.lineWidth_global = lineWidth_global;
 exports.transformOrigin = transformOrigin;
 exports.hue = hue;
 exports.alpha = alpha;

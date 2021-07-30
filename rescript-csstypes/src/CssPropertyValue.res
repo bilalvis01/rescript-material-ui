@@ -93,19 +93,35 @@ let borderLeftStyle = v => CssString.lineStyle_global(v)->borderLeftStyleString;
 type tag_borderWidth;
 type t_borderWidth = synthetic<tag_borderWidth>;
 external borderWidthString: string => t_borderWidth = "%identity";
-let borderWidth = v => 
-  switch v {
-    | #...lineWidth as w => CssString.lineWidth(w)
-    | #...global as g => CssString.global(g)
-  }
-  ->borderWidthString;
-let borderWidth2 = (~tb, ~lr) => `${CssString.lineWidth(tb)} ${CssString.lineWidth(lr)}`->borderWidthString;
+let borderWidth = v => CssString.lineWidth_global(v)->borderWidthString;
+let borderWidth2 = (~tb, ~lr) => 
+  `${CssString.lineWidth(tb)} ${CssString.lineWidth(lr)}`->borderWidthString;
 let borderWidth3 = (~top, ~lr, ~bottom) =>
   `${CssString.lineWidth(top)} ${CssString.lineWidth(lr)} ${CssString.lineWidth(bottom)}`
   ->borderWidthString;
 let borderWidth4 = (~top, ~right, ~bottom, ~left) =>
   `${CssString.lineWidth(top)} ${CssString.lineWidth(right)} ${CssString.lineWidth(bottom)} ${CssString.lineWidth(left)}`
   ->borderWidthString;
+
+type tag_borderTopWidth;
+type t_borderTopWidth = synthetic<tag_borderTopWidth>;
+external borderTopWidthString: string => t_borderTopWidth = "%identity";
+let borderTopWidth = v => CssString.lineWidth_global(v)->borderTopWidthString;
+
+type tag_borderRightWidth;
+type t_borderRightWidth = synthetic<tag_borderRightWidth>;
+external borderRightWidthString: string => t_borderRightWidth = "%identity";
+let borderRightWidth = v => CssString.lineWidth_global(v)->borderRightWidthString;
+
+type tag_borderBottomWidth;
+type t_borderBottomWidth = synthetic<tag_borderBottomWidth>;
+external borderBottomWidthString: string => t_borderBottomWidth = "%identity";
+let borderBottomWidth = v => CssString.lineWidth_global(v)->borderBottomWidthString;
+
+type tag_borderLeftWidth;
+type t_borderLeftWidth = synthetic<tag_borderLeftWidth>;
+external borderLeftWidthString: string => t_borderLeftWidth = "%identity";
+let borderLeftWidth = v => CssString.lineWidth_global(v)->borderLeftWidthString;
 
 type tag_background;
 type t_background = synthetic<tag_background>;

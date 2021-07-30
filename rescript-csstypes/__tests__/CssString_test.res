@@ -155,6 +155,11 @@ describe("Line", (.) => {
     expect(lineWidth(#thick))->toBe("thick");
     expect(lineWidth(Css.mm(10.)))->toBe("10mm");
   });
+
+  test("lineWidth", (.) => {
+    expect(lineWidth_global(#thick))->toBe("thick");
+    expect(lineWidth_global(#initial))->toBe("initial");
+  });
 });
 
 describe("transformOrigin", (.) => {

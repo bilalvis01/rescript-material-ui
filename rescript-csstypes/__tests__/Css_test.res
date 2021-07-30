@@ -54,45 +54,13 @@ describe("border", (.) => {
     expect(borderWidth(px(1.)))->toEqual(propertyString("borderWidth", "1px"));
     expect(borderWidth2(~tb=px(1.), ~lr=#thin))->toEqual(propertyString("borderWidth", "1px thin"));
     expect(borderWidth3(~top=#thin, ~lr=#medium, ~bottom=#thick))
-      ->toEqual(propertyString("borderWidth", "thin medium thick"));
+    ->toEqual(propertyString("borderWidth", "thin medium thick"));
     expect(borderWidth4(~top=px(1.), ~bottom=px(1.), ~right=#thin, ~left=#thick))
-      ->toEqual(propertyString("borderWidth", "1px thin 1px thick"));
-  });
-
-  test("borderTopWidth", (.) => {
+    ->toEqual(propertyString("borderWidth", "1px thin 1px thick"));
     expect(borderTopWidth(px(1.)))->toEqual(propertyString("borderTopWidth", "1px"));
-    expect(borderTopWidth2(~tb=px(1.), ~lr=#thin))->toEqual(propertyString("borderTopWidth", "1px thin"));
-    expect(borderTopWidth3(~top=#thin, ~lr=#medium, ~bottom=#thick))
-      ->toEqual(propertyString("borderTopWidth", "thin medium thick"));
-    expect(borderTopWidth4(~top=px(1.), ~bottom=px(1.), ~right=#thin, ~left=#thick))
-      ->toEqual(propertyString("borderTopWidth", "1px thin 1px thick"));
-  });
-
-  test("borderRightWidth", (.) => {
     expect(borderRightWidth(px(1.)))->toEqual(propertyString("borderRightWidth", "1px"));
-    expect(borderRightWidth2(~tb=px(1.), ~lr=#thin))->toEqual(propertyString("borderRightWidth", "1px thin"));
-    expect(borderRightWidth3(~top=#thin, ~lr=#medium, ~bottom=#thick))
-      ->toEqual(propertyString("borderRightWidth", "thin medium thick"));
-    expect(borderRightWidth4(~top=px(1.), ~bottom=px(1.), ~right=#thin, ~left=#thick))
-      ->toEqual(propertyString("borderRightWidth", "1px thin 1px thick"));
-  });
-
-  test("borderBottomWidth", (.) => {
     expect(borderBottomWidth(px(1.)))->toEqual(propertyString("borderBottomWidth", "1px"));
-    expect(borderBottomWidth2(~tb=px(1.), ~lr=#thin))->toEqual(propertyString("borderBottomWidth", "1px thin"));
-    expect(borderBottomWidth3(~top=#thin, ~lr=#medium, ~bottom=#thick))
-      ->toEqual(propertyString("borderBottomWidth", "thin medium thick"));
-    expect(borderBottomWidth4(~top=px(1.), ~bottom=px(1.), ~right=#thin, ~left=#thick))
-      ->toEqual(propertyString("borderBottomWidth", "1px thin 1px thick"));
-  });
-
-  test("borderLeftWidth", (.) => {
     expect(borderLeftWidth(px(1.)))->toEqual(propertyString("borderLeftWidth", "1px"));
-    expect(borderLeftWidth2(~tb=px(1.), ~lr=#thin))->toEqual(propertyString("borderLeftWidth", "1px thin"));
-    expect(borderLeftWidth3(~top=#thin, ~lr=#medium, ~bottom=#thick))
-      ->toEqual(propertyString("borderLeftWidth", "thin medium thick"));
-    expect(borderLeftWidth4(~top=px(1.), ~bottom=px(1.), ~right=#thin, ~left=#thick))
-      ->toEqual(propertyString("borderLeftWidth", "1px thin 1px thick"));
   });
 
   test("borderStyle", (.) => {

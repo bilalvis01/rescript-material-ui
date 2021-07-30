@@ -1051,27 +1051,6 @@ function borderTopWidth(v) {
         ];
 }
 
-function borderTopWidth2(tb, lr) {
-  return [
-          "borderTopWidth",
-          CssPropertyValue$Css.borderWidth2(tb, lr)
-        ];
-}
-
-function borderTopWidth3(top, lr, bottom) {
-  return [
-          "borderTopWidth",
-          CssPropertyValue$Css.borderWidth3(top, lr, bottom)
-        ];
-}
-
-function borderTopWidth4(top, right, bottom, left) {
-  return [
-          "borderTopWidth",
-          CssPropertyValue$Css.borderWidth4(top, right, bottom, left)
-        ];
-}
-
 function borderTopWidthString(v) {
   return [
           "borderTopWidth",
@@ -1083,27 +1062,6 @@ function borderRightWidth(v) {
   return [
           "borderRightWidth",
           CssPropertyValue$Css.borderWidth(v)
-        ];
-}
-
-function borderRightWidth2(tb, lr) {
-  return [
-          "borderRightWidth",
-          CssPropertyValue$Css.borderWidth2(tb, lr)
-        ];
-}
-
-function borderRightWidth3(top, lr, bottom) {
-  return [
-          "borderRightWidth",
-          CssPropertyValue$Css.borderWidth3(top, lr, bottom)
-        ];
-}
-
-function borderRightWidth4(top, right, bottom, left) {
-  return [
-          "borderRightWidth",
-          CssPropertyValue$Css.borderWidth4(top, right, bottom, left)
         ];
 }
 
@@ -1121,27 +1079,6 @@ function borderBottomWidth(v) {
         ];
 }
 
-function borderBottomWidth2(tb, lr) {
-  return [
-          "borderBottomWidth",
-          CssPropertyValue$Css.borderWidth2(tb, lr)
-        ];
-}
-
-function borderBottomWidth3(top, lr, bottom) {
-  return [
-          "borderBottomWidth",
-          CssPropertyValue$Css.borderWidth3(top, lr, bottom)
-        ];
-}
-
-function borderBottomWidth4(top, right, bottom, left) {
-  return [
-          "borderBottomWidth",
-          CssPropertyValue$Css.borderWidth4(top, right, bottom, left)
-        ];
-}
-
 function borderBottomWidthString(v) {
   return [
           "borderBottomWidth",
@@ -1153,27 +1090,6 @@ function borderLeftWidth(v) {
   return [
           "borderLeftWidth",
           CssPropertyValue$Css.borderWidth(v)
-        ];
-}
-
-function borderLeftWidth2(tb, lr) {
-  return [
-          "borderLeftWidth",
-          CssPropertyValue$Css.borderWidth2(tb, lr)
-        ];
-}
-
-function borderLeftWidth3(top, lr, bottom) {
-  return [
-          "borderLeftWidth",
-          CssPropertyValue$Css.borderWidth3(top, lr, bottom)
-        ];
-}
-
-function borderLeftWidth4(top, right, bottom, left) {
-  return [
-          "borderLeftWidth",
-          CssPropertyValue$Css.borderWidth4(top, right, bottom, left)
         ];
 }
 
@@ -1491,24 +1407,12 @@ exports.borderWidth3 = borderWidth3;
 exports.borderWidth4 = borderWidth4;
 exports.borderWidthString = borderWidthString;
 exports.borderTopWidth = borderTopWidth;
-exports.borderTopWidth2 = borderTopWidth2;
-exports.borderTopWidth3 = borderTopWidth3;
-exports.borderTopWidth4 = borderTopWidth4;
 exports.borderTopWidthString = borderTopWidthString;
 exports.borderRightWidth = borderRightWidth;
-exports.borderRightWidth2 = borderRightWidth2;
-exports.borderRightWidth3 = borderRightWidth3;
-exports.borderRightWidth4 = borderRightWidth4;
 exports.borderRightWidthString = borderRightWidthString;
 exports.borderBottomWidth = borderBottomWidth;
-exports.borderBottomWidth2 = borderBottomWidth2;
-exports.borderBottomWidth3 = borderBottomWidth3;
-exports.borderBottomWidth4 = borderBottomWidth4;
 exports.borderBottomWidthString = borderBottomWidthString;
 exports.borderLeftWidth = borderLeftWidth;
-exports.borderLeftWidth2 = borderLeftWidth2;
-exports.borderLeftWidth3 = borderLeftWidth3;
-exports.borderLeftWidth4 = borderLeftWidth4;
 exports.borderLeftWidthString = borderLeftWidthString;
 exports.background = background;
 exports.backgroundString = backgroundString;

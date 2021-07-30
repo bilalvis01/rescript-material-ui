@@ -220,35 +220,15 @@ let borderWidth4 = (~top, ~right, ~bottom, ~left) =>
 let borderWidthString = v => ("borderWidth", PropertyValue(CssPropertyValue.string(v)));
 
 let borderTopWidth = v => ("borderTopWidth", PropertyValue(CssPropertyValue.borderWidth(v)));
-let borderTopWidth2 = (~tb, ~lr) => ("borderTopWidth", PropertyValue(CssPropertyValue.borderWidth2(~tb, ~lr)));
-let borderTopWidth3 = (~top, ~lr, ~bottom) =>
-  ("borderTopWidth", PropertyValue(CssPropertyValue.borderWidth3(~top, ~lr, ~bottom)));
-let borderTopWidth4 = (~top, ~right, ~bottom, ~left) =>
-  ("borderTopWidth", PropertyValue(CssPropertyValue.borderWidth4(~top, ~right, ~bottom, ~left)));
 let borderTopWidthString = v => ("borderTopWidth", PropertyValue(CssPropertyValue.string(v)));
 
 let borderRightWidth = v => ("borderRightWidth", PropertyValue(CssPropertyValue.borderWidth(v)));
-let borderRightWidth2 = (~tb, ~lr) => ("borderRightWidth", PropertyValue(CssPropertyValue.borderWidth2(~tb, ~lr)));
-let borderRightWidth3 = (~top, ~lr, ~bottom) =>
-  ("borderRightWidth", PropertyValue(CssPropertyValue.borderWidth3(~top, ~lr, ~bottom)));
-let borderRightWidth4 = (~top, ~right, ~bottom, ~left) =>
-  ("borderRightWidth", PropertyValue(CssPropertyValue.borderWidth4(~top, ~right, ~bottom, ~left)));
 let borderRightWidthString = v => ("borderRightWidth", PropertyValue(CssPropertyValue.string(v)));
 
 let borderBottomWidth = v => ("borderBottomWidth", PropertyValue(CssPropertyValue.borderWidth(v)));
-let borderBottomWidth2 = (~tb, ~lr) => ("borderBottomWidth", PropertyValue(CssPropertyValue.borderWidth2(~tb, ~lr)));
-let borderBottomWidth3 = (~top, ~lr, ~bottom) =>
-  ("borderBottomWidth", PropertyValue(CssPropertyValue.borderWidth3(~top, ~lr, ~bottom)));
-let borderBottomWidth4 = (~top, ~right, ~bottom, ~left) =>
-  ("borderBottomWidth", PropertyValue(CssPropertyValue.borderWidth4(~top, ~right, ~bottom, ~left)));
 let borderBottomWidthString = v => ("borderBottomWidth", PropertyValue(CssPropertyValue.string(v)));
 
 let borderLeftWidth = v => ("borderLeftWidth", PropertyValue(CssPropertyValue.borderWidth(v)));
-let borderLeftWidth2 = (~tb, ~lr) => ("borderLeftWidth", PropertyValue(CssPropertyValue.borderWidth2(~tb, ~lr)));
-let borderLeftWidth3 = (~top, ~lr, ~bottom) =>
-  ("borderLeftWidth", PropertyValue(CssPropertyValue.borderWidth3(~top, ~lr, ~bottom)));
-let borderLeftWidth4 = (~top, ~right, ~bottom, ~left) =>
-  ("borderLeftWidth", PropertyValue(CssPropertyValue.borderWidth4(~top, ~right, ~bottom, ~left)));
 let borderLeftWidthString = v => ("borderLeftWidth", PropertyValue(CssPropertyValue.string(v)));
 
 let background = (

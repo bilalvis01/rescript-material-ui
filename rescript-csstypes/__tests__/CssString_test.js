@@ -146,6 +146,11 @@ describe("Line", (function () {
                 expect(CssString$Css.lineWidth(Css$Css.mm(10))).toBe("10mm");
                 
               }));
+        test("lineWidth", (function () {
+                expect(CssString$Css.lineWidth_global("thick")).toBe("thick");
+                expect(CssString$Css.lineWidth_global("initial")).toBe("initial");
+                
+              }));
         
       }));
 

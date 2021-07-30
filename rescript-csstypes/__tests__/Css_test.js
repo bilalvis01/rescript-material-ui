@@ -62,34 +62,10 @@ describe("border", (function () {
                 expect(Css$Css.borderWidth2(Css$Css.px(1), "thin")).toEqual(Css$Css.propertyString("borderWidth", "1px thin"));
                 expect(Css$Css.borderWidth3("thin", "medium", "thick")).toEqual(Css$Css.propertyString("borderWidth", "thin medium thick"));
                 expect(Css$Css.borderWidth4(Css$Css.px(1), "thin", Css$Css.px(1), "thick")).toEqual(Css$Css.propertyString("borderWidth", "1px thin 1px thick"));
-                
-              }));
-        test("borderTopWidth", (function () {
                 expect(Css$Css.borderTopWidth(Css$Css.px(1))).toEqual(Css$Css.propertyString("borderTopWidth", "1px"));
-                expect(Css$Css.borderTopWidth2(Css$Css.px(1), "thin")).toEqual(Css$Css.propertyString("borderTopWidth", "1px thin"));
-                expect(Css$Css.borderTopWidth3("thin", "medium", "thick")).toEqual(Css$Css.propertyString("borderTopWidth", "thin medium thick"));
-                expect(Css$Css.borderTopWidth4(Css$Css.px(1), "thin", Css$Css.px(1), "thick")).toEqual(Css$Css.propertyString("borderTopWidth", "1px thin 1px thick"));
-                
-              }));
-        test("borderRightWidth", (function () {
                 expect(Css$Css.borderRightWidth(Css$Css.px(1))).toEqual(Css$Css.propertyString("borderRightWidth", "1px"));
-                expect(Css$Css.borderRightWidth2(Css$Css.px(1), "thin")).toEqual(Css$Css.propertyString("borderRightWidth", "1px thin"));
-                expect(Css$Css.borderRightWidth3("thin", "medium", "thick")).toEqual(Css$Css.propertyString("borderRightWidth", "thin medium thick"));
-                expect(Css$Css.borderRightWidth4(Css$Css.px(1), "thin", Css$Css.px(1), "thick")).toEqual(Css$Css.propertyString("borderRightWidth", "1px thin 1px thick"));
-                
-              }));
-        test("borderBottomWidth", (function () {
                 expect(Css$Css.borderBottomWidth(Css$Css.px(1))).toEqual(Css$Css.propertyString("borderBottomWidth", "1px"));
-                expect(Css$Css.borderBottomWidth2(Css$Css.px(1), "thin")).toEqual(Css$Css.propertyString("borderBottomWidth", "1px thin"));
-                expect(Css$Css.borderBottomWidth3("thin", "medium", "thick")).toEqual(Css$Css.propertyString("borderBottomWidth", "thin medium thick"));
-                expect(Css$Css.borderBottomWidth4(Css$Css.px(1), "thin", Css$Css.px(1), "thick")).toEqual(Css$Css.propertyString("borderBottomWidth", "1px thin 1px thick"));
-                
-              }));
-        test("borderLeftWidth", (function () {
                 expect(Css$Css.borderLeftWidth(Css$Css.px(1))).toEqual(Css$Css.propertyString("borderLeftWidth", "1px"));
-                expect(Css$Css.borderLeftWidth2(Css$Css.px(1), "thin")).toEqual(Css$Css.propertyString("borderLeftWidth", "1px thin"));
-                expect(Css$Css.borderLeftWidth3("thin", "medium", "thick")).toEqual(Css$Css.propertyString("borderLeftWidth", "thin medium thick"));
-                expect(Css$Css.borderLeftWidth4(Css$Css.px(1), "thin", Css$Css.px(1), "thick")).toEqual(Css$Css.propertyString("borderLeftWidth", "1px thin 1px thick"));
                 
               }));
         test("borderStyle", (function () {
