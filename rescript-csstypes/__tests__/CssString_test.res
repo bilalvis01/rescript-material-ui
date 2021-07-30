@@ -143,6 +143,11 @@ describe("Color data types", (.) => {
     expect(color(Css.rgb(10., 10., 10.)))
       ->toBe("rgb(10, 10, 10)");
   });
+
+  test("color_global", (.) => {
+    expect(color_global(Css.rgb(244., 244., 244.)))->toBe("rgb(244, 244, 244)");
+    expect(color_global(#initial))->toBe("initial");
+  });
 });
 
 describe("Line", (.) => {

@@ -132,6 +132,11 @@ describe("Color data types", (function () {
                 expect(CssString$Css.color(Css$Css.rgb(10, 10, 10))).toBe("rgb(10, 10, 10)");
                 
               }));
+        test("color_global", (function () {
+                expect(CssString$Css.color_global(Css$Css.rgb(244, 244, 244))).toBe("rgb(244, 244, 244)");
+                expect(CssString$Css.color_global("initial")).toBe("initial");
+                
+              }));
         
       }));
 

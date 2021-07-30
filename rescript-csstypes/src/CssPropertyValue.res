@@ -42,6 +42,18 @@ let borderColor4 = (~top, ~right, ~bottom, ~left) =>
   `${CssString.color(top)} ${CssString.color(right)} ${CssString.color(bottom)} ${CssString.color(left)}`
   ->borderColorString;
 
+/*
+type tag_borderColor;
+type t_borderColor = synthetic<tag_borderColor>;
+external borderColorString: string => t_borderColor = "%identity";
+let borderColor = v => 
+  switch v {
+    | #...color as c => CssString.color(c)
+    | #...global as g => CssString.global(g)
+  }
+  ->borderColorString;
+*/
+
 type tag_borderStyle;
 type t_borderStyle = synthetic<tag_borderStyle>;
 external borderStyleString: string => t_borderStyle = "%identity";
