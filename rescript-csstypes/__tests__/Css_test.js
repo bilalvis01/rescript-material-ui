@@ -141,4 +141,40 @@ describe("background", (function () {
         
       }));
 
+describe("spacing", (function () {
+        test("margin", (function () {
+                expect(Css$Css.margin(Css$Css.px(24))).toEqual(Css$Css.propertyString("margin", "24px"));
+                expect(Css$Css.margin("initial")).toEqual(Css$Css.propertyString("margin", "initial"));
+                expect(Css$Css.margin2(Css$Css.rem(2), Css$Css.rem(4))).toEqual(Css$Css.propertyString("margin", "2rem 4rem"));
+                expect(Css$Css.margin3(Css$Css.px(10), Css$Css.px(24), Css$Css.px(40))).toEqual(Css$Css.propertyString("margin", "10px 24px 40px"));
+                expect(Css$Css.margin4(Css$Css.px(20), Css$Css.px(40), Css$Css.px(20), Css$Css.px(40))).toEqual(Css$Css.propertyString("margin", "20px 40px 20px 40px"));
+                expect(Css$Css.marginTop(Css$Css.px(24))).toEqual(Css$Css.propertyString("marginTop", "24px"));
+                expect(Css$Css.marginTop("initial")).toEqual(Css$Css.propertyString("marginTop", "initial"));
+                expect(Css$Css.marginRight(Css$Css.px(24))).toEqual(Css$Css.propertyString("marginRight", "24px"));
+                expect(Css$Css.marginRight("initial")).toEqual(Css$Css.propertyString("marginRight", "initial"));
+                expect(Css$Css.marginBottom(Css$Css.px(24))).toEqual(Css$Css.propertyString("marginBottom", "24px"));
+                expect(Css$Css.marginBottom("initial")).toEqual(Css$Css.propertyString("marginBottom", "initial"));
+                expect(Css$Css.marginLeft(Css$Css.px(24))).toEqual(Css$Css.propertyString("marginLeft", "24px"));
+                expect(Css$Css.marginLeft("initial")).toEqual(Css$Css.propertyString("marginLeft", "initial"));
+                
+              }));
+        test("padding", (function () {
+                expect(Css$Css.padding(Css$Css.px(24))).toEqual(Css$Css.propertyString("padding", "24px"));
+                expect(Css$Css.padding("initial")).toEqual(Css$Css.propertyString("padding", "initial"));
+                expect(Css$Css.padding2(Css$Css.rem(2), Css$Css.rem(4))).toEqual(Css$Css.propertyString("padding", "2rem 4rem"));
+                expect(Css$Css.padding3(Css$Css.px(10), Css$Css.px(24), Css$Css.px(40))).toEqual(Css$Css.propertyString("padding", "10px 24px 40px"));
+                expect(Css$Css.padding4(Css$Css.px(20), Css$Css.px(40), Css$Css.px(20), Css$Css.px(40))).toEqual(Css$Css.propertyString("padding", "20px 40px 20px 40px"));
+                expect(Css$Css.paddingTop(Css$Css.px(24))).toEqual(Css$Css.propertyString("paddingTop", "24px"));
+                expect(Css$Css.paddingTop("initial")).toEqual(Css$Css.propertyString("paddingTop", "initial"));
+                expect(Css$Css.paddingRight(Css$Css.px(24))).toEqual(Css$Css.propertyString("paddingRight", "24px"));
+                expect(Css$Css.paddingRight("initial")).toEqual(Css$Css.propertyString("paddingRight", "initial"));
+                expect(Css$Css.paddingBottom(Css$Css.px(24))).toEqual(Css$Css.propertyString("paddingBottom", "24px"));
+                expect(Css$Css.paddingBottom("initial")).toEqual(Css$Css.propertyString("paddingBottom", "initial"));
+                expect(Css$Css.paddingLeft(Css$Css.px(24))).toEqual(Css$Css.propertyString("paddingLeft", "24px"));
+                expect(Css$Css.paddingLeft("initial")).toEqual(Css$Css.propertyString("paddingLeft", "initial"));
+                
+              }));
+        
+      }));
+
 /*  Not a pure module */

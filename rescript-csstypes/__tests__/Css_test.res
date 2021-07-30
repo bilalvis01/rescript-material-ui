@@ -170,3 +170,41 @@ describe("background", (.) => {
     ->toEqual(propertyString("backgroundStyle", "repeat-x, repeat repeat, no-repeat, space"));
   });
 });
+
+describe("spacing", (.) => {
+  test("margin", (.) => {
+    expect(margin(Css.px(24.)))->toEqual(propertyString("margin", "24px"));
+    expect(margin(#initial))->toEqual(propertyString("margin", "initial"));
+    expect(margin2(~tb=Css.rem(2.), ~lr=Css.rem(4.)))->toEqual(propertyString("margin", "2rem 4rem"));
+    expect(margin3(~top=Css.px(10.), ~lr=Css.px(24.), ~bottom=Css.px(40.)))
+    ->toEqual(propertyString("margin", "10px 24px 40px"));
+    expect(margin4(~top=Css.px(20.), ~bottom=Css.px(20.), ~left=Css.px(40.), ~right=Css.px(40.)))
+    ->toEqual(propertyString("margin", "20px 40px 20px 40px"));
+    expect(marginTop(Css.px(24.)))->toEqual(propertyString("marginTop", "24px"));
+    expect(marginTop(#initial))->toEqual(propertyString("marginTop", "initial"));
+    expect(marginRight(Css.px(24.)))->toEqual(propertyString("marginRight", "24px"));
+    expect(marginRight(#initial))->toEqual(propertyString("marginRight", "initial"));
+    expect(marginBottom(Css.px(24.)))->toEqual(propertyString("marginBottom", "24px"));
+    expect(marginBottom(#initial))->toEqual(propertyString("marginBottom", "initial"));
+    expect(marginLeft(Css.px(24.)))->toEqual(propertyString("marginLeft", "24px"));
+    expect(marginLeft(#initial))->toEqual(propertyString("marginLeft", "initial"));
+  });
+
+  test("padding", (.) => {
+    expect(padding(Css.px(24.)))->toEqual(propertyString("padding", "24px"));
+    expect(padding(#initial))->toEqual(propertyString("padding", "initial"));
+    expect(padding2(~tb=Css.rem(2.), ~lr=Css.rem(4.)))->toEqual(propertyString("padding", "2rem 4rem"));
+    expect(padding3(~top=Css.px(10.), ~lr=Css.px(24.), ~bottom=Css.px(40.)))
+    ->toEqual(propertyString("padding", "10px 24px 40px"));
+    expect(padding4(~top=Css.px(20.), ~bottom=Css.px(20.), ~left=Css.px(40.), ~right=Css.px(40.)))
+    ->toEqual(propertyString("padding", "20px 40px 20px 40px"));
+    expect(paddingTop(Css.px(24.)))->toEqual(propertyString("paddingTop", "24px"));
+    expect(paddingTop(#initial))->toEqual(propertyString("paddingTop", "initial"));
+    expect(paddingRight(Css.px(24.)))->toEqual(propertyString("paddingRight", "24px"));
+    expect(paddingRight(#initial))->toEqual(propertyString("paddingRight", "initial"));
+    expect(paddingBottom(Css.px(24.)))->toEqual(propertyString("paddingBottom", "24px"));
+    expect(paddingBottom(#initial))->toEqual(propertyString("paddingBottom", "initial"));
+    expect(paddingLeft(Css.px(24.)))->toEqual(propertyString("paddingLeft", "24px"));
+    expect(paddingLeft(#initial))->toEqual(propertyString("paddingLeft", "initial"));
+  });
+});
