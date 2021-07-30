@@ -1047,7 +1047,7 @@ function borderWidthString(v) {
 function borderTopWidth(v) {
   return [
           "borderTopWidth",
-          CssPropertyValue$Css.borderWidth(v)
+          CssPropertyValue$Css.borderTopWidth(v)
         ];
 }
 
@@ -1061,7 +1061,7 @@ function borderTopWidthString(v) {
 function borderRightWidth(v) {
   return [
           "borderRightWidth",
-          CssPropertyValue$Css.borderWidth(v)
+          CssPropertyValue$Css.borderRightWidth(v)
         ];
 }
 
@@ -1075,7 +1075,7 @@ function borderRightWidthString(v) {
 function borderBottomWidth(v) {
   return [
           "borderBottomWidth",
-          CssPropertyValue$Css.borderWidth(v)
+          CssPropertyValue$Css.borderBottomWidth(v)
         ];
 }
 
@@ -1089,7 +1089,7 @@ function borderBottomWidthString(v) {
 function borderLeftWidth(v) {
   return [
           "borderLeftWidth",
-          CssPropertyValue$Css.borderWidth(v)
+          CssPropertyValue$Css.borderLeftWidth(v)
         ];
 }
 
