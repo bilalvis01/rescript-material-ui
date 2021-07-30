@@ -655,3 +655,19 @@ let bgLayer = v => {
     );
   };
 };
+
+/*
+Margin
+*/
+let margin = v => {
+  switch v {
+  | #...length_percentage as l => length_percentage(l)
+  | #auto => "auto"
+  };
+};
+let margin_global = v => {
+  switch v {
+  | #...margin as m => margin(m)
+  | #...global as g => global(g)
+  }
+};

@@ -140,3 +140,9 @@ let background: (
   [ | bgImage | color ]
 ) => string;
 let bgLayer: bgLayer => string;
+
+/*
+Margin
+*/
+let margin: margin => string;
+let margin_global: margin_global => string;

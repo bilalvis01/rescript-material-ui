@@ -936,6 +936,22 @@ function bgLayer(v) {
   return background(match[0], match[1], match[2], match[3], match[4], match[5], match[6], match[7]);
 }
 
+function margin(v) {
+  if (typeof v === "object") {
+    return length_percentage(v);
+  } else {
+    return "auto";
+  }
+}
+
+function margin_global(v) {
+  if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
+    return margin(v);
+  } else {
+    return v;
+  }
+}
+
 exports.concat = concat;
 exports.join = join;
 exports.stick = stick;
@@ -1016,4 +1032,6 @@ exports.bgSize = bgSize;
 exports.position = position;
 exports.background = background;
 exports.bgLayer = bgLayer;
+exports.margin = margin;
+exports.margin_global = margin_global;
 /* No side effect */
