@@ -865,28 +865,7 @@ function borderColorString(v) {
 function borderTopColor(v) {
   return [
           "borderTopColor",
-          CssPropertyValue$Css.borderColor(v)
-        ];
-}
-
-function borderTopColor2(tb, lr) {
-  return [
-          "borderTopColor",
-          CssPropertyValue$Css.borderColor2(tb, lr)
-        ];
-}
-
-function borderTopColor3(top, lr, bottom) {
-  return [
-          "borderTopColor",
-          CssPropertyValue$Css.borderColor3(top, lr, bottom)
-        ];
-}
-
-function borderTopColor4(top, right, bottom, left) {
-  return [
-          "borderTopColor",
-          CssPropertyValue$Css.borderColor4(top, right, bottom, left)
+          CssPropertyValue$Css.borderTopColor(v)
         ];
 }
 
@@ -900,28 +879,7 @@ function borderTopColorString(v) {
 function borderRightColor(v) {
   return [
           "borderRightColor",
-          CssPropertyValue$Css.borderColor(v)
-        ];
-}
-
-function borderRightColor2(tb, lr) {
-  return [
-          "borderRightColor",
-          CssPropertyValue$Css.borderColor2(tb, lr)
-        ];
-}
-
-function borderRightColor3(top, lr, bottom) {
-  return [
-          "borderRightColor",
-          CssPropertyValue$Css.borderColor3(top, lr, bottom)
-        ];
-}
-
-function borderRightColor4(top, right, bottom, left) {
-  return [
-          "borderRightColor",
-          CssPropertyValue$Css.borderColor4(top, right, bottom, left)
+          CssPropertyValue$Css.borderRightColor(v)
         ];
 }
 
@@ -932,72 +890,30 @@ function borderRightColorString(v) {
         ];
 }
 
-function borderLeftColor(v) {
-  return [
-          "borderLeftColor",
-          CssPropertyValue$Css.borderColor(v)
-        ];
-}
-
-function borderLeftColor2(tb, lr) {
-  return [
-          "borderLeftColor",
-          CssPropertyValue$Css.borderColor2(tb, lr)
-        ];
-}
-
-function borderLeftColor3(top, lr, bottom) {
-  return [
-          "borderLeftColor",
-          CssPropertyValue$Css.borderColor3(top, lr, bottom)
-        ];
-}
-
-function borderLeftColor4(top, right, bottom, left) {
-  return [
-          "borderLeftColor",
-          CssPropertyValue$Css.borderColor4(top, right, bottom, left)
-        ];
-}
-
-function borderLeftColorString(v) {
-  return [
-          "borderLeftColor",
-          v
-        ];
-}
-
 function borderBottomColor(v) {
   return [
           "borderBottomColor",
-          CssPropertyValue$Css.borderColor(v)
-        ];
-}
-
-function borderBottomColor2(tb, lr) {
-  return [
-          "borderBottomColor",
-          CssPropertyValue$Css.borderColor2(tb, lr)
-        ];
-}
-
-function borderBottomColor3(top, lr, bottom) {
-  return [
-          "borderBottomColor",
-          CssPropertyValue$Css.borderColor3(top, lr, bottom)
-        ];
-}
-
-function borderBottomColor4(top, right, bottom, left) {
-  return [
-          "borderBottomColor",
-          CssPropertyValue$Css.borderColor4(top, right, bottom, left)
+          CssPropertyValue$Css.borderBottomColor(v)
         ];
 }
 
 function borderBottomColorString(v) {
   return [
           "borderBottomColor",
+          v
+        ];
+}
+
+function borderLeftColor(v) {
+  return [
+          "borderLeftColor",
+          CssPropertyValue$Css.borderLeftColor(v)
+        ];
+}
+
+function borderLeftColorString(v) {
+  return [
+          "borderLeftColor",
           v
         ];
 }
@@ -1633,24 +1549,12 @@ exports.borderColor3 = borderColor3;
 exports.borderColor4 = borderColor4;
 exports.borderColorString = borderColorString;
 exports.borderTopColor = borderTopColor;
-exports.borderTopColor2 = borderTopColor2;
-exports.borderTopColor3 = borderTopColor3;
-exports.borderTopColor4 = borderTopColor4;
 exports.borderTopColorString = borderTopColorString;
 exports.borderRightColor = borderRightColor;
-exports.borderRightColor2 = borderRightColor2;
-exports.borderRightColor3 = borderRightColor3;
-exports.borderRightColor4 = borderRightColor4;
 exports.borderRightColorString = borderRightColorString;
 exports.borderBottomColor = borderBottomColor;
-exports.borderBottomColor2 = borderBottomColor2;
-exports.borderBottomColor3 = borderBottomColor3;
-exports.borderBottomColor4 = borderBottomColor4;
 exports.borderBottomColorString = borderBottomColorString;
 exports.borderLeftColor = borderLeftColor;
-exports.borderLeftColor2 = borderLeftColor2;
-exports.borderLeftColor3 = borderLeftColor3;
-exports.borderLeftColor4 = borderLeftColor4;
 exports.borderLeftColorString = borderLeftColorString;
 exports.borderStyle = borderStyle;
 exports.borderStyle2 = borderStyle2;

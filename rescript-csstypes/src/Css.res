@@ -179,37 +179,17 @@ let borderColor4 = (~top, ~right, ~bottom, ~left) =>
   ("borderColor", PropertyValue(CssPropertyValue.borderColor4(~top, ~right, ~bottom, ~left)));
 let borderColorString = v => ("borderColor", PropertyValue(CssPropertyValue.string(v)));
 
-let borderTopColor = v => ("borderTopColor", PropertyValue(CssPropertyValue.borderColor(v)));
-let borderTopColor2 = (~tb, ~lr) => ("borderTopColor", PropertyValue(CssPropertyValue.borderColor2(~tb, ~lr)));
-let borderTopColor3 = (~top, ~lr, ~bottom) =>
-  ("borderTopColor", PropertyValue(CssPropertyValue.borderColor3(~top, ~lr, ~bottom)));
-let borderTopColor4 = (~top, ~right, ~bottom, ~left) =>
-  ("borderTopColor", PropertyValue(CssPropertyValue.borderColor4(~top, ~right, ~bottom, ~left)));
+let borderTopColor = v => ("borderTopColor", PropertyValue(CssPropertyValue.borderTopColor(v)));
 let borderTopColorString = v => ("borderTopColor", PropertyValue(CssPropertyValue.string(v)));
 
-let borderRightColor = v => ("borderRightColor", PropertyValue(CssPropertyValue.borderColor(v)));
-let borderRightColor2 = (~tb, ~lr) => ("borderRightColor", PropertyValue(CssPropertyValue.borderColor2(~tb, ~lr)));
-let borderRightColor3 = (~top, ~lr, ~bottom) =>
-  ("borderRightColor", PropertyValue(CssPropertyValue.borderColor3(~top, ~lr, ~bottom)));
-let borderRightColor4 = (~top, ~right, ~bottom, ~left) =>
-  ("borderRightColor", PropertyValue(CssPropertyValue.borderColor4(~top, ~right, ~bottom, ~left)));
+let borderRightColor = v => ("borderRightColor", PropertyValue(CssPropertyValue.borderRightColor(v)));
 let borderRightColorString = v => ("borderRightColor", PropertyValue(CssPropertyValue.string(v)));
 
-let borderLeftColor = v => ("borderLeftColor", PropertyValue(CssPropertyValue.borderColor(v)));
-let borderLeftColor2 = (~tb, ~lr) => ("borderLeftColor", PropertyValue(CssPropertyValue.borderColor2(~tb, ~lr)));
-let borderLeftColor3 = (~top, ~lr, ~bottom) =>
-  ("borderLeftColor", PropertyValue(CssPropertyValue.borderColor3(~top, ~lr, ~bottom)));
-let borderLeftColor4 = (~top, ~right, ~bottom, ~left) =>
-  ("borderLeftColor", PropertyValue(CssPropertyValue.borderColor4(~top, ~right, ~bottom, ~left)));
-let borderLeftColorString = v => ("borderLeftColor", PropertyValue(CssPropertyValue.string(v)));
-
-let borderBottomColor = v => ("borderBottomColor", PropertyValue(CssPropertyValue.borderColor(v)));
-let borderBottomColor2 = (~tb, ~lr) => ("borderBottomColor", PropertyValue(CssPropertyValue.borderColor2(~tb, ~lr)));
-let borderBottomColor3 = (~top, ~lr, ~bottom) =>
-  ("borderBottomColor", PropertyValue(CssPropertyValue.borderColor3(~top, ~lr, ~bottom)));
-let borderBottomColor4 = (~top, ~right, ~bottom, ~left) =>
-  ("borderBottomColor", PropertyValue(CssPropertyValue.borderColor4(~top, ~right, ~bottom, ~left)));
+let borderBottomColor = v => ("borderBottomColor", PropertyValue(CssPropertyValue.borderBottomColor(v)));
 let borderBottomColorString = v => ("borderBottomColor", PropertyValue(CssPropertyValue.string(v)));
+
+let borderLeftColor = v => ("borderLeftColor", PropertyValue(CssPropertyValue.borderLeftColor(v)));
+let borderLeftColorString = v => ("borderLeftColor", PropertyValue(CssPropertyValue.string(v)));
 
 let borderStyle = v => ("borderStyle", PropertyValue(CssPropertyValue.borderStyle(v)));
 let borderStyle2 = (~tb, ~lr) => ("borderStyle", PropertyValue(CssPropertyValue.borderStyle2(~tb, ~lr)));

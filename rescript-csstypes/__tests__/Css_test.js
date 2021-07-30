@@ -132,34 +132,10 @@ describe("border", (function () {
                 expect(Css$Css.borderColor2("red", "blue")).toEqual(Css$Css.propertyString("borderColor", "red blue"));
                 expect(Css$Css.borderColor3(Css$Css.rgbX("000000"), Css$Css.rgbX("000000"), Css$Css.rgbX("111111"))).toEqual(Css$Css.propertyString("borderColor", "#000000 #000000 #111111"));
                 expect(Css$Css.borderColor4("red", "turquoise", "purple", "deeppink")).toEqual(Css$Css.propertyString("borderColor", "red turquoise purple deeppink"));
-                
-              }));
-        test("borderTopColor", (function () {
                 expect(Css$Css.borderTopColor(Css$Css.hsl(360, Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderTopColor", "hsl(360, 50%, 50%)"));
-                expect(Css$Css.borderTopColor2("red", "blue")).toEqual(Css$Css.propertyString("borderTopColor", "red blue"));
-                expect(Css$Css.borderTopColor3(Css$Css.rgbX("000000"), Css$Css.rgbX("000000"), Css$Css.rgbX("111111"))).toEqual(Css$Css.propertyString("borderTopColor", "#000000 #000000 #111111"));
-                expect(Css$Css.borderTopColor4("red", "turquoise", "purple", "deeppink")).toEqual(Css$Css.propertyString("borderTopColor", "red turquoise purple deeppink"));
-                
-              }));
-        test("borderRightColor", (function () {
                 expect(Css$Css.borderRightColor(Css$Css.hsl(360, Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderRightColor", "hsl(360, 50%, 50%)"));
-                expect(Css$Css.borderRightColor2("red", "blue")).toEqual(Css$Css.propertyString("borderRightColor", "red blue"));
-                expect(Css$Css.borderRightColor3(Css$Css.rgbX("000000"), Css$Css.rgbX("000000"), Css$Css.rgbX("111111"))).toEqual(Css$Css.propertyString("borderRightColor", "#000000 #000000 #111111"));
-                expect(Css$Css.borderRightColor4("red", "turquoise", "purple", "deeppink")).toEqual(Css$Css.propertyString("borderRightColor", "red turquoise purple deeppink"));
-                
-              }));
-        test("borderBottomColor", (function () {
                 expect(Css$Css.borderBottomColor(Css$Css.hsl(360, Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderBottomColor", "hsl(360, 50%, 50%)"));
-                expect(Css$Css.borderBottomColor2("red", "blue")).toEqual(Css$Css.propertyString("borderBottomColor", "red blue"));
-                expect(Css$Css.borderBottomColor3(Css$Css.rgbX("000000"), Css$Css.rgbX("000000"), Css$Css.rgbX("111111"))).toEqual(Css$Css.propertyString("borderBottomColor", "#000000 #000000 #111111"));
-                expect(Css$Css.borderBottomColor4("red", "turquoise", "purple", "deeppink")).toEqual(Css$Css.propertyString("borderBottomColor", "red turquoise purple deeppink"));
-                
-              }));
-        test("borderLeftColor", (function () {
                 expect(Css$Css.borderLeftColor(Css$Css.hsl(360, Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderLeftColor", "hsl(360, 50%, 50%)"));
-                expect(Css$Css.borderLeftColor2("red", "blue")).toEqual(Css$Css.propertyString("borderLeftColor", "red blue"));
-                expect(Css$Css.borderLeftColor3(Css$Css.rgbX("000000"), Css$Css.rgbX("000000"), Css$Css.rgbX("111111"))).toEqual(Css$Css.propertyString("borderLeftColor", "#000000 #000000 #111111"));
-                expect(Css$Css.borderLeftColor4("red", "turquoise", "purple", "deeppink")).toEqual(Css$Css.propertyString("borderLeftColor", "red turquoise purple deeppink"));
                 
               }));
         

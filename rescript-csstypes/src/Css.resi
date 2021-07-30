@@ -198,28 +198,16 @@ let borderColor3: (~top: color, ~lr: color, ~bottom: color) => property;
 let borderColor4: (~top: color, ~right: color, ~bottom: color, ~left: color) => property;
 let borderColorString: string => property;
 
-let borderTopColor: [ | color | global ] => property;
-let borderTopColor2: (~tb: color, ~lr: color) => property;
-let borderTopColor3: (~top: color, ~lr: color, ~bottom: color) => property;
-let borderTopColor4: (~top: color, ~right: color, ~bottom: color, ~left: color) => property;
+let borderTopColor: color_global => property;
 let borderTopColorString: string => property;
 
-let borderRightColor: [ | color | global ] => property;
-let borderRightColor2: (~tb: color, ~lr: color) => property;
-let borderRightColor3: (~top: color, ~lr: color, ~bottom: color) => property;
-let borderRightColor4: (~top: color, ~right: color, ~bottom: color, ~left: color) => property;
+let borderRightColor: color_global => property;
 let borderRightColorString: string => property;
 
-let borderBottomColor: [ | color | global ] => property;
-let borderBottomColor2: (~tb: color, ~lr: color) => property;
-let borderBottomColor3: (~top: color, ~lr: color, ~bottom: color) => property;
-let borderBottomColor4: (~top: color, ~right: color, ~bottom: color, ~left: color) => property;
+let borderBottomColor: color_global => property;
 let borderBottomColorString: string => property;
 
-let borderLeftColor: [ | color | global ] => property;
-let borderLeftColor2: (~tb: color, ~lr: color) => property;
-let borderLeftColor3: (~top: color, ~lr: color, ~bottom: color) => property;
-let borderLeftColor4: (~top: color, ~right: color, ~bottom: color, ~left: color) => property;
+let borderLeftColor: color_global => property;
 let borderLeftColorString: string => property;
 
 let borderStyle: [ | lineStyle | global ] => property;

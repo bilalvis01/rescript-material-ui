@@ -42,17 +42,25 @@ let borderColor4 = (~top, ~right, ~bottom, ~left) =>
   `${CssString.color(top)} ${CssString.color(right)} ${CssString.color(bottom)} ${CssString.color(left)}`
   ->borderColorString;
 
-/*
-type tag_borderColor;
-type t_borderColor = synthetic<tag_borderColor>;
-external borderColorString: string => t_borderColor = "%identity";
-let borderColor = v => 
-  switch v {
-    | #...color as c => CssString.color(c)
-    | #...global as g => CssString.global(g)
-  }
-  ->borderColorString;
-*/
+type tag_borderTopColor;
+type t_borderTopColor = synthetic<tag_borderTopColor>;
+external borderTopColorString: string => t_borderTopColor = "%identity";
+let borderTopColor = v => CssString.color_global(v)->borderTopColorString;
+
+type tag_borderRightColor;
+type t_borderRightColor = synthetic<tag_borderRightColor>;
+external borderRightColorString: string => t_borderRightColor = "%identity";
+let borderRightColor = v => CssString.color_global(v)->borderRightColorString;
+
+type tag_borderBottomColor;
+type t_borderBottomColor = synthetic<tag_borderBottomColor>;
+external borderBottomColorString: string => t_borderBottomColor = "%identity";
+let borderBottomColor = v => CssString.color_global(v)->borderBottomColorString;
+
+type tag_borderLeftColor;
+type t_borderLeftColor = synthetic<tag_borderLeftColor>;
+external borderLeftColorString: string => t_borderLeftColor = "%identity";
+let borderLeftColor = v => CssString.color_global(v)->borderLeftColorString;
 
 type tag_borderStyle;
 type t_borderStyle = synthetic<tag_borderStyle>;

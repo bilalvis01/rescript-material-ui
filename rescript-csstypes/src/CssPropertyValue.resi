@@ -24,6 +24,26 @@ let borderColor2: (~tb: color, ~lr: color) => t_borderColor;
 let borderColor3: (~top: color, ~lr: color, ~bottom: color) => t_borderColor;
 let borderColor4: (~top: color, ~right: color, ~bottom: color, ~left: color) => t_borderColor;
 
+type tag_borderTopColor;
+type t_borderTopColor = synthetic<tag_borderTopColor>;
+external borderTopColorString: string => t_borderTopColor = "%identity";
+let borderTopColor: color_global => t_borderTopColor;
+
+type tag_borderRightColor;
+type t_borderRightColor = synthetic<tag_borderRightColor>;
+external borderRightColorString: string => t_borderRightColor = "%identity";
+let borderRightColor: color_global => t_borderRightColor;
+
+type tag_borderBottomColor;
+type t_borderBottomColor = synthetic<tag_borderBottomColor>;
+external borderBottomColorString: string => t_borderBottomColor = "%identity";
+let borderBottomColor: color_global => t_borderBottomColor;
+
+type tag_borderLeftColor;
+type t_borderLeftColor = synthetic<tag_borderLeftColor>;
+external borderLeftColorString: string => t_borderLeftColor = "%identity";
+let borderLeftColor: color_global => t_borderLeftColor;
+
 type tag_borderStyle;
 type t_borderStyle = synthetic<tag_borderStyle>;
 external borderStyleString: string => t_borderStyle = "%identity";
