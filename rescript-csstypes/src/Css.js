@@ -960,27 +960,6 @@ function borderTopStyle(v) {
         ];
 }
 
-function borderTopStyle2(tb, lr) {
-  return [
-          "borderTopStyle",
-          CssPropertyValue$Css.borderStyle2(tb, lr)
-        ];
-}
-
-function borderTopStyle3(top, lr, bottom) {
-  return [
-          "borderTopStyle",
-          CssPropertyValue$Css.borderStyle3(top, lr, bottom)
-        ];
-}
-
-function borderTopStyle4(top, right, bottom, left) {
-  return [
-          "borderTopStyle",
-          CssPropertyValue$Css.borderStyle4(top, right, bottom, left)
-        ];
-}
-
 function borderTopStyleString(v) {
   return [
           "borderTopStyle",
@@ -992,27 +971,6 @@ function borderRightStyle(v) {
   return [
           "borderRightStyle",
           CssPropertyValue$Css.borderStyle(v)
-        ];
-}
-
-function borderRightStyle2(tb, lr) {
-  return [
-          "borderRightStyle",
-          CssPropertyValue$Css.borderStyle2(tb, lr)
-        ];
-}
-
-function borderRightStyle3(top, lr, bottom) {
-  return [
-          "borderRightStyle",
-          CssPropertyValue$Css.borderStyle3(top, lr, bottom)
-        ];
-}
-
-function borderRightStyle4(top, right, bottom, left) {
-  return [
-          "borderRightStyle",
-          CssPropertyValue$Css.borderStyle4(top, right, bottom, left)
         ];
 }
 
@@ -1030,27 +988,6 @@ function borderBottomStyle(v) {
         ];
 }
 
-function borderBottomStyle2(tb, lr) {
-  return [
-          "borderBottomStyle",
-          CssPropertyValue$Css.borderStyle2(tb, lr)
-        ];
-}
-
-function borderBottomStyle3(top, lr, bottom) {
-  return [
-          "borderBottomStyle",
-          CssPropertyValue$Css.borderStyle3(top, lr, bottom)
-        ];
-}
-
-function borderBottomStyle4(top, right, bottom, left) {
-  return [
-          "borderBottomStyle",
-          CssPropertyValue$Css.borderStyle4(top, right, bottom, left)
-        ];
-}
-
 function borderBottomStyleString(v) {
   return [
           "borderBottomStyle",
@@ -1062,27 +999,6 @@ function borderLeftStyle(v) {
   return [
           "borderLeftStyle",
           CssPropertyValue$Css.borderStyle(v)
-        ];
-}
-
-function borderLeftStyle2(tb, lr) {
-  return [
-          "borderLeftStyle",
-          CssPropertyValue$Css.borderStyle2(tb, lr)
-        ];
-}
-
-function borderLeftStyle3(top, lr, bottom) {
-  return [
-          "borderLeftStyle",
-          CssPropertyValue$Css.borderStyle3(top, lr, bottom)
-        ];
-}
-
-function borderLeftStyle4(top, right, bottom, left) {
-  return [
-          "borderLeftStyle",
-          CssPropertyValue$Css.borderStyle4(top, right, bottom, left)
         ];
 }
 
@@ -1562,24 +1478,12 @@ exports.borderStyle3 = borderStyle3;
 exports.borderStyle4 = borderStyle4;
 exports.borderStyleString = borderStyleString;
 exports.borderTopStyle = borderTopStyle;
-exports.borderTopStyle2 = borderTopStyle2;
-exports.borderTopStyle3 = borderTopStyle3;
-exports.borderTopStyle4 = borderTopStyle4;
 exports.borderTopStyleString = borderTopStyleString;
 exports.borderRightStyle = borderRightStyle;
-exports.borderRightStyle2 = borderRightStyle2;
-exports.borderRightStyle3 = borderRightStyle3;
-exports.borderRightStyle4 = borderRightStyle4;
 exports.borderRightStyleString = borderRightStyleString;
 exports.borderBottomStyle = borderBottomStyle;
-exports.borderBottomStyle2 = borderBottomStyle2;
-exports.borderBottomStyle3 = borderBottomStyle3;
-exports.borderBottomStyle4 = borderBottomStyle4;
 exports.borderBottomStyleString = borderBottomStyleString;
 exports.borderLeftStyle = borderLeftStyle;
-exports.borderLeftStyle2 = borderLeftStyle2;
-exports.borderLeftStyle3 = borderLeftStyle3;
-exports.borderLeftStyle4 = borderLeftStyle4;
 exports.borderLeftStyleString = borderLeftStyleString;
 exports.borderWidth = borderWidth;
 exports.borderWidth2 = borderWidth2;

@@ -60,12 +60,7 @@ let borderLeftColor = v => CssString.color_global(v)->borderLeftColorString;
 type tag_borderStyle;
 type t_borderStyle = synthetic<tag_borderStyle>;
 external borderStyleString: string => t_borderStyle = "%identity";
-let borderStyle = v =>
-  switch v {
-  | #...lineStyle as s => CssString.lineStyle(s)
-  | #...global as g => CssString.global(g)
-  }
-  ->borderStyleString;
+let borderStyle = v => CssString.lineStyle_global(v)->borderStyleString;
 let borderStyle2 = (~tb, ~lr) =>
   `${CssString.lineStyle(tb)} ${CssString.lineStyle(lr)}`->borderStyleString;
 let borderStyle3 = (~top, ~lr, ~bottom) =>
@@ -74,6 +69,26 @@ let borderStyle3 = (~top, ~lr, ~bottom) =>
 let borderStyle4 = (~top, ~right, ~bottom, ~left) =>
   `${CssString.lineStyle(top)} ${CssString.lineStyle(right)} ${CssString.lineStyle(bottom)} ${CssString.lineStyle(left)}`
   ->borderStyleString;
+
+type tag_borderTopStyle;
+type t_borderTopStyle = synthetic<tag_borderTopStyle>;
+external borderTopStyleString: string => t_borderTopStyle = "%identity";
+let borderTopStyle = v => CssString.lineStyle_global(v)->borderTopStyleString;
+
+type tag_borderRightStyle;
+type t_borderRightStyle = synthetic<tag_borderRightStyle>;
+external borderRightStyleString: string => t_borderRightStyle = "%identity";
+let borderRightStyle = v => CssString.lineStyle_global(v)->borderRightStyleString;
+
+type tag_borderBottomStyle;
+type t_borderBottomStyle = synthetic<tag_borderBottomStyle>;
+external borderBottomStyleString: string => t_borderBottomStyle = "%identity";
+let borderBottomStyle = v => CssString.lineStyle_global(v)->borderBottomStyleString;
+
+type tag_borderLeftStyle;
+type t_borderLeftStyle = synthetic<tag_borderLeftStyle>;
+external borderLeftStyleString: string => t_borderLeftStyle = "%identity";
+let borderLeftStyle = v => CssString.lineStyle_global(v)->borderLeftStyleString;
 
 type tag_borderWidth;
 type t_borderWidth = synthetic<tag_borderWidth>;

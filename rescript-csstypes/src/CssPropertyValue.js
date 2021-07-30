@@ -54,6 +54,22 @@ function borderStyle4(top, right, bottom, left) {
   return top + " " + right + " " + bottom + " " + left;
 }
 
+function borderTopStyle(v) {
+  return v;
+}
+
+function borderRightStyle(v) {
+  return v;
+}
+
+function borderBottomStyle(v) {
+  return v;
+}
+
+function borderLeftStyle(v) {
+  return v;
+}
+
 function borderWidth(v) {
   if (typeof v === "object" || v === "thick" || v === "medium" || v === "thin") {
     return CssString$Css.lineWidth(v);
@@ -196,6 +212,10 @@ exports.borderStyle = borderStyle;
 exports.borderStyle2 = borderStyle2;
 exports.borderStyle3 = borderStyle3;
 exports.borderStyle4 = borderStyle4;
+exports.borderTopStyle = borderTopStyle;
+exports.borderRightStyle = borderRightStyle;
+exports.borderBottomStyle = borderBottomStyle;
+exports.borderLeftStyle = borderLeftStyle;
 exports.borderWidth = borderWidth;
 exports.borderWidth2 = borderWidth2;
 exports.borderWidth3 = borderWidth3;

@@ -227,6 +227,7 @@ let lineWidth = v => {
 }; 
 
 external lineStyle: lineStyle => string = "%identity";
+external lineStyle_global: lineStyle_global => string = "%identity"; 
 
 // transform-origin
 let transformOrigin = v => {

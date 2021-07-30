@@ -99,45 +99,14 @@ describe("border", (.) => {
     expect(borderStyle(#unset))->toEqual(propertyString("borderStyle", "unset"));
     expect(borderStyle2(~tb=#solid, ~lr=#dotted))->toEqual(propertyString("borderStyle", "solid dotted"));
     expect(borderStyle3(~top=#solid, ~lr=#inset, ~bottom=#dotted))
-      ->toEqual(propertyString("borderStyle", "solid inset dotted"));
+    ->toEqual(propertyString("borderStyle", "solid inset dotted"));
     expect(borderStyle4(~top=#solid, ~bottom=#dotted, ~left=#inset, ~right=#double))
-      ->toEqual(propertyString("borderStyle", "solid double dotted inset"));
-  });
-
-  test("borderTopStyle", (.) => {
+    ->toEqual(propertyString("borderStyle", "solid double dotted inset"));
     expect(borderTopStyle(#unset))->toEqual(propertyString("borderTopStyle", "unset"));
-    expect(borderTopStyle2(~tb=#solid, ~lr=#dotted))->toEqual(propertyString("borderTopStyle", "solid dotted"));
-    expect(borderTopStyle3(~top=#solid, ~lr=#inset, ~bottom=#dotted))
-      ->toEqual(propertyString("borderTopStyle", "solid inset dotted"));
-    expect(borderTopStyle4(~top=#solid, ~bottom=#dotted, ~left=#inset, ~right=#double))
-      ->toEqual(propertyString("borderTopStyle", "solid double dotted inset"));
-  });
-
-  test("borderRightStyle", (.) => {
     expect(borderRightStyle(#unset))->toEqual(propertyString("borderRightStyle", "unset"));
-    expect(borderRightStyle2(~tb=#solid, ~lr=#dotted))->toEqual(propertyString("borderRightStyle", "solid dotted"));
-    expect(borderRightStyle3(~top=#solid, ~lr=#inset, ~bottom=#dotted))
-      ->toEqual(propertyString("borderRightStyle", "solid inset dotted"));
-    expect(borderRightStyle4(~top=#solid, ~bottom=#dotted, ~left=#inset, ~right=#double))
-      ->toEqual(propertyString("borderRightStyle", "solid double dotted inset"));
-  });
-
-  test("borderBottomStyle", (.) => {
     expect(borderBottomStyle(#unset))->toEqual(propertyString("borderBottomStyle", "unset"));
-    expect(borderBottomStyle2(~tb=#solid, ~lr=#dotted))->toEqual(propertyString("borderBottomStyle", "solid dotted"));
-    expect(borderBottomStyle3(~top=#solid, ~lr=#inset, ~bottom=#dotted))
-      ->toEqual(propertyString("borderBottomStyle", "solid inset dotted"));
-    expect(borderBottomStyle4(~top=#solid, ~bottom=#dotted, ~left=#inset, ~right=#double))
-      ->toEqual(propertyString("borderBottomStyle", "solid double dotted inset"));
-  });
-
-  test("borderLeftStyle", (.) => {
     expect(borderLeftStyle(#unset))->toEqual(propertyString("borderLeftStyle", "unset"));
-    expect(borderLeftStyle2(~tb=#solid, ~lr=#dotted))->toEqual(propertyString("borderLeftStyle", "solid dotted"));
-    expect(borderLeftStyle3(~top=#solid, ~lr=#inset, ~bottom=#dotted))
-      ->toEqual(propertyString("borderLeftStyle", "solid inset dotted"));
-    expect(borderLeftStyle4(~top=#solid, ~bottom=#dotted, ~left=#inset, ~right=#double))
-      ->toEqual(propertyString("borderLeftStyle", "solid double dotted inset"));
+
   });
 
   test("borderColor", (.) => {

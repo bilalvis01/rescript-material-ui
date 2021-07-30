@@ -982,6 +982,11 @@ type lineStyle = [
   | #outset
 ];
 
+type lineStyle_global = [
+  | lineStyle
+  | global
+];
+
 type displayOutside = [
   | #block
   | #inline

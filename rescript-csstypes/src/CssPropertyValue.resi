@@ -47,10 +47,30 @@ let borderLeftColor: color_global => t_borderLeftColor;
 type tag_borderStyle;
 type t_borderStyle = synthetic<tag_borderStyle>;
 external borderStyleString: string => t_borderStyle = "%identity";
-let borderStyle: [ | lineStyle | global ] => t_borderStyle;
+let borderStyle: lineStyle_global => t_borderStyle;
 let borderStyle2: (~tb: lineStyle, ~lr: lineStyle) => t_borderStyle;
 let borderStyle3: (~top: lineStyle, ~lr: lineStyle, ~bottom: lineStyle) => t_borderStyle;
 let borderStyle4: (~top: lineStyle, ~right: lineStyle, ~bottom: lineStyle, ~left: lineStyle) => t_borderStyle;
+
+type tag_borderTopStyle;
+type t_borderTopStyle = synthetic<tag_borderTopStyle>;
+external borderTopStyleString: string => t_borderTopStyle = "%identity";
+let borderTopStyle: lineStyle_global => t_borderTopStyle;
+
+type tag_borderRightStyle;
+type t_borderRightStyle = synthetic<tag_borderRightStyle>;
+external borderRightStyleString: string => t_borderRightStyle = "%identity";
+let borderRightStyle: lineStyle_global => t_borderRightStyle;
+
+type tag_borderBottomStyle;
+type t_borderBottomStyle = synthetic<tag_borderBottomStyle>;
+external borderBottomStyleString: string => t_borderBottomStyle = "%identity";
+let borderBottomStyle: lineStyle_global => t_borderBottomStyle;
+
+type tag_borderLeftStyle;
+type t_borderLeftStyle = synthetic<tag_borderLeftStyle>;
+external borderLeftStyleString: string => t_borderLeftStyle = "%identity";
+let borderLeftStyle: lineStyle_global => t_borderLeftStyle;
 
 type tag_borderWidth;
 type t_borderWidth = synthetic<tag_borderWidth>;

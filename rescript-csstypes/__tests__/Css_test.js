@@ -97,34 +97,10 @@ describe("border", (function () {
                 expect(Css$Css.borderStyle2("solid", "dotted")).toEqual(Css$Css.propertyString("borderStyle", "solid dotted"));
                 expect(Css$Css.borderStyle3("solid", "inset", "dotted")).toEqual(Css$Css.propertyString("borderStyle", "solid inset dotted"));
                 expect(Css$Css.borderStyle4("solid", "double", "dotted", "inset")).toEqual(Css$Css.propertyString("borderStyle", "solid double dotted inset"));
-                
-              }));
-        test("borderTopStyle", (function () {
                 expect(Css$Css.borderTopStyle("unset")).toEqual(Css$Css.propertyString("borderTopStyle", "unset"));
-                expect(Css$Css.borderTopStyle2("solid", "dotted")).toEqual(Css$Css.propertyString("borderTopStyle", "solid dotted"));
-                expect(Css$Css.borderTopStyle3("solid", "inset", "dotted")).toEqual(Css$Css.propertyString("borderTopStyle", "solid inset dotted"));
-                expect(Css$Css.borderTopStyle4("solid", "double", "dotted", "inset")).toEqual(Css$Css.propertyString("borderTopStyle", "solid double dotted inset"));
-                
-              }));
-        test("borderRightStyle", (function () {
                 expect(Css$Css.borderRightStyle("unset")).toEqual(Css$Css.propertyString("borderRightStyle", "unset"));
-                expect(Css$Css.borderRightStyle2("solid", "dotted")).toEqual(Css$Css.propertyString("borderRightStyle", "solid dotted"));
-                expect(Css$Css.borderRightStyle3("solid", "inset", "dotted")).toEqual(Css$Css.propertyString("borderRightStyle", "solid inset dotted"));
-                expect(Css$Css.borderRightStyle4("solid", "double", "dotted", "inset")).toEqual(Css$Css.propertyString("borderRightStyle", "solid double dotted inset"));
-                
-              }));
-        test("borderBottomStyle", (function () {
                 expect(Css$Css.borderBottomStyle("unset")).toEqual(Css$Css.propertyString("borderBottomStyle", "unset"));
-                expect(Css$Css.borderBottomStyle2("solid", "dotted")).toEqual(Css$Css.propertyString("borderBottomStyle", "solid dotted"));
-                expect(Css$Css.borderBottomStyle3("solid", "inset", "dotted")).toEqual(Css$Css.propertyString("borderBottomStyle", "solid inset dotted"));
-                expect(Css$Css.borderBottomStyle4("solid", "double", "dotted", "inset")).toEqual(Css$Css.propertyString("borderBottomStyle", "solid double dotted inset"));
-                
-              }));
-        test("borderLeftStyle", (function () {
                 expect(Css$Css.borderLeftStyle("unset")).toEqual(Css$Css.propertyString("borderLeftStyle", "unset"));
-                expect(Css$Css.borderLeftStyle2("solid", "dotted")).toEqual(Css$Css.propertyString("borderLeftStyle", "solid dotted"));
-                expect(Css$Css.borderLeftStyle3("solid", "inset", "dotted")).toEqual(Css$Css.propertyString("borderLeftStyle", "solid inset dotted"));
-                expect(Css$Css.borderLeftStyle4("solid", "double", "dotted", "inset")).toEqual(Css$Css.propertyString("borderLeftStyle", "solid double dotted inset"));
                 
               }));
         test("borderColor", (function () {

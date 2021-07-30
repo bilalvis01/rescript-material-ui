@@ -84,6 +84,7 @@ let scalar: scalar => string;
 // Line
 let lineWidth: lineWidth => string;
 external lineStyle: lineStyle => string = "%identity";
+external lineStyle_global: lineStyle_global => string = "%identity"; 
 
 // transform-origin
 let transformOrigin: transformOrigin => string;
