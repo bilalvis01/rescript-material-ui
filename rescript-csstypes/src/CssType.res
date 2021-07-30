@@ -656,7 +656,7 @@ type degree = [
   | #360
 ];
 
-type rgbColorValue = [
+type rgbDecimalValue = [
   | #0
   | #1
   | #2
@@ -929,7 +929,7 @@ type hue = [
 type rgbParam = [
   | percentage
   | number
-  | rgbColorValue
+  | rgbDecimalValue
 ];
 
 type color = [
