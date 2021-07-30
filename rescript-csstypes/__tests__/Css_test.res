@@ -184,7 +184,9 @@ describe("border", (.) => {
     expect(borderLeftColor4(~top=#red, ~bottom=#purple, ~right=#turquoise, ~left=#deeppink))
       ->toEqual(propertyString("borderLeftColor", "red turquoise purple deeppink"));
   });
+});
 
+describe("background", (.) => {
   test("background", (.) => {
     expect(background(#initial))->toEqual(propertyString("background", "initial"));
     expect(background(~color=#red, #initial))->toEqual(propertyString("background", "initial"));
@@ -217,5 +219,45 @@ describe("border", (.) => {
       bgLayer(~repeat=#repeat, url("myimage.png")),
     ))
     ->toEqual(propertyString("background", `url("myimage.png") repeat, url("myimage.png") repeat, url("myimage.png") repeat, url("myimage.png") repeat`));
+  });
+
+  test("backgroundAttachment", (.) => {
+    expect(backgroundAttachment(#scroll))->toEqual(propertyString("backgroundAttachment", "scroll"));
+    expect(backgroundAttachment2(#scroll, #fixed))->toEqual(propertyString("backgroundAttachment", "scroll, fixed"));
+    expect(backgroundAttachment3(#scroll, #fixed, #fixed))->toEqual(propertyString("backgroundAttachment", "scroll, fixed, fixed"));
+    expect(backgroundAttachment4(#scroll, #fixed, #fixed, #local))->toEqual(propertyString("backgroundAttachment", "scroll, fixed, fixed, local"));
+  });
+
+  test("backgroundColor", (.) => {
+    expect(backgroundColor(Css.rgb(200., 200., 200.)))->toEqual(propertyString("backgroundColor", "rgb(200, 200, 200)"));
+  });
+
+  test("backgroundImage", (.) => {
+    expect(backgroundImage(Css.url("image.png")))->toEqual(propertyString("backgroundImage",`url("image.png")`));
+    expect(backgroundImage2(Css.url("image.png"), Css.image(Css.url("myimage.jpg"))))
+    ->toEqual(propertyString("backgroundImage", `url("image.png"), image(url("myimage.jpg"))`));
+    expect(backgroundImage3(Css.url("image.png"), Css.image(Css.url("myimage.jpg")), Css.linearGradient(#red)))
+    ->toEqual(propertyString("backgroundImage", `url("image.png"), image(url("myimage.jpg")), linear-gradient(red)`));
+    expect(backgroundImage4(Css.url("image.png"), Css.image(Css.url("myimage.jpg")), Css.linearGradient(#red), Css.radialGradient(#blue)))
+    ->toEqual(propertyString("backgroundImage", `url("image.png"), image(url("myimage.jpg")), linear-gradient(red), radial-gradient(blue)`));
+  });
+
+  test("backgroundPosition", (.) => {
+    expect(backgroundPosition(Css.px(10.)))->toEqual(propertyString("backgroundPosition", "10px"));
+    expect(backgroundPosition2(Css.px(10.), Css.position2(#center, #bottom)))
+    ->toEqual(propertyString("backgroundPosition", "10px, center bottom"));
+    expect(backgroundPosition3(Css.px(10.), Css.position2(#center, #bottom), #center))
+    ->toEqual(propertyString("backgroundPosition", "10px, center bottom, center"));
+    expect(backgroundPosition4(Css.px(10.), Css.position2(#center, #bottom), Css.pct(10.), Css.position4(#left, Css.px(10.), #top, Css.pct(10.))))
+    ->toEqual(propertyString("backgroundPosition", "10px, center bottom, 10%, left 10px top 10%"));
+  });
+
+  test("backgroundStyle", (.) => {
+    expect(backgroundStyle(#"repeat-x"))->toEqual(propertyString("backgroundStyle", "repeat-x"));
+    expect(backgroundStyle2(#"repeat-x", #"repeat repeat"))->toEqual(propertyString("backgroundStyle", "repeat-x, repeat repeat"));
+    expect(backgroundStyle3(#"repeat-x", #"repeat repeat", #"no-repeat"))
+    ->toEqual(propertyString("backgroundStyle", "repeat-x, repeat repeat, no-repeat"));
+    expect(backgroundStyle4(#"repeat-x", #"repeat repeat", #"no-repeat", #space))
+    ->toEqual(propertyString("backgroundStyle", "repeat-x, repeat repeat, no-repeat, space"));
   });
 });

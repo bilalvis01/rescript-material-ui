@@ -162,6 +162,10 @@ describe("border", (function () {
                 expect(Css$Css.borderLeftColor4("red", "turquoise", "purple", "deeppink")).toEqual(Css$Css.propertyString("borderLeftColor", "red turquoise purple deeppink"));
                 
               }));
+        
+      }));
+
+describe("background", (function () {
         test("background", (function () {
                 expect(Css$Css.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "initial")).toEqual(Css$Css.propertyString("background", "initial"));
                 expect(Css$Css.background("red", undefined, undefined, undefined, undefined, undefined, undefined, "initial")).toEqual(Css$Css.propertyString("background", "initial"));
@@ -172,6 +176,38 @@ describe("border", (function () {
                 expect(Css$Css.background3(Css$Css.linearGradient2(Css$Css.deg(217), Css$Css.rgba(255, 0, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(255, 0, 0, 0), Css$Css.pct(70.71))), Css$Css.linearGradient2(Css$Css.deg(127), Css$Css.rgba(0, 255, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(0, 255, 0, 0), Css$Css.pct(70.71))), Css$Css.linearGradient2(Css$Css.deg(217), Css$Css.rgba(255, 0, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(255, 0, 0, 0), Css$Css.pct(70.71))))).toEqual(Css$Css.propertyString("background", "linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%)"));
                 expect(Css$Css.background4(Css$Css.linearGradient2(Css$Css.deg(217), Css$Css.rgba(255, 0, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(255, 0, 0, 0), Css$Css.pct(70.71))), Css$Css.linearGradient2(Css$Css.deg(127), Css$Css.rgba(0, 255, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(0, 255, 0, 0), Css$Css.pct(70.71))), Css$Css.linearGradient2(Css$Css.deg(217), Css$Css.rgba(255, 0, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(255, 0, 0, 0), Css$Css.pct(70.71))), Css$Css.linearGradient2(Css$Css.deg(127), Css$Css.rgba(0, 255, 0, 0.8), Css$Css.linearColorStop2(Css$Css.rgba(0, 255, 0, 0), Css$Css.pct(70.71))))).toEqual(Css$Css.propertyString("background", "linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%)"));
                 expect(Css$Css.background4(Css$Css.bgLayer(undefined, undefined, undefined, "repeat", undefined, undefined, undefined, Css$Css.url("myimage.png")), Css$Css.bgLayer(undefined, undefined, undefined, "repeat", undefined, undefined, undefined, Css$Css.url("myimage.png")), Css$Css.bgLayer(undefined, undefined, undefined, "repeat", undefined, undefined, undefined, Css$Css.url("myimage.png")), Css$Css.bgLayer(undefined, undefined, undefined, "repeat", undefined, undefined, undefined, Css$Css.url("myimage.png")))).toEqual(Css$Css.propertyString("background", "url(\"myimage.png\") repeat, url(\"myimage.png\") repeat, url(\"myimage.png\") repeat, url(\"myimage.png\") repeat"));
+                
+              }));
+        test("backgroundAttachment", (function () {
+                expect(Css$Css.backgroundAttachment("scroll")).toEqual(Css$Css.propertyString("backgroundAttachment", "scroll"));
+                expect(Css$Css.backgroundAttachment2("scroll", "fixed")).toEqual(Css$Css.propertyString("backgroundAttachment", "scroll, fixed"));
+                expect(Css$Css.backgroundAttachment3("scroll", "fixed", "fixed")).toEqual(Css$Css.propertyString("backgroundAttachment", "scroll, fixed, fixed"));
+                expect(Css$Css.backgroundAttachment4("scroll", "fixed", "fixed", "local")).toEqual(Css$Css.propertyString("backgroundAttachment", "scroll, fixed, fixed, local"));
+                
+              }));
+        test("backgroundColor", (function () {
+                expect(Css$Css.backgroundColor(Css$Css.rgb(200, 200, 200))).toEqual(Css$Css.propertyString("backgroundColor", "rgb(200, 200, 200)"));
+                
+              }));
+        test("backgroundImage", (function () {
+                expect(Css$Css.backgroundImage(Css$Css.url("image.png"))).toEqual(Css$Css.propertyString("backgroundImage", "url(\"image.png\")"));
+                expect(Css$Css.backgroundImage2(Css$Css.url("image.png"), Css$Css.image(undefined, undefined, Css$Css.url("myimage.jpg")))).toEqual(Css$Css.propertyString("backgroundImage", "url(\"image.png\"), image(url(\"myimage.jpg\"))"));
+                expect(Css$Css.backgroundImage3(Css$Css.url("image.png"), Css$Css.image(undefined, undefined, Css$Css.url("myimage.jpg")), Css$Css.linearGradient(undefined, "red"))).toEqual(Css$Css.propertyString("backgroundImage", "url(\"image.png\"), image(url(\"myimage.jpg\")), linear-gradient(red)"));
+                expect(Css$Css.backgroundImage4(Css$Css.url("image.png"), Css$Css.image(undefined, undefined, Css$Css.url("myimage.jpg")), Css$Css.linearGradient(undefined, "red"), Css$Css.radialGradient(undefined, undefined, undefined, "blue"))).toEqual(Css$Css.propertyString("backgroundImage", "url(\"image.png\"), image(url(\"myimage.jpg\")), linear-gradient(red), radial-gradient(blue)"));
+                
+              }));
+        test("backgroundPosition", (function () {
+                expect(Css$Css.backgroundPosition(Css$Css.px(10))).toEqual(Css$Css.propertyString("backgroundPosition", "10px"));
+                expect(Css$Css.backgroundPosition2(Css$Css.px(10), Css$Css.position2("center", "bottom"))).toEqual(Css$Css.propertyString("backgroundPosition", "10px, center bottom"));
+                expect(Css$Css.backgroundPosition3(Css$Css.px(10), Css$Css.position2("center", "bottom"), "center")).toEqual(Css$Css.propertyString("backgroundPosition", "10px, center bottom, center"));
+                expect(Css$Css.backgroundPosition4(Css$Css.px(10), Css$Css.position2("center", "bottom"), Css$Css.pct(10), Css$Css.position4("left", Css$Css.px(10), "top", Css$Css.pct(10)))).toEqual(Css$Css.propertyString("backgroundPosition", "10px, center bottom, 10%, left 10px top 10%"));
+                
+              }));
+        test("backgroundStyle", (function () {
+                expect(Css$Css.backgroundStyle("repeat-x")).toEqual(Css$Css.propertyString("backgroundStyle", "repeat-x"));
+                expect(Css$Css.backgroundStyle2("repeat-x", "repeat repeat")).toEqual(Css$Css.propertyString("backgroundStyle", "repeat-x, repeat repeat"));
+                expect(Css$Css.backgroundStyle3("repeat-x", "repeat repeat", "no-repeat")).toEqual(Css$Css.propertyString("backgroundStyle", "repeat-x, repeat repeat, no-repeat"));
+                expect(Css$Css.backgroundStyle4("repeat-x", "repeat repeat", "no-repeat", "space")).toEqual(Css$Css.propertyString("backgroundStyle", "repeat-x, repeat repeat, no-repeat, space"));
                 
               }));
         
