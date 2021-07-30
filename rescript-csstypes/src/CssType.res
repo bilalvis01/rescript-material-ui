@@ -1567,3 +1567,102 @@ type attachment = [
       [ | bgImage | color  ]
     )
 ];
+
+type clear = [
+  | #none
+  | #left
+  | #right
+  | #both
+  | #"inline-start"
+  | #"inline-end"
+];
+
+type clear_global = [
+  | clear
+  | global
+];
+
+type cursorKeyword = [
+  | #auto
+  | #default
+  | #none
+  | #"context-menu"
+  | #help
+  | #pointer
+  | #progress
+  | #wait
+  | #cell
+  | #crosshair
+  | #text
+  | #"vertical-text"
+  | #alias
+  | #copy
+  | #move
+  | #"no-drop"
+  | #"not-allowed"
+  | #"e-resize"
+  | #"n-resize"
+  | #"ne-resize"
+  | #"nw-resize"
+  | #"s-resize"
+  | #"se-resize"
+  | #"sw-resize"
+  | #"w-resize"
+  | #"ew-resize"
+  | #"ns-resize"
+  | #"nesw-resize"
+  | #"col-resize"
+  | #"row-resize"
+  | #"all-scroll"
+  | #"zoom-in"
+  | #"zoom-out"
+  | #grab
+  | #grabbing
+];
+
+type cursorKeyword_global = [
+  | cursorKeyword
+  | global
+];
+
+type cursorCoondinatesValue = [
+  | #0
+  | #1
+  | #2
+  | #3
+  | #4
+  | #5
+  | #6
+  | #7
+  | #8
+  | #9
+  | #10
+  | #11
+  | #12
+  | #13
+  | #14
+  | #15
+  | #16
+  | #17
+  | #18
+  | #19
+  | #20
+  | #21
+  | #22
+  | #23
+  | #24
+  | #25
+  | #26
+  | #27
+  | #28
+  | #29
+  | #30
+  | #31
+  | #32
+];
+
+type cursorImage = [
+  | url
+  | #cursorImage2(url, cursorCoondinatesValue)
+  | #cursorImage3(url, cursorCoondinatesValue, cursorCoondinatesValue)
+];

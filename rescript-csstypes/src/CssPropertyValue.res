@@ -299,3 +299,30 @@ type t_paddingLeft = synthetic<tag_paddingLeft>;
 external paddingLeftString: string => t_paddingLeft = "%identity";
 external paddingLeftNumber: float => t_paddingLeft = "%identity";
 let paddingLeft = v => CssString.padding_global(v)->paddingLeftString;
+
+type tag_clear;
+type t_clear = synthetic<tag_clear>;
+external clearString: string => t_clear = "%identity";
+let clear = v => CssString.clear_global(v)->clearString;
+
+type tag_color;
+type t_color = synthetic<tag_color>;
+external colorString: string => t_color = "%identity";
+let color = v => CssString.color_global(v)->colorString;
+
+type tag_cursor;
+type t_cursor = synthetic<tag_cursor>;
+external cursorString: string => t_cursor = "%identity";
+let cursor = v => CssString.cursorKeyword_global(v)->cursorString;
+let cursor1 = (i, k) =>
+  `${CssString.cursorImage(i)}, ${CssString.cursorKeyword(k)}`
+  ->cursorString;
+let cursor2 = (i1, i2, k) =>
+  `${CssString.cursorImage(i1)}, ${CssString.cursorImage(i2)}, ${CssString.cursorKeyword(k)}`
+  ->cursorString;
+let cursor3 = (i1, i2, i3, k) =>
+  `${CssString.cursorImage(i1)}, ${CssString.cursorImage(i2)}, ${CssString.cursorImage(i3)}, ${CssString.cursorKeyword(k)}`
+  ->cursorString;
+let cursor4 = (i1, i2, i3, i4, k) =>
+  `${CssString.cursorImage(i1)}, ${CssString.cursorImage(i2)}, ${CssString.cursorImage(i3)}, ${CssString.cursorImage(i4)}, ${CssString.cursorKeyword(k)}`
+  ->cursorString;

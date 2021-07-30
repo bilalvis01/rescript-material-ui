@@ -223,6 +223,32 @@ var paddingBottom = CssString$Css.padding_global;
 
 var paddingLeft = CssString$Css.padding_global;
 
+function clear(v) {
+  return v;
+}
+
+var color = CssString$Css.color_global;
+
+function cursor(v) {
+  return v;
+}
+
+function cursor1(i, k) {
+  return CssString$Css.cursorImage(i) + ", " + k;
+}
+
+function cursor2(i1, i2, k) {
+  return CssString$Css.cursorImage(i1) + ", " + CssString$Css.cursorImage(i2) + ", " + k;
+}
+
+function cursor3(i1, i2, i3, k) {
+  return CssString$Css.cursorImage(i1) + ", " + CssString$Css.cursorImage(i2) + ", " + CssString$Css.cursorImage(i3) + ", " + k;
+}
+
+function cursor4(i1, i2, i3, i4, k) {
+  return CssString$Css.cursorImage(i1) + ", " + CssString$Css.cursorImage(i2) + ", " + CssString$Css.cursorImage(i3) + ", " + CssString$Css.cursorImage(i4) + ", " + k;
+}
+
 exports.border = border;
 exports.borderColor = borderColor;
 exports.borderColor2 = borderColor2;
@@ -285,4 +311,11 @@ exports.paddingTop = paddingTop;
 exports.paddingRight = paddingRight;
 exports.paddingBottom = paddingBottom;
 exports.paddingLeft = paddingLeft;
+exports.clear = clear;
+exports.color = color;
+exports.cursor = cursor;
+exports.cursor1 = cursor1;
+exports.cursor2 = cursor2;
+exports.cursor3 = cursor3;
+exports.cursor4 = cursor4;
 /* No side effect */

@@ -978,6 +978,19 @@ function padding_global(v) {
   }
 }
 
+function cursorImage(v) {
+  var variant = v.NAME;
+  if (variant === "cursorImage2") {
+    var match = v.VAL;
+    return url(match[0]) + " " + match[1];
+  }
+  if (variant !== "cursorImage3") {
+    return url(v);
+  }
+  var match$1 = v.VAL;
+  return url(match$1[0]) + " " + match$1[1] + " " + match$1[2];
+}
+
 exports.concat = concat;
 exports.join = join;
 exports.stick = stick;
@@ -1064,4 +1077,5 @@ exports.margin = margin;
 exports.margin_global = margin_global;
 exports.padding = padding;
 exports.padding_global = padding_global;
+exports.cursorImage = cursorImage;
 /* No side effect */

@@ -151,3 +151,9 @@ let margin: margin => string;
 let margin_global: margin_global => string;
 let padding: padding => string;
 let padding_global: padding_global => string;
+
+external clear_global: clear_global => string = "%identity";
+
+external cursorKeyword: cursorKeyword => string = "%identity";
+external cursorKeyword_global: cursorKeyword_global => string = "%identity";
+let cursorImage: cursorImage => string;

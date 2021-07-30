@@ -221,3 +221,22 @@ type t_paddingLeft = synthetic<tag_paddingLeft>;
 external paddingLeftString: string => t_paddingLeft = "%identity";
 external paddingLeftNumber: float => t_paddingLeft = "%identity";
 let paddingLeft: padding_global => t_paddingLeft;
+
+type tag_clear;
+type t_clear = synthetic<tag_clear>;
+external clearString: string => t_clear = "%identity";
+let clear: clear_global => t_clear;
+
+type tag_color;
+type t_color = synthetic<tag_color>;
+external colorString: string => t_color = "%identity";
+let color: color_global => t_color;
+
+type tag_cursor;
+type t_cursor = synthetic<tag_cursor>;
+external cursorString: string => t_cursor = "%identity";
+let cursor: cursorKeyword_global => t_cursor;
+let cursor1: (cursorImage, cursorKeyword) => t_cursor;
+let cursor2: (cursorImage, cursorImage, cursorKeyword) => t_cursor;
+let cursor3: (cursorImage, cursorImage, cursorImage, cursorKeyword) => t_cursor;
+let cursor4: (cursorImage, cursorImage, cursorImage, cursorImage, cursorKeyword) => t_cursor;

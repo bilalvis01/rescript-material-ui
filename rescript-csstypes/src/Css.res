@@ -391,3 +391,24 @@ let paddingLeftString = v =>
   ("paddingLeft", PropertyValue(CssPropertyValue.paddingLeftString(v)));
 let paddingLeftNumber = v =>
   ("paddingLeft", PropertyValue(CssPropertyValue.paddingLeftNumber(v)));
+
+let clear = v =>
+  ("clear", PropertyValue(CssPropertyValue.clear(v)));
+
+let color = v =>
+  ("color", PropertyValue(CssPropertyValue.color(v)));
+let colorString = v =>
+  ("color", PropertyValue(CssPropertyValue.colorString(v)));
+
+let cursor = v =>
+  ("cursor", PropertyValue(CssPropertyValue.cursor(v)));
+let cursor1 = (i, k) =>
+  ("cursor", PropertyValue(CssPropertyValue.cursor1(i, k)));
+let cursor2 = (i1, i2, k) =>
+  ("cursor", PropertyValue(CssPropertyValue.cursor2(i1, i2, k)));
+let cursor3 = (i1, i2, i3, k) =>
+  ("cursor", PropertyValue(CssPropertyValue.cursor3(i1, i2, i3, k)));
+let cursor4 = (i1, i2, i3, i4, k) =>
+  ("cursor", PropertyValue(CssPropertyValue.cursor4(i1, i2, i3, i4, k)));
+let cursorString = v =>
+  ("cursor", PropertyValue(CssPropertyValue.cursorString(v)));

@@ -691,3 +691,15 @@ let padding_global = v => {
   | #...global as g => global(g)
   }
 };
+
+external clear_global: clear_global => string = "%identity";
+
+external cursorKeyword: cursorKeyword => string = "%identity";
+external cursorKeyword_global: cursorKeyword_global => string = "%identity";
+let cursorImage = v => {
+  switch v {
+  | #...url as u => url(u)
+  | #cursorImage2(#...url as u, x) => `${url(u)} ${Obj.magic(x)}`
+  | #cursorImage3(#...url as u, x, y) => `${url(u)} ${Obj.magic(x)} ${Obj.magic(y)}` 
+  };
+};

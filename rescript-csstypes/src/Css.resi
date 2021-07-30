@@ -335,3 +335,15 @@ let paddingBottomNumber: float => property;
 let paddingLeft: padding_global => property;
 let paddingLeftString: string => property;
 let paddingLeftNumber: float => property;
+
+let clear: clear_global => property;
+
+let color: color_global => property;
+let colorString: string => property;
+
+let cursor: cursorKeyword_global => property;
+let cursor1: (cursorImage, cursorKeyword) => property;
+let cursor2: (cursorImage, cursorImage, cursorKeyword) => property;
+let cursor3: (cursorImage, cursorImage, cursorImage, cursorKeyword) => property;
+let cursor4: (cursorImage, cursorImage, cursorImage, cursorImage, cursorKeyword) => property;
+let cursorString: string => property;

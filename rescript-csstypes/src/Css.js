@@ -1541,6 +1541,69 @@ function paddingLeftNumber(v) {
         ];
 }
 
+function clear(v) {
+  return [
+          "clear",
+          CssPropertyValue$Css.clear(v)
+        ];
+}
+
+function color(v) {
+  return [
+          "color",
+          CssPropertyValue$Css.color(v)
+        ];
+}
+
+function colorString(v) {
+  return [
+          "color",
+          v
+        ];
+}
+
+function cursor(v) {
+  return [
+          "cursor",
+          CssPropertyValue$Css.cursor(v)
+        ];
+}
+
+function cursor1(i, k) {
+  return [
+          "cursor",
+          CssPropertyValue$Css.cursor1(i, k)
+        ];
+}
+
+function cursor2(i1, i2, k) {
+  return [
+          "cursor",
+          CssPropertyValue$Css.cursor2(i1, i2, k)
+        ];
+}
+
+function cursor3(i1, i2, i3, k) {
+  return [
+          "cursor",
+          CssPropertyValue$Css.cursor3(i1, i2, i3, k)
+        ];
+}
+
+function cursor4(i1, i2, i3, i4, k) {
+  return [
+          "cursor",
+          CssPropertyValue$Css.cursor4(i1, i2, i3, i4, k)
+        ];
+}
+
+function cursorString(v) {
+  return [
+          "cursor",
+          v
+        ];
+}
+
 exports.str = str;
 exports.num = num;
 exports.$$int = $$int;
@@ -1729,4 +1792,13 @@ exports.paddingBottomNumber = paddingBottomNumber;
 exports.paddingLeft = paddingLeft;
 exports.paddingLeftString = paddingLeftString;
 exports.paddingLeftNumber = paddingLeftNumber;
+exports.clear = clear;
+exports.color = color;
+exports.colorString = colorString;
+exports.cursor = cursor;
+exports.cursor1 = cursor1;
+exports.cursor2 = cursor2;
+exports.cursor3 = cursor3;
+exports.cursor4 = cursor4;
+exports.cursorString = cursorString;
 /* No side effect */
