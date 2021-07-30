@@ -312,3 +312,26 @@ let marginBottomNumber: float => property;
 let marginLeft: margin_global => property;
 let marginLeftString: string => property;
 let marginLeftNumber: float => property;
+
+let padding: padding_global => property;
+let padding2: (~tb: padding, ~lr: padding) => property;
+let padding3: (~top: padding, ~lr: padding, ~bottom: padding) => property;
+let padding4: (~top: padding, ~right: padding, ~bottom: padding, ~left: padding) => property;
+let paddingString: string => property;
+let paddingNumber: float => property;
+
+let paddingTop: padding_global => property;
+let paddingTopString: string => property;
+let paddingTopNumber: float => property;
+
+let paddingRight: padding_global => property;
+let paddingRightString: string => property;
+let paddingRightNumber: float => property;
+
+let paddingBottom: padding_global => property;
+let paddingBottomString: string => property;
+let paddingBottomNumber: float => property;
+
+let paddingLeft: padding_global => property;
+let paddingLeftString: string => property;
+let paddingLeftNumber: float => property;

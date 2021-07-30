@@ -350,3 +350,44 @@ let marginLeftString = v =>
   ("marginLeft", PropertyValue(CssPropertyValue.marginLeftString(v)));
 let marginLeftNumber = v =>
   ("marginLeft", PropertyValue(CssPropertyValue.marginLeftNumber(v)));
+
+let padding = v => 
+  ("padding", PropertyValue(CssPropertyValue.padding(v)));
+let padding2 = (~tb, ~lr) =>
+  ("padding", PropertyValue(CssPropertyValue.padding2(~tb, ~lr)));
+let padding3 = (~top, ~lr, ~bottom) =>
+  ("padding", PropertyValue(CssPropertyValue.padding3(~top, ~lr, ~bottom)));
+let padding4 = (~top, ~right, ~bottom, ~left) =>
+  ("padding", PropertyValue(CssPropertyValue.padding4(~top, ~right, ~bottom, ~left)));
+let paddingString = v =>
+  ("padding", PropertyValue(CssPropertyValue.paddingString(v)));
+let paddingNumber = v =>
+  ("padding", PropertyValue(CssPropertyValue.paddingNumber(v)));
+
+let paddingTop = v =>
+  ("paddingTop", PropertyValue(CssPropertyValue.paddingTop(v)));
+let paddingTopString = v =>
+  ("paddingTop", PropertyValue(CssPropertyValue.paddingTopString(v)));
+let paddingTopNumber = v =>
+  ("paddingTop", PropertyValue(CssPropertyValue.paddingTopNumber(v)));
+
+let paddingRight = v =>
+  ("paddingRight", PropertyValue(CssPropertyValue.paddingRight(v)));
+let paddingRightString = v =>
+  ("paddingRight", PropertyValue(CssPropertyValue.paddingRightString(v)));
+let paddingRightNumber = v =>
+  ("paddingRight", PropertyValue(CssPropertyValue.paddingRightNumber(v)));
+
+let paddingBottom = v =>
+  ("paddingBottom", PropertyValue(CssPropertyValue.paddingBottom(v)));
+let paddingBottomString = v =>
+  ("paddingBottom", PropertyValue(CssPropertyValue.paddingBottomString(v)));
+let paddingBottomNumber = v =>
+  ("paddingBottom", PropertyValue(CssPropertyValue.paddingBottomNumber(v)));
+
+let paddingLeft = v =>
+  ("paddingLeft", PropertyValue(CssPropertyValue.paddingLeft(v)));
+let paddingLeftString = v =>
+  ("paddingLeft", PropertyValue(CssPropertyValue.paddingLeftString(v)));
+let paddingLeftNumber = v =>
+  ("paddingLeft", PropertyValue(CssPropertyValue.paddingLeftNumber(v)));

@@ -1415,6 +1415,132 @@ function marginLeftNumber(v) {
         ];
 }
 
+function padding(v) {
+  return [
+          "padding",
+          CssPropertyValue$Css.padding(v)
+        ];
+}
+
+function padding2(tb, lr) {
+  return [
+          "padding",
+          CssPropertyValue$Css.padding2(tb, lr)
+        ];
+}
+
+function padding3(top, lr, bottom) {
+  return [
+          "padding",
+          CssPropertyValue$Css.padding3(top, lr, bottom)
+        ];
+}
+
+function padding4(top, right, bottom, left) {
+  return [
+          "padding",
+          CssPropertyValue$Css.padding4(top, right, bottom, left)
+        ];
+}
+
+function paddingString(v) {
+  return [
+          "padding",
+          v
+        ];
+}
+
+function paddingNumber(v) {
+  return [
+          "padding",
+          v
+        ];
+}
+
+function paddingTop(v) {
+  return [
+          "paddingTop",
+          CssPropertyValue$Css.paddingTop(v)
+        ];
+}
+
+function paddingTopString(v) {
+  return [
+          "paddingTop",
+          v
+        ];
+}
+
+function paddingTopNumber(v) {
+  return [
+          "paddingTop",
+          v
+        ];
+}
+
+function paddingRight(v) {
+  return [
+          "paddingRight",
+          CssPropertyValue$Css.paddingRight(v)
+        ];
+}
+
+function paddingRightString(v) {
+  return [
+          "paddingRight",
+          v
+        ];
+}
+
+function paddingRightNumber(v) {
+  return [
+          "paddingRight",
+          v
+        ];
+}
+
+function paddingBottom(v) {
+  return [
+          "paddingBottom",
+          CssPropertyValue$Css.paddingBottom(v)
+        ];
+}
+
+function paddingBottomString(v) {
+  return [
+          "paddingBottom",
+          v
+        ];
+}
+
+function paddingBottomNumber(v) {
+  return [
+          "paddingBottom",
+          v
+        ];
+}
+
+function paddingLeft(v) {
+  return [
+          "paddingLeft",
+          CssPropertyValue$Css.paddingLeft(v)
+        ];
+}
+
+function paddingLeftString(v) {
+  return [
+          "paddingLeft",
+          v
+        ];
+}
+
+function paddingLeftNumber(v) {
+  return [
+          "paddingLeft",
+          v
+        ];
+}
+
 exports.str = str;
 exports.num = num;
 exports.$$int = $$int;
@@ -1585,4 +1711,22 @@ exports.marginBottomNumber = marginBottomNumber;
 exports.marginLeft = marginLeft;
 exports.marginLeftString = marginLeftString;
 exports.marginLeftNumber = marginLeftNumber;
+exports.padding = padding;
+exports.padding2 = padding2;
+exports.padding3 = padding3;
+exports.padding4 = padding4;
+exports.paddingString = paddingString;
+exports.paddingNumber = paddingNumber;
+exports.paddingTop = paddingTop;
+exports.paddingTopString = paddingTopString;
+exports.paddingTopNumber = paddingTopNumber;
+exports.paddingRight = paddingRight;
+exports.paddingRightString = paddingRightString;
+exports.paddingRightNumber = paddingRightNumber;
+exports.paddingBottom = paddingBottom;
+exports.paddingBottomString = paddingBottomString;
+exports.paddingBottomNumber = paddingBottomNumber;
+exports.paddingLeft = paddingLeft;
+exports.paddingLeftString = paddingLeftString;
+exports.paddingLeftNumber = paddingLeftNumber;
 /* No side effect */
