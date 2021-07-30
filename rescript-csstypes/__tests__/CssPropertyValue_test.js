@@ -102,6 +102,22 @@ describe("spacing", (function () {
                 expect(CssPropertyValue$Css.marginLeft("initial")).toBe("initial");
                 
               }));
+        test("padding", (function () {
+                expect(CssPropertyValue$Css.padding(Css$Css.px(24))).toBe("24px");
+                expect(CssPropertyValue$Css.padding("initial")).toBe("initial");
+                expect(CssPropertyValue$Css.padding2(Css$Css.rem(2), Css$Css.rem(4))).toBe("2rem 4rem");
+                expect(CssPropertyValue$Css.padding3(Css$Css.px(10), Css$Css.px(24), Css$Css.px(40))).toBe("10px 24px 40px");
+                expect(CssPropertyValue$Css.padding4(Css$Css.px(20), Css$Css.px(40), Css$Css.px(20), Css$Css.px(40))).toBe("20px 40px 20px 40px");
+                expect(CssPropertyValue$Css.paddingTop(Css$Css.px(24))).toBe("24px");
+                expect(CssPropertyValue$Css.paddingTop("initial")).toBe("initial");
+                expect(CssPropertyValue$Css.paddingRight(Css$Css.px(24))).toBe("24px");
+                expect(CssPropertyValue$Css.paddingRight("initial")).toBe("initial");
+                expect(CssPropertyValue$Css.paddingBottom(Css$Css.px(24))).toBe("24px");
+                expect(CssPropertyValue$Css.paddingBottom("initial")).toBe("initial");
+                expect(CssPropertyValue$Css.paddingLeft(Css$Css.px(24))).toBe("24px");
+                expect(CssPropertyValue$Css.paddingLeft("initial")).toBe("initial");
+                
+              }));
         
       }));
 

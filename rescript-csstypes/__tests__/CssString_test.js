@@ -350,6 +350,13 @@ describe("Spacing", (function () {
                 expect(CssString$Css.margin_global("initial")).toBe("initial");
                 
               }));
+        test("padding", (function () {
+                expect(CssString$Css.padding(Css$Css.px(10))).toBe("10px");
+                expect(CssString$Css.padding(Css$Css.pct(20))).toBe("20%");
+                expect(CssString$Css.padding_global(Css$Css.px(24))).toBe("24px");
+                expect(CssString$Css.padding_global("initial")).toBe("initial");
+                
+              }));
         
       }));
 

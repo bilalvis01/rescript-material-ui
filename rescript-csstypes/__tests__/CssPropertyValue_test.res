@@ -134,4 +134,22 @@ describe("spacing", (.) => {
     expect(marginLeft(Css.px(24.)))->toBe(marginLeftString("24px"));
     expect(marginLeft(#initial))->toBe(marginLeftString("initial"));
   });
+
+  test("padding", (.) => {
+    expect(padding(Css.px(24.)))->toBe(paddingString("24px"));
+    expect(padding(#initial))->toBe(paddingString("initial"));
+    expect(padding2(~tb=Css.rem(2.), ~lr=Css.rem(4.)))->toBe(paddingString("2rem 4rem"));
+    expect(padding3(~top=Css.px(10.), ~lr=Css.px(24.), ~bottom=Css.px(40.)))
+    ->toBe(paddingString("10px 24px 40px"));
+    expect(padding4(~top=Css.px(20.), ~bottom=Css.px(20.), ~left=Css.px(40.), ~right=Css.px(40.)))
+    ->toBe(paddingString("20px 40px 20px 40px"));
+    expect(paddingTop(Css.px(24.)))->toBe(paddingTopString("24px"));
+    expect(paddingTop(#initial))->toBe(paddingTopString("initial"));
+    expect(paddingRight(Css.px(24.)))->toBe(paddingRightString("24px"));
+    expect(paddingRight(#initial))->toBe(paddingRightString("initial"));
+    expect(paddingBottom(Css.px(24.)))->toBe(paddingBottomString("24px"));
+    expect(paddingBottom(#initial))->toBe(paddingBottomString("initial"));
+    expect(paddingLeft(Css.px(24.)))->toBe(paddingLeftString("24px"));
+    expect(paddingLeft(#initial))->toBe(paddingLeftString("initial"));
+  });
 });

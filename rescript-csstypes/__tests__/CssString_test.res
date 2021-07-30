@@ -434,4 +434,11 @@ describe("Spacing", (.) => {
     expect(margin_global(Css.px(24.)))->toBe("24px");
     expect(margin_global(#initial))->toBe("initial");
   });
+
+  test("padding", (.) => {
+    expect(padding(Css.px(10.)))->toBe("10px");
+    expect(padding(Css.pct(20.)))->toBe("20%");
+    expect(padding_global(Css.px(24.)))->toBe("24px");
+    expect(padding_global(#initial))->toBe("initial");
+  });
 });
