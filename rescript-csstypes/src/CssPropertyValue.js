@@ -16,13 +16,7 @@ function border(width, color, style) {
   }
 }
 
-function borderColor(v) {
-  if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
-    return CssString$Css.color(v);
-  } else {
-    return v;
-  }
-}
+var borderColor = CssString$Css.color_global;
 
 function borderColor2(tb, lr) {
   return CssString$Css.color(tb) + " " + CssString$Css.color(lr);

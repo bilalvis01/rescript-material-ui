@@ -29,12 +29,7 @@ let border = (~width=?, ~color=?, style) => {
 type tag_borderColor;
 type t_borderColor = synthetic<tag_borderColor>;
 external borderColorString: string => t_borderColor = "%identity";
-let borderColor = v => 
-  switch v {
-    | #...color as c => CssString.color(c)
-    | #...global as g => CssString.global(g)
-  }
-  ->borderColorString;
+let borderColor = v => CssString.color_global(v)->borderColorString;
 let borderColor2 = (~tb, ~lr) => `${CssString.color(tb)} ${CssString.color(lr)}`->borderColorString;
 let borderColor3 = (~top, ~lr, ~bottom) => 
   `${CssString.color(top)} ${CssString.color(lr)} ${CssString.color(bottom)}`->borderColorString;

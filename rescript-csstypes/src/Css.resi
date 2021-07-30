@@ -192,7 +192,7 @@ let borderRightString: string => property;
 let borderBottom: (~width: lineWidth=?, ~color: color=?, [ | global | lineStyle ]) => property;
 let borderBottomString: string => property;
 
-let borderColor: [ | color | global ] => property;
+let borderColor: color_global => property;
 let borderColor2: (~tb: color, ~lr: color) => property;
 let borderColor3: (~top: color, ~lr: color, ~bottom: color) => property;
 let borderColor4: (~top: color, ~right: color, ~bottom: color, ~left: color) => property;

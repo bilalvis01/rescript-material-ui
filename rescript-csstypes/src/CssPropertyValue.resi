@@ -19,7 +19,7 @@ let border: (
 type tag_borderColor;
 type t_borderColor = synthetic<tag_borderColor>;
 external borderColorString: string => t_borderColor = "%identity";
-let borderColor: [ | color | global ] => t_borderColor;
+let borderColor: color_global => t_borderColor;
 let borderColor2: (~tb: color, ~lr: color) => t_borderColor;
 let borderColor3: (~top: color, ~lr: color, ~bottom: color) => t_borderColor;
 let borderColor4: (~top: color, ~right: color, ~bottom: color, ~left: color) => t_borderColor;
