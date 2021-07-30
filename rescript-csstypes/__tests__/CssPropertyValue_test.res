@@ -115,3 +115,23 @@ describe("background", (.) => {
     ->toBe(backgroundStyleString("repeat-x, repeat repeat, no-repeat, space"));
   });
 });
+
+describe("spacing", (.) => {
+  test("margin", (.) => {
+    expect(margin(Css.px(24.)))->toBe(marginString("24px"));
+    expect(margin(#initial))->toBe(marginString("initial"));
+    expect(margin2(~tb=Css.rem(2.), ~lr=Css.rem(4.)))->toBe(marginString("2rem 4rem"));
+    expect(margin3(~top=Css.px(10.), ~lr=Css.px(24.), ~bottom=Css.px(40.)))
+    ->toBe(marginString("10px 24px 40px"));
+    expect(margin4(~top=Css.px(20.), ~bottom=Css.px(20.), ~left=Css.px(40.), ~right=Css.px(40.)))
+    ->toBe(marginString("20px 40px 20px 40px"));
+    expect(marginTop(Css.px(24.)))->toBe(marginTopString("24px"));
+    expect(marginTop(#initial))->toBe(marginTopString("initial"));
+    expect(marginRight(Css.px(24.)))->toBe(marginRightString("24px"));
+    expect(marginRight(#initial))->toBe(marginRightString("initial"));
+    expect(marginBottom(Css.px(24.)))->toBe(marginBottomString("24px"));
+    expect(marginBottom(#initial))->toBe(marginBottomString("initial"));
+    expect(marginLeft(Css.px(24.)))->toBe(marginLeftString("24px"));
+    expect(marginLeft(#initial))->toBe(marginLeftString("initial"));
+  });
+});

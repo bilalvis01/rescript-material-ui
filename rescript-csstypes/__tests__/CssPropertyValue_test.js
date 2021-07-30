@@ -85,4 +85,24 @@ describe("background", (function () {
         
       }));
 
+describe("spacing", (function () {
+        test("margin", (function () {
+                expect(CssPropertyValue$Css.margin(Css$Css.px(24))).toBe("24px");
+                expect(CssPropertyValue$Css.margin("initial")).toBe("initial");
+                expect(CssPropertyValue$Css.margin2(Css$Css.rem(2), Css$Css.rem(4))).toBe("2rem 4rem");
+                expect(CssPropertyValue$Css.margin3(Css$Css.px(10), Css$Css.px(24), Css$Css.px(40))).toBe("10px 24px 40px");
+                expect(CssPropertyValue$Css.margin4(Css$Css.px(20), Css$Css.px(40), Css$Css.px(20), Css$Css.px(40))).toBe("20px 40px 20px 40px");
+                expect(CssPropertyValue$Css.marginTop(Css$Css.px(24))).toBe("24px");
+                expect(CssPropertyValue$Css.marginTop("initial")).toBe("initial");
+                expect(CssPropertyValue$Css.marginRight(Css$Css.px(24))).toBe("24px");
+                expect(CssPropertyValue$Css.marginRight("initial")).toBe("initial");
+                expect(CssPropertyValue$Css.marginBottom(Css$Css.px(24))).toBe("24px");
+                expect(CssPropertyValue$Css.marginBottom("initial")).toBe("initial");
+                expect(CssPropertyValue$Css.marginLeft(Css$Css.px(24))).toBe("24px");
+                expect(CssPropertyValue$Css.marginLeft("initial")).toBe("initial");
+                
+              }));
+        
+      }));
+
 /*  Not a pure module */
