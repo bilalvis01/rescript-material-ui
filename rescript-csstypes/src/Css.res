@@ -309,3 +309,44 @@ let backgroundStyle4 = (v1, v2, v3, v4) =>
   ("backgroundStyle", PropertyValue(CssPropertyValue.backgroundStyle4(v1, v2, v3, v4)));
 let backgroundStyleString = v =>
   ("backgroundStyle", PropertyValue(CssPropertyValue.backgroundStyleString(v)));
+
+let margin = v => 
+  ("margin", PropertyValue(CssPropertyValue.margin(v)));
+let margin2 = (~tb, ~lr) =>
+  ("margin", PropertyValue(CssPropertyValue.margin2(~tb, ~lr)));
+let margin3 = (~top, ~lr, ~bottom) =>
+  ("margin", PropertyValue(CssPropertyValue.margin3(~top, ~lr, ~bottom)));
+let margin4 = (~top, ~right, ~bottom, ~left) =>
+  ("margin", PropertyValue(CssPropertyValue.margin4(~top, ~right, ~bottom, ~left)));
+let marginString = v =>
+  ("margin", PropertyValue(CssPropertyValue.marginString(v)));
+let marginNumber = v =>
+  ("margin", PropertyValue(CssPropertyValue.marginNumber(v)));
+
+let marginTop = v =>
+  ("marginTop", PropertyValue(CssPropertyValue.marginTop(v)));
+let marginTopString = v =>
+  ("marginTop", PropertyValue(CssPropertyValue.marginTopString(v)));
+let marginTopNumber = v =>
+  ("marginTop", PropertyValue(CssPropertyValue.marginTopNumber(v)));
+
+let marginRight = v =>
+  ("marginRight", PropertyValue(CssPropertyValue.marginRight(v)));
+let marginRightString = v =>
+  ("marginRight", PropertyValue(CssPropertyValue.marginRightString(v)));
+let marginRightNumber = v =>
+  ("marginRight", PropertyValue(CssPropertyValue.marginRightNumber(v)));
+
+let marginBottom = v =>
+  ("marginBottom", PropertyValue(CssPropertyValue.marginBottom(v)));
+let marginBottomString = v =>
+  ("marginBottom", PropertyValue(CssPropertyValue.marginBottomString(v)));
+let marginBottomNumber = v =>
+  ("marginBottom", PropertyValue(CssPropertyValue.marginBottomNumber(v)));
+
+let marginLeft = v =>
+  ("marginLeft", PropertyValue(CssPropertyValue.marginLeft(v)));
+let marginLeftString = v =>
+  ("marginLeft", PropertyValue(CssPropertyValue.marginLeftString(v)));
+let marginLeftNumber = v =>
+  ("marginLeft", PropertyValue(CssPropertyValue.marginLeftNumber(v)));

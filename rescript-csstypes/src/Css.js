@@ -1289,6 +1289,132 @@ function backgroundStyleString(v) {
         ];
 }
 
+function margin(v) {
+  return [
+          "margin",
+          CssPropertyValue$Css.margin(v)
+        ];
+}
+
+function margin2(tb, lr) {
+  return [
+          "margin",
+          CssPropertyValue$Css.margin2(tb, lr)
+        ];
+}
+
+function margin3(top, lr, bottom) {
+  return [
+          "margin",
+          CssPropertyValue$Css.margin3(top, lr, bottom)
+        ];
+}
+
+function margin4(top, right, bottom, left) {
+  return [
+          "margin",
+          CssPropertyValue$Css.margin4(top, right, bottom, left)
+        ];
+}
+
+function marginString(v) {
+  return [
+          "margin",
+          v
+        ];
+}
+
+function marginNumber(v) {
+  return [
+          "margin",
+          v
+        ];
+}
+
+function marginTop(v) {
+  return [
+          "marginTop",
+          CssPropertyValue$Css.marginTop(v)
+        ];
+}
+
+function marginTopString(v) {
+  return [
+          "marginTop",
+          v
+        ];
+}
+
+function marginTopNumber(v) {
+  return [
+          "marginTop",
+          v
+        ];
+}
+
+function marginRight(v) {
+  return [
+          "marginRight",
+          CssPropertyValue$Css.marginRight(v)
+        ];
+}
+
+function marginRightString(v) {
+  return [
+          "marginRight",
+          v
+        ];
+}
+
+function marginRightNumber(v) {
+  return [
+          "marginRight",
+          v
+        ];
+}
+
+function marginBottom(v) {
+  return [
+          "marginBottom",
+          CssPropertyValue$Css.marginBottom(v)
+        ];
+}
+
+function marginBottomString(v) {
+  return [
+          "marginBottom",
+          v
+        ];
+}
+
+function marginBottomNumber(v) {
+  return [
+          "marginBottom",
+          v
+        ];
+}
+
+function marginLeft(v) {
+  return [
+          "marginLeft",
+          CssPropertyValue$Css.marginLeft(v)
+        ];
+}
+
+function marginLeftString(v) {
+  return [
+          "marginLeft",
+          v
+        ];
+}
+
+function marginLeftNumber(v) {
+  return [
+          "marginLeft",
+          v
+        ];
+}
+
 exports.str = str;
 exports.num = num;
 exports.$$int = $$int;
@@ -1441,4 +1567,22 @@ exports.backgroundStyle2 = backgroundStyle2;
 exports.backgroundStyle3 = backgroundStyle3;
 exports.backgroundStyle4 = backgroundStyle4;
 exports.backgroundStyleString = backgroundStyleString;
+exports.margin = margin;
+exports.margin2 = margin2;
+exports.margin3 = margin3;
+exports.margin4 = margin4;
+exports.marginString = marginString;
+exports.marginNumber = marginNumber;
+exports.marginTop = marginTop;
+exports.marginTopString = marginTopString;
+exports.marginTopNumber = marginTopNumber;
+exports.marginRight = marginRight;
+exports.marginRightString = marginRightString;
+exports.marginRightNumber = marginRightNumber;
+exports.marginBottom = marginBottom;
+exports.marginBottomString = marginBottomString;
+exports.marginBottomNumber = marginBottomNumber;
+exports.marginLeft = marginLeft;
+exports.marginLeftString = marginLeftString;
+exports.marginLeftNumber = marginLeftNumber;
 /* No side effect */

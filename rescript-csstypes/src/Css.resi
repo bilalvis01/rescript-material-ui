@@ -289,3 +289,26 @@ let backgroundStyle2: (repeatStyle, repeatStyle) => property;
 let backgroundStyle3: (repeatStyle, repeatStyle, repeatStyle) => property;
 let backgroundStyle4: (repeatStyle, repeatStyle, repeatStyle, repeatStyle) => property;
 let backgroundStyleString: string => property;
+
+let margin: margin_global => property;
+let margin2: (~tb: margin, ~lr: margin) => property;
+let margin3: (~top: margin, ~lr: margin, ~bottom: margin) => property;
+let margin4: (~top: margin, ~right: margin, ~bottom: margin, ~left: margin) => property;
+let marginString: string => property;
+let marginNumber: float => property;
+
+let marginTop: margin_global => property;
+let marginTopString: string => property;
+let marginTopNumber: float => property;
+
+let marginRight: margin_global => property;
+let marginRightString: string => property;
+let marginRightNumber: float => property;
+
+let marginBottom: margin_global => property;
+let marginBottomString: string => property;
+let marginBottomNumber: float => property;
+
+let marginLeft: margin_global => property;
+let marginLeftString: string => property;
+let marginLeftNumber: float => property;
