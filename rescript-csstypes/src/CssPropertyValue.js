@@ -159,6 +159,28 @@ function backgroundStyle4(v1, v2, v3, v4) {
   return v1 + ", " + v2 + ", " + v3 + ", " + v4;
 }
 
+var margin = CssString$Css.margin_global;
+
+function margin2(v1, v2) {
+  return CssString$Css.margin(v1) + " " + CssString$Css.margin(v2);
+}
+
+function margin3(v1, v2, v3) {
+  return CssString$Css.margin(v1) + " " + CssString$Css.margin(v2) + " " + CssString$Css.margin(v3);
+}
+
+function margin4(v1, v2, v3, v4) {
+  return CssString$Css.margin(v1) + " " + CssString$Css.margin(v2) + " " + CssString$Css.margin(v3) + " " + CssString$Css.margin(v4);
+}
+
+var marginTop = CssString$Css.margin_global;
+
+var marginRight = CssString$Css.margin_global;
+
+var marginBottom = CssString$Css.margin_global;
+
+var marginLeft = CssString$Css.margin_global;
+
 exports.border = border;
 exports.borderColor = borderColor;
 exports.borderColor2 = borderColor2;
@@ -193,4 +215,12 @@ exports.backgroundStyle = backgroundStyle;
 exports.backgroundStyle2 = backgroundStyle2;
 exports.backgroundStyle3 = backgroundStyle3;
 exports.backgroundStyle4 = backgroundStyle4;
+exports.margin = margin;
+exports.margin2 = margin2;
+exports.margin3 = margin3;
+exports.margin4 = margin4;
+exports.marginTop = marginTop;
+exports.marginRight = marginRight;
+exports.marginBottom = marginBottom;
+exports.marginLeft = marginLeft;
 /* No side effect */

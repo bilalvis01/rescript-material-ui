@@ -95,3 +95,36 @@ let backgroundStyle: repeatStyle => t_backgroundStyle;
 let backgroundStyle2: (repeatStyle, repeatStyle) => t_backgroundStyle;
 let backgroundStyle3: (repeatStyle, repeatStyle, repeatStyle) => t_backgroundStyle;
 let backgroundStyle4: (repeatStyle, repeatStyle, repeatStyle, repeatStyle) => t_backgroundStyle;
+
+type tag_margin;
+type t_margin = synthetic<tag_margin>;
+external marginString: string => t_margin = "%identity";
+external marginNumber: float => t_margin = "%identity";
+let margin: margin_global => t_margin;
+let margin2: (margin, margin) => t_margin;
+let margin3: (margin, margin, margin) => t_margin;
+let margin4: (margin, margin, margin, margin) => t_margin;
+
+type tag_marginTop;
+type t_marginTop = synthetic<tag_marginTop>;
+external marginTopString: string => t_marginTop = "%identity";
+external marginTopNumber: float => t_marginTop = "%identity";
+let marginTop: margin_global => t_marginTop;
+
+type tag_marginRight;
+type t_marginRight = synthetic<tag_marginRight>;
+external marginRightString: string => t_marginRight = "%identity";
+external marginRightNumber: float => t_marginRight = "%identity";
+let marginRight: margin_global => t_marginRight;
+
+type tag_marginBottom;
+type t_marginBottom = synthetic<tag_marginBottom>;
+external marginBottomString: string => t_marginBottom = "%identity";
+external marginBottomNumber: float => t_marginBottom = "%identity";
+let marginBottom: margin_global => t_marginBottom;
+
+type tag_marginLeft;
+type t_marginLeft = synthetic<tag_marginLeft>;
+external marginLeftString: string => t_marginLeft = "%identity";
+external marginLeftNumber: float => t_marginLeft = "%identity";
+let marginLeft: margin_global => t_marginLeft;

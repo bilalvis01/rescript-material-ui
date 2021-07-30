@@ -175,3 +175,42 @@ let backgroundStyle3 = (v1, v2, v3) =>
 let backgroundStyle4 = (v1, v2, v3, v4) => 
   `${CssString.repeatStyle(v1)}, ${CssString.repeatStyle(v2)}, ${CssString.repeatStyle(v3)}, ${CssString.repeatStyle(v4)}`
   ->backgroundStyleString;
+
+type tag_margin;
+type t_margin = synthetic<tag_margin>;
+external marginString: string => t_margin = "%identity";
+external marginNumber: float => t_margin = "%identity";
+let margin = v => CssString.margin_global(v)->marginString;
+let margin2 = (v1, v2) => 
+  `${CssString.margin(v1)} ${CssString.margin(v2)}`
+  ->marginString;
+let margin3 = (v1, v2, v3) =>
+  `${CssString.margin(v1)} ${CssString.margin(v2)} ${CssString.margin(v3)}`
+  ->marginString;
+let margin4 = (v1, v2, v3, v4) =>
+  `${CssString.margin(v1)} ${CssString.margin(v2)} ${CssString.margin(v3)} ${CssString.margin(v4)}`
+  ->marginString;
+
+type tag_marginTop;
+type t_marginTop = synthetic<tag_marginTop>;
+external marginTopString: string => t_marginTop = "%identity";
+external marginTopNumber: float => t_marginTop = "%identity";
+let marginTop = v => CssString.margin_global(v)->marginTopString;
+
+type tag_marginRight;
+type t_marginRight = synthetic<tag_marginRight>;
+external marginRightString: string => t_marginRight = "%identity";
+external marginRightNumber: float => t_marginRight = "%identity";
+let marginRight = v => CssString.margin_global(v)->marginRightString;
+
+type tag_marginBottom;
+type t_marginBottom = synthetic<tag_marginBottom>;
+external marginBottomString: string => t_marginBottom = "%identity";
+external marginBottomNumber: float => t_marginBottom = "%identity";
+let marginBottom = v => CssString.margin_global(v)->marginBottomString;
+
+type tag_marginLeft;
+type t_marginLeft = synthetic<tag_marginLeft>;
+external marginLeftString: string => t_marginLeft = "%identity";
+external marginLeftNumber: float => t_marginLeft = "%identity";
+let marginLeft = v => CssString.margin_global(v)->marginLeftString;
