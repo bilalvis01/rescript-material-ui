@@ -227,14 +227,14 @@ type t_margin = synthetic<tag_margin>;
 external marginString: string => t_margin = "%identity";
 external marginNumber: float => t_margin = "%identity";
 let margin = v => CssString.margin_global(v)->marginString;
-let margin2 = (v1, v2) => 
-  `${CssString.margin(v1)} ${CssString.margin(v2)}`
+let margin2 = (~tb, ~lr) => 
+  `${CssString.margin(tb)} ${CssString.margin(lr)}`
   ->marginString;
-let margin3 = (v1, v2, v3) =>
-  `${CssString.margin(v1)} ${CssString.margin(v2)} ${CssString.margin(v3)}`
+let margin3 = (~top, ~lr, ~bottom) =>
+  `${CssString.margin(top)} ${CssString.margin(lr)} ${CssString.margin(bottom)}`
   ->marginString;
-let margin4 = (v1, v2, v3, v4) =>
-  `${CssString.margin(v1)} ${CssString.margin(v2)} ${CssString.margin(v3)} ${CssString.margin(v4)}`
+let margin4 = (~top, ~right, ~bottom, ~left) =>
+  `${CssString.margin(top)} ${CssString.margin(right)} ${CssString.margin(bottom)} ${CssString.margin(left)}`
   ->marginString;
 
 type tag_marginTop;

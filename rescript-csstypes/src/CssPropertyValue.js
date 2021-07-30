@@ -181,16 +181,16 @@ function backgroundStyle4(v1, v2, v3, v4) {
 
 var margin = CssString$Css.margin_global;
 
-function margin2(v1, v2) {
-  return CssString$Css.margin(v1) + " " + CssString$Css.margin(v2);
+function margin2(tb, lr) {
+  return CssString$Css.margin(tb) + " " + CssString$Css.margin(lr);
 }
 
-function margin3(v1, v2, v3) {
-  return CssString$Css.margin(v1) + " " + CssString$Css.margin(v2) + " " + CssString$Css.margin(v3);
+function margin3(top, lr, bottom) {
+  return CssString$Css.margin(top) + " " + CssString$Css.margin(lr) + " " + CssString$Css.margin(bottom);
 }
 
-function margin4(v1, v2, v3, v4) {
-  return CssString$Css.margin(v1) + " " + CssString$Css.margin(v2) + " " + CssString$Css.margin(v3) + " " + CssString$Css.margin(v4);
+function margin4(top, right, bottom, left) {
+  return CssString$Css.margin(top) + " " + CssString$Css.margin(right) + " " + CssString$Css.margin(bottom) + " " + CssString$Css.margin(left);
 }
 
 var marginTop = CssString$Css.margin_global;

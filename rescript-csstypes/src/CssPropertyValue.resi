@@ -161,9 +161,9 @@ type t_margin = synthetic<tag_margin>;
 external marginString: string => t_margin = "%identity";
 external marginNumber: float => t_margin = "%identity";
 let margin: margin_global => t_margin;
-let margin2: (margin, margin) => t_margin;
-let margin3: (margin, margin, margin) => t_margin;
-let margin4: (margin, margin, margin, margin) => t_margin;
+let margin2: (~tb: margin, ~lr: margin) => t_margin;
+let margin3: (~top: margin, ~lr: margin, ~bottom: margin) => t_margin;
+let margin4: (~top: margin, ~right: margin, ~bottom: margin, ~left: margin) => t_margin;
 
 type tag_marginTop;
 type t_marginTop = synthetic<tag_marginTop>;
