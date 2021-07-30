@@ -331,4 +331,16 @@ describe("background", (function () {
         
       }));
 
+describe("Spacing", (function () {
+        test("margin", (function () {
+                expect(CssString$Css.margin(Css$Css.px(10))).toBe("10px");
+                expect(CssString$Css.margin("auto")).toBe("auto");
+                expect(CssString$Css.margin(Css$Css.pct(20))).toBe("20%");
+                expect(CssString$Css.margin_global(Css$Css.px(24))).toBe("24px");
+                expect(CssString$Css.margin_global("initial")).toBe("initial");
+                
+              }));
+        
+      }));
+
 /*  Not a pure module */

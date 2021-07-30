@@ -415,3 +415,13 @@ describe("background", (.) => {
       ->toBe(`url("../img/image.png") center / 80% no-repeat`);
   });
 });
+
+describe("Spacing", (.) => {
+  test("margin", (.) => {
+    expect(margin(Css.px(10.)))->toBe("10px");
+    expect(margin(#auto))->toBe("auto");
+    expect(margin(Css.pct(20.)))->toBe("20%");
+    expect(margin_global(Css.px(24.)))->toBe("24px");
+    expect(margin_global(#initial))->toBe("initial");
+  });
+});
