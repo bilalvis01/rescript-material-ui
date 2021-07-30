@@ -260,3 +260,42 @@ type t_marginLeft = synthetic<tag_marginLeft>;
 external marginLeftString: string => t_marginLeft = "%identity";
 external marginLeftNumber: float => t_marginLeft = "%identity";
 let marginLeft = v => CssString.margin_global(v)->marginLeftString;
+
+type tag_padding;
+type t_padding = synthetic<tag_padding>;
+external paddingString: string => t_padding = "%identity";
+external paddingNumber: float => t_padding = "%identity";
+let padding = v => CssString.padding_global(v)->paddingString;
+let padding2 = (~tb, ~lr) => 
+  `${CssString.padding(tb)} ${CssString.padding(lr)}`
+  ->paddingString;
+let padding3 = (~top, ~lr, ~bottom) =>
+  `${CssString.padding(top)} ${CssString.padding(lr)} ${CssString.padding(bottom)}`
+  ->paddingString;
+let padding4 = (~top, ~right, ~bottom, ~left) =>
+  `${CssString.padding(top)} ${CssString.padding(right)} ${CssString.padding(bottom)} ${CssString.padding(left)}`
+  ->paddingString;
+
+type tag_paddingTop;
+type t_paddingTop = synthetic<tag_paddingTop>;
+external paddingTopString: string => t_paddingTop = "%identity";
+external paddingTopNumber: float => t_paddingTop = "%identity";
+let paddingTop = v => CssString.padding_global(v)->paddingTopString;
+
+type tag_paddingRight;
+type t_paddingRight = synthetic<tag_paddingRight>;
+external paddingRightString: string => t_paddingRight = "%identity";
+external paddingRightNumber: float => t_paddingRight = "%identity";
+let paddingRight = v => CssString.padding_global(v)->paddingRightString;
+
+type tag_paddingBottom;
+type t_paddingBottom = synthetic<tag_paddingBottom>;
+external paddingBottomString: string => t_paddingBottom = "%identity";
+external paddingBottomNumber: float => t_paddingBottom = "%identity";
+let paddingBottom = v => CssString.padding_global(v)->paddingBottomString;
+
+type tag_paddingLeft;
+type t_paddingLeft = synthetic<tag_paddingLeft>;
+external paddingLeftString: string => t_paddingLeft = "%identity";
+external paddingLeftNumber: float => t_paddingLeft = "%identity";
+let paddingLeft = v => CssString.padding_global(v)->paddingLeftString;

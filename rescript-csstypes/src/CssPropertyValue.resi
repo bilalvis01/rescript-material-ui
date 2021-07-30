@@ -188,3 +188,36 @@ type t_marginLeft = synthetic<tag_marginLeft>;
 external marginLeftString: string => t_marginLeft = "%identity";
 external marginLeftNumber: float => t_marginLeft = "%identity";
 let marginLeft: margin_global => t_marginLeft;
+
+type tag_padding;
+type t_padding = synthetic<tag_padding>;
+external paddingString: string => t_padding = "%identity";
+external paddingNumber: float => t_padding = "%identity";
+let padding: padding_global => t_padding;
+let padding2: (~tb: padding, ~lr: padding) => t_padding;
+let padding3: (~top: padding, ~lr: padding, ~bottom: padding) => t_padding;
+let padding4: (~top: padding, ~right: padding, ~bottom: padding, ~left: padding) => t_padding;
+
+type tag_paddingTop;
+type t_paddingTop = synthetic<tag_paddingTop>;
+external paddingTopString: string => t_paddingTop = "%identity";
+external paddingTopNumber: float => t_paddingTop = "%identity";
+let paddingTop: padding_global => t_paddingTop;
+
+type tag_paddingRight;
+type t_paddingRight = synthetic<tag_paddingRight>;
+external paddingRightString: string => t_paddingRight = "%identity";
+external paddingRightNumber: float => t_paddingRight = "%identity";
+let paddingRight: padding_global => t_paddingRight;
+
+type tag_paddingBottom;
+type t_paddingBottom = synthetic<tag_paddingBottom>;
+external paddingBottomString: string => t_paddingBottom = "%identity";
+external paddingBottomNumber: float => t_paddingBottom = "%identity";
+let paddingBottom: padding_global => t_paddingBottom;
+
+type tag_paddingLeft;
+type t_paddingLeft = synthetic<tag_paddingLeft>;
+external paddingLeftString: string => t_paddingLeft = "%identity";
+external paddingLeftNumber: float => t_paddingLeft = "%identity";
+let paddingLeft: padding_global => t_paddingLeft;

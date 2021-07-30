@@ -968,6 +968,16 @@ function margin_global(v) {
   }
 }
 
+var padding = length_percentage;
+
+function padding_global(v) {
+  if (typeof v === "object") {
+    return length_percentage(v);
+  } else {
+    return v;
+  }
+}
+
 exports.concat = concat;
 exports.join = join;
 exports.stick = stick;
@@ -1052,4 +1062,6 @@ exports.background = background;
 exports.bgLayer = bgLayer;
 exports.margin = margin;
 exports.margin_global = margin_global;
+exports.padding = padding;
+exports.padding_global = padding_global;
 /* No side effect */

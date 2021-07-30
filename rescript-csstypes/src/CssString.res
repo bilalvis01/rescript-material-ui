@@ -670,7 +670,7 @@ let bgLayer = v => {
 };
 
 /*
-Margin
+Spacing
 */
 let margin = v => {
   switch v {
@@ -681,6 +681,13 @@ let margin = v => {
 let margin_global = v => {
   switch v {
   | #...margin as m => margin(m)
+  | #...global as g => global(g)
+  }
+};
+let padding = v => length_percentage(v);
+let padding_global = v => {
+  switch v {
+  | #...padding as p => padding(p)
   | #...global as g => global(g)
   }
 };

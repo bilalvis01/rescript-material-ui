@@ -145,7 +145,9 @@ let background: (
 let bgLayer: bgLayer => string;
 
 /*
-Margin
+Spacing
 */
 let margin: margin => string;
 let margin_global: margin_global => string;
+let padding: padding => string;
+let padding_global: padding_global => string;

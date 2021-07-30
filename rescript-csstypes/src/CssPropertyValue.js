@@ -201,6 +201,28 @@ var marginBottom = CssString$Css.margin_global;
 
 var marginLeft = CssString$Css.margin_global;
 
+var padding = CssString$Css.padding_global;
+
+function padding2(tb, lr) {
+  return CssString$Css.padding(tb) + " " + CssString$Css.padding(lr);
+}
+
+function padding3(top, lr, bottom) {
+  return CssString$Css.padding(top) + " " + CssString$Css.padding(lr) + " " + CssString$Css.padding(bottom);
+}
+
+function padding4(top, right, bottom, left) {
+  return CssString$Css.padding(top) + " " + CssString$Css.padding(right) + " " + CssString$Css.padding(bottom) + " " + CssString$Css.padding(left);
+}
+
+var paddingTop = CssString$Css.padding_global;
+
+var paddingRight = CssString$Css.padding_global;
+
+var paddingBottom = CssString$Css.padding_global;
+
+var paddingLeft = CssString$Css.padding_global;
+
 exports.border = border;
 exports.borderColor = borderColor;
 exports.borderColor2 = borderColor2;
@@ -255,4 +277,12 @@ exports.marginTop = marginTop;
 exports.marginRight = marginRight;
 exports.marginBottom = marginBottom;
 exports.marginLeft = marginLeft;
+exports.padding = padding;
+exports.padding2 = padding2;
+exports.padding3 = padding3;
+exports.padding4 = padding4;
+exports.paddingTop = paddingTop;
+exports.paddingRight = paddingRight;
+exports.paddingBottom = paddingBottom;
+exports.paddingLeft = paddingLeft;
 /* No side effect */
