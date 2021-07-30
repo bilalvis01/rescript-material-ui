@@ -941,6 +941,11 @@ type color = [
   | #rgbX(string)
 ];
 
+type color_global = [
+  | color
+  | global
+];
+
 // scalar
 type scalar = [
   | number

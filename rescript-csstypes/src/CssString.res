@@ -295,6 +295,12 @@ let color = v => {
     | #...colorKeyword as c => colorKeyword(c)
   };
 };
+let color_global = v => {
+  switch v {
+  | #...color as c => color(c)
+  | #...global as g => global(g)
+  };
+};
 
 let bgSize = v => {
   let autoOrLength = v =>

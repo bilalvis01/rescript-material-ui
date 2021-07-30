@@ -448,6 +448,14 @@ function color(v) {
   return hsla(match$3[0], match$3[1], match$3[2], match$3[3]);
 }
 
+function color_global(v) {
+  if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
+    return color(v);
+  } else {
+    return v;
+  }
+}
+
 function bgSize(v) {
   var autoOrLength = function (v) {
     if (typeof v === "object") {
@@ -1015,6 +1023,7 @@ exports.rgb = rgb;
 exports.rgba = rgba;
 exports.rgbX = rgbX;
 exports.color = color;
+exports.color_global = color_global;
 exports.gradientLineAngle = gradientLineAngle;
 exports.linearColorStop = linearColorStop;
 exports.linearGradient = linearGradient;

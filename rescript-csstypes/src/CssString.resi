@@ -101,6 +101,7 @@ let rgba: (rgbParam, rgbParam, rgbParam, alpha) => string;
 let rgbX: string => string;
 external colorKeyword: colorKeyword => string = "%identity"; 
 let color: color => string;
+let color_global: color_global => string;
 
 /*
 Image data types
