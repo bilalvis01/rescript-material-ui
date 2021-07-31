@@ -230,27 +230,6 @@ function x(v) {
         };
 }
 
-function transformOrigin2(x, y) {
-  return {
-          NAME: "transformOrigin2",
-          VAL: [
-            x,
-            y
-          ]
-        };
-}
-
-function transformOrigin3(x, y, l) {
-  return {
-          NAME: "transformOrigin3",
-          VAL: [
-            x,
-            y,
-            l
-          ]
-        };
-}
-
 function hsl(v1, v2, v3) {
   return {
           NAME: "hsl",
@@ -1640,8 +1619,6 @@ exports.dpi = dpi;
 exports.dpcm = dpcm;
 exports.dppx = dppx;
 exports.x = x;
-exports.transformOrigin2 = transformOrigin2;
-exports.transformOrigin3 = transformOrigin3;
 exports.hsl = hsl;
 exports.hsla = hsla;
 exports.rgb = rgb;

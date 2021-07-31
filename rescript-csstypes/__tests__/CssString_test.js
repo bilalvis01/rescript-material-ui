@@ -152,8 +152,21 @@ describe("transformOrigin", (function () {
         test("transformOrigin", (function () {
                 expect(CssString$Css.transformOrigin("left")).toBe("left");
                 expect(CssString$Css.transformOrigin(Css$Css.px(20))).toBe("20px");
-                expect(CssString$Css.transformOrigin(Css$Css.transformOrigin2("left", "top"))).toBe("left top");
-                expect(CssString$Css.transformOrigin(Css$Css.transformOrigin3("left", "top", Css$Css.px(10)))).toBe("left top 10px");
+                expect(CssString$Css.transformOrigin({
+                            NAME: "transformOrigin2",
+                            VAL: [
+                              "left",
+                              "top"
+                            ]
+                          })).toBe("left top");
+                expect(CssString$Css.transformOrigin({
+                            NAME: "transformOrigin3",
+                            VAL: [
+                              "left",
+                              "top",
+                              Css$Css.px(10)
+                            ]
+                          })).toBe("left top 10px");
                 
               }));
         
