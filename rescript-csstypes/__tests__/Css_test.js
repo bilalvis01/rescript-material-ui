@@ -220,4 +220,28 @@ describe("others", (function () {
         
       }));
 
+describe("style", (function () {
+        test("style", (function () {
+                expect(Css$Css.style([
+                            Css$Css.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Css.url("image.png")),
+                            Css$Css.color(Css$Css.rgb(255, 255, 255)),
+                            Css$Css.paddingTop(Css$Css.px(24)),
+                            Css$Css.paddingBottom(Css$Css.px(24)),
+                            Css$Css.paddingLeft(Css$Css.px(40)),
+                            Css$Css.paddingRight(Css$Css.px(40)),
+                            Css$Css.marginNumber(24)
+                          ])).toEqual({
+                      background: "url(\"image.png\")",
+                      color: "rgb(255, 255, 255)",
+                      paddingTop: "24px",
+                      paddingBottom: "24px",
+                      paddingLeft: "40px",
+                      paddingRight: "40px",
+                      margin: 24
+                    });
+                
+              }));
+        
+      }));
+
 /*  Not a pure module */
