@@ -1,6 +1,7 @@
-open CssType;
-
 type synthetic<'a>;
+@unboxed
+type rec box =
+  | Box(synthetic<'a>): box;
 
 type tag_synthetic;
 type t_synthetic = synthetic<tag_synthetic>
@@ -19,9 +20,9 @@ let border = (~width=?, ~color=?, style) => {
   | (Some(w), Some(c)) => Some(`${CssString.lineWidth(w)} ${CssString.color(c)}`)
   };
   switch (border, style) {
-  | (_, #...global as g) => CssString.global(g)
-  | (None, #...lineStyle as s) => CssString.lineStyle(s)
-  | (Some(b), #...lineStyle as s) => `${b} ${CssString.lineStyle(s)}`
+  | (_, #...CssType.global as g) => CssString.global(g)
+  | (None, #...CssType.lineStyle as s) => CssString.lineStyle(s)
+  | (Some(b), #...CssType.lineStyle as s) => `${b} ${CssString.lineStyle(s)}`
   }
   ->borderString
 };
@@ -137,9 +138,9 @@ let background = (
   imageOrColor
 ) => {
   switch imageOrColor {
-  | #...global as g => CssString.global(g)
-  | #...bgImage as imageOrColor
-  | #...color as imageOrColor =>
+  | #...CssType.global as g => CssString.global(g)
+  | #...CssType.bgImage as imageOrColor
+  | #...CssType.color as imageOrColor =>
     CssString.background(
       ~color=?color,
       ~position=?position,
