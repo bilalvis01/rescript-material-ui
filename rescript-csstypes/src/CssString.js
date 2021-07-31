@@ -980,15 +980,15 @@ function padding_global(v) {
 
 function cursorImage(v) {
   var variant = v.NAME;
-  if (variant === "cursorImage2") {
+  if (variant === "url3") {
     var match = v.VAL;
-    return url(match[0]) + " " + match[1];
+    return "url(\"" + match[0] + "\") " + String(match[1]) + " " + String(match[2]);
   }
-  if (variant !== "cursorImage3") {
+  if (variant === "url") {
     return url(v);
   }
   var match$1 = v.VAL;
-  return url(match$1[0]) + " " + match$1[1] + " " + match$1[2];
+  return "url(\"" + match$1[0] + "\") " + String(match$1[1]);
 }
 
 exports.concat = concat;

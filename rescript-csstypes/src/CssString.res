@@ -699,7 +699,7 @@ external cursorKeyword_global: cursorKeyword_global => string = "%identity";
 let cursorImage = v => {
   switch v {
   | #...url as u => url(u)
-  | #cursorImage2(#...url as u, x) => `${url(u)} ${Obj.magic(x)}`
-  | #cursorImage3(#...url as u, x, y) => `${url(u)} ${Obj.magic(x)} ${Obj.magic(y)}` 
+  | #url2(u, x) => `url("${u}") ${Belt.Float.toString(x)}`
+  | #url3(u, x, y) => `url("${u}") ${Belt.Float.toString(x)} ${Belt.Float.toString(y)}` 
   };
 };

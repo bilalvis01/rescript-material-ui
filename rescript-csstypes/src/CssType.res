@@ -1625,7 +1625,7 @@ type cursorKeyword_global = [
   | global
 ];
 
-type cursorCoondinatesValue = [
+type cursorImageCoondinatesValue = [
   | #0
   | #1
   | #2
@@ -1663,6 +1663,6 @@ type cursorCoondinatesValue = [
 
 type cursorImage = [
   | url
-  | #cursorImage2(url, cursorCoondinatesValue)
-  | #cursorImage3(url, cursorCoondinatesValue, cursorCoondinatesValue)
+  | #url2(string, float)
+  | #url3(string, float, float)
 ];
