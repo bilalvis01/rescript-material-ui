@@ -30,7 +30,7 @@ describe("border", (function () {
         test("borderColor", (function () {
                 expect(CssPropertyValue$Css.borderColor("red")).toBe("red");
                 expect(CssPropertyValue$Css.borderColor2("red", Css$Css.rgbX("000000ff"))).toBe("red #000000ff");
-                expect(CssPropertyValue$Css.borderColor3("red", Css$Css.rgb(255, 255, 255), Css$Css.hsl(360, Css$Css.pct(100), Css$Css.pct(50)))).toBe("red rgb(255, 255, 255) hsl(360, 100%, 50%)");
+                expect(CssPropertyValue$Css.borderColor3("red", Css$Css.rgb(255, 255, 255), Css$Css.hsl(Css$Css.deg(360), Css$Css.pct(100), Css$Css.pct(50)))).toBe("red rgb(255, 255, 255) hsl(360deg, 100%, 50%)");
                 expect(CssPropertyValue$Css.borderColor4("blue", Css$Css.rgba(0, 0, 0, 0.5), "red", Css$Css.rgb(255, 255, 255))).toBe("blue rgba(0, 0, 0, 0.5) red rgb(255, 255, 255)");
                 
               }));

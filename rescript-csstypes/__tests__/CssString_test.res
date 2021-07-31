@@ -117,25 +117,14 @@ Color data types
 describe("Color data types", (.) => {
   test("color", (.) => {
     expect(hue(Css.deg(1.)))->toBe("1deg");
-    expect(hue(Css.num(1.)))->toBe("1");
     expect(alpha(Css.pct(1.)))->toBe("1%");
     expect(alpha(Css.num(1.)))->toBe("1");
     expect(rgbParam(Css.pct(1.)))->toBe("1%");
     expect(rgbParam(Css.num(1.)))->toBe("1");
-    expect(hsl(Css.num(1.), Css.pct(10.), Css.pct(10.)))
-      ->toBe("hsl(1, 10%, 10%)");
-    expect(hsla(Css.num(1.), Css.pct(10.), Css.pct(10.), Css.num(1.)))
-      ->toBe("hsla(1, 10%, 10%, 1)");
-    expect(hsl(#1, Css.pct(10.), Css.pct(10.)))
-      ->toBe("hsl(1, 10%, 10%)");
-    expect(hsla(#1, Css.pct(10.), Css.pct(10.), Css.num(1.)))
-      ->toBe("hsla(1, 10%, 10%, 1)");
     expect(rgb(Css.num(1.), Css.num(1.), Css.pct(10.)))
       ->toBe("rgb(1, 1, 10%)");
     expect(rgba(Css.num(1.), Css.num(1.), Css.pct(10.), Css.num(1.)))
       ->toBe("rgba(1, 1, 10%, 1)");
-    expect(rgb(#255, #255, #255))
-      ->toBe("rgb(255, 255, 255)");
     expect(rgba(Css.num(0.), Css.num(0.), Css.num(0.), Css.num(1.)))
       ->toBe("rgba(0, 0, 0, 1)");
     expect(rgbX("000000"))->toBe("#000000");

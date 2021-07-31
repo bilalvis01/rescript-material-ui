@@ -114,18 +114,12 @@ describe("Combination data types", (function () {
 describe("Color data types", (function () {
         test("color", (function () {
                 expect(CssString$Css.hue(Css$Css.deg(1))).toBe("1deg");
-                expect(CssString$Css.hue(Css$Css.num(1))).toBe("1");
                 expect(CssString$Css.alpha(Css$Css.pct(1))).toBe("1%");
                 expect(CssString$Css.alpha(Css$Css.num(1))).toBe("1");
                 expect(CssString$Css.rgbParam(Css$Css.pct(1))).toBe("1%");
                 expect(CssString$Css.rgbParam(Css$Css.num(1))).toBe("1");
-                expect(CssString$Css.hsl(Css$Css.num(1), Css$Css.pct(10), Css$Css.pct(10))).toBe("hsl(1, 10%, 10%)");
-                expect(CssString$Css.hsla(Css$Css.num(1), Css$Css.pct(10), Css$Css.pct(10), Css$Css.num(1))).toBe("hsla(1, 10%, 10%, 1)");
-                expect(CssString$Css.hsl(1, Css$Css.pct(10), Css$Css.pct(10))).toBe("hsl(1, 10%, 10%)");
-                expect(CssString$Css.hsla(1, Css$Css.pct(10), Css$Css.pct(10), Css$Css.num(1))).toBe("hsla(1, 10%, 10%, 1)");
                 expect(CssString$Css.rgb(Css$Css.num(1), Css$Css.num(1), Css$Css.pct(10))).toBe("rgb(1, 1, 10%)");
                 expect(CssString$Css.rgba(Css$Css.num(1), Css$Css.num(1), Css$Css.pct(10), Css$Css.num(1))).toBe("rgba(1, 1, 10%, 1)");
-                expect(CssString$Css.rgb(255, 255, 255)).toBe("rgb(255, 255, 255)");
                 expect(CssString$Css.rgba(Css$Css.num(0), Css$Css.num(0), Css$Css.num(0), Css$Css.num(1))).toBe("rgba(0, 0, 0, 1)");
                 expect(CssString$Css.rgbX("000000")).toBe("#000000");
                 expect(CssString$Css.color(Css$Css.rgbX("000000"))).toBe("#000000");

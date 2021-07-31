@@ -78,20 +78,20 @@ describe("border", (.) => {
   });
 
   test("borderColor", (.) => {
-    expect(borderColor(hsl(360., pct(50.), pct(50.))))->toEqual(propertyString("borderColor", "hsl(360, 50%, 50%)"));
+    expect(borderColor(hsl(deg(360.), pct(50.), pct(50.))))->toEqual(propertyString("borderColor", "hsl(360deg, 50%, 50%)"));
     expect(borderColor2(~tb=#red, ~lr=#blue))->toEqual(propertyString("borderColor", "red blue"));
     expect(borderColor3(~top=rgbX("000000"), ~lr=rgbX("000000"), ~bottom=rgbX("111111")))
     ->toEqual(propertyString("borderColor", "#000000 #000000 #111111"));
     expect(borderColor4(~top=#red, ~bottom=#purple, ~right=#turquoise, ~left=#deeppink))
     ->toEqual(propertyString("borderColor", "red turquoise purple deeppink"));
-    expect(borderTopColor(hsl(360., pct(50.), pct(50.))))
-    ->toEqual(propertyString("borderTopColor", "hsl(360, 50%, 50%)"));
-    expect(borderRightColor(hsl(360., pct(50.), pct(50.))))
-    ->toEqual(propertyString("borderRightColor", "hsl(360, 50%, 50%)"));
-    expect(borderBottomColor(hsl(360., pct(50.), pct(50.))))
-    ->toEqual(propertyString("borderBottomColor", "hsl(360, 50%, 50%)"));
-    expect(borderLeftColor(hsl(360., pct(50.), pct(50.))))
-    ->toEqual(propertyString("borderLeftColor", "hsl(360, 50%, 50%)"));
+    expect(borderTopColor(hsl(deg(360.), pct(50.), pct(50.))))
+    ->toEqual(propertyString("borderTopColor", "hsl(360deg, 50%, 50%)"));
+    expect(borderRightColor(hsl(deg(360.), pct(50.), pct(50.))))
+    ->toEqual(propertyString("borderRightColor", "hsl(360deg, 50%, 50%)"));
+    expect(borderBottomColor(hsl(deg(360.), pct(50.), pct(50.))))
+    ->toEqual(propertyString("borderBottomColor", "hsl(360deg, 50%, 50%)"));
+    expect(borderLeftColor(hsl(deg(360.), pct(50.), pct(50.))))
+    ->toEqual(propertyString("borderLeftColor", "hsl(360deg, 50%, 50%)"));
   });
 });
 

@@ -80,14 +80,14 @@ describe("border", (function () {
                 
               }));
         test("borderColor", (function () {
-                expect(Css$Css.borderColor(Css$Css.hsl(360, Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderColor", "hsl(360, 50%, 50%)"));
+                expect(Css$Css.borderColor(Css$Css.hsl(Css$Css.deg(360), Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderColor", "hsl(360deg, 50%, 50%)"));
                 expect(Css$Css.borderColor2("red", "blue")).toEqual(Css$Css.propertyString("borderColor", "red blue"));
                 expect(Css$Css.borderColor3(Css$Css.rgbX("000000"), Css$Css.rgbX("000000"), Css$Css.rgbX("111111"))).toEqual(Css$Css.propertyString("borderColor", "#000000 #000000 #111111"));
                 expect(Css$Css.borderColor4("red", "turquoise", "purple", "deeppink")).toEqual(Css$Css.propertyString("borderColor", "red turquoise purple deeppink"));
-                expect(Css$Css.borderTopColor(Css$Css.hsl(360, Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderTopColor", "hsl(360, 50%, 50%)"));
-                expect(Css$Css.borderRightColor(Css$Css.hsl(360, Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderRightColor", "hsl(360, 50%, 50%)"));
-                expect(Css$Css.borderBottomColor(Css$Css.hsl(360, Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderBottomColor", "hsl(360, 50%, 50%)"));
-                expect(Css$Css.borderLeftColor(Css$Css.hsl(360, Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderLeftColor", "hsl(360, 50%, 50%)"));
+                expect(Css$Css.borderTopColor(Css$Css.hsl(Css$Css.deg(360), Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderTopColor", "hsl(360deg, 50%, 50%)"));
+                expect(Css$Css.borderRightColor(Css$Css.hsl(Css$Css.deg(360), Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderRightColor", "hsl(360deg, 50%, 50%)"));
+                expect(Css$Css.borderBottomColor(Css$Css.hsl(Css$Css.deg(360), Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderBottomColor", "hsl(360deg, 50%, 50%)"));
+                expect(Css$Css.borderLeftColor(Css$Css.hsl(Css$Css.deg(360), Css$Css.pct(50), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("borderLeftColor", "hsl(360deg, 50%, 50%)"));
                 
               }));
         

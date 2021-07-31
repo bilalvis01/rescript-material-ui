@@ -380,17 +380,7 @@ function transformOrigin(v) {
   }
 }
 
-function hue(v) {
-  if (typeof v === "object") {
-    if (v.NAME === "number") {
-      return String(v.VAL);
-    } else {
-      return angle(v);
-    }
-  } else {
-    return String(v);
-  }
-}
+var hue = angle;
 
 function alpha(v) {
   if (v.NAME === "number") {
@@ -401,23 +391,19 @@ function alpha(v) {
 }
 
 function rgbParam(v) {
-  if (typeof v === "object") {
-    if (v.NAME === "number") {
-      return String(v.VAL);
-    } else {
-      return percentage(v);
-    }
+  if (v.NAME === "number") {
+    return String(v.VAL);
   } else {
-    return String(v);
+    return percentage(v);
   }
 }
 
 function hsl(v1, v2, v3) {
-  return "hsl(" + hue(v1) + ", " + percentage(v2) + ", " + percentage(v3) + ")";
+  return "hsl(" + angle(v1) + ", " + percentage(v2) + ", " + percentage(v3) + ")";
 }
 
 function hsla(v1, v2, v3, v4) {
-  return "hsla(" + hue(v1) + ", " + percentage(v2) + ", " + percentage(v3) + ", " + alpha(v4) + ")";
+  return "hsla(" + angle(v1) + ", " + percentage(v2) + ", " + percentage(v3) + ", " + alpha(v4) + ")";
 }
 
 function rgb(v1, v2, v3) {

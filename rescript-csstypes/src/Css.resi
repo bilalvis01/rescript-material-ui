@@ -63,8 +63,8 @@ let transformOrigin2: (
 /*
 Color functions
 */
-let hsl: (float, percentage, percentage) => [> #hsl(hue, percentage, percentage) ];
-let hsla: (float, percentage, percentage, float) => [> #hsla(hue, percentage, percentage, alpha) ];
+let hsl: (hue, percentage, percentage) => [> #hsl(hue, percentage, percentage) ];
+let hsla: (hue, percentage, percentage, float) => [> #hsla(hue, percentage, percentage, alpha) ];
 let rgb: (float, float, float) => [> #rgb(rgbParam, rgbParam, rgbParam) ];
 let rgba: (float, float, float, float) => [> #rgba(rgbParam, rgbParam, rgbParam, alpha) ];
 let rgbX: string => [> #rgbX(string) ];

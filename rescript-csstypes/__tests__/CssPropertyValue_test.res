@@ -33,8 +33,8 @@ describe("border", (.) => {
   test("borderColor", (.) => {
     expect(borderColor(#red))->toBe(borderColorString("red"));
     expect(borderColor2(~tb=#red, ~lr=Css.rgbX("000000ff")))->toBe(borderColorString("red #000000ff"));
-    expect(borderColor3(~top=#red, ~lr=Css.rgb(255., 255., 255.), ~bottom=Css.hsl(360., Css.pct(100.), Css.pct(50.))))
-      ->toBe(borderColorString("red rgb(255, 255, 255) hsl(360, 100%, 50%)"));
+    expect(borderColor3(~top=#red, ~lr=Css.rgb(255., 255., 255.), ~bottom=Css.hsl(Css.deg(360.), Css.pct(100.), Css.pct(50.))))
+      ->toBe(borderColorString("red rgb(255, 255, 255) hsl(360deg, 100%, 50%)"));
     expect(borderColor4(~bottom=#red, ~top=#blue, ~left=Css.rgb(255., 255., 255.), ~right=Css.rgba(0., 0., 0., 0.5)))
       ->toBe(borderColorString("blue rgba(0, 0, 0, 0.5) red rgb(255, 255, 255)"));
   });

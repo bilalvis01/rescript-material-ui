@@ -245,10 +245,7 @@ function hsl(v1, v2, v3) {
   return {
           NAME: "hsl",
           VAL: [
-            {
-              NAME: "number",
-              VAL: v1
-            },
+            v1,
             v2,
             v3
           ]
@@ -259,10 +256,7 @@ function hsla(v1, v2, v3, v4) {
   return {
           NAME: "hsla",
           VAL: [
-            {
-              NAME: "number",
-              VAL: v1
-            },
+            v1,
             v2,
             v3,
             {

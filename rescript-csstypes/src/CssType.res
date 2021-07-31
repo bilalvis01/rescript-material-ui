@@ -922,14 +922,14 @@ type alpha = [
 
 type hue = [
   | angle
-  | number
-  | degree
+  // | number
+  // | degree
 ];
 
 type rgbParam = [
   | percentage
   | number
-  | rgbDecimalValue
+  // | rgbDecimalValue
 ];
 
 type color = [
