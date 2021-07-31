@@ -3,7 +3,8 @@
   "private": true,
   "workspaces": [
     "core",
-    "rescript-csstypes",
+    "rescript-csstype",
+    "rescript-csstype-react",
     "rescript-jest"
   ]
 }
