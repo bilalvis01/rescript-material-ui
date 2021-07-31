@@ -2,7 +2,7 @@
 'use strict';
 
 var Js_dict = require("rescript/lib/js/js_dict.js");
-var CssPropertyValue$Css = require("./CssPropertyValue.js");
+var CssPropertyValue$Ress = require("./CssPropertyValue.js");
 
 function MakeValue($star) {
   var str = function (v) {
@@ -746,7 +746,7 @@ function MakeProperty($star) {
   var border = function (width, color, style) {
     return [
             "border",
-            CssPropertyValue$Css.border(width, color, style)
+            CssPropertyValue$Ress.border(width, color, style)
           ];
   };
   var borderString = function (v) {
@@ -758,7 +758,7 @@ function MakeProperty($star) {
   var borderTop = function (width, color, style) {
     return [
             "borderTop",
-            CssPropertyValue$Css.border(width, color, style)
+            CssPropertyValue$Ress.border(width, color, style)
           ];
   };
   var borderTopString = function (v) {
@@ -770,7 +770,7 @@ function MakeProperty($star) {
   var borderLeft = function (width, color, style) {
     return [
             "borderLeft",
-            CssPropertyValue$Css.border(width, color, style)
+            CssPropertyValue$Ress.border(width, color, style)
           ];
   };
   var borderLeftString = function (v) {
@@ -782,7 +782,7 @@ function MakeProperty($star) {
   var borderRight = function (width, color, style) {
     return [
             "borderRight",
-            CssPropertyValue$Css.border(width, color, style)
+            CssPropertyValue$Ress.border(width, color, style)
           ];
   };
   var borderRightString = function (v) {
@@ -794,7 +794,7 @@ function MakeProperty($star) {
   var borderBottom = function (width, color, style) {
     return [
             "borderBottom",
-            CssPropertyValue$Css.border(width, color, style)
+            CssPropertyValue$Ress.border(width, color, style)
           ];
   };
   var borderBottomString = function (v) {
@@ -806,25 +806,25 @@ function MakeProperty($star) {
   var borderColor = function (v) {
     return [
             "borderColor",
-            CssPropertyValue$Css.borderColor(v)
+            CssPropertyValue$Ress.borderColor(v)
           ];
   };
   var borderColor2 = function (tb, lr) {
     return [
             "borderColor",
-            CssPropertyValue$Css.borderColor2(tb, lr)
+            CssPropertyValue$Ress.borderColor2(tb, lr)
           ];
   };
   var borderColor3 = function (top, lr, bottom) {
     return [
             "borderColor",
-            CssPropertyValue$Css.borderColor3(top, lr, bottom)
+            CssPropertyValue$Ress.borderColor3(top, lr, bottom)
           ];
   };
   var borderColor4 = function (top, right, bottom, left) {
     return [
             "borderColor",
-            CssPropertyValue$Css.borderColor4(top, right, bottom, left)
+            CssPropertyValue$Ress.borderColor4(top, right, bottom, left)
           ];
   };
   var borderColorString = function (v) {
@@ -836,7 +836,7 @@ function MakeProperty($star) {
   var borderTopColor = function (v) {
     return [
             "borderTopColor",
-            CssPropertyValue$Css.borderTopColor(v)
+            CssPropertyValue$Ress.borderTopColor(v)
           ];
   };
   var borderTopColorString = function (v) {
@@ -848,7 +848,7 @@ function MakeProperty($star) {
   var borderRightColor = function (v) {
     return [
             "borderRightColor",
-            CssPropertyValue$Css.borderRightColor(v)
+            CssPropertyValue$Ress.borderRightColor(v)
           ];
   };
   var borderRightColorString = function (v) {
@@ -860,7 +860,7 @@ function MakeProperty($star) {
   var borderBottomColor = function (v) {
     return [
             "borderBottomColor",
-            CssPropertyValue$Css.borderBottomColor(v)
+            CssPropertyValue$Ress.borderBottomColor(v)
           ];
   };
   var borderBottomColorString = function (v) {
@@ -872,7 +872,7 @@ function MakeProperty($star) {
   var borderLeftColor = function (v) {
     return [
             "borderLeftColor",
-            CssPropertyValue$Css.borderLeftColor(v)
+            CssPropertyValue$Ress.borderLeftColor(v)
           ];
   };
   var borderLeftColorString = function (v) {
@@ -884,25 +884,25 @@ function MakeProperty($star) {
   var borderStyle = function (v) {
     return [
             "borderStyle",
-            CssPropertyValue$Css.borderStyle(v)
+            CssPropertyValue$Ress.borderStyle(v)
           ];
   };
   var borderStyle2 = function (tb, lr) {
     return [
             "borderStyle",
-            CssPropertyValue$Css.borderStyle2(tb, lr)
+            CssPropertyValue$Ress.borderStyle2(tb, lr)
           ];
   };
   var borderStyle3 = function (top, lr, bottom) {
     return [
             "borderStyle",
-            CssPropertyValue$Css.borderStyle3(top, lr, bottom)
+            CssPropertyValue$Ress.borderStyle3(top, lr, bottom)
           ];
   };
   var borderStyle4 = function (top, right, bottom, left) {
     return [
             "borderStyle",
-            CssPropertyValue$Css.borderStyle4(top, right, bottom, left)
+            CssPropertyValue$Ress.borderStyle4(top, right, bottom, left)
           ];
   };
   var borderStyleString = function (v) {
@@ -914,7 +914,7 @@ function MakeProperty($star) {
   var borderTopStyle = function (v) {
     return [
             "borderTopStyle",
-            CssPropertyValue$Css.borderStyle(v)
+            CssPropertyValue$Ress.borderStyle(v)
           ];
   };
   var borderTopStyleString = function (v) {
@@ -926,7 +926,7 @@ function MakeProperty($star) {
   var borderRightStyle = function (v) {
     return [
             "borderRightStyle",
-            CssPropertyValue$Css.borderStyle(v)
+            CssPropertyValue$Ress.borderStyle(v)
           ];
   };
   var borderRightStyleString = function (v) {
@@ -938,7 +938,7 @@ function MakeProperty($star) {
   var borderBottomStyle = function (v) {
     return [
             "borderBottomStyle",
-            CssPropertyValue$Css.borderStyle(v)
+            CssPropertyValue$Ress.borderStyle(v)
           ];
   };
   var borderBottomStyleString = function (v) {
@@ -950,7 +950,7 @@ function MakeProperty($star) {
   var borderLeftStyle = function (v) {
     return [
             "borderLeftStyle",
-            CssPropertyValue$Css.borderStyle(v)
+            CssPropertyValue$Ress.borderStyle(v)
           ];
   };
   var borderLeftStyleString = function (v) {
@@ -962,25 +962,25 @@ function MakeProperty($star) {
   var borderWidth = function (v) {
     return [
             "borderWidth",
-            CssPropertyValue$Css.borderWidth(v)
+            CssPropertyValue$Ress.borderWidth(v)
           ];
   };
   var borderWidth2 = function (tb, lr) {
     return [
             "borderWidth",
-            CssPropertyValue$Css.borderWidth2(tb, lr)
+            CssPropertyValue$Ress.borderWidth2(tb, lr)
           ];
   };
   var borderWidth3 = function (top, lr, bottom) {
     return [
             "borderWidth",
-            CssPropertyValue$Css.borderWidth3(top, lr, bottom)
+            CssPropertyValue$Ress.borderWidth3(top, lr, bottom)
           ];
   };
   var borderWidth4 = function (top, right, bottom, left) {
     return [
             "borderWidth",
-            CssPropertyValue$Css.borderWidth4(top, right, bottom, left)
+            CssPropertyValue$Ress.borderWidth4(top, right, bottom, left)
           ];
   };
   var borderWidthString = function (v) {
@@ -992,7 +992,7 @@ function MakeProperty($star) {
   var borderTopWidth = function (v) {
     return [
             "borderTopWidth",
-            CssPropertyValue$Css.borderTopWidth(v)
+            CssPropertyValue$Ress.borderTopWidth(v)
           ];
   };
   var borderTopWidthString = function (v) {
@@ -1004,7 +1004,7 @@ function MakeProperty($star) {
   var borderRightWidth = function (v) {
     return [
             "borderRightWidth",
-            CssPropertyValue$Css.borderRightWidth(v)
+            CssPropertyValue$Ress.borderRightWidth(v)
           ];
   };
   var borderRightWidthString = function (v) {
@@ -1016,7 +1016,7 @@ function MakeProperty($star) {
   var borderBottomWidth = function (v) {
     return [
             "borderBottomWidth",
-            CssPropertyValue$Css.borderBottomWidth(v)
+            CssPropertyValue$Ress.borderBottomWidth(v)
           ];
   };
   var borderBottomWidthString = function (v) {
@@ -1028,7 +1028,7 @@ function MakeProperty($star) {
   var borderLeftWidth = function (v) {
     return [
             "borderLeftWidth",
-            CssPropertyValue$Css.borderLeftWidth(v)
+            CssPropertyValue$Ress.borderLeftWidth(v)
           ];
   };
   var borderLeftWidthString = function (v) {
@@ -1040,25 +1040,25 @@ function MakeProperty($star) {
   var background = function (color, position, size, repeat, attachment, origin, clip, imageOrColor) {
     return [
             "background",
-            CssPropertyValue$Css.background(color, position, size, repeat, attachment, origin, clip, imageOrColor)
+            CssPropertyValue$Ress.background(color, position, size, repeat, attachment, origin, clip, imageOrColor)
           ];
   };
   var background2 = function (l1, l2) {
     return [
             "background",
-            CssPropertyValue$Css.background2(l1, l2)
+            CssPropertyValue$Ress.background2(l1, l2)
           ];
   };
   var background3 = function (l1, l2, l3) {
     return [
             "background",
-            CssPropertyValue$Css.background3(l1, l2, l3)
+            CssPropertyValue$Ress.background3(l1, l2, l3)
           ];
   };
   var background4 = function (l1, l2, l3, l4) {
     return [
             "background",
-            CssPropertyValue$Css.background4(l1, l2, l3, l4)
+            CssPropertyValue$Ress.background4(l1, l2, l3, l4)
           ];
   };
   var backgroundString = function (v) {
@@ -1070,25 +1070,25 @@ function MakeProperty($star) {
   var backgroundAttachment = function (v) {
     return [
             "backgroundAttachment",
-            CssPropertyValue$Css.backgroundAttachment(v)
+            CssPropertyValue$Ress.backgroundAttachment(v)
           ];
   };
   var backgroundAttachment2 = function (v1, v2) {
     return [
             "backgroundAttachment",
-            CssPropertyValue$Css.backgroundAttachment2(v1, v2)
+            CssPropertyValue$Ress.backgroundAttachment2(v1, v2)
           ];
   };
   var backgroundAttachment3 = function (v1, v2, v3) {
     return [
             "backgroundAttachment",
-            CssPropertyValue$Css.backgroundAttachment3(v1, v2, v3)
+            CssPropertyValue$Ress.backgroundAttachment3(v1, v2, v3)
           ];
   };
   var backgroundAttachment4 = function (v1, v2, v3, v4) {
     return [
             "backgroundAttachment",
-            CssPropertyValue$Css.backgroundAttachment4(v1, v2, v3, v4)
+            CssPropertyValue$Ress.backgroundAttachment4(v1, v2, v3, v4)
           ];
   };
   var backgroundAttachmentString = function (v) {
@@ -1100,7 +1100,7 @@ function MakeProperty($star) {
   var backgroundColor = function (v) {
     return [
             "backgroundColor",
-            CssPropertyValue$Css.backgroundColor(v)
+            CssPropertyValue$Ress.backgroundColor(v)
           ];
   };
   var backgroundColorString = function (v) {
@@ -1112,25 +1112,25 @@ function MakeProperty($star) {
   var backgroundImage = function (v) {
     return [
             "backgroundImage",
-            CssPropertyValue$Css.backgroundImage(v)
+            CssPropertyValue$Ress.backgroundImage(v)
           ];
   };
   var backgroundImage2 = function (v1, v2) {
     return [
             "backgroundImage",
-            CssPropertyValue$Css.backgroundImage2(v1, v2)
+            CssPropertyValue$Ress.backgroundImage2(v1, v2)
           ];
   };
   var backgroundImage3 = function (v1, v2, v3) {
     return [
             "backgroundImage",
-            CssPropertyValue$Css.backgroundImage3(v1, v2, v3)
+            CssPropertyValue$Ress.backgroundImage3(v1, v2, v3)
           ];
   };
   var backgroundImage4 = function (v1, v2, v3, v4) {
     return [
             "backgroundImage",
-            CssPropertyValue$Css.backgroundImage4(v1, v2, v3, v4)
+            CssPropertyValue$Ress.backgroundImage4(v1, v2, v3, v4)
           ];
   };
   var backgroundImageString = function (v) {
@@ -1142,25 +1142,25 @@ function MakeProperty($star) {
   var backgroundPosition = function (v) {
     return [
             "backgroundPosition",
-            CssPropertyValue$Css.backgroundPosition(v)
+            CssPropertyValue$Ress.backgroundPosition(v)
           ];
   };
   var backgroundPosition2 = function (v1, v2) {
     return [
             "backgroundPosition",
-            CssPropertyValue$Css.backgroundPosition2(v1, v2)
+            CssPropertyValue$Ress.backgroundPosition2(v1, v2)
           ];
   };
   var backgroundPosition3 = function (v1, v2, v3) {
     return [
             "backgroundPosition",
-            CssPropertyValue$Css.backgroundPosition3(v1, v2, v3)
+            CssPropertyValue$Ress.backgroundPosition3(v1, v2, v3)
           ];
   };
   var backgroundPosition4 = function (v1, v2, v3, v4) {
     return [
             "backgroundPosition",
-            CssPropertyValue$Css.backgroundPosition4(v1, v2, v3, v4)
+            CssPropertyValue$Ress.backgroundPosition4(v1, v2, v3, v4)
           ];
   };
   var backgroundPositionString = function (v) {
@@ -1172,25 +1172,25 @@ function MakeProperty($star) {
   var backgroundStyle = function (v) {
     return [
             "backgroundStyle",
-            CssPropertyValue$Css.backgroundStyle(v)
+            CssPropertyValue$Ress.backgroundStyle(v)
           ];
   };
   var backgroundStyle2 = function (v1, v2) {
     return [
             "backgroundStyle",
-            CssPropertyValue$Css.backgroundStyle2(v1, v2)
+            CssPropertyValue$Ress.backgroundStyle2(v1, v2)
           ];
   };
   var backgroundStyle3 = function (v1, v2, v3) {
     return [
             "backgroundStyle",
-            CssPropertyValue$Css.backgroundStyle3(v1, v2, v3)
+            CssPropertyValue$Ress.backgroundStyle3(v1, v2, v3)
           ];
   };
   var backgroundStyle4 = function (v1, v2, v3, v4) {
     return [
             "backgroundStyle",
-            CssPropertyValue$Css.backgroundStyle4(v1, v2, v3, v4)
+            CssPropertyValue$Ress.backgroundStyle4(v1, v2, v3, v4)
           ];
   };
   var backgroundStyleString = function (v) {
@@ -1202,25 +1202,25 @@ function MakeProperty($star) {
   var margin = function (v) {
     return [
             "margin",
-            CssPropertyValue$Css.margin(v)
+            CssPropertyValue$Ress.margin(v)
           ];
   };
   var margin2 = function (tb, lr) {
     return [
             "margin",
-            CssPropertyValue$Css.margin2(tb, lr)
+            CssPropertyValue$Ress.margin2(tb, lr)
           ];
   };
   var margin3 = function (top, lr, bottom) {
     return [
             "margin",
-            CssPropertyValue$Css.margin3(top, lr, bottom)
+            CssPropertyValue$Ress.margin3(top, lr, bottom)
           ];
   };
   var margin4 = function (top, right, bottom, left) {
     return [
             "margin",
-            CssPropertyValue$Css.margin4(top, right, bottom, left)
+            CssPropertyValue$Ress.margin4(top, right, bottom, left)
           ];
   };
   var marginString = function (v) {
@@ -1238,7 +1238,7 @@ function MakeProperty($star) {
   var marginTop = function (v) {
     return [
             "marginTop",
-            CssPropertyValue$Css.marginTop(v)
+            CssPropertyValue$Ress.marginTop(v)
           ];
   };
   var marginTopString = function (v) {
@@ -1256,7 +1256,7 @@ function MakeProperty($star) {
   var marginRight = function (v) {
     return [
             "marginRight",
-            CssPropertyValue$Css.marginRight(v)
+            CssPropertyValue$Ress.marginRight(v)
           ];
   };
   var marginRightString = function (v) {
@@ -1274,7 +1274,7 @@ function MakeProperty($star) {
   var marginBottom = function (v) {
     return [
             "marginBottom",
-            CssPropertyValue$Css.marginBottom(v)
+            CssPropertyValue$Ress.marginBottom(v)
           ];
   };
   var marginBottomString = function (v) {
@@ -1292,7 +1292,7 @@ function MakeProperty($star) {
   var marginLeft = function (v) {
     return [
             "marginLeft",
-            CssPropertyValue$Css.marginLeft(v)
+            CssPropertyValue$Ress.marginLeft(v)
           ];
   };
   var marginLeftString = function (v) {
@@ -1310,25 +1310,25 @@ function MakeProperty($star) {
   var padding = function (v) {
     return [
             "padding",
-            CssPropertyValue$Css.padding(v)
+            CssPropertyValue$Ress.padding(v)
           ];
   };
   var padding2 = function (tb, lr) {
     return [
             "padding",
-            CssPropertyValue$Css.padding2(tb, lr)
+            CssPropertyValue$Ress.padding2(tb, lr)
           ];
   };
   var padding3 = function (top, lr, bottom) {
     return [
             "padding",
-            CssPropertyValue$Css.padding3(top, lr, bottom)
+            CssPropertyValue$Ress.padding3(top, lr, bottom)
           ];
   };
   var padding4 = function (top, right, bottom, left) {
     return [
             "padding",
-            CssPropertyValue$Css.padding4(top, right, bottom, left)
+            CssPropertyValue$Ress.padding4(top, right, bottom, left)
           ];
   };
   var paddingString = function (v) {
@@ -1346,7 +1346,7 @@ function MakeProperty($star) {
   var paddingTop = function (v) {
     return [
             "paddingTop",
-            CssPropertyValue$Css.paddingTop(v)
+            CssPropertyValue$Ress.paddingTop(v)
           ];
   };
   var paddingTopString = function (v) {
@@ -1364,7 +1364,7 @@ function MakeProperty($star) {
   var paddingRight = function (v) {
     return [
             "paddingRight",
-            CssPropertyValue$Css.paddingRight(v)
+            CssPropertyValue$Ress.paddingRight(v)
           ];
   };
   var paddingRightString = function (v) {
@@ -1382,7 +1382,7 @@ function MakeProperty($star) {
   var paddingBottom = function (v) {
     return [
             "paddingBottom",
-            CssPropertyValue$Css.paddingBottom(v)
+            CssPropertyValue$Ress.paddingBottom(v)
           ];
   };
   var paddingBottomString = function (v) {
@@ -1400,7 +1400,7 @@ function MakeProperty($star) {
   var paddingLeft = function (v) {
     return [
             "paddingLeft",
-            CssPropertyValue$Css.paddingLeft(v)
+            CssPropertyValue$Ress.paddingLeft(v)
           ];
   };
   var paddingLeftString = function (v) {
@@ -1418,13 +1418,13 @@ function MakeProperty($star) {
   var clear = function (v) {
     return [
             "clear",
-            CssPropertyValue$Css.clear(v)
+            CssPropertyValue$Ress.clear(v)
           ];
   };
   var color = function (v) {
     return [
             "color",
-            CssPropertyValue$Css.color(v)
+            CssPropertyValue$Ress.color(v)
           ];
   };
   var colorString = function (v) {
@@ -1436,31 +1436,31 @@ function MakeProperty($star) {
   var cursor = function (v) {
     return [
             "cursor",
-            CssPropertyValue$Css.cursor(v)
+            CssPropertyValue$Ress.cursor(v)
           ];
   };
   var cursor1 = function (i, k) {
     return [
             "cursor",
-            CssPropertyValue$Css.cursor1(i, k)
+            CssPropertyValue$Ress.cursor1(i, k)
           ];
   };
   var cursor2 = function (i1, i2, k) {
     return [
             "cursor",
-            CssPropertyValue$Css.cursor2(i1, i2, k)
+            CssPropertyValue$Ress.cursor2(i1, i2, k)
           ];
   };
   var cursor3 = function (i1, i2, i3, k) {
     return [
             "cursor",
-            CssPropertyValue$Css.cursor3(i1, i2, i3, k)
+            CssPropertyValue$Ress.cursor3(i1, i2, i3, k)
           ];
   };
   var cursor4 = function (i1, i2, i3, i4, k) {
     return [
             "cursor",
-            CssPropertyValue$Css.cursor4(i1, i2, i3, i4, k)
+            CssPropertyValue$Ress.cursor4(i1, i2, i3, i4, k)
           ];
   };
   var cursorString = function (v) {
@@ -2345,7 +2345,7 @@ function propertyInteger(name, value) {
 function border(width, color, style) {
   return [
           "border",
-          CssPropertyValue$Css.border(width, color, style)
+          CssPropertyValue$Ress.border(width, color, style)
         ];
 }
 
@@ -2359,7 +2359,7 @@ function borderString(v) {
 function borderTop(width, color, style) {
   return [
           "borderTop",
-          CssPropertyValue$Css.border(width, color, style)
+          CssPropertyValue$Ress.border(width, color, style)
         ];
 }
 
@@ -2373,7 +2373,7 @@ function borderTopString(v) {
 function borderLeft(width, color, style) {
   return [
           "borderLeft",
-          CssPropertyValue$Css.border(width, color, style)
+          CssPropertyValue$Ress.border(width, color, style)
         ];
 }
 
@@ -2387,7 +2387,7 @@ function borderLeftString(v) {
 function borderRight(width, color, style) {
   return [
           "borderRight",
-          CssPropertyValue$Css.border(width, color, style)
+          CssPropertyValue$Ress.border(width, color, style)
         ];
 }
 
@@ -2401,7 +2401,7 @@ function borderRightString(v) {
 function borderBottom(width, color, style) {
   return [
           "borderBottom",
-          CssPropertyValue$Css.border(width, color, style)
+          CssPropertyValue$Ress.border(width, color, style)
         ];
 }
 
@@ -2415,28 +2415,28 @@ function borderBottomString(v) {
 function borderColor(v) {
   return [
           "borderColor",
-          CssPropertyValue$Css.borderColor(v)
+          CssPropertyValue$Ress.borderColor(v)
         ];
 }
 
 function borderColor2(tb, lr) {
   return [
           "borderColor",
-          CssPropertyValue$Css.borderColor2(tb, lr)
+          CssPropertyValue$Ress.borderColor2(tb, lr)
         ];
 }
 
 function borderColor3(top, lr, bottom) {
   return [
           "borderColor",
-          CssPropertyValue$Css.borderColor3(top, lr, bottom)
+          CssPropertyValue$Ress.borderColor3(top, lr, bottom)
         ];
 }
 
 function borderColor4(top, right, bottom, left) {
   return [
           "borderColor",
-          CssPropertyValue$Css.borderColor4(top, right, bottom, left)
+          CssPropertyValue$Ress.borderColor4(top, right, bottom, left)
         ];
 }
 
@@ -2450,7 +2450,7 @@ function borderColorString(v) {
 function borderTopColor(v) {
   return [
           "borderTopColor",
-          CssPropertyValue$Css.borderTopColor(v)
+          CssPropertyValue$Ress.borderTopColor(v)
         ];
 }
 
@@ -2464,7 +2464,7 @@ function borderTopColorString(v) {
 function borderRightColor(v) {
   return [
           "borderRightColor",
-          CssPropertyValue$Css.borderRightColor(v)
+          CssPropertyValue$Ress.borderRightColor(v)
         ];
 }
 
@@ -2478,7 +2478,7 @@ function borderRightColorString(v) {
 function borderBottomColor(v) {
   return [
           "borderBottomColor",
-          CssPropertyValue$Css.borderBottomColor(v)
+          CssPropertyValue$Ress.borderBottomColor(v)
         ];
 }
 
@@ -2492,7 +2492,7 @@ function borderBottomColorString(v) {
 function borderLeftColor(v) {
   return [
           "borderLeftColor",
-          CssPropertyValue$Css.borderLeftColor(v)
+          CssPropertyValue$Ress.borderLeftColor(v)
         ];
 }
 
@@ -2506,28 +2506,28 @@ function borderLeftColorString(v) {
 function borderStyle(v) {
   return [
           "borderStyle",
-          CssPropertyValue$Css.borderStyle(v)
+          CssPropertyValue$Ress.borderStyle(v)
         ];
 }
 
 function borderStyle2(tb, lr) {
   return [
           "borderStyle",
-          CssPropertyValue$Css.borderStyle2(tb, lr)
+          CssPropertyValue$Ress.borderStyle2(tb, lr)
         ];
 }
 
 function borderStyle3(top, lr, bottom) {
   return [
           "borderStyle",
-          CssPropertyValue$Css.borderStyle3(top, lr, bottom)
+          CssPropertyValue$Ress.borderStyle3(top, lr, bottom)
         ];
 }
 
 function borderStyle4(top, right, bottom, left) {
   return [
           "borderStyle",
-          CssPropertyValue$Css.borderStyle4(top, right, bottom, left)
+          CssPropertyValue$Ress.borderStyle4(top, right, bottom, left)
         ];
 }
 
@@ -2541,7 +2541,7 @@ function borderStyleString(v) {
 function borderTopStyle(v) {
   return [
           "borderTopStyle",
-          CssPropertyValue$Css.borderStyle(v)
+          CssPropertyValue$Ress.borderStyle(v)
         ];
 }
 
@@ -2555,7 +2555,7 @@ function borderTopStyleString(v) {
 function borderRightStyle(v) {
   return [
           "borderRightStyle",
-          CssPropertyValue$Css.borderStyle(v)
+          CssPropertyValue$Ress.borderStyle(v)
         ];
 }
 
@@ -2569,7 +2569,7 @@ function borderRightStyleString(v) {
 function borderBottomStyle(v) {
   return [
           "borderBottomStyle",
-          CssPropertyValue$Css.borderStyle(v)
+          CssPropertyValue$Ress.borderStyle(v)
         ];
 }
 
@@ -2583,7 +2583,7 @@ function borderBottomStyleString(v) {
 function borderLeftStyle(v) {
   return [
           "borderLeftStyle",
-          CssPropertyValue$Css.borderStyle(v)
+          CssPropertyValue$Ress.borderStyle(v)
         ];
 }
 
@@ -2597,28 +2597,28 @@ function borderLeftStyleString(v) {
 function borderWidth(v) {
   return [
           "borderWidth",
-          CssPropertyValue$Css.borderWidth(v)
+          CssPropertyValue$Ress.borderWidth(v)
         ];
 }
 
 function borderWidth2(tb, lr) {
   return [
           "borderWidth",
-          CssPropertyValue$Css.borderWidth2(tb, lr)
+          CssPropertyValue$Ress.borderWidth2(tb, lr)
         ];
 }
 
 function borderWidth3(top, lr, bottom) {
   return [
           "borderWidth",
-          CssPropertyValue$Css.borderWidth3(top, lr, bottom)
+          CssPropertyValue$Ress.borderWidth3(top, lr, bottom)
         ];
 }
 
 function borderWidth4(top, right, bottom, left) {
   return [
           "borderWidth",
-          CssPropertyValue$Css.borderWidth4(top, right, bottom, left)
+          CssPropertyValue$Ress.borderWidth4(top, right, bottom, left)
         ];
 }
 
@@ -2632,7 +2632,7 @@ function borderWidthString(v) {
 function borderTopWidth(v) {
   return [
           "borderTopWidth",
-          CssPropertyValue$Css.borderTopWidth(v)
+          CssPropertyValue$Ress.borderTopWidth(v)
         ];
 }
 
@@ -2646,7 +2646,7 @@ function borderTopWidthString(v) {
 function borderRightWidth(v) {
   return [
           "borderRightWidth",
-          CssPropertyValue$Css.borderRightWidth(v)
+          CssPropertyValue$Ress.borderRightWidth(v)
         ];
 }
 
@@ -2660,7 +2660,7 @@ function borderRightWidthString(v) {
 function borderBottomWidth(v) {
   return [
           "borderBottomWidth",
-          CssPropertyValue$Css.borderBottomWidth(v)
+          CssPropertyValue$Ress.borderBottomWidth(v)
         ];
 }
 
@@ -2674,7 +2674,7 @@ function borderBottomWidthString(v) {
 function borderLeftWidth(v) {
   return [
           "borderLeftWidth",
-          CssPropertyValue$Css.borderLeftWidth(v)
+          CssPropertyValue$Ress.borderLeftWidth(v)
         ];
 }
 
@@ -2688,28 +2688,28 @@ function borderLeftWidthString(v) {
 function background(color, position, size, repeat, attachment, origin, clip, imageOrColor) {
   return [
           "background",
-          CssPropertyValue$Css.background(color, position, size, repeat, attachment, origin, clip, imageOrColor)
+          CssPropertyValue$Ress.background(color, position, size, repeat, attachment, origin, clip, imageOrColor)
         ];
 }
 
 function background2(l1, l2) {
   return [
           "background",
-          CssPropertyValue$Css.background2(l1, l2)
+          CssPropertyValue$Ress.background2(l1, l2)
         ];
 }
 
 function background3(l1, l2, l3) {
   return [
           "background",
-          CssPropertyValue$Css.background3(l1, l2, l3)
+          CssPropertyValue$Ress.background3(l1, l2, l3)
         ];
 }
 
 function background4(l1, l2, l3, l4) {
   return [
           "background",
-          CssPropertyValue$Css.background4(l1, l2, l3, l4)
+          CssPropertyValue$Ress.background4(l1, l2, l3, l4)
         ];
 }
 
@@ -2723,28 +2723,28 @@ function backgroundString(v) {
 function backgroundAttachment(v) {
   return [
           "backgroundAttachment",
-          CssPropertyValue$Css.backgroundAttachment(v)
+          CssPropertyValue$Ress.backgroundAttachment(v)
         ];
 }
 
 function backgroundAttachment2(v1, v2) {
   return [
           "backgroundAttachment",
-          CssPropertyValue$Css.backgroundAttachment2(v1, v2)
+          CssPropertyValue$Ress.backgroundAttachment2(v1, v2)
         ];
 }
 
 function backgroundAttachment3(v1, v2, v3) {
   return [
           "backgroundAttachment",
-          CssPropertyValue$Css.backgroundAttachment3(v1, v2, v3)
+          CssPropertyValue$Ress.backgroundAttachment3(v1, v2, v3)
         ];
 }
 
 function backgroundAttachment4(v1, v2, v3, v4) {
   return [
           "backgroundAttachment",
-          CssPropertyValue$Css.backgroundAttachment4(v1, v2, v3, v4)
+          CssPropertyValue$Ress.backgroundAttachment4(v1, v2, v3, v4)
         ];
 }
 
@@ -2758,7 +2758,7 @@ function backgroundAttachmentString(v) {
 function backgroundColor(v) {
   return [
           "backgroundColor",
-          CssPropertyValue$Css.backgroundColor(v)
+          CssPropertyValue$Ress.backgroundColor(v)
         ];
 }
 
@@ -2772,28 +2772,28 @@ function backgroundColorString(v) {
 function backgroundImage(v) {
   return [
           "backgroundImage",
-          CssPropertyValue$Css.backgroundImage(v)
+          CssPropertyValue$Ress.backgroundImage(v)
         ];
 }
 
 function backgroundImage2(v1, v2) {
   return [
           "backgroundImage",
-          CssPropertyValue$Css.backgroundImage2(v1, v2)
+          CssPropertyValue$Ress.backgroundImage2(v1, v2)
         ];
 }
 
 function backgroundImage3(v1, v2, v3) {
   return [
           "backgroundImage",
-          CssPropertyValue$Css.backgroundImage3(v1, v2, v3)
+          CssPropertyValue$Ress.backgroundImage3(v1, v2, v3)
         ];
 }
 
 function backgroundImage4(v1, v2, v3, v4) {
   return [
           "backgroundImage",
-          CssPropertyValue$Css.backgroundImage4(v1, v2, v3, v4)
+          CssPropertyValue$Ress.backgroundImage4(v1, v2, v3, v4)
         ];
 }
 
@@ -2807,28 +2807,28 @@ function backgroundImageString(v) {
 function backgroundPosition(v) {
   return [
           "backgroundPosition",
-          CssPropertyValue$Css.backgroundPosition(v)
+          CssPropertyValue$Ress.backgroundPosition(v)
         ];
 }
 
 function backgroundPosition2(v1, v2) {
   return [
           "backgroundPosition",
-          CssPropertyValue$Css.backgroundPosition2(v1, v2)
+          CssPropertyValue$Ress.backgroundPosition2(v1, v2)
         ];
 }
 
 function backgroundPosition3(v1, v2, v3) {
   return [
           "backgroundPosition",
-          CssPropertyValue$Css.backgroundPosition3(v1, v2, v3)
+          CssPropertyValue$Ress.backgroundPosition3(v1, v2, v3)
         ];
 }
 
 function backgroundPosition4(v1, v2, v3, v4) {
   return [
           "backgroundPosition",
-          CssPropertyValue$Css.backgroundPosition4(v1, v2, v3, v4)
+          CssPropertyValue$Ress.backgroundPosition4(v1, v2, v3, v4)
         ];
 }
 
@@ -2842,28 +2842,28 @@ function backgroundPositionString(v) {
 function backgroundStyle(v) {
   return [
           "backgroundStyle",
-          CssPropertyValue$Css.backgroundStyle(v)
+          CssPropertyValue$Ress.backgroundStyle(v)
         ];
 }
 
 function backgroundStyle2(v1, v2) {
   return [
           "backgroundStyle",
-          CssPropertyValue$Css.backgroundStyle2(v1, v2)
+          CssPropertyValue$Ress.backgroundStyle2(v1, v2)
         ];
 }
 
 function backgroundStyle3(v1, v2, v3) {
   return [
           "backgroundStyle",
-          CssPropertyValue$Css.backgroundStyle3(v1, v2, v3)
+          CssPropertyValue$Ress.backgroundStyle3(v1, v2, v3)
         ];
 }
 
 function backgroundStyle4(v1, v2, v3, v4) {
   return [
           "backgroundStyle",
-          CssPropertyValue$Css.backgroundStyle4(v1, v2, v3, v4)
+          CssPropertyValue$Ress.backgroundStyle4(v1, v2, v3, v4)
         ];
 }
 
@@ -2877,28 +2877,28 @@ function backgroundStyleString(v) {
 function margin(v) {
   return [
           "margin",
-          CssPropertyValue$Css.margin(v)
+          CssPropertyValue$Ress.margin(v)
         ];
 }
 
 function margin2(tb, lr) {
   return [
           "margin",
-          CssPropertyValue$Css.margin2(tb, lr)
+          CssPropertyValue$Ress.margin2(tb, lr)
         ];
 }
 
 function margin3(top, lr, bottom) {
   return [
           "margin",
-          CssPropertyValue$Css.margin3(top, lr, bottom)
+          CssPropertyValue$Ress.margin3(top, lr, bottom)
         ];
 }
 
 function margin4(top, right, bottom, left) {
   return [
           "margin",
-          CssPropertyValue$Css.margin4(top, right, bottom, left)
+          CssPropertyValue$Ress.margin4(top, right, bottom, left)
         ];
 }
 
@@ -2919,7 +2919,7 @@ function marginNumber(v) {
 function marginTop(v) {
   return [
           "marginTop",
-          CssPropertyValue$Css.marginTop(v)
+          CssPropertyValue$Ress.marginTop(v)
         ];
 }
 
@@ -2940,7 +2940,7 @@ function marginTopNumber(v) {
 function marginRight(v) {
   return [
           "marginRight",
-          CssPropertyValue$Css.marginRight(v)
+          CssPropertyValue$Ress.marginRight(v)
         ];
 }
 
@@ -2961,7 +2961,7 @@ function marginRightNumber(v) {
 function marginBottom(v) {
   return [
           "marginBottom",
-          CssPropertyValue$Css.marginBottom(v)
+          CssPropertyValue$Ress.marginBottom(v)
         ];
 }
 
@@ -2982,7 +2982,7 @@ function marginBottomNumber(v) {
 function marginLeft(v) {
   return [
           "marginLeft",
-          CssPropertyValue$Css.marginLeft(v)
+          CssPropertyValue$Ress.marginLeft(v)
         ];
 }
 
@@ -3003,28 +3003,28 @@ function marginLeftNumber(v) {
 function padding(v) {
   return [
           "padding",
-          CssPropertyValue$Css.padding(v)
+          CssPropertyValue$Ress.padding(v)
         ];
 }
 
 function padding2(tb, lr) {
   return [
           "padding",
-          CssPropertyValue$Css.padding2(tb, lr)
+          CssPropertyValue$Ress.padding2(tb, lr)
         ];
 }
 
 function padding3(top, lr, bottom) {
   return [
           "padding",
-          CssPropertyValue$Css.padding3(top, lr, bottom)
+          CssPropertyValue$Ress.padding3(top, lr, bottom)
         ];
 }
 
 function padding4(top, right, bottom, left) {
   return [
           "padding",
-          CssPropertyValue$Css.padding4(top, right, bottom, left)
+          CssPropertyValue$Ress.padding4(top, right, bottom, left)
         ];
 }
 
@@ -3045,7 +3045,7 @@ function paddingNumber(v) {
 function paddingTop(v) {
   return [
           "paddingTop",
-          CssPropertyValue$Css.paddingTop(v)
+          CssPropertyValue$Ress.paddingTop(v)
         ];
 }
 
@@ -3066,7 +3066,7 @@ function paddingTopNumber(v) {
 function paddingRight(v) {
   return [
           "paddingRight",
-          CssPropertyValue$Css.paddingRight(v)
+          CssPropertyValue$Ress.paddingRight(v)
         ];
 }
 
@@ -3087,7 +3087,7 @@ function paddingRightNumber(v) {
 function paddingBottom(v) {
   return [
           "paddingBottom",
-          CssPropertyValue$Css.paddingBottom(v)
+          CssPropertyValue$Ress.paddingBottom(v)
         ];
 }
 
@@ -3108,7 +3108,7 @@ function paddingBottomNumber(v) {
 function paddingLeft(v) {
   return [
           "paddingLeft",
-          CssPropertyValue$Css.paddingLeft(v)
+          CssPropertyValue$Ress.paddingLeft(v)
         ];
 }
 
@@ -3129,14 +3129,14 @@ function paddingLeftNumber(v) {
 function clear(v) {
   return [
           "clear",
-          CssPropertyValue$Css.clear(v)
+          CssPropertyValue$Ress.clear(v)
         ];
 }
 
 function color(v) {
   return [
           "color",
-          CssPropertyValue$Css.color(v)
+          CssPropertyValue$Ress.color(v)
         ];
 }
 
@@ -3150,35 +3150,35 @@ function colorString(v) {
 function cursor(v) {
   return [
           "cursor",
-          CssPropertyValue$Css.cursor(v)
+          CssPropertyValue$Ress.cursor(v)
         ];
 }
 
 function cursor1(i, k) {
   return [
           "cursor",
-          CssPropertyValue$Css.cursor1(i, k)
+          CssPropertyValue$Ress.cursor1(i, k)
         ];
 }
 
 function cursor2(i1, i2, k) {
   return [
           "cursor",
-          CssPropertyValue$Css.cursor2(i1, i2, k)
+          CssPropertyValue$Ress.cursor2(i1, i2, k)
         ];
 }
 
 function cursor3(i1, i2, i3, k) {
   return [
           "cursor",
-          CssPropertyValue$Css.cursor3(i1, i2, i3, k)
+          CssPropertyValue$Ress.cursor3(i1, i2, i3, k)
         ];
 }
 
 function cursor4(i1, i2, i3, i4, k) {
   return [
           "cursor",
-          CssPropertyValue$Css.cursor4(i1, i2, i3, i4, k)
+          CssPropertyValue$Ress.cursor4(i1, i2, i3, i4, k)
         ];
 }
 
