@@ -258,8 +258,8 @@ let transformOrigin = v => {
   | #right => "right"
   | #top => "top"
   | #bottom => "bottom"
-  | #transformOrigin2(x, y, None) => `${xToString(x)} ${yToString(y)}`
-  | #transformOrigin2(x, y, Some(l)) => `${xToString(x)} ${yToString(y)} ${length(l)}`
+  | #transformOrigin2(x, y) => `${xToString(x)} ${yToString(y)}`
+  | #transformOrigin3(x, y, l) => `${xToString(x)} ${yToString(y)} ${length(l)}`
   }
 };
 

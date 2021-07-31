@@ -156,7 +156,7 @@ describe("transformOrigin", (.) => {
     expect(transformOrigin(#left))->toBe("left");
     expect(transformOrigin(Css.px(20.)))->toBe("20px");
     expect(transformOrigin(Css.transformOrigin2(#left, #top)))->toBe("left top");
-    expect(transformOrigin(Css.transformOrigin2(~length=Css.px(10.), #left, #top)))->toBe("left top 10px");
+    expect(transformOrigin(Css.transformOrigin3(#left, #top, Css.px(10.))))->toBe("left top 10px");
   }); 
 });
 

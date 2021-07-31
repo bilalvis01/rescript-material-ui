@@ -1375,7 +1375,8 @@ type transformOrigin = [
   | #right
   | #top
   | #bottom
-  | #transformOrigin2([ | length_percentage | #left | #center | #right ], [ | length_percentage | #top | #center | #bottom ], option<length>)
+  | #transformOrigin2([ | length_percentage | #left | #center | #right ], [ | length_percentage | #top | #center | #bottom ])
+  | #transformOrigin3([ | length_percentage | #left | #center | #right ], [ | length_percentage | #top | #center | #bottom ], length)
 ];
 
 type bgSize = [

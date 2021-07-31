@@ -366,18 +366,16 @@ function transformOrigin(v) {
       return "left";
     }
   }
-  if (v.NAME !== "transformOrigin2") {
+  var variant = v.NAME;
+  if (variant === "transformOrigin2") {
+    var match = v.VAL;
+    return xToString(match[0]) + " " + yToString(match[1]);
+  }
+  if (variant !== "transformOrigin3") {
     return length_percentage(v);
   }
-  var match = v.VAL;
-  var l = match[2];
-  var y = match[1];
-  var x = match[0];
-  if (l !== undefined) {
-    return xToString(x) + " " + yToString(y) + " " + length(l);
-  } else {
-    return xToString(x) + " " + yToString(y);
-  }
+  var match$1 = v.VAL;
+  return xToString(match$1[0]) + " " + yToString(match$1[1]) + " " + length(match$1[2]);
 }
 
 var hue = angle;
@@ -625,7 +623,11 @@ function radialGradientSize(v) {
 }
 
 function radialGradientPosition(v) {
-  if (typeof v === "object" && v.NAME === "transformOrigin2") {
+  if (typeof v !== "object") {
+    return position(v);
+  }
+  var variant = v.NAME;
+  if (variant === "transformOrigin3" || variant === "transformOrigin2") {
     return transformOrigin(v);
   } else {
     return position(v);

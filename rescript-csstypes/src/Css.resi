@@ -55,10 +55,14 @@ let x: float => [> | #x(float) ];
 
 // TransformOrigin
 let transformOrigin2: (
-  ~length: length=?,
   [ | length_percentage | #left | #center | #right ], 
   [ | length_percentage | #top | #center | #bottom ],
-) => [> #transformOrigin2([ | length_percentage | #left | #center | #right ], [ | length_percentage | #top | #center | #bottom ], option<length>) ];
+) => [> #transformOrigin2([ | length_percentage | #left | #center | #right ], [ | length_percentage | #top | #center | #bottom ]) ];
+let transformOrigin3: (
+  [ | length_percentage | #left | #center | #right ], 
+  [ | length_percentage | #top | #center | #bottom ],
+  length
+) => [> #transformOrigin3([ | length_percentage | #left | #center | #right ], [ | length_percentage | #top | #center | #bottom ], length) ];
 
 /*
 Color functions
