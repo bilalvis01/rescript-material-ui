@@ -138,26 +138,26 @@ describe("background", (.) => {
   });
 
   test("backgroundColor", (.) => {
-    expect(backgroundColor(Css.rgb(200., 200., 200.)))->toEqual(propertyString("backgroundColor", "rgb(200, 200, 200)"));
+    expect(backgroundColor(rgb(200., 200., 200.)))->toEqual(propertyString("backgroundColor", "rgb(200, 200, 200)"));
   });
 
   test("backgroundImage", (.) => {
-    expect(backgroundImage(Css.url("image.png")))->toEqual(propertyString("backgroundImage",`url("image.png")`));
-    expect(backgroundImage2(Css.url("image.png"), Css.image(Css.url("myimage.jpg"))))
+    expect(backgroundImage(url("image.png")))->toEqual(propertyString("backgroundImage",`url("image.png")`));
+    expect(backgroundImage2(url("image.png"), image(url("myimage.jpg"))))
     ->toEqual(propertyString("backgroundImage", `url("image.png"), image(url("myimage.jpg"))`));
-    expect(backgroundImage3(Css.url("image.png"), Css.image(Css.url("myimage.jpg")), Css.linearGradient(#red)))
+    expect(backgroundImage3(url("image.png"), image(url("myimage.jpg")), linearGradient(#red)))
     ->toEqual(propertyString("backgroundImage", `url("image.png"), image(url("myimage.jpg")), linear-gradient(red)`));
-    expect(backgroundImage4(Css.url("image.png"), Css.image(Css.url("myimage.jpg")), Css.linearGradient(#red), Css.radialGradient(#blue)))
+    expect(backgroundImage4(url("image.png"), image(url("myimage.jpg")), linearGradient(#red), radialGradient(#blue)))
     ->toEqual(propertyString("backgroundImage", `url("image.png"), image(url("myimage.jpg")), linear-gradient(red), radial-gradient(blue)`));
   });
 
   test("backgroundPosition", (.) => {
-    expect(backgroundPosition(Css.px(10.)))->toEqual(propertyString("backgroundPosition", "10px"));
-    expect(backgroundPosition2(Css.px(10.), Css.position2(#center, #bottom)))
+    expect(backgroundPosition(px(10.)))->toEqual(propertyString("backgroundPosition", "10px"));
+    expect(backgroundPosition2(px(10.), position2(#center, #bottom)))
     ->toEqual(propertyString("backgroundPosition", "10px, center bottom"));
-    expect(backgroundPosition3(Css.px(10.), Css.position2(#center, #bottom), #center))
+    expect(backgroundPosition3(px(10.), position2(#center, #bottom), #center))
     ->toEqual(propertyString("backgroundPosition", "10px, center bottom, center"));
-    expect(backgroundPosition4(Css.px(10.), Css.position2(#center, #bottom), Css.pct(10.), Css.position4(#left, Css.px(10.), #top, Css.pct(10.))))
+    expect(backgroundPosition4(px(10.), position2(#center, #bottom), pct(10.), position4(#left, px(10.), #top, pct(10.))))
     ->toEqual(propertyString("backgroundPosition", "10px, center bottom, 10%, left 10px top 10%"));
   });
 
@@ -173,38 +173,69 @@ describe("background", (.) => {
 
 describe("spacing", (.) => {
   test("margin", (.) => {
-    expect(margin(Css.px(24.)))->toEqual(propertyString("margin", "24px"));
+    expect(margin(px(24.)))->toEqual(propertyString("margin", "24px"));
     expect(margin(#initial))->toEqual(propertyString("margin", "initial"));
-    expect(margin2(~tb=Css.rem(2.), ~lr=Css.rem(4.)))->toEqual(propertyString("margin", "2rem 4rem"));
-    expect(margin3(~top=Css.px(10.), ~lr=Css.px(24.), ~bottom=Css.px(40.)))
+    expect(margin2(~tb=rem(2.), ~lr=rem(4.)))->toEqual(propertyString("margin", "2rem 4rem"));
+    expect(margin3(~top=px(10.), ~lr=px(24.), ~bottom=px(40.)))
     ->toEqual(propertyString("margin", "10px 24px 40px"));
-    expect(margin4(~top=Css.px(20.), ~bottom=Css.px(20.), ~left=Css.px(40.), ~right=Css.px(40.)))
+    expect(margin4(~top=px(20.), ~bottom=px(20.), ~left=px(40.), ~right=px(40.)))
     ->toEqual(propertyString("margin", "20px 40px 20px 40px"));
-    expect(marginTop(Css.px(24.)))->toEqual(propertyString("marginTop", "24px"));
+    expect(marginTop(px(24.)))->toEqual(propertyString("marginTop", "24px"));
     expect(marginTop(#initial))->toEqual(propertyString("marginTop", "initial"));
-    expect(marginRight(Css.px(24.)))->toEqual(propertyString("marginRight", "24px"));
+    expect(marginRight(px(24.)))->toEqual(propertyString("marginRight", "24px"));
     expect(marginRight(#initial))->toEqual(propertyString("marginRight", "initial"));
-    expect(marginBottom(Css.px(24.)))->toEqual(propertyString("marginBottom", "24px"));
+    expect(marginBottom(px(24.)))->toEqual(propertyString("marginBottom", "24px"));
     expect(marginBottom(#initial))->toEqual(propertyString("marginBottom", "initial"));
-    expect(marginLeft(Css.px(24.)))->toEqual(propertyString("marginLeft", "24px"));
+    expect(marginLeft(px(24.)))->toEqual(propertyString("marginLeft", "24px"));
     expect(marginLeft(#initial))->toEqual(propertyString("marginLeft", "initial"));
   });
 
   test("padding", (.) => {
-    expect(padding(Css.px(24.)))->toEqual(propertyString("padding", "24px"));
+    expect(padding(px(24.)))->toEqual(propertyString("padding", "24px"));
     expect(padding(#initial))->toEqual(propertyString("padding", "initial"));
-    expect(padding2(~tb=Css.rem(2.), ~lr=Css.rem(4.)))->toEqual(propertyString("padding", "2rem 4rem"));
-    expect(padding3(~top=Css.px(10.), ~lr=Css.px(24.), ~bottom=Css.px(40.)))
+    expect(padding2(~tb=rem(2.), ~lr=rem(4.)))->toEqual(propertyString("padding", "2rem 4rem"));
+    expect(padding3(~top=px(10.), ~lr=px(24.), ~bottom=px(40.)))
     ->toEqual(propertyString("padding", "10px 24px 40px"));
-    expect(padding4(~top=Css.px(20.), ~bottom=Css.px(20.), ~left=Css.px(40.), ~right=Css.px(40.)))
+    expect(padding4(~top=px(20.), ~bottom=px(20.), ~left=px(40.), ~right=px(40.)))
     ->toEqual(propertyString("padding", "20px 40px 20px 40px"));
-    expect(paddingTop(Css.px(24.)))->toEqual(propertyString("paddingTop", "24px"));
+    expect(paddingTop(px(24.)))->toEqual(propertyString("paddingTop", "24px"));
     expect(paddingTop(#initial))->toEqual(propertyString("paddingTop", "initial"));
-    expect(paddingRight(Css.px(24.)))->toEqual(propertyString("paddingRight", "24px"));
+    expect(paddingRight(px(24.)))->toEqual(propertyString("paddingRight", "24px"));
     expect(paddingRight(#initial))->toEqual(propertyString("paddingRight", "initial"));
-    expect(paddingBottom(Css.px(24.)))->toEqual(propertyString("paddingBottom", "24px"));
+    expect(paddingBottom(px(24.)))->toEqual(propertyString("paddingBottom", "24px"));
     expect(paddingBottom(#initial))->toEqual(propertyString("paddingBottom", "initial"));
-    expect(paddingLeft(Css.px(24.)))->toEqual(propertyString("paddingLeft", "24px"));
+    expect(paddingLeft(px(24.)))->toEqual(propertyString("paddingLeft", "24px"));
     expect(paddingLeft(#initial))->toEqual(propertyString("paddingLeft", "initial"));
+  });
+});
+
+describe("others", (.) => {
+  test("clear", (.) => {
+    expect(clear(#none))->toEqual(propertyString("clear", "none"));
+    expect(clear(#left))->toEqual(propertyString("clear", "left"));
+    expect(clear(#inherit))->toEqual(propertyString("clear", "inherit"));
+  });
+
+  test("color", (.) => {
+    expect(color(#rebeccapurple))->toEqual(propertyString("color", "rebeccapurple"));
+    expect(color(rgbX("00ff00")))->toEqual(propertyString("color", "#00ff00"));
+    expect(color(rgb(214., 122., 127.)))->toEqual(propertyString("color", "rgb(214, 122, 127)"));
+    expect(color(hsl(deg(30.), pct(100.), pct(50.))))->toEqual(propertyString("color", "hsl(30deg, 100%, 50%)"));
+    expect(color(hsla(deg(30.), pct(100.), pct(50.), 0.3)))->toEqual(propertyString("color", "hsla(30deg, 100%, 50%, 0.3)"));
+    expect(color(#initial))->toEqual(colorString("initial"));
+  });
+
+  test("cursor", (.) => {
+    expect(cursor(#auto))->toEqual(propertyString("cursor", "auto"));
+    expect(cursor(#initial))->toEqual(propertyString("cursor", "initial"));
+    expect(cursor1(url("image.png"), #default))->toEqual(propertyString("cursor", `url("image.png"), default`));
+    expect(cursor1(#url2("image.png", 12.), #default))->toEqual(propertyString("cursor", `url("image.png") 12, default`));
+    expect(cursor1(#url3("image.png", 12., 24.), #default))->toEqual(propertyString("cursor", `url("image.png") 12 24, default`));
+    expect(cursor2(url("image.png"), url("image2.png"), #default))
+    ->toEqual(propertyString("cursor", `url("image.png"), url("image2.png"), default`));
+    expect(cursor3(url("image.png"), url("image2.png"), url("image3.png"), #default))
+    ->toEqual(propertyString("cursor", `url("image.png"), url("image2.png"), url("image3.png"), default`));
+    expect(cursor4(url("image.png"), url("image2.png"), url("image3.png"), url("image4.png"), #default))
+    ->toEqual(propertyString("cursor", `url("image.png"), url("image2.png"), url("image3.png"), url("image4.png"), default`));
   });
 });

@@ -153,3 +153,19 @@ describe("spacing", (.) => {
     expect(paddingLeft(#initial))->toBe(paddingLeftString("initial"));
   });
 });
+
+describe("others", (.) => {
+  test("cursor", (.) => {
+    expect(cursor(#auto))->toBe(cursorString("auto"));
+    expect(cursor(#initial))->toBe(cursorString("initial"));
+    expect(cursor1(Css.url("image.png"), #default))->toBe(cursorString(`url("image.png"), default`));
+    expect(cursor1(#url2("image.png", 12.), #default))->toBe(cursorString(`url("image.png") 12, default`));
+    expect(cursor1(#url3("image.png", 12., 24.), #default))->toBe(cursorString(`url("image.png") 12 24, default`));
+    expect(cursor2(Css.url("image.png"), Css.url("image2.png"), #default))
+    ->toBe(cursorString(`url("image.png"), url("image2.png"), default`));
+    expect(cursor3(Css.url("image.png"), Css.url("image2.png"), Css.url("image3.png"), #default))
+    ->toBe(cursorString(`url("image.png"), url("image2.png"), url("image3.png"), default`));
+    expect(cursor4(Css.url("image.png"), Css.url("image2.png"), Css.url("image3.png"), Css.url("image4.png"), #default))
+    ->toBe(cursorString(`url("image.png"), url("image2.png"), url("image3.png"), url("image4.png"), default`));
+  });
+});

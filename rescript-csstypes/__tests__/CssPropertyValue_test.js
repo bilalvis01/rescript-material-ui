@@ -121,4 +121,32 @@ describe("spacing", (function () {
         
       }));
 
+describe("others", (function () {
+        test("cursor", (function () {
+                expect(CssPropertyValue$Css.cursor("auto")).toBe("auto");
+                expect(CssPropertyValue$Css.cursor("initial")).toBe("initial");
+                expect(CssPropertyValue$Css.cursor1(Css$Css.url("image.png"), "default")).toBe("url(\"image.png\"), default");
+                expect(CssPropertyValue$Css.cursor1({
+                            NAME: "url2",
+                            VAL: [
+                              "image.png",
+                              12
+                            ]
+                          }, "default")).toBe("url(\"image.png\") 12, default");
+                expect(CssPropertyValue$Css.cursor1({
+                            NAME: "url3",
+                            VAL: [
+                              "image.png",
+                              12,
+                              24
+                            ]
+                          }, "default")).toBe("url(\"image.png\") 12 24, default");
+                expect(CssPropertyValue$Css.cursor2(Css$Css.url("image.png"), Css$Css.url("image2.png"), "default")).toBe("url(\"image.png\"), url(\"image2.png\"), default");
+                expect(CssPropertyValue$Css.cursor3(Css$Css.url("image.png"), Css$Css.url("image2.png"), Css$Css.url("image3.png"), "default")).toBe("url(\"image.png\"), url(\"image2.png\"), url(\"image3.png\"), default");
+                expect(CssPropertyValue$Css.cursor4(Css$Css.url("image.png"), Css$Css.url("image2.png"), Css$Css.url("image3.png"), Css$Css.url("image4.png"), "default")).toBe("url(\"image.png\"), url(\"image2.png\"), url(\"image3.png\"), url(\"image4.png\"), default");
+                
+              }));
+        
+      }));
+
 /*  Not a pure module */

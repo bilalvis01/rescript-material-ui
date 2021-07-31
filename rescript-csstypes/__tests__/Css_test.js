@@ -177,4 +177,47 @@ describe("spacing", (function () {
         
       }));
 
+describe("others", (function () {
+        test("clear", (function () {
+                expect(Css$Css.clear("none")).toEqual(Css$Css.propertyString("clear", "none"));
+                expect(Css$Css.clear("left")).toEqual(Css$Css.propertyString("clear", "left"));
+                expect(Css$Css.clear("inherit")).toEqual(Css$Css.propertyString("clear", "inherit"));
+                
+              }));
+        test("color", (function () {
+                expect(Css$Css.color("rebeccapurple")).toEqual(Css$Css.propertyString("color", "rebeccapurple"));
+                expect(Css$Css.color(Css$Css.rgbX("00ff00"))).toEqual(Css$Css.propertyString("color", "#00ff00"));
+                expect(Css$Css.color(Css$Css.rgb(214, 122, 127))).toEqual(Css$Css.propertyString("color", "rgb(214, 122, 127)"));
+                expect(Css$Css.color(Css$Css.hsl(Css$Css.deg(30), Css$Css.pct(100), Css$Css.pct(50)))).toEqual(Css$Css.propertyString("color", "hsl(30deg, 100%, 50%)"));
+                expect(Css$Css.color(Css$Css.hsla(Css$Css.deg(30), Css$Css.pct(100), Css$Css.pct(50), 0.3))).toEqual(Css$Css.propertyString("color", "hsla(30deg, 100%, 50%, 0.3)"));
+                expect(Css$Css.color("initial")).toEqual(Css$Css.colorString("initial"));
+                
+              }));
+        test("cursor", (function () {
+                expect(Css$Css.cursor("auto")).toEqual(Css$Css.propertyString("cursor", "auto"));
+                expect(Css$Css.cursor("initial")).toEqual(Css$Css.propertyString("cursor", "initial"));
+                expect(Css$Css.cursor1(Css$Css.url("image.png"), "default")).toEqual(Css$Css.propertyString("cursor", "url(\"image.png\"), default"));
+                expect(Css$Css.cursor1({
+                            NAME: "url2",
+                            VAL: [
+                              "image.png",
+                              12
+                            ]
+                          }, "default")).toEqual(Css$Css.propertyString("cursor", "url(\"image.png\") 12, default"));
+                expect(Css$Css.cursor1({
+                            NAME: "url3",
+                            VAL: [
+                              "image.png",
+                              12,
+                              24
+                            ]
+                          }, "default")).toEqual(Css$Css.propertyString("cursor", "url(\"image.png\") 12 24, default"));
+                expect(Css$Css.cursor2(Css$Css.url("image.png"), Css$Css.url("image2.png"), "default")).toEqual(Css$Css.propertyString("cursor", "url(\"image.png\"), url(\"image2.png\"), default"));
+                expect(Css$Css.cursor3(Css$Css.url("image.png"), Css$Css.url("image2.png"), Css$Css.url("image3.png"), "default")).toEqual(Css$Css.propertyString("cursor", "url(\"image.png\"), url(\"image2.png\"), url(\"image3.png\"), default"));
+                expect(Css$Css.cursor4(Css$Css.url("image.png"), Css$Css.url("image2.png"), Css$Css.url("image3.png"), Css$Css.url("image4.png"), "default")).toEqual(Css$Css.propertyString("cursor", "url(\"image.png\"), url(\"image2.png\"), url(\"image3.png\"), url(\"image4.png\"), default"));
+                
+              }));
+        
+      }));
+
 /*  Not a pure module */
