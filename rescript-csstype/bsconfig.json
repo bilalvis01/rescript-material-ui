@@ -1,6 +1,6 @@
 {
-  "name": "@bilalvis01/rescript-csstypes",
-  "namespace": "css",
+  "name": "@bilalvis01/rescript-csstype",
+  "namespace": "ress",
   "reason": {
     "react-jsx": 3
   },
