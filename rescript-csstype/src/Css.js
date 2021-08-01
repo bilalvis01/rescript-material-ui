@@ -2,1601 +2,9 @@
 'use strict';
 
 var Js_dict = require("rescript/lib/js/js_dict.js");
-var CssPropertyValue$Ress = require("./CssPropertyValue.js");
-
-function MakeValue($star) {
-  var str = function (v) {
-    return {
-            NAME: "string",
-            VAL: v
-          };
-  };
-  var num = function (v) {
-    return {
-            NAME: "number",
-            VAL: v
-          };
-  };
-  var $$int = function (v) {
-    return {
-            NAME: "integer",
-            VAL: v
-          };
-  };
-  var ratio = function (v1, v2) {
-    return {
-            NAME: "ratio",
-            VAL: [
-              v1,
-              v2
-            ]
-          };
-  };
-  var fr = function (v) {
-    return {
-            NAME: "fr",
-            VAL: v
-          };
-  };
-  var ch = function (l) {
-    return {
-            NAME: "ch",
-            VAL: l
-          };
-  };
-  var em = function (l) {
-    return {
-            NAME: "em",
-            VAL: l
-          };
-  };
-  var ex = function (l) {
-    return {
-            NAME: "ex",
-            VAL: l
-          };
-  };
-  var rem = function (l) {
-    return {
-            NAME: "rem",
-            VAL: l
-          };
-  };
-  var vh = function (l) {
-    return {
-            NAME: "vh",
-            VAL: l
-          };
-  };
-  var vw = function (l) {
-    return {
-            NAME: "vw",
-            VAL: l
-          };
-  };
-  var vmin = function (l) {
-    return {
-            NAME: "vmin",
-            VAL: l
-          };
-  };
-  var vmax = function (l) {
-    return {
-            NAME: "vmax",
-            VAL: l
-          };
-  };
-  var px = function (l) {
-    return {
-            NAME: "px",
-            VAL: l
-          };
-  };
-  var cm = function (l) {
-    return {
-            NAME: "cm",
-            VAL: l
-          };
-  };
-  var mm = function (l) {
-    return {
-            NAME: "mm",
-            VAL: l
-          };
-  };
-  var inch = function (l) {
-    return {
-            NAME: "inch",
-            VAL: l
-          };
-  };
-  var pc = function (l) {
-    return {
-            NAME: "pc",
-            VAL: l
-          };
-  };
-  var pt = function (l) {
-    return {
-            NAME: "pt",
-            VAL: l
-          };
-  };
-  var pct = function (v) {
-    return {
-            NAME: "pct",
-            VAL: v
-          };
-  };
-  var deg = function (v) {
-    return {
-            NAME: "deg",
-            VAL: v
-          };
-  };
-  var grad = function (v) {
-    return {
-            NAME: "grad",
-            VAL: v
-          };
-  };
-  var rad = function (v) {
-    return {
-            NAME: "rad",
-            VAL: v
-          };
-  };
-  var turn = function (v) {
-    return {
-            NAME: "turn",
-            VAL: v
-          };
-  };
-  var s = function (v) {
-    return {
-            NAME: "s",
-            VAL: v
-          };
-  };
-  var ms = function (v) {
-    return {
-            NAME: "ms",
-            VAL: v
-          };
-  };
-  var hz = function (v) {
-    return {
-            NAME: "Hz",
-            VAL: v
-          };
-  };
-  var kHz = function (v) {
-    return {
-            NAME: "kHz",
-            VAL: v
-          };
-  };
-  var dpi = function (v) {
-    return {
-            NAME: "dpi",
-            VAL: v
-          };
-  };
-  var dpcm = function (v) {
-    return {
-            NAME: "dpcm",
-            VAL: v
-          };
-  };
-  var dppx = function (v) {
-    return {
-            NAME: "dppx",
-            VAL: v
-          };
-  };
-  var x = function (v) {
-    return {
-            NAME: "x",
-            VAL: v
-          };
-  };
-  var hsl = function (v1, v2, v3) {
-    return {
-            NAME: "hsl",
-            VAL: [
-              v1,
-              v2,
-              v3
-            ]
-          };
-  };
-  var hsla = function (v1, v2, v3, v4) {
-    return {
-            NAME: "hsla",
-            VAL: [
-              v1,
-              v2,
-              v3,
-              {
-                NAME: "number",
-                VAL: v4
-              }
-            ]
-          };
-  };
-  var rgb = function (v1, v2, v3) {
-    return {
-            NAME: "rgb",
-            VAL: [
-              {
-                NAME: "number",
-                VAL: v1
-              },
-              {
-                NAME: "number",
-                VAL: v2
-              },
-              {
-                NAME: "number",
-                VAL: v3
-              }
-            ]
-          };
-  };
-  var rgba = function (v1, v2, v3, v4) {
-    return {
-            NAME: "rgba",
-            VAL: [
-              {
-                NAME: "number",
-                VAL: v1
-              },
-              {
-                NAME: "number",
-                VAL: v2
-              },
-              {
-                NAME: "number",
-                VAL: v3
-              },
-              {
-                NAME: "number",
-                VAL: v4
-              }
-            ]
-          };
-  };
-  var rgbX = function (v) {
-    return {
-            NAME: "rgbX",
-            VAL: v
-          };
-  };
-  var linearColorStop2 = function (c, l) {
-    return {
-            NAME: "linearColorStop2",
-            VAL: [
-              c,
-              l
-            ]
-          };
-  };
-  var linearColorStop3 = function (c, l1, l2) {
-    return {
-            NAME: "linearColorStop3",
-            VAL: [
-              c,
-              l1,
-              l2
-            ]
-          };
-  };
-  var linearGradient = function (angle, c) {
-    return {
-            NAME: "linearGradient",
-            VAL: [
-              angle,
-              c
-            ]
-          };
-  };
-  var linearGradient2 = function (angle, c1, c2) {
-    return {
-            NAME: "linearGradient2",
-            VAL: [
-              angle,
-              c1,
-              c2
-            ]
-          };
-  };
-  var linearGradient3 = function (angle, c1, c2, c3) {
-    return {
-            NAME: "linearGradient3",
-            VAL: [
-              angle,
-              c1,
-              c2,
-              c3
-            ]
-          };
-  };
-  var linearGradient4 = function (angle, c1, c2, c3, c4) {
-    return {
-            NAME: "linearGradient4",
-            VAL: [
-              angle,
-              c1,
-              c2,
-              c3,
-              c4
-            ]
-          };
-  };
-  var repeatingLinearGradient = function (angle, c) {
-    return {
-            NAME: "repeatingLinearGradient",
-            VAL: [
-              angle,
-              c
-            ]
-          };
-  };
-  var repeatingLinearGradient2 = function (angle, c1, c2) {
-    return {
-            NAME: "repeatingLinearGradient2",
-            VAL: [
-              angle,
-              c1,
-              c2
-            ]
-          };
-  };
-  var repeatingLinearGradient3 = function (angle, c1, c2, c3) {
-    return {
-            NAME: "repeatingLinearGradient3",
-            VAL: [
-              angle,
-              c1,
-              c2,
-              c3
-            ]
-          };
-  };
-  var repeatingLinearGradient4 = function (angle, c1, c2, c3, c4) {
-    return {
-            NAME: "repeatingLinearGradient4",
-            VAL: [
-              angle,
-              c1,
-              c2,
-              c3,
-              c4
-            ]
-          };
-  };
-  var radialGradient = function (position, endingShape, size, c) {
-    return {
-            NAME: "radialGradient",
-            VAL: [
-              position,
-              endingShape,
-              size,
-              c
-            ]
-          };
-  };
-  var radialGradient2 = function (position, endingShape, size, c1, c2) {
-    return {
-            NAME: "radialGradient2",
-            VAL: [
-              position,
-              endingShape,
-              size,
-              c1,
-              c2
-            ]
-          };
-  };
-  var radialGradient3 = function (position, endingShape, size, c1, c2, c3) {
-    return {
-            NAME: "radialGradient3",
-            VAL: [
-              position,
-              endingShape,
-              size,
-              c1,
-              c2,
-              c3
-            ]
-          };
-  };
-  var radialGradient4 = function (position, endingShape, size, c1, c2, c3, c4) {
-    return {
-            NAME: "radialGradient4",
-            VAL: [
-              position,
-              endingShape,
-              size,
-              c1,
-              c2,
-              c3,
-              c4
-            ]
-          };
-  };
-  var repeatingRadialGradient = function (position, endingShape, size, c) {
-    return {
-            NAME: "repeatingRadialGradient",
-            VAL: [
-              position,
-              endingShape,
-              size,
-              c
-            ]
-          };
-  };
-  var repeatingRadialGradient2 = function (position, endingShape, size, c1, c2) {
-    return {
-            NAME: "repeatingRadialGradient2",
-            VAL: [
-              position,
-              endingShape,
-              size,
-              c1,
-              c2
-            ]
-          };
-  };
-  var repeatingRadialGradient3 = function (position, endingShape, size, c1, c2, c3) {
-    return {
-            NAME: "repeatingRadialGradient3",
-            VAL: [
-              position,
-              endingShape,
-              size,
-              c1,
-              c2,
-              c3
-            ]
-          };
-  };
-  var repeatingRadialGradient4 = function (position, endingShape, size, c1, c2, c3, c4) {
-    return {
-            NAME: "repeatingRadialGradient4",
-            VAL: [
-              position,
-              endingShape,
-              size,
-              c1,
-              c2,
-              c3,
-              c4
-            ]
-          };
-  };
-  var conicGradient = function (angle, position, c) {
-    return {
-            NAME: "conicGradient",
-            VAL: [
-              angle,
-              position,
-              c
-            ]
-          };
-  };
-  var conicGradient2 = function (angle, position, c1, c2) {
-    return {
-            NAME: "conicGradient2",
-            VAL: [
-              angle,
-              position,
-              c1,
-              c2
-            ]
-          };
-  };
-  var conicGradient3 = function (angle, position, c1, c2, c3) {
-    return {
-            NAME: "conicGradient3",
-            VAL: [
-              angle,
-              position,
-              c1,
-              c2,
-              c3
-            ]
-          };
-  };
-  var conicGradient4 = function (angle, position, c1, c2, c3, c4) {
-    return {
-            NAME: "conicGradient4",
-            VAL: [
-              angle,
-              position,
-              c1,
-              c2,
-              c3,
-              c4
-            ]
-          };
-  };
-  var repeatingConicGradient = function (angle, position, c) {
-    return {
-            NAME: "repeatingConicGradient",
-            VAL: [
-              angle,
-              position,
-              c
-            ]
-          };
-  };
-  var repeatingConicGradient2 = function (angle, position, c1, c2) {
-    return {
-            NAME: "repeatingConicGradient2",
-            VAL: [
-              angle,
-              position,
-              c1,
-              c2
-            ]
-          };
-  };
-  var repeatingConicGradient3 = function (angle, position, c1, c2, c3) {
-    return {
-            NAME: "repeatingConicGradient3",
-            VAL: [
-              angle,
-              position,
-              c1,
-              c2,
-              c3
-            ]
-          };
-  };
-  var repeatingConicGradient4 = function (angle, position, c1, c2, c3, c4) {
-    return {
-            NAME: "repeatingConicGradient4",
-            VAL: [
-              angle,
-              position,
-              c1,
-              c2,
-              c3,
-              c4
-            ]
-          };
-  };
-  var url = function (v) {
-    return {
-            NAME: "url",
-            VAL: v
-          };
-  };
-  var src = function (v) {
-    return {
-            NAME: "src",
-            VAL: v
-          };
-  };
-  var image = function (dir, color, imageSrcOrColor) {
-    return {
-            NAME: "image",
-            VAL: [
-              dir,
-              color,
-              imageSrcOrColor
-            ]
-          };
-  };
-  var bgSize2 = function (s1, s2) {
-    return {
-            NAME: "bgSize2",
-            VAL: [
-              s1,
-              s2
-            ]
-          };
-  };
-  var position2 = function (p1, p2) {
-    return {
-            NAME: "position2",
-            VAL: [
-              p1,
-              p2
-            ]
-          };
-  };
-  var position3 = function (p1, p2, p3) {
-    return {
-            NAME: "position3",
-            VAL: [
-              p1,
-              p2,
-              p3
-            ]
-          };
-  };
-  var position4 = function (p1, p2, p3, p4) {
-    return {
-            NAME: "position4",
-            VAL: [
-              p1,
-              p2,
-              p3,
-              p4
-            ]
-          };
-  };
-  var bgLayer = function (color, position, size, repeat, attachment, origin, clip, imageOrColor) {
-    return {
-            NAME: "bgLayer",
-            VAL: [
-              color,
-              position,
-              size,
-              repeat,
-              attachment,
-              origin,
-              clip,
-              imageOrColor
-            ]
-          };
-  };
-  return {
-          str: str,
-          num: num,
-          $$int: $$int,
-          pct: pct,
-          ratio: ratio,
-          fr: fr,
-          ch: ch,
-          em: em,
-          ex: ex,
-          rem: rem,
-          vh: vh,
-          vw: vw,
-          vmin: vmin,
-          vmax: vmax,
-          px: px,
-          cm: cm,
-          mm: mm,
-          inch: inch,
-          pc: pc,
-          pt: pt,
-          deg: deg,
-          grad: grad,
-          rad: rad,
-          turn: turn,
-          s: s,
-          ms: ms,
-          hz: hz,
-          kHz: kHz,
-          dpi: dpi,
-          dpcm: dpcm,
-          dppx: dppx,
-          x: x,
-          hsl: hsl,
-          hsla: hsla,
-          rgb: rgb,
-          rgba: rgba,
-          rgbX: rgbX,
-          linearColorStop2: linearColorStop2,
-          linearColorStop3: linearColorStop3,
-          linearGradient: linearGradient,
-          linearGradient2: linearGradient2,
-          linearGradient3: linearGradient3,
-          linearGradient4: linearGradient4,
-          repeatingLinearGradient: repeatingLinearGradient,
-          repeatingLinearGradient2: repeatingLinearGradient2,
-          repeatingLinearGradient3: repeatingLinearGradient3,
-          repeatingLinearGradient4: repeatingLinearGradient4,
-          radialGradient: radialGradient,
-          radialGradient2: radialGradient2,
-          radialGradient3: radialGradient3,
-          radialGradient4: radialGradient4,
-          repeatingRadialGradient: repeatingRadialGradient,
-          repeatingRadialGradient2: repeatingRadialGradient2,
-          repeatingRadialGradient3: repeatingRadialGradient3,
-          repeatingRadialGradient4: repeatingRadialGradient4,
-          conicGradient: conicGradient,
-          conicGradient2: conicGradient2,
-          conicGradient3: conicGradient3,
-          conicGradient4: conicGradient4,
-          repeatingConicGradient: repeatingConicGradient,
-          repeatingConicGradient2: repeatingConicGradient2,
-          repeatingConicGradient3: repeatingConicGradient3,
-          repeatingConicGradient4: repeatingConicGradient4,
-          url: url,
-          src: src,
-          image: image,
-          bgSize2: bgSize2,
-          position2: position2,
-          position3: position3,
-          position4: position4,
-          bgLayer: bgLayer
-        };
-}
-
-function MakeProperty($star) {
-  var property = function (name, value) {
-    return [
-            name,
-            value
-          ];
-  };
-  var propertyString = function (name, value) {
-    return [
-            name,
-            value
-          ];
-  };
-  var propertyNumber = function (name, value) {
-    return [
-            name,
-            value
-          ];
-  };
-  var propertyInteger = function (name, value) {
-    return [
-            name,
-            value
-          ];
-  };
-  var border = function (width, color, style) {
-    return [
-            "border",
-            CssPropertyValue$Ress.border(width, color, style)
-          ];
-  };
-  var borderString = function (v) {
-    return [
-            "border",
-            v
-          ];
-  };
-  var borderTop = function (width, color, style) {
-    return [
-            "borderTop",
-            CssPropertyValue$Ress.border(width, color, style)
-          ];
-  };
-  var borderTopString = function (v) {
-    return [
-            "borderTop",
-            v
-          ];
-  };
-  var borderLeft = function (width, color, style) {
-    return [
-            "borderLeft",
-            CssPropertyValue$Ress.border(width, color, style)
-          ];
-  };
-  var borderLeftString = function (v) {
-    return [
-            "borderLeft",
-            v
-          ];
-  };
-  var borderRight = function (width, color, style) {
-    return [
-            "borderRight",
-            CssPropertyValue$Ress.border(width, color, style)
-          ];
-  };
-  var borderRightString = function (v) {
-    return [
-            "borderRight",
-            v
-          ];
-  };
-  var borderBottom = function (width, color, style) {
-    return [
-            "borderBottom",
-            CssPropertyValue$Ress.border(width, color, style)
-          ];
-  };
-  var borderBottomString = function (v) {
-    return [
-            "borderBottom",
-            v
-          ];
-  };
-  var borderColor = function (v) {
-    return [
-            "borderColor",
-            CssPropertyValue$Ress.borderColor(v)
-          ];
-  };
-  var borderColor2 = function (tb, lr) {
-    return [
-            "borderColor",
-            CssPropertyValue$Ress.borderColor2(tb, lr)
-          ];
-  };
-  var borderColor3 = function (top, lr, bottom) {
-    return [
-            "borderColor",
-            CssPropertyValue$Ress.borderColor3(top, lr, bottom)
-          ];
-  };
-  var borderColor4 = function (top, right, bottom, left) {
-    return [
-            "borderColor",
-            CssPropertyValue$Ress.borderColor4(top, right, bottom, left)
-          ];
-  };
-  var borderColorString = function (v) {
-    return [
-            "borderColor",
-            v
-          ];
-  };
-  var borderTopColor = function (v) {
-    return [
-            "borderTopColor",
-            CssPropertyValue$Ress.borderTopColor(v)
-          ];
-  };
-  var borderTopColorString = function (v) {
-    return [
-            "borderTopColor",
-            v
-          ];
-  };
-  var borderRightColor = function (v) {
-    return [
-            "borderRightColor",
-            CssPropertyValue$Ress.borderRightColor(v)
-          ];
-  };
-  var borderRightColorString = function (v) {
-    return [
-            "borderRightColor",
-            v
-          ];
-  };
-  var borderBottomColor = function (v) {
-    return [
-            "borderBottomColor",
-            CssPropertyValue$Ress.borderBottomColor(v)
-          ];
-  };
-  var borderBottomColorString = function (v) {
-    return [
-            "borderBottomColor",
-            v
-          ];
-  };
-  var borderLeftColor = function (v) {
-    return [
-            "borderLeftColor",
-            CssPropertyValue$Ress.borderLeftColor(v)
-          ];
-  };
-  var borderLeftColorString = function (v) {
-    return [
-            "borderLeftColor",
-            v
-          ];
-  };
-  var borderStyle = function (v) {
-    return [
-            "borderStyle",
-            CssPropertyValue$Ress.borderStyle(v)
-          ];
-  };
-  var borderStyle2 = function (tb, lr) {
-    return [
-            "borderStyle",
-            CssPropertyValue$Ress.borderStyle2(tb, lr)
-          ];
-  };
-  var borderStyle3 = function (top, lr, bottom) {
-    return [
-            "borderStyle",
-            CssPropertyValue$Ress.borderStyle3(top, lr, bottom)
-          ];
-  };
-  var borderStyle4 = function (top, right, bottom, left) {
-    return [
-            "borderStyle",
-            CssPropertyValue$Ress.borderStyle4(top, right, bottom, left)
-          ];
-  };
-  var borderStyleString = function (v) {
-    return [
-            "borderStyle",
-            v
-          ];
-  };
-  var borderTopStyle = function (v) {
-    return [
-            "borderTopStyle",
-            CssPropertyValue$Ress.borderStyle(v)
-          ];
-  };
-  var borderTopStyleString = function (v) {
-    return [
-            "borderTopStyle",
-            v
-          ];
-  };
-  var borderRightStyle = function (v) {
-    return [
-            "borderRightStyle",
-            CssPropertyValue$Ress.borderStyle(v)
-          ];
-  };
-  var borderRightStyleString = function (v) {
-    return [
-            "borderRightStyle",
-            v
-          ];
-  };
-  var borderBottomStyle = function (v) {
-    return [
-            "borderBottomStyle",
-            CssPropertyValue$Ress.borderStyle(v)
-          ];
-  };
-  var borderBottomStyleString = function (v) {
-    return [
-            "borderBottomStyle",
-            v
-          ];
-  };
-  var borderLeftStyle = function (v) {
-    return [
-            "borderLeftStyle",
-            CssPropertyValue$Ress.borderStyle(v)
-          ];
-  };
-  var borderLeftStyleString = function (v) {
-    return [
-            "borderLeftStyle",
-            v
-          ];
-  };
-  var borderWidth = function (v) {
-    return [
-            "borderWidth",
-            CssPropertyValue$Ress.borderWidth(v)
-          ];
-  };
-  var borderWidth2 = function (tb, lr) {
-    return [
-            "borderWidth",
-            CssPropertyValue$Ress.borderWidth2(tb, lr)
-          ];
-  };
-  var borderWidth3 = function (top, lr, bottom) {
-    return [
-            "borderWidth",
-            CssPropertyValue$Ress.borderWidth3(top, lr, bottom)
-          ];
-  };
-  var borderWidth4 = function (top, right, bottom, left) {
-    return [
-            "borderWidth",
-            CssPropertyValue$Ress.borderWidth4(top, right, bottom, left)
-          ];
-  };
-  var borderWidthString = function (v) {
-    return [
-            "borderWidth",
-            v
-          ];
-  };
-  var borderTopWidth = function (v) {
-    return [
-            "borderTopWidth",
-            CssPropertyValue$Ress.borderTopWidth(v)
-          ];
-  };
-  var borderTopWidthString = function (v) {
-    return [
-            "borderTopWidth",
-            v
-          ];
-  };
-  var borderRightWidth = function (v) {
-    return [
-            "borderRightWidth",
-            CssPropertyValue$Ress.borderRightWidth(v)
-          ];
-  };
-  var borderRightWidthString = function (v) {
-    return [
-            "borderRightWidth",
-            v
-          ];
-  };
-  var borderBottomWidth = function (v) {
-    return [
-            "borderBottomWidth",
-            CssPropertyValue$Ress.borderBottomWidth(v)
-          ];
-  };
-  var borderBottomWidthString = function (v) {
-    return [
-            "borderBottomWidth",
-            v
-          ];
-  };
-  var borderLeftWidth = function (v) {
-    return [
-            "borderLeftWidth",
-            CssPropertyValue$Ress.borderLeftWidth(v)
-          ];
-  };
-  var borderLeftWidthString = function (v) {
-    return [
-            "borderLeftWidth",
-            v
-          ];
-  };
-  var background = function (color, position, size, repeat, attachment, origin, clip, imageOrColor) {
-    return [
-            "background",
-            CssPropertyValue$Ress.background(color, position, size, repeat, attachment, origin, clip, imageOrColor)
-          ];
-  };
-  var background2 = function (l1, l2) {
-    return [
-            "background",
-            CssPropertyValue$Ress.background2(l1, l2)
-          ];
-  };
-  var background3 = function (l1, l2, l3) {
-    return [
-            "background",
-            CssPropertyValue$Ress.background3(l1, l2, l3)
-          ];
-  };
-  var background4 = function (l1, l2, l3, l4) {
-    return [
-            "background",
-            CssPropertyValue$Ress.background4(l1, l2, l3, l4)
-          ];
-  };
-  var backgroundString = function (v) {
-    return [
-            "background",
-            v
-          ];
-  };
-  var backgroundAttachment = function (v) {
-    return [
-            "backgroundAttachment",
-            CssPropertyValue$Ress.backgroundAttachment(v)
-          ];
-  };
-  var backgroundAttachment2 = function (v1, v2) {
-    return [
-            "backgroundAttachment",
-            CssPropertyValue$Ress.backgroundAttachment2(v1, v2)
-          ];
-  };
-  var backgroundAttachment3 = function (v1, v2, v3) {
-    return [
-            "backgroundAttachment",
-            CssPropertyValue$Ress.backgroundAttachment3(v1, v2, v3)
-          ];
-  };
-  var backgroundAttachment4 = function (v1, v2, v3, v4) {
-    return [
-            "backgroundAttachment",
-            CssPropertyValue$Ress.backgroundAttachment4(v1, v2, v3, v4)
-          ];
-  };
-  var backgroundAttachmentString = function (v) {
-    return [
-            "backgroundAttachment",
-            v
-          ];
-  };
-  var backgroundColor = function (v) {
-    return [
-            "backgroundColor",
-            CssPropertyValue$Ress.backgroundColor(v)
-          ];
-  };
-  var backgroundColorString = function (v) {
-    return [
-            "backgroundColor",
-            v
-          ];
-  };
-  var backgroundImage = function (v) {
-    return [
-            "backgroundImage",
-            CssPropertyValue$Ress.backgroundImage(v)
-          ];
-  };
-  var backgroundImage2 = function (v1, v2) {
-    return [
-            "backgroundImage",
-            CssPropertyValue$Ress.backgroundImage2(v1, v2)
-          ];
-  };
-  var backgroundImage3 = function (v1, v2, v3) {
-    return [
-            "backgroundImage",
-            CssPropertyValue$Ress.backgroundImage3(v1, v2, v3)
-          ];
-  };
-  var backgroundImage4 = function (v1, v2, v3, v4) {
-    return [
-            "backgroundImage",
-            CssPropertyValue$Ress.backgroundImage4(v1, v2, v3, v4)
-          ];
-  };
-  var backgroundImageString = function (v) {
-    return [
-            "backgroundImage",
-            v
-          ];
-  };
-  var backgroundPosition = function (v) {
-    return [
-            "backgroundPosition",
-            CssPropertyValue$Ress.backgroundPosition(v)
-          ];
-  };
-  var backgroundPosition2 = function (v1, v2) {
-    return [
-            "backgroundPosition",
-            CssPropertyValue$Ress.backgroundPosition2(v1, v2)
-          ];
-  };
-  var backgroundPosition3 = function (v1, v2, v3) {
-    return [
-            "backgroundPosition",
-            CssPropertyValue$Ress.backgroundPosition3(v1, v2, v3)
-          ];
-  };
-  var backgroundPosition4 = function (v1, v2, v3, v4) {
-    return [
-            "backgroundPosition",
-            CssPropertyValue$Ress.backgroundPosition4(v1, v2, v3, v4)
-          ];
-  };
-  var backgroundPositionString = function (v) {
-    return [
-            "backgroundPosition",
-            v
-          ];
-  };
-  var backgroundStyle = function (v) {
-    return [
-            "backgroundStyle",
-            CssPropertyValue$Ress.backgroundStyle(v)
-          ];
-  };
-  var backgroundStyle2 = function (v1, v2) {
-    return [
-            "backgroundStyle",
-            CssPropertyValue$Ress.backgroundStyle2(v1, v2)
-          ];
-  };
-  var backgroundStyle3 = function (v1, v2, v3) {
-    return [
-            "backgroundStyle",
-            CssPropertyValue$Ress.backgroundStyle3(v1, v2, v3)
-          ];
-  };
-  var backgroundStyle4 = function (v1, v2, v3, v4) {
-    return [
-            "backgroundStyle",
-            CssPropertyValue$Ress.backgroundStyle4(v1, v2, v3, v4)
-          ];
-  };
-  var backgroundStyleString = function (v) {
-    return [
-            "backgroundStyle",
-            v
-          ];
-  };
-  var margin = function (v) {
-    return [
-            "margin",
-            CssPropertyValue$Ress.margin(v)
-          ];
-  };
-  var margin2 = function (tb, lr) {
-    return [
-            "margin",
-            CssPropertyValue$Ress.margin2(tb, lr)
-          ];
-  };
-  var margin3 = function (top, lr, bottom) {
-    return [
-            "margin",
-            CssPropertyValue$Ress.margin3(top, lr, bottom)
-          ];
-  };
-  var margin4 = function (top, right, bottom, left) {
-    return [
-            "margin",
-            CssPropertyValue$Ress.margin4(top, right, bottom, left)
-          ];
-  };
-  var marginString = function (v) {
-    return [
-            "margin",
-            v
-          ];
-  };
-  var marginNumber = function (v) {
-    return [
-            "margin",
-            v
-          ];
-  };
-  var marginTop = function (v) {
-    return [
-            "marginTop",
-            CssPropertyValue$Ress.marginTop(v)
-          ];
-  };
-  var marginTopString = function (v) {
-    return [
-            "marginTop",
-            v
-          ];
-  };
-  var marginTopNumber = function (v) {
-    return [
-            "marginTop",
-            v
-          ];
-  };
-  var marginRight = function (v) {
-    return [
-            "marginRight",
-            CssPropertyValue$Ress.marginRight(v)
-          ];
-  };
-  var marginRightString = function (v) {
-    return [
-            "marginRight",
-            v
-          ];
-  };
-  var marginRightNumber = function (v) {
-    return [
-            "marginRight",
-            v
-          ];
-  };
-  var marginBottom = function (v) {
-    return [
-            "marginBottom",
-            CssPropertyValue$Ress.marginBottom(v)
-          ];
-  };
-  var marginBottomString = function (v) {
-    return [
-            "marginBottom",
-            v
-          ];
-  };
-  var marginBottomNumber = function (v) {
-    return [
-            "marginBottom",
-            v
-          ];
-  };
-  var marginLeft = function (v) {
-    return [
-            "marginLeft",
-            CssPropertyValue$Ress.marginLeft(v)
-          ];
-  };
-  var marginLeftString = function (v) {
-    return [
-            "marginLeft",
-            v
-          ];
-  };
-  var marginLeftNumber = function (v) {
-    return [
-            "marginLeft",
-            v
-          ];
-  };
-  var padding = function (v) {
-    return [
-            "padding",
-            CssPropertyValue$Ress.padding(v)
-          ];
-  };
-  var padding2 = function (tb, lr) {
-    return [
-            "padding",
-            CssPropertyValue$Ress.padding2(tb, lr)
-          ];
-  };
-  var padding3 = function (top, lr, bottom) {
-    return [
-            "padding",
-            CssPropertyValue$Ress.padding3(top, lr, bottom)
-          ];
-  };
-  var padding4 = function (top, right, bottom, left) {
-    return [
-            "padding",
-            CssPropertyValue$Ress.padding4(top, right, bottom, left)
-          ];
-  };
-  var paddingString = function (v) {
-    return [
-            "padding",
-            v
-          ];
-  };
-  var paddingNumber = function (v) {
-    return [
-            "padding",
-            v
-          ];
-  };
-  var paddingTop = function (v) {
-    return [
-            "paddingTop",
-            CssPropertyValue$Ress.paddingTop(v)
-          ];
-  };
-  var paddingTopString = function (v) {
-    return [
-            "paddingTop",
-            v
-          ];
-  };
-  var paddingTopNumber = function (v) {
-    return [
-            "paddingTop",
-            v
-          ];
-  };
-  var paddingRight = function (v) {
-    return [
-            "paddingRight",
-            CssPropertyValue$Ress.paddingRight(v)
-          ];
-  };
-  var paddingRightString = function (v) {
-    return [
-            "paddingRight",
-            v
-          ];
-  };
-  var paddingRightNumber = function (v) {
-    return [
-            "paddingRight",
-            v
-          ];
-  };
-  var paddingBottom = function (v) {
-    return [
-            "paddingBottom",
-            CssPropertyValue$Ress.paddingBottom(v)
-          ];
-  };
-  var paddingBottomString = function (v) {
-    return [
-            "paddingBottom",
-            v
-          ];
-  };
-  var paddingBottomNumber = function (v) {
-    return [
-            "paddingBottom",
-            v
-          ];
-  };
-  var paddingLeft = function (v) {
-    return [
-            "paddingLeft",
-            CssPropertyValue$Ress.paddingLeft(v)
-          ];
-  };
-  var paddingLeftString = function (v) {
-    return [
-            "paddingLeft",
-            v
-          ];
-  };
-  var paddingLeftNumber = function (v) {
-    return [
-            "paddingLeft",
-            v
-          ];
-  };
-  var clear = function (v) {
-    return [
-            "clear",
-            CssPropertyValue$Ress.clear(v)
-          ];
-  };
-  var color = function (v) {
-    return [
-            "color",
-            CssPropertyValue$Ress.color(v)
-          ];
-  };
-  var colorString = function (v) {
-    return [
-            "color",
-            v
-          ];
-  };
-  var cursor = function (v) {
-    return [
-            "cursor",
-            CssPropertyValue$Ress.cursor(v)
-          ];
-  };
-  var cursor1 = function (i, k) {
-    return [
-            "cursor",
-            CssPropertyValue$Ress.cursor1(i, k)
-          ];
-  };
-  var cursor2 = function (i1, i2, k) {
-    return [
-            "cursor",
-            CssPropertyValue$Ress.cursor2(i1, i2, k)
-          ];
-  };
-  var cursor3 = function (i1, i2, i3, k) {
-    return [
-            "cursor",
-            CssPropertyValue$Ress.cursor3(i1, i2, i3, k)
-          ];
-  };
-  var cursor4 = function (i1, i2, i3, i4, k) {
-    return [
-            "cursor",
-            CssPropertyValue$Ress.cursor4(i1, i2, i3, i4, k)
-          ];
-  };
-  var cursorString = function (v) {
-    return [
-            "cursor",
-            v
-          ];
-  };
-  return {
-          property: property,
-          propertyString: propertyString,
-          propertyNumber: propertyNumber,
-          propertyInteger: propertyInteger,
-          border: border,
-          borderString: borderString,
-          borderTop: borderTop,
-          borderTopString: borderTopString,
-          borderLeft: borderLeft,
-          borderLeftString: borderLeftString,
-          borderRight: borderRight,
-          borderRightString: borderRightString,
-          borderBottom: borderBottom,
-          borderBottomString: borderBottomString,
-          borderColor: borderColor,
-          borderColor2: borderColor2,
-          borderColor3: borderColor3,
-          borderColor4: borderColor4,
-          borderColorString: borderColorString,
-          borderTopColor: borderTopColor,
-          borderTopColorString: borderTopColorString,
-          borderRightColor: borderRightColor,
-          borderRightColorString: borderRightColorString,
-          borderBottomColor: borderBottomColor,
-          borderBottomColorString: borderBottomColorString,
-          borderLeftColor: borderLeftColor,
-          borderLeftColorString: borderLeftColorString,
-          borderStyle: borderStyle,
-          borderStyle2: borderStyle2,
-          borderStyle3: borderStyle3,
-          borderStyle4: borderStyle4,
-          borderStyleString: borderStyleString,
-          borderTopStyle: borderTopStyle,
-          borderTopStyleString: borderTopStyleString,
-          borderRightStyle: borderRightStyle,
-          borderRightStyleString: borderRightStyleString,
-          borderBottomStyle: borderBottomStyle,
-          borderBottomStyleString: borderBottomStyleString,
-          borderLeftStyle: borderLeftStyle,
-          borderLeftStyleString: borderLeftStyleString,
-          borderWidth: borderWidth,
-          borderWidth2: borderWidth2,
-          borderWidth3: borderWidth3,
-          borderWidth4: borderWidth4,
-          borderWidthString: borderWidthString,
-          borderTopWidth: borderTopWidth,
-          borderTopWidthString: borderTopWidthString,
-          borderRightWidth: borderRightWidth,
-          borderRightWidthString: borderRightWidthString,
-          borderBottomWidth: borderBottomWidth,
-          borderBottomWidthString: borderBottomWidthString,
-          borderLeftWidth: borderLeftWidth,
-          borderLeftWidthString: borderLeftWidthString,
-          background: background,
-          backgroundString: backgroundString,
-          background2: background2,
-          background3: background3,
-          background4: background4,
-          backgroundAttachment: backgroundAttachment,
-          backgroundAttachment2: backgroundAttachment2,
-          backgroundAttachment3: backgroundAttachment3,
-          backgroundAttachment4: backgroundAttachment4,
-          backgroundAttachmentString: backgroundAttachmentString,
-          backgroundColor: backgroundColor,
-          backgroundColorString: backgroundColorString,
-          backgroundImage: backgroundImage,
-          backgroundImage2: backgroundImage2,
-          backgroundImage3: backgroundImage3,
-          backgroundImage4: backgroundImage4,
-          backgroundImageString: backgroundImageString,
-          backgroundPosition: backgroundPosition,
-          backgroundPosition2: backgroundPosition2,
-          backgroundPosition3: backgroundPosition3,
-          backgroundPosition4: backgroundPosition4,
-          backgroundPositionString: backgroundPositionString,
-          backgroundStyle: backgroundStyle,
-          backgroundStyle2: backgroundStyle2,
-          backgroundStyle3: backgroundStyle3,
-          backgroundStyle4: backgroundStyle4,
-          backgroundStyleString: backgroundStyleString,
-          margin: margin,
-          margin2: margin2,
-          margin3: margin3,
-          margin4: margin4,
-          marginString: marginString,
-          marginNumber: marginNumber,
-          marginTop: marginTop,
-          marginTopString: marginTopString,
-          marginTopNumber: marginTopNumber,
-          marginRight: marginRight,
-          marginRightString: marginRightString,
-          marginRightNumber: marginRightNumber,
-          marginBottom: marginBottom,
-          marginBottomString: marginBottomString,
-          marginBottomNumber: marginBottomNumber,
-          marginLeft: marginLeft,
-          marginLeftString: marginLeftString,
-          marginLeftNumber: marginLeftNumber,
-          padding: padding,
-          padding2: padding2,
-          padding3: padding3,
-          padding4: padding4,
-          paddingString: paddingString,
-          paddingNumber: paddingNumber,
-          paddingTop: paddingTop,
-          paddingTopString: paddingTopString,
-          paddingTopNumber: paddingTopNumber,
-          paddingRight: paddingRight,
-          paddingRightString: paddingRightString,
-          paddingRightNumber: paddingRightNumber,
-          paddingBottom: paddingBottom,
-          paddingBottomString: paddingBottomString,
-          paddingBottomNumber: paddingBottomNumber,
-          paddingLeft: paddingLeft,
-          paddingLeftString: paddingLeftString,
-          paddingLeftNumber: paddingLeftNumber,
-          clear: clear,
-          color: color,
-          colorString: colorString,
-          cursor: cursor,
-          cursor1: cursor1,
-          cursor2: cursor2,
-          cursor3: cursor3,
-          cursor4: cursor4,
-          cursorString: cursorString
-        };
-}
+var CssValue$Ress = require("./CssValue.js");
+var CssFunction$Ress = require("./CssFunction.js");
+var CssProperty$Ress = require("./CssProperty.js");
 
 function MakeStyle(Type) {
   var style = Js_dict.fromArray;
@@ -1605,1594 +13,400 @@ function MakeStyle(Type) {
         };
 }
 
-function str(v) {
-  return {
-          NAME: "string",
-          VAL: v
-        };
-}
-
-function num(v) {
-  return {
-          NAME: "number",
-          VAL: v
-        };
-}
-
-function $$int(v) {
-  return {
-          NAME: "integer",
-          VAL: v
-        };
-}
-
-function ratio(v1, v2) {
-  return {
-          NAME: "ratio",
-          VAL: [
-            v1,
-            v2
-          ]
-        };
-}
-
-function fr(v) {
-  return {
-          NAME: "fr",
-          VAL: v
-        };
-}
-
-function ch(l) {
-  return {
-          NAME: "ch",
-          VAL: l
-        };
-}
-
-function em(l) {
-  return {
-          NAME: "em",
-          VAL: l
-        };
-}
-
-function ex(l) {
-  return {
-          NAME: "ex",
-          VAL: l
-        };
-}
-
-function rem(l) {
-  return {
-          NAME: "rem",
-          VAL: l
-        };
-}
-
-function vh(l) {
-  return {
-          NAME: "vh",
-          VAL: l
-        };
-}
-
-function vw(l) {
-  return {
-          NAME: "vw",
-          VAL: l
-        };
-}
-
-function vmin(l) {
-  return {
-          NAME: "vmin",
-          VAL: l
-        };
-}
-
-function vmax(l) {
-  return {
-          NAME: "vmax",
-          VAL: l
-        };
-}
-
-function px(l) {
-  return {
-          NAME: "px",
-          VAL: l
-        };
-}
-
-function cm(l) {
-  return {
-          NAME: "cm",
-          VAL: l
-        };
-}
-
-function mm(l) {
-  return {
-          NAME: "mm",
-          VAL: l
-        };
-}
-
-function inch(l) {
-  return {
-          NAME: "inch",
-          VAL: l
-        };
-}
-
-function pc(l) {
-  return {
-          NAME: "pc",
-          VAL: l
-        };
-}
-
-function pt(l) {
-  return {
-          NAME: "pt",
-          VAL: l
-        };
-}
-
-function pct(v) {
-  return {
-          NAME: "pct",
-          VAL: v
-        };
-}
-
-function deg(v) {
-  return {
-          NAME: "deg",
-          VAL: v
-        };
-}
-
-function grad(v) {
-  return {
-          NAME: "grad",
-          VAL: v
-        };
-}
-
-function rad(v) {
-  return {
-          NAME: "rad",
-          VAL: v
-        };
-}
-
-function turn(v) {
-  return {
-          NAME: "turn",
-          VAL: v
-        };
-}
-
-function s(v) {
-  return {
-          NAME: "s",
-          VAL: v
-        };
-}
-
-function ms(v) {
-  return {
-          NAME: "ms",
-          VAL: v
-        };
-}
-
-function hz(v) {
-  return {
-          NAME: "Hz",
-          VAL: v
-        };
-}
-
-function kHz(v) {
-  return {
-          NAME: "kHz",
-          VAL: v
-        };
-}
-
-function dpi(v) {
-  return {
-          NAME: "dpi",
-          VAL: v
-        };
-}
-
-function dpcm(v) {
-  return {
-          NAME: "dpcm",
-          VAL: v
-        };
-}
-
-function dppx(v) {
-  return {
-          NAME: "dppx",
-          VAL: v
-        };
-}
-
-function x(v) {
-  return {
-          NAME: "x",
-          VAL: v
-        };
-}
-
-function hsl(v1, v2, v3) {
-  return {
-          NAME: "hsl",
-          VAL: [
-            v1,
-            v2,
-            v3
-          ]
-        };
-}
-
-function hsla(v1, v2, v3, v4) {
-  return {
-          NAME: "hsla",
-          VAL: [
-            v1,
-            v2,
-            v3,
-            {
-              NAME: "number",
-              VAL: v4
-            }
-          ]
-        };
-}
-
-function rgb(v1, v2, v3) {
-  return {
-          NAME: "rgb",
-          VAL: [
-            {
-              NAME: "number",
-              VAL: v1
-            },
-            {
-              NAME: "number",
-              VAL: v2
-            },
-            {
-              NAME: "number",
-              VAL: v3
-            }
-          ]
-        };
-}
-
-function rgba(v1, v2, v3, v4) {
-  return {
-          NAME: "rgba",
-          VAL: [
-            {
-              NAME: "number",
-              VAL: v1
-            },
-            {
-              NAME: "number",
-              VAL: v2
-            },
-            {
-              NAME: "number",
-              VAL: v3
-            },
-            {
-              NAME: "number",
-              VAL: v4
-            }
-          ]
-        };
-}
-
-function rgbX(v) {
-  return {
-          NAME: "rgbX",
-          VAL: v
-        };
-}
-
-function linearColorStop2(c, l) {
-  return {
-          NAME: "linearColorStop2",
-          VAL: [
-            c,
-            l
-          ]
-        };
-}
-
-function linearColorStop3(c, l1, l2) {
-  return {
-          NAME: "linearColorStop3",
-          VAL: [
-            c,
-            l1,
-            l2
-          ]
-        };
-}
-
-function linearGradient(angle, c) {
-  return {
-          NAME: "linearGradient",
-          VAL: [
-            angle,
-            c
-          ]
-        };
-}
-
-function linearGradient2(angle, c1, c2) {
-  return {
-          NAME: "linearGradient2",
-          VAL: [
-            angle,
-            c1,
-            c2
-          ]
-        };
-}
-
-function linearGradient3(angle, c1, c2, c3) {
-  return {
-          NAME: "linearGradient3",
-          VAL: [
-            angle,
-            c1,
-            c2,
-            c3
-          ]
-        };
-}
-
-function linearGradient4(angle, c1, c2, c3, c4) {
-  return {
-          NAME: "linearGradient4",
-          VAL: [
-            angle,
-            c1,
-            c2,
-            c3,
-            c4
-          ]
-        };
-}
-
-function repeatingLinearGradient(angle, c) {
-  return {
-          NAME: "repeatingLinearGradient",
-          VAL: [
-            angle,
-            c
-          ]
-        };
-}
-
-function repeatingLinearGradient2(angle, c1, c2) {
-  return {
-          NAME: "repeatingLinearGradient2",
-          VAL: [
-            angle,
-            c1,
-            c2
-          ]
-        };
-}
-
-function repeatingLinearGradient3(angle, c1, c2, c3) {
-  return {
-          NAME: "repeatingLinearGradient3",
-          VAL: [
-            angle,
-            c1,
-            c2,
-            c3
-          ]
-        };
-}
-
-function repeatingLinearGradient4(angle, c1, c2, c3, c4) {
-  return {
-          NAME: "repeatingLinearGradient4",
-          VAL: [
-            angle,
-            c1,
-            c2,
-            c3,
-            c4
-          ]
-        };
-}
-
-function radialGradient(position, endingShape, size, c) {
-  return {
-          NAME: "radialGradient",
-          VAL: [
-            position,
-            endingShape,
-            size,
-            c
-          ]
-        };
-}
-
-function radialGradient2(position, endingShape, size, c1, c2) {
-  return {
-          NAME: "radialGradient2",
-          VAL: [
-            position,
-            endingShape,
-            size,
-            c1,
-            c2
-          ]
-        };
-}
-
-function radialGradient3(position, endingShape, size, c1, c2, c3) {
-  return {
-          NAME: "radialGradient3",
-          VAL: [
-            position,
-            endingShape,
-            size,
-            c1,
-            c2,
-            c3
-          ]
-        };
-}
-
-function radialGradient4(position, endingShape, size, c1, c2, c3, c4) {
-  return {
-          NAME: "radialGradient4",
-          VAL: [
-            position,
-            endingShape,
-            size,
-            c1,
-            c2,
-            c3,
-            c4
-          ]
-        };
-}
-
-function repeatingRadialGradient(position, endingShape, size, c) {
-  return {
-          NAME: "repeatingRadialGradient",
-          VAL: [
-            position,
-            endingShape,
-            size,
-            c
-          ]
-        };
-}
-
-function repeatingRadialGradient2(position, endingShape, size, c1, c2) {
-  return {
-          NAME: "repeatingRadialGradient2",
-          VAL: [
-            position,
-            endingShape,
-            size,
-            c1,
-            c2
-          ]
-        };
-}
-
-function repeatingRadialGradient3(position, endingShape, size, c1, c2, c3) {
-  return {
-          NAME: "repeatingRadialGradient3",
-          VAL: [
-            position,
-            endingShape,
-            size,
-            c1,
-            c2,
-            c3
-          ]
-        };
-}
-
-function repeatingRadialGradient4(position, endingShape, size, c1, c2, c3, c4) {
-  return {
-          NAME: "repeatingRadialGradient4",
-          VAL: [
-            position,
-            endingShape,
-            size,
-            c1,
-            c2,
-            c3,
-            c4
-          ]
-        };
-}
-
-function conicGradient(angle, position, c) {
-  return {
-          NAME: "conicGradient",
-          VAL: [
-            angle,
-            position,
-            c
-          ]
-        };
-}
-
-function conicGradient2(angle, position, c1, c2) {
-  return {
-          NAME: "conicGradient2",
-          VAL: [
-            angle,
-            position,
-            c1,
-            c2
-          ]
-        };
-}
-
-function conicGradient3(angle, position, c1, c2, c3) {
-  return {
-          NAME: "conicGradient3",
-          VAL: [
-            angle,
-            position,
-            c1,
-            c2,
-            c3
-          ]
-        };
-}
-
-function conicGradient4(angle, position, c1, c2, c3, c4) {
-  return {
-          NAME: "conicGradient4",
-          VAL: [
-            angle,
-            position,
-            c1,
-            c2,
-            c3,
-            c4
-          ]
-        };
-}
-
-function repeatingConicGradient(angle, position, c) {
-  return {
-          NAME: "repeatingConicGradient",
-          VAL: [
-            angle,
-            position,
-            c
-          ]
-        };
-}
-
-function repeatingConicGradient2(angle, position, c1, c2) {
-  return {
-          NAME: "repeatingConicGradient2",
-          VAL: [
-            angle,
-            position,
-            c1,
-            c2
-          ]
-        };
-}
-
-function repeatingConicGradient3(angle, position, c1, c2, c3) {
-  return {
-          NAME: "repeatingConicGradient3",
-          VAL: [
-            angle,
-            position,
-            c1,
-            c2,
-            c3
-          ]
-        };
-}
-
-function repeatingConicGradient4(angle, position, c1, c2, c3, c4) {
-  return {
-          NAME: "repeatingConicGradient4",
-          VAL: [
-            angle,
-            position,
-            c1,
-            c2,
-            c3,
-            c4
-          ]
-        };
-}
-
-function url(v) {
-  return {
-          NAME: "url",
-          VAL: v
-        };
-}
-
-function src(v) {
-  return {
-          NAME: "src",
-          VAL: v
-        };
-}
-
-function image(dir, color, imageSrcOrColor) {
-  return {
-          NAME: "image",
-          VAL: [
-            dir,
-            color,
-            imageSrcOrColor
-          ]
-        };
-}
-
-function bgSize2(s1, s2) {
-  return {
-          NAME: "bgSize2",
-          VAL: [
-            s1,
-            s2
-          ]
-        };
-}
-
-function position2(p1, p2) {
-  return {
-          NAME: "position2",
-          VAL: [
-            p1,
-            p2
-          ]
-        };
-}
-
-function position3(p1, p2, p3) {
-  return {
-          NAME: "position3",
-          VAL: [
-            p1,
-            p2,
-            p3
-          ]
-        };
-}
-
-function position4(p1, p2, p3, p4) {
-  return {
-          NAME: "position4",
-          VAL: [
-            p1,
-            p2,
-            p3,
-            p4
-          ]
-        };
-}
-
-function bgLayer(color, position, size, repeat, attachment, origin, clip, imageOrColor) {
-  return {
-          NAME: "bgLayer",
-          VAL: [
-            color,
-            position,
-            size,
-            repeat,
-            attachment,
-            origin,
-            clip,
-            imageOrColor
-          ]
-        };
-}
-
-function property(name, value) {
-  return [
-          name,
-          value
-        ];
-}
-
-function propertyString(name, value) {
-  return [
-          name,
-          value
-        ];
-}
-
-function propertyNumber(name, value) {
-  return [
-          name,
-          value
-        ];
-}
-
-function propertyInteger(name, value) {
-  return [
-          name,
-          value
-        ];
-}
-
-function border(width, color, style) {
-  return [
-          "border",
-          CssPropertyValue$Ress.border(width, color, style)
-        ];
-}
-
-function borderString(v) {
-  return [
-          "border",
-          v
-        ];
-}
-
-function borderTop(width, color, style) {
-  return [
-          "borderTop",
-          CssPropertyValue$Ress.border(width, color, style)
-        ];
-}
-
-function borderTopString(v) {
-  return [
-          "borderTop",
-          v
-        ];
-}
-
-function borderLeft(width, color, style) {
-  return [
-          "borderLeft",
-          CssPropertyValue$Ress.border(width, color, style)
-        ];
-}
-
-function borderLeftString(v) {
-  return [
-          "borderLeft",
-          v
-        ];
-}
-
-function borderRight(width, color, style) {
-  return [
-          "borderRight",
-          CssPropertyValue$Ress.border(width, color, style)
-        ];
-}
-
-function borderRightString(v) {
-  return [
-          "borderRight",
-          v
-        ];
-}
-
-function borderBottom(width, color, style) {
-  return [
-          "borderBottom",
-          CssPropertyValue$Ress.border(width, color, style)
-        ];
-}
-
-function borderBottomString(v) {
-  return [
-          "borderBottom",
-          v
-        ];
-}
-
-function borderColor(v) {
-  return [
-          "borderColor",
-          CssPropertyValue$Ress.borderColor(v)
-        ];
-}
-
-function borderColor2(tb, lr) {
-  return [
-          "borderColor",
-          CssPropertyValue$Ress.borderColor2(tb, lr)
-        ];
-}
-
-function borderColor3(top, lr, bottom) {
-  return [
-          "borderColor",
-          CssPropertyValue$Ress.borderColor3(top, lr, bottom)
-        ];
-}
-
-function borderColor4(top, right, bottom, left) {
-  return [
-          "borderColor",
-          CssPropertyValue$Ress.borderColor4(top, right, bottom, left)
-        ];
-}
-
-function borderColorString(v) {
-  return [
-          "borderColor",
-          v
-        ];
-}
-
-function borderTopColor(v) {
-  return [
-          "borderTopColor",
-          CssPropertyValue$Ress.borderTopColor(v)
-        ];
-}
-
-function borderTopColorString(v) {
-  return [
-          "borderTopColor",
-          v
-        ];
-}
-
-function borderRightColor(v) {
-  return [
-          "borderRightColor",
-          CssPropertyValue$Ress.borderRightColor(v)
-        ];
-}
-
-function borderRightColorString(v) {
-  return [
-          "borderRightColor",
-          v
-        ];
-}
-
-function borderBottomColor(v) {
-  return [
-          "borderBottomColor",
-          CssPropertyValue$Ress.borderBottomColor(v)
-        ];
-}
-
-function borderBottomColorString(v) {
-  return [
-          "borderBottomColor",
-          v
-        ];
-}
-
-function borderLeftColor(v) {
-  return [
-          "borderLeftColor",
-          CssPropertyValue$Ress.borderLeftColor(v)
-        ];
-}
-
-function borderLeftColorString(v) {
-  return [
-          "borderLeftColor",
-          v
-        ];
-}
-
-function borderStyle(v) {
-  return [
-          "borderStyle",
-          CssPropertyValue$Ress.borderStyle(v)
-        ];
-}
-
-function borderStyle2(tb, lr) {
-  return [
-          "borderStyle",
-          CssPropertyValue$Ress.borderStyle2(tb, lr)
-        ];
-}
-
-function borderStyle3(top, lr, bottom) {
-  return [
-          "borderStyle",
-          CssPropertyValue$Ress.borderStyle3(top, lr, bottom)
-        ];
-}
-
-function borderStyle4(top, right, bottom, left) {
-  return [
-          "borderStyle",
-          CssPropertyValue$Ress.borderStyle4(top, right, bottom, left)
-        ];
-}
-
-function borderStyleString(v) {
-  return [
-          "borderStyle",
-          v
-        ];
-}
-
-function borderTopStyle(v) {
-  return [
-          "borderTopStyle",
-          CssPropertyValue$Ress.borderStyle(v)
-        ];
-}
-
-function borderTopStyleString(v) {
-  return [
-          "borderTopStyle",
-          v
-        ];
-}
-
-function borderRightStyle(v) {
-  return [
-          "borderRightStyle",
-          CssPropertyValue$Ress.borderStyle(v)
-        ];
-}
-
-function borderRightStyleString(v) {
-  return [
-          "borderRightStyle",
-          v
-        ];
-}
-
-function borderBottomStyle(v) {
-  return [
-          "borderBottomStyle",
-          CssPropertyValue$Ress.borderStyle(v)
-        ];
-}
-
-function borderBottomStyleString(v) {
-  return [
-          "borderBottomStyle",
-          v
-        ];
-}
-
-function borderLeftStyle(v) {
-  return [
-          "borderLeftStyle",
-          CssPropertyValue$Ress.borderStyle(v)
-        ];
-}
-
-function borderLeftStyleString(v) {
-  return [
-          "borderLeftStyle",
-          v
-        ];
-}
-
-function borderWidth(v) {
-  return [
-          "borderWidth",
-          CssPropertyValue$Ress.borderWidth(v)
-        ];
-}
-
-function borderWidth2(tb, lr) {
-  return [
-          "borderWidth",
-          CssPropertyValue$Ress.borderWidth2(tb, lr)
-        ];
-}
-
-function borderWidth3(top, lr, bottom) {
-  return [
-          "borderWidth",
-          CssPropertyValue$Ress.borderWidth3(top, lr, bottom)
-        ];
-}
-
-function borderWidth4(top, right, bottom, left) {
-  return [
-          "borderWidth",
-          CssPropertyValue$Ress.borderWidth4(top, right, bottom, left)
-        ];
-}
-
-function borderWidthString(v) {
-  return [
-          "borderWidth",
-          v
-        ];
-}
-
-function borderTopWidth(v) {
-  return [
-          "borderTopWidth",
-          CssPropertyValue$Ress.borderTopWidth(v)
-        ];
-}
-
-function borderTopWidthString(v) {
-  return [
-          "borderTopWidth",
-          v
-        ];
-}
-
-function borderRightWidth(v) {
-  return [
-          "borderRightWidth",
-          CssPropertyValue$Ress.borderRightWidth(v)
-        ];
-}
-
-function borderRightWidthString(v) {
-  return [
-          "borderRightWidth",
-          v
-        ];
-}
-
-function borderBottomWidth(v) {
-  return [
-          "borderBottomWidth",
-          CssPropertyValue$Ress.borderBottomWidth(v)
-        ];
-}
-
-function borderBottomWidthString(v) {
-  return [
-          "borderBottomWidth",
-          v
-        ];
-}
-
-function borderLeftWidth(v) {
-  return [
-          "borderLeftWidth",
-          CssPropertyValue$Ress.borderLeftWidth(v)
-        ];
-}
-
-function borderLeftWidthString(v) {
-  return [
-          "borderLeftWidth",
-          v
-        ];
-}
-
-function background(color, position, size, repeat, attachment, origin, clip, imageOrColor) {
-  return [
-          "background",
-          CssPropertyValue$Ress.background(color, position, size, repeat, attachment, origin, clip, imageOrColor)
-        ];
-}
-
-function background2(l1, l2) {
-  return [
-          "background",
-          CssPropertyValue$Ress.background2(l1, l2)
-        ];
-}
-
-function background3(l1, l2, l3) {
-  return [
-          "background",
-          CssPropertyValue$Ress.background3(l1, l2, l3)
-        ];
-}
-
-function background4(l1, l2, l3, l4) {
-  return [
-          "background",
-          CssPropertyValue$Ress.background4(l1, l2, l3, l4)
-        ];
-}
-
-function backgroundString(v) {
-  return [
-          "background",
-          v
-        ];
-}
-
-function backgroundAttachment(v) {
-  return [
-          "backgroundAttachment",
-          CssPropertyValue$Ress.backgroundAttachment(v)
-        ];
-}
-
-function backgroundAttachment2(v1, v2) {
-  return [
-          "backgroundAttachment",
-          CssPropertyValue$Ress.backgroundAttachment2(v1, v2)
-        ];
-}
-
-function backgroundAttachment3(v1, v2, v3) {
-  return [
-          "backgroundAttachment",
-          CssPropertyValue$Ress.backgroundAttachment3(v1, v2, v3)
-        ];
-}
-
-function backgroundAttachment4(v1, v2, v3, v4) {
-  return [
-          "backgroundAttachment",
-          CssPropertyValue$Ress.backgroundAttachment4(v1, v2, v3, v4)
-        ];
-}
-
-function backgroundAttachmentString(v) {
-  return [
-          "backgroundAttachment",
-          v
-        ];
-}
-
-function backgroundColor(v) {
-  return [
-          "backgroundColor",
-          CssPropertyValue$Ress.backgroundColor(v)
-        ];
-}
-
-function backgroundColorString(v) {
-  return [
-          "backgroundColor",
-          v
-        ];
-}
-
-function backgroundImage(v) {
-  return [
-          "backgroundImage",
-          CssPropertyValue$Ress.backgroundImage(v)
-        ];
-}
-
-function backgroundImage2(v1, v2) {
-  return [
-          "backgroundImage",
-          CssPropertyValue$Ress.backgroundImage2(v1, v2)
-        ];
-}
-
-function backgroundImage3(v1, v2, v3) {
-  return [
-          "backgroundImage",
-          CssPropertyValue$Ress.backgroundImage3(v1, v2, v3)
-        ];
-}
-
-function backgroundImage4(v1, v2, v3, v4) {
-  return [
-          "backgroundImage",
-          CssPropertyValue$Ress.backgroundImage4(v1, v2, v3, v4)
-        ];
-}
-
-function backgroundImageString(v) {
-  return [
-          "backgroundImage",
-          v
-        ];
-}
-
-function backgroundPosition(v) {
-  return [
-          "backgroundPosition",
-          CssPropertyValue$Ress.backgroundPosition(v)
-        ];
-}
-
-function backgroundPosition2(v1, v2) {
-  return [
-          "backgroundPosition",
-          CssPropertyValue$Ress.backgroundPosition2(v1, v2)
-        ];
-}
-
-function backgroundPosition3(v1, v2, v3) {
-  return [
-          "backgroundPosition",
-          CssPropertyValue$Ress.backgroundPosition3(v1, v2, v3)
-        ];
-}
-
-function backgroundPosition4(v1, v2, v3, v4) {
-  return [
-          "backgroundPosition",
-          CssPropertyValue$Ress.backgroundPosition4(v1, v2, v3, v4)
-        ];
-}
-
-function backgroundPositionString(v) {
-  return [
-          "backgroundPosition",
-          v
-        ];
-}
-
-function backgroundStyle(v) {
-  return [
-          "backgroundStyle",
-          CssPropertyValue$Ress.backgroundStyle(v)
-        ];
-}
-
-function backgroundStyle2(v1, v2) {
-  return [
-          "backgroundStyle",
-          CssPropertyValue$Ress.backgroundStyle2(v1, v2)
-        ];
-}
-
-function backgroundStyle3(v1, v2, v3) {
-  return [
-          "backgroundStyle",
-          CssPropertyValue$Ress.backgroundStyle3(v1, v2, v3)
-        ];
-}
-
-function backgroundStyle4(v1, v2, v3, v4) {
-  return [
-          "backgroundStyle",
-          CssPropertyValue$Ress.backgroundStyle4(v1, v2, v3, v4)
-        ];
-}
-
-function backgroundStyleString(v) {
-  return [
-          "backgroundStyle",
-          v
-        ];
-}
-
-function margin(v) {
-  return [
-          "margin",
-          CssPropertyValue$Ress.margin(v)
-        ];
-}
-
-function margin2(tb, lr) {
-  return [
-          "margin",
-          CssPropertyValue$Ress.margin2(tb, lr)
-        ];
-}
-
-function margin3(top, lr, bottom) {
-  return [
-          "margin",
-          CssPropertyValue$Ress.margin3(top, lr, bottom)
-        ];
-}
-
-function margin4(top, right, bottom, left) {
-  return [
-          "margin",
-          CssPropertyValue$Ress.margin4(top, right, bottom, left)
-        ];
-}
-
-function marginString(v) {
-  return [
-          "margin",
-          v
-        ];
-}
-
-function marginNumber(v) {
-  return [
-          "margin",
-          v
-        ];
-}
-
-function marginTop(v) {
-  return [
-          "marginTop",
-          CssPropertyValue$Ress.marginTop(v)
-        ];
-}
-
-function marginTopString(v) {
-  return [
-          "marginTop",
-          v
-        ];
-}
-
-function marginTopNumber(v) {
-  return [
-          "marginTop",
-          v
-        ];
-}
-
-function marginRight(v) {
-  return [
-          "marginRight",
-          CssPropertyValue$Ress.marginRight(v)
-        ];
-}
-
-function marginRightString(v) {
-  return [
-          "marginRight",
-          v
-        ];
-}
-
-function marginRightNumber(v) {
-  return [
-          "marginRight",
-          v
-        ];
-}
-
-function marginBottom(v) {
-  return [
-          "marginBottom",
-          CssPropertyValue$Ress.marginBottom(v)
-        ];
-}
-
-function marginBottomString(v) {
-  return [
-          "marginBottom",
-          v
-        ];
-}
-
-function marginBottomNumber(v) {
-  return [
-          "marginBottom",
-          v
-        ];
-}
-
-function marginLeft(v) {
-  return [
-          "marginLeft",
-          CssPropertyValue$Ress.marginLeft(v)
-        ];
-}
-
-function marginLeftString(v) {
-  return [
-          "marginLeft",
-          v
-        ];
-}
-
-function marginLeftNumber(v) {
-  return [
-          "marginLeft",
-          v
-        ];
-}
-
-function padding(v) {
-  return [
-          "padding",
-          CssPropertyValue$Ress.padding(v)
-        ];
-}
-
-function padding2(tb, lr) {
-  return [
-          "padding",
-          CssPropertyValue$Ress.padding2(tb, lr)
-        ];
-}
-
-function padding3(top, lr, bottom) {
-  return [
-          "padding",
-          CssPropertyValue$Ress.padding3(top, lr, bottom)
-        ];
-}
-
-function padding4(top, right, bottom, left) {
-  return [
-          "padding",
-          CssPropertyValue$Ress.padding4(top, right, bottom, left)
-        ];
-}
-
-function paddingString(v) {
-  return [
-          "padding",
-          v
-        ];
-}
-
-function paddingNumber(v) {
-  return [
-          "padding",
-          v
-        ];
-}
-
-function paddingTop(v) {
-  return [
-          "paddingTop",
-          CssPropertyValue$Ress.paddingTop(v)
-        ];
-}
-
-function paddingTopString(v) {
-  return [
-          "paddingTop",
-          v
-        ];
-}
-
-function paddingTopNumber(v) {
-  return [
-          "paddingTop",
-          v
-        ];
-}
-
-function paddingRight(v) {
-  return [
-          "paddingRight",
-          CssPropertyValue$Ress.paddingRight(v)
-        ];
-}
-
-function paddingRightString(v) {
-  return [
-          "paddingRight",
-          v
-        ];
-}
-
-function paddingRightNumber(v) {
-  return [
-          "paddingRight",
-          v
-        ];
-}
-
-function paddingBottom(v) {
-  return [
-          "paddingBottom",
-          CssPropertyValue$Ress.paddingBottom(v)
-        ];
-}
-
-function paddingBottomString(v) {
-  return [
-          "paddingBottom",
-          v
-        ];
-}
-
-function paddingBottomNumber(v) {
-  return [
-          "paddingBottom",
-          v
-        ];
-}
-
-function paddingLeft(v) {
-  return [
-          "paddingLeft",
-          CssPropertyValue$Ress.paddingLeft(v)
-        ];
-}
-
-function paddingLeftString(v) {
-  return [
-          "paddingLeft",
-          v
-        ];
-}
-
-function paddingLeftNumber(v) {
-  return [
-          "paddingLeft",
-          v
-        ];
-}
-
-function clear(v) {
-  return [
-          "clear",
-          CssPropertyValue$Ress.clear(v)
-        ];
-}
-
-function color(v) {
-  return [
-          "color",
-          CssPropertyValue$Ress.color(v)
-        ];
-}
-
-function colorString(v) {
-  return [
-          "color",
-          v
-        ];
-}
-
-function cursor(v) {
-  return [
-          "cursor",
-          CssPropertyValue$Ress.cursor(v)
-        ];
-}
-
-function cursor1(i, k) {
-  return [
-          "cursor",
-          CssPropertyValue$Ress.cursor1(i, k)
-        ];
-}
-
-function cursor2(i1, i2, k) {
-  return [
-          "cursor",
-          CssPropertyValue$Ress.cursor2(i1, i2, k)
-        ];
-}
-
-function cursor3(i1, i2, i3, k) {
-  return [
-          "cursor",
-          CssPropertyValue$Ress.cursor3(i1, i2, i3, k)
-        ];
-}
-
-function cursor4(i1, i2, i3, i4, k) {
-  return [
-          "cursor",
-          CssPropertyValue$Ress.cursor4(i1, i2, i3, i4, k)
-        ];
-}
-
-function cursorString(v) {
-  return [
-          "cursor",
-          v
-        ];
-}
-
 var style = Js_dict.fromArray;
 
-exports.MakeValue = MakeValue;
-exports.MakeProperty = MakeProperty;
+var str = CssValue$Ress.str;
+
+var num = CssValue$Ress.num;
+
+var $$int = CssValue$Ress.$$int;
+
+var pct = CssValue$Ress.pct;
+
+var ratio = CssValue$Ress.ratio;
+
+var fr = CssValue$Ress.fr;
+
+var ch = CssValue$Ress.ch;
+
+var em = CssValue$Ress.em;
+
+var ex = CssValue$Ress.ex;
+
+var rem = CssValue$Ress.rem;
+
+var vh = CssValue$Ress.vh;
+
+var vw = CssValue$Ress.vw;
+
+var vmin = CssValue$Ress.vmin;
+
+var vmax = CssValue$Ress.vmax;
+
+var px = CssValue$Ress.px;
+
+var cm = CssValue$Ress.cm;
+
+var mm = CssValue$Ress.mm;
+
+var inch = CssValue$Ress.inch;
+
+var pc = CssValue$Ress.pc;
+
+var pt = CssValue$Ress.pt;
+
+var deg = CssValue$Ress.deg;
+
+var grad = CssValue$Ress.grad;
+
+var rad = CssValue$Ress.rad;
+
+var turn = CssValue$Ress.turn;
+
+var s = CssValue$Ress.s;
+
+var ms = CssValue$Ress.ms;
+
+var hz = CssValue$Ress.hz;
+
+var kHz = CssValue$Ress.kHz;
+
+var dpi = CssValue$Ress.dpi;
+
+var dpcm = CssValue$Ress.dpcm;
+
+var dppx = CssValue$Ress.dppx;
+
+var x = CssValue$Ress.x;
+
+var position2 = CssValue$Ress.position2;
+
+var position3 = CssValue$Ress.position3;
+
+var position4 = CssValue$Ress.position4;
+
+var src = CssValue$Ress.src;
+
+var bgLayer = CssValue$Ress.bgLayer;
+
+var bgSize2 = CssValue$Ress.bgSize2;
+
+var hsl = CssFunction$Ress.hsl;
+
+var hsla = CssFunction$Ress.hsla;
+
+var rgb = CssFunction$Ress.rgb;
+
+var rgba = CssFunction$Ress.rgba;
+
+var rgbX = CssFunction$Ress.rgbX;
+
+var url = CssFunction$Ress.url;
+
+var image = CssFunction$Ress.image;
+
+var linearColorStop2 = CssFunction$Ress.linearColorStop2;
+
+var linearColorStop3 = CssFunction$Ress.linearColorStop3;
+
+var linearGradient = CssFunction$Ress.linearGradient;
+
+var linearGradient2 = CssFunction$Ress.linearGradient2;
+
+var linearGradient3 = CssFunction$Ress.linearGradient3;
+
+var linearGradient4 = CssFunction$Ress.linearGradient4;
+
+var repeatingLinearGradient = CssFunction$Ress.repeatingLinearGradient;
+
+var repeatingLinearGradient2 = CssFunction$Ress.repeatingLinearGradient2;
+
+var repeatingLinearGradient3 = CssFunction$Ress.repeatingLinearGradient3;
+
+var repeatingLinearGradient4 = CssFunction$Ress.repeatingLinearGradient4;
+
+var radialGradient = CssFunction$Ress.radialGradient;
+
+var radialGradient2 = CssFunction$Ress.radialGradient2;
+
+var radialGradient3 = CssFunction$Ress.radialGradient3;
+
+var radialGradient4 = CssFunction$Ress.radialGradient4;
+
+var repeatingRadialGradient = CssFunction$Ress.repeatingRadialGradient;
+
+var repeatingRadialGradient2 = CssFunction$Ress.repeatingRadialGradient2;
+
+var repeatingRadialGradient3 = CssFunction$Ress.repeatingRadialGradient3;
+
+var repeatingRadialGradient4 = CssFunction$Ress.repeatingRadialGradient4;
+
+var conicGradient = CssFunction$Ress.conicGradient;
+
+var conicGradient2 = CssFunction$Ress.conicGradient2;
+
+var conicGradient3 = CssFunction$Ress.conicGradient3;
+
+var conicGradient4 = CssFunction$Ress.conicGradient4;
+
+var repeatingConicGradient = CssFunction$Ress.repeatingConicGradient;
+
+var repeatingConicGradient2 = CssFunction$Ress.repeatingConicGradient2;
+
+var repeatingConicGradient3 = CssFunction$Ress.repeatingConicGradient3;
+
+var repeatingConicGradient4 = CssFunction$Ress.repeatingConicGradient4;
+
+var property = CssProperty$Ress.property;
+
+var propertyString = CssProperty$Ress.propertyString;
+
+var propertyNumber = CssProperty$Ress.propertyNumber;
+
+var propertyInteger = CssProperty$Ress.propertyInteger;
+
+var border = CssProperty$Ress.border;
+
+var borderString = CssProperty$Ress.borderString;
+
+var borderTop = CssProperty$Ress.borderTop;
+
+var borderTopString = CssProperty$Ress.borderTopString;
+
+var borderLeft = CssProperty$Ress.borderLeft;
+
+var borderLeftString = CssProperty$Ress.borderLeftString;
+
+var borderRight = CssProperty$Ress.borderRight;
+
+var borderRightString = CssProperty$Ress.borderRightString;
+
+var borderBottom = CssProperty$Ress.borderBottom;
+
+var borderBottomString = CssProperty$Ress.borderBottomString;
+
+var borderColor = CssProperty$Ress.borderColor;
+
+var borderColor2 = CssProperty$Ress.borderColor2;
+
+var borderColor3 = CssProperty$Ress.borderColor3;
+
+var borderColor4 = CssProperty$Ress.borderColor4;
+
+var borderColorString = CssProperty$Ress.borderColorString;
+
+var borderTopColor = CssProperty$Ress.borderTopColor;
+
+var borderTopColorString = CssProperty$Ress.borderTopColorString;
+
+var borderRightColor = CssProperty$Ress.borderRightColor;
+
+var borderRightColorString = CssProperty$Ress.borderRightColorString;
+
+var borderBottomColor = CssProperty$Ress.borderBottomColor;
+
+var borderBottomColorString = CssProperty$Ress.borderBottomColorString;
+
+var borderLeftColor = CssProperty$Ress.borderLeftColor;
+
+var borderLeftColorString = CssProperty$Ress.borderLeftColorString;
+
+var borderStyle = CssProperty$Ress.borderStyle;
+
+var borderStyle2 = CssProperty$Ress.borderStyle2;
+
+var borderStyle3 = CssProperty$Ress.borderStyle3;
+
+var borderStyle4 = CssProperty$Ress.borderStyle4;
+
+var borderStyleString = CssProperty$Ress.borderStyleString;
+
+var borderTopStyle = CssProperty$Ress.borderTopStyle;
+
+var borderTopStyleString = CssProperty$Ress.borderTopStyleString;
+
+var borderRightStyle = CssProperty$Ress.borderRightStyle;
+
+var borderRightStyleString = CssProperty$Ress.borderRightStyleString;
+
+var borderBottomStyle = CssProperty$Ress.borderBottomStyle;
+
+var borderBottomStyleString = CssProperty$Ress.borderBottomStyleString;
+
+var borderLeftStyle = CssProperty$Ress.borderLeftStyle;
+
+var borderLeftStyleString = CssProperty$Ress.borderLeftStyleString;
+
+var borderWidth = CssProperty$Ress.borderWidth;
+
+var borderWidth2 = CssProperty$Ress.borderWidth2;
+
+var borderWidth3 = CssProperty$Ress.borderWidth3;
+
+var borderWidth4 = CssProperty$Ress.borderWidth4;
+
+var borderWidthString = CssProperty$Ress.borderWidthString;
+
+var borderTopWidth = CssProperty$Ress.borderTopWidth;
+
+var borderTopWidthString = CssProperty$Ress.borderTopWidthString;
+
+var borderRightWidth = CssProperty$Ress.borderRightWidth;
+
+var borderRightWidthString = CssProperty$Ress.borderRightWidthString;
+
+var borderBottomWidth = CssProperty$Ress.borderBottomWidth;
+
+var borderBottomWidthString = CssProperty$Ress.borderBottomWidthString;
+
+var borderLeftWidth = CssProperty$Ress.borderLeftWidth;
+
+var borderLeftWidthString = CssProperty$Ress.borderLeftWidthString;
+
+var background = CssProperty$Ress.background;
+
+var backgroundString = CssProperty$Ress.backgroundString;
+
+var background2 = CssProperty$Ress.background2;
+
+var background3 = CssProperty$Ress.background3;
+
+var background4 = CssProperty$Ress.background4;
+
+var backgroundAttachment = CssProperty$Ress.backgroundAttachment;
+
+var backgroundAttachment2 = CssProperty$Ress.backgroundAttachment2;
+
+var backgroundAttachment3 = CssProperty$Ress.backgroundAttachment3;
+
+var backgroundAttachment4 = CssProperty$Ress.backgroundAttachment4;
+
+var backgroundAttachmentString = CssProperty$Ress.backgroundAttachmentString;
+
+var backgroundColor = CssProperty$Ress.backgroundColor;
+
+var backgroundColorString = CssProperty$Ress.backgroundColorString;
+
+var backgroundImage = CssProperty$Ress.backgroundImage;
+
+var backgroundImage2 = CssProperty$Ress.backgroundImage2;
+
+var backgroundImage3 = CssProperty$Ress.backgroundImage3;
+
+var backgroundImage4 = CssProperty$Ress.backgroundImage4;
+
+var backgroundImageString = CssProperty$Ress.backgroundImageString;
+
+var backgroundPosition = CssProperty$Ress.backgroundPosition;
+
+var backgroundPosition2 = CssProperty$Ress.backgroundPosition2;
+
+var backgroundPosition3 = CssProperty$Ress.backgroundPosition3;
+
+var backgroundPosition4 = CssProperty$Ress.backgroundPosition4;
+
+var backgroundPositionString = CssProperty$Ress.backgroundPositionString;
+
+var backgroundStyle = CssProperty$Ress.backgroundStyle;
+
+var backgroundStyle2 = CssProperty$Ress.backgroundStyle2;
+
+var backgroundStyle3 = CssProperty$Ress.backgroundStyle3;
+
+var backgroundStyle4 = CssProperty$Ress.backgroundStyle4;
+
+var backgroundStyleString = CssProperty$Ress.backgroundStyleString;
+
+var margin = CssProperty$Ress.margin;
+
+var margin2 = CssProperty$Ress.margin2;
+
+var margin3 = CssProperty$Ress.margin3;
+
+var margin4 = CssProperty$Ress.margin4;
+
+var marginString = CssProperty$Ress.marginString;
+
+var marginNumber = CssProperty$Ress.marginNumber;
+
+var marginTop = CssProperty$Ress.marginTop;
+
+var marginTopString = CssProperty$Ress.marginTopString;
+
+var marginTopNumber = CssProperty$Ress.marginTopNumber;
+
+var marginRight = CssProperty$Ress.marginRight;
+
+var marginRightString = CssProperty$Ress.marginRightString;
+
+var marginRightNumber = CssProperty$Ress.marginRightNumber;
+
+var marginBottom = CssProperty$Ress.marginBottom;
+
+var marginBottomString = CssProperty$Ress.marginBottomString;
+
+var marginBottomNumber = CssProperty$Ress.marginBottomNumber;
+
+var marginLeft = CssProperty$Ress.marginLeft;
+
+var marginLeftString = CssProperty$Ress.marginLeftString;
+
+var marginLeftNumber = CssProperty$Ress.marginLeftNumber;
+
+var padding = CssProperty$Ress.padding;
+
+var padding2 = CssProperty$Ress.padding2;
+
+var padding3 = CssProperty$Ress.padding3;
+
+var padding4 = CssProperty$Ress.padding4;
+
+var paddingString = CssProperty$Ress.paddingString;
+
+var paddingNumber = CssProperty$Ress.paddingNumber;
+
+var paddingTop = CssProperty$Ress.paddingTop;
+
+var paddingTopString = CssProperty$Ress.paddingTopString;
+
+var paddingTopNumber = CssProperty$Ress.paddingTopNumber;
+
+var paddingRight = CssProperty$Ress.paddingRight;
+
+var paddingRightString = CssProperty$Ress.paddingRightString;
+
+var paddingRightNumber = CssProperty$Ress.paddingRightNumber;
+
+var paddingBottom = CssProperty$Ress.paddingBottom;
+
+var paddingBottomString = CssProperty$Ress.paddingBottomString;
+
+var paddingBottomNumber = CssProperty$Ress.paddingBottomNumber;
+
+var paddingLeft = CssProperty$Ress.paddingLeft;
+
+var paddingLeftString = CssProperty$Ress.paddingLeftString;
+
+var paddingLeftNumber = CssProperty$Ress.paddingLeftNumber;
+
+var clear = CssProperty$Ress.clear;
+
+var color = CssProperty$Ress.color;
+
+var colorString = CssProperty$Ress.colorString;
+
+var cursor = CssProperty$Ress.cursor;
+
+var cursor1 = CssProperty$Ress.cursor1;
+
+var cursor2 = CssProperty$Ress.cursor2;
+
+var cursor3 = CssProperty$Ress.cursor3;
+
+var cursor4 = CssProperty$Ress.cursor4;
+
+var cursorString = CssProperty$Ress.cursorString;
+
 exports.MakeStyle = MakeStyle;
 exports.str = str;
 exports.num = num;
@@ -3226,11 +440,19 @@ exports.dpi = dpi;
 exports.dpcm = dpcm;
 exports.dppx = dppx;
 exports.x = x;
+exports.position2 = position2;
+exports.position3 = position3;
+exports.position4 = position4;
+exports.src = src;
+exports.bgLayer = bgLayer;
+exports.bgSize2 = bgSize2;
 exports.hsl = hsl;
 exports.hsla = hsla;
 exports.rgb = rgb;
 exports.rgba = rgba;
 exports.rgbX = rgbX;
+exports.url = url;
+exports.image = image;
 exports.linearColorStop2 = linearColorStop2;
 exports.linearColorStop3 = linearColorStop3;
 exports.linearGradient = linearGradient;
@@ -3257,14 +479,6 @@ exports.repeatingConicGradient = repeatingConicGradient;
 exports.repeatingConicGradient2 = repeatingConicGradient2;
 exports.repeatingConicGradient3 = repeatingConicGradient3;
 exports.repeatingConicGradient4 = repeatingConicGradient4;
-exports.url = url;
-exports.src = src;
-exports.image = image;
-exports.bgSize2 = bgSize2;
-exports.position2 = position2;
-exports.position3 = position3;
-exports.position4 = position4;
-exports.bgLayer = bgLayer;
 exports.property = property;
 exports.propertyString = propertyString;
 exports.propertyNumber = propertyNumber;
