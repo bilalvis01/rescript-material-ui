@@ -2,18 +2,448 @@
 'use strict';
 
 var Js_dict = require("rescript/lib/js/js_dict.js");
+var Belt_Array = require("rescript/lib/js/belt_Array.js");
 var CssValue$Ress = require("./CssValue.js");
+var FontFace$Ress = require("./FontFace.js");
 var CssFunction$Ress = require("./CssFunction.js");
 var CssProperty$Ress = require("./CssProperty.js");
 
 function MakeStyle(Type) {
-  var style = Js_dict.fromArray;
+  var style = function (rules) {
+    return Js_dict.fromArray(Belt_Array.map(rules, (function (rule) {
+                      switch (rule.TAG | 0) {
+                        case /* Property */0 :
+                            return [
+                                    rule._0,
+                                    rule._1
+                                  ];
+                        case /* BorderTop */2 :
+                            return [
+                                    "borderTop",
+                                    rule._0
+                                  ];
+                        case /* BorderRight */3 :
+                            return [
+                                    "borderRight",
+                                    rule._0
+                                  ];
+                        case /* BorderBottom */4 :
+                            return [
+                                    "borderBottom",
+                                    rule._0
+                                  ];
+                        case /* BorderLeft */5 :
+                            return [
+                                    "borderLeft",
+                                    rule._0
+                                  ];
+                        case /* Border */1 :
+                        case /* BorderStyle */6 :
+                            return [
+                                    "border",
+                                    rule._0
+                                  ];
+                        case /* BorderTopStyle */7 :
+                            return [
+                                    "borderTopStyle",
+                                    rule._0
+                                  ];
+                        case /* BorderRightStyle */8 :
+                            return [
+                                    "borderRightStyle",
+                                    rule._0
+                                  ];
+                        case /* BorderBottomStyle */9 :
+                            return [
+                                    "borderBottomStyle",
+                                    rule._0
+                                  ];
+                        case /* BorderLeftStyle */10 :
+                            return [
+                                    "borderLeftStyle",
+                                    rule._0
+                                  ];
+                        case /* BorderWidth */11 :
+                            return [
+                                    "boderWidth",
+                                    rule._0
+                                  ];
+                        case /* BorderTopWidth */12 :
+                            return [
+                                    "borderTopWidth",
+                                    rule._0
+                                  ];
+                        case /* BorderRightWidth */13 :
+                            return [
+                                    "borderRightWidth",
+                                    rule._0
+                                  ];
+                        case /* BorderBottomWidth */14 :
+                            return [
+                                    "borderBottomWidth",
+                                    rule._0
+                                  ];
+                        case /* BorderLeftWidth */15 :
+                            return [
+                                    "borderLeftWidth",
+                                    rule._0
+                                  ];
+                        case /* BorderColor */16 :
+                            return [
+                                    "borderColor",
+                                    rule._0
+                                  ];
+                        case /* BorderTopColor */17 :
+                            return [
+                                    "borderTopColor",
+                                    rule._0
+                                  ];
+                        case /* BorderRightColor */18 :
+                            return [
+                                    "borderRightColor",
+                                    rule._0
+                                  ];
+                        case /* BorderBottomColor */19 :
+                            return [
+                                    "borderBottomColor",
+                                    rule._0
+                                  ];
+                        case /* BorderLeftColor */20 :
+                            return [
+                                    "borderLeftColor",
+                                    rule._0
+                                  ];
+                        case /* Background */21 :
+                            return [
+                                    "background",
+                                    rule._0
+                                  ];
+                        case /* BackgroundAttachment */22 :
+                            return [
+                                    "backgroundAttachment",
+                                    rule._0
+                                  ];
+                        case /* BackgroundColor */23 :
+                            return [
+                                    "backgroundColor",
+                                    rule._0
+                                  ];
+                        case /* BackgroundImage */24 :
+                            return [
+                                    "backgroundImage",
+                                    rule._0
+                                  ];
+                        case /* BackgroundPosition */25 :
+                            return [
+                                    "backgroundPosition",
+                                    rule._0
+                                  ];
+                        case /* BackgroundStyle */26 :
+                            return [
+                                    "backgroundStyle",
+                                    rule._0
+                                  ];
+                        case /* Margin */27 :
+                            return [
+                                    "margin",
+                                    rule._0
+                                  ];
+                        case /* MarginTop */28 :
+                            return [
+                                    "marginTop",
+                                    rule._0
+                                  ];
+                        case /* MarginRight */29 :
+                            return [
+                                    "marginRight",
+                                    rule._0
+                                  ];
+                        case /* MarginBottom */30 :
+                            return [
+                                    "marginBottom",
+                                    rule._0
+                                  ];
+                        case /* MarginLeft */31 :
+                            return [
+                                    "marginLeft",
+                                    rule._0
+                                  ];
+                        case /* Padding */32 :
+                            return [
+                                    "padding",
+                                    rule._0
+                                  ];
+                        case /* PaddingTop */33 :
+                            return [
+                                    "paddingTop",
+                                    rule._0
+                                  ];
+                        case /* PaddingBottom */34 :
+                            return [
+                                    "paddingBottom",
+                                    rule._0
+                                  ];
+                        case /* PaddingRight */35 :
+                            return [
+                                    "paddingRight",
+                                    rule._0
+                                  ];
+                        case /* PaddingLeft */36 :
+                            return [
+                                    "paddingLeft",
+                                    rule._0
+                                  ];
+                        case /* Color */37 :
+                            return [
+                                    "color",
+                                    rule._0
+                                  ];
+                        case /* Clear */38 :
+                            return [
+                                    "clear",
+                                    rule._0
+                                  ];
+                        case /* Cursor */39 :
+                            return [
+                                    "cursor",
+                                    rule._0
+                                  ];
+                        case /* FontFace */40 :
+                            return [
+                                    "@font-face",
+                                    rule._0
+                                  ];
+                        
+                      }
+                    })));
+  };
+  var fontFace = function (descriptors) {
+    return {
+            TAG: /* FontFace */40,
+            _0: FontFace$Ress.make(descriptors)
+          };
+  };
   return {
-          style: style
+          style: style,
+          fontFace: fontFace
         };
 }
 
-var style = Js_dict.fromArray;
+function style(rules) {
+  return Js_dict.fromArray(Belt_Array.map(rules, (function (rule) {
+                    switch (rule.TAG | 0) {
+                      case /* Property */0 :
+                          return [
+                                  rule._0,
+                                  rule._1
+                                ];
+                      case /* BorderTop */2 :
+                          return [
+                                  "borderTop",
+                                  rule._0
+                                ];
+                      case /* BorderRight */3 :
+                          return [
+                                  "borderRight",
+                                  rule._0
+                                ];
+                      case /* BorderBottom */4 :
+                          return [
+                                  "borderBottom",
+                                  rule._0
+                                ];
+                      case /* BorderLeft */5 :
+                          return [
+                                  "borderLeft",
+                                  rule._0
+                                ];
+                      case /* Border */1 :
+                      case /* BorderStyle */6 :
+                          return [
+                                  "border",
+                                  rule._0
+                                ];
+                      case /* BorderTopStyle */7 :
+                          return [
+                                  "borderTopStyle",
+                                  rule._0
+                                ];
+                      case /* BorderRightStyle */8 :
+                          return [
+                                  "borderRightStyle",
+                                  rule._0
+                                ];
+                      case /* BorderBottomStyle */9 :
+                          return [
+                                  "borderBottomStyle",
+                                  rule._0
+                                ];
+                      case /* BorderLeftStyle */10 :
+                          return [
+                                  "borderLeftStyle",
+                                  rule._0
+                                ];
+                      case /* BorderWidth */11 :
+                          return [
+                                  "boderWidth",
+                                  rule._0
+                                ];
+                      case /* BorderTopWidth */12 :
+                          return [
+                                  "borderTopWidth",
+                                  rule._0
+                                ];
+                      case /* BorderRightWidth */13 :
+                          return [
+                                  "borderRightWidth",
+                                  rule._0
+                                ];
+                      case /* BorderBottomWidth */14 :
+                          return [
+                                  "borderBottomWidth",
+                                  rule._0
+                                ];
+                      case /* BorderLeftWidth */15 :
+                          return [
+                                  "borderLeftWidth",
+                                  rule._0
+                                ];
+                      case /* BorderColor */16 :
+                          return [
+                                  "borderColor",
+                                  rule._0
+                                ];
+                      case /* BorderTopColor */17 :
+                          return [
+                                  "borderTopColor",
+                                  rule._0
+                                ];
+                      case /* BorderRightColor */18 :
+                          return [
+                                  "borderRightColor",
+                                  rule._0
+                                ];
+                      case /* BorderBottomColor */19 :
+                          return [
+                                  "borderBottomColor",
+                                  rule._0
+                                ];
+                      case /* BorderLeftColor */20 :
+                          return [
+                                  "borderLeftColor",
+                                  rule._0
+                                ];
+                      case /* Background */21 :
+                          return [
+                                  "background",
+                                  rule._0
+                                ];
+                      case /* BackgroundAttachment */22 :
+                          return [
+                                  "backgroundAttachment",
+                                  rule._0
+                                ];
+                      case /* BackgroundColor */23 :
+                          return [
+                                  "backgroundColor",
+                                  rule._0
+                                ];
+                      case /* BackgroundImage */24 :
+                          return [
+                                  "backgroundImage",
+                                  rule._0
+                                ];
+                      case /* BackgroundPosition */25 :
+                          return [
+                                  "backgroundPosition",
+                                  rule._0
+                                ];
+                      case /* BackgroundStyle */26 :
+                          return [
+                                  "backgroundStyle",
+                                  rule._0
+                                ];
+                      case /* Margin */27 :
+                          return [
+                                  "margin",
+                                  rule._0
+                                ];
+                      case /* MarginTop */28 :
+                          return [
+                                  "marginTop",
+                                  rule._0
+                                ];
+                      case /* MarginRight */29 :
+                          return [
+                                  "marginRight",
+                                  rule._0
+                                ];
+                      case /* MarginBottom */30 :
+                          return [
+                                  "marginBottom",
+                                  rule._0
+                                ];
+                      case /* MarginLeft */31 :
+                          return [
+                                  "marginLeft",
+                                  rule._0
+                                ];
+                      case /* Padding */32 :
+                          return [
+                                  "padding",
+                                  rule._0
+                                ];
+                      case /* PaddingTop */33 :
+                          return [
+                                  "paddingTop",
+                                  rule._0
+                                ];
+                      case /* PaddingBottom */34 :
+                          return [
+                                  "paddingBottom",
+                                  rule._0
+                                ];
+                      case /* PaddingRight */35 :
+                          return [
+                                  "paddingRight",
+                                  rule._0
+                                ];
+                      case /* PaddingLeft */36 :
+                          return [
+                                  "paddingLeft",
+                                  rule._0
+                                ];
+                      case /* Color */37 :
+                          return [
+                                  "color",
+                                  rule._0
+                                ];
+                      case /* Clear */38 :
+                          return [
+                                  "clear",
+                                  rule._0
+                                ];
+                      case /* Cursor */39 :
+                          return [
+                                  "cursor",
+                                  rule._0
+                                ];
+                      case /* FontFace */40 :
+                          return [
+                                  "@font-face",
+                                  rule._0
+                                ];
+                      
+                    }
+                  })));
+}
+
+function fontFace(descriptors) {
+  return {
+          TAG: /* FontFace */40,
+          _0: FontFace$Ress.make(descriptors)
+        };
+}
 
 var PropertyValue;
 
@@ -160,8 +590,6 @@ var repeatingConicGradient3 = CssFunction$Ress.repeatingConicGradient3;
 var repeatingConicGradient4 = CssFunction$Ress.repeatingConicGradient4;
 
 var property = CssProperty$Ress.property;
-
-var propertyString = CssProperty$Ress.propertyString;
 
 var propertyNumber = CssProperty$Ress.propertyNumber;
 
@@ -483,7 +911,6 @@ exports.repeatingConicGradient2 = repeatingConicGradient2;
 exports.repeatingConicGradient3 = repeatingConicGradient3;
 exports.repeatingConicGradient4 = repeatingConicGradient4;
 exports.property = property;
-exports.propertyString = propertyString;
 exports.propertyNumber = propertyNumber;
 exports.propertyInteger = propertyInteger;
 exports.border = border;
@@ -608,4 +1035,5 @@ exports.cursor3 = cursor3;
 exports.cursor4 = cursor4;
 exports.cursorString = cursorString;
 exports.style = style;
+exports.fontFace = fontFace;
 /* No side effect */

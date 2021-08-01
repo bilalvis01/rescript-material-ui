@@ -4,882 +4,877 @@
 var CssPropertyValue$Ress = require("./CssPropertyValue.js");
 
 function property(name, value) {
-  return [
-          name,
-          value
-        ];
-}
-
-function propertyString(name, value) {
-  return [
-          name,
-          value
-        ];
+  return {
+          TAG: /* Property */0,
+          _0: name,
+          _1: value
+        };
 }
 
 function propertyNumber(name, value) {
-  return [
-          name,
-          value
-        ];
+  return {
+          TAG: /* Property */0,
+          _0: name,
+          _1: value
+        };
 }
 
 function propertyInteger(name, value) {
-  return [
-          name,
-          value
-        ];
+  return {
+          TAG: /* Property */0,
+          _0: name,
+          _1: value
+        };
 }
 
 function border(width, color, style) {
-  return [
-          "border",
-          CssPropertyValue$Ress.border(width, color, style)
-        ];
+  return {
+          TAG: /* Border */1,
+          _0: CssPropertyValue$Ress.border(width, color, style)
+        };
 }
 
 function borderString(v) {
-  return [
-          "border",
-          v
-        ];
+  return {
+          TAG: /* Border */1,
+          _0: v
+        };
 }
 
 function borderTop(width, color, style) {
-  return [
-          "borderTop",
-          CssPropertyValue$Ress.border(width, color, style)
-        ];
+  return {
+          TAG: /* BorderTop */2,
+          _0: CssPropertyValue$Ress.border(width, color, style)
+        };
 }
 
 function borderTopString(v) {
-  return [
-          "borderTop",
-          v
-        ];
+  return {
+          TAG: /* BorderTop */2,
+          _0: v
+        };
 }
 
 function borderLeft(width, color, style) {
-  return [
-          "borderLeft",
-          CssPropertyValue$Ress.border(width, color, style)
-        ];
+  return {
+          TAG: /* BorderLeft */5,
+          _0: CssPropertyValue$Ress.border(width, color, style)
+        };
 }
 
 function borderLeftString(v) {
-  return [
-          "borderLeft",
-          v
-        ];
+  return {
+          TAG: /* BorderLeft */5,
+          _0: v
+        };
 }
 
 function borderRight(width, color, style) {
-  return [
-          "borderRight",
-          CssPropertyValue$Ress.border(width, color, style)
-        ];
+  return {
+          TAG: /* BorderRight */3,
+          _0: CssPropertyValue$Ress.border(width, color, style)
+        };
 }
 
 function borderRightString(v) {
-  return [
-          "borderRight",
-          v
-        ];
+  return {
+          TAG: /* BorderRight */3,
+          _0: v
+        };
 }
 
 function borderBottom(width, color, style) {
-  return [
-          "borderBottom",
-          CssPropertyValue$Ress.border(width, color, style)
-        ];
+  return {
+          TAG: /* BorderBottom */4,
+          _0: CssPropertyValue$Ress.border(width, color, style)
+        };
 }
 
 function borderBottomString(v) {
-  return [
-          "borderBottom",
-          v
-        ];
+  return {
+          TAG: /* BorderBottom */4,
+          _0: v
+        };
 }
 
 function borderColor(v) {
-  return [
-          "borderColor",
-          CssPropertyValue$Ress.borderColor(v)
-        ];
+  return {
+          TAG: /* BorderColor */16,
+          _0: CssPropertyValue$Ress.borderColor(v)
+        };
 }
 
 function borderColor2(tb, lr) {
-  return [
-          "borderColor",
-          CssPropertyValue$Ress.borderColor2(tb, lr)
-        ];
+  return {
+          TAG: /* BorderColor */16,
+          _0: CssPropertyValue$Ress.borderColor2(tb, lr)
+        };
 }
 
 function borderColor3(top, lr, bottom) {
-  return [
-          "borderColor",
-          CssPropertyValue$Ress.borderColor3(top, lr, bottom)
-        ];
+  return {
+          TAG: /* BorderColor */16,
+          _0: CssPropertyValue$Ress.borderColor3(top, lr, bottom)
+        };
 }
 
 function borderColor4(top, right, bottom, left) {
-  return [
-          "borderColor",
-          CssPropertyValue$Ress.borderColor4(top, right, bottom, left)
-        ];
+  return {
+          TAG: /* BorderColor */16,
+          _0: CssPropertyValue$Ress.borderColor4(top, right, bottom, left)
+        };
 }
 
 function borderColorString(v) {
-  return [
-          "borderColor",
-          v
-        ];
+  return {
+          TAG: /* BorderColor */16,
+          _0: v
+        };
 }
 
 function borderTopColor(v) {
-  return [
-          "borderTopColor",
-          CssPropertyValue$Ress.borderTopColor(v)
-        ];
+  return {
+          TAG: /* BorderTopColor */17,
+          _0: CssPropertyValue$Ress.borderTopColor(v)
+        };
 }
 
 function borderTopColorString(v) {
-  return [
-          "borderTopColor",
-          v
-        ];
+  return {
+          TAG: /* BorderTopColor */17,
+          _0: v
+        };
 }
 
 function borderRightColor(v) {
-  return [
-          "borderRightColor",
-          CssPropertyValue$Ress.borderRightColor(v)
-        ];
+  return {
+          TAG: /* BorderRightColor */18,
+          _0: CssPropertyValue$Ress.borderRightColor(v)
+        };
 }
 
 function borderRightColorString(v) {
-  return [
-          "borderRightColor",
-          v
-        ];
+  return {
+          TAG: /* BorderRightColor */18,
+          _0: v
+        };
 }
 
 function borderBottomColor(v) {
-  return [
-          "borderBottomColor",
-          CssPropertyValue$Ress.borderBottomColor(v)
-        ];
+  return {
+          TAG: /* BorderBottomColor */19,
+          _0: CssPropertyValue$Ress.borderBottomColor(v)
+        };
 }
 
 function borderBottomColorString(v) {
-  return [
-          "borderBottomColor",
-          v
-        ];
+  return {
+          TAG: /* BorderBottomColor */19,
+          _0: v
+        };
 }
 
 function borderLeftColor(v) {
-  return [
-          "borderLeftColor",
-          CssPropertyValue$Ress.borderLeftColor(v)
-        ];
+  return {
+          TAG: /* BorderLeftColor */20,
+          _0: CssPropertyValue$Ress.borderLeftColor(v)
+        };
 }
 
 function borderLeftColorString(v) {
-  return [
-          "borderLeftColor",
-          v
-        ];
+  return {
+          TAG: /* BorderLeftColor */20,
+          _0: v
+        };
 }
 
 function borderStyle(v) {
-  return [
-          "borderStyle",
-          CssPropertyValue$Ress.borderStyle(v)
-        ];
+  return {
+          TAG: /* BorderStyle */6,
+          _0: CssPropertyValue$Ress.borderStyle(v)
+        };
 }
 
 function borderStyle2(tb, lr) {
-  return [
-          "borderStyle",
-          CssPropertyValue$Ress.borderStyle2(tb, lr)
-        ];
+  return {
+          TAG: /* BorderStyle */6,
+          _0: CssPropertyValue$Ress.borderStyle2(tb, lr)
+        };
 }
 
 function borderStyle3(top, lr, bottom) {
-  return [
-          "borderStyle",
-          CssPropertyValue$Ress.borderStyle3(top, lr, bottom)
-        ];
+  return {
+          TAG: /* BorderStyle */6,
+          _0: CssPropertyValue$Ress.borderStyle3(top, lr, bottom)
+        };
 }
 
 function borderStyle4(top, right, bottom, left) {
-  return [
-          "borderStyle",
-          CssPropertyValue$Ress.borderStyle4(top, right, bottom, left)
-        ];
+  return {
+          TAG: /* BorderStyle */6,
+          _0: CssPropertyValue$Ress.borderStyle4(top, right, bottom, left)
+        };
 }
 
 function borderStyleString(v) {
-  return [
-          "borderStyle",
-          v
-        ];
+  return {
+          TAG: /* BorderStyle */6,
+          _0: v
+        };
 }
 
 function borderTopStyle(v) {
-  return [
-          "borderTopStyle",
-          CssPropertyValue$Ress.borderStyle(v)
-        ];
+  return {
+          TAG: /* BorderTopStyle */7,
+          _0: CssPropertyValue$Ress.borderTopStyle(v)
+        };
 }
 
 function borderTopStyleString(v) {
-  return [
-          "borderTopStyle",
-          v
-        ];
+  return {
+          TAG: /* BorderTopStyle */7,
+          _0: v
+        };
 }
 
 function borderRightStyle(v) {
-  return [
-          "borderRightStyle",
-          CssPropertyValue$Ress.borderStyle(v)
-        ];
+  return {
+          TAG: /* BorderRightStyle */8,
+          _0: CssPropertyValue$Ress.borderRightStyle(v)
+        };
 }
 
 function borderRightStyleString(v) {
-  return [
-          "borderRightStyle",
-          v
-        ];
+  return {
+          TAG: /* BorderRightStyle */8,
+          _0: v
+        };
 }
 
 function borderBottomStyle(v) {
-  return [
-          "borderBottomStyle",
-          CssPropertyValue$Ress.borderStyle(v)
-        ];
+  return {
+          TAG: /* BorderBottomStyle */9,
+          _0: CssPropertyValue$Ress.borderBottomStyle(v)
+        };
 }
 
 function borderBottomStyleString(v) {
-  return [
-          "borderBottomStyle",
-          v
-        ];
+  return {
+          TAG: /* BorderBottomStyle */9,
+          _0: v
+        };
 }
 
 function borderLeftStyle(v) {
-  return [
-          "borderLeftStyle",
-          CssPropertyValue$Ress.borderStyle(v)
-        ];
+  return {
+          TAG: /* BorderLeftStyle */10,
+          _0: CssPropertyValue$Ress.borderLeftStyle(v)
+        };
 }
 
 function borderLeftStyleString(v) {
-  return [
-          "borderLeftStyle",
-          v
-        ];
+  return {
+          TAG: /* BorderLeftStyle */10,
+          _0: v
+        };
 }
 
 function borderWidth(v) {
-  return [
-          "borderWidth",
-          CssPropertyValue$Ress.borderWidth(v)
-        ];
+  return {
+          TAG: /* BorderWidth */11,
+          _0: CssPropertyValue$Ress.borderWidth(v)
+        };
 }
 
 function borderWidth2(tb, lr) {
-  return [
-          "borderWidth",
-          CssPropertyValue$Ress.borderWidth2(tb, lr)
-        ];
+  return {
+          TAG: /* BorderWidth */11,
+          _0: CssPropertyValue$Ress.borderWidth2(tb, lr)
+        };
 }
 
 function borderWidth3(top, lr, bottom) {
-  return [
-          "borderWidth",
-          CssPropertyValue$Ress.borderWidth3(top, lr, bottom)
-        ];
+  return {
+          TAG: /* BorderWidth */11,
+          _0: CssPropertyValue$Ress.borderWidth3(top, lr, bottom)
+        };
 }
 
 function borderWidth4(top, right, bottom, left) {
-  return [
-          "borderWidth",
-          CssPropertyValue$Ress.borderWidth4(top, right, bottom, left)
-        ];
+  return {
+          TAG: /* BorderWidth */11,
+          _0: CssPropertyValue$Ress.borderWidth4(top, right, bottom, left)
+        };
 }
 
 function borderWidthString(v) {
-  return [
-          "borderWidth",
-          v
-        ];
+  return {
+          TAG: /* BorderWidth */11,
+          _0: v
+        };
 }
 
 function borderTopWidth(v) {
-  return [
-          "borderTopWidth",
-          CssPropertyValue$Ress.borderTopWidth(v)
-        ];
+  return {
+          TAG: /* BorderTopWidth */12,
+          _0: CssPropertyValue$Ress.borderTopWidth(v)
+        };
 }
 
 function borderTopWidthString(v) {
-  return [
-          "borderTopWidth",
-          v
-        ];
+  return {
+          TAG: /* BorderTopWidth */12,
+          _0: v
+        };
 }
 
 function borderRightWidth(v) {
-  return [
-          "borderRightWidth",
-          CssPropertyValue$Ress.borderRightWidth(v)
-        ];
+  return {
+          TAG: /* BorderRightWidth */13,
+          _0: CssPropertyValue$Ress.borderRightWidth(v)
+        };
 }
 
 function borderRightWidthString(v) {
-  return [
-          "borderRightWidth",
-          v
-        ];
+  return {
+          TAG: /* BorderRightWidth */13,
+          _0: v
+        };
 }
 
 function borderBottomWidth(v) {
-  return [
-          "borderBottomWidth",
-          CssPropertyValue$Ress.borderBottomWidth(v)
-        ];
+  return {
+          TAG: /* BorderBottomWidth */14,
+          _0: CssPropertyValue$Ress.borderBottomWidth(v)
+        };
 }
 
 function borderBottomWidthString(v) {
-  return [
-          "borderBottomWidth",
-          v
-        ];
+  return {
+          TAG: /* BorderBottomWidth */14,
+          _0: v
+        };
 }
 
 function borderLeftWidth(v) {
-  return [
-          "borderLeftWidth",
-          CssPropertyValue$Ress.borderLeftWidth(v)
-        ];
+  return {
+          TAG: /* BorderLeftWidth */15,
+          _0: CssPropertyValue$Ress.borderLeftWidth(v)
+        };
 }
 
 function borderLeftWidthString(v) {
-  return [
-          "borderLeftWidth",
-          v
-        ];
+  return {
+          TAG: /* BorderLeftWidth */15,
+          _0: v
+        };
 }
 
 function background(color, position, size, repeat, attachment, origin, clip, imageOrColor) {
-  return [
-          "background",
-          CssPropertyValue$Ress.background(color, position, size, repeat, attachment, origin, clip, imageOrColor)
-        ];
+  return {
+          TAG: /* Background */21,
+          _0: CssPropertyValue$Ress.background(color, position, size, repeat, attachment, origin, clip, imageOrColor)
+        };
 }
 
 function background2(l1, l2) {
-  return [
-          "background",
-          CssPropertyValue$Ress.background2(l1, l2)
-        ];
+  return {
+          TAG: /* Background */21,
+          _0: CssPropertyValue$Ress.background2(l1, l2)
+        };
 }
 
 function background3(l1, l2, l3) {
-  return [
-          "background",
-          CssPropertyValue$Ress.background3(l1, l2, l3)
-        ];
+  return {
+          TAG: /* Background */21,
+          _0: CssPropertyValue$Ress.background3(l1, l2, l3)
+        };
 }
 
 function background4(l1, l2, l3, l4) {
-  return [
-          "background",
-          CssPropertyValue$Ress.background4(l1, l2, l3, l4)
-        ];
+  return {
+          TAG: /* Background */21,
+          _0: CssPropertyValue$Ress.background4(l1, l2, l3, l4)
+        };
 }
 
 function backgroundString(v) {
-  return [
-          "background",
-          v
-        ];
+  return {
+          TAG: /* Background */21,
+          _0: v
+        };
 }
 
 function backgroundAttachment(v) {
-  return [
-          "backgroundAttachment",
-          CssPropertyValue$Ress.backgroundAttachment(v)
-        ];
+  return {
+          TAG: /* BackgroundAttachment */22,
+          _0: CssPropertyValue$Ress.backgroundAttachment(v)
+        };
 }
 
 function backgroundAttachment2(v1, v2) {
-  return [
-          "backgroundAttachment",
-          CssPropertyValue$Ress.backgroundAttachment2(v1, v2)
-        ];
+  return {
+          TAG: /* BackgroundAttachment */22,
+          _0: CssPropertyValue$Ress.backgroundAttachment2(v1, v2)
+        };
 }
 
 function backgroundAttachment3(v1, v2, v3) {
-  return [
-          "backgroundAttachment",
-          CssPropertyValue$Ress.backgroundAttachment3(v1, v2, v3)
-        ];
+  return {
+          TAG: /* BackgroundAttachment */22,
+          _0: CssPropertyValue$Ress.backgroundAttachment3(v1, v2, v3)
+        };
 }
 
 function backgroundAttachment4(v1, v2, v3, v4) {
-  return [
-          "backgroundAttachment",
-          CssPropertyValue$Ress.backgroundAttachment4(v1, v2, v3, v4)
-        ];
+  return {
+          TAG: /* BackgroundAttachment */22,
+          _0: CssPropertyValue$Ress.backgroundAttachment4(v1, v2, v3, v4)
+        };
 }
 
 function backgroundAttachmentString(v) {
-  return [
-          "backgroundAttachment",
-          v
-        ];
+  return {
+          TAG: /* BackgroundAttachment */22,
+          _0: v
+        };
 }
 
 function backgroundColor(v) {
-  return [
-          "backgroundColor",
-          CssPropertyValue$Ress.backgroundColor(v)
-        ];
+  return {
+          TAG: /* BackgroundColor */23,
+          _0: CssPropertyValue$Ress.backgroundColor(v)
+        };
 }
 
 function backgroundColorString(v) {
-  return [
-          "backgroundColor",
-          v
-        ];
+  return {
+          TAG: /* BackgroundColor */23,
+          _0: v
+        };
 }
 
 function backgroundImage(v) {
-  return [
-          "backgroundImage",
-          CssPropertyValue$Ress.backgroundImage(v)
-        ];
+  return {
+          TAG: /* BackgroundImage */24,
+          _0: CssPropertyValue$Ress.backgroundImage(v)
+        };
 }
 
 function backgroundImage2(v1, v2) {
-  return [
-          "backgroundImage",
-          CssPropertyValue$Ress.backgroundImage2(v1, v2)
-        ];
+  return {
+          TAG: /* BackgroundImage */24,
+          _0: CssPropertyValue$Ress.backgroundImage2(v1, v2)
+        };
 }
 
 function backgroundImage3(v1, v2, v3) {
-  return [
-          "backgroundImage",
-          CssPropertyValue$Ress.backgroundImage3(v1, v2, v3)
-        ];
+  return {
+          TAG: /* BackgroundImage */24,
+          _0: CssPropertyValue$Ress.backgroundImage3(v1, v2, v3)
+        };
 }
 
 function backgroundImage4(v1, v2, v3, v4) {
-  return [
-          "backgroundImage",
-          CssPropertyValue$Ress.backgroundImage4(v1, v2, v3, v4)
-        ];
+  return {
+          TAG: /* BackgroundImage */24,
+          _0: CssPropertyValue$Ress.backgroundImage4(v1, v2, v3, v4)
+        };
 }
 
 function backgroundImageString(v) {
-  return [
-          "backgroundImage",
-          v
-        ];
+  return {
+          TAG: /* BackgroundImage */24,
+          _0: v
+        };
 }
 
 function backgroundPosition(v) {
-  return [
-          "backgroundPosition",
-          CssPropertyValue$Ress.backgroundPosition(v)
-        ];
+  return {
+          TAG: /* BackgroundPosition */25,
+          _0: CssPropertyValue$Ress.backgroundPosition(v)
+        };
 }
 
 function backgroundPosition2(v1, v2) {
-  return [
-          "backgroundPosition",
-          CssPropertyValue$Ress.backgroundPosition2(v1, v2)
-        ];
+  return {
+          TAG: /* BackgroundPosition */25,
+          _0: CssPropertyValue$Ress.backgroundPosition2(v1, v2)
+        };
 }
 
 function backgroundPosition3(v1, v2, v3) {
-  return [
-          "backgroundPosition",
-          CssPropertyValue$Ress.backgroundPosition3(v1, v2, v3)
-        ];
+  return {
+          TAG: /* BackgroundPosition */25,
+          _0: CssPropertyValue$Ress.backgroundPosition3(v1, v2, v3)
+        };
 }
 
 function backgroundPosition4(v1, v2, v3, v4) {
-  return [
-          "backgroundPosition",
-          CssPropertyValue$Ress.backgroundPosition4(v1, v2, v3, v4)
-        ];
+  return {
+          TAG: /* BackgroundPosition */25,
+          _0: CssPropertyValue$Ress.backgroundPosition4(v1, v2, v3, v4)
+        };
 }
 
 function backgroundPositionString(v) {
-  return [
-          "backgroundPosition",
-          v
-        ];
+  return {
+          TAG: /* BackgroundPosition */25,
+          _0: v
+        };
 }
 
 function backgroundStyle(v) {
-  return [
-          "backgroundStyle",
-          CssPropertyValue$Ress.backgroundStyle(v)
-        ];
+  return {
+          TAG: /* BackgroundStyle */26,
+          _0: CssPropertyValue$Ress.backgroundStyle(v)
+        };
 }
 
 function backgroundStyle2(v1, v2) {
-  return [
-          "backgroundStyle",
-          CssPropertyValue$Ress.backgroundStyle2(v1, v2)
-        ];
+  return {
+          TAG: /* BackgroundStyle */26,
+          _0: CssPropertyValue$Ress.backgroundStyle2(v1, v2)
+        };
 }
 
 function backgroundStyle3(v1, v2, v3) {
-  return [
-          "backgroundStyle",
-          CssPropertyValue$Ress.backgroundStyle3(v1, v2, v3)
-        ];
+  return {
+          TAG: /* BackgroundStyle */26,
+          _0: CssPropertyValue$Ress.backgroundStyle3(v1, v2, v3)
+        };
 }
 
 function backgroundStyle4(v1, v2, v3, v4) {
-  return [
-          "backgroundStyle",
-          CssPropertyValue$Ress.backgroundStyle4(v1, v2, v3, v4)
-        ];
+  return {
+          TAG: /* BackgroundStyle */26,
+          _0: CssPropertyValue$Ress.backgroundStyle4(v1, v2, v3, v4)
+        };
 }
 
 function backgroundStyleString(v) {
-  return [
-          "backgroundStyle",
-          v
-        ];
+  return {
+          TAG: /* BackgroundStyle */26,
+          _0: v
+        };
 }
 
 function margin(v) {
-  return [
-          "margin",
-          CssPropertyValue$Ress.margin(v)
-        ];
+  return {
+          TAG: /* Margin */27,
+          _0: CssPropertyValue$Ress.margin(v)
+        };
 }
 
 function margin2(tb, lr) {
-  return [
-          "margin",
-          CssPropertyValue$Ress.margin2(tb, lr)
-        ];
+  return {
+          TAG: /* Margin */27,
+          _0: CssPropertyValue$Ress.margin2(tb, lr)
+        };
 }
 
 function margin3(top, lr, bottom) {
-  return [
-          "margin",
-          CssPropertyValue$Ress.margin3(top, lr, bottom)
-        ];
+  return {
+          TAG: /* Margin */27,
+          _0: CssPropertyValue$Ress.margin3(top, lr, bottom)
+        };
 }
 
 function margin4(top, right, bottom, left) {
-  return [
-          "margin",
-          CssPropertyValue$Ress.margin4(top, right, bottom, left)
-        ];
+  return {
+          TAG: /* Margin */27,
+          _0: CssPropertyValue$Ress.margin4(top, right, bottom, left)
+        };
 }
 
 function marginString(v) {
-  return [
-          "margin",
-          v
-        ];
+  return {
+          TAG: /* Margin */27,
+          _0: v
+        };
 }
 
 function marginNumber(v) {
-  return [
-          "margin",
-          v
-        ];
+  return {
+          TAG: /* Margin */27,
+          _0: v
+        };
 }
 
 function marginTop(v) {
-  return [
-          "marginTop",
-          CssPropertyValue$Ress.marginTop(v)
-        ];
+  return {
+          TAG: /* MarginTop */28,
+          _0: CssPropertyValue$Ress.marginTop(v)
+        };
 }
 
 function marginTopString(v) {
-  return [
-          "marginTop",
-          v
-        ];
+  return {
+          TAG: /* MarginTop */28,
+          _0: v
+        };
 }
 
 function marginTopNumber(v) {
-  return [
-          "marginTop",
-          v
-        ];
+  return {
+          TAG: /* MarginTop */28,
+          _0: v
+        };
 }
 
 function marginRight(v) {
-  return [
-          "marginRight",
-          CssPropertyValue$Ress.marginRight(v)
-        ];
+  return {
+          TAG: /* MarginRight */29,
+          _0: CssPropertyValue$Ress.marginRight(v)
+        };
 }
 
 function marginRightString(v) {
-  return [
-          "marginRight",
-          v
-        ];
+  return {
+          TAG: /* MarginRight */29,
+          _0: v
+        };
 }
 
 function marginRightNumber(v) {
-  return [
-          "marginRight",
-          v
-        ];
+  return {
+          TAG: /* MarginRight */29,
+          _0: v
+        };
 }
 
 function marginBottom(v) {
-  return [
-          "marginBottom",
-          CssPropertyValue$Ress.marginBottom(v)
-        ];
+  return {
+          TAG: /* MarginBottom */30,
+          _0: CssPropertyValue$Ress.marginBottom(v)
+        };
 }
 
 function marginBottomString(v) {
-  return [
-          "marginBottom",
-          v
-        ];
+  return {
+          TAG: /* MarginBottom */30,
+          _0: v
+        };
 }
 
 function marginBottomNumber(v) {
-  return [
-          "marginBottom",
-          v
-        ];
+  return {
+          TAG: /* MarginBottom */30,
+          _0: v
+        };
 }
 
 function marginLeft(v) {
-  return [
-          "marginLeft",
-          CssPropertyValue$Ress.marginLeft(v)
-        ];
+  return {
+          TAG: /* MarginLeft */31,
+          _0: CssPropertyValue$Ress.marginLeft(v)
+        };
 }
 
 function marginLeftString(v) {
-  return [
-          "marginLeft",
-          v
-        ];
+  return {
+          TAG: /* MarginLeft */31,
+          _0: v
+        };
 }
 
 function marginLeftNumber(v) {
-  return [
-          "marginLeft",
-          v
-        ];
+  return {
+          TAG: /* MarginLeft */31,
+          _0: v
+        };
 }
 
 function padding(v) {
-  return [
-          "padding",
-          CssPropertyValue$Ress.padding(v)
-        ];
+  return {
+          TAG: /* Padding */32,
+          _0: CssPropertyValue$Ress.padding(v)
+        };
 }
 
 function padding2(tb, lr) {
-  return [
-          "padding",
-          CssPropertyValue$Ress.padding2(tb, lr)
-        ];
+  return {
+          TAG: /* Padding */32,
+          _0: CssPropertyValue$Ress.padding2(tb, lr)
+        };
 }
 
 function padding3(top, lr, bottom) {
-  return [
-          "padding",
-          CssPropertyValue$Ress.padding3(top, lr, bottom)
-        ];
+  return {
+          TAG: /* Padding */32,
+          _0: CssPropertyValue$Ress.padding3(top, lr, bottom)
+        };
 }
 
 function padding4(top, right, bottom, left) {
-  return [
-          "padding",
-          CssPropertyValue$Ress.padding4(top, right, bottom, left)
-        ];
+  return {
+          TAG: /* Padding */32,
+          _0: CssPropertyValue$Ress.padding4(top, right, bottom, left)
+        };
 }
 
 function paddingString(v) {
-  return [
-          "padding",
-          v
-        ];
+  return {
+          TAG: /* Padding */32,
+          _0: v
+        };
 }
 
 function paddingNumber(v) {
-  return [
-          "padding",
-          v
-        ];
+  return {
+          TAG: /* Padding */32,
+          _0: v
+        };
 }
 
 function paddingTop(v) {
-  return [
-          "paddingTop",
-          CssPropertyValue$Ress.paddingTop(v)
-        ];
+  return {
+          TAG: /* PaddingTop */33,
+          _0: CssPropertyValue$Ress.paddingTop(v)
+        };
 }
 
 function paddingTopString(v) {
-  return [
-          "paddingTop",
-          v
-        ];
+  return {
+          TAG: /* PaddingTop */33,
+          _0: v
+        };
 }
 
 function paddingTopNumber(v) {
-  return [
-          "paddingTop",
-          v
-        ];
+  return {
+          TAG: /* PaddingTop */33,
+          _0: v
+        };
 }
 
 function paddingRight(v) {
-  return [
-          "paddingRight",
-          CssPropertyValue$Ress.paddingRight(v)
-        ];
+  return {
+          TAG: /* PaddingRight */35,
+          _0: CssPropertyValue$Ress.paddingRight(v)
+        };
 }
 
 function paddingRightString(v) {
-  return [
-          "paddingRight",
-          v
-        ];
+  return {
+          TAG: /* PaddingRight */35,
+          _0: v
+        };
 }
 
 function paddingRightNumber(v) {
-  return [
-          "paddingRight",
-          v
-        ];
+  return {
+          TAG: /* PaddingRight */35,
+          _0: v
+        };
 }
 
 function paddingBottom(v) {
-  return [
-          "paddingBottom",
-          CssPropertyValue$Ress.paddingBottom(v)
-        ];
+  return {
+          TAG: /* PaddingBottom */34,
+          _0: CssPropertyValue$Ress.paddingBottom(v)
+        };
 }
 
 function paddingBottomString(v) {
-  return [
-          "paddingBottom",
-          v
-        ];
+  return {
+          TAG: /* PaddingBottom */34,
+          _0: v
+        };
 }
 
 function paddingBottomNumber(v) {
-  return [
-          "paddingBottom",
-          v
-        ];
+  return {
+          TAG: /* PaddingBottom */34,
+          _0: v
+        };
 }
 
 function paddingLeft(v) {
-  return [
-          "paddingLeft",
-          CssPropertyValue$Ress.paddingLeft(v)
-        ];
+  return {
+          TAG: /* PaddingLeft */36,
+          _0: CssPropertyValue$Ress.paddingLeft(v)
+        };
 }
 
 function paddingLeftString(v) {
-  return [
-          "paddingLeft",
-          v
-        ];
+  return {
+          TAG: /* PaddingLeft */36,
+          _0: v
+        };
 }
 
 function paddingLeftNumber(v) {
-  return [
-          "paddingLeft",
-          v
-        ];
+  return {
+          TAG: /* PaddingLeft */36,
+          _0: v
+        };
 }
 
 function clear(v) {
-  return [
-          "clear",
-          CssPropertyValue$Ress.clear(v)
-        ];
+  return {
+          TAG: /* Clear */38,
+          _0: CssPropertyValue$Ress.clear(v)
+        };
 }
 
 function color(v) {
-  return [
-          "color",
-          CssPropertyValue$Ress.color(v)
-        ];
+  return {
+          TAG: /* Color */37,
+          _0: CssPropertyValue$Ress.color(v)
+        };
 }
 
 function colorString(v) {
-  return [
-          "color",
-          v
-        ];
+  return {
+          TAG: /* Color */37,
+          _0: v
+        };
 }
 
 function cursor(v) {
-  return [
-          "cursor",
-          CssPropertyValue$Ress.cursor(v)
-        ];
+  return {
+          TAG: /* Cursor */39,
+          _0: CssPropertyValue$Ress.cursor(v)
+        };
 }
 
 function cursor1(i, k) {
-  return [
-          "cursor",
-          CssPropertyValue$Ress.cursor1(i, k)
-        ];
+  return {
+          TAG: /* Cursor */39,
+          _0: CssPropertyValue$Ress.cursor1(i, k)
+        };
 }
 
 function cursor2(i1, i2, k) {
-  return [
-          "cursor",
-          CssPropertyValue$Ress.cursor2(i1, i2, k)
-        ];
+  return {
+          TAG: /* Cursor */39,
+          _0: CssPropertyValue$Ress.cursor2(i1, i2, k)
+        };
 }
 
 function cursor3(i1, i2, i3, k) {
-  return [
-          "cursor",
-          CssPropertyValue$Ress.cursor3(i1, i2, i3, k)
-        ];
+  return {
+          TAG: /* Cursor */39,
+          _0: CssPropertyValue$Ress.cursor3(i1, i2, i3, k)
+        };
 }
 
 function cursor4(i1, i2, i3, i4, k) {
-  return [
-          "cursor",
-          CssPropertyValue$Ress.cursor4(i1, i2, i3, i4, k)
-        ];
+  return {
+          TAG: /* Cursor */39,
+          _0: CssPropertyValue$Ress.cursor4(i1, i2, i3, i4, k)
+        };
 }
 
 function cursorString(v) {
-  return [
-          "cursor",
-          v
-        ];
+  return {
+          TAG: /* Cursor */39,
+          _0: v
+        };
 }
 
 exports.property = property;
-exports.propertyString = propertyString;
 exports.propertyNumber = propertyNumber;
 exports.propertyInteger = propertyInteger;
 exports.border = border;

@@ -1,132 +1,174 @@
-let property: (string, CssPropertyValue.synthetic<'a>) => (string, CssPropertyValue.box);
-let propertyString: (string, string) => (string, CssPropertyValue.box);
-let propertyNumber: (string, float) => (string, CssPropertyValue.box);
-let propertyInteger: (string, int) => (string, CssPropertyValue.box);
+type property = 
+  | Property(string, CssPropertyValue.t_synthetic)
+  | Border(CssPropertyValue.t_border)
+  | BorderTop(CssPropertyValue.t_border)
+  | BorderRight(CssPropertyValue.t_border)
+  | BorderBottom(CssPropertyValue.t_border)
+  | BorderLeft(CssPropertyValue.t_border)
+  | BorderStyle(CssPropertyValue.t_borderStyle)
+  | BorderTopStyle(CssPropertyValue.t_borderTopStyle)
+  | BorderRightStyle(CssPropertyValue.t_borderRightStyle)
+  | BorderBottomStyle(CssPropertyValue.t_borderBottomStyle)
+  | BorderLeftStyle(CssPropertyValue.t_borderLeftStyle)
+  | BorderWidth(CssPropertyValue.t_borderWidth)
+  | BorderTopWidth(CssPropertyValue.t_borderTopWidth)
+  | BorderRightWidth(CssPropertyValue.t_borderRightWidth)
+  | BorderBottomWidth(CssPropertyValue.t_borderBottomWidth)
+  | BorderLeftWidth(CssPropertyValue.t_borderLeftWidth)
+  | BorderColor(CssPropertyValue.t_borderColor)
+  | BorderTopColor(CssPropertyValue.t_borderTopColor)
+  | BorderRightColor(CssPropertyValue.t_borderRightColor)
+  | BorderBottomColor(CssPropertyValue.t_borderBottomColor)
+  | BorderLeftColor(CssPropertyValue.t_borderLeftColor)
+  | Background(CssPropertyValue.t_background)
+  | BackgroundAttachment(CssPropertyValue.t_backgroundAttachment)
+  | BackgroundColor(CssPropertyValue.t_backgroundColor)
+  | BackgroundImage(CssPropertyValue.t_backgroundImage)
+  | BackgroundPosition(CssPropertyValue.t_backgroundPosition)
+  | BackgroundStyle(CssPropertyValue.t_backgroundStyle)
+  | Margin(CssPropertyValue.t_margin)
+  | MarginTop(CssPropertyValue.t_marginTop)
+  | MarginRight(CssPropertyValue.t_marginRight)
+  | MarginBottom(CssPropertyValue.t_marginBottom)
+  | MarginLeft(CssPropertyValue.t_marginLeft)
+  | Padding(CssPropertyValue.t_padding)
+  | PaddingTop(CssPropertyValue.t_paddingTop)
+  | PaddingBottom(CssPropertyValue.t_paddingBottom)
+  | PaddingRight(CssPropertyValue.t_paddingRight)
+  | PaddingLeft(CssPropertyValue.t_paddingLeft)
+  | Color(CssPropertyValue.t_color)
+  | Clear(CssPropertyValue.t_clear)
+  | Cursor(CssPropertyValue.t_cursor)
+  | FontFace(FontFace.t);
+
+let property: (string, string) => property;
+let propertyNumber: (string, float) => property;
+let propertyInteger: (string, int) => property;
 
 let border: (
   ~width: CssType.lineWidth=?, 
   ~color: CssType.color=?, 
   CssType.lineStyle_global
-) => (string, CssPropertyValue.box);
-let borderString: string => (string, CssPropertyValue.box);
+) => property;
+let borderString: string => property;
 
 let borderTop: (
   ~width: CssType.lineWidth=?, 
   ~color: CssType.color=?, 
   CssType.lineStyle_global
-) => (string, CssPropertyValue.box);
-let borderTopString: string => (string, CssPropertyValue.box);
+) => property;
+let borderTopString: string => property;
 
 let borderLeft: (
   ~width: CssType.lineWidth=?, 
   ~color: CssType.color=?, 
   CssType.lineStyle_global
-) => (string, CssPropertyValue.box);
-let borderLeftString: string => (string, CssPropertyValue.box);
+) => property;
+let borderLeftString: string => property;
 
 let borderRight: (
   ~width: CssType.lineWidth=?, 
   ~color: CssType.color=?, 
   CssType.lineStyle_global
-) => (string, CssPropertyValue.box);
-let borderRightString: string => (string, CssPropertyValue.box);
+) => property;
+let borderRightString: string => property;
 
 let borderBottom: (
   ~width: CssType.lineWidth=?, 
   ~color: CssType.color=?, 
   CssType.lineStyle_global
-) => (string, CssPropertyValue.box);
-let borderBottomString: string => (string, CssPropertyValue.box);
+) => property;
+let borderBottomString: string => property;
 
-let borderColor: CssType.color_global => (string, CssPropertyValue.box);
+let borderColor: CssType.color_global => property;
 let borderColor2: (
   ~tb: CssType.color, 
   ~lr: CssType.color
-) => (string, CssPropertyValue.box);
+) => property;
 let borderColor3: (
   ~top: CssType.color, 
   ~lr: CssType.color, 
   ~bottom: CssType.color
-) => (string, CssPropertyValue.box);
+) => property;
 let borderColor4: (
   ~top: CssType.color, 
   ~right: CssType.color, 
   ~bottom: CssType.color, 
   ~left: CssType.color
-) => (string, CssPropertyValue.box);
-let borderColorString: string => (string, CssPropertyValue.box);
+) => property;
+let borderColorString: string => property;
 
-let borderTopColor: CssType.color_global => (string, CssPropertyValue.box);
-let borderTopColorString: string => (string, CssPropertyValue.box);
+let borderTopColor: CssType.color_global => property;
+let borderTopColorString: string => property;
 
-let borderRightColor: CssType.color_global => (string, CssPropertyValue.box);
-let borderRightColorString: string => (string, CssPropertyValue.box);
+let borderRightColor: CssType.color_global => property;
+let borderRightColorString: string => property;
 
-let borderBottomColor: CssType.color_global => (string, CssPropertyValue.box);
-let borderBottomColorString: string => (string, CssPropertyValue.box);
+let borderBottomColor: CssType.color_global => property;
+let borderBottomColorString: string => property;
 
-let borderLeftColor: CssType.color_global => (string, CssPropertyValue.box);
-let borderLeftColorString: string => (string, CssPropertyValue.box);
+let borderLeftColor: CssType.color_global => property;
+let borderLeftColorString: string => property;
 
-let borderStyle: CssType.lineStyle_global => (string, CssPropertyValue.box);
+let borderStyle: CssType.lineStyle_global => property;
 let borderStyle2: (
   ~tb: CssType.lineStyle, 
   ~lr: CssType.lineStyle
-) => (string, CssPropertyValue.box);
+) => property;
 let borderStyle3: (
   ~top: CssType.lineStyle, 
   ~lr: CssType.lineStyle, 
   ~bottom: CssType.lineStyle
-) => (string, CssPropertyValue.box);
+) => property;
 let borderStyle4: (
   ~top: CssType.lineStyle, 
   ~right: CssType.lineStyle, 
   ~bottom: CssType.lineStyle, 
   ~left: CssType.lineStyle
-) => (string, CssPropertyValue.box);
-let borderStyleString: string => (string, CssPropertyValue.box);
+) => property;
+let borderStyleString: string => property;
 
-let borderTopStyle: CssType.lineStyle_global => (string, CssPropertyValue.box);
-let borderTopStyleString: string => (string, CssPropertyValue.box);
+let borderTopStyle: CssType.lineStyle_global => property;
+let borderTopStyleString: string => property;
 
-let borderRightStyle: CssType.lineStyle_global => (string, CssPropertyValue.box);
-let borderRightStyleString: string => (string, CssPropertyValue.box);
+let borderRightStyle: CssType.lineStyle_global => property;
+let borderRightStyleString: string => property;
 
-let borderBottomStyle: CssType.lineStyle_global => (string, CssPropertyValue.box);
-let borderBottomStyleString: string => (string, CssPropertyValue.box);
+let borderBottomStyle: CssType.lineStyle_global => property;
+let borderBottomStyleString: string => property;
 
-let borderLeftStyle: CssType.lineStyle_global => (string, CssPropertyValue.box);
-let borderLeftStyleString: string => (string, CssPropertyValue.box);
+let borderLeftStyle: CssType.lineStyle_global => property;
+let borderLeftStyleString: string => property;
 
-let borderWidth: CssType.lineWidth_global => (string, CssPropertyValue.box);
+let borderWidth: CssType.lineWidth_global => property;
 let borderWidth2: (
   ~tb: CssType.lineWidth, 
   ~lr: CssType.lineWidth
-) => (string, CssPropertyValue.box);
+) => property;
 let borderWidth3: (
   ~top: CssType.lineWidth, 
   ~lr: CssType.lineWidth, 
   ~bottom: CssType.lineWidth
-) => (string, CssPropertyValue.box);
+) => property;
 let borderWidth4: (
   ~top: CssType.lineWidth, 
   ~right: CssType.lineWidth, 
   ~bottom: CssType.lineWidth, 
   ~left: CssType.lineWidth
-) => (string, CssPropertyValue.box);
-let borderWidthString: string => (string, CssPropertyValue.box);
+) => property;
+let borderWidthString: string => property;
 
-let borderTopWidth: CssType.lineWidth_global => (string, CssPropertyValue.box);
-let borderTopWidthString: string => (string, CssPropertyValue.box);
+let borderTopWidth: CssType.lineWidth_global => property;
+let borderTopWidthString: string => property;
 
-let borderRightWidth: CssType.lineWidth_global => (string, CssPropertyValue.box);
-let borderRightWidthString: string => (string, CssPropertyValue.box);
+let borderRightWidth: CssType.lineWidth_global => property;
+let borderRightWidthString: string => property;
 
-let borderBottomWidth: CssType.lineWidth_global => (string, CssPropertyValue.box);
-let borderBottomWidthString: string => (string, CssPropertyValue.box);
+let borderBottomWidth: CssType.lineWidth_global => property;
+let borderBottomWidthString: string => property;
 
-let borderLeftWidth: CssType.lineWidth_global => (string, CssPropertyValue.box);
-let borderLeftWidthString: string => (string, CssPropertyValue.box);
+let borderLeftWidth: CssType.lineWidth_global => property;
+let borderLeftWidthString: string => property;
 
 let background: (
   ~color: CssType.color=?,
@@ -137,192 +179,192 @@ let background: (
   ~origin: CssType.box=?,
   ~clip: CssType.box=?,
   [ | CssType.global | CssType.bgImage | CssType.color]
-) => (string, CssPropertyValue.box);
-let backgroundString: string => (string, CssPropertyValue.box);
-let background2: (CssType.bgLayer, CssType.bgLayer) => (string, CssPropertyValue.box);
+) => property;
+let backgroundString: string => property;
+let background2: (CssType.bgLayer, CssType.bgLayer) => property;
 let background3: (
   CssType.bgLayer, 
   CssType.bgLayer, 
   CssType.bgLayer
-) => (string, CssPropertyValue.box);
+) => property;
 let background4: (
   CssType.bgLayer, 
   CssType.bgLayer, 
   CssType.bgLayer, 
   CssType.bgLayer
-) => (string, CssPropertyValue.box);
+) => property;
 
-let backgroundAttachment: CssType.attachment => (string, CssPropertyValue.box);
+let backgroundAttachment: CssType.attachment => property;
 let backgroundAttachment2: (
   CssType.attachment, 
   CssType.attachment
-) => (string, CssPropertyValue.box);
+) => property;
 let backgroundAttachment3: (
   CssType.attachment, 
   CssType.attachment, 
   CssType.attachment
-) => (string, CssPropertyValue.box);
+) => property;
 let backgroundAttachment4: (
   CssType.attachment, 
   CssType.attachment, 
   CssType.attachment, 
   CssType.attachment
-) => (string, CssPropertyValue.box);
-let backgroundAttachmentString: string => (string, CssPropertyValue.box)
+) => property;
+let backgroundAttachmentString: string => property
 
-let backgroundColor: CssType.color => (string, CssPropertyValue.box);
-let backgroundColorString: string => (string, CssPropertyValue.box);
+let backgroundColor: CssType.color => property;
+let backgroundColorString: string => property;
 
-let backgroundImage: CssType.bgImage => (string, CssPropertyValue.box);
+let backgroundImage: CssType.bgImage => property;
 let backgroundImage2: (
   CssType.bgImage, 
   CssType.bgImage
-) => (string, CssPropertyValue.box);
+) => property;
 let backgroundImage3: (
   CssType.bgImage, 
   CssType.bgImage, 
   CssType.bgImage
-) => (string, CssPropertyValue.box);
+) => property;
 let backgroundImage4: (
   CssType.bgImage, 
   CssType.bgImage, 
   CssType.bgImage, 
   CssType.bgImage
-) => (string, CssPropertyValue.box);
-let backgroundImageString: string => (string, CssPropertyValue.box);
+) => property;
+let backgroundImageString: string => property;
 
-let backgroundPosition: CssType.position => (string, CssPropertyValue.box);
+let backgroundPosition: CssType.position => property;
 let backgroundPosition2: (
   CssType.position, 
   CssType.position
-) => (string, CssPropertyValue.box);
+) => property;
 let backgroundPosition3: (
   CssType.position, 
   CssType.position, 
   CssType.position
-) => (string, CssPropertyValue.box);
+) => property;
 let backgroundPosition4: (
   CssType.position, 
   CssType.position, 
   CssType.position,
   CssType.position
-) => (string, CssPropertyValue.box);
-let backgroundPositionString: string => (string, CssPropertyValue.box);
+) => property;
+let backgroundPositionString: string => property;
 
-let backgroundStyle: CssType.repeatStyle => (string, CssPropertyValue.box);
+let backgroundStyle: CssType.repeatStyle => property;
 let backgroundStyle2: (
   CssType.repeatStyle, 
   CssType.repeatStyle
-) => (string, CssPropertyValue.box);
+) => property;
 let backgroundStyle3: (
   CssType.repeatStyle, 
   CssType.repeatStyle, 
   CssType.repeatStyle
-) => (string, CssPropertyValue.box);
+) => property;
 let backgroundStyle4: (
   CssType.repeatStyle, 
   CssType.repeatStyle, 
   CssType.repeatStyle, 
   CssType.repeatStyle
-) => (string, CssPropertyValue.box);
-let backgroundStyleString: string => (string, CssPropertyValue.box);
+) => property;
+let backgroundStyleString: string => property;
 
-let margin: CssType.margin_global => (string, CssPropertyValue.box);
+let margin: CssType.margin_global => property;
 let margin2: (
   ~tb: CssType.margin, 
   ~lr: CssType.margin
-) => (string, CssPropertyValue.box);
+) => property;
 let margin3: (
   ~top: CssType.margin, 
   ~lr: CssType.margin, 
   ~bottom: CssType.margin
-) => (string, CssPropertyValue.box);
+) => property;
 let margin4: (
   ~top: CssType.margin, 
   ~right: CssType.margin, 
   ~bottom: CssType.margin, 
   ~left: CssType.margin
-) => (string, CssPropertyValue.box);
-let marginString: string => (string, CssPropertyValue.box);
-let marginNumber: float => (string, CssPropertyValue.box);
+) => property;
+let marginString: string => property;
+let marginNumber: float => property;
 
-let marginTop: CssType.margin_global => (string, CssPropertyValue.box);
-let marginTopString: string => (string, CssPropertyValue.box);
-let marginTopNumber: float => (string, CssPropertyValue.box);
+let marginTop: CssType.margin_global => property;
+let marginTopString: string => property;
+let marginTopNumber: float => property;
 
-let marginRight: CssType.margin_global => (string, CssPropertyValue.box);
-let marginRightString: string => (string, CssPropertyValue.box);
-let marginRightNumber: float => (string, CssPropertyValue.box);
+let marginRight: CssType.margin_global => property;
+let marginRightString: string => property;
+let marginRightNumber: float => property;
 
-let marginBottom: CssType.margin_global => (string, CssPropertyValue.box);
-let marginBottomString: string => (string, CssPropertyValue.box);
-let marginBottomNumber: float => (string, CssPropertyValue.box);
+let marginBottom: CssType.margin_global => property;
+let marginBottomString: string => property;
+let marginBottomNumber: float => property;
 
-let marginLeft: CssType.margin_global => (string, CssPropertyValue.box);
-let marginLeftString: string => (string, CssPropertyValue.box);
-let marginLeftNumber: float => (string, CssPropertyValue.box);
+let marginLeft: CssType.margin_global => property;
+let marginLeftString: string => property;
+let marginLeftNumber: float => property;
 
-let padding: CssType.padding_global => (string, CssPropertyValue.box);
+let padding: CssType.padding_global => property;
 let padding2: (
   ~tb: CssType.padding, 
   ~lr: CssType.padding
-) => (string, CssPropertyValue.box);
+) => property;
 let padding3: (
   ~top: CssType.padding, 
   ~lr: CssType.padding, 
   ~bottom: CssType.padding
-) => (string, CssPropertyValue.box);
+) => property;
 let padding4: (
   ~top: CssType.padding, 
   ~right: CssType.padding, 
   ~bottom: CssType.padding, 
   ~left: CssType.padding
-) => (string, CssPropertyValue.box);
-let paddingString: string => (string, CssPropertyValue.box);
-let paddingNumber: float => (string, CssPropertyValue.box);
+) => property;
+let paddingString: string => property;
+let paddingNumber: float => property;
 
-let paddingTop: CssType.padding_global => (string, CssPropertyValue.box);
-let paddingTopString: string => (string, CssPropertyValue.box);
-let paddingTopNumber: float => (string, CssPropertyValue.box);
+let paddingTop: CssType.padding_global => property;
+let paddingTopString: string => property;
+let paddingTopNumber: float => property;
 
-let paddingRight: CssType.padding_global => (string, CssPropertyValue.box);
-let paddingRightString: string => (string, CssPropertyValue.box);
-let paddingRightNumber: float => (string, CssPropertyValue.box);
+let paddingRight: CssType.padding_global => property;
+let paddingRightString: string => property;
+let paddingRightNumber: float => property;
 
-let paddingBottom: CssType.padding_global => (string, CssPropertyValue.box);
-let paddingBottomString: string => (string, CssPropertyValue.box);
-let paddingBottomNumber: float => (string, CssPropertyValue.box);
+let paddingBottom: CssType.padding_global => property;
+let paddingBottomString: string => property;
+let paddingBottomNumber: float => property;
 
-let paddingLeft: CssType.padding_global => (string, CssPropertyValue.box);
-let paddingLeftString: string => (string, CssPropertyValue.box);
-let paddingLeftNumber: float => (string, CssPropertyValue.box);
+let paddingLeft: CssType.padding_global => property;
+let paddingLeftString: string => property;
+let paddingLeftNumber: float => property;
 
-let clear: CssType.clear_global => (string, CssPropertyValue.box);
+let clear: CssType.clear_global => property;
 
-let color: CssType.color_global => (string, CssPropertyValue.box);
-let colorString: string => (string, CssPropertyValue.box);
+let color: CssType.color_global => property;
+let colorString: string => property;
 
-let cursor: CssType.cursorKeyword_global => (string, CssPropertyValue.box);
+let cursor: CssType.cursorKeyword_global => property;
 let cursor1: (
   CssType.cursorImage, 
   CssType.cursorKeyword
-) => (string, CssPropertyValue.box);
+) => property;
 let cursor2: (
   CssType.cursorImage, 
   CssType.cursorImage, 
   CssType.cursorKeyword
-) => (string, CssPropertyValue.box);
+) => property;
 let cursor3: (
   CssType.cursorImage, 
   CssType.cursorImage, 
   CssType.cursorImage, 
   CssType.cursorKeyword
-) => (string, CssPropertyValue.box);
+) => property;
 let cursor4: (
   CssType.cursorImage, 
   CssType.cursorImage, 
   CssType.cursorImage, 
   CssType.cursorImage, 
   CssType.cursorKeyword
-) => (string, CssPropertyValue.box);
-let cursorString: string => (string, CssPropertyValue.box);
+) => property;
+let cursorString: string => property;

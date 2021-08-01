@@ -1,7 +1,4 @@
 type synthetic<'a>;
-@unboxed
-type rec box =
-  | Box(synthetic<'a>): box;
 
 type tag_synthetic;
 type t_synthetic = synthetic<tag_synthetic>
