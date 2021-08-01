@@ -42,7 +42,7 @@ external makeProps: (
   ~onFocusVisible: ReactEvent.Focus.t => unit=?,
   ~\"TouchRippleProps": TouchRipple.props=?,
   // button attributes
-  ~\"type": HtmlButton.\"type"=?,
+  ~\"type": string=?,
   // HTML aria attributes
   ~\"aria-details": string=?,
   ~\"aria-disabled": bool=?,

@@ -61,7 +61,7 @@ external makeProps: (
   ~select: bool=?,
   ~\"SelectProps": Select.props=?,
   ~size: size=?,
-  ~\"type": HtmlInput.\"type"=?,
+  ~\"type": string=?,
   ~value: 'value=?,
   ~variant: variant=?,
   // FormControl props
