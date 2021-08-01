@@ -2,406 +2,405 @@
 'use strict';
 
 var Css$Ress = require("@bilalvis01/rescript-csstype/src/Css.js");
+var CssValue$Ress = require("@bilalvis01/rescript-csstype/src/CssValue.js");
+var CssFunction$Ress = require("@bilalvis01/rescript-csstype/src/CssFunction.js");
+var CssProperty$Ress = require("@bilalvis01/rescript-csstype/src/CssProperty.js");
 
-var include = Css$Ress.MakeValue({});
+var include = Css$Ress.MakeStyle({});
 
-var include$1 = Css$Ress.MakeProperty({});
+var str = CssValue$Ress.str;
 
-var include$2 = Css$Ress.MakeStyle({});
+var num = CssValue$Ress.num;
 
-var str = include.str;
+var $$int = CssValue$Ress.$$int;
 
-var num = include.num;
+var pct = CssValue$Ress.pct;
 
-var $$int = include.$$int;
+var ratio = CssValue$Ress.ratio;
 
-var pct = include.pct;
+var fr = CssValue$Ress.fr;
 
-var ratio = include.ratio;
+var ch = CssValue$Ress.ch;
 
-var fr = include.fr;
+var em = CssValue$Ress.em;
 
-var ch = include.ch;
+var ex = CssValue$Ress.ex;
 
-var em = include.em;
+var rem = CssValue$Ress.rem;
 
-var ex = include.ex;
+var vh = CssValue$Ress.vh;
 
-var rem = include.rem;
+var vw = CssValue$Ress.vw;
 
-var vh = include.vh;
+var vmin = CssValue$Ress.vmin;
 
-var vw = include.vw;
+var vmax = CssValue$Ress.vmax;
 
-var vmin = include.vmin;
+var px = CssValue$Ress.px;
 
-var vmax = include.vmax;
+var cm = CssValue$Ress.cm;
 
-var px = include.px;
+var mm = CssValue$Ress.mm;
 
-var cm = include.cm;
+var inch = CssValue$Ress.inch;
 
-var mm = include.mm;
+var pc = CssValue$Ress.pc;
 
-var inch = include.inch;
+var pt = CssValue$Ress.pt;
 
-var pc = include.pc;
+var deg = CssValue$Ress.deg;
 
-var pt = include.pt;
+var grad = CssValue$Ress.grad;
 
-var deg = include.deg;
+var rad = CssValue$Ress.rad;
 
-var grad = include.grad;
+var turn = CssValue$Ress.turn;
 
-var rad = include.rad;
+var s = CssValue$Ress.s;
 
-var turn = include.turn;
+var ms = CssValue$Ress.ms;
 
-var s = include.s;
+var hz = CssValue$Ress.hz;
 
-var ms = include.ms;
+var kHz = CssValue$Ress.kHz;
 
-var hz = include.hz;
+var dpi = CssValue$Ress.dpi;
 
-var kHz = include.kHz;
+var dpcm = CssValue$Ress.dpcm;
 
-var dpi = include.dpi;
+var dppx = CssValue$Ress.dppx;
 
-var dpcm = include.dpcm;
+var x = CssValue$Ress.x;
 
-var dppx = include.dppx;
+var position2 = CssValue$Ress.position2;
 
-var x = include.x;
+var position3 = CssValue$Ress.position3;
 
-var hsl = include.hsl;
+var position4 = CssValue$Ress.position4;
 
-var hsla = include.hsla;
+var src = CssValue$Ress.src;
 
-var rgb = include.rgb;
+var bgLayer = CssValue$Ress.bgLayer;
 
-var rgba = include.rgba;
+var bgSize2 = CssValue$Ress.bgSize2;
 
-var rgbX = include.rgbX;
+var hsl = CssFunction$Ress.hsl;
 
-var linearColorStop2 = include.linearColorStop2;
+var hsla = CssFunction$Ress.hsla;
 
-var linearColorStop3 = include.linearColorStop3;
+var rgb = CssFunction$Ress.rgb;
 
-var linearGradient = include.linearGradient;
+var rgba = CssFunction$Ress.rgba;
 
-var linearGradient2 = include.linearGradient2;
+var rgbX = CssFunction$Ress.rgbX;
 
-var linearGradient3 = include.linearGradient3;
+var url = CssFunction$Ress.url;
 
-var linearGradient4 = include.linearGradient4;
+var image = CssFunction$Ress.image;
 
-var repeatingLinearGradient = include.repeatingLinearGradient;
+var linearColorStop2 = CssFunction$Ress.linearColorStop2;
 
-var repeatingLinearGradient2 = include.repeatingLinearGradient2;
+var linearColorStop3 = CssFunction$Ress.linearColorStop3;
 
-var repeatingLinearGradient3 = include.repeatingLinearGradient3;
+var linearGradient = CssFunction$Ress.linearGradient;
 
-var repeatingLinearGradient4 = include.repeatingLinearGradient4;
+var linearGradient2 = CssFunction$Ress.linearGradient2;
 
-var radialGradient = include.radialGradient;
+var linearGradient3 = CssFunction$Ress.linearGradient3;
 
-var radialGradient2 = include.radialGradient2;
+var linearGradient4 = CssFunction$Ress.linearGradient4;
 
-var radialGradient3 = include.radialGradient3;
+var repeatingLinearGradient = CssFunction$Ress.repeatingLinearGradient;
 
-var radialGradient4 = include.radialGradient4;
+var repeatingLinearGradient2 = CssFunction$Ress.repeatingLinearGradient2;
 
-var repeatingRadialGradient = include.repeatingRadialGradient;
+var repeatingLinearGradient3 = CssFunction$Ress.repeatingLinearGradient3;
 
-var repeatingRadialGradient2 = include.repeatingRadialGradient2;
+var repeatingLinearGradient4 = CssFunction$Ress.repeatingLinearGradient4;
 
-var repeatingRadialGradient3 = include.repeatingRadialGradient3;
+var radialGradient = CssFunction$Ress.radialGradient;
 
-var repeatingRadialGradient4 = include.repeatingRadialGradient4;
+var radialGradient2 = CssFunction$Ress.radialGradient2;
 
-var conicGradient = include.conicGradient;
+var radialGradient3 = CssFunction$Ress.radialGradient3;
 
-var conicGradient2 = include.conicGradient2;
+var radialGradient4 = CssFunction$Ress.radialGradient4;
 
-var conicGradient3 = include.conicGradient3;
+var repeatingRadialGradient = CssFunction$Ress.repeatingRadialGradient;
 
-var conicGradient4 = include.conicGradient4;
+var repeatingRadialGradient2 = CssFunction$Ress.repeatingRadialGradient2;
 
-var repeatingConicGradient = include.repeatingConicGradient;
+var repeatingRadialGradient3 = CssFunction$Ress.repeatingRadialGradient3;
 
-var repeatingConicGradient2 = include.repeatingConicGradient2;
+var repeatingRadialGradient4 = CssFunction$Ress.repeatingRadialGradient4;
 
-var repeatingConicGradient3 = include.repeatingConicGradient3;
+var conicGradient = CssFunction$Ress.conicGradient;
 
-var repeatingConicGradient4 = include.repeatingConicGradient4;
+var conicGradient2 = CssFunction$Ress.conicGradient2;
 
-var url = include.url;
+var conicGradient3 = CssFunction$Ress.conicGradient3;
 
-var src = include.src;
+var conicGradient4 = CssFunction$Ress.conicGradient4;
 
-var image = include.image;
+var repeatingConicGradient = CssFunction$Ress.repeatingConicGradient;
 
-var bgSize2 = include.bgSize2;
+var repeatingConicGradient2 = CssFunction$Ress.repeatingConicGradient2;
 
-var position2 = include.position2;
+var repeatingConicGradient3 = CssFunction$Ress.repeatingConicGradient3;
 
-var position3 = include.position3;
+var repeatingConicGradient4 = CssFunction$Ress.repeatingConicGradient4;
 
-var position4 = include.position4;
+var property = CssProperty$Ress.property;
 
-var bgLayer = include.bgLayer;
+var propertyString = CssProperty$Ress.propertyString;
 
-var property = include$1.property;
+var propertyNumber = CssProperty$Ress.propertyNumber;
 
-var propertyString = include$1.propertyString;
+var propertyInteger = CssProperty$Ress.propertyInteger;
 
-var propertyNumber = include$1.propertyNumber;
+var border = CssProperty$Ress.border;
 
-var propertyInteger = include$1.propertyInteger;
+var borderString = CssProperty$Ress.borderString;
 
-var border = include$1.border;
+var borderTop = CssProperty$Ress.borderTop;
 
-var borderString = include$1.borderString;
+var borderTopString = CssProperty$Ress.borderTopString;
 
-var borderTop = include$1.borderTop;
+var borderLeft = CssProperty$Ress.borderLeft;
 
-var borderTopString = include$1.borderTopString;
+var borderLeftString = CssProperty$Ress.borderLeftString;
 
-var borderLeft = include$1.borderLeft;
+var borderRight = CssProperty$Ress.borderRight;
 
-var borderLeftString = include$1.borderLeftString;
+var borderRightString = CssProperty$Ress.borderRightString;
 
-var borderRight = include$1.borderRight;
+var borderBottom = CssProperty$Ress.borderBottom;
 
-var borderRightString = include$1.borderRightString;
+var borderBottomString = CssProperty$Ress.borderBottomString;
 
-var borderBottom = include$1.borderBottom;
+var borderColor = CssProperty$Ress.borderColor;
 
-var borderBottomString = include$1.borderBottomString;
+var borderColor2 = CssProperty$Ress.borderColor2;
 
-var borderColor = include$1.borderColor;
+var borderColor3 = CssProperty$Ress.borderColor3;
 
-var borderColor2 = include$1.borderColor2;
+var borderColor4 = CssProperty$Ress.borderColor4;
 
-var borderColor3 = include$1.borderColor3;
+var borderColorString = CssProperty$Ress.borderColorString;
 
-var borderColor4 = include$1.borderColor4;
+var borderTopColor = CssProperty$Ress.borderTopColor;
 
-var borderColorString = include$1.borderColorString;
+var borderTopColorString = CssProperty$Ress.borderTopColorString;
 
-var borderTopColor = include$1.borderTopColor;
+var borderRightColor = CssProperty$Ress.borderRightColor;
 
-var borderTopColorString = include$1.borderTopColorString;
+var borderRightColorString = CssProperty$Ress.borderRightColorString;
 
-var borderRightColor = include$1.borderRightColor;
+var borderBottomColor = CssProperty$Ress.borderBottomColor;
 
-var borderRightColorString = include$1.borderRightColorString;
+var borderBottomColorString = CssProperty$Ress.borderBottomColorString;
 
-var borderBottomColor = include$1.borderBottomColor;
+var borderLeftColor = CssProperty$Ress.borderLeftColor;
 
-var borderBottomColorString = include$1.borderBottomColorString;
+var borderLeftColorString = CssProperty$Ress.borderLeftColorString;
 
-var borderLeftColor = include$1.borderLeftColor;
+var borderStyle = CssProperty$Ress.borderStyle;
 
-var borderLeftColorString = include$1.borderLeftColorString;
+var borderStyle2 = CssProperty$Ress.borderStyle2;
 
-var borderStyle = include$1.borderStyle;
+var borderStyle3 = CssProperty$Ress.borderStyle3;
 
-var borderStyle2 = include$1.borderStyle2;
+var borderStyle4 = CssProperty$Ress.borderStyle4;
 
-var borderStyle3 = include$1.borderStyle3;
+var borderStyleString = CssProperty$Ress.borderStyleString;
 
-var borderStyle4 = include$1.borderStyle4;
+var borderTopStyle = CssProperty$Ress.borderTopStyle;
 
-var borderStyleString = include$1.borderStyleString;
+var borderTopStyleString = CssProperty$Ress.borderTopStyleString;
 
-var borderTopStyle = include$1.borderTopStyle;
+var borderRightStyle = CssProperty$Ress.borderRightStyle;
 
-var borderTopStyleString = include$1.borderTopStyleString;
+var borderRightStyleString = CssProperty$Ress.borderRightStyleString;
 
-var borderRightStyle = include$1.borderRightStyle;
+var borderBottomStyle = CssProperty$Ress.borderBottomStyle;
 
-var borderRightStyleString = include$1.borderRightStyleString;
+var borderBottomStyleString = CssProperty$Ress.borderBottomStyleString;
 
-var borderBottomStyle = include$1.borderBottomStyle;
+var borderLeftStyle = CssProperty$Ress.borderLeftStyle;
 
-var borderBottomStyleString = include$1.borderBottomStyleString;
+var borderLeftStyleString = CssProperty$Ress.borderLeftStyleString;
 
-var borderLeftStyle = include$1.borderLeftStyle;
+var borderWidth = CssProperty$Ress.borderWidth;
 
-var borderLeftStyleString = include$1.borderLeftStyleString;
+var borderWidth2 = CssProperty$Ress.borderWidth2;
 
-var borderWidth = include$1.borderWidth;
+var borderWidth3 = CssProperty$Ress.borderWidth3;
 
-var borderWidth2 = include$1.borderWidth2;
+var borderWidth4 = CssProperty$Ress.borderWidth4;
 
-var borderWidth3 = include$1.borderWidth3;
+var borderWidthString = CssProperty$Ress.borderWidthString;
 
-var borderWidth4 = include$1.borderWidth4;
+var borderTopWidth = CssProperty$Ress.borderTopWidth;
 
-var borderWidthString = include$1.borderWidthString;
+var borderTopWidthString = CssProperty$Ress.borderTopWidthString;
 
-var borderTopWidth = include$1.borderTopWidth;
+var borderRightWidth = CssProperty$Ress.borderRightWidth;
 
-var borderTopWidthString = include$1.borderTopWidthString;
+var borderRightWidthString = CssProperty$Ress.borderRightWidthString;
 
-var borderRightWidth = include$1.borderRightWidth;
+var borderBottomWidth = CssProperty$Ress.borderBottomWidth;
 
-var borderRightWidthString = include$1.borderRightWidthString;
+var borderBottomWidthString = CssProperty$Ress.borderBottomWidthString;
 
-var borderBottomWidth = include$1.borderBottomWidth;
+var borderLeftWidth = CssProperty$Ress.borderLeftWidth;
 
-var borderBottomWidthString = include$1.borderBottomWidthString;
+var borderLeftWidthString = CssProperty$Ress.borderLeftWidthString;
 
-var borderLeftWidth = include$1.borderLeftWidth;
+var background = CssProperty$Ress.background;
 
-var borderLeftWidthString = include$1.borderLeftWidthString;
+var backgroundString = CssProperty$Ress.backgroundString;
 
-var background = include$1.background;
+var background2 = CssProperty$Ress.background2;
 
-var backgroundString = include$1.backgroundString;
+var background3 = CssProperty$Ress.background3;
 
-var background2 = include$1.background2;
+var background4 = CssProperty$Ress.background4;
 
-var background3 = include$1.background3;
+var backgroundAttachment = CssProperty$Ress.backgroundAttachment;
 
-var background4 = include$1.background4;
+var backgroundAttachment2 = CssProperty$Ress.backgroundAttachment2;
 
-var backgroundAttachment = include$1.backgroundAttachment;
+var backgroundAttachment3 = CssProperty$Ress.backgroundAttachment3;
 
-var backgroundAttachment2 = include$1.backgroundAttachment2;
+var backgroundAttachment4 = CssProperty$Ress.backgroundAttachment4;
 
-var backgroundAttachment3 = include$1.backgroundAttachment3;
+var backgroundAttachmentString = CssProperty$Ress.backgroundAttachmentString;
 
-var backgroundAttachment4 = include$1.backgroundAttachment4;
+var backgroundColor = CssProperty$Ress.backgroundColor;
 
-var backgroundAttachmentString = include$1.backgroundAttachmentString;
+var backgroundColorString = CssProperty$Ress.backgroundColorString;
 
-var backgroundColor = include$1.backgroundColor;
+var backgroundImage = CssProperty$Ress.backgroundImage;
 
-var backgroundColorString = include$1.backgroundColorString;
+var backgroundImage2 = CssProperty$Ress.backgroundImage2;
 
-var backgroundImage = include$1.backgroundImage;
+var backgroundImage3 = CssProperty$Ress.backgroundImage3;
 
-var backgroundImage2 = include$1.backgroundImage2;
+var backgroundImage4 = CssProperty$Ress.backgroundImage4;
 
-var backgroundImage3 = include$1.backgroundImage3;
+var backgroundImageString = CssProperty$Ress.backgroundImageString;
 
-var backgroundImage4 = include$1.backgroundImage4;
+var backgroundPosition = CssProperty$Ress.backgroundPosition;
 
-var backgroundImageString = include$1.backgroundImageString;
+var backgroundPosition2 = CssProperty$Ress.backgroundPosition2;
 
-var backgroundPosition = include$1.backgroundPosition;
+var backgroundPosition3 = CssProperty$Ress.backgroundPosition3;
 
-var backgroundPosition2 = include$1.backgroundPosition2;
+var backgroundPosition4 = CssProperty$Ress.backgroundPosition4;
 
-var backgroundPosition3 = include$1.backgroundPosition3;
+var backgroundPositionString = CssProperty$Ress.backgroundPositionString;
 
-var backgroundPosition4 = include$1.backgroundPosition4;
+var backgroundStyle = CssProperty$Ress.backgroundStyle;
 
-var backgroundPositionString = include$1.backgroundPositionString;
+var backgroundStyle2 = CssProperty$Ress.backgroundStyle2;
 
-var backgroundStyle = include$1.backgroundStyle;
+var backgroundStyle3 = CssProperty$Ress.backgroundStyle3;
 
-var backgroundStyle2 = include$1.backgroundStyle2;
+var backgroundStyle4 = CssProperty$Ress.backgroundStyle4;
 
-var backgroundStyle3 = include$1.backgroundStyle3;
+var backgroundStyleString = CssProperty$Ress.backgroundStyleString;
 
-var backgroundStyle4 = include$1.backgroundStyle4;
+var margin = CssProperty$Ress.margin;
 
-var backgroundStyleString = include$1.backgroundStyleString;
+var margin2 = CssProperty$Ress.margin2;
 
-var margin = include$1.margin;
+var margin3 = CssProperty$Ress.margin3;
 
-var margin2 = include$1.margin2;
+var margin4 = CssProperty$Ress.margin4;
 
-var margin3 = include$1.margin3;
+var marginString = CssProperty$Ress.marginString;
 
-var margin4 = include$1.margin4;
+var marginNumber = CssProperty$Ress.marginNumber;
 
-var marginString = include$1.marginString;
+var marginTop = CssProperty$Ress.marginTop;
 
-var marginNumber = include$1.marginNumber;
+var marginTopString = CssProperty$Ress.marginTopString;
 
-var marginTop = include$1.marginTop;
+var marginTopNumber = CssProperty$Ress.marginTopNumber;
 
-var marginTopString = include$1.marginTopString;
+var marginRight = CssProperty$Ress.marginRight;
 
-var marginTopNumber = include$1.marginTopNumber;
+var marginRightString = CssProperty$Ress.marginRightString;
 
-var marginRight = include$1.marginRight;
+var marginRightNumber = CssProperty$Ress.marginRightNumber;
 
-var marginRightString = include$1.marginRightString;
+var marginBottom = CssProperty$Ress.marginBottom;
 
-var marginRightNumber = include$1.marginRightNumber;
+var marginBottomString = CssProperty$Ress.marginBottomString;
 
-var marginBottom = include$1.marginBottom;
+var marginBottomNumber = CssProperty$Ress.marginBottomNumber;
 
-var marginBottomString = include$1.marginBottomString;
+var marginLeft = CssProperty$Ress.marginLeft;
 
-var marginBottomNumber = include$1.marginBottomNumber;
+var marginLeftString = CssProperty$Ress.marginLeftString;
 
-var marginLeft = include$1.marginLeft;
+var marginLeftNumber = CssProperty$Ress.marginLeftNumber;
 
-var marginLeftString = include$1.marginLeftString;
+var padding = CssProperty$Ress.padding;
 
-var marginLeftNumber = include$1.marginLeftNumber;
+var padding2 = CssProperty$Ress.padding2;
 
-var padding = include$1.padding;
+var padding3 = CssProperty$Ress.padding3;
 
-var padding2 = include$1.padding2;
+var padding4 = CssProperty$Ress.padding4;
 
-var padding3 = include$1.padding3;
+var paddingString = CssProperty$Ress.paddingString;
 
-var padding4 = include$1.padding4;
+var paddingNumber = CssProperty$Ress.paddingNumber;
 
-var paddingString = include$1.paddingString;
+var paddingTop = CssProperty$Ress.paddingTop;
 
-var paddingNumber = include$1.paddingNumber;
+var paddingTopString = CssProperty$Ress.paddingTopString;
 
-var paddingTop = include$1.paddingTop;
+var paddingTopNumber = CssProperty$Ress.paddingTopNumber;
 
-var paddingTopString = include$1.paddingTopString;
+var paddingRight = CssProperty$Ress.paddingRight;
 
-var paddingTopNumber = include$1.paddingTopNumber;
+var paddingRightString = CssProperty$Ress.paddingRightString;
 
-var paddingRight = include$1.paddingRight;
+var paddingRightNumber = CssProperty$Ress.paddingRightNumber;
 
-var paddingRightString = include$1.paddingRightString;
+var paddingBottom = CssProperty$Ress.paddingBottom;
 
-var paddingRightNumber = include$1.paddingRightNumber;
+var paddingBottomString = CssProperty$Ress.paddingBottomString;
 
-var paddingBottom = include$1.paddingBottom;
+var paddingBottomNumber = CssProperty$Ress.paddingBottomNumber;
 
-var paddingBottomString = include$1.paddingBottomString;
+var paddingLeft = CssProperty$Ress.paddingLeft;
 
-var paddingBottomNumber = include$1.paddingBottomNumber;
+var paddingLeftString = CssProperty$Ress.paddingLeftString;
 
-var paddingLeft = include$1.paddingLeft;
+var paddingLeftNumber = CssProperty$Ress.paddingLeftNumber;
 
-var paddingLeftString = include$1.paddingLeftString;
+var clear = CssProperty$Ress.clear;
 
-var paddingLeftNumber = include$1.paddingLeftNumber;
+var color = CssProperty$Ress.color;
 
-var clear = include$1.clear;
+var colorString = CssProperty$Ress.colorString;
 
-var color = include$1.color;
+var cursor = CssProperty$Ress.cursor;
 
-var colorString = include$1.colorString;
+var cursor1 = CssProperty$Ress.cursor1;
 
-var cursor = include$1.cursor;
+var cursor2 = CssProperty$Ress.cursor2;
 
-var cursor1 = include$1.cursor1;
+var cursor3 = CssProperty$Ress.cursor3;
 
-var cursor2 = include$1.cursor2;
+var cursor4 = CssProperty$Ress.cursor4;
 
-var cursor3 = include$1.cursor3;
+var cursorString = CssProperty$Ress.cursorString;
 
-var cursor4 = include$1.cursor4;
-
-var cursorString = include$1.cursorString;
-
-var style = include$2.style;
+var style = include.style;
 
 exports.str = str;
 exports.num = num;
@@ -435,11 +434,19 @@ exports.dpi = dpi;
 exports.dpcm = dpcm;
 exports.dppx = dppx;
 exports.x = x;
+exports.position2 = position2;
+exports.position3 = position3;
+exports.position4 = position4;
+exports.src = src;
+exports.bgLayer = bgLayer;
+exports.bgSize2 = bgSize2;
 exports.hsl = hsl;
 exports.hsla = hsla;
 exports.rgb = rgb;
 exports.rgba = rgba;
 exports.rgbX = rgbX;
+exports.url = url;
+exports.image = image;
 exports.linearColorStop2 = linearColorStop2;
 exports.linearColorStop3 = linearColorStop3;
 exports.linearGradient = linearGradient;
@@ -466,14 +473,6 @@ exports.repeatingConicGradient = repeatingConicGradient;
 exports.repeatingConicGradient2 = repeatingConicGradient2;
 exports.repeatingConicGradient3 = repeatingConicGradient3;
 exports.repeatingConicGradient4 = repeatingConicGradient4;
-exports.url = url;
-exports.src = src;
-exports.image = image;
-exports.bgSize2 = bgSize2;
-exports.position2 = position2;
-exports.position3 = position3;
-exports.position4 = position4;
-exports.bgLayer = bgLayer;
 exports.property = property;
 exports.propertyString = propertyString;
 exports.propertyNumber = propertyNumber;
