@@ -11,6 +11,9 @@ describe("style", (.) => {
       paddingLeft(px(40.)),
       paddingRight(px(40.)),
       marginNumber(24.),
+      fontFace([
+        FontFace.fontDisplay(#auto),
+      ]),
     ]))
     ->toEqual(Obj.magic({
       "background": `url("image.png")`,
@@ -20,6 +23,9 @@ describe("style", (.) => {
       "paddingLeft": "40px",
       "paddingRight": "40px",
       "margin": 24,
+      "@font-face": {
+        "fontDisplay": "auto"
+      },
     }));
   });
 });

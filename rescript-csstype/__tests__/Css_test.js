@@ -2,6 +2,7 @@
 'use strict';
 
 var Css$Ress = require("../src/Css.js");
+var FontFace$Ress = require("../src/FontFace.js");
 
 describe("style", (function () {
         test("style", (function () {
@@ -12,7 +13,8 @@ describe("style", (function () {
                             Css$Ress.paddingBottom(Css$Ress.px(24)),
                             Css$Ress.paddingLeft(Css$Ress.px(40)),
                             Css$Ress.paddingRight(Css$Ress.px(40)),
-                            Css$Ress.marginNumber(24)
+                            Css$Ress.marginNumber(24),
+                            Css$Ress.fontFace([FontFace$Ress.fontDisplay("auto")])
                           ])).toEqual({
                       background: "url(\"image.png\")",
                       color: "rgb(255, 255, 255)",
@@ -20,7 +22,10 @@ describe("style", (function () {
                       paddingBottom: "24px",
                       paddingLeft: "40px",
                       paddingRight: "40px",
-                      margin: 24
+                      margin: 24,
+                      "@font-face": {
+                        fontDisplay: "auto"
+                      }
                     });
                 
               }));
