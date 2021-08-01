@@ -15,6 +15,8 @@ function MakeStyle(Type) {
 
 var style = Js_dict.fromArray;
 
+var PropertyValue;
+
 var str = CssValue$Ress.str;
 
 var num = CssValue$Ress.num;
@@ -408,6 +410,7 @@ var cursor4 = CssProperty$Ress.cursor4;
 var cursorString = CssProperty$Ress.cursorString;
 
 exports.MakeStyle = MakeStyle;
+exports.PropertyValue = PropertyValue;
 exports.str = str;
 exports.num = num;
 exports.$$int = $$int;

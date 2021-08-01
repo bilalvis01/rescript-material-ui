@@ -15,6 +15,8 @@ module MakeStyle: MakeStyleType = (
   let style = entries => Js.Dict.fromArray(entries)->makeStyle;
 };
 
+module PropertyValue = CssPropertyValue;
+
 include CssValue;
 include CssFunction;
 include CssProperty;

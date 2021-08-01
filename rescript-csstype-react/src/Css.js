@@ -8,6 +8,8 @@ var CssProperty$Ress = require("@bilalvis01/rescript-csstype/src/CssProperty.js"
 
 var include = Css$Ress.MakeStyle({});
 
+var PropertyValue;
+
 var str = CssValue$Ress.str;
 
 var num = CssValue$Ress.num;
@@ -402,6 +404,7 @@ var cursorString = CssProperty$Ress.cursorString;
 
 var style = include.style;
 
+exports.PropertyValue = PropertyValue;
 exports.str = str;
 exports.num = num;
 exports.$$int = $$int;

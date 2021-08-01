@@ -1,3 +1,5 @@
+module PropertyValue = CssPropertyValue;
+
 include Ress.CssValue;
 include Ress.CssFunction;
 include Ress.CssProperty;
