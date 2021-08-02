@@ -10,204 +10,209 @@ function Make(funarg) {
   var style = function (statements) {
     return Js_dict.fromArray(Belt_Array.map(statements, (function (statement) {
                       switch (statement.TAG | 0) {
-                        case /* FontFace */1 :
+                        case /* Hover */1 :
+                            return [
+                                    "&:hover",
+                                    statement._0
+                                  ];
+                        case /* FontFace */2 :
                             return [
                                     "@font-face",
                                     statement._0
                                   ];
                         case /* Selector */0 :
-                        case /* Property */2 :
+                        case /* Property */3 :
                             return [
                                     statement._0,
                                     statement._1
                                   ];
-                        case /* BorderTop */4 :
+                        case /* BorderTop */5 :
                             return [
                                     "borderTop",
                                     statement._0
                                   ];
-                        case /* BorderRight */5 :
+                        case /* BorderRight */6 :
                             return [
                                     "borderRight",
                                     statement._0
                                   ];
-                        case /* BorderBottom */6 :
+                        case /* BorderBottom */7 :
                             return [
                                     "borderBottom",
                                     statement._0
                                   ];
-                        case /* BorderLeft */7 :
+                        case /* BorderLeft */8 :
                             return [
                                     "borderLeft",
                                     statement._0
                                   ];
-                        case /* Border */3 :
-                        case /* BorderStyle */8 :
+                        case /* Border */4 :
+                        case /* BorderStyle */9 :
                             return [
                                     "border",
                                     statement._0
                                   ];
-                        case /* BorderTopStyle */9 :
+                        case /* BorderTopStyle */10 :
                             return [
                                     "borderTopStyle",
                                     statement._0
                                   ];
-                        case /* BorderRightStyle */10 :
+                        case /* BorderRightStyle */11 :
                             return [
                                     "borderRightStyle",
                                     statement._0
                                   ];
-                        case /* BorderBottomStyle */11 :
+                        case /* BorderBottomStyle */12 :
                             return [
                                     "borderBottomStyle",
                                     statement._0
                                   ];
-                        case /* BorderLeftStyle */12 :
+                        case /* BorderLeftStyle */13 :
                             return [
                                     "borderLeftStyle",
                                     statement._0
                                   ];
-                        case /* BorderWidth */13 :
+                        case /* BorderWidth */14 :
                             return [
                                     "boderWidth",
                                     statement._0
                                   ];
-                        case /* BorderTopWidth */14 :
+                        case /* BorderTopWidth */15 :
                             return [
                                     "borderTopWidth",
                                     statement._0
                                   ];
-                        case /* BorderRightWidth */15 :
+                        case /* BorderRightWidth */16 :
                             return [
                                     "borderRightWidth",
                                     statement._0
                                   ];
-                        case /* BorderBottomWidth */16 :
+                        case /* BorderBottomWidth */17 :
                             return [
                                     "borderBottomWidth",
                                     statement._0
                                   ];
-                        case /* BorderLeftWidth */17 :
+                        case /* BorderLeftWidth */18 :
                             return [
                                     "borderLeftWidth",
                                     statement._0
                                   ];
-                        case /* BorderColor */18 :
+                        case /* BorderColor */19 :
                             return [
                                     "borderColor",
                                     statement._0
                                   ];
-                        case /* BorderTopColor */19 :
+                        case /* BorderTopColor */20 :
                             return [
                                     "borderTopColor",
                                     statement._0
                                   ];
-                        case /* BorderRightColor */20 :
+                        case /* BorderRightColor */21 :
                             return [
                                     "borderRightColor",
                                     statement._0
                                   ];
-                        case /* BorderBottomColor */21 :
+                        case /* BorderBottomColor */22 :
                             return [
                                     "borderBottomColor",
                                     statement._0
                                   ];
-                        case /* BorderLeftColor */22 :
+                        case /* BorderLeftColor */23 :
                             return [
                                     "borderLeftColor",
                                     statement._0
                                   ];
-                        case /* Background */23 :
+                        case /* Background */24 :
                             return [
                                     "background",
                                     statement._0
                                   ];
-                        case /* BackgroundAttachment */24 :
+                        case /* BackgroundAttachment */25 :
                             return [
                                     "backgroundAttachment",
                                     statement._0
                                   ];
-                        case /* BackgroundColor */25 :
+                        case /* BackgroundColor */26 :
                             return [
                                     "backgroundColor",
                                     statement._0
                                   ];
-                        case /* BackgroundImage */26 :
+                        case /* BackgroundImage */27 :
                             return [
                                     "backgroundImage",
                                     statement._0
                                   ];
-                        case /* BackgroundPosition */27 :
+                        case /* BackgroundPosition */28 :
                             return [
                                     "backgroundPosition",
                                     statement._0
                                   ];
-                        case /* BackgroundStyle */28 :
+                        case /* BackgroundStyle */29 :
                             return [
                                     "backgroundStyle",
                                     statement._0
                                   ];
-                        case /* Margin */29 :
+                        case /* Margin */30 :
                             return [
                                     "margin",
                                     statement._0
                                   ];
-                        case /* MarginTop */30 :
+                        case /* MarginTop */31 :
                             return [
                                     "marginTop",
                                     statement._0
                                   ];
-                        case /* MarginRight */31 :
+                        case /* MarginRight */32 :
                             return [
                                     "marginRight",
                                     statement._0
                                   ];
-                        case /* MarginBottom */32 :
+                        case /* MarginBottom */33 :
                             return [
                                     "marginBottom",
                                     statement._0
                                   ];
-                        case /* MarginLeft */33 :
+                        case /* MarginLeft */34 :
                             return [
                                     "marginLeft",
                                     statement._0
                                   ];
-                        case /* Padding */34 :
+                        case /* Padding */35 :
                             return [
                                     "padding",
                                     statement._0
                                   ];
-                        case /* PaddingTop */35 :
+                        case /* PaddingTop */36 :
                             return [
                                     "paddingTop",
                                     statement._0
                                   ];
-                        case /* PaddingBottom */36 :
+                        case /* PaddingBottom */37 :
                             return [
                                     "paddingBottom",
                                     statement._0
                                   ];
-                        case /* PaddingRight */37 :
+                        case /* PaddingRight */38 :
                             return [
                                     "paddingRight",
                                     statement._0
                                   ];
-                        case /* PaddingLeft */38 :
+                        case /* PaddingLeft */39 :
                             return [
                                     "paddingLeft",
                                     statement._0
                                   ];
-                        case /* Color */39 :
+                        case /* Color */40 :
                             return [
                                     "color",
                                     statement._0
                                   ];
-                        case /* Clear */40 :
+                        case /* Clear */41 :
                             return [
                                     "clear",
                                     statement._0
                                   ];
-                        case /* Cursor */41 :
+                        case /* Cursor */42 :
                             return [
                                     "cursor",
                                     statement._0
@@ -216,769 +221,776 @@ function Make(funarg) {
                       }
                     })));
   };
-  var selector = function (selector$1, declaration) {
+  var selector = function (selector$1, declarations) {
     return {
             TAG: /* Selector */0,
             _0: selector$1,
-            _1: style(declaration)
+            _1: style(declarations)
+          };
+  };
+  var hover = function (declarations) {
+    return {
+            TAG: /* Hover */1,
+            _0: style(declarations)
           };
   };
   var fontFace = function (descriptors) {
     return {
-            TAG: /* FontFace */1,
+            TAG: /* FontFace */2,
             _0: CssFontFace$Ress.make(descriptors)
           };
   };
   var property = function (name, value) {
     return {
-            TAG: /* Property */2,
+            TAG: /* Property */3,
             _0: name,
             _1: value
           };
   };
   var propertyNumber = function (name, value) {
     return {
-            TAG: /* Property */2,
+            TAG: /* Property */3,
             _0: name,
             _1: value
           };
   };
   var propertyInteger = function (name, value) {
     return {
-            TAG: /* Property */2,
+            TAG: /* Property */3,
             _0: name,
             _1: value
           };
   };
   var border = function (width, color, style) {
     return {
-            TAG: /* Border */3,
+            TAG: /* Border */4,
             _0: CssPropertyValue$Ress.border(width, color, style)
           };
   };
   var borderString = function (v) {
     return {
-            TAG: /* Border */3,
+            TAG: /* Border */4,
             _0: v
           };
   };
   var borderTop = function (width, color, style) {
     return {
-            TAG: /* BorderTop */4,
+            TAG: /* BorderTop */5,
             _0: CssPropertyValue$Ress.border(width, color, style)
           };
   };
   var borderTopString = function (v) {
     return {
-            TAG: /* BorderTop */4,
+            TAG: /* BorderTop */5,
             _0: v
           };
   };
   var borderLeft = function (width, color, style) {
     return {
-            TAG: /* BorderLeft */7,
+            TAG: /* BorderLeft */8,
             _0: CssPropertyValue$Ress.border(width, color, style)
           };
   };
   var borderLeftString = function (v) {
     return {
-            TAG: /* BorderLeft */7,
+            TAG: /* BorderLeft */8,
             _0: v
           };
   };
   var borderRight = function (width, color, style) {
     return {
-            TAG: /* BorderRight */5,
+            TAG: /* BorderRight */6,
             _0: CssPropertyValue$Ress.border(width, color, style)
           };
   };
   var borderRightString = function (v) {
     return {
-            TAG: /* BorderRight */5,
+            TAG: /* BorderRight */6,
             _0: v
           };
   };
   var borderBottom = function (width, color, style) {
     return {
-            TAG: /* BorderBottom */6,
+            TAG: /* BorderBottom */7,
             _0: CssPropertyValue$Ress.border(width, color, style)
           };
   };
   var borderBottomString = function (v) {
     return {
-            TAG: /* BorderBottom */6,
+            TAG: /* BorderBottom */7,
             _0: v
           };
   };
   var borderColor = function (v) {
     return {
-            TAG: /* BorderColor */18,
+            TAG: /* BorderColor */19,
             _0: CssPropertyValue$Ress.borderColor(v)
           };
   };
   var borderColor2 = function (tb, lr) {
     return {
-            TAG: /* BorderColor */18,
+            TAG: /* BorderColor */19,
             _0: CssPropertyValue$Ress.borderColor2(tb, lr)
           };
   };
   var borderColor3 = function (top, lr, bottom) {
     return {
-            TAG: /* BorderColor */18,
+            TAG: /* BorderColor */19,
             _0: CssPropertyValue$Ress.borderColor3(top, lr, bottom)
           };
   };
   var borderColor4 = function (top, right, bottom, left) {
     return {
-            TAG: /* BorderColor */18,
+            TAG: /* BorderColor */19,
             _0: CssPropertyValue$Ress.borderColor4(top, right, bottom, left)
           };
   };
   var borderColorString = function (v) {
     return {
-            TAG: /* BorderColor */18,
+            TAG: /* BorderColor */19,
             _0: v
           };
   };
   var borderTopColor = function (v) {
     return {
-            TAG: /* BorderTopColor */19,
+            TAG: /* BorderTopColor */20,
             _0: CssPropertyValue$Ress.borderTopColor(v)
           };
   };
   var borderTopColorString = function (v) {
     return {
-            TAG: /* BorderTopColor */19,
+            TAG: /* BorderTopColor */20,
             _0: v
           };
   };
   var borderRightColor = function (v) {
     return {
-            TAG: /* BorderRightColor */20,
+            TAG: /* BorderRightColor */21,
             _0: CssPropertyValue$Ress.borderRightColor(v)
           };
   };
   var borderRightColorString = function (v) {
     return {
-            TAG: /* BorderRightColor */20,
+            TAG: /* BorderRightColor */21,
             _0: v
           };
   };
   var borderBottomColor = function (v) {
     return {
-            TAG: /* BorderBottomColor */21,
+            TAG: /* BorderBottomColor */22,
             _0: CssPropertyValue$Ress.borderBottomColor(v)
           };
   };
   var borderBottomColorString = function (v) {
     return {
-            TAG: /* BorderBottomColor */21,
+            TAG: /* BorderBottomColor */22,
             _0: v
           };
   };
   var borderLeftColor = function (v) {
     return {
-            TAG: /* BorderLeftColor */22,
+            TAG: /* BorderLeftColor */23,
             _0: CssPropertyValue$Ress.borderLeftColor(v)
           };
   };
   var borderLeftColorString = function (v) {
     return {
-            TAG: /* BorderLeftColor */22,
+            TAG: /* BorderLeftColor */23,
             _0: v
           };
   };
   var borderStyle = function (v) {
     return {
-            TAG: /* BorderStyle */8,
+            TAG: /* BorderStyle */9,
             _0: CssPropertyValue$Ress.borderStyle(v)
           };
   };
   var borderStyle2 = function (tb, lr) {
     return {
-            TAG: /* BorderStyle */8,
+            TAG: /* BorderStyle */9,
             _0: CssPropertyValue$Ress.borderStyle2(tb, lr)
           };
   };
   var borderStyle3 = function (top, lr, bottom) {
     return {
-            TAG: /* BorderStyle */8,
+            TAG: /* BorderStyle */9,
             _0: CssPropertyValue$Ress.borderStyle3(top, lr, bottom)
           };
   };
   var borderStyle4 = function (top, right, bottom, left) {
     return {
-            TAG: /* BorderStyle */8,
+            TAG: /* BorderStyle */9,
             _0: CssPropertyValue$Ress.borderStyle4(top, right, bottom, left)
           };
   };
   var borderStyleString = function (v) {
     return {
-            TAG: /* BorderStyle */8,
+            TAG: /* BorderStyle */9,
             _0: v
           };
   };
   var borderTopStyle = function (v) {
     return {
-            TAG: /* BorderTopStyle */9,
+            TAG: /* BorderTopStyle */10,
             _0: CssPropertyValue$Ress.borderTopStyle(v)
           };
   };
   var borderTopStyleString = function (v) {
     return {
-            TAG: /* BorderTopStyle */9,
+            TAG: /* BorderTopStyle */10,
             _0: v
           };
   };
   var borderRightStyle = function (v) {
     return {
-            TAG: /* BorderRightStyle */10,
+            TAG: /* BorderRightStyle */11,
             _0: CssPropertyValue$Ress.borderRightStyle(v)
           };
   };
   var borderRightStyleString = function (v) {
     return {
-            TAG: /* BorderRightStyle */10,
+            TAG: /* BorderRightStyle */11,
             _0: v
           };
   };
   var borderBottomStyle = function (v) {
     return {
-            TAG: /* BorderBottomStyle */11,
+            TAG: /* BorderBottomStyle */12,
             _0: CssPropertyValue$Ress.borderBottomStyle(v)
           };
   };
   var borderBottomStyleString = function (v) {
     return {
-            TAG: /* BorderBottomStyle */11,
+            TAG: /* BorderBottomStyle */12,
             _0: v
           };
   };
   var borderLeftStyle = function (v) {
     return {
-            TAG: /* BorderLeftStyle */12,
+            TAG: /* BorderLeftStyle */13,
             _0: CssPropertyValue$Ress.borderLeftStyle(v)
           };
   };
   var borderLeftStyleString = function (v) {
     return {
-            TAG: /* BorderLeftStyle */12,
+            TAG: /* BorderLeftStyle */13,
             _0: v
           };
   };
   var borderWidth = function (v) {
     return {
-            TAG: /* BorderWidth */13,
+            TAG: /* BorderWidth */14,
             _0: CssPropertyValue$Ress.borderWidth(v)
           };
   };
   var borderWidth2 = function (tb, lr) {
     return {
-            TAG: /* BorderWidth */13,
+            TAG: /* BorderWidth */14,
             _0: CssPropertyValue$Ress.borderWidth2(tb, lr)
           };
   };
   var borderWidth3 = function (top, lr, bottom) {
     return {
-            TAG: /* BorderWidth */13,
+            TAG: /* BorderWidth */14,
             _0: CssPropertyValue$Ress.borderWidth3(top, lr, bottom)
           };
   };
   var borderWidth4 = function (top, right, bottom, left) {
     return {
-            TAG: /* BorderWidth */13,
+            TAG: /* BorderWidth */14,
             _0: CssPropertyValue$Ress.borderWidth4(top, right, bottom, left)
           };
   };
   var borderWidthString = function (v) {
     return {
-            TAG: /* BorderWidth */13,
+            TAG: /* BorderWidth */14,
             _0: v
           };
   };
   var borderTopWidth = function (v) {
     return {
-            TAG: /* BorderTopWidth */14,
+            TAG: /* BorderTopWidth */15,
             _0: CssPropertyValue$Ress.borderTopWidth(v)
           };
   };
   var borderTopWidthString = function (v) {
     return {
-            TAG: /* BorderTopWidth */14,
+            TAG: /* BorderTopWidth */15,
             _0: v
           };
   };
   var borderRightWidth = function (v) {
     return {
-            TAG: /* BorderRightWidth */15,
+            TAG: /* BorderRightWidth */16,
             _0: CssPropertyValue$Ress.borderRightWidth(v)
           };
   };
   var borderRightWidthString = function (v) {
     return {
-            TAG: /* BorderRightWidth */15,
+            TAG: /* BorderRightWidth */16,
             _0: v
           };
   };
   var borderBottomWidth = function (v) {
     return {
-            TAG: /* BorderBottomWidth */16,
+            TAG: /* BorderBottomWidth */17,
             _0: CssPropertyValue$Ress.borderBottomWidth(v)
           };
   };
   var borderBottomWidthString = function (v) {
     return {
-            TAG: /* BorderBottomWidth */16,
+            TAG: /* BorderBottomWidth */17,
             _0: v
           };
   };
   var borderLeftWidth = function (v) {
     return {
-            TAG: /* BorderLeftWidth */17,
+            TAG: /* BorderLeftWidth */18,
             _0: CssPropertyValue$Ress.borderLeftWidth(v)
           };
   };
   var borderLeftWidthString = function (v) {
     return {
-            TAG: /* BorderLeftWidth */17,
+            TAG: /* BorderLeftWidth */18,
             _0: v
           };
   };
   var background = function (color, position, size, repeat, attachment, origin, clip, imageOrColor) {
     return {
-            TAG: /* Background */23,
+            TAG: /* Background */24,
             _0: CssPropertyValue$Ress.background(color, position, size, repeat, attachment, origin, clip, imageOrColor)
           };
   };
   var background2 = function (l1, l2) {
     return {
-            TAG: /* Background */23,
+            TAG: /* Background */24,
             _0: CssPropertyValue$Ress.background2(l1, l2)
           };
   };
   var background3 = function (l1, l2, l3) {
     return {
-            TAG: /* Background */23,
+            TAG: /* Background */24,
             _0: CssPropertyValue$Ress.background3(l1, l2, l3)
           };
   };
   var background4 = function (l1, l2, l3, l4) {
     return {
-            TAG: /* Background */23,
+            TAG: /* Background */24,
             _0: CssPropertyValue$Ress.background4(l1, l2, l3, l4)
           };
   };
   var backgroundString = function (v) {
     return {
-            TAG: /* Background */23,
+            TAG: /* Background */24,
             _0: v
           };
   };
   var backgroundAttachment = function (v) {
     return {
-            TAG: /* BackgroundAttachment */24,
+            TAG: /* BackgroundAttachment */25,
             _0: CssPropertyValue$Ress.backgroundAttachment(v)
           };
   };
   var backgroundAttachment2 = function (v1, v2) {
     return {
-            TAG: /* BackgroundAttachment */24,
+            TAG: /* BackgroundAttachment */25,
             _0: CssPropertyValue$Ress.backgroundAttachment2(v1, v2)
           };
   };
   var backgroundAttachment3 = function (v1, v2, v3) {
     return {
-            TAG: /* BackgroundAttachment */24,
+            TAG: /* BackgroundAttachment */25,
             _0: CssPropertyValue$Ress.backgroundAttachment3(v1, v2, v3)
           };
   };
   var backgroundAttachment4 = function (v1, v2, v3, v4) {
     return {
-            TAG: /* BackgroundAttachment */24,
+            TAG: /* BackgroundAttachment */25,
             _0: CssPropertyValue$Ress.backgroundAttachment4(v1, v2, v3, v4)
           };
   };
   var backgroundAttachmentString = function (v) {
     return {
-            TAG: /* BackgroundAttachment */24,
+            TAG: /* BackgroundAttachment */25,
             _0: v
           };
   };
   var backgroundColor = function (v) {
     return {
-            TAG: /* BackgroundColor */25,
+            TAG: /* BackgroundColor */26,
             _0: CssPropertyValue$Ress.backgroundColor(v)
           };
   };
   var backgroundColorString = function (v) {
     return {
-            TAG: /* BackgroundColor */25,
+            TAG: /* BackgroundColor */26,
             _0: v
           };
   };
   var backgroundImage = function (v) {
     return {
-            TAG: /* BackgroundImage */26,
+            TAG: /* BackgroundImage */27,
             _0: CssPropertyValue$Ress.backgroundImage(v)
           };
   };
   var backgroundImage2 = function (v1, v2) {
     return {
-            TAG: /* BackgroundImage */26,
+            TAG: /* BackgroundImage */27,
             _0: CssPropertyValue$Ress.backgroundImage2(v1, v2)
           };
   };
   var backgroundImage3 = function (v1, v2, v3) {
     return {
-            TAG: /* BackgroundImage */26,
+            TAG: /* BackgroundImage */27,
             _0: CssPropertyValue$Ress.backgroundImage3(v1, v2, v3)
           };
   };
   var backgroundImage4 = function (v1, v2, v3, v4) {
     return {
-            TAG: /* BackgroundImage */26,
+            TAG: /* BackgroundImage */27,
             _0: CssPropertyValue$Ress.backgroundImage4(v1, v2, v3, v4)
           };
   };
   var backgroundImageString = function (v) {
     return {
-            TAG: /* BackgroundImage */26,
+            TAG: /* BackgroundImage */27,
             _0: v
           };
   };
   var backgroundPosition = function (v) {
     return {
-            TAG: /* BackgroundPosition */27,
+            TAG: /* BackgroundPosition */28,
             _0: CssPropertyValue$Ress.backgroundPosition(v)
           };
   };
   var backgroundPosition2 = function (v1, v2) {
     return {
-            TAG: /* BackgroundPosition */27,
+            TAG: /* BackgroundPosition */28,
             _0: CssPropertyValue$Ress.backgroundPosition2(v1, v2)
           };
   };
   var backgroundPosition3 = function (v1, v2, v3) {
     return {
-            TAG: /* BackgroundPosition */27,
+            TAG: /* BackgroundPosition */28,
             _0: CssPropertyValue$Ress.backgroundPosition3(v1, v2, v3)
           };
   };
   var backgroundPosition4 = function (v1, v2, v3, v4) {
     return {
-            TAG: /* BackgroundPosition */27,
+            TAG: /* BackgroundPosition */28,
             _0: CssPropertyValue$Ress.backgroundPosition4(v1, v2, v3, v4)
           };
   };
   var backgroundPositionString = function (v) {
     return {
-            TAG: /* BackgroundPosition */27,
+            TAG: /* BackgroundPosition */28,
             _0: v
           };
   };
   var backgroundStyle = function (v) {
     return {
-            TAG: /* BackgroundStyle */28,
+            TAG: /* BackgroundStyle */29,
             _0: CssPropertyValue$Ress.backgroundStyle(v)
           };
   };
   var backgroundStyle2 = function (v1, v2) {
     return {
-            TAG: /* BackgroundStyle */28,
+            TAG: /* BackgroundStyle */29,
             _0: CssPropertyValue$Ress.backgroundStyle2(v1, v2)
           };
   };
   var backgroundStyle3 = function (v1, v2, v3) {
     return {
-            TAG: /* BackgroundStyle */28,
+            TAG: /* BackgroundStyle */29,
             _0: CssPropertyValue$Ress.backgroundStyle3(v1, v2, v3)
           };
   };
   var backgroundStyle4 = function (v1, v2, v3, v4) {
     return {
-            TAG: /* BackgroundStyle */28,
+            TAG: /* BackgroundStyle */29,
             _0: CssPropertyValue$Ress.backgroundStyle4(v1, v2, v3, v4)
           };
   };
   var backgroundStyleString = function (v) {
     return {
-            TAG: /* BackgroundStyle */28,
+            TAG: /* BackgroundStyle */29,
             _0: v
           };
   };
   var margin = function (v) {
     return {
-            TAG: /* Margin */29,
+            TAG: /* Margin */30,
             _0: CssPropertyValue$Ress.margin(v)
           };
   };
   var margin2 = function (tb, lr) {
     return {
-            TAG: /* Margin */29,
+            TAG: /* Margin */30,
             _0: CssPropertyValue$Ress.margin2(tb, lr)
           };
   };
   var margin3 = function (top, lr, bottom) {
     return {
-            TAG: /* Margin */29,
+            TAG: /* Margin */30,
             _0: CssPropertyValue$Ress.margin3(top, lr, bottom)
           };
   };
   var margin4 = function (top, right, bottom, left) {
     return {
-            TAG: /* Margin */29,
+            TAG: /* Margin */30,
             _0: CssPropertyValue$Ress.margin4(top, right, bottom, left)
           };
   };
   var marginString = function (v) {
     return {
-            TAG: /* Margin */29,
+            TAG: /* Margin */30,
             _0: v
           };
   };
   var marginNumber = function (v) {
     return {
-            TAG: /* Margin */29,
+            TAG: /* Margin */30,
             _0: v
           };
   };
   var marginTop = function (v) {
     return {
-            TAG: /* MarginTop */30,
+            TAG: /* MarginTop */31,
             _0: CssPropertyValue$Ress.marginTop(v)
           };
   };
   var marginTopString = function (v) {
     return {
-            TAG: /* MarginTop */30,
+            TAG: /* MarginTop */31,
             _0: v
           };
   };
   var marginTopNumber = function (v) {
     return {
-            TAG: /* MarginTop */30,
+            TAG: /* MarginTop */31,
             _0: v
           };
   };
   var marginRight = function (v) {
     return {
-            TAG: /* MarginRight */31,
+            TAG: /* MarginRight */32,
             _0: CssPropertyValue$Ress.marginRight(v)
           };
   };
   var marginRightString = function (v) {
     return {
-            TAG: /* MarginRight */31,
+            TAG: /* MarginRight */32,
             _0: v
           };
   };
   var marginRightNumber = function (v) {
     return {
-            TAG: /* MarginRight */31,
+            TAG: /* MarginRight */32,
             _0: v
           };
   };
   var marginBottom = function (v) {
     return {
-            TAG: /* MarginBottom */32,
+            TAG: /* MarginBottom */33,
             _0: CssPropertyValue$Ress.marginBottom(v)
           };
   };
   var marginBottomString = function (v) {
     return {
-            TAG: /* MarginBottom */32,
+            TAG: /* MarginBottom */33,
             _0: v
           };
   };
   var marginBottomNumber = function (v) {
     return {
-            TAG: /* MarginBottom */32,
+            TAG: /* MarginBottom */33,
             _0: v
           };
   };
   var marginLeft = function (v) {
     return {
-            TAG: /* MarginLeft */33,
+            TAG: /* MarginLeft */34,
             _0: CssPropertyValue$Ress.marginLeft(v)
           };
   };
   var marginLeftString = function (v) {
     return {
-            TAG: /* MarginLeft */33,
+            TAG: /* MarginLeft */34,
             _0: v
           };
   };
   var marginLeftNumber = function (v) {
     return {
-            TAG: /* MarginLeft */33,
+            TAG: /* MarginLeft */34,
             _0: v
           };
   };
   var padding = function (v) {
     return {
-            TAG: /* Padding */34,
+            TAG: /* Padding */35,
             _0: CssPropertyValue$Ress.padding(v)
           };
   };
   var padding2 = function (tb, lr) {
     return {
-            TAG: /* Padding */34,
+            TAG: /* Padding */35,
             _0: CssPropertyValue$Ress.padding2(tb, lr)
           };
   };
   var padding3 = function (top, lr, bottom) {
     return {
-            TAG: /* Padding */34,
+            TAG: /* Padding */35,
             _0: CssPropertyValue$Ress.padding3(top, lr, bottom)
           };
   };
   var padding4 = function (top, right, bottom, left) {
     return {
-            TAG: /* Padding */34,
+            TAG: /* Padding */35,
             _0: CssPropertyValue$Ress.padding4(top, right, bottom, left)
           };
   };
   var paddingString = function (v) {
     return {
-            TAG: /* Padding */34,
+            TAG: /* Padding */35,
             _0: v
           };
   };
   var paddingNumber = function (v) {
     return {
-            TAG: /* Padding */34,
+            TAG: /* Padding */35,
             _0: v
           };
   };
   var paddingTop = function (v) {
     return {
-            TAG: /* PaddingTop */35,
+            TAG: /* PaddingTop */36,
             _0: CssPropertyValue$Ress.paddingTop(v)
           };
   };
   var paddingTopString = function (v) {
     return {
-            TAG: /* PaddingTop */35,
+            TAG: /* PaddingTop */36,
             _0: v
           };
   };
   var paddingTopNumber = function (v) {
     return {
-            TAG: /* PaddingTop */35,
+            TAG: /* PaddingTop */36,
             _0: v
           };
   };
   var paddingRight = function (v) {
     return {
-            TAG: /* PaddingRight */37,
+            TAG: /* PaddingRight */38,
             _0: CssPropertyValue$Ress.paddingRight(v)
           };
   };
   var paddingRightString = function (v) {
     return {
-            TAG: /* PaddingRight */37,
+            TAG: /* PaddingRight */38,
             _0: v
           };
   };
   var paddingRightNumber = function (v) {
     return {
-            TAG: /* PaddingRight */37,
+            TAG: /* PaddingRight */38,
             _0: v
           };
   };
   var paddingBottom = function (v) {
     return {
-            TAG: /* PaddingBottom */36,
+            TAG: /* PaddingBottom */37,
             _0: CssPropertyValue$Ress.paddingBottom(v)
           };
   };
   var paddingBottomString = function (v) {
     return {
-            TAG: /* PaddingBottom */36,
+            TAG: /* PaddingBottom */37,
             _0: v
           };
   };
   var paddingBottomNumber = function (v) {
     return {
-            TAG: /* PaddingBottom */36,
+            TAG: /* PaddingBottom */37,
             _0: v
           };
   };
   var paddingLeft = function (v) {
     return {
-            TAG: /* PaddingLeft */38,
+            TAG: /* PaddingLeft */39,
             _0: CssPropertyValue$Ress.paddingLeft(v)
           };
   };
   var paddingLeftString = function (v) {
     return {
-            TAG: /* PaddingLeft */38,
+            TAG: /* PaddingLeft */39,
             _0: v
           };
   };
   var paddingLeftNumber = function (v) {
     return {
-            TAG: /* PaddingLeft */38,
+            TAG: /* PaddingLeft */39,
             _0: v
           };
   };
   var clear = function (v) {
     return {
-            TAG: /* Clear */40,
+            TAG: /* Clear */41,
             _0: CssPropertyValue$Ress.clear(v)
           };
   };
   var color = function (v) {
     return {
-            TAG: /* Color */39,
+            TAG: /* Color */40,
             _0: CssPropertyValue$Ress.color(v)
           };
   };
   var colorString = function (v) {
     return {
-            TAG: /* Color */39,
+            TAG: /* Color */40,
             _0: v
           };
   };
   var cursor = function (v) {
     return {
-            TAG: /* Cursor */41,
+            TAG: /* Cursor */42,
             _0: CssPropertyValue$Ress.cursor(v)
           };
   };
   var cursor1 = function (i, k) {
     return {
-            TAG: /* Cursor */41,
+            TAG: /* Cursor */42,
             _0: CssPropertyValue$Ress.cursor1(i, k)
           };
   };
   var cursor2 = function (i1, i2, k) {
     return {
-            TAG: /* Cursor */41,
+            TAG: /* Cursor */42,
             _0: CssPropertyValue$Ress.cursor2(i1, i2, k)
           };
   };
   var cursor3 = function (i1, i2, i3, k) {
     return {
-            TAG: /* Cursor */41,
+            TAG: /* Cursor */42,
             _0: CssPropertyValue$Ress.cursor3(i1, i2, i3, k)
           };
   };
   var cursor4 = function (i1, i2, i3, i4, k) {
     return {
-            TAG: /* Cursor */41,
+            TAG: /* Cursor */42,
             _0: CssPropertyValue$Ress.cursor4(i1, i2, i3, i4, k)
           };
   };
   var cursorString = function (v) {
     return {
-            TAG: /* Cursor */41,
+            TAG: /* Cursor */42,
             _0: v
           };
   };
   return {
           style: style,
           selector: selector,
+          hover: hover,
           fontFace: fontFace,
           property: property,
           propertyNumber: propertyNumber,

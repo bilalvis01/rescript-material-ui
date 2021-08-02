@@ -5,6 +5,7 @@ module Make: (
 ) => {
   type statement = 
     | Selector(string, Type.t)
+    | Hover(Type.t)
     | FontFace(CssFontFace.t)
     | Property(string, CssPropertyValue.t_synthetic)
     | Border(CssPropertyValue.t_border)
@@ -54,6 +55,8 @@ module Make: (
   let style: array<statement> => Type.t;
 
   let selector: (string, array<statement>) => statement;
+
+  let hover: array<statement> => statement;
 
   let fontFace: array<CssFontFace.descriptor> => statement;
 

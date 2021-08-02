@@ -5,6 +5,7 @@ module Make = (
 ) => {
   type statement = 
     | Selector(string, Type.t)
+    | Hover(Type.t)
     | FontFace(CssFontFace.t)
     | Property(string, CssPropertyValue.t_synthetic)
     | Border(CssPropertyValue.t_border)
@@ -55,7 +56,8 @@ module Make = (
   let style = statements => {
     statements->Belt.Array.map(statement => {
       switch statement {
-      | Selector(selector, style) => (selector, BoxValue(style)) 
+      | Selector(selector, style) => (selector, BoxValue(style))
+      | Hover(style) => ("&:hover", BoxValue(style))
       | Property(name, value) => (name, BoxValue(value))
       | Border(value) => ("border", BoxValue(value))
       | BorderTop(value) => ("borderTop", BoxValue(value))
@@ -103,8 +105,11 @@ module Make = (
     ->makeStyle;
   };
 
-  let selector = (selector, declaration) => 
-    Selector(selector, style(declaration));
+  let selector = (selector, declarations) => 
+    Selector(selector, style(declarations));
+
+  let hover = declarations =>
+    Hover(style(declarations));
 
   let fontFace = descriptors => 
     FontFace(CssFontFace.make(descriptors));

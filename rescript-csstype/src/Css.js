@@ -153,6 +153,8 @@ var style = include.style;
 
 var selector = include.selector;
 
+var hover = include.hover;
+
 var fontFace = include.fontFace;
 
 var property = include.property;
@@ -480,6 +482,7 @@ exports.repeatingConicGradient3 = repeatingConicGradient3;
 exports.repeatingConicGradient4 = repeatingConicGradient4;
 exports.style = style;
 exports.selector = selector;
+exports.hover = hover;
 exports.fontFace = fontFace;
 exports.property = property;
 exports.propertyNumber = propertyNumber;
