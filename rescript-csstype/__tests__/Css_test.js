@@ -19,7 +19,7 @@ describe("style", (function () {
                                 ]),
                             Curry._2(Css$Ress.selector, "button", [
                                   Curry._1(Css$Ress.color, Css$Ress.hsla(Css$Ress.deg(360), Css$Ress.pct(100), Css$Ress.pct(50), 0.5)),
-                                  Curry._2(Css$Ress.selector, "&:hover", [Curry._8(Css$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
+                                  Curry._1(Css$Ress.hover, [Curry._8(Css$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                                 ]),
                             Curry._1(Css$Ress.fontFace, [CssFontFace$Ress.fontDisplay("auto")])
                           ])).toEqual({

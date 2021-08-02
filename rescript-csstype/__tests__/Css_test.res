@@ -15,7 +15,7 @@ describe("style", (.) => {
       ]),
       selector("button", [
         color(hsla(deg(360.), pct(100.), pct(50.), 0.5)),
-        selector("&:hover", [
+        hover([
           background(#blue)
         ]),
       ]),
