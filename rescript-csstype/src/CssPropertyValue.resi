@@ -311,3 +311,9 @@ let cursor4: (
   CssType.cursorImage, 
   CssType.cursorKeyword
 ) => t_cursor;
+
+type tag_fontFamily;
+type t_fontFamily = synthetic<tag_fontFamily>;
+
+type tag_fontWeight;
+type t_fontWeight = synthetic<tag_fontWeight>;

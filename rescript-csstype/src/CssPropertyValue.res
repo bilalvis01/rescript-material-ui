@@ -324,3 +324,9 @@ let cursor3 = (i1, i2, i3, k) =>
 let cursor4 = (i1, i2, i3, i4, k) =>
   `${CssString.cursorImage(i1)}, ${CssString.cursorImage(i2)}, ${CssString.cursorImage(i3)}, ${CssString.cursorImage(i4)}, ${CssString.cursorKeyword(k)}`
   ->cursorString;
+
+type tag_fontFamily;
+type t_fontFamily = synthetic<tag_fontFamily>;
+
+type tag_fontWeight;
+type t_fontWeight = synthetic<tag_fontWeight>;
