@@ -5,7 +5,7 @@ module Make = (
 ) => {
   type statement = 
     | Selector(string, Type.t)
-    | FontFace(FontFace.t)
+    | FontFace(CssFontFace.t)
     | Property(string, CssPropertyValue.t_synthetic)
     | Border(CssPropertyValue.t_border)
     | BorderTop(CssPropertyValue.t_border)
@@ -107,7 +107,7 @@ module Make = (
     Selector(selector, style(declaration));
 
   let fontFace = descriptors => 
-    FontFace(FontFace.make(descriptors));
+    FontFace(CssFontFace.make(descriptors));
 
   let property = (name, value) => 
     Property(name, CssPropertyValue.string(value));

@@ -1,5 +1,5 @@
 type descriptor =
-  | FontDisplay(FontFaceDescriptorValue.t_fontDisplay);
+  | FontDisplay(CssFontFacePropertyValue.t_fontDisplay);
 
 @unboxed
 type rec boxValue = 
@@ -17,6 +17,6 @@ let make = descriptors => {
 };
 
 let fontDisplay = v => 
-  FontDisplay(FontFaceDescriptorValue.fontDisplay(v));
+  FontDisplay(CssFontFacePropertyValue.fontDisplay(v));
 let fontDisplayString = v =>
-  FontDisplay(FontFaceDescriptorValue.fontDisplayString(v));
+  FontDisplay(CssFontFacePropertyValue.fontDisplayString(v));

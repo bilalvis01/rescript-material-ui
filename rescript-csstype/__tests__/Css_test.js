@@ -3,7 +3,7 @@
 
 var Curry = require("rescript/lib/js/curry.js");
 var Css$Ress = require("../src/Css.js");
-var FontFace$Ress = require("../src/FontFace.js");
+var CssFontFace$Ress = require("../src/CssFontFace.js");
 
 describe("style", (function () {
         test("style", (function () {
@@ -21,7 +21,7 @@ describe("style", (function () {
                                   Curry._1(Css$Ress.color, Css$Ress.hsla(Css$Ress.deg(360), Css$Ress.pct(100), Css$Ress.pct(50), 0.5)),
                                   Curry._2(Css$Ress.selector, "&:hover", [Curry._8(Css$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                                 ]),
-                            Curry._1(Css$Ress.fontFace, [FontFace$Ress.fontDisplay("auto")])
+                            Curry._1(Css$Ress.fontFace, [CssFontFace$Ress.fontDisplay("auto")])
                           ])).toEqual({
                       wrapper: {
                         background: "url(\"image.png\")",

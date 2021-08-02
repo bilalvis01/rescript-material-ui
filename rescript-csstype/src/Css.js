@@ -405,6 +405,8 @@ var cursorString = include.cursorString;
 
 var PropertyValue;
 
+var $$FontFace;
+
 exports.str = str;
 exports.num = num;
 exports.$$int = $$int;
@@ -604,4 +606,5 @@ exports.cursor3 = cursor3;
 exports.cursor4 = cursor4;
 exports.cursorString = cursorString;
 exports.PropertyValue = PropertyValue;
+exports.$$FontFace = $$FontFace;
 /* include Not a pure module */

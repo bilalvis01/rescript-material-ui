@@ -3,7 +3,7 @@
 
 var Js_dict = require("rescript/lib/js/js_dict.js");
 var Belt_Array = require("rescript/lib/js/belt_Array.js");
-var FontFace$Ress = require("./FontFace.js");
+var CssFontFace$Ress = require("./CssFontFace.js");
 var CssPropertyValue$Ress = require("./CssPropertyValue.js");
 
 function Make(funarg) {
@@ -226,7 +226,7 @@ function Make(funarg) {
   var fontFace = function (descriptors) {
     return {
             TAG: /* FontFace */1,
-            _0: FontFace$Ress.make(descriptors)
+            _0: CssFontFace$Ress.make(descriptors)
           };
   };
   var property = function (name, value) {

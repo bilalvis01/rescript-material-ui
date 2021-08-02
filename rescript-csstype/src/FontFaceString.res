@@ -1,1 +1,0 @@
-external fontDisplay: FontFaceType.fontDisplay => string = "%identity";

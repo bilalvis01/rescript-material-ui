@@ -1,5 +1,5 @@
 type descriptor =
-  | FontDisplay(FontFaceDescriptorValue.t_fontDisplay);
+  | FontDisplay(CssFontFacePropertyValue.t_fontDisplay);
 
 type t;
 
@@ -9,5 +9,5 @@ type rec boxValue =
 
 let make: array<descriptor> => t;
 
-let fontDisplay: FontFaceType.fontDisplay => descriptor;
+let fontDisplay: CssFontFaceType.fontDisplay => descriptor;
 let fontDisplayString: string => descriptor;

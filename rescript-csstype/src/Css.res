@@ -5,3 +5,4 @@ include CssFunction;
 include CssStyle.Make({ type t = style });
 
 module PropertyValue = CssPropertyValue;
+module FontFace = CssFontFace;

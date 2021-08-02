@@ -5,7 +5,7 @@ module Make: (
 ) => {
   type statement = 
     | Selector(string, Type.t)
-    | FontFace(FontFace.t)
+    | FontFace(CssFontFace.t)
     | Property(string, CssPropertyValue.t_synthetic)
     | Border(CssPropertyValue.t_border)
     | BorderTop(CssPropertyValue.t_border)
@@ -55,7 +55,7 @@ module Make: (
 
   let selector: (string, array<statement>) => statement;
 
-  let fontFace: array<FontFace.descriptor> => statement;
+  let fontFace: array<CssFontFace.descriptor> => statement;
 
   let property: (string, string) => statement;
   let propertyNumber: (string, float) => statement;
