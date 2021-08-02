@@ -15,6 +15,8 @@ module PaletteColorOptions = Theme_PaletteColorOptions;
 module TextColor = Theme_TextColor;
 module TonalOffset = Theme_TonalOffset;
 
+module Typography = Theme_Typography;
+
 let make: (
   ~palette: Theme_Palette.t=?,
   unit

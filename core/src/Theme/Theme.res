@@ -15,6 +15,8 @@ module PaletteColorOptions = Theme_PaletteColorOptions;
 module TextColor = Theme_TextColor;
 module TonalOffset = Theme_TonalOffset;
 
+module Typography = Theme_Typography;
+
 @module("@material-ui/core/styles")
 external createTheme: ThemeOptions.t => t = "createTheme";
 

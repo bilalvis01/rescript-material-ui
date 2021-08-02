@@ -34,6 +34,8 @@ var TextColor;
 
 var TonalOffset;
 
+var Typography;
+
 exports.Palette = Palette;
 exports.Color = Color;
 exports.ColorPartial = ColorPartial;
@@ -45,5 +47,6 @@ exports.PaletteColor = PaletteColor;
 exports.PaletteColorOptions = PaletteColorOptions;
 exports.TextColor = TextColor;
 exports.TonalOffset = TonalOffset;
+exports.Typography = Typography;
 exports.make = make;
 /* @material-ui/core/styles Not a pure module */
