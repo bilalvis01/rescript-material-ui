@@ -18,10 +18,8 @@
   "author": "BILAL <bilalvis01@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@rescript/react": "^0.10.3",
     "jest": "^27.0.6",
     "rescript": "^9.1.4"
-  },
-  "dependencies": {
-    "@rescript/react": "^0.10.3"
   }
 }
