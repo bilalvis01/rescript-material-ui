@@ -3,8 +3,8 @@ open Css;
 
 describe("style", (.) => {
   test("style", (.) => {
-    expect(style([
-      selector("wrapper", [
+    expect({
+      "wrapper": style([
         background(url("image.png")),
         color(rgb(255., 255., 255.)),
         paddingTop(px(24.)),
@@ -13,16 +13,16 @@ describe("style", (.) => {
         paddingRight(px(40.)),
         marginNumber(24.),
       ]),
-      selector("button", [
+      "button": style([
         color(hsla(deg(360.), pct(100.), pct(50.), 0.5)),
         hover([
           background(#blue)
         ]),
       ]),
-      fontFace([
+      "@font-face": FontFace.make([
         FontFace.fontDisplay(#auto),
       ]),
-    ]))
+    })
     ->toEqual(Obj.magic({
       "wrapper": {
         "background": `url("image.png")`,

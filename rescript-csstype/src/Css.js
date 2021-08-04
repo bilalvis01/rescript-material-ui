@@ -4,8 +4,272 @@
 var CssStyle$Ress = require("./CssStyle.js");
 var CssValue$Ress = require("./CssValue.js");
 var CssFunction$Ress = require("./CssFunction.js");
+var CssStyleHelper$Ress = require("./CssStyleHelper.js");
+var CssDeclarationHelper$Ress = require("./CssDeclarationHelper.js");
 
-var include = CssStyle$Ress.Make({});
+var Style = CssStyle$Ress.Make({});
+
+var include = CssStyleHelper$Ress.Make({
+      style: Style.make
+    });
+
+var selector = include.selector;
+
+var hover = include.hover;
+
+var fontFace = include.fontFace;
+
+var property = CssDeclarationHelper$Ress.property;
+
+var propertyNumber = CssDeclarationHelper$Ress.propertyNumber;
+
+var propertyInteger = CssDeclarationHelper$Ress.propertyInteger;
+
+var border = CssDeclarationHelper$Ress.border;
+
+var borderString = CssDeclarationHelper$Ress.borderString;
+
+var borderTop = CssDeclarationHelper$Ress.borderTop;
+
+var borderTopString = CssDeclarationHelper$Ress.borderTopString;
+
+var borderLeft = CssDeclarationHelper$Ress.borderLeft;
+
+var borderLeftString = CssDeclarationHelper$Ress.borderLeftString;
+
+var borderRight = CssDeclarationHelper$Ress.borderRight;
+
+var borderRightString = CssDeclarationHelper$Ress.borderRightString;
+
+var borderBottom = CssDeclarationHelper$Ress.borderBottom;
+
+var borderBottomString = CssDeclarationHelper$Ress.borderBottomString;
+
+var borderColor = CssDeclarationHelper$Ress.borderColor;
+
+var borderColor2 = CssDeclarationHelper$Ress.borderColor2;
+
+var borderColor3 = CssDeclarationHelper$Ress.borderColor3;
+
+var borderColor4 = CssDeclarationHelper$Ress.borderColor4;
+
+var borderColorString = CssDeclarationHelper$Ress.borderColorString;
+
+var borderTopColor = CssDeclarationHelper$Ress.borderTopColor;
+
+var borderTopColorString = CssDeclarationHelper$Ress.borderTopColorString;
+
+var borderRightColor = CssDeclarationHelper$Ress.borderRightColor;
+
+var borderRightColorString = CssDeclarationHelper$Ress.borderRightColorString;
+
+var borderBottomColor = CssDeclarationHelper$Ress.borderBottomColor;
+
+var borderBottomColorString = CssDeclarationHelper$Ress.borderBottomColorString;
+
+var borderLeftColor = CssDeclarationHelper$Ress.borderLeftColor;
+
+var borderLeftColorString = CssDeclarationHelper$Ress.borderLeftColorString;
+
+var borderStyle = CssDeclarationHelper$Ress.borderStyle;
+
+var borderStyle2 = CssDeclarationHelper$Ress.borderStyle2;
+
+var borderStyle3 = CssDeclarationHelper$Ress.borderStyle3;
+
+var borderStyle4 = CssDeclarationHelper$Ress.borderStyle4;
+
+var borderStyleString = CssDeclarationHelper$Ress.borderStyleString;
+
+var borderTopStyle = CssDeclarationHelper$Ress.borderTopStyle;
+
+var borderTopStyleString = CssDeclarationHelper$Ress.borderTopStyleString;
+
+var borderRightStyle = CssDeclarationHelper$Ress.borderRightStyle;
+
+var borderRightStyleString = CssDeclarationHelper$Ress.borderRightStyleString;
+
+var borderBottomStyle = CssDeclarationHelper$Ress.borderBottomStyle;
+
+var borderBottomStyleString = CssDeclarationHelper$Ress.borderBottomStyleString;
+
+var borderLeftStyle = CssDeclarationHelper$Ress.borderLeftStyle;
+
+var borderLeftStyleString = CssDeclarationHelper$Ress.borderLeftStyleString;
+
+var borderWidth = CssDeclarationHelper$Ress.borderWidth;
+
+var borderWidth2 = CssDeclarationHelper$Ress.borderWidth2;
+
+var borderWidth3 = CssDeclarationHelper$Ress.borderWidth3;
+
+var borderWidth4 = CssDeclarationHelper$Ress.borderWidth4;
+
+var borderWidthString = CssDeclarationHelper$Ress.borderWidthString;
+
+var borderTopWidth = CssDeclarationHelper$Ress.borderTopWidth;
+
+var borderTopWidthString = CssDeclarationHelper$Ress.borderTopWidthString;
+
+var borderRightWidth = CssDeclarationHelper$Ress.borderRightWidth;
+
+var borderRightWidthString = CssDeclarationHelper$Ress.borderRightWidthString;
+
+var borderBottomWidth = CssDeclarationHelper$Ress.borderBottomWidth;
+
+var borderBottomWidthString = CssDeclarationHelper$Ress.borderBottomWidthString;
+
+var borderLeftWidth = CssDeclarationHelper$Ress.borderLeftWidth;
+
+var borderLeftWidthString = CssDeclarationHelper$Ress.borderLeftWidthString;
+
+var background = CssDeclarationHelper$Ress.background;
+
+var backgroundString = CssDeclarationHelper$Ress.backgroundString;
+
+var background2 = CssDeclarationHelper$Ress.background2;
+
+var background3 = CssDeclarationHelper$Ress.background3;
+
+var background4 = CssDeclarationHelper$Ress.background4;
+
+var backgroundAttachment = CssDeclarationHelper$Ress.backgroundAttachment;
+
+var backgroundAttachment2 = CssDeclarationHelper$Ress.backgroundAttachment2;
+
+var backgroundAttachment3 = CssDeclarationHelper$Ress.backgroundAttachment3;
+
+var backgroundAttachment4 = CssDeclarationHelper$Ress.backgroundAttachment4;
+
+var backgroundAttachmentString = CssDeclarationHelper$Ress.backgroundAttachmentString;
+
+var backgroundColor = CssDeclarationHelper$Ress.backgroundColor;
+
+var backgroundColorString = CssDeclarationHelper$Ress.backgroundColorString;
+
+var backgroundImage = CssDeclarationHelper$Ress.backgroundImage;
+
+var backgroundImage2 = CssDeclarationHelper$Ress.backgroundImage2;
+
+var backgroundImage3 = CssDeclarationHelper$Ress.backgroundImage3;
+
+var backgroundImage4 = CssDeclarationHelper$Ress.backgroundImage4;
+
+var backgroundImageString = CssDeclarationHelper$Ress.backgroundImageString;
+
+var backgroundPosition = CssDeclarationHelper$Ress.backgroundPosition;
+
+var backgroundPosition2 = CssDeclarationHelper$Ress.backgroundPosition2;
+
+var backgroundPosition3 = CssDeclarationHelper$Ress.backgroundPosition3;
+
+var backgroundPosition4 = CssDeclarationHelper$Ress.backgroundPosition4;
+
+var backgroundPositionString = CssDeclarationHelper$Ress.backgroundPositionString;
+
+var backgroundStyle = CssDeclarationHelper$Ress.backgroundStyle;
+
+var backgroundStyle2 = CssDeclarationHelper$Ress.backgroundStyle2;
+
+var backgroundStyle3 = CssDeclarationHelper$Ress.backgroundStyle3;
+
+var backgroundStyle4 = CssDeclarationHelper$Ress.backgroundStyle4;
+
+var backgroundStyleString = CssDeclarationHelper$Ress.backgroundStyleString;
+
+var margin = CssDeclarationHelper$Ress.margin;
+
+var margin2 = CssDeclarationHelper$Ress.margin2;
+
+var margin3 = CssDeclarationHelper$Ress.margin3;
+
+var margin4 = CssDeclarationHelper$Ress.margin4;
+
+var marginString = CssDeclarationHelper$Ress.marginString;
+
+var marginNumber = CssDeclarationHelper$Ress.marginNumber;
+
+var marginTop = CssDeclarationHelper$Ress.marginTop;
+
+var marginTopString = CssDeclarationHelper$Ress.marginTopString;
+
+var marginTopNumber = CssDeclarationHelper$Ress.marginTopNumber;
+
+var marginRight = CssDeclarationHelper$Ress.marginRight;
+
+var marginRightString = CssDeclarationHelper$Ress.marginRightString;
+
+var marginRightNumber = CssDeclarationHelper$Ress.marginRightNumber;
+
+var marginBottom = CssDeclarationHelper$Ress.marginBottom;
+
+var marginBottomString = CssDeclarationHelper$Ress.marginBottomString;
+
+var marginBottomNumber = CssDeclarationHelper$Ress.marginBottomNumber;
+
+var marginLeft = CssDeclarationHelper$Ress.marginLeft;
+
+var marginLeftString = CssDeclarationHelper$Ress.marginLeftString;
+
+var marginLeftNumber = CssDeclarationHelper$Ress.marginLeftNumber;
+
+var padding = CssDeclarationHelper$Ress.padding;
+
+var padding2 = CssDeclarationHelper$Ress.padding2;
+
+var padding3 = CssDeclarationHelper$Ress.padding3;
+
+var padding4 = CssDeclarationHelper$Ress.padding4;
+
+var paddingString = CssDeclarationHelper$Ress.paddingString;
+
+var paddingNumber = CssDeclarationHelper$Ress.paddingNumber;
+
+var paddingTop = CssDeclarationHelper$Ress.paddingTop;
+
+var paddingTopString = CssDeclarationHelper$Ress.paddingTopString;
+
+var paddingTopNumber = CssDeclarationHelper$Ress.paddingTopNumber;
+
+var paddingRight = CssDeclarationHelper$Ress.paddingRight;
+
+var paddingRightString = CssDeclarationHelper$Ress.paddingRightString;
+
+var paddingRightNumber = CssDeclarationHelper$Ress.paddingRightNumber;
+
+var paddingBottom = CssDeclarationHelper$Ress.paddingBottom;
+
+var paddingBottomString = CssDeclarationHelper$Ress.paddingBottomString;
+
+var paddingBottomNumber = CssDeclarationHelper$Ress.paddingBottomNumber;
+
+var paddingLeft = CssDeclarationHelper$Ress.paddingLeft;
+
+var paddingLeftString = CssDeclarationHelper$Ress.paddingLeftString;
+
+var paddingLeftNumber = CssDeclarationHelper$Ress.paddingLeftNumber;
+
+var clear = CssDeclarationHelper$Ress.clear;
+
+var color = CssDeclarationHelper$Ress.color;
+
+var colorString = CssDeclarationHelper$Ress.colorString;
+
+var cursor = CssDeclarationHelper$Ress.cursor;
+
+var cursor1 = CssDeclarationHelper$Ress.cursor1;
+
+var cursor2 = CssDeclarationHelper$Ress.cursor2;
+
+var cursor3 = CssDeclarationHelper$Ress.cursor3;
+
+var cursor4 = CssDeclarationHelper$Ress.cursor4;
+
+var cursorString = CssDeclarationHelper$Ress.cursorString;
+
+var PropertyValue;
+
+var $$FontFace;
 
 var str = CssValue$Ress.str;
 
@@ -149,338 +413,9 @@ var repeatingConicGradient3 = CssFunction$Ress.repeatingConicGradient3;
 
 var repeatingConicGradient4 = CssFunction$Ress.repeatingConicGradient4;
 
-var style = include.style;
+var style = Style.make;
 
-var selector = include.selector;
-
-var hover = include.hover;
-
-var fontFace = include.fontFace;
-
-var property = include.property;
-
-var propertyNumber = include.propertyNumber;
-
-var propertyInteger = include.propertyInteger;
-
-var border = include.border;
-
-var borderString = include.borderString;
-
-var borderTop = include.borderTop;
-
-var borderTopString = include.borderTopString;
-
-var borderLeft = include.borderLeft;
-
-var borderLeftString = include.borderLeftString;
-
-var borderRight = include.borderRight;
-
-var borderRightString = include.borderRightString;
-
-var borderBottom = include.borderBottom;
-
-var borderBottomString = include.borderBottomString;
-
-var borderColor = include.borderColor;
-
-var borderColor2 = include.borderColor2;
-
-var borderColor3 = include.borderColor3;
-
-var borderColor4 = include.borderColor4;
-
-var borderColorString = include.borderColorString;
-
-var borderTopColor = include.borderTopColor;
-
-var borderTopColorString = include.borderTopColorString;
-
-var borderRightColor = include.borderRightColor;
-
-var borderRightColorString = include.borderRightColorString;
-
-var borderBottomColor = include.borderBottomColor;
-
-var borderBottomColorString = include.borderBottomColorString;
-
-var borderLeftColor = include.borderLeftColor;
-
-var borderLeftColorString = include.borderLeftColorString;
-
-var borderStyle = include.borderStyle;
-
-var borderStyle2 = include.borderStyle2;
-
-var borderStyle3 = include.borderStyle3;
-
-var borderStyle4 = include.borderStyle4;
-
-var borderStyleString = include.borderStyleString;
-
-var borderTopStyle = include.borderTopStyle;
-
-var borderTopStyleString = include.borderTopStyleString;
-
-var borderRightStyle = include.borderRightStyle;
-
-var borderRightStyleString = include.borderRightStyleString;
-
-var borderBottomStyle = include.borderBottomStyle;
-
-var borderBottomStyleString = include.borderBottomStyleString;
-
-var borderLeftStyle = include.borderLeftStyle;
-
-var borderLeftStyleString = include.borderLeftStyleString;
-
-var borderWidth = include.borderWidth;
-
-var borderWidth2 = include.borderWidth2;
-
-var borderWidth3 = include.borderWidth3;
-
-var borderWidth4 = include.borderWidth4;
-
-var borderWidthString = include.borderWidthString;
-
-var borderTopWidth = include.borderTopWidth;
-
-var borderTopWidthString = include.borderTopWidthString;
-
-var borderRightWidth = include.borderRightWidth;
-
-var borderRightWidthString = include.borderRightWidthString;
-
-var borderBottomWidth = include.borderBottomWidth;
-
-var borderBottomWidthString = include.borderBottomWidthString;
-
-var borderLeftWidth = include.borderLeftWidth;
-
-var borderLeftWidthString = include.borderLeftWidthString;
-
-var background = include.background;
-
-var backgroundString = include.backgroundString;
-
-var background2 = include.background2;
-
-var background3 = include.background3;
-
-var background4 = include.background4;
-
-var backgroundAttachment = include.backgroundAttachment;
-
-var backgroundAttachment2 = include.backgroundAttachment2;
-
-var backgroundAttachment3 = include.backgroundAttachment3;
-
-var backgroundAttachment4 = include.backgroundAttachment4;
-
-var backgroundAttachmentString = include.backgroundAttachmentString;
-
-var backgroundColor = include.backgroundColor;
-
-var backgroundColorString = include.backgroundColorString;
-
-var backgroundImage = include.backgroundImage;
-
-var backgroundImage2 = include.backgroundImage2;
-
-var backgroundImage3 = include.backgroundImage3;
-
-var backgroundImage4 = include.backgroundImage4;
-
-var backgroundImageString = include.backgroundImageString;
-
-var backgroundPosition = include.backgroundPosition;
-
-var backgroundPosition2 = include.backgroundPosition2;
-
-var backgroundPosition3 = include.backgroundPosition3;
-
-var backgroundPosition4 = include.backgroundPosition4;
-
-var backgroundPositionString = include.backgroundPositionString;
-
-var backgroundStyle = include.backgroundStyle;
-
-var backgroundStyle2 = include.backgroundStyle2;
-
-var backgroundStyle3 = include.backgroundStyle3;
-
-var backgroundStyle4 = include.backgroundStyle4;
-
-var backgroundStyleString = include.backgroundStyleString;
-
-var margin = include.margin;
-
-var margin2 = include.margin2;
-
-var margin3 = include.margin3;
-
-var margin4 = include.margin4;
-
-var marginString = include.marginString;
-
-var marginNumber = include.marginNumber;
-
-var marginTop = include.marginTop;
-
-var marginTopString = include.marginTopString;
-
-var marginTopNumber = include.marginTopNumber;
-
-var marginRight = include.marginRight;
-
-var marginRightString = include.marginRightString;
-
-var marginRightNumber = include.marginRightNumber;
-
-var marginBottom = include.marginBottom;
-
-var marginBottomString = include.marginBottomString;
-
-var marginBottomNumber = include.marginBottomNumber;
-
-var marginLeft = include.marginLeft;
-
-var marginLeftString = include.marginLeftString;
-
-var marginLeftNumber = include.marginLeftNumber;
-
-var padding = include.padding;
-
-var padding2 = include.padding2;
-
-var padding3 = include.padding3;
-
-var padding4 = include.padding4;
-
-var paddingString = include.paddingString;
-
-var paddingNumber = include.paddingNumber;
-
-var paddingTop = include.paddingTop;
-
-var paddingTopString = include.paddingTopString;
-
-var paddingTopNumber = include.paddingTopNumber;
-
-var paddingRight = include.paddingRight;
-
-var paddingRightString = include.paddingRightString;
-
-var paddingRightNumber = include.paddingRightNumber;
-
-var paddingBottom = include.paddingBottom;
-
-var paddingBottomString = include.paddingBottomString;
-
-var paddingBottomNumber = include.paddingBottomNumber;
-
-var paddingLeft = include.paddingLeft;
-
-var paddingLeftString = include.paddingLeftString;
-
-var paddingLeftNumber = include.paddingLeftNumber;
-
-var clear = include.clear;
-
-var color = include.color;
-
-var colorString = include.colorString;
-
-var cursor = include.cursor;
-
-var cursor1 = include.cursor1;
-
-var cursor2 = include.cursor2;
-
-var cursor3 = include.cursor3;
-
-var cursor4 = include.cursor4;
-
-var cursorString = include.cursorString;
-
-var PropertyValue;
-
-var $$FontFace;
-
-exports.str = str;
-exports.num = num;
-exports.$$int = $$int;
-exports.pct = pct;
-exports.ratio = ratio;
-exports.fr = fr;
-exports.ch = ch;
-exports.em = em;
-exports.ex = ex;
-exports.rem = rem;
-exports.vh = vh;
-exports.vw = vw;
-exports.vmin = vmin;
-exports.vmax = vmax;
-exports.px = px;
-exports.cm = cm;
-exports.mm = mm;
-exports.inch = inch;
-exports.pc = pc;
-exports.pt = pt;
-exports.deg = deg;
-exports.grad = grad;
-exports.rad = rad;
-exports.turn = turn;
-exports.s = s;
-exports.ms = ms;
-exports.hz = hz;
-exports.kHz = kHz;
-exports.dpi = dpi;
-exports.dpcm = dpcm;
-exports.dppx = dppx;
-exports.x = x;
-exports.position2 = position2;
-exports.position3 = position3;
-exports.position4 = position4;
-exports.src = src;
-exports.bgLayer = bgLayer;
-exports.bgSize2 = bgSize2;
-exports.hsl = hsl;
-exports.hsla = hsla;
-exports.rgb = rgb;
-exports.rgba = rgba;
-exports.rgbX = rgbX;
-exports.url = url;
-exports.image = image;
-exports.linearColorStop2 = linearColorStop2;
-exports.linearColorStop3 = linearColorStop3;
-exports.linearGradient = linearGradient;
-exports.linearGradient2 = linearGradient2;
-exports.linearGradient3 = linearGradient3;
-exports.linearGradient4 = linearGradient4;
-exports.repeatingLinearGradient = repeatingLinearGradient;
-exports.repeatingLinearGradient2 = repeatingLinearGradient2;
-exports.repeatingLinearGradient3 = repeatingLinearGradient3;
-exports.repeatingLinearGradient4 = repeatingLinearGradient4;
-exports.radialGradient = radialGradient;
-exports.radialGradient2 = radialGradient2;
-exports.radialGradient3 = radialGradient3;
-exports.radialGradient4 = radialGradient4;
-exports.repeatingRadialGradient = repeatingRadialGradient;
-exports.repeatingRadialGradient2 = repeatingRadialGradient2;
-exports.repeatingRadialGradient3 = repeatingRadialGradient3;
-exports.repeatingRadialGradient4 = repeatingRadialGradient4;
-exports.conicGradient = conicGradient;
-exports.conicGradient2 = conicGradient2;
-exports.conicGradient3 = conicGradient3;
-exports.conicGradient4 = conicGradient4;
-exports.repeatingConicGradient = repeatingConicGradient;
-exports.repeatingConicGradient2 = repeatingConicGradient2;
-exports.repeatingConicGradient3 = repeatingConicGradient3;
-exports.repeatingConicGradient4 = repeatingConicGradient4;
-exports.style = style;
+exports.Style = Style;
 exports.selector = selector;
 exports.hover = hover;
 exports.fontFace = fontFace;
@@ -610,4 +545,76 @@ exports.cursor4 = cursor4;
 exports.cursorString = cursorString;
 exports.PropertyValue = PropertyValue;
 exports.$$FontFace = $$FontFace;
-/* include Not a pure module */
+exports.str = str;
+exports.num = num;
+exports.$$int = $$int;
+exports.pct = pct;
+exports.ratio = ratio;
+exports.fr = fr;
+exports.ch = ch;
+exports.em = em;
+exports.ex = ex;
+exports.rem = rem;
+exports.vh = vh;
+exports.vw = vw;
+exports.vmin = vmin;
+exports.vmax = vmax;
+exports.px = px;
+exports.cm = cm;
+exports.mm = mm;
+exports.inch = inch;
+exports.pc = pc;
+exports.pt = pt;
+exports.deg = deg;
+exports.grad = grad;
+exports.rad = rad;
+exports.turn = turn;
+exports.s = s;
+exports.ms = ms;
+exports.hz = hz;
+exports.kHz = kHz;
+exports.dpi = dpi;
+exports.dpcm = dpcm;
+exports.dppx = dppx;
+exports.x = x;
+exports.position2 = position2;
+exports.position3 = position3;
+exports.position4 = position4;
+exports.src = src;
+exports.bgLayer = bgLayer;
+exports.bgSize2 = bgSize2;
+exports.hsl = hsl;
+exports.hsla = hsla;
+exports.rgb = rgb;
+exports.rgba = rgba;
+exports.rgbX = rgbX;
+exports.url = url;
+exports.image = image;
+exports.linearColorStop2 = linearColorStop2;
+exports.linearColorStop3 = linearColorStop3;
+exports.linearGradient = linearGradient;
+exports.linearGradient2 = linearGradient2;
+exports.linearGradient3 = linearGradient3;
+exports.linearGradient4 = linearGradient4;
+exports.repeatingLinearGradient = repeatingLinearGradient;
+exports.repeatingLinearGradient2 = repeatingLinearGradient2;
+exports.repeatingLinearGradient3 = repeatingLinearGradient3;
+exports.repeatingLinearGradient4 = repeatingLinearGradient4;
+exports.radialGradient = radialGradient;
+exports.radialGradient2 = radialGradient2;
+exports.radialGradient3 = radialGradient3;
+exports.radialGradient4 = radialGradient4;
+exports.repeatingRadialGradient = repeatingRadialGradient;
+exports.repeatingRadialGradient2 = repeatingRadialGradient2;
+exports.repeatingRadialGradient3 = repeatingRadialGradient3;
+exports.repeatingRadialGradient4 = repeatingRadialGradient4;
+exports.conicGradient = conicGradient;
+exports.conicGradient2 = conicGradient2;
+exports.conicGradient3 = conicGradient3;
+exports.conicGradient4 = conicGradient4;
+exports.repeatingConicGradient = repeatingConicGradient;
+exports.repeatingConicGradient2 = repeatingConicGradient2;
+exports.repeatingConicGradient3 = repeatingConicGradient3;
+exports.repeatingConicGradient4 = repeatingConicGradient4;
+exports.style = style;
+/* Style Not a pure module */
