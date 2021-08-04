@@ -15,7 +15,6 @@ include CssDeclarationHelper;
 module PropertyValue = CssPropertyValue;
 module FontFace = CssFontFace;
 
-include CssValue;
-include CssFunction;
+include CssValueHelper;
 
 let style = Style.make;

@@ -1,5 +1,5 @@
 open Jest;
-open CssString;
+open CssValueString;
 
 /*
 Numeric data types

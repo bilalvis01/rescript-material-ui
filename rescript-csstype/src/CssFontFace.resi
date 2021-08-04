@@ -9,5 +9,5 @@ type rec boxValue =
 
 let make: array<descriptor> => t;
 
-let fontDisplay: CssFontFaceType.fontDisplay => descriptor;
+let fontDisplay: CssFontFaceValueType.fontDisplay => descriptor;
 let fontDisplayString: string => descriptor;

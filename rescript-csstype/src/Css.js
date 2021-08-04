@@ -2,9 +2,8 @@
 'use strict';
 
 var CssStyle$Ress = require("./CssStyle.js");
-var CssValue$Ress = require("./CssValue.js");
-var CssFunction$Ress = require("./CssFunction.js");
 var CssStyleHelper$Ress = require("./CssStyleHelper.js");
+var CssValueHelper$Ress = require("./CssValueHelper.js");
 var CssDeclarationHelper$Ress = require("./CssDeclarationHelper.js");
 
 var Style = CssStyle$Ress.Make({});
@@ -271,147 +270,147 @@ var PropertyValue;
 
 var $$FontFace;
 
-var str = CssValue$Ress.str;
+var str = CssValueHelper$Ress.str;
 
-var num = CssValue$Ress.num;
+var num = CssValueHelper$Ress.num;
 
-var $$int = CssValue$Ress.$$int;
+var $$int = CssValueHelper$Ress.$$int;
 
-var pct = CssValue$Ress.pct;
+var pct = CssValueHelper$Ress.pct;
 
-var ratio = CssValue$Ress.ratio;
+var ratio = CssValueHelper$Ress.ratio;
 
-var fr = CssValue$Ress.fr;
+var fr = CssValueHelper$Ress.fr;
 
-var ch = CssValue$Ress.ch;
+var ch = CssValueHelper$Ress.ch;
 
-var em = CssValue$Ress.em;
+var em = CssValueHelper$Ress.em;
 
-var ex = CssValue$Ress.ex;
+var ex = CssValueHelper$Ress.ex;
 
-var rem = CssValue$Ress.rem;
+var rem = CssValueHelper$Ress.rem;
 
-var vh = CssValue$Ress.vh;
+var vh = CssValueHelper$Ress.vh;
 
-var vw = CssValue$Ress.vw;
+var vw = CssValueHelper$Ress.vw;
 
-var vmin = CssValue$Ress.vmin;
+var vmin = CssValueHelper$Ress.vmin;
 
-var vmax = CssValue$Ress.vmax;
+var vmax = CssValueHelper$Ress.vmax;
 
-var px = CssValue$Ress.px;
+var px = CssValueHelper$Ress.px;
 
-var cm = CssValue$Ress.cm;
+var cm = CssValueHelper$Ress.cm;
 
-var mm = CssValue$Ress.mm;
+var mm = CssValueHelper$Ress.mm;
 
-var inch = CssValue$Ress.inch;
+var inch = CssValueHelper$Ress.inch;
 
-var pc = CssValue$Ress.pc;
+var pc = CssValueHelper$Ress.pc;
 
-var pt = CssValue$Ress.pt;
+var pt = CssValueHelper$Ress.pt;
 
-var deg = CssValue$Ress.deg;
+var deg = CssValueHelper$Ress.deg;
 
-var grad = CssValue$Ress.grad;
+var grad = CssValueHelper$Ress.grad;
 
-var rad = CssValue$Ress.rad;
+var rad = CssValueHelper$Ress.rad;
 
-var turn = CssValue$Ress.turn;
+var turn = CssValueHelper$Ress.turn;
 
-var s = CssValue$Ress.s;
+var s = CssValueHelper$Ress.s;
 
-var ms = CssValue$Ress.ms;
+var ms = CssValueHelper$Ress.ms;
 
-var hz = CssValue$Ress.hz;
+var hz = CssValueHelper$Ress.hz;
 
-var kHz = CssValue$Ress.kHz;
+var kHz = CssValueHelper$Ress.kHz;
 
-var dpi = CssValue$Ress.dpi;
+var dpi = CssValueHelper$Ress.dpi;
 
-var dpcm = CssValue$Ress.dpcm;
+var dpcm = CssValueHelper$Ress.dpcm;
 
-var dppx = CssValue$Ress.dppx;
+var dppx = CssValueHelper$Ress.dppx;
 
-var x = CssValue$Ress.x;
+var x = CssValueHelper$Ress.x;
 
-var position2 = CssValue$Ress.position2;
+var position2 = CssValueHelper$Ress.position2;
 
-var position3 = CssValue$Ress.position3;
+var position3 = CssValueHelper$Ress.position3;
 
-var position4 = CssValue$Ress.position4;
+var position4 = CssValueHelper$Ress.position4;
 
-var src = CssValue$Ress.src;
+var src = CssValueHelper$Ress.src;
 
-var bgLayer = CssValue$Ress.bgLayer;
+var bgLayer = CssValueHelper$Ress.bgLayer;
 
-var bgSize2 = CssValue$Ress.bgSize2;
+var bgSize2 = CssValueHelper$Ress.bgSize2;
 
-var hsl = CssFunction$Ress.hsl;
+var hsl = CssValueHelper$Ress.hsl;
 
-var hsla = CssFunction$Ress.hsla;
+var hsla = CssValueHelper$Ress.hsla;
 
-var rgb = CssFunction$Ress.rgb;
+var rgb = CssValueHelper$Ress.rgb;
 
-var rgba = CssFunction$Ress.rgba;
+var rgba = CssValueHelper$Ress.rgba;
 
-var rgbX = CssFunction$Ress.rgbX;
+var rgbX = CssValueHelper$Ress.rgbX;
 
-var url = CssFunction$Ress.url;
+var url = CssValueHelper$Ress.url;
 
-var image = CssFunction$Ress.image;
+var image = CssValueHelper$Ress.image;
 
-var linearColorStop2 = CssFunction$Ress.linearColorStop2;
+var linearColorStop2 = CssValueHelper$Ress.linearColorStop2;
 
-var linearColorStop3 = CssFunction$Ress.linearColorStop3;
+var linearColorStop3 = CssValueHelper$Ress.linearColorStop3;
 
-var linearGradient = CssFunction$Ress.linearGradient;
+var linearGradient = CssValueHelper$Ress.linearGradient;
 
-var linearGradient2 = CssFunction$Ress.linearGradient2;
+var linearGradient2 = CssValueHelper$Ress.linearGradient2;
 
-var linearGradient3 = CssFunction$Ress.linearGradient3;
+var linearGradient3 = CssValueHelper$Ress.linearGradient3;
 
-var linearGradient4 = CssFunction$Ress.linearGradient4;
+var linearGradient4 = CssValueHelper$Ress.linearGradient4;
 
-var repeatingLinearGradient = CssFunction$Ress.repeatingLinearGradient;
+var repeatingLinearGradient = CssValueHelper$Ress.repeatingLinearGradient;
 
-var repeatingLinearGradient2 = CssFunction$Ress.repeatingLinearGradient2;
+var repeatingLinearGradient2 = CssValueHelper$Ress.repeatingLinearGradient2;
 
-var repeatingLinearGradient3 = CssFunction$Ress.repeatingLinearGradient3;
+var repeatingLinearGradient3 = CssValueHelper$Ress.repeatingLinearGradient3;
 
-var repeatingLinearGradient4 = CssFunction$Ress.repeatingLinearGradient4;
+var repeatingLinearGradient4 = CssValueHelper$Ress.repeatingLinearGradient4;
 
-var radialGradient = CssFunction$Ress.radialGradient;
+var radialGradient = CssValueHelper$Ress.radialGradient;
 
-var radialGradient2 = CssFunction$Ress.radialGradient2;
+var radialGradient2 = CssValueHelper$Ress.radialGradient2;
 
-var radialGradient3 = CssFunction$Ress.radialGradient3;
+var radialGradient3 = CssValueHelper$Ress.radialGradient3;
 
-var radialGradient4 = CssFunction$Ress.radialGradient4;
+var radialGradient4 = CssValueHelper$Ress.radialGradient4;
 
-var repeatingRadialGradient = CssFunction$Ress.repeatingRadialGradient;
+var repeatingRadialGradient = CssValueHelper$Ress.repeatingRadialGradient;
 
-var repeatingRadialGradient2 = CssFunction$Ress.repeatingRadialGradient2;
+var repeatingRadialGradient2 = CssValueHelper$Ress.repeatingRadialGradient2;
 
-var repeatingRadialGradient3 = CssFunction$Ress.repeatingRadialGradient3;
+var repeatingRadialGradient3 = CssValueHelper$Ress.repeatingRadialGradient3;
 
-var repeatingRadialGradient4 = CssFunction$Ress.repeatingRadialGradient4;
+var repeatingRadialGradient4 = CssValueHelper$Ress.repeatingRadialGradient4;
 
-var conicGradient = CssFunction$Ress.conicGradient;
+var conicGradient = CssValueHelper$Ress.conicGradient;
 
-var conicGradient2 = CssFunction$Ress.conicGradient2;
+var conicGradient2 = CssValueHelper$Ress.conicGradient2;
 
-var conicGradient3 = CssFunction$Ress.conicGradient3;
+var conicGradient3 = CssValueHelper$Ress.conicGradient3;
 
-var conicGradient4 = CssFunction$Ress.conicGradient4;
+var conicGradient4 = CssValueHelper$Ress.conicGradient4;
 
-var repeatingConicGradient = CssFunction$Ress.repeatingConicGradient;
+var repeatingConicGradient = CssValueHelper$Ress.repeatingConicGradient;
 
-var repeatingConicGradient2 = CssFunction$Ress.repeatingConicGradient2;
+var repeatingConicGradient2 = CssValueHelper$Ress.repeatingConicGradient2;
 
-var repeatingConicGradient3 = CssFunction$Ress.repeatingConicGradient3;
+var repeatingConicGradient3 = CssValueHelper$Ress.repeatingConicGradient3;
 
-var repeatingConicGradient4 = CssFunction$Ress.repeatingConicGradient4;
+var repeatingConicGradient4 = CssValueHelper$Ress.repeatingConicGradient4;
 
 var style = Style.make;
 

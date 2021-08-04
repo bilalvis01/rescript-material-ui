@@ -1,4 +1,4 @@
-open CssType;
+open CssValueType;
 open Belt;
 
 /*
@@ -204,15 +204,6 @@ let time_percentage = v => {
   switch v {
   | #...time as t => time(t)
   | #...percentage as p => percentage(p)
-  }
-};
-
-// Scalar
-let scalar = v => {
-  switch v {
-    | #...number as n => number(n)
-    | #...integer as i => integer(i)
-    | #...string_ as s => string(s)
   }
 };
 

@@ -1,4 +1,4 @@
-open CssType;
+open CssValueType;
 
 /* 
 Combinator
@@ -14,7 +14,7 @@ let stickMany: (stickMany<'a>, 'a => string) => string;
 Textual data types
 */
 external global: global => string = "%identity";
-let string: string_ => string;
+let string: cssString => string;
 
 /*
 Numeric data types
@@ -77,9 +77,6 @@ let length_percentage: length_percentage => string;
 let frequency_percentage: frequency_percentage => string;
 let angle_percentage: angle_percentage => string;
 let time_percentage: time_percentage => string;
-
-// Scalar
-let scalar: scalar => string;
 
 // Line
 let lineWidth: lineWidth => string;

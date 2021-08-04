@@ -35,7 +35,7 @@ type global = [
   | #revert
 ];
 
-type string_ = [
+type cssString = [
   | #string(string)
 ];
 
@@ -69,49 +69,75 @@ type flexUnit = [
 Quantities
 */
 // length
+type ch = [ | #ch(float) ];
+type em = [ | #em(float) ];
+type ex = [ | #ex(float) ];
+type rem = [ | #rem(float) ];
+type vh = [ | #vh(float) ];
+type vw = [ | #vw(float) ];
+type vmin = [ | #vmin(float) ];
+type vmax = [ | #vmax(float) ];
+type px = [ | #px(float) ];
+type cm = [ | #cm(float) ];
+type mm = [ | #mm(float) ];
+type inch = [ | #inch(float) ];
+type pc = [ | #pc(float) ];
+type pt = [ | #pt(float) ];
 type length = [
-  | #ch(float)
-  | #em(float)
-  | #ex(float)
-  | #rem(float)
-  | #vh(float)
-  | #vw(float)
-  | #vmin(float)
-  | #vmax(float)
-  | #px(float)
-  | #cm(float)
-  | #mm(float)
-  | #inch(float)
-  | #pc(float)
-  | #pt(float)
+  | ch
+  | em
+  | ex
+  | rem
+  | vh
+  | vw
+  | vmin
+  | vmax
+  | px
+  | cm
+  | mm
+  | inch
+  | pc
+  | pt
 ];
 
 // Angle
+type deg = [ | #deg(float) ];
+type grad = [ | #grad(float) ];
+type rad = [ | #rad(float) ];
+type turn = [ | #turn(float) ];
 type angle = [
-  | #deg(float)
-  | #grad(float)
-  | #rad(float)
-  | #turn(float)
+  | deg
+  | grad
+  | rad
+  | turn
 ];
 
 // time
+type s = [ | #s(float) ];
+type ms = [ | #ms(float) ];
 type time = [
-  | #s(float)
-  | #ms(float)
+  | s
+  | ms
 ];
 
 // Frequency
+type hz = [ | #Hz(float) ];
+type kHz = [ | #kHz(float) ];
 type frequency = [
-  | #Hz(float)
-  | #kHz(float)
+  | hz
+  | kHz
 ];
 
 // Resolution
+type dpi = [ | #dpi(float) ];
+type dpcm = [ | #dpcm(float) ];
+type dppx = [ | #dppx(float) ];
+type x = [ | #x(float) ];
 type resolution = [
-  | #dpi(float)
-  | #dpcm(float)
-  | #dppx(float)
-  | #x(float) // alias for dppx
+  | dpi
+  | dpcm
+  | dppx
+  | x // alias for dppx
 ];
 
 /*
@@ -922,35 +948,31 @@ type alpha = [
 
 type hue = [
   | angle
-  // | number
-  // | degree
 ];
 
 type rgbParam = [
   | percentage
   | number
-  // | rgbDecimalValue
 ];
+
+type hsl = [ | #hsl(hue, percentage, percentage) ];
+type hsla = [ | #hsla(hue, percentage, percentage, alpha) ];
+type rgb = [ | #rgb(rgbParam, rgbParam, rgbParam) ];
+type rgba = [ | #rgba(rgbParam, rgbParam, rgbParam, alpha) ];
+type rgbX = [ | #rgbX(string) ];
 
 type color = [
   | colorKeyword
-  | #hsl(hue, percentage, percentage)
-  | #hsla(hue, percentage, percentage, alpha)
-  | #rgb(rgbParam, rgbParam, rgbParam)
-  | #rgba(rgbParam, rgbParam, rgbParam, alpha)
-  | #rgbX(string)
+  | hsl
+  | hsla
+  | rgb
+  | rgba
+  | rgbX
 ];
 
 type color_global = [
   | color
   | global
-];
-
-// scalar
-type scalar = [
-  | number
-  | integer
-  | string_
 ];
 
 type width = [
@@ -1368,35 +1390,51 @@ type borderRadius_global = [
   | global
 ];
 
-type transformOrigin = [
+type transformOrigin1 = [
   | length_percentage
   | #left
   | #center
   | #right
   | #top
   | #bottom
-  | #transformOrigin2([ | length_percentage | #left | #center | #right ], [ | length_percentage | #top | #center | #bottom ])
-  | #transformOrigin3([ | length_percentage | #left | #center | #right ], [ | length_percentage | #top | #center | #bottom ], length)
+];
+type transformOrigin2 = [ | #transformOrigin2([ | length_percentage | #left | #center | #right ], [ | length_percentage | #top | #center | #bottom ]) ];
+type transformOrigin3 = [ | #transformOrigin3([ | length_percentage | #left | #center | #right ], [ | length_percentage | #top | #center | #bottom ], length) ];
+
+type transformOrigin = [
+  | transformOrigin1
+  | transformOrigin2
+  | transformOrigin3
 ];
 
-type bgSize = [
+type bgSize1 = [
   | #cover
   | #contain
   | #auto
   | length_percentage
-  | #bgSize2([ | #auto | length_percentage ], [ | #auto | length_percentage ])
+];
+type bgSize2 = [ | #bgSize2([ | #auto | length_percentage ], [ | #auto | length_percentage ]) ];
+type bgSize = [
+  | bgSize1
+  | bgSize2
 ];
 
-type position = [
+type position1 = [
   | #left
   | #center
   | #right
   | #top
   | #bottom
   | length_percentage
-  | #position2([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ])
-  | #position3([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ])
-  | #position4([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage)
+];
+type position2 = [ | #position2([ | #left | #center | #right | length_percentage ], [ | #top | #center | #bottom | length_percentage ]) ];
+type position3 = [ | #position3([ | #center | #left | #right ], [ | #top | #bottom | length_percentage ], [ | #center | #top | #bottom | length_percentage ]) ];
+type position4 = [ | #position4([ | #left | #right ], length_percentage, [ | #top | #bottom ], length_percentage) ];
+type position = [
+  | position1
+  | position2
+  | position3
+  | position4
 ];
 
 /*
@@ -1418,25 +1456,38 @@ type gradientLineAngle = [
   | gradientLineStartingPoint
 ];
 
-type linearColorStop = [
+type linearColorStop1 = [
   | color
   | length_percentage
-  | #linearColorStop2(color, length_percentage)
-  | #linearColorStop3(color, length_percentage, length_percentage)
+];
+type linearColorStop2 = [ | #linearColorStop2(color, length_percentage) ];
+type linearColorStop3 = [ | #linearColorStop3(color, length_percentage, length_percentage) ];
+type linearColorStop = [
+  | linearColorStop1
+  | linearColorStop2
+  | linearColorStop3
 ];
 
+type linearGradient1 = [ | #linearGradient(option<gradientLineAngle>, linearColorStop) ];
+type linearGradient2 = [ | #linearGradient2(option<gradientLineAngle>, linearColorStop, linearColorStop) ];
+type linearGradient3 = [ | #linearGradient3(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop) ];
+type linearGradient4 = [ | #linearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
 type linearGradient = [
-  | #linearGradient(option<gradientLineAngle>, linearColorStop)
-  | #linearGradient2(option<gradientLineAngle>, linearColorStop, linearColorStop)
-  | #linearGradient3(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop)
-  | #linearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
+  | linearGradient1
+  | linearGradient2
+  | linearGradient3
+  | linearGradient4
 ];
 
+type repeatingLinearGradient1 = [ | #repeatingLinearGradient(option<gradientLineAngle>, linearColorStop) ];
+type repeatingLinearGradient2 = [ | #repeatingLinearGradient2(option<gradientLineAngle>, linearColorStop, linearColorStop) ];
+type repeatingLinearGradient3 = [ | #repeatingLinearGradient3(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop) ];
+type repeatingLinearGradient4 = [   | #repeatingLinearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
 type repeatingLinearGradient = [
-  | #repeatingLinearGradient(option<gradientLineAngle>, linearColorStop)
-  | #repeatingLinearGradient2(option<gradientLineAngle>, linearColorStop, linearColorStop)
-  | #repeatingLinearGradient3(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop)
-  | #repeatingLinearGradient4(option<gradientLineAngle>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
+  | repeatingLinearGradient1
+  | repeatingLinearGradient2
+  | repeatingLinearGradient3
+  | repeatingLinearGradient4
 ];
 
 type radialGradientPosition = [ | position | transformOrigin ];
@@ -1449,35 +1500,51 @@ type radialGradientSize = [
   | #"farthest-side"
   | #"farthest-corner"
   | length
-  | #ellipse(length_percentage, length_percentage)
+  | #ellipse(length_percentage, length_percentage) 
 ];
 
+type radialGradient1 = [ | #radialGradient(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop) ];
+type radialGradient2 = [ | #radialGradient2(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop) ];
+type radialGradient3 = [ | #radialGradient3(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop, linearColorStop) ];
+type radialGradient4 = [ | #radialGradient4(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
 type radialGradient = [
-  | #radialGradient(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop)
-  | #radialGradient2(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop)
-  | #radialGradient3(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop, linearColorStop)
-  | #radialGradient4(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
+  | radialGradient1
+  | radialGradient2
+  | radialGradient3
+  | radialGradient4
 ];
 
+type repeatingRadialGradient1 = [ | #repeatingRadialGradient(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop) ];
+type repeatingRadialGradient2 = [ | #repeatingRadialGradient2(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop) ];
+type repeatingRadialGradient3 = [ | #repeatingRadialGradient3(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop, linearColorStop) ];
+type repeatingRadialGradient4 = [ | #repeatingRadialGradient4(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
 type repeatingRadialGradient = [
-  | #repeatingRadialGradient(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop)
-  | #repeatingRadialGradient2(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop)
-  | #repeatingRadialGradient3(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop, linearColorStop)
-  | #repeatingRadialGradient4(option<radialGradientPosition>, option<radialGradientEndingShape>, option<radialGradientSize>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
+  | repeatingRadialGradient1
+  | repeatingRadialGradient2
+  | repeatingRadialGradient3
+  | repeatingRadialGradient4
 ];
 
+type conicGradient1 = [ | #conicGradient(option<gradientLineAngle>, option<position>, linearColorStop) ];
+type conicGradient2 = [ | #conicGradient2(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop) ];
+type conicGradient3 = [ | #conicGradient3(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop) ];
+type conicGradient4 = [ | #conicGradient4(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
 type conicGradient = [
-  | #conicGradient(option<gradientLineAngle>, option<position>, linearColorStop)
-  | #conicGradient2(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop)
-  | #conicGradient3(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop)
-  | #conicGradient4(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
+  | conicGradient1
+  | conicGradient2
+  | conicGradient3
+  | conicGradient4
 ];
 
+type repeatingConicGradient1 = [ | #repeatingConicGradient(option<gradientLineAngle>, option<position>, linearColorStop) ];
+type repeatingConicGradient2 = [ | #repeatingConicGradient2(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop) ];
+type repeatingConicGradient3 = [ | #repeatingConicGradient3(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop) ];
+type repeatingConicGradient4 = [ | #repeatingConicGradient4(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop, linearColorStop) ];
 type repeatingConicGradient = [
-  | #repeatingConicGradient(option<gradientLineAngle>, option<position>, linearColorStop)
-  | #repeatingConicGradient2(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop)
-  | #repeatingConicGradient3(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop)
-  | #repeatingConicGradient4(option<gradientLineAngle>, option<position>, linearColorStop, linearColorStop, linearColorStop, linearColorStop)
+  | repeatingConicGradient1
+  | repeatingConicGradient2
+  | repeatingConicGradient3
+  | repeatingConicGradient4
 ];
 
 type gradient = [
@@ -1498,9 +1565,13 @@ type url = [
   | #url(string)
 ];
 
+type src = [
+  | #src(string)
+];
+
 type imageSrc = [
   | url
-  | #src(string)
+  | src
 ];
 
 type image = [

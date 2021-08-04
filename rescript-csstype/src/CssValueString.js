@@ -301,15 +301,6 @@ function time_percentage(v) {
   }
 }
 
-function scalar(v) {
-  var variant = v.NAME;
-  if (variant === "integer" || variant === "number") {
-    return String(v.VAL);
-  } else {
-    return string(v);
-  }
-}
-
 function lineWidth(v) {
   if (typeof v === "object") {
     return length(v);
@@ -1030,7 +1021,6 @@ exports.length_percentage = length_percentage;
 exports.frequency_percentage = frequency_percentage;
 exports.angle_percentage = angle_percentage;
 exports.time_percentage = time_percentage;
-exports.scalar = scalar;
 exports.lineWidth = lineWidth;
 exports.lineWidth_global = lineWidth_global;
 exports.transformOrigin = transformOrigin;

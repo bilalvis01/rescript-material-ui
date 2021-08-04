@@ -3,4 +3,4 @@ type synthetic<'a>;
 type tag_fontDisplay;
 type t_fontDisplay = synthetic<tag_fontDisplay>;
 external fontDisplayString: string => t_fontDisplay = "%identity";
-let fontDisplay: CssFontFaceType.fontDisplay => t_fontDisplay;
+let fontDisplay: CssFontFaceValueType.fontDisplay => t_fontDisplay;
