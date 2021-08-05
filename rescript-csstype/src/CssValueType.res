@@ -1,30 +1,3 @@
-/*
-Combinator
-*/
-type concat<'a> = [
-  | #concat('a, 'a)
-];
-
-type join<'a> = [
-  | #join('a, 'a)
-];
-
-type stick<'a> = [
-  | #stick('a, 'a)
-];
-
-type concatMany<'a> = [
-  | #concatMany(array<'a>)
-];
-
-type joinMany<'a> = [
-  | #joinMany(array<'a>)
-];
-
-type stickMany<'a> = [
-  | #stickMany(array<'a>)
-];
-
 /* 
 Textual data types
 */

@@ -2,55 +2,6 @@ open CssValueType;
 open Belt;
 
 /*
-Combinator
-*/
-let concat = (v, cb) => {
-  switch v {
-    | #concat(v1, v2) => `${cb(v1)} ${cb(v2)}`
-  };
-};
-let join = (v, cb) => {
-  switch v {
-    | #join(v1, v2) => `${cb(v1)}, ${cb(v2)}`
-  };
-};
-let stick = (v, cb) => {
-  switch v {
-  | #stick(v1, v2) => `${cb(v1)} / ${cb(v2)}`
-  };
-};
-let concatMany = (v, cb) => {
-  switch v {
-  | #concatMany(v) =>
-    v
-    ->Array.reduce("", (acc, item) => 
-      if (Js.String2.length(acc) == 0) { cb(item) }
-      else { `${acc} ${cb(item)}` }
-    )
-  };
-};
-let joinMany = (v, cb) => {
-  switch v {
-  | #joinMany(v) =>
-    v
-    ->Array.reduce("", (acc, item) => 
-      if (Js.String2.length(acc) == 0) { cb(item) }
-      else { `${acc}, ${cb(item)}` }
-    )
-  };
-};
-let stickMany = (v, cb) => {
-  switch v {
-  | #stickMany(v) =>
-    v
-    ->Array.reduce("", (acc, item) => 
-      if (Js.String2.length(acc) == 0) { cb(item) }
-      else { `${acc} / ${cb(item)}` }
-    )
-  };
-};
-
-/*
 Textual data type
 */
 let global = v => {

@@ -1,15 +1,5 @@
 open CssValueType;
 
-/* 
-Combinator
-*/
-let concat: (concat<'a>, 'a => string) => string;
-let join: (join<'a>, 'a => string) => string;
-let stick: (stick<'a>, 'a => string) => string;
-let concatMany: (concatMany<'a>, 'a => string) => string;
-let joinMany: (joinMany<'a>, 'a => string) => string;
-let stickMany: (stickMany<'a>, 'a => string) => string;
-
 /*
 Textual data types
 */
