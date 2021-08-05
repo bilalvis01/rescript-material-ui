@@ -9,10 +9,12 @@ function border(width, color, style) {
     ) : (
       color !== undefined ? CssValueString$Ress.color(color) : undefined
     );
-  if (style === "inherit" || style === "unset" || style === "revert" || style === "initial" || border$1 === undefined) {
-    return style;
+  if (style === "inherit" || style === "unset" || style === "revert" || style === "initial") {
+    return CssValueString$Ress.$$global(style);
+  } else if (border$1 !== undefined) {
+    return border$1 + " " + CssValueString$Ress.lineStyle(style);
   } else {
-    return border$1 + " " + style;
+    return CssValueString$Ress.lineStyle(style);
   }
 }
 
@@ -38,37 +40,27 @@ var borderBottomColor = CssValueString$Ress.color_global;
 
 var borderLeftColor = CssValueString$Ress.color_global;
 
-function borderStyle(v) {
-  return v;
-}
+var borderStyle = CssValueString$Ress.lineStyle_global;
 
 function borderStyle2(tb, lr) {
-  return tb + " " + lr;
+  return CssValueString$Ress.lineStyle(tb) + " " + CssValueString$Ress.lineStyle(lr);
 }
 
 function borderStyle3(top, lr, bottom) {
-  return top + " " + lr + " " + bottom;
+  return CssValueString$Ress.lineStyle(top) + " " + CssValueString$Ress.lineStyle(lr) + " " + CssValueString$Ress.lineStyle(bottom);
 }
 
 function borderStyle4(top, right, bottom, left) {
-  return top + " " + right + " " + bottom + " " + left;
+  return CssValueString$Ress.lineStyle(top) + " " + CssValueString$Ress.lineStyle(right) + " " + CssValueString$Ress.lineStyle(bottom) + " " + CssValueString$Ress.lineStyle(left);
 }
 
-function borderTopStyle(v) {
-  return v;
-}
+var borderTopStyle = CssValueString$Ress.lineStyle_global;
 
-function borderRightStyle(v) {
-  return v;
-}
+var borderRightStyle = CssValueString$Ress.lineStyle_global;
 
-function borderBottomStyle(v) {
-  return v;
-}
+var borderBottomStyle = CssValueString$Ress.lineStyle_global;
 
-function borderLeftStyle(v) {
-  return v;
-}
+var borderLeftStyle = CssValueString$Ress.lineStyle_global;
 
 var borderWidth = CssValueString$Ress.lineWidth_global;
 
@@ -98,7 +90,7 @@ function background(color, position, size, repeat, attachment, origin, clip, ima
     imageOrColor$1 = imageOrColor;
   } else {
     if (imageOrColor === "inherit" || imageOrColor === "unset" || imageOrColor === "revert" || imageOrColor === "initial") {
-      return imageOrColor;
+      return CssValueString$Ress.$$global(imageOrColor);
     }
     imageOrColor$1 = imageOrColor;
   }
@@ -117,20 +109,18 @@ function background4(l1, l2, l3, l4) {
   return CssValueString$Ress.bgLayer(l1) + ", " + CssValueString$Ress.bgLayer(l2) + ", " + CssValueString$Ress.bgLayer(l3) + ", " + CssValueString$Ress.bgLayer(l4);
 }
 
-function backgroundAttachment(v) {
-  return v;
-}
+var backgroundAttachment = CssValueString$Ress.attachment;
 
 function backgroundAttachment2(v1, v2) {
-  return v1 + ", " + v2;
+  return CssValueString$Ress.attachment(v1) + ", " + CssValueString$Ress.attachment(v2);
 }
 
 function backgroundAttachment3(v1, v2, v3) {
-  return v1 + ", " + v2 + ", " + v3;
+  return CssValueString$Ress.attachment(v1) + ", " + CssValueString$Ress.attachment(v2) + ", " + CssValueString$Ress.attachment(v3);
 }
 
 function backgroundAttachment4(v1, v2, v3, v4) {
-  return v1 + ", " + v2 + ", " + v3 + ", " + v4;
+  return CssValueString$Ress.attachment(v1) + ", " + CssValueString$Ress.attachment(v2) + ", " + CssValueString$Ress.attachment(v3) + ", " + CssValueString$Ress.attachment(v4);
 }
 
 var backgroundColor = CssValueString$Ress.color;
@@ -163,20 +153,18 @@ function backgroundPosition4(v1, v2, v3, v4) {
   return CssValueString$Ress.position(v1) + ", " + CssValueString$Ress.position(v2) + ", " + CssValueString$Ress.position(v3) + ", " + CssValueString$Ress.position(v4);
 }
 
-function backgroundStyle(v) {
-  return v;
-}
+var backgroundStyle = CssValueString$Ress.repeatStyle;
 
 function backgroundStyle2(v1, v2) {
-  return v1 + ", " + v2;
+  return CssValueString$Ress.repeatStyle(v1) + ", " + CssValueString$Ress.repeatStyle(v2);
 }
 
 function backgroundStyle3(v1, v2, v3) {
-  return v1 + ", " + v2 + ", " + v3;
+  return CssValueString$Ress.repeatStyle(v1) + ", " + CssValueString$Ress.repeatStyle(v2) + ", " + CssValueString$Ress.repeatStyle(v3);
 }
 
 function backgroundStyle4(v1, v2, v3, v4) {
-  return v1 + ", " + v2 + ", " + v3 + ", " + v4;
+  return CssValueString$Ress.repeatStyle(v1) + ", " + CssValueString$Ress.repeatStyle(v2) + ", " + CssValueString$Ress.repeatStyle(v3) + ", " + CssValueString$Ress.repeatStyle(v4);
 }
 
 var margin = CssValueString$Ress.margin_global;
@@ -223,30 +211,26 @@ var paddingBottom = CssValueString$Ress.padding_global;
 
 var paddingLeft = CssValueString$Ress.padding_global;
 
-function clear(v) {
-  return v;
-}
+var clear = CssValueString$Ress.clear_global;
 
 var color = CssValueString$Ress.color_global;
 
-function cursor(v) {
-  return v;
-}
+var cursor = CssValueString$Ress.cursorKeyword_global;
 
 function cursor1(i, k) {
-  return CssValueString$Ress.cursorImage(i) + ", " + k;
+  return CssValueString$Ress.cursorImage(i) + ", " + CssValueString$Ress.cursorKeyword(k);
 }
 
 function cursor2(i1, i2, k) {
-  return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + k;
+  return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorKeyword(k);
 }
 
 function cursor3(i1, i2, i3, k) {
-  return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorImage(i3) + ", " + k;
+  return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorImage(i3) + ", " + CssValueString$Ress.cursorKeyword(k);
 }
 
 function cursor4(i1, i2, i3, i4, k) {
-  return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorImage(i3) + ", " + CssValueString$Ress.cursorImage(i4) + ", " + k;
+  return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorImage(i3) + ", " + CssValueString$Ress.cursorImage(i4) + ", " + CssValueString$Ress.cursorKeyword(k);
 }
 
 exports.border = border;

@@ -162,8 +162,8 @@ describe("transformOrigin", (.) => {
 
 describe("Image data types", (.) => {
   test("gradientLineDirection", (.) => {
-    expect(gradientLineAngle(#"to top"))->toBe("to top");
-    expect(gradientLineAngle(#"to top left"))->toBe("to top left");
+    expect(gradientLineAngle(#toTop))->toBe("to top");
+    expect(gradientLineAngle(#toTopLeft))->toBe("to top left");
     expect(gradientLineAngle(Css.turn(0.25)))->toBe("0.25turn");
   });
 
@@ -395,22 +395,22 @@ describe("background", (.) => {
     expect(background(Css.rgb(255., 255., 255.)))->toBe("rgb(255, 255, 255)");
     expect(background(~color=#red, Css.rgb(255., 255., 255.)))->toBe("rgb(255, 255, 255)");
     expect(background(Css.url("myimage.png")))->toBe(`url("myimage.png")`);
-    expect(background(~repeat=#"repeat-y", Css.url("test.jpg")))
+    expect(background(~repeat=#repeatY, Css.url("test.jpg")))
       ->toBe(`url("test.jpg") repeat-y`)
-    expect(background(~origin=#"border-box", #red))
+    expect(background(~origin=#borderBox, #red))
       ->toBe("red border-box");
-    expect(background(~origin=#"border-box", ~clip=#"padding-box", #red))
+    expect(background(~origin=#borderBox, ~clip=#paddingBox, #red))
       ->toBe("red border-box padding-box");
-    expect(background(~clip=#"padding-box", #red))
+    expect(background(~clip=#paddingBox, #red))
       ->toBe("red");
-    expect(background(~repeat=#"no-repeat", ~position=#center, ~size=Css.pct(80.), Css.url("../img/image.png")))
+    expect(background(~repeat=#noRepeat, ~position=#center, ~size=Css.pct(80.), Css.url("../img/image.png")))
       ->toBe(`url("../img/image.png") center / 80% no-repeat`);
-    expect(background(~repeat=#"no-repeat", ~size=Css.pct(80.), Css.url("../img/image.png")))
+    expect(background(~repeat=#noRepeat, ~size=Css.pct(80.), Css.url("../img/image.png")))
       ->toBe(`url("../img/image.png") no-repeat`);
     expect(bgLayer(#red))->toBe("red");
     expect(bgLayer(Css.url("myimage.png")))->toBe(`url("myimage.png")`);
-    expect(bgLayer(Css.bgLayer(~repeat=#"repeat-y", Css.url("test.jpg"))))->toBe(`url("test.jpg") repeat-y`);
-    expect(bgLayer(Css.bgLayer(~repeat=#"no-repeat", ~position=#center, ~size=Css.pct(80.), Css.url("../img/image.png"))))
+    expect(bgLayer(Css.bgLayer(~repeat=#repeatY, Css.url("test.jpg"))))->toBe(`url("test.jpg") repeat-y`);
+    expect(bgLayer(Css.bgLayer(~repeat=#noRepeat, ~position=#center, ~size=Css.pct(80.), Css.url("../img/image.png"))))
       ->toBe(`url("../img/image.png") center / 80% no-repeat`);
   });
 });

@@ -49,6 +49,18 @@ function stickMany(v, cb) {
               }));
 }
 
+function $$global(v) {
+  if (v === "revert") {
+    return "revert";
+  } else if (v === "unset") {
+    return "unset";
+  } else if (v === "inherit") {
+    return "inherit";
+  } else {
+    return "initial";
+  }
+}
+
 function string(v) {
   return "\"" + v.VAL + "\"";
 }
@@ -317,7 +329,39 @@ function lineWidth_global(v) {
   if (typeof v === "object" || v === "thick" || v === "medium" || v === "thin") {
     return lineWidth(v);
   } else {
-    return v;
+    return $$global(v);
+  }
+}
+
+function lineStyle(v) {
+  if (v === "hidden") {
+    return "hidden";
+  } else if (v === "ridge") {
+    return "ridge";
+  } else if (v === "solid") {
+    return "solid";
+  } else if (v === "outset") {
+    return "outset";
+  } else if (v === "groove") {
+    return "groove";
+  } else if (v === "dashed") {
+    return "dashed";
+  } else if (v === "dotted") {
+    return "dotted";
+  } else if (v === "double") {
+    return "double";
+  } else if (v === "inset") {
+    return "inset";
+  } else {
+    return "none";
+  }
+}
+
+function lineStyle_global(v) {
+  if (v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
+    return $$global(v);
+  } else {
+    return lineStyle(v);
   }
 }
 
@@ -407,9 +451,311 @@ function rgbX(v) {
   return "#" + v;
 }
 
+function colorKeyword(v) {
+  if (v === "aqua") {
+    return "aqua";
+  } else if (v === "dimgray") {
+    return "dimgray";
+  } else if (v === "dimgrey") {
+    return "dimgrey";
+  } else if (v === "blue") {
+    return "blue";
+  } else if (v === "cyan") {
+    return "cyan";
+  } else if (v === "mediumaquamarine") {
+    return "mediumaquamarine";
+  } else if (v === "mediumpurple") {
+    return "mediumpurple";
+  } else if (v === "ivory") {
+    return "ivory";
+  } else if (v === "whitesmoke") {
+    return "whitesmoke";
+  } else if (v === "gold") {
+    return "gold";
+  } else if (v === "gray") {
+    return "gray";
+  } else if (v === "grey") {
+    return "grey";
+  } else if (v === "orange") {
+    return "orange";
+  } else if (v === "orchid") {
+    return "orchid";
+  } else if (v === "lime") {
+    return "lime";
+  } else if (v === "lavenderblush") {
+    return "lavenderblush";
+  } else if (v === "navy") {
+    return "navy";
+  } else if (v === "wheat") {
+    return "wheat";
+  } else if (v === "white") {
+    return "white";
+  } else if (v === "peru") {
+    return "peru";
+  } else if (v === "pink") {
+    return "pink";
+  } else if (v === "plum") {
+    return "plum";
+  } else if (v === "coral") {
+    return "coral";
+  } else if (v === "mediumblue") {
+    return "mediumblue";
+  } else if (v === "darkseagreen") {
+    return "darkseagreen";
+  } else if (v === "palegoldenrod") {
+    return "palegoldenrod";
+  } else if (v === "snow") {
+    return "snow";
+  } else if (v === "lightsalmon") {
+    return "lightsalmon";
+  } else if (v === "teal") {
+    return "teal";
+  } else if (v === "mistyrose") {
+    return "mistyrose";
+  } else if (v === "mediumturquoise") {
+    return "mediumturquoise";
+  } else if (v === "lightblue") {
+    return "lightblue";
+  } else if (v === "lightcyan") {
+    return "lightcyan";
+  } else if (v === "yellow") {
+    return "yellow";
+  } else if (v === "darkviolet") {
+    return "darkviolet";
+  } else if (v === "mintcream") {
+    return "mintcream";
+  } else if (v === "lightgray") {
+    return "lightgray";
+  } else if (v === "lightgrey") {
+    return "lightgrey";
+  } else if (v === "mediumspringgreen") {
+    return "mediumspringgreen";
+  } else if (v === "deepskyblue") {
+    return "deepskyblue";
+  } else if (v === "lightpink") {
+    return "lightpink";
+  } else if (v === "lightgoldenrodyellow") {
+    return "lightgoldenrodyellow";
+  } else if (v === "darkslateblue") {
+    return "darkslateblue";
+  } else if (v === "blanchedalmond") {
+    return "blanchedalmond";
+  } else if (v === "hotpink") {
+    return "hotpink";
+  } else if (v === "antiquewhite") {
+    return "antiquewhite";
+  } else if (v === "cornsilk") {
+    return "cornsilk";
+  } else if (v === "peachpuff") {
+    return "peachpuff";
+  } else if (v === "darkslategray") {
+    return "darkslategray";
+  } else if (v === "darkslategrey") {
+    return "darkslategrey";
+  } else if (v === "seashell") {
+    return "seashell";
+  } else if (v === "papayawhip") {
+    return "papayawhip";
+  } else if (v === "khaki") {
+    return "khaki";
+  } else if (v === "lemonchiffon") {
+    return "lemonchiffon";
+  } else if (v === "forestgreen") {
+    return "forestgreen";
+  } else if (v === "skyblue") {
+    return "skyblue";
+  } else if (v === "oranngered") {
+    return "orangered";
+  } else if (v === "crimson") {
+    return "crimson";
+  } else if (v === "steelblue") {
+    return "steelblue";
+  } else if (v === "deeppink") {
+    return "deeppink";
+  } else if (v === "cadetblue") {
+    return "cadetblue";
+  } else if (v === "midnightblue") {
+    return "midnightblue";
+  } else if (v === "violet") {
+    return "violet";
+  } else if (v === "dodgerblue") {
+    return "dodgerblue";
+  } else if (v === "lightseagreen") {
+    return "lightseagreen";
+  } else if (v === "slateblue") {
+    return "slateblue";
+  } else if (v === "bisque") {
+    return "bisque";
+  } else if (v === "purple") {
+    return "purple";
+  } else if (v === "darkred") {
+    return "darkred";
+  } else if (v === "slategray") {
+    return "slategray";
+  } else if (v === "slategrey") {
+    return "slategrey";
+  } else if (v === "greenyellow") {
+    return "greenyellow";
+  } else if (v === "linen") {
+    return "linen";
+  } else if (v === "indianred") {
+    return "indianred";
+  } else if (v === "lightskyblue") {
+    return "lightskyblue";
+  } else if (v === "darkgreen") {
+    return "darkgreen";
+  } else if (v === "seagreen") {
+    return "seagreen";
+  } else if (v === "palegreen") {
+    return "palegreen";
+  } else if (v === "darkturquoise") {
+    return "darkturquoise";
+  } else if (v === "lightyellow") {
+    return "lightyellow";
+  } else if (v === "red") {
+    return "red";
+  } else if (v === "tan") {
+    return "tan";
+  } else if (v === "darksalmon") {
+    return "darksalmon";
+  } else if (v === "lavender") {
+    return "lavender";
+  } else if (v === "rosybrown") {
+    return "rosybrown";
+  } else if (v === "palevioletred") {
+    return "palevioletred";
+  } else if (v === "navajowhite") {
+    return "navajowhite";
+  } else if (v === "chartreuse") {
+    return "chartreuse";
+  } else if (v === "lightgreen") {
+    return "lightgreen";
+  } else if (v === "darkblue") {
+    return "darkblue";
+  } else if (v === "darkcyan") {
+    return "darkcyan";
+  } else if (v === "gainsboro") {
+    return "gainsboro";
+  } else if (v === "darkgoldenrod") {
+    return "darkgoldenrod";
+  } else if (v === "darkgray") {
+    return "darkgray";
+  } else if (v === "magenta") {
+    return "magenta";
+  } else if (v === "springgreen") {
+    return "springgreen";
+  } else if (v === "currentColor") {
+    return "currentColor";
+  } else if (v === "burlywood") {
+    return "burlywood";
+  } else if (v === "oldlace") {
+    return "oldlace";
+  } else if (v === "tomato") {
+    return "tomato";
+  } else if (v === "blueviolet") {
+    return "blueviolet";
+  } else if (v === "lawngreen") {
+    return "lawngreen";
+  } else if (v === "turquoise") {
+    return "turquoise";
+  } else if (v === "indigo") {
+    return "indigo";
+  } else if (v === "lightsteelblue") {
+    return "lightsteelblue";
+  } else if (v === "mediumvioletred") {
+    return "mediumvioletred";
+  } else if (v === "rebeccapurple") {
+    return "rebeccapurple";
+  } else if (v === "mediumorchid") {
+    return "mediumorchid";
+  } else if (v === "darkolivegreen") {
+    return "darkolivegreen";
+  } else if (v === "aquamarine") {
+    return "aquamarine";
+  } else if (v === "darkmagenta") {
+    return "darkmagenta";
+  } else if (v === "green") {
+    return "green";
+  } else if (v === "aliceblue") {
+    return "aliceblue";
+  } else if (v === "yellowgreen") {
+    return "yellowgreen";
+  } else if (v === "salmon") {
+    return "salmon";
+  } else if (v === "royalblue") {
+    return "royalblue";
+  } else if (v === "chocolate") {
+    return "chocolate";
+  } else if (v === "fuchsia") {
+    return "fuchsia";
+  } else if (v === "lightslategray") {
+    return "lightslategray";
+  } else if (v === "lightslategrey") {
+    return "lightslategrey";
+  } else if (v === "floralwhite") {
+    return "floralwhite";
+  } else if (v === "firebrick") {
+    return "firebrick";
+  } else if (v === "mediumseagreen") {
+    return "mediumseagreen";
+  } else if (v === "transparent") {
+    return "transparent";
+  } else if (v === "goldenrod") {
+    return "goldenrod";
+  } else if (v === "limegreen") {
+    return "limegreen";
+  } else if (v === "saddlebrown") {
+    return "saddlebrown";
+  } else if (v === "mediumslateblue") {
+    return "mediumslateblue";
+  } else if (v === "darkorange") {
+    return "darkorange";
+  } else if (v === "azure") {
+    return "azure";
+  } else if (v === "darkorchid") {
+    return "darkorchid";
+  } else if (v === "thistle") {
+    return "thistle";
+  } else if (v === "beige") {
+    return "beique";
+  } else if (v === "olive") {
+    return "olive";
+  } else if (v === "cornflowerblue") {
+    return "cornflowerblue";
+  } else if (v === "powderblue") {
+    return "powderblue";
+  } else if (v === "sienna") {
+    return "sienna";
+  } else if (v === "black") {
+    return "black";
+  } else if (v === "ghostwhite") {
+    return "ghostwhite";
+  } else if (v === "honeydew") {
+    return "honeydew";
+  } else if (v === "silver") {
+    return "silver";
+  } else if (v === "lightcoral") {
+    return "lightcoral";
+  } else if (v === "moccasin") {
+    return "moccasin";
+  } else if (v === "brown") {
+    return "brown";
+  } else if (v === "maroon") {
+    return "maroon";
+  } else if (v === "sandybrown") {
+    return "sandybrown";
+  } else if (v === "paleturquoise") {
+    return "paleturquoise";
+  } else if (v === "olivedrab") {
+    return "olivedrab";
+  } else {
+    return "darkkhaki";
+  }
+}
+
 function color(v) {
   if (typeof v !== "object") {
-    return v;
+    return colorKeyword(v);
   }
   var variant = v.NAME;
   if (variant === "rgbX") {
@@ -435,7 +781,7 @@ function color_global(v) {
   if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
     return color(v);
   } else {
-    return v;
+    return $$global(v);
   }
 }
 
@@ -521,11 +867,31 @@ function position(v) {
   return v1$4 + " " + length_percentage(match$2[1]) + " " + v3$2 + " " + length_percentage(match$2[3]);
 }
 
+function gradientLineStartingPoint(v) {
+  if (v === "toBottomRight") {
+    return "to bottom right";
+  } else if (v === "toLeft") {
+    return "to left";
+  } else if (v === "toBottom") {
+    return "to bottom";
+  } else if (v === "toTop") {
+    return "to top";
+  } else if (v === "toTopLeft") {
+    return "to top left";
+  } else if (v === "toTopRight") {
+    return "to top right";
+  } else if (v === "toRight") {
+    return "to right";
+  } else {
+    return "to bottom left";
+  }
+}
+
 function gradientLineAngle(v) {
   if (typeof v === "object") {
     return angle(v);
   } else {
-    return v;
+    return gradientLineStartingPoint(v);
   }
 }
 
@@ -790,6 +1156,14 @@ function gradient(v) {
   }
 }
 
+function imageTags(v) {
+  if (v === "rtl") {
+    return "rtl";
+  } else {
+    return "ltr";
+  }
+}
+
 function url(v) {
   return "url(\"" + v.VAL + "\")";
 }
@@ -826,12 +1200,12 @@ function image(v) {
       exit = 2;
     }
     if (exit === 2) {
-      return "image(" + t + " " + color(c$1) + ")";
+      return "image(" + imageTags(t) + " " + color(c$1) + ")";
     }
     if (c !== undefined) {
-      return "image(" + t + " " + imageSrc(match[2]) + ", " + color(c) + ")";
+      return "image(" + imageTags(t) + " " + imageSrc(match[2]) + ", " + color(c) + ")";
     } else {
-      return "image(" + t + " " + imageSrc(match[2]) + ")";
+      return "image(" + imageTags(t) + " " + imageSrc(match[2]) + ")";
     }
   }
   var c$2 = match[1];
@@ -860,27 +1234,95 @@ function bgImage(v) {
   }
 }
 
+function repeatStyle(v) {
+  if (v === "space__noRepeat") {
+    return "space no-repeat";
+  } else if (v === "noRepeat__repeat") {
+    return "no-repeat repeat";
+  } else if (v === "space__space") {
+    return "space space";
+  } else if (v === "noRepeat") {
+    return "no-repeat";
+  } else if (v === "round__round") {
+    return "round round";
+  } else if (v === "round") {
+    return "round";
+  } else if (v === "repeat__round") {
+    return "repeat round";
+  } else if (v === "round__space") {
+    return "round space";
+  } else if (v === "repeat__repeat") {
+    return "repeat repeat";
+  } else if (v === "repeat__noRepeat") {
+    return "repeat no-repeat";
+  } else if (v === "space") {
+    return "space";
+  } else if (v === "repeat__space") {
+    return "repeat space";
+  } else if (v === "repeat") {
+    return "repeat";
+  } else if (v === "noRepeat__round") {
+    return "no-repeat round";
+  } else if (v === "repeatX") {
+    return "repeat-x";
+  } else if (v === "repeatY") {
+    return "repeat-y";
+  } else if (v === "round__repeat") {
+    return "round repeat";
+  } else if (v === "space__repeat") {
+    return "space repeat";
+  } else if (v === "round__noRepeat") {
+    return "round no-repeat";
+  } else if (v === "noRepeat__space") {
+    return "no-repeat space";
+  } else if (v === "noRepeat__noRepeat") {
+    return "no-repeat no-repeat";
+  } else {
+    return "space round";
+  }
+}
+
+function attachment(v) {
+  if (v === "local") {
+    return "local";
+  } else if (v === "fixed") {
+    return "fixed";
+  } else {
+    return "scroll";
+  }
+}
+
+function box(v) {
+  if (v === "borderBox") {
+    return "border-box";
+  } else if (v === "paddingBox") {
+    return "padding-box";
+  } else {
+    return "content-box";
+  }
+}
+
 function background(col, pos, size, repeat, att, origin, clip, imageOrColor) {
   var pos$1 = pos !== undefined ? (
       size !== undefined ? position(pos) + " / " + bgSize(size) : position(pos)
     ) : undefined;
   var bg = pos$1 !== undefined ? (
-      repeat !== undefined ? pos$1 + " " + repeat : pos$1
+      repeat !== undefined ? pos$1 + " " + repeatStyle(repeat) : pos$1
     ) : (
-      repeat !== undefined ? repeat : undefined
+      repeat !== undefined ? repeatStyle(repeat) : undefined
     );
   var bg$1 = bg !== undefined ? (
-      att !== undefined ? bg + " " + att : bg
+      att !== undefined ? bg + " " + attachment(att) : bg
     ) : (
-      att !== undefined ? att : undefined
+      att !== undefined ? attachment(att) : undefined
     );
-  var box = origin !== undefined ? (
-      clip !== undefined ? origin + " " + clip : origin
+  var box$1 = origin !== undefined ? (
+      clip !== undefined ? box(origin) + " " + box(clip) : box(origin)
     ) : undefined;
   var bg$2 = bg$1 !== undefined ? (
-      box !== undefined ? bg$1 + " " + box : bg$1
+      box$1 !== undefined ? bg$1 + " " + box$1 : bg$1
     ) : (
-      box !== undefined ? box : undefined
+      box$1 !== undefined ? box$1 : undefined
     );
   var exit = 0;
   if (typeof imageOrColor === "object") {
@@ -943,7 +1385,7 @@ function margin_global(v) {
   if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
     return margin(v);
   } else {
-    return v;
+    return $$global(v);
   }
 }
 
@@ -953,7 +1395,113 @@ function padding_global(v) {
   if (typeof v === "object") {
     return length_percentage(v);
   } else {
-    return v;
+    return $$global(v);
+  }
+}
+
+function clear(v) {
+  if (v === "inlineStart") {
+    return "inline-start";
+  } else if (v === "left") {
+    return "left";
+  } else if (v === "none") {
+    return "none";
+  } else if (v === "right") {
+    return "right";
+  } else if (v === "inlineEnd") {
+    return "inline-end";
+  } else {
+    return "both";
+  }
+}
+
+function clear_global(v) {
+  if (v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
+    return $$global(v);
+  } else {
+    return clear(v);
+  }
+}
+
+function cursorKeyword(v) {
+  if (v === "cell") {
+    return "cell";
+  } else if (v === "copy") {
+    return "copy";
+  } else if (v === "swResize") {
+    return "sw-resize";
+  } else if (v === "grab") {
+    return "grab";
+  } else if (v === "help") {
+    return "help";
+  } else if (v === "move") {
+    return "move";
+  } else if (v === "none") {
+    return "none";
+  } else if (v === "text") {
+    return "text";
+  } else if (v === "rowResize") {
+    return "row-resize";
+  } else if (v === "wait") {
+    return "wait";
+  } else if (v === "pointer") {
+    return "pointer";
+  } else if (v === "seResize") {
+    return "se-resize";
+  } else if (v === "zoomOut") {
+    return "zoom-out";
+  } else if (v === "sResize") {
+    return "s-resize";
+  } else if (v === "zoomIn") {
+    return "zoom-in";
+  } else if (v === "grabbing") {
+    return "grabbing";
+  } else if (v === "nsResize") {
+    return "ns-resize";
+  } else if (v === "progress") {
+    return "progress";
+  } else if (v === "crosshair") {
+    return "crosshair";
+  } else if (v === "wResize") {
+    return "w-resize";
+  } else if (v === "noDrop") {
+    return "no-drop";
+  } else if (v === "allScroll") {
+    return "all-scroll";
+  } else if (v === "verticalText") {
+    return "vertical-text";
+  } else if (v === "nResize") {
+    return "n-resize";
+  } else if (v === "default") {
+    return "default";
+  } else if (v === "neswResize") {
+    return "nesw-resize";
+  } else if (v === "alias") {
+    return "alias";
+  } else if (v === "ewResize") {
+    return "ew-resize";
+  } else if (v === "eResize") {
+    return "e-resize";
+  } else if (v === "nwResize") {
+    return "nw-resize";
+  } else if (v === "contextMenu") {
+    return "context-menu";
+  } else if (v === "colResize") {
+    return "col-resize";
+  } else if (v === "notAllowed") {
+    return "not-allowed";
+  } else if (v === "neResize") {
+    return "ne-resize";
+  } else {
+    return "auto";
+  }
+}
+
+function cursorKeyword_global(v) {
+  if (v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
+    return $$global(v);
+  } else {
+    return cursorKeyword(v);
   }
 }
 
@@ -976,6 +1524,7 @@ exports.stick = stick;
 exports.concatMany = concatMany;
 exports.joinMany = joinMany;
 exports.stickMany = stickMany;
+exports.$$global = $$global;
 exports.string = string;
 exports.num = num;
 exports.number = number;
@@ -1023,6 +1572,8 @@ exports.angle_percentage = angle_percentage;
 exports.time_percentage = time_percentage;
 exports.lineWidth = lineWidth;
 exports.lineWidth_global = lineWidth_global;
+exports.lineStyle = lineStyle;
+exports.lineStyle_global = lineStyle_global;
 exports.transformOrigin = transformOrigin;
 exports.hue = hue;
 exports.alpha = alpha;
@@ -1032,8 +1583,10 @@ exports.hsla = hsla;
 exports.rgb = rgb;
 exports.rgba = rgba;
 exports.rgbX = rgbX;
+exports.colorKeyword = colorKeyword;
 exports.color = color;
 exports.color_global = color_global;
+exports.gradientLineStartingPoint = gradientLineStartingPoint;
 exports.gradientLineAngle = gradientLineAngle;
 exports.linearColorStop = linearColorStop;
 exports.linearGradient = linearGradient;
@@ -1043,17 +1596,25 @@ exports.repeatingRadialGradient = repeatingRadialGradient;
 exports.conicGradient = conicGradient;
 exports.repeatingConicGradient = repeatingConicGradient;
 exports.gradient = gradient;
+exports.imageTags = imageTags;
 exports.url = url;
 exports.imageSrc = imageSrc;
 exports.image = image;
 exports.bgImage = bgImage;
 exports.bgSize = bgSize;
 exports.position = position;
+exports.repeatStyle = repeatStyle;
+exports.attachment = attachment;
+exports.box = box;
 exports.background = background;
 exports.bgLayer = bgLayer;
 exports.margin = margin;
 exports.margin_global = margin_global;
 exports.padding = padding;
 exports.padding_global = padding_global;
+exports.clear = clear;
+exports.clear_global = clear_global;
+exports.cursorKeyword = cursorKeyword;
+exports.cursorKeyword_global = cursorKeyword_global;
 exports.cursorImage = cursorImage;
 /* No side effect */

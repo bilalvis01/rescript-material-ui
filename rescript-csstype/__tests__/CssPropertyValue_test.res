@@ -44,7 +44,7 @@ test("background", (.) => {
   expect(background(~color=#red, #initial))->toBe(backgroundString("initial"));
   expect(background(#red))->toBe(backgroundString("red"));
   expect(background(rgb(255., 255., 255.)))->toBe(backgroundString("rgb(255, 255, 255)"));
-  expect(background(~repeat=#"repeat-y", url("test.jpg")))
+  expect(background(~repeat=#repeatY, url("test.jpg")))
     ->toBe(backgroundString(`url("test.jpg") repeat-y`))
   expect(background2(
     linearGradient2(~angle=deg(217.), rgba(255., 0., 0., 0.8), linearColorStop2(rgba(255., 0., 0., 0.), pct(70.71))),
@@ -105,11 +105,11 @@ test("backgroundPosition", (.) => {
 });
 
 test("backgroundStyle", (.) => {
-  expect(backgroundStyle(#"repeat-x"))->toBe(backgroundStyleString("repeat-x"));
-  expect(backgroundStyle2(#"repeat-x", #"repeat repeat"))->toBe(backgroundStyleString("repeat-x, repeat repeat"));
-  expect(backgroundStyle3(#"repeat-x", #"repeat repeat", #"no-repeat"))
+  expect(backgroundStyle(#repeatX))->toBe(backgroundStyleString("repeat-x"));
+  expect(backgroundStyle2(#repeatX, #repeat__repeat))->toBe(backgroundStyleString("repeat-x, repeat repeat"));
+  expect(backgroundStyle3(#repeatX, #repeat__repeat, #noRepeat))
   ->toBe(backgroundStyleString("repeat-x, repeat repeat, no-repeat"));
-  expect(backgroundStyle4(#"repeat-x", #"repeat repeat", #"no-repeat", #space))
+  expect(backgroundStyle4(#repeatX, #repeat__repeat, #noRepeat, #space))
   ->toBe(backgroundStyleString("repeat-x, repeat repeat, no-repeat, space"));
 });
 

@@ -13,7 +13,7 @@ let stickMany: (stickMany<'a>, 'a => string) => string;
 /*
 Textual data types
 */
-external global: global => string = "%identity";
+let global: global => string;
 let string: cssString => string;
 
 /*
@@ -81,8 +81,8 @@ let time_percentage: time_percentage => string;
 // Line
 let lineWidth: lineWidth => string;
 let lineWidth_global: lineWidth_global => string;
-external lineStyle: lineStyle => string = "%identity";
-external lineStyle_global: lineStyle_global => string = "%identity"; 
+let lineStyle: lineStyle => string;
+let lineStyle_global: lineStyle_global => string; 
 
 // transform-origin
 let transformOrigin: transformOrigin => string;
@@ -98,14 +98,14 @@ let hsla: (hue, percentage, percentage, alpha) => string;
 let rgb: (rgbParam, rgbParam, rgbParam) => string;
 let rgba: (rgbParam, rgbParam, rgbParam, alpha) => string;
 let rgbX: string => string;
-external colorKeyword: colorKeyword => string = "%identity"; 
+let colorKeyword: colorKeyword => string; 
 let color: color => string;
 let color_global: color_global => string;
 
 /*
 Image data types
 */
-external gradientLineStartingPoint: gradientLineStartingPoint => string = "%identity";
+let gradientLineStartingPoint: gradientLineStartingPoint => string;
 let gradientLineAngle: gradientLineAngle => string;
 let linearColorStop: linearColorStop => string;
 let linearGradient: linearGradient => string;
@@ -115,16 +115,16 @@ let repeatingRadialGradient: repeatingRadialGradient => string;
 let conicGradient: conicGradient => string;
 let repeatingConicGradient: repeatingConicGradient => string;
 let gradient: gradient => string;
-external imageTags: imageTags => string = "%identity";
+let imageTags: imageTags => string;
 let url: url => string;
 let imageSrc: imageSrc => string;
 let image: image => string;
 let bgImage: bgImage => string;
 let bgSize: bgSize => string;
 let position: position => string;
-external repeatStyle: repeatStyle => string = "%identity";
-external attachment: attachment => string = "%identity";
-external box: box => string = "%identity";
+let repeatStyle: repeatStyle => string;
+let attachment: attachment => string;
+let box: box => string;
 
 /*
 Background
@@ -149,8 +149,9 @@ let margin_global: margin_global => string;
 let padding: padding => string;
 let padding_global: padding_global => string;
 
-external clear_global: clear_global => string = "%identity";
+let clear: clear => string;
+let clear_global: clear_global => string;
 
-external cursorKeyword: cursorKeyword => string = "%identity";
-external cursorKeyword_global: cursorKeyword_global => string = "%identity";
+let cursorKeyword: cursorKeyword => string;
+let cursorKeyword_global: cursorKeyword_global => string;
 let cursorImage: cursorImage => string;

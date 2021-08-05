@@ -1441,14 +1441,14 @@ type position = [
 Image data types
 */
 type gradientLineStartingPoint = [
-  | #"to top"
-  | #"to bottom"
-  | #"to left"
-  | #"to right"
-  | #"to top left"
-  | #"to top right"
-  | #"to bottom left"
-  | #"to bottom right"
+  | #toTop
+  | #toBottom
+  | #toLeft
+  | #toRight
+  | #toTopLeft
+  | #toTopRight
+  | #toBottomLeft
+  | #toBottomRight
 ];
 
 type gradientLineAngle = [
@@ -1586,28 +1586,28 @@ type bgImage = [
 ];
 
 type repeatStyle = [
-  | #"repeat-x"
-  | #"repeat-y"
-  | #repeat
-  | #space
-  | #round
-  | #"no-repeat"
-  | #"repeat repeat"
-  | #"repeat space"
-  | #"repeat round"
-  | #"repeat no-repeat"
-  | #"space repeat"
-  | #"space space"
-  | #"space round"
-  | #"space no-repeat"
-  | #"round repeat"
-  | #"round space"
-  | #"round round"
-  | #"round no-repeat"
-  | #"no-repeat repeat"
-  | #"no-repeat space"
-  | #"no-repeat round"
-  | #"no-repeat no-repeat"
+  | #repeatX
+  | #repeatY
+  | #repeat 
+  | #space 
+  | #round 
+  | #noRepeat
+  | #repeat__repeat 
+  | #repeat__space
+  | #repeat__round
+  | #repeat__noRepeat
+  | #space__repeat 
+  | #space__space 
+  | #space__round 
+  | #space__noRepeat 
+  | #round__repeat 
+  | #round__space 
+  | #round__round 
+  | #round__noRepeat 
+  | #noRepeat__repeat
+  | #noRepeat__space
+  | #noRepeat__round
+  | #noRepeat__noRepeat
 ];
 
 type attachment = [
@@ -1617,9 +1617,9 @@ type attachment = [
 ];
 
  type box = [
-   | #"border-box"
-   | #"padding-box"
-   | #"content-box"
+   | #borderBox
+   | #paddingBox
+   | #contentBox
  ];
 
  /*
@@ -1645,8 +1645,8 @@ type clear = [
   | #left
   | #right
   | #both
-  | #"inline-start"
-  | #"inline-end"
+  | #inlineStart
+  | #inlineEnd
 ];
 
 type clear_global = [
@@ -1655,40 +1655,40 @@ type clear_global = [
 ];
 
 type cursorKeyword = [
-  | #auto
-  | #default
-  | #none
-  | #"context-menu"
-  | #help
+  | #auto 
+  | #default 
+  | #none 
+  | #contextMenu 
+  | #help 
   | #pointer
   | #progress
-  | #wait
-  | #cell
-  | #crosshair
-  | #text
-  | #"vertical-text"
-  | #alias
-  | #copy
-  | #move
-  | #"no-drop"
-  | #"not-allowed"
-  | #"e-resize"
-  | #"n-resize"
-  | #"ne-resize"
-  | #"nw-resize"
-  | #"s-resize"
-  | #"se-resize"
-  | #"sw-resize"
-  | #"w-resize"
-  | #"ew-resize"
-  | #"ns-resize"
-  | #"nesw-resize"
-  | #"col-resize"
-  | #"row-resize"
-  | #"all-scroll"
-  | #"zoom-in"
-  | #"zoom-out"
-  | #grab
+  | #wait 
+  | #cell 
+  | #crosshair 
+  | #text 
+  | #verticalText 
+  | #alias 
+  | #copy 
+  | #move 
+  | #noDrop 
+  | #notAllowed 
+  | #eResize 
+  | #nResize 
+  | #neResize
+  | #nwResize
+  | #sResize 
+  | #seResize 
+  | #swResize 
+  | #wResize 
+  | #ewResize 
+  | #nsResize 
+  | #neswResize
+  | #colResize 
+  | #rowResize 
+  | #allScroll 
+  | #zoomIn 
+  | #zoomOut 
+  | #grab 
   | #grabbing
 ];
 

@@ -174,8 +174,8 @@ describe("transformOrigin", (function () {
 
 describe("Image data types", (function () {
         test("gradientLineDirection", (function () {
-                expect(CssValueString$Ress.gradientLineAngle("to top")).toBe("to top");
-                expect(CssValueString$Ress.gradientLineAngle("to top left")).toBe("to top left");
+                expect(CssValueString$Ress.gradientLineAngle("toTop")).toBe("to top");
+                expect(CssValueString$Ress.gradientLineAngle("toTopLeft")).toBe("to top left");
                 expect(CssValueString$Ress.gradientLineAngle(Css$Ress.turn(0.25))).toBe("0.25turn");
                 
               }));
@@ -333,16 +333,16 @@ describe("background", (function () {
                 expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
                 expect(CssValueString$Ress.background("red", undefined, undefined, undefined, undefined, undefined, undefined, Css$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
                 expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Ress.url("myimage.png"))).toBe("url(\"myimage.png\")");
-                expect(CssValueString$Ress.background(undefined, undefined, undefined, "repeat-y", undefined, undefined, undefined, Css$Ress.url("test.jpg"))).toBe("url(\"test.jpg\") repeat-y");
-                expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, "border-box", undefined, "red")).toBe("red border-box");
-                expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, "border-box", "padding-box", "red")).toBe("red border-box padding-box");
-                expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, "padding-box", "red")).toBe("red");
-                expect(CssValueString$Ress.background(undefined, "center", Css$Ress.pct(80), "no-repeat", undefined, undefined, undefined, Css$Ress.url("../img/image.png"))).toBe("url(\"../img/image.png\") center / 80% no-repeat");
-                expect(CssValueString$Ress.background(undefined, undefined, Css$Ress.pct(80), "no-repeat", undefined, undefined, undefined, Css$Ress.url("../img/image.png"))).toBe("url(\"../img/image.png\") no-repeat");
+                expect(CssValueString$Ress.background(undefined, undefined, undefined, "repeatY", undefined, undefined, undefined, Css$Ress.url("test.jpg"))).toBe("url(\"test.jpg\") repeat-y");
+                expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, "borderBox", undefined, "red")).toBe("red border-box");
+                expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, "borderBox", "paddingBox", "red")).toBe("red border-box padding-box");
+                expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, "paddingBox", "red")).toBe("red");
+                expect(CssValueString$Ress.background(undefined, "center", Css$Ress.pct(80), "noRepeat", undefined, undefined, undefined, Css$Ress.url("../img/image.png"))).toBe("url(\"../img/image.png\") center / 80% no-repeat");
+                expect(CssValueString$Ress.background(undefined, undefined, Css$Ress.pct(80), "noRepeat", undefined, undefined, undefined, Css$Ress.url("../img/image.png"))).toBe("url(\"../img/image.png\") no-repeat");
                 expect(CssValueString$Ress.bgLayer("red")).toBe("red");
                 expect(CssValueString$Ress.bgLayer(Css$Ress.url("myimage.png"))).toBe("url(\"myimage.png\")");
-                expect(CssValueString$Ress.bgLayer(Css$Ress.bgLayer(undefined, undefined, undefined, "repeat-y", undefined, undefined, undefined, Css$Ress.url("test.jpg")))).toBe("url(\"test.jpg\") repeat-y");
-                expect(CssValueString$Ress.bgLayer(Css$Ress.bgLayer(undefined, "center", Css$Ress.pct(80), "no-repeat", undefined, undefined, undefined, Css$Ress.url("../img/image.png")))).toBe("url(\"../img/image.png\") center / 80% no-repeat");
+                expect(CssValueString$Ress.bgLayer(Css$Ress.bgLayer(undefined, undefined, undefined, "repeatY", undefined, undefined, undefined, Css$Ress.url("test.jpg")))).toBe("url(\"test.jpg\") repeat-y");
+                expect(CssValueString$Ress.bgLayer(Css$Ress.bgLayer(undefined, "center", Css$Ress.pct(80), "noRepeat", undefined, undefined, undefined, Css$Ress.url("../img/image.png")))).toBe("url(\"../img/image.png\") center / 80% no-repeat");
                 
               }));
         

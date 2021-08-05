@@ -53,7 +53,14 @@ let stickMany = (v, cb) => {
 /*
 Textual data type
 */
-external global: global => string = "%identity"; 
+let global = v => {
+  switch v {
+  | #inherit => "inherit"
+  | #initial => "initial"
+  | #unset => "unset"
+  | #revert => "revert"
+  }
+};
 
 let string = v => {
   switch v {
@@ -223,8 +230,27 @@ let lineWidth_global = v => {
   };
 };
 
-external lineStyle: lineStyle => string = "%identity";
-external lineStyle_global: lineStyle_global => string = "%identity"; 
+let lineStyle = v => {
+  switch v {
+  | #none => "none"
+  | #hidden => "hidden"
+  | #dotted => "dotted"
+  | #dashed => "dashed"
+  | #solid => "solid"
+  | #double => "double"
+  | #groove => "groove"
+  | #ridge => "ridge"
+  | #inset => "inset"
+  | #outset => "outset"
+  }
+};
+
+let lineStyle_global = v => {
+  switch v {
+  | #...global as g => global(g)
+  | #...lineStyle as l => lineStyle(l)
+  }
+}; 
 
 // transform-origin
 let transformOrigin = v => {
@@ -282,7 +308,159 @@ let hsla = (v1, v2, v3, v4) => `hsla(${hue(v1)}, ${percentage(v2)}, ${percentage
 let rgb = (v1, v2, v3) => `rgb(${rgbParam(v1)}, ${rgbParam(v2)}, ${rgbParam(v3)})`;
 let rgba = (v1, v2, v3, v4) => `rgba(${rgbParam(v1)}, ${rgbParam(v2)}, ${rgbParam(v3)}, ${alpha(v4)})`;
 let rgbX = v => `#${v}`;
-external colorKeyword: colorKeyword => string = "%identity"; 
+let colorKeyword = v => {
+  switch v {
+  | #transparent => "transparent"
+  | #currentColor => "currentColor"
+  | #black => "black"
+  | #silver => "silver"
+  | #gray => "gray"
+  | #white => "white"
+  | #maroon => "maroon"
+  | #red => "red"
+  | #purple => "purple"
+  | #fuchsia => "fuchsia"
+  | #green => "green"
+  | #lime => "lime"
+  | #olive => "olive"
+  | #yellow => "yellow"
+  | #navy => "navy"
+  | #blue => "blue"
+  | #teal => "teal"
+  | #aqua => "aqua"
+  | #orange => "orange"
+  | #aliceblue => "aliceblue"
+  | #antiquewhite => "antiquewhite"
+  | #aquamarine => "aquamarine"
+  | #azure => "azure"
+  | #beige => "beique"
+  | #bisque => "bisque"
+  | #blanchedalmond => "blanchedalmond"
+  | #blueviolet => "blueviolet"
+  | #brown => "brown"
+  | #burlywood => "burlywood"
+  | #cadetblue => "cadetblue"
+  | #chartreuse => "chartreuse"
+  | #chocolate => "chocolate"
+  | #coral => "coral"
+  | #cornflowerblue => "cornflowerblue"
+  | #cornsilk => "cornsilk"
+  | #crimson => "crimson"
+  | #cyan => "cyan"
+  | #darkblue => "darkblue"
+  | #darkcyan => "darkcyan"
+  | #darkgoldenrod => "darkgoldenrod"
+  | #darkgray => "darkgray"
+  | #darkgreen => "darkgreen"
+  | #darkkhaki => "darkkhaki"
+  | #darkmagenta => "darkmagenta"
+  | #darkolivegreen => "darkolivegreen"
+  | #darkorange => "darkorange"
+  | #darkorchid => "darkorchid"
+  | #darkred => "darkred"
+  | #darksalmon => "darksalmon"
+  | #darkseagreen => "darkseagreen"
+  | #darkslateblue => "darkslateblue"
+  | #darkslategray => "darkslategray"
+  | #darkslategrey => "darkslategrey"
+  | #darkturquoise => "darkturquoise"
+  | #darkviolet => "darkviolet"
+  | #deeppink => "deeppink"
+  | #deepskyblue => "deepskyblue"
+  | #dimgray => "dimgray"
+  | #dimgrey => "dimgrey"
+  | #dodgerblue => "dodgerblue"
+  | #firebrick => "firebrick"
+  | #floralwhite => "floralwhite"
+  | #forestgreen => "forestgreen"
+  | #gainsboro => "gainsboro"
+  | #ghostwhite => "ghostwhite"
+  | #gold => "gold"
+  | #goldenrod => "goldenrod"
+  | #greenyellow => "greenyellow"
+  | #grey => "grey"
+  | #honeydew => "honeydew"
+  | #hotpink => "hotpink"
+  | #indianred => "indianred"
+  | #indigo => "indigo"
+  | #ivory => "ivory"
+  | #khaki => "khaki"
+  | #lavender => "lavender"
+  | #lavenderblush => "lavenderblush"
+  | #lawngreen => "lawngreen"
+  | #lemonchiffon => "lemonchiffon"
+  | #lightblue => "lightblue"
+  | #lightcoral => "lightcoral"
+  | #lightcyan => "lightcyan"
+  | #lightgoldenrodyellow => "lightgoldenrodyellow"
+  | #lightgray => "lightgray"
+  | #lightgreen => "lightgreen"
+  | #lightgrey => "lightgrey"
+  | #lightpink => "lightpink"
+  | #lightsalmon => "lightsalmon"
+  | #lightseagreen => "lightseagreen"
+  | #lightskyblue => "lightskyblue"
+  | #lightslategray => "lightslategray"
+  | #lightslategrey => "lightslategrey"
+  | #lightsteelblue => "lightsteelblue"
+  | #lightyellow => "lightyellow"
+  | #limegreen => "limegreen"
+  | #linen => "linen"
+  | #magenta => "magenta"
+  | #mediumaquamarine => "mediumaquamarine"
+  | #mediumblue => "mediumblue"
+  | #mediumorchid => "mediumorchid"
+  | #mediumpurple => "mediumpurple"
+  | #mediumseagreen => "mediumseagreen"
+  | #mediumslateblue => "mediumslateblue"
+  | #mediumspringgreen => "mediumspringgreen"
+  | #mediumturquoise => "mediumturquoise"
+  | #mediumvioletred => "mediumvioletred"
+  | #midnightblue => "midnightblue"
+  | #mintcream => "mintcream"
+  | #mistyrose => "mistyrose"
+  | #moccasin => "moccasin"
+  | #navajowhite => "navajowhite"
+  | #oldlace => "oldlace"
+  | #olivedrab => "olivedrab"
+  | #oranngered => "orangered"
+  | #orchid => "orchid"
+  | #palegoldenrod => "palegoldenrod"
+  | #palegreen => "palegreen"
+  | #paleturquoise => "paleturquoise"
+  | #palevioletred => "palevioletred"
+  | #papayawhip => "papayawhip"
+  | #peachpuff => "peachpuff"
+  | #peru => "peru"
+  | #pink => "pink"
+  | #plum => "plum"
+  | #powderblue => "powderblue"
+  | #rosybrown => "rosybrown"
+  | #royalblue => "royalblue"
+  | #saddlebrown => "saddlebrown"
+  | #salmon => "salmon"
+  | #sandybrown => "sandybrown"
+  | #seagreen => "seagreen"
+  | #seashell => "seashell"
+  | #sienna => "sienna"
+  | #skyblue => "skyblue"
+  | #slateblue => "slateblue" 
+  | #slategray => "slategray"
+  | #slategrey => "slategrey"
+  | #snow => "snow"
+  | #springgreen => "springgreen"
+  | #steelblue => "steelblue"
+  | #tan => "tan"
+  | #thistle => "thistle"
+  | #tomato => "tomato"
+  | #turquoise => "turquoise"
+  | #violet => "violet"
+  | #wheat => "wheat"
+  | #whitesmoke => "whitesmoke"
+  | #yellowgreen => "yellowgreen"
+  | #rebeccapurple => "rebeccapurple"
+  }
+}; 
 let color = v => {
   switch v {
     | #hsl(v1, v2, v3) => hsl(v1, v2, v3)
@@ -374,7 +552,18 @@ let position = v => {
 /*
 Image data types
 */
-external gradientLineStartingPoint: gradientLineStartingPoint => string = "%identity";
+let gradientLineStartingPoint = v => {
+  switch v {
+  | #toTop => "to top"
+  | #toBottom => "to bottom"
+  | #toLeft => "to left"
+  | #toRight => "to right"
+  | #toTopLeft => "to top left"
+  | #toTopRight => "to top right"
+  | #toBottomLeft => "to bottom left"
+  | #toBottomRight => "to bottom right"
+  }
+};
 let gradientLineAngle = v => {
   switch v {
   | #...angle as a => angle(a)
@@ -558,7 +747,12 @@ let gradient = v => {
   | #...repeatingConicGradient as g => repeatingConicGradient(g)
   };
 };
-external imageTags: imageTags => string = "%identity";
+let imageTags = v => {
+  switch v {
+  | #ltr => "ltr"
+  | #rtl => "rtl"
+  }
+};
 let url = v => {
   switch v {
   | #url(v) => `url("${v}")`
@@ -588,9 +782,46 @@ let bgImage = v => {
   | #none => "none"
   }
 };
-external repeatStyle: repeatStyle => string = "%identity";
-external attachment: attachment => string = "%identity";
-external box: box => string = "%identity";
+let repeatStyle = v => {
+  switch v {
+  | #repeatX => "repeat-x" 
+  | #repeatY => "repeat-y"
+  | #repeat => "repeat"
+  | #space => "space"
+  | #round => "round"
+  | #noRepeat => "no-repeat"
+  | #repeat__repeat => "repeat repeat"
+  | #repeat__space => "repeat space"
+  | #repeat__round => "repeat round"
+  | #repeat__noRepeat => "repeat no-repeat"
+  | #space__repeat => "space repeat"
+  | #space__space => "space space"
+  | #space__round => "space round"
+  | #space__noRepeat => "space no-repeat"
+  | #round__repeat => "round repeat"
+  | #round__space => "round space"
+  | #round__round => "round round"
+  | #round__noRepeat => "round no-repeat"
+  | #noRepeat__repeat => "no-repeat repeat"
+  | #noRepeat__space => "no-repeat space"
+  | #noRepeat__round => "no-repeat round"
+  | #noRepeat__noRepeat => "no-repeat no-repeat"
+  }
+};
+let attachment = v => {
+  switch v {
+  | #scroll => "scroll"
+  | #fixed => "fixed"
+  | #local => "local"
+  }
+};
+let box = v => {
+  switch v {
+  | #borderBox => "border-box"
+  | #paddingBox => "padding-box"
+  | #contentBox => "content-box"
+  }
+};
 
 /*
 Background
@@ -683,10 +914,68 @@ let padding_global = v => {
   }
 };
 
-external clear_global: clear_global => string = "%identity";
+let clear = v => {
+  switch v {
+  | #none => "none"
+  | #left => "left"
+  | #right => "right"
+  | #both => "both"
+  | #inlineStart => "inline-start"
+  | #inlineEnd => "inline-end"
+  }
+};
+let clear_global = v => {
+  switch v {
+  | #...clear as c => clear(c)
+  | #...global as g => global(g)
+  }
+};
 
-external cursorKeyword: cursorKeyword => string = "%identity";
-external cursorKeyword_global: cursorKeyword_global => string = "%identity";
+let cursorKeyword = v => {
+  switch v {
+  | #auto => "auto"
+  | #default => "default"
+  | #none => "none"
+  | #contextMenu => "context-menu"
+  | #help => "help"
+  | #pointer => "pointer"
+  | #progress => "progress"
+  | #wait => "wait"
+  | #cell => "cell"
+  | #crosshair => "crosshair"
+  | #text => "text"
+  | #verticalText => "vertical-text"
+  | #alias => "alias"
+  | #copy => "copy"
+  | #move => "move"
+  | #noDrop => "no-drop"
+  | #notAllowed => "not-allowed"
+  | #eResize => "e-resize"
+  | #nResize => "n-resize"
+  | #neResize => "ne-resize"
+  | #nwResize => "nw-resize"
+  | #sResize => "s-resize"
+  | #seResize => "se-resize"
+  | #swResize => "sw-resize"
+  | #wResize => "w-resize"
+  | #ewResize => "ew-resize"
+  | #nsResize => "ns-resize"
+  | #neswResize => "nesw-resize"
+  | #colResize => "col-resize"
+  | #rowResize => "row-resize"
+  | #allScroll => "all-scroll"
+  | #zoomIn => "zoom-in"
+  | #zoomOut => "zoom-out"
+  | #grab => "grab"
+  | #grabbing => "grabbing"
+  }
+};
+let cursorKeyword_global = v => {
+  switch v {
+  | #...cursorKeyword as k => cursorKeyword(k)
+  | #...global as g => global(g)
+  }
+};
 let cursorImage = v => {
   switch v {
   | #...url as u => url(u)
