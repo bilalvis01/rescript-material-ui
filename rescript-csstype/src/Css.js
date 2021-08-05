@@ -353,7 +353,7 @@ var rgb = CssValueHelper$Ress.rgb;
 
 var rgba = CssValueHelper$Ress.rgba;
 
-var rgbX = CssValueHelper$Ress.rgbX;
+var hexColor = CssValueHelper$Ress.hexColor;
 
 var url = CssValueHelper$Ress.url;
 
@@ -585,7 +585,7 @@ exports.hsl = hsl;
 exports.hsla = hsla;
 exports.rgb = rgb;
 exports.rgba = rgba;
-exports.rgbX = rgbX;
+exports.hexColor = hexColor;
 exports.url = url;
 exports.image = image;
 exports.linearColorStop2 = linearColorStop2;

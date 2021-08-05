@@ -8,7 +8,7 @@ test("border", (.) => {
     ->toBe(borderString("red dashed"));
   expect(border(~width=rem(1.0), #solid))
     ->toBe(borderString("1rem solid"));
-  expect(border(~width=#thick, ~color=rgbX("32a1ce"), #double))
+  expect(border(~width=#thick, ~color=hexColor("32a1ce"), #double))
     ->toBe(borderString("thick #32a1ce double"));
   expect(border(~width=mm(4.), ~color=rgba(170., 50., 220., 0.6), #ridge))
     ->toBe(borderString("4mm rgba(170, 50, 220, 0.6) ridge"));
@@ -32,7 +32,7 @@ test("borderWidth", (.) => {
 
 test("borderColor", (.) => {
   expect(borderColor(#red))->toBe(borderColorString("red"));
-  expect(borderColor2(~tb=#red, ~lr=rgbX("000000ff")))->toBe(borderColorString("red #000000ff"));
+  expect(borderColor2(~tb=#red, ~lr=hexColor("000000ff")))->toBe(borderColorString("red #000000ff"));
   expect(borderColor3(~top=#red, ~lr=rgb(255., 255., 255.), ~bottom=hsl(deg(360.), pct(100.), pct(50.))))
     ->toBe(borderColorString("red rgb(255, 255, 255) hsl(360deg, 100%, 50%)"));
   expect(borderColor4(~bottom=#red, ~top=#blue, ~left=rgb(255., 255., 255.), ~right=rgba(0., 0., 0., 0.5)))

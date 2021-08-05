@@ -127,8 +127,8 @@ describe("Color data types", (.) => {
       ->toBe("rgba(1, 1, 10%, 1)");
     expect(rgba(Css.num(0.), Css.num(0.), Css.num(0.), Css.num(1.)))
       ->toBe("rgba(0, 0, 0, 1)");
-    expect(rgbX("000000"))->toBe("#000000");
-    expect(color(Css.rgbX("000000")))->toBe("#000000");
+    expect(hexColor("000000"))->toBe("#000000");
+    expect(color(Css.hexColor("000000")))->toBe("#000000");
     expect(color(Css.rgb(10., 10., 10.)))
       ->toBe("rgb(10, 10, 10)");
   });
@@ -262,50 +262,50 @@ describe("Image data types", (.) => {
   });
 
   test("radialGradient", (.) => {
-    expect(radialGradient(Css.radialGradient(Css.rgbX("9198e5"))))->toBe("radial-gradient(#9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#circle, Css.rgbX("9198e5"))))
+    expect(radialGradient(Css.radialGradient(Css.hexColor("9198e5"))))->toBe("radial-gradient(#9198e5)");
+    expect(radialGradient(Css.radialGradient(~endingShape=#circle, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(circle, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#circle, ~position=#center, Css.rgbX("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~endingShape=#circle, ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(circle at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#circle, ~size=Css.px(10.), ~position=#center, Css.rgbX("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~endingShape=#circle, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(circle 10px at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.rgbX("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(ellipse at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(10px 10px at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(ellipse 10px 10px at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.rgbX("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(ellipse at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient2(~endingShape=#circle, Css.rgbX("9198e5"), #red)))
+    expect(radialGradient(Css.radialGradient2(~endingShape=#circle, Css.hexColor("9198e5"), #red)))
     ->toBe("radial-gradient(circle, #9198e5, red)");
-    expect(radialGradient(Css.radialGradient3(~endingShape=#circle, Css.rgbX("9198e5"), #red, Css.rgb(255., 255., 255.))))
+    expect(radialGradient(Css.radialGradient3(~endingShape=#circle, Css.hexColor("9198e5"), #red, Css.rgb(255., 255., 255.))))
     ->toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
-    expect(radialGradient(Css.radialGradient4(~endingShape=#circle, Css.rgbX("9198e5"), #red, Css.rgb(255., 255., 255.), Css.linearColorStop2(#blue, Css.pct(10.)))))
+    expect(radialGradient(Css.radialGradient4(~endingShape=#circle, Css.hexColor("9198e5"), #red, Css.rgb(255., 255., 255.), Css.linearColorStop2(#blue, Css.pct(10.)))))
     ->toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
   });
 
   test("repeatingRadialGradient", (.) => {
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(Css.rgbX("9198e5"))))->toBe("repeating-radial-gradient(#9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#circle, Css.rgbX("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(Css.hexColor("9198e5"))))->toBe("repeating-radial-gradient(#9198e5)");
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#circle, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(circle, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#circle, ~position=#center, Css.rgbX("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#circle, ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(circle at center, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#circle, ~size=Css.px(10.), ~position=#center, Css.rgbX("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#circle, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.rgbX("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(10px 10px at center, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.rgbX("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(ellipse 10px 10px at center, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.rgbX("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient2(~endingShape=#circle, Css.rgbX("9198e5"), #red)))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient2(~endingShape=#circle, Css.hexColor("9198e5"), #red)))
     ->toBe("repeating-radial-gradient(circle, #9198e5, red)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient3(~endingShape=#circle, Css.rgbX("9198e5"), #red, Css.rgb(255., 255., 255.))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient3(~endingShape=#circle, Css.hexColor("9198e5"), #red, Css.rgb(255., 255., 255.))))
     ->toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient4(~endingShape=#circle, Css.rgbX("9198e5"), #red, Css.rgb(255., 255., 255.), Css.linearColorStop2(#blue, Css.pct(10.)))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient4(~endingShape=#circle, Css.hexColor("9198e5"), #red, Css.rgb(255., 255., 255.), Css.linearColorStop2(#blue, Css.pct(10.)))))
     ->toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
   });
 
@@ -344,9 +344,9 @@ describe("Image data types", (.) => {
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
     expect(gradient(Css.repeatingLinearGradient(~angle=Css.deg(360.), #red)))->toBe("repeating-linear-gradient(360deg, red)");
-    expect(gradient(Css.radialGradient(~endingShape=#circle, ~position=#center, Css.rgbX("9198e5"))))
+    expect(gradient(Css.radialGradient(~endingShape=#circle, ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(circle at center, #9198e5)");
-    expect(gradient(Css.repeatingRadialGradient(~endingShape=#circle, ~size=Css.px(10.), ~position=#center, Css.rgbX("9198e5"))))
+    expect(gradient(Css.repeatingRadialGradient(~endingShape=#circle, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
     expect(gradient(Css.conicGradient(~angle=Css.deg(360.), ~position=Css.px(10.), #red)))->toBe("conic-gradient(from 360deg at 10px, red)");
     expect(gradient(Css.repeatingConicGradient(~angle=Css.deg(360.), ~position=Css.px(10.), #red)))

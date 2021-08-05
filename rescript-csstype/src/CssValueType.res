@@ -959,7 +959,7 @@ type hsl = [ | #hsl(hue, percentage, percentage) ];
 type hsla = [ | #hsla(hue, percentage, percentage, alpha) ];
 type rgb = [ | #rgb(rgbParam, rgbParam, rgbParam) ];
 type rgba = [ | #rgba(rgbParam, rgbParam, rgbParam, alpha) ];
-type rgbX = [ | #rgbX(string) ];
+type hexColor = [ | #hexColor(string) ];
 
 type color = [
   | colorKeyword
@@ -967,7 +967,7 @@ type color = [
   | hsla
   | rgb
   | rgba
-  | rgbX
+  | hexColor
 ];
 
 type color_global = [

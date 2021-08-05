@@ -99,7 +99,7 @@ let hsla = (v1, v2, v3, v4) => #hsla(v1, v2, v3, num(v4));
 let rgb = (v1, v2, v3) => #rgb(num(v1), num(v2), num(v3));
 let rgba = (v1, v2, v3, v4) => 
   #rgba(num(v1), num(v2), num(v3), num(v4));
-let rgbX = v => #rgbX(v);
+let hexColor = v => #hexColor(v);
 
 /*
 Image data types

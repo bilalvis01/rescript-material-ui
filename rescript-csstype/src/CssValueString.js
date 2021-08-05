@@ -447,7 +447,7 @@ function rgba(v1, v2, v3, v4) {
   return "rgba(" + rgbParam(v1) + ", " + rgbParam(v2) + ", " + rgbParam(v3) + ", " + alpha(v4) + ")";
 }
 
-function rgbX(v) {
+function hexColor(v) {
   return "#" + v;
 }
 
@@ -758,12 +758,12 @@ function color(v) {
     return colorKeyword(v);
   }
   var variant = v.NAME;
-  if (variant === "rgbX") {
-    return "#" + v.VAL;
-  }
   if (variant === "rgba") {
     var match = v.VAL;
     return rgba(match[0], match[1], match[2], match[3]);
+  }
+  if (variant === "hexColor") {
+    return "#" + v.VAL;
   }
   if (variant === "hsl") {
     var match$1 = v.VAL;
@@ -1192,7 +1192,7 @@ function image(v) {
     var exit = 0;
     if (typeof c$1 === "object") {
       var variant$1 = c$1.NAME;
-      if (variant$1 === "rgb" || variant$1 === "hsl" || variant$1 === "rgba" || variant$1 === "rgbX" || variant$1 === "hsla") {
+      if (variant$1 === "rgb" || variant$1 === "hsl" || variant$1 === "hexColor" || variant$1 === "rgba" || variant$1 === "hsla") {
         exit = 2;
       }
       
@@ -1212,7 +1212,7 @@ function image(v) {
   var c$3 = match[2];
   if (typeof c$3 === "object") {
     var variant$2 = c$3.NAME;
-    if (variant$2 === "rgb" || variant$2 === "hsl" || variant$2 === "rgba" || variant$2 === "rgbX" || variant$2 === "hsla") {
+    if (variant$2 === "rgb" || variant$2 === "hsl" || variant$2 === "hexColor" || variant$2 === "rgba" || variant$2 === "hsla") {
       return "image(" + color(c$3) + ")";
     }
     
@@ -1327,7 +1327,7 @@ function background(col, pos, size, repeat, att, origin, clip, imageOrColor) {
   var exit = 0;
   if (typeof imageOrColor === "object") {
     var variant = imageOrColor.NAME;
-    exit = variant === "rgb" || variant === "hsl" || variant === "rgba" || variant === "rgbX" || variant === "hsla" ? 2 : 1;
+    exit = variant === "rgb" || variant === "hsl" || variant === "hexColor" || variant === "rgba" || variant === "hsla" ? 2 : 1;
   } else {
     exit = imageOrColor === "none" ? 1 : 2;
   }
@@ -1363,7 +1363,7 @@ function bgLayer(v) {
     }
   }
   var variant = v.NAME;
-  if (variant === "rgb" || variant === "hsl" || variant === "rgba" || variant === "rgbX" || variant === "hsla") {
+  if (variant === "rgb" || variant === "hsl" || variant === "hexColor" || variant === "rgba" || variant === "hsla") {
     return color(v);
   }
   if (variant !== "bgLayer") {
@@ -1582,7 +1582,7 @@ exports.hsl = hsl;
 exports.hsla = hsla;
 exports.rgb = rgb;
 exports.rgba = rgba;
-exports.rgbX = rgbX;
+exports.hexColor = hexColor;
 exports.colorKeyword = colorKeyword;
 exports.color = color;
 exports.color_global = color_global;

@@ -121,8 +121,8 @@ describe("Color data types", (function () {
                 expect(CssValueString$Ress.rgb(Css$Ress.num(1), Css$Ress.num(1), Css$Ress.pct(10))).toBe("rgb(1, 1, 10%)");
                 expect(CssValueString$Ress.rgba(Css$Ress.num(1), Css$Ress.num(1), Css$Ress.pct(10), Css$Ress.num(1))).toBe("rgba(1, 1, 10%, 1)");
                 expect(CssValueString$Ress.rgba(Css$Ress.num(0), Css$Ress.num(0), Css$Ress.num(0), Css$Ress.num(1))).toBe("rgba(0, 0, 0, 1)");
-                expect(CssValueString$Ress.rgbX("000000")).toBe("#000000");
-                expect(CssValueString$Ress.color(Css$Ress.rgbX("000000"))).toBe("#000000");
+                expect(CssValueString$Ress.hexColor("000000")).toBe("#000000");
+                expect(CssValueString$Ress.color(Css$Ress.hexColor("000000"))).toBe("#000000");
                 expect(CssValueString$Ress.color(Css$Ress.rgb(10, 10, 10))).toBe("rgb(10, 10, 10)");
                 
               }));
@@ -211,55 +211,55 @@ describe("Image data types", (function () {
                 
               }));
         test("radialGradient", (function () {
-                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient(undefined, undefined, undefined, Css$Ress.rgbX("9198e5")))).toBe("radial-gradient(#9198e5)");
-                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient(undefined, "circle", undefined, Css$Ress.rgbX("9198e5")))).toBe("radial-gradient(circle, #9198e5)");
-                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", "circle", undefined, Css$Ress.rgbX("9198e5")))).toBe("radial-gradient(circle at center, #9198e5)");
-                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", "circle", Css$Ress.px(10), Css$Ress.rgbX("9198e5")))).toBe("radial-gradient(circle 10px at center, #9198e5)");
-                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", "ellipse", Css$Ress.px(10), Css$Ress.rgbX("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
+                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient(undefined, undefined, undefined, Css$Ress.hexColor("9198e5")))).toBe("radial-gradient(#9198e5)");
+                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient(undefined, "circle", undefined, Css$Ress.hexColor("9198e5")))).toBe("radial-gradient(circle, #9198e5)");
+                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", "circle", undefined, Css$Ress.hexColor("9198e5")))).toBe("radial-gradient(circle at center, #9198e5)");
+                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", "circle", Css$Ress.px(10), Css$Ress.hexColor("9198e5")))).toBe("radial-gradient(circle 10px at center, #9198e5)");
+                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", "ellipse", Css$Ress.px(10), Css$Ress.hexColor("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
                 expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", undefined, {
                                 NAME: "ellipse",
                                 VAL: [
                                   Css$Ress.px(10),
                                   Css$Ress.px(10)
                                 ]
-                              }, Css$Ress.rgbX("9198e5")))).toBe("radial-gradient(10px 10px at center, #9198e5)");
+                              }, Css$Ress.hexColor("9198e5")))).toBe("radial-gradient(10px 10px at center, #9198e5)");
                 expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", "ellipse", {
                                 NAME: "ellipse",
                                 VAL: [
                                   Css$Ress.px(10),
                                   Css$Ress.px(10)
                                 ]
-                              }, Css$Ress.rgbX("9198e5")))).toBe("radial-gradient(ellipse 10px 10px at center, #9198e5)");
-                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", "ellipse", Css$Ress.px(10), Css$Ress.rgbX("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
-                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient2(undefined, "circle", undefined, Css$Ress.rgbX("9198e5"), "red"))).toBe("radial-gradient(circle, #9198e5, red)");
-                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient3(undefined, "circle", undefined, Css$Ress.rgbX("9198e5"), "red", Css$Ress.rgb(255, 255, 255)))).toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
-                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient4(undefined, "circle", undefined, Css$Ress.rgbX("9198e5"), "red", Css$Ress.rgb(255, 255, 255), Css$Ress.linearColorStop2("blue", Css$Ress.pct(10))))).toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
+                              }, Css$Ress.hexColor("9198e5")))).toBe("radial-gradient(ellipse 10px 10px at center, #9198e5)");
+                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", "ellipse", Css$Ress.px(10), Css$Ress.hexColor("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
+                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient2(undefined, "circle", undefined, Css$Ress.hexColor("9198e5"), "red"))).toBe("radial-gradient(circle, #9198e5, red)");
+                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient3(undefined, "circle", undefined, Css$Ress.hexColor("9198e5"), "red", Css$Ress.rgb(255, 255, 255)))).toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
+                expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient4(undefined, "circle", undefined, Css$Ress.hexColor("9198e5"), "red", Css$Ress.rgb(255, 255, 255), Css$Ress.linearColorStop2("blue", Css$Ress.pct(10))))).toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
                 
               }));
         test("repeatingRadialGradient", (function () {
-                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient(undefined, undefined, undefined, Css$Ress.rgbX("9198e5")))).toBe("repeating-radial-gradient(#9198e5)");
-                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient(undefined, "circle", undefined, Css$Ress.rgbX("9198e5")))).toBe("repeating-radial-gradient(circle, #9198e5)");
-                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", "circle", undefined, Css$Ress.rgbX("9198e5")))).toBe("repeating-radial-gradient(circle at center, #9198e5)");
-                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", "circle", Css$Ress.px(10), Css$Ress.rgbX("9198e5")))).toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
-                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", "ellipse", Css$Ress.px(10), Css$Ress.rgbX("9198e5")))).toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
+                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient(undefined, undefined, undefined, Css$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(#9198e5)");
+                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient(undefined, "circle", undefined, Css$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(circle, #9198e5)");
+                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", "circle", undefined, Css$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(circle at center, #9198e5)");
+                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", "circle", Css$Ress.px(10), Css$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
+                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", "ellipse", Css$Ress.px(10), Css$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
                 expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", undefined, {
                                 NAME: "ellipse",
                                 VAL: [
                                   Css$Ress.px(10),
                                   Css$Ress.px(10)
                                 ]
-                              }, Css$Ress.rgbX("9198e5")))).toBe("repeating-radial-gradient(10px 10px at center, #9198e5)");
+                              }, Css$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(10px 10px at center, #9198e5)");
                 expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", "ellipse", {
                                 NAME: "ellipse",
                                 VAL: [
                                   Css$Ress.px(10),
                                   Css$Ress.px(10)
                                 ]
-                              }, Css$Ress.rgbX("9198e5")))).toBe("repeating-radial-gradient(ellipse 10px 10px at center, #9198e5)");
-                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", "ellipse", Css$Ress.px(10), Css$Ress.rgbX("9198e5")))).toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
-                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient2(undefined, "circle", undefined, Css$Ress.rgbX("9198e5"), "red"))).toBe("repeating-radial-gradient(circle, #9198e5, red)");
-                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient3(undefined, "circle", undefined, Css$Ress.rgbX("9198e5"), "red", Css$Ress.rgb(255, 255, 255)))).toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
-                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient4(undefined, "circle", undefined, Css$Ress.rgbX("9198e5"), "red", Css$Ress.rgb(255, 255, 255), Css$Ress.linearColorStop2("blue", Css$Ress.pct(10))))).toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
+                              }, Css$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(ellipse 10px 10px at center, #9198e5)");
+                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", "ellipse", Css$Ress.px(10), Css$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
+                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient2(undefined, "circle", undefined, Css$Ress.hexColor("9198e5"), "red"))).toBe("repeating-radial-gradient(circle, #9198e5, red)");
+                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient3(undefined, "circle", undefined, Css$Ress.hexColor("9198e5"), "red", Css$Ress.rgb(255, 255, 255)))).toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
+                expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient4(undefined, "circle", undefined, Css$Ress.hexColor("9198e5"), "red", Css$Ress.rgb(255, 255, 255), Css$Ress.linearColorStop2("blue", Css$Ress.pct(10))))).toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
                 
               }));
         test("conicGradient", (function () {
@@ -284,8 +284,8 @@ describe("Image data types", (function () {
                 expect(CssValueString$Ress.gradient(Css$Ress.linearGradient3(Css$Ress.turn(0.25), Css$Ress.linearColorStop2(Css$Ress.rgb(255, 255, 255), Css$Ress.pct(10)), Css$Ress.pct(30), Css$Ress.linearColorStop3(Css$Ress.rgb(255, 255, 255), Css$Ress.pct(50), Css$Ress.pct(60))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
                 expect(CssValueString$Ress.gradient(Css$Ress.linearGradient4(Css$Ress.turn(0.25), Css$Ress.linearColorStop2(Css$Ress.rgb(255, 255, 255), Css$Ress.pct(10)), Css$Ress.linearColorStop2(Css$Ress.rgb(255, 255, 255), Css$Ress.pct(40)), Css$Ress.linearColorStop3(Css$Ress.rgb(255, 255, 255), Css$Ress.pct(50), Css$Ress.pct(60)), Css$Ress.linearColorStop3("red", Css$Ress.pct(70), Css$Ress.pct(100))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
                 expect(CssValueString$Ress.gradient(Css$Ress.repeatingLinearGradient(Css$Ress.deg(360), "red"))).toBe("repeating-linear-gradient(360deg, red)");
-                expect(CssValueString$Ress.gradient(Css$Ress.radialGradient("center", "circle", undefined, Css$Ress.rgbX("9198e5")))).toBe("radial-gradient(circle at center, #9198e5)");
-                expect(CssValueString$Ress.gradient(Css$Ress.repeatingRadialGradient("center", "circle", Css$Ress.px(10), Css$Ress.rgbX("9198e5")))).toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
+                expect(CssValueString$Ress.gradient(Css$Ress.radialGradient("center", "circle", undefined, Css$Ress.hexColor("9198e5")))).toBe("radial-gradient(circle at center, #9198e5)");
+                expect(CssValueString$Ress.gradient(Css$Ress.repeatingRadialGradient("center", "circle", Css$Ress.px(10), Css$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
                 expect(CssValueString$Ress.gradient(Css$Ress.conicGradient(Css$Ress.deg(360), Css$Ress.px(10), "red"))).toBe("conic-gradient(from 360deg at 10px, red)");
                 expect(CssValueString$Ress.gradient(Css$Ress.repeatingConicGradient(Css$Ress.deg(360), Css$Ress.px(10), "red"))).toBe("repeating-conic-gradient(from 360deg at 10px, red)");
                 

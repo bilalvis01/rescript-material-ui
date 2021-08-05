@@ -307,7 +307,7 @@ let hsl = (v1, v2, v3) => `hsl(${hue(v1)}, ${percentage(v2)}, ${percentage(v3)})
 let hsla = (v1, v2, v3, v4) => `hsla(${hue(v1)}, ${percentage(v2)}, ${percentage(v3)}, ${alpha(v4)})`;
 let rgb = (v1, v2, v3) => `rgb(${rgbParam(v1)}, ${rgbParam(v2)}, ${rgbParam(v3)})`;
 let rgba = (v1, v2, v3, v4) => `rgba(${rgbParam(v1)}, ${rgbParam(v2)}, ${rgbParam(v3)}, ${alpha(v4)})`;
-let rgbX = v => `#${v}`;
+let hexColor = v => `#${v}`;
 let colorKeyword = v => {
   switch v {
   | #transparent => "transparent"
@@ -467,7 +467,7 @@ let color = v => {
     | #hsla(v1, v2, v3, v4) => hsla(v1, v2, v3, v4)
     | #rgb(v1, v2, v3) => rgb(v1, v2, v3)
     | #rgba(v1, v2, v3, v4) =>  rgba(v1, v2, v3, v4)
-    | #rgbX(v) => rgbX(v)
+    | #hexColor(v) => hexColor(v)
     | #...colorKeyword as c => colorKeyword(c)
   };
 };

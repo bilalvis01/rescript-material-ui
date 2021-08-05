@@ -105,7 +105,7 @@ let rgb: (float, float, float) =>
   [> CssValueType.rgb ];
 let rgba: (float, float, float, float) => 
   [> CssValueType.rgba ];
-let rgbX: string => [> CssValueType.rgbX ];
+let hexColor: string => [> CssValueType.hexColor ];
 
 /*
 Image data types

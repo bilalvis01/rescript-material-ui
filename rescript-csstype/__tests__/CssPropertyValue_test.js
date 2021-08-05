@@ -8,7 +8,7 @@ test("border", (function () {
         expect(CssPropertyValue$Ress.border(undefined, undefined, "solid")).toBe("solid");
         expect(CssPropertyValue$Ress.border(undefined, "red", "dashed")).toBe("red dashed");
         expect(CssPropertyValue$Ress.border(CssValueHelper$Ress.rem(1.0), undefined, "solid")).toBe("1rem solid");
-        expect(CssPropertyValue$Ress.border("thick", CssValueHelper$Ress.rgbX("32a1ce"), "double")).toBe("thick #32a1ce double");
+        expect(CssPropertyValue$Ress.border("thick", CssValueHelper$Ress.hexColor("32a1ce"), "double")).toBe("thick #32a1ce double");
         expect(CssPropertyValue$Ress.border(CssValueHelper$Ress.mm(4), CssValueHelper$Ress.rgba(170, 50, 220, 0.6), "ridge")).toBe("4mm rgba(170, 50, 220, 0.6) ridge");
         
       }));
@@ -31,7 +31,7 @@ test("borderWidth", (function () {
 
 test("borderColor", (function () {
         expect(CssPropertyValue$Ress.borderColor("red")).toBe("red");
-        expect(CssPropertyValue$Ress.borderColor2("red", CssValueHelper$Ress.rgbX("000000ff"))).toBe("red #000000ff");
+        expect(CssPropertyValue$Ress.borderColor2("red", CssValueHelper$Ress.hexColor("000000ff"))).toBe("red #000000ff");
         expect(CssPropertyValue$Ress.borderColor3("red", CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.hsl(CssValueHelper$Ress.deg(360), CssValueHelper$Ress.pct(100), CssValueHelper$Ress.pct(50)))).toBe("red rgb(255, 255, 255) hsl(360deg, 100%, 50%)");
         expect(CssPropertyValue$Ress.borderColor4("blue", CssValueHelper$Ress.rgba(0, 0, 0, 0.5), "red", CssValueHelper$Ress.rgb(255, 255, 255))).toBe("blue rgba(0, 0, 0, 0.5) red rgb(255, 255, 255)");
         

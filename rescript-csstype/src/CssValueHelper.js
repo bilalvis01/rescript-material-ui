@@ -365,9 +365,9 @@ function rgba(v1, v2, v3, v4) {
         };
 }
 
-function rgbX(v) {
+function hexColor(v) {
   return {
-          NAME: "rgbX",
+          NAME: "hexColor",
           VAL: v
         };
 }
@@ -753,7 +753,7 @@ exports.hsl = hsl;
 exports.hsla = hsla;
 exports.rgb = rgb;
 exports.rgba = rgba;
-exports.rgbX = rgbX;
+exports.hexColor = hexColor;
 exports.url = url;
 exports.image = image;
 exports.linearColorStop2 = linearColorStop2;
