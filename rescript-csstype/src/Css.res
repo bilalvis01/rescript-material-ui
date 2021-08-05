@@ -10,7 +10,6 @@ include CssStyleHelper.Make({
   type t = style;
   let style = Style.make;
 });
-include CssDeclarationHelper;
 
 module PropertyValue = CssPropertyValue;
 module FontFace = CssFontFace;

@@ -4,6 +4,8 @@ module Make = (
     let style: array<CssStyleType.declarations<t>> => t;
   }
 ) => {
+  include CssDeclarationHelper;
+
   let selector = (selector, declarations) => 
     #Selector(selector, Type.style(declarations));
 
