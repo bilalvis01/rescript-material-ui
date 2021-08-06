@@ -26,10 +26,7 @@
   "suffix": ".js",
   "bs-dependencies": [
     "@rescript/react",
-    "@bilalvis01/rescript-csstype"
-  ],
-  "bs-dev-dependencies": [
-    "@glennsl/bs-jest",
+    "@bilalvis01/rescript-csstype",
     "@bilalvis01/rescript-jest"
   ],
   "pinned-dependencies": [
