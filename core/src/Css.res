@@ -1,6 +1,9 @@
-include Ress.CssValue;
-include Ress.CssFunction;
-include Ress.CssStyle.Make({ type t = ReactDOM.Style.t });
+type value;
+type style;
+type styles;
 
-module PropertyValue = Ress.CssPropertyValue;
-module FontFace = Ress.CssFontFace;
+include Ress.Css.Make({
+  type value = value;
+  type style = style;
+  type styles = styles;
+});
