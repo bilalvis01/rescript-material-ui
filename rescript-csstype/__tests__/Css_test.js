@@ -5,45 +5,81 @@ var Curry = require("rescript/lib/js/curry.js");
 var Css$Ress = require("../src/Css.js");
 var CssFontFace$Ress = require("../src/CssFontFace.js");
 
-describe("style", (function () {
-        test("style", (function () {
-                expect({
-                        wrapper: Curry._1(Css$Ress.style, [
-                              Curry._8(Css$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Ress.url("image.png")),
-                              Curry._1(Css$Ress.color, Css$Ress.rgb(255, 255, 255)),
-                              Curry._1(Css$Ress.paddingTop, Css$Ress.px(24)),
-                              Curry._1(Css$Ress.paddingBottom, Css$Ress.px(24)),
-                              Curry._1(Css$Ress.paddingLeft, Css$Ress.px(40)),
-                              Curry._1(Css$Ress.paddingRight, Css$Ress.px(40)),
-                              Curry._1(Css$Ress.marginNumber, 24)
-                            ]),
-                        button: Curry._1(Css$Ress.style, [
-                              Curry._1(Css$Ress.color, Css$Ress.hsla(Css$Ress.deg(360), Css$Ress.pct(100), Css$Ress.pct(50), 0.5)),
-                              Curry._1(Css$Ress.hover, [Curry._8(Css$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
-                            ]),
-                        "@font-face": CssFontFace$Ress.make([CssFontFace$Ress.fontDisplay("auto")])
-                      }).toEqual({
-                      wrapper: {
-                        background: "url(\"image.png\")",
-                        color: "rgb(255, 255, 255)",
-                        paddingTop: "24px",
-                        paddingBottom: "24px",
-                        paddingLeft: "40px",
-                        paddingRight: "40px",
-                        margin: 24
-                      },
-                      button: {
-                        color: "hsla(360deg, 100%, 50%, 0.5)",
-                        "&:hover": {
-                          background: "blue"
-                        }
-                      },
-                      "@font-face": {
-                        fontDisplay: "auto"
-                      }
-                    });
-                
-              }));
+test("style", (function () {
+        expect({
+                wrapper: Curry._1(Css$Ress.style, [
+                      Curry._8(Css$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Ress.url("image.png")),
+                      Curry._1(Css$Ress.color, Css$Ress.rgb(255, 255, 255)),
+                      Curry._1(Css$Ress.paddingTop, Css$Ress.px(24)),
+                      Curry._1(Css$Ress.paddingBottom, Css$Ress.px(24)),
+                      Curry._1(Css$Ress.paddingLeft, Css$Ress.px(40)),
+                      Curry._1(Css$Ress.paddingRight, Css$Ress.px(40)),
+                      Curry._1(Css$Ress.marginNumber, 24)
+                    ]),
+                button: Curry._1(Css$Ress.style, [
+                      Curry._1(Css$Ress.color, Css$Ress.hsla(Css$Ress.deg(360), Css$Ress.pct(100), Css$Ress.pct(50), 0.5)),
+                      Curry._1(Css$Ress.hover, [Curry._8(Css$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
+                    ]),
+                "@font-face": CssFontFace$Ress.style([CssFontFace$Ress.fontDisplay("auto")])
+              }).toEqual({
+              wrapper: {
+                background: "url(\"image.png\")",
+                color: "rgb(255, 255, 255)",
+                paddingTop: "24px",
+                paddingBottom: "24px",
+                paddingLeft: "40px",
+                paddingRight: "40px",
+                margin: 24
+              },
+              button: {
+                color: "hsla(360deg, 100%, 50%, 0.5)",
+                "&:hover": {
+                  background: "blue"
+                }
+              },
+              "@font-face": {
+                fontDisplay: "auto"
+              }
+            });
+        
+      }));
+
+test("styles", (function () {
+        expect(Curry._1(Css$Ress.styles, [
+                    Curry._2(Css$Ress.selector, "wrapper", [
+                          Curry._8(Css$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Ress.url("image.png")),
+                          Curry._1(Css$Ress.color, Css$Ress.rgb(255, 255, 255)),
+                          Curry._1(Css$Ress.paddingTop, Css$Ress.px(24)),
+                          Curry._1(Css$Ress.paddingBottom, Css$Ress.px(24)),
+                          Curry._1(Css$Ress.paddingLeft, Css$Ress.px(40)),
+                          Curry._1(Css$Ress.paddingRight, Css$Ress.px(40)),
+                          Curry._1(Css$Ress.marginNumber, 24)
+                        ]),
+                    Curry._2(Css$Ress.selector, "button", [
+                          Curry._1(Css$Ress.color, Css$Ress.hsla(Css$Ress.deg(360), Css$Ress.pct(100), Css$Ress.pct(50), 0.5)),
+                          Curry._1(Css$Ress.hover, [Curry._8(Css$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
+                        ]),
+                    Css$Ress.fontFace([CssFontFace$Ress.fontDisplay("auto")])
+                  ])).toEqual({
+              wrapper: {
+                background: "url(\"image.png\")",
+                color: "rgb(255, 255, 255)",
+                paddingTop: "24px",
+                paddingBottom: "24px",
+                paddingLeft: "40px",
+                paddingRight: "40px",
+                margin: 24
+              },
+              button: {
+                color: "hsla(360deg, 100%, 50%, 0.5)",
+                "&:hover": {
+                  background: "blue"
+                }
+              },
+              "@font-face": {
+                fontDisplay: "auto"
+              }
+            });
         
       }));
 
