@@ -413,6 +413,8 @@ var style = include.style;
 
 var styles = include.styles;
 
+var React;
+
 exports.PropertyValue = PropertyValue;
 exports.$$FontFace = $$FontFace;
 exports.Style = Style;
@@ -617,4 +619,5 @@ exports.repeatingConicGradient4 = repeatingConicGradient4;
 exports.fontFace = fontFace;
 exports.style = style;
 exports.styles = styles;
+exports.React = React;
 /* include Not a pure module */

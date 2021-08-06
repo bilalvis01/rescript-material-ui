@@ -7,3 +7,5 @@ include Ress.Css.Make({
   type style = style;
   type styles = styles;
 });
+
+module React = CssReact;
