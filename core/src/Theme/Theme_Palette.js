@@ -5,7 +5,7 @@ var Caml_option = require("rescript/lib/js/caml_option.js");
 var Styles = require("@material-ui/core/styles");
 
 function tonalOffset(v) {
-  if (typeof v === "number") {
+  if (typeof v.tonalOffset() === "number") {
     return {
             TAG: /* Number */0,
             _0: v

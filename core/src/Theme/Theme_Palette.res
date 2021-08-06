@@ -42,7 +42,7 @@ external getContrastText: (t, string) => string = "getContrastText";
 external augmentColor: (t, Theme_AugmentColorOptions.t) => Theme_PaletteColor.t = "augmentColor";
 
 let tonalOffset = v => {
-  if (Js.typeof(v) == "number") {
+  if (getTonalOffset(v)->Js.typeof == "number") {
     Theme_TonalOffset.Number(Obj.magic(v): float);
   }
   else { 
