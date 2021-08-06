@@ -16,11 +16,9 @@ var Palette;
 
 var Color;
 
-var ColorPartial;
-
 var ActionColor;
 
-var AugmentColorOptions;
+var AugmentColor;
 
 var BackgroundColor;
 
@@ -38,9 +36,8 @@ var Typography;
 
 exports.Palette = Palette;
 exports.Color = Color;
-exports.ColorPartial = ColorPartial;
 exports.ActionColor = ActionColor;
-exports.AugmentColorOptions = AugmentColorOptions;
+exports.AugmentColor = AugmentColor;
 exports.BackgroundColor = BackgroundColor;
 exports.CommonColors = CommonColors;
 exports.PaletteColor = PaletteColor;

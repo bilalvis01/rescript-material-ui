@@ -1,11 +1,11 @@
 type t;
 
-@send
+@get
 external black: t => string = "black";
-@send
+@get
 external white: t => string = "white";
 
-@send
+@obj
 external make: (
   ~black: string=?,
   ~white: string=?,

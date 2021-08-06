@@ -1,10 +1,10 @@
 type t;
 
-@send
+@get
 external light: t => string = "light";
-@send
+@get
 external main: t => string = "main";
-@send
+@get
 external dark: t => string = "dark";
-@send
+@get
 external contrastText: t => string = "contrastText";

@@ -2,44 +2,44 @@ type typeDivider = string;
 
 type t;
 
-@send
+@get
 external common: t => Theme_CommonColors.t = "common";
-@send
+@get
 external mode: t => MaterialuiType.palleteMode = "mode";
-@send
+@get
 external contrastThreshold: t => float = "contrastThreshold";
-@send
+@get
 external tonalOffsetUnsafe: t => Theme_TonalOffset.t = "tonalOffset";
-@send
+@get
 external tonalOffsetUnsafeNumber: t => float = "tonalOffset";
-@send
+@get
 external getTonalOffset: t => 'a = "tonalOffset";
-@send
+@get
 external primary: t => Theme_PaletteColor.t = "primary";
-@send
+@get
 external secondary: t => Theme_PaletteColor.t = "secondary";
-@send
+@get
 external error: t => Theme_PaletteColor.t = "error";
-@send
+@get
 external warning: t => Theme_PaletteColor.t = "warning";
-@send
+@get
 external info: t => Theme_PaletteColor.t = "info";
-@send
+@get
 external success: t => Theme_PaletteColor.t = "success";
-@send
+@get
 external grey: t => Theme_Color.t = "grey";
-@send
+@get
 external text: t => Theme_TextColor.t = "text";
-@send
+@get
 external divider: t => typeDivider = "divider";
-@send
+@get
 external action: t => Theme_ActionColor.t = "action";
-@send
+@get
 external background: t => Theme_BackgroundColor.t = "background";
 @send
 external getContrastText: (t, string) => string = "getContrastText";
 @send
-external augmentColor: (t, Theme_AugmentColorOptions.t) => Theme_PaletteColor.t = "augmentColor";
+external augmentColor: (t, Theme_AugmentColor.t) => Theme_PaletteColor.t = "augmentColor";
 
 let tonalOffset = v => {
   if (getTonalOffset(v)->Js.typeof == "number") {
@@ -50,46 +50,23 @@ let tonalOffset = v => {
   }
 };
 
-@module("@material-ui/core/styles")
-external createPalette: Theme_PaletteOptions.t => t = "pallete";
-
-let make = (
-  ~primary=?,
-  ~secondary=?,
-  ~error=?,
-  ~warning=?,
-  ~info=?,
-  ~success=?,
-  ~mode=?,
-  ~tonalOffset=?,
-  ~contrastThreshold=?,
-  ~common=?,
-  ~grey=?,
-  ~text=?,
-  ~divider=?,
-  ~action=?,
-  ~background=?,
-  ~getContrastText=?,
-  ()
-) => {
-  Theme_PaletteOptions.make(
-    ~primary=?primary,
-    ~secondary=?secondary,
-    ~error=?error,
-    ~warning=?warning,
-    ~info=?info,
-    ~success=?success,
-    ~mode=?mode,
-    ~tonalOffset=?tonalOffset,
-    ~contrastThreshold=?contrastThreshold,
-    ~common=?common,
-    ~grey=?grey,
-    ~text=?text,
-    ~divider=?divider,
-    ~action=?action,
-    ~background=?background,
-    ~getContrastText=?getContrastText,
-    ()
-  )
-  ->createPalette;
-};
+@obj
+external make: (
+  ~primary: Theme_PaletteColorOptions.t=?,
+  ~secondary: Theme_PaletteColorOptions.t=?,
+  ~error: Theme_PaletteColorOptions.t=?,
+  ~warning: Theme_PaletteColorOptions.t=?,
+  ~info: Theme_PaletteColorOptions.t=?,
+  ~success: Theme_PaletteColorOptions.t=?,
+  ~mode: MaterialuiType.palleteMode=?,
+  ~tonalOffset: Theme_TonalOffset.t=?,
+  ~contrastThreshold: float=?,
+  ~common: Theme_CommonColors.t=?,
+  ~grey: Theme_Color.t=?,
+  ~text: Theme_TextColor.t=?,
+  ~divider: string=?,
+  ~action: Theme_ActionColor.t=?,
+  ~background: Theme_BackgroundColor.t=?,
+  ~getContrastText: string => string=?,
+  unit
+) => t = "";

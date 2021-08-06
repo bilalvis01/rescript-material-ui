@@ -1,22 +1,22 @@
 type t;
 
-@send
+@get
 external active: t => string = "active";
-@send
+@get
 external hover: t => string = "hover";
-@send
+@get
 external hoverOpacity: t => float = "hoverOpacity";
-@send
+@get
 external selected: t => string = "selected";
-@send
+@get
 external selectedOpacity: t => float = "selectedOpacity";
-@send
+@get
 external disabledBackground: t => string = "disabledBackground";
-@send
+@get
 external focus: t => string = "focus";
-@send
+@get
 external focusOpacity: t => float = "focusOpacity";
-@send
+@get
 external activatedOpacity: t => float = "activatedOpacity";
 
 @obj

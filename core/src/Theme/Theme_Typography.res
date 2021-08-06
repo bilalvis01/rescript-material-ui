@@ -6,45 +6,45 @@ external make: (
   Theme_Palette.t => Theme_TypographyOptions.t,
 ) => t = "createTypography";
 
-@send
+@get
 external h1: t => Css.style = "h1";
-@send
+@get
 external h2: t => Css.style = "h2";
-@send
+@get
 external h3: t => Css.style = "h3";
-@send
+@get
 external h4: t => Css.style = "h4";
-@send
+@get
 external h5: t => Css.style = "h5";
-@send
+@get
 external h6: t => Css.style = "h6";
-@send
+@get
 external subtitle1: t => Css.style = "subtitle1";
-@send
+@get
 external subtitle2: t => Css.style = "subtitle2";
-@send
+@get
 external body1: t => Css.style = "body1";
-@send
+@get
 external body2: t => Css.style = "body2";
-@send
+@get
 external caption: t => Css.style = "caption";
-@send
+@get
 external button: t => Css.style = "caption";
-@send
+@get
 external overline: t => Css.style = "overline";
-@send
+@get
 external fontFamily: t => string = "fontFamily";
-@send
+@get
 external fontSize: t => float = "fontSize";
-@send
+@get
 external fontWeightLight: t => string = "fontWeightLight";
-@send
+@get
 external fontWeightRegular: t => string = "fontWeightRegular";
-@send
+@get
 external fontWeightMedium: t => string = "fontWeightMedium";
-@send
+@get
 external fontWeightBold: t => string = "fontWeightBold";
-@send
+@get
 external htmlFontSize: t => float = "htmlFontSize";
 @send
 external pxToRem: (t, float) => string ="pxToRem"; 

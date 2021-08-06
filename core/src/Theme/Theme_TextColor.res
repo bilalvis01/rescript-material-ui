@@ -1,10 +1,10 @@
 type t;
 
-@send
+@get
 external primary: t => string = "primary";
-@send
+@get
 external secondary: t => string = "secondary";
-@send
+@get
 external disbled: t => string = "desabled";
 
 @obj

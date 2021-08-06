@@ -1,8 +1,8 @@
 type t;
 
-@send
+@get
 external default: t => string = "default";
-@send
+@get
 external paper: t => string = "paper";
 
 @obj

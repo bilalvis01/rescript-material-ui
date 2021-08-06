@@ -2,10 +2,9 @@
 'use strict';
 
 var Caml_option = require("rescript/lib/js/caml_option.js");
-var Styles = require("@material-ui/core/styles");
 
 function tonalOffset(v) {
-  if (typeof v.tonalOffset() === "number") {
+  if (typeof v.tonalOffset === "number") {
     return {
             TAG: /* Number */0,
             _0: v
@@ -18,59 +17,59 @@ function tonalOffset(v) {
   }
 }
 
-function make(primary, secondary, error, warning, info, success, mode, tonalOffset, contrastThreshold, common, grey, text, divider, action, background, getContrastText, param) {
+function make(prim0, prim1, prim2, prim3, prim4, prim5, prim6, prim7, prim8, prim9, prim10, prim11, prim12, prim13, prim14, prim15, prim16) {
   var tmp = {};
-  if (primary !== undefined) {
-    tmp.primary = Caml_option.valFromOption(primary);
+  if (prim0 !== undefined) {
+    tmp.primary = Caml_option.valFromOption(prim0);
   }
-  if (secondary !== undefined) {
-    tmp.secondary = Caml_option.valFromOption(secondary);
+  if (prim1 !== undefined) {
+    tmp.secondary = Caml_option.valFromOption(prim1);
   }
-  if (error !== undefined) {
-    tmp.error = Caml_option.valFromOption(error);
+  if (prim2 !== undefined) {
+    tmp.error = Caml_option.valFromOption(prim2);
   }
-  if (warning !== undefined) {
-    tmp.warning = Caml_option.valFromOption(warning);
+  if (prim3 !== undefined) {
+    tmp.warning = Caml_option.valFromOption(prim3);
   }
-  if (info !== undefined) {
-    tmp.info = Caml_option.valFromOption(info);
+  if (prim4 !== undefined) {
+    tmp.info = Caml_option.valFromOption(prim4);
   }
-  if (success !== undefined) {
-    tmp.success = Caml_option.valFromOption(success);
+  if (prim5 !== undefined) {
+    tmp.success = Caml_option.valFromOption(prim5);
   }
-  if (mode !== undefined) {
-    tmp.mode = Caml_option.valFromOption(mode);
+  if (prim6 !== undefined) {
+    tmp.mode = Caml_option.valFromOption(prim6);
   }
-  if (tonalOffset !== undefined) {
-    tmp.tonalOffset = Caml_option.valFromOption(tonalOffset);
+  if (prim7 !== undefined) {
+    tmp.tonalOffset = Caml_option.valFromOption(prim7);
   }
-  if (contrastThreshold !== undefined) {
-    tmp.contrastThreshold = contrastThreshold;
+  if (prim8 !== undefined) {
+    tmp.contrastThreshold = prim8;
   }
-  if (common !== undefined) {
-    tmp.common = Caml_option.valFromOption(common);
+  if (prim9 !== undefined) {
+    tmp.common = Caml_option.valFromOption(prim9);
   }
-  if (grey !== undefined) {
-    tmp.grey = Caml_option.valFromOption(grey);
+  if (prim10 !== undefined) {
+    tmp.grey = Caml_option.valFromOption(prim10);
   }
-  if (text !== undefined) {
-    tmp.text = Caml_option.valFromOption(text);
+  if (prim11 !== undefined) {
+    tmp.text = Caml_option.valFromOption(prim11);
   }
-  if (divider !== undefined) {
-    tmp.divider = divider;
+  if (prim12 !== undefined) {
+    tmp.divider = prim12;
   }
-  if (action !== undefined) {
-    tmp.action = Caml_option.valFromOption(action);
+  if (prim13 !== undefined) {
+    tmp.action = Caml_option.valFromOption(prim13);
   }
-  if (background !== undefined) {
-    tmp.background = Caml_option.valFromOption(background);
+  if (prim14 !== undefined) {
+    tmp.background = Caml_option.valFromOption(prim14);
   }
-  if (getContrastText !== undefined) {
-    tmp.getContrastText = Caml_option.valFromOption(getContrastText);
+  if (prim15 !== undefined) {
+    tmp.getContrastText = Caml_option.valFromOption(prim15);
   }
-  return Styles.pallete(tmp);
+  return tmp;
 }
 
 exports.tonalOffset = tonalOffset;
 exports.make = make;
-/* @material-ui/core/styles Not a pure module */
+/* No side effect */

@@ -2,42 +2,42 @@ type typeDivider = string;
 
 type t;
 
-@send
+@get
 external common: t => Theme_CommonColors.t = "common";
-@send
+@get
 external mode: t => MaterialuiType.palleteMode = "mode";
-@send
+@get
 external contrastThreshold: t => float = "contrastThreshold";
-@send
+@get
 external tonalOffsetUnsafe: t => Theme_TonalOffset.t = "tonalOffset";
-@send
+@get
 external tonalOffsetUnsafeNumber: t => float = "tonalOffset";
-@send
+@get
 external primary: t => Theme_PaletteColor.t = "primary";
-@send
+@get
 external secondary: t => Theme_PaletteColor.t = "secondary";
-@send
+@get
 external error: t => Theme_PaletteColor.t = "error";
-@send
+@get
 external warning: t => Theme_PaletteColor.t = "warning";
-@send
+@get
 external info: t => Theme_PaletteColor.t = "info";
-@send
+@get
 external success: t => Theme_PaletteColor.t = "success";
-@send
+@get
 external grey: t => Theme_Color.t = "grey";
-@send
+@get
 external text: t => Theme_TextColor.t = "text";
-@send
+@get
 external divider: t => typeDivider = "divider";
-@send
+@get
 external action: t => Theme_ActionColor.t = "action";
-@send
+@get
 external background: t => Theme_BackgroundColor.t = "background";
 @send
 external getContrastText: (t, string) => string = "getContrastText";
 @send
-external augmentColor: (t, Theme_AugmentColorOptions.t) => Theme_PaletteColor.t = "augmentColor";
+external augmentColor: (t, Theme_AugmentColor.t) => Theme_PaletteColor.t = "augmentColor";
 
 let tonalOffset: t => Theme_TonalOffset.case;
 
@@ -52,7 +52,7 @@ let make: (
   ~tonalOffset: Theme_TonalOffset.t=?,
   ~contrastThreshold: float=?,
   ~common: Theme_CommonColors.t=?,
-  ~grey: Theme_ColorPartial.t=?,
+  ~grey: Theme_Color.t=?,
   ~text: Theme_TextColor.t=?,
   ~divider: string=?,
   ~action: Theme_ActionColor.t=?,
