@@ -1,17 +1,16 @@
 module Make = (
   Type: {
     type t;
-    let style: array<CssStyleType.declarations<t>> => t;
+    let style: array<CssStyleType.declaration<t>> => t;
   }
 ) => {
   include CssDeclarationHelper;
-
-  let selector = (selector, declarations) => 
-    #Selector(selector, Type.style(declarations));
-
-  let hover = declarations =>
-    #Hover(Type.style(declarations));
-
-  let fontFace = descriptors => 
-    #FontFace(CssFontFace.make(descriptors));
+  include CssSelectorHelper.Make({ 
+    type style = Type.t; 
+    let style = Type.style; 
+  });
+  include CssPseudoClassHelper.Make({ 
+    type style = Type.t; 
+    let style = Type.style; 
+  });
 };

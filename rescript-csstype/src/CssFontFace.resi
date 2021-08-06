@@ -1,13 +1,10 @@
-type descriptor =
-  | FontDisplay(CssFontFacePropertyValue.t_fontDisplay);
-
 type t;
 
 @unboxed
 type rec boxValue = 
   | BoxValue('a): boxValue;
 
-let make: array<descriptor> => t;
+let style: array<CssFontFaceType.property> => t;
 
-let fontDisplay: CssFontFaceValueType.fontDisplay => descriptor;
-let fontDisplayString: string => descriptor;
+let fontDisplay: CssFontFaceValueType.fontDisplay => [> CssFontFaceType.fontDisplay ];
+let fontDisplayString: string => [ CssFontFaceType.fontDisplay ];

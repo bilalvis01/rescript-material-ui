@@ -2,14 +2,236 @@
 'use strict';
 
 var CssStyle$Ress = require("./CssStyle.js");
+var CssStyles$Ress = require("./CssStyles.js");
 var CssStyleHelper$Ress = require("./CssStyleHelper.js");
 var CssValueHelper$Ress = require("./CssValueHelper.js");
+var CssAtRuleHelper$Ress = require("./CssAtRuleHelper.js");
+
+function Make(Type) {
+  var Style = CssStyle$Ress.Make({});
+  var Styles = CssStyles$Ress.Make({});
+  var include = CssStyleHelper$Ress.Make({
+        style: Style.make
+      });
+  return {
+          PropertyValue: undefined,
+          $$FontFace: undefined,
+          Style: Style,
+          Styles: Styles,
+          property: include.property,
+          propertyNumber: include.propertyNumber,
+          propertyInteger: include.propertyInteger,
+          border: include.border,
+          borderString: include.borderString,
+          borderTop: include.borderTop,
+          borderTopString: include.borderTopString,
+          borderLeft: include.borderLeft,
+          borderLeftString: include.borderLeftString,
+          borderRight: include.borderRight,
+          borderRightString: include.borderRightString,
+          borderBottom: include.borderBottom,
+          borderBottomString: include.borderBottomString,
+          borderColor: include.borderColor,
+          borderColor2: include.borderColor2,
+          borderColor3: include.borderColor3,
+          borderColor4: include.borderColor4,
+          borderColorString: include.borderColorString,
+          borderTopColor: include.borderTopColor,
+          borderTopColorString: include.borderTopColorString,
+          borderRightColor: include.borderRightColor,
+          borderRightColorString: include.borderRightColorString,
+          borderBottomColor: include.borderBottomColor,
+          borderBottomColorString: include.borderBottomColorString,
+          borderLeftColor: include.borderLeftColor,
+          borderLeftColorString: include.borderLeftColorString,
+          borderStyle: include.borderStyle,
+          borderStyle2: include.borderStyle2,
+          borderStyle3: include.borderStyle3,
+          borderStyle4: include.borderStyle4,
+          borderStyleString: include.borderStyleString,
+          borderTopStyle: include.borderTopStyle,
+          borderTopStyleString: include.borderTopStyleString,
+          borderRightStyle: include.borderRightStyle,
+          borderRightStyleString: include.borderRightStyleString,
+          borderBottomStyle: include.borderBottomStyle,
+          borderBottomStyleString: include.borderBottomStyleString,
+          borderLeftStyle: include.borderLeftStyle,
+          borderLeftStyleString: include.borderLeftStyleString,
+          borderWidth: include.borderWidth,
+          borderWidth2: include.borderWidth2,
+          borderWidth3: include.borderWidth3,
+          borderWidth4: include.borderWidth4,
+          borderWidthString: include.borderWidthString,
+          borderTopWidth: include.borderTopWidth,
+          borderTopWidthString: include.borderTopWidthString,
+          borderRightWidth: include.borderRightWidth,
+          borderRightWidthString: include.borderRightWidthString,
+          borderBottomWidth: include.borderBottomWidth,
+          borderBottomWidthString: include.borderBottomWidthString,
+          borderLeftWidth: include.borderLeftWidth,
+          borderLeftWidthString: include.borderLeftWidthString,
+          background: include.background,
+          backgroundString: include.backgroundString,
+          background2: include.background2,
+          background3: include.background3,
+          background4: include.background4,
+          backgroundAttachment: include.backgroundAttachment,
+          backgroundAttachment2: include.backgroundAttachment2,
+          backgroundAttachment3: include.backgroundAttachment3,
+          backgroundAttachment4: include.backgroundAttachment4,
+          backgroundAttachmentString: include.backgroundAttachmentString,
+          backgroundColor: include.backgroundColor,
+          backgroundColorString: include.backgroundColorString,
+          backgroundImage: include.backgroundImage,
+          backgroundImage2: include.backgroundImage2,
+          backgroundImage3: include.backgroundImage3,
+          backgroundImage4: include.backgroundImage4,
+          backgroundImageString: include.backgroundImageString,
+          backgroundPosition: include.backgroundPosition,
+          backgroundPosition2: include.backgroundPosition2,
+          backgroundPosition3: include.backgroundPosition3,
+          backgroundPosition4: include.backgroundPosition4,
+          backgroundPositionString: include.backgroundPositionString,
+          backgroundStyle: include.backgroundStyle,
+          backgroundStyle2: include.backgroundStyle2,
+          backgroundStyle3: include.backgroundStyle3,
+          backgroundStyle4: include.backgroundStyle4,
+          backgroundStyleString: include.backgroundStyleString,
+          margin: include.margin,
+          margin2: include.margin2,
+          margin3: include.margin3,
+          margin4: include.margin4,
+          marginString: include.marginString,
+          marginNumber: include.marginNumber,
+          marginTop: include.marginTop,
+          marginTopString: include.marginTopString,
+          marginTopNumber: include.marginTopNumber,
+          marginRight: include.marginRight,
+          marginRightString: include.marginRightString,
+          marginRightNumber: include.marginRightNumber,
+          marginBottom: include.marginBottom,
+          marginBottomString: include.marginBottomString,
+          marginBottomNumber: include.marginBottomNumber,
+          marginLeft: include.marginLeft,
+          marginLeftString: include.marginLeftString,
+          marginLeftNumber: include.marginLeftNumber,
+          padding: include.padding,
+          padding2: include.padding2,
+          padding3: include.padding3,
+          padding4: include.padding4,
+          paddingString: include.paddingString,
+          paddingNumber: include.paddingNumber,
+          paddingTop: include.paddingTop,
+          paddingTopString: include.paddingTopString,
+          paddingTopNumber: include.paddingTopNumber,
+          paddingRight: include.paddingRight,
+          paddingRightString: include.paddingRightString,
+          paddingRightNumber: include.paddingRightNumber,
+          paddingBottom: include.paddingBottom,
+          paddingBottomString: include.paddingBottomString,
+          paddingBottomNumber: include.paddingBottomNumber,
+          paddingLeft: include.paddingLeft,
+          paddingLeftString: include.paddingLeftString,
+          paddingLeftNumber: include.paddingLeftNumber,
+          clear: include.clear,
+          color: include.color,
+          colorString: include.colorString,
+          cursor: include.cursor,
+          cursor1: include.cursor1,
+          cursor2: include.cursor2,
+          cursor3: include.cursor3,
+          cursor4: include.cursor4,
+          cursorString: include.cursorString,
+          selector: include.selector,
+          hover: include.hover,
+          str: CssValueHelper$Ress.str,
+          num: CssValueHelper$Ress.num,
+          $$int: CssValueHelper$Ress.$$int,
+          pct: CssValueHelper$Ress.pct,
+          ratio: CssValueHelper$Ress.ratio,
+          fr: CssValueHelper$Ress.fr,
+          ch: CssValueHelper$Ress.ch,
+          em: CssValueHelper$Ress.em,
+          ex: CssValueHelper$Ress.ex,
+          rem: CssValueHelper$Ress.rem,
+          vh: CssValueHelper$Ress.vh,
+          vw: CssValueHelper$Ress.vw,
+          vmin: CssValueHelper$Ress.vmin,
+          vmax: CssValueHelper$Ress.vmax,
+          px: CssValueHelper$Ress.px,
+          cm: CssValueHelper$Ress.cm,
+          mm: CssValueHelper$Ress.mm,
+          inch: CssValueHelper$Ress.inch,
+          pc: CssValueHelper$Ress.pc,
+          pt: CssValueHelper$Ress.pt,
+          deg: CssValueHelper$Ress.deg,
+          grad: CssValueHelper$Ress.grad,
+          rad: CssValueHelper$Ress.rad,
+          turn: CssValueHelper$Ress.turn,
+          s: CssValueHelper$Ress.s,
+          ms: CssValueHelper$Ress.ms,
+          hz: CssValueHelper$Ress.hz,
+          kHz: CssValueHelper$Ress.kHz,
+          dpi: CssValueHelper$Ress.dpi,
+          dpcm: CssValueHelper$Ress.dpcm,
+          dppx: CssValueHelper$Ress.dppx,
+          x: CssValueHelper$Ress.x,
+          position2: CssValueHelper$Ress.position2,
+          position3: CssValueHelper$Ress.position3,
+          position4: CssValueHelper$Ress.position4,
+          src: CssValueHelper$Ress.src,
+          bgLayer: CssValueHelper$Ress.bgLayer,
+          bgSize2: CssValueHelper$Ress.bgSize2,
+          hsl: CssValueHelper$Ress.hsl,
+          hsla: CssValueHelper$Ress.hsla,
+          rgb: CssValueHelper$Ress.rgb,
+          rgba: CssValueHelper$Ress.rgba,
+          hexColor: CssValueHelper$Ress.hexColor,
+          url: CssValueHelper$Ress.url,
+          image: CssValueHelper$Ress.image,
+          linearColorStop2: CssValueHelper$Ress.linearColorStop2,
+          linearColorStop3: CssValueHelper$Ress.linearColorStop3,
+          linearGradient: CssValueHelper$Ress.linearGradient,
+          linearGradient2: CssValueHelper$Ress.linearGradient2,
+          linearGradient3: CssValueHelper$Ress.linearGradient3,
+          linearGradient4: CssValueHelper$Ress.linearGradient4,
+          repeatingLinearGradient: CssValueHelper$Ress.repeatingLinearGradient,
+          repeatingLinearGradient2: CssValueHelper$Ress.repeatingLinearGradient2,
+          repeatingLinearGradient3: CssValueHelper$Ress.repeatingLinearGradient3,
+          repeatingLinearGradient4: CssValueHelper$Ress.repeatingLinearGradient4,
+          radialGradient: CssValueHelper$Ress.radialGradient,
+          radialGradient2: CssValueHelper$Ress.radialGradient2,
+          radialGradient3: CssValueHelper$Ress.radialGradient3,
+          radialGradient4: CssValueHelper$Ress.radialGradient4,
+          repeatingRadialGradient: CssValueHelper$Ress.repeatingRadialGradient,
+          repeatingRadialGradient2: CssValueHelper$Ress.repeatingRadialGradient2,
+          repeatingRadialGradient3: CssValueHelper$Ress.repeatingRadialGradient3,
+          repeatingRadialGradient4: CssValueHelper$Ress.repeatingRadialGradient4,
+          conicGradient: CssValueHelper$Ress.conicGradient,
+          conicGradient2: CssValueHelper$Ress.conicGradient2,
+          conicGradient3: CssValueHelper$Ress.conicGradient3,
+          conicGradient4: CssValueHelper$Ress.conicGradient4,
+          repeatingConicGradient: CssValueHelper$Ress.repeatingConicGradient,
+          repeatingConicGradient2: CssValueHelper$Ress.repeatingConicGradient2,
+          repeatingConicGradient3: CssValueHelper$Ress.repeatingConicGradient3,
+          repeatingConicGradient4: CssValueHelper$Ress.repeatingConicGradient4,
+          fontFace: CssAtRuleHelper$Ress.fontFace,
+          style: Style.make,
+          styles: Styles.make
+        };
+}
 
 var Style = CssStyle$Ress.Make({});
+
+var Styles = CssStyles$Ress.Make({});
 
 var include = CssStyleHelper$Ress.Make({
       style: Style.make
     });
+
+var PropertyValue;
+
+var $$FontFace;
 
 var property = include.property;
 
@@ -263,12 +485,6 @@ var selector = include.selector;
 
 var hover = include.hover;
 
-var fontFace = include.fontFace;
-
-var PropertyValue;
-
-var $$FontFace;
-
 var str = CssValueHelper$Ress.str;
 
 var num = CssValueHelper$Ress.num;
@@ -411,9 +627,17 @@ var repeatingConicGradient3 = CssValueHelper$Ress.repeatingConicGradient3;
 
 var repeatingConicGradient4 = CssValueHelper$Ress.repeatingConicGradient4;
 
+var fontFace = CssAtRuleHelper$Ress.fontFace;
+
 var style = Style.make;
 
+var styles = Styles.make;
+
+exports.Make = Make;
+exports.PropertyValue = PropertyValue;
+exports.$$FontFace = $$FontFace;
 exports.Style = Style;
+exports.Styles = Styles;
 exports.property = property;
 exports.propertyNumber = propertyNumber;
 exports.propertyInteger = propertyInteger;
@@ -540,9 +764,6 @@ exports.cursor4 = cursor4;
 exports.cursorString = cursorString;
 exports.selector = selector;
 exports.hover = hover;
-exports.fontFace = fontFace;
-exports.PropertyValue = PropertyValue;
-exports.$$FontFace = $$FontFace;
 exports.str = str;
 exports.num = num;
 exports.$$int = $$int;
@@ -614,5 +835,7 @@ exports.repeatingConicGradient = repeatingConicGradient;
 exports.repeatingConicGradient2 = repeatingConicGradient2;
 exports.repeatingConicGradient3 = repeatingConicGradient3;
 exports.repeatingConicGradient4 = repeatingConicGradient4;
+exports.fontFace = fontFace;
 exports.style = style;
+exports.styles = styles;
 /* Style Not a pure module */

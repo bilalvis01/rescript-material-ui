@@ -4,33 +4,28 @@
 var Curry = require("rescript/lib/js/curry.js");
 var Js_dict = require("rescript/lib/js/js_dict.js");
 var Belt_Array = require("rescript/lib/js/belt_Array.js");
+var CssAtRule$Ress = require("./CssAtRule.js");
+var CssSelector$Ress = require("./CssSelector.js");
 var CssDeclaration$Ress = require("./CssDeclaration.js");
+var CssPseudoClass$Ress = require("./CssPseudoClass.js");
 
 function Make(funarg) {
   var Declaration = CssDeclaration$Ress.Make({});
+  var Selector = CssSelector$Ress.Make({});
+  var PseudoClass = CssPseudoClass$Ress.Make({});
+  var AtRule = CssAtRule$Ress.Make({});
   var make = function (declarations) {
     return Js_dict.fromArray(Belt_Array.map(declarations, (function (declaration) {
                       var variant = declaration.NAME;
-                      if (variant !== "Selector") {
-                        if (variant === "FontFace") {
-                          return [
-                                  "@font-face",
-                                  declaration.VAL
-                                ];
-                        } else if (variant === "Hover") {
-                          return [
-                                  "&:hover",
-                                  declaration.VAL
-                                ];
-                        } else {
-                          return Curry._1(Declaration.make, declaration);
-                        }
+                      if (variant === "Selector") {
+                        return Curry._1(Selector.make, declaration);
+                      } else if (variant === "FontFace") {
+                        return Curry._1(AtRule.make, declaration);
+                      } else if (variant === "Hover") {
+                        return Curry._1(PseudoClass.make, declaration);
+                      } else {
+                        return Curry._1(Declaration.make, declaration);
                       }
-                      var match = declaration.VAL;
-                      return [
-                              match[0],
-                              match[1]
-                            ];
                     })));
   };
   return {

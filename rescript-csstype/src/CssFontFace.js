@@ -5,28 +5,30 @@ var Js_dict = require("rescript/lib/js/js_dict.js");
 var Belt_Array = require("rescript/lib/js/belt_Array.js");
 var CssFontFacePropertyValue$Ress = require("./CssFontFacePropertyValue.js");
 
-function make(descriptors) {
-  return Js_dict.fromArray(Belt_Array.map(descriptors, (function (descriptor) {
+function style(declarations) {
+  return Js_dict.fromArray(Belt_Array.map(declarations, (function (declaration) {
                     return [
                             "fontDisplay",
-                            descriptor._0
+                            declaration.VAL
                           ];
                   })));
 }
 
 function fontDisplay(v) {
-  return /* FontDisplay */{
-          _0: CssFontFacePropertyValue$Ress.fontDisplay(v)
+  return {
+          NAME: "FontDisplay",
+          VAL: CssFontFacePropertyValue$Ress.fontDisplay(v)
         };
 }
 
 function fontDisplayString(v) {
-  return /* FontDisplay */{
-          _0: v
+  return {
+          NAME: "FontDisplay",
+          VAL: v
         };
 }
 
-exports.make = make;
+exports.style = style;
 exports.fontDisplay = fontDisplay;
 exports.fontDisplayString = fontDisplayString;
 /* No side effect */

@@ -1,0 +1,1 @@
+type t<'style> = [ | #Selector(string, 'style) ];

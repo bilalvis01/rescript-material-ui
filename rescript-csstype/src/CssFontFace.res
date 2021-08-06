@@ -1,22 +1,19 @@
-type descriptor =
-  | FontDisplay(CssFontFacePropertyValue.t_fontDisplay);
-
 @unboxed
 type rec boxValue = 
   | BoxValue('a): boxValue;
 
 type t = Js.Dict.t<boxValue>;
 
-let make = descriptors => {
-  let descriptors = descriptors->Belt.Array.map(descriptor => {
-    switch descriptor {
-    | FontDisplay(value) => ("fontDisplay", BoxValue(value))
+let style = declarations => {
+  declarations->Belt.Array.map(declaration => {
+    switch declaration {
+    | #FontDisplay(value) => ("fontDisplay", BoxValue(value))
     };
-  });
-  Js.Dict.fromArray(descriptors);
+  })
+  ->Js.Dict.fromArray
 };
 
 let fontDisplay = v => 
-  FontDisplay(CssFontFacePropertyValue.fontDisplay(v));
+  #FontDisplay(CssFontFacePropertyValue.fontDisplay(v));
 let fontDisplayString = v =>
-  FontDisplay(CssFontFacePropertyValue.fontDisplayString(v));
+  #FontDisplay(CssFontFacePropertyValue.fontDisplayString(v));
