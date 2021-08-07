@@ -202,3 +202,45 @@ describe("default palette", (.) => {
     ->toBe(0.12);
   });
 });
+
+describe("custom palette", (.) => {
+  let palette = Theme.make(
+    ~palette=Palette.make(
+      ~common=CommonColors.make(
+        ~black="#212121",
+        ~white="#fafafa",
+        ()
+      ),
+      ~primary=PaletteColorOptions.SimpleColor.make(
+        ~main="#fff",
+        ~light="#fefefe",
+        ~dark="#ababab",
+        ~contrastText="#aaaaaa",
+        ()
+      ),
+      ()
+    ),
+    ()
+  )
+  ->Theme.palette;
+
+  test("common colors", (.) => {
+    let common = palette->Palette.common;
+    expect(common->CommonColors.black)
+    ->toBe("#212121");
+    expect(common->CommonColors.white)
+    ->toBe("#fafafa");
+  });
+
+  test("primary colors", (.) => {
+    let primary = palette->Palette.primary;
+    expect(primary->PaletteColor.light)
+    ->toBe("#fefefe");
+    expect(primary->PaletteColor.main)
+    ->toBe("#fff");
+    expect(primary->PaletteColor.dark)
+    ->toBe("#ababab");
+    expect(primary->PaletteColor.contrastText)
+    ->toBe("#aaaaaa");
+  });
+});
