@@ -1,10 +1,11 @@
 open Jest;
 open! Theme;
 
-let theme = Theme.make(());
-
-describe("palette", (.) => {
-  let palette = theme->Theme.palette;
+/*
+Default theme
+*/
+describe("default palette", (.) => {
+  let palette = Theme.make()->Theme.palette;
 
   test("common colors", (.) => {
     let common = palette->Palette.common;
@@ -116,5 +117,88 @@ describe("palette", (.) => {
     ->toBe("#303030");
     expect(grey->Color.get700)
     ->toBe("#616161");
+  });
+
+  test("contrastThreshold", (.) => {
+    expect(palette->Palette.contrastThreshold)
+    ->toBe(3.);
+  });
+
+  test("getContrastText", (.) => {
+    expect(palette->Palette.getContrastText("#fff"))
+    ->toBe("rgba(0, 0, 0, 0.87)");
+  });
+
+  test("augmentColor", (.) => {
+    expect(
+      palette
+      ->Palette.augmentColor(
+        PaletteColorOptions.SimpleColor.make(~main="#fff", ())
+      )
+    )
+    ->toEqual(Obj.magic({
+      "contrastText": "rgba(0, 0, 0, 0.87)",
+      "dark": "rgb(178, 178, 178)",
+      "light": "rgb(255, 255, 255)",
+      "main": "#fff",
+    }));
+  });
+
+  test("tanalOffset", (.) => {
+    expect(palette->Palette.tonalOffsetUnsafeNumber)
+    ->toBe(0.2);
+    expect(
+      switch (palette->Palette.tonalOffset) {
+      | Number(n) => n
+      | Obj(_) => 0.0
+      }
+    )
+    ->toBe(0.2);
+  });
+
+  test("text", (.) => {
+    let text = palette->Palette.text;
+    expect(text->TextColor.primary)
+    ->toBe("rgba(0, 0, 0, 0.87)");
+    expect(text->TextColor.secondary)
+    ->toBe("rgba(0, 0, 0, 0.54)");
+    expect(text->TextColor.disabled)
+    ->toBe("rgba(0, 0, 0, 0.38)");
+    expect(text->TextColor.hint)
+    ->toBe("rgba(0, 0, 0, 0.38)");
+  });
+
+  test("background", (.) => {
+    let background = palette->Palette.background;
+    expect(background->BackgroundColor.paper)
+    ->toBe("#fff");
+    expect(background->BackgroundColor.default)
+    ->toBe("#fafafa");
+  });
+
+  test("action", (.) => {
+    let action = palette->Palette.action;
+    expect(action->ActionColor.active)
+    ->toBe("rgba(0, 0, 0, 0.54)");
+    expect(action->ActionColor.hover)
+    ->toBe("rgba(0, 0, 0, 0.04)");
+    expect(action->ActionColor.hoverOpacity)
+    ->toBe(0.04);
+    expect(action->ActionColor.selected)
+    ->toBe("rgba(0, 0, 0, 0.08)");
+    expect(action->ActionColor.selectedOpacity)
+    ->toBe(0.08);
+    expect(action->ActionColor.disabled)
+    ->toBe("rgba(0, 0, 0, 0.26)");
+    expect(action->ActionColor.disabledBackground)
+    ->toBe("rgba(0, 0, 0, 0.12)");
+    expect(action->ActionColor.disabledOpacity)
+    ->toBe(0.38);
+    expect(action->ActionColor.focus)
+    ->toBe("rgba(0, 0, 0, 0.12)");
+    expect(action->ActionColor.focusOpacity)
+    ->toBe(0.12);
+    expect(action->ActionColor.activatedOpacity)
+    ->toBe(0.12);
   });
 });

@@ -2,11 +2,10 @@
 'use strict';
 
 var Theme_Theme$Materialui = require("../src/Theme/Theme_Theme.js");
+var Theme_Palette$Materialui = require("../src/Theme/Theme_Palette.js");
 
-var theme = Theme_Theme$Materialui.make(undefined, undefined);
-
-describe("palette", (function () {
-        var palette = theme.palette;
+describe("default palette", (function () {
+        var palette = Theme_Theme$Materialui.make(undefined, undefined).palette;
         test("common colors", (function () {
                 var common = palette.common;
                 expect(common.black).toBe("#000");
@@ -79,8 +78,63 @@ describe("palette", (function () {
                 expect(grey[700]).toBe("#616161");
                 
               }));
+        test("contrastThreshold", (function () {
+                expect(palette.contrastThreshold).toBe(3);
+                
+              }));
+        test("getContrastText", (function () {
+                expect(palette.getContrastText("#fff")).toBe("rgba(0, 0, 0, 0.87)");
+                
+              }));
+        test("augmentColor", (function () {
+                expect(palette.augmentColor({
+                            main: "#fff"
+                          })).toEqual({
+                      contrastText: "rgba(0, 0, 0, 0.87)",
+                      dark: "rgb(178, 178, 178)",
+                      light: "rgb(255, 255, 255)",
+                      main: "#fff"
+                    });
+                
+              }));
+        test("tanalOffset", (function () {
+                expect(palette.tonalOffset).toBe(0.2);
+                var n = Theme_Palette$Materialui.tonalOffset(palette);
+                var tmp;
+                tmp = n.TAG === /* Number */0 ? n._0 : 0.0;
+                expect(tmp).toBe(0.2);
+                
+              }));
+        test("text", (function () {
+                var text = palette.text;
+                expect(text.primary).toBe("rgba(0, 0, 0, 0.87)");
+                expect(text.secondary).toBe("rgba(0, 0, 0, 0.54)");
+                expect(text.disabled).toBe("rgba(0, 0, 0, 0.38)");
+                expect(text.hint).toBe("rgba(0, 0, 0, 0.38)");
+                
+              }));
+        test("background", (function () {
+                var background = palette.background;
+                expect(background.paper).toBe("#fff");
+                expect(background.default).toBe("#fafafa");
+                
+              }));
+        test("action", (function () {
+                var action = palette.action;
+                expect(action.active).toBe("rgba(0, 0, 0, 0.54)");
+                expect(action.hover).toBe("rgba(0, 0, 0, 0.04)");
+                expect(action.hoverOpacity).toBe(0.04);
+                expect(action.selected).toBe("rgba(0, 0, 0, 0.08)");
+                expect(action.selectedOpacity).toBe(0.08);
+                expect(action.disabled).toBe("rgba(0, 0, 0, 0.26)");
+                expect(action.disabledBackground).toBe("rgba(0, 0, 0, 0.12)");
+                expect(action.disabledOpacity).toBe(0.38);
+                expect(action.focus).toBe("rgba(0, 0, 0, 0.12)");
+                expect(action.focusOpacity).toBe(0.12);
+                expect(action.activatedOpacity).toBe(0.12);
+                
+              }));
         
       }));
 
-exports.theme = theme;
-/* theme Not a pure module */
+/*  Not a pure module */
