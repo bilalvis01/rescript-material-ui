@@ -4,15 +4,16 @@
 var Caml_option = require("rescript/lib/js/caml_option.js");
 
 function tonalOffset(v) {
-  if (typeof v.tonalOffset === "number") {
+  var v$1 = v.tonalOffset;
+  if (typeof v$1 === "number") {
     return {
             TAG: /* Number */0,
-            _0: v
+            _0: v$1
           };
   } else {
     return {
             TAG: /* Obj */1,
-            _0: v
+            _0: v$1
           };
   }
 }

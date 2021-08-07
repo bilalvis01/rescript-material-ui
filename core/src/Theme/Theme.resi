@@ -6,7 +6,6 @@ Palette
 module Palette = Theme_Palette;
 module Color = Theme_Color; 
 module ActionColor = Theme_ActionColor;
-module AugmentColor = Theme_AugmentColor;
 module BackgroundColor = Theme_BackgroundColor;
 module CommonColors = Theme_CommonColors;
 module PaletteColor = Theme_PaletteColor;

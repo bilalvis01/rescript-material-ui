@@ -37,7 +37,7 @@ external background: t => Theme_BackgroundColor.t = "background";
 @send
 external getContrastText: (t, string) => string = "getContrastText";
 @send
-external augmentColor: (t, Theme_AugmentColor.t) => Theme_PaletteColor.t = "augmentColor";
+external augmentColor: (t, Theme_PaletteColorOptions.t) => string = "augmentColor";
 
 let tonalOffset: t => Theme_TonalOffset.case;
 

@@ -11,6 +11,10 @@ external selected: t => string = "selected";
 @get
 external selectedOpacity: t => float = "selectedOpacity";
 @get
+external disabled: t => string = "disabled";
+@get
+external disabledOpacity: t => float = "disabledOpacity";
+@get
 external disabledBackground: t => string = "disabledBackground";
 @get
 external focus: t => string = "focus";

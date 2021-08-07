@@ -10,8 +10,6 @@ var Color;
 
 var ActionColor;
 
-var AugmentColor;
-
 var BackgroundColor;
 
 var CommonColors;
@@ -30,7 +28,6 @@ exports.Theme = Theme;
 exports.Palette = Palette;
 exports.Color = Color;
 exports.ActionColor = ActionColor;
-exports.AugmentColor = AugmentColor;
 exports.BackgroundColor = BackgroundColor;
 exports.CommonColors = CommonColors;
 exports.PaletteColor = PaletteColor;
