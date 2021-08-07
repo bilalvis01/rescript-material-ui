@@ -1,4 +1,4 @@
-type t;
+module Theme = Theme_Theme;
 
 /*
 Palette
@@ -18,20 +18,3 @@ module TonalOffset = Theme_TonalOffset;
 Typography
 */
 module Typography = Theme_Typography;
-
-@get
-external palette: t => Palette.t = "palette";
-
-@module("@material-ui/core/styles")
-external createTheme: ThemeOptions.t => t = "createTheme";
-
-let make = (
-  ~palette=?,
-  ()
-) => {
-  ThemeOptions.make(
-    ~palette=?palette,
-    ()
-  )
-  ->createTheme;
-};

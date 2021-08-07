@@ -1,10 +1,10 @@
 open Jest;
-open Theme;
+open! Theme;
 
-let theme = make(());
+let theme = Theme.make(());
 
 describe("palette", (.) => {
-  let palette = theme->palette;
+  let palette = theme->Theme.palette;
 
   test("common colors", (.) => {
     let common = palette->Palette.common;
