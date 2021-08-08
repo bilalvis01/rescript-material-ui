@@ -22,6 +22,8 @@ var TextColor;
 
 var TonalOffset;
 
+var AugmentColorOptions;
+
 var Typography;
 
 exports.Theme = Theme;
@@ -34,5 +36,6 @@ exports.PaletteColor = PaletteColor;
 exports.PaletteColorOptions = PaletteColorOptions;
 exports.TextColor = TextColor;
 exports.TonalOffset = TonalOffset;
+exports.AugmentColorOptions = AugmentColorOptions;
 exports.Typography = Typography;
 /* No side effect */

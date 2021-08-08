@@ -12,6 +12,7 @@ module PaletteColor = Theme_PaletteColor;
 module PaletteColorOptions = Theme_PaletteColorOptions;
 module TextColor = Theme_TextColor;
 module TonalOffset = Theme_TonalOffset;
+module AugmentColorOptions = Theme_AugmentColorOptions;
 
 /*
 Typography

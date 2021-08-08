@@ -18,6 +18,14 @@ function tonalOffset(v) {
   }
 }
 
+function augmentColor(palette, options) {
+  var color = options.color;
+  var mainShade = options.mainShade;
+  var lightShade = options.lightShade;
+  var darkShade = options.darkShade;
+  return palette.augmentColor(color, mainShade, lightShade, darkShade);
+}
+
 function make(prim0, prim1, prim2, prim3, prim4, prim5, prim6, prim7, prim8, prim9, prim10, prim11, prim12, prim13, prim14, prim15, prim16) {
   var tmp = {};
   if (prim0 !== undefined) {
@@ -72,5 +80,6 @@ function make(prim0, prim1, prim2, prim3, prim4, prim5, prim6, prim7, prim8, pri
 }
 
 exports.tonalOffset = tonalOffset;
+exports.augmentColor = augmentColor;
 exports.make = make;
 /* No side effect */

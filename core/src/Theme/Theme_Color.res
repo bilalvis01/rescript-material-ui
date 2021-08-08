@@ -30,3 +30,22 @@ external getA300: t => string = "A300";
 external getA400: t => string = "A400";
 @get
 external getA700: t => string = "A700";
+
+@obj
+external make: (
+  ~\"50": string=?,
+  ~\"100": string=?,
+  ~\"200": string=?,
+  ~\"300": string=?,
+  ~\"400": string=?,
+  ~\"500": string=?,
+  ~\"600": string=?,
+  ~\"700": string=?,
+  ~\"800": string=?,
+  ~\"900": string=?,
+  ~\"A100": string=?,
+  ~\"A200": string=?,
+  ~\"A400": string=?,
+  ~\"A700": string=?,
+  unit
+) => t = "";

@@ -1,7 +1,13 @@
 type t;
+
+type obj = {
+  light: float,
+  dark: float,
+};
+
 type case = 
   | Number(float)
-  | Obj(t);
+  | Obj(obj);
 
 external number: float => t = "%identity";
 

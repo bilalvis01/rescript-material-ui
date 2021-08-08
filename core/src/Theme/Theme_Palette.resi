@@ -9,7 +9,7 @@ external mode: t => MaterialuiType.palleteMode = "mode";
 @get
 external contrastThreshold: t => float = "contrastThreshold";
 @get
-external tonalOffsetUnsafe: t => Theme_TonalOffset.t = "tonalOffset";
+external tonalOffsetUnsafe: t => Theme_TonalOffset.obj = "tonalOffset";
 @get
 external tonalOffsetUnsafeNumber: t => float = "tonalOffset";
 @get
@@ -37,9 +37,17 @@ external background: t => Theme_BackgroundColor.t = "background";
 @send
 external getContrastText: (t, string) => string = "getContrastText";
 @send
-external augmentColor: (t, Theme_PaletteColorOptions.t) => string = "augmentColor";
+external getAugmentColor: (
+  t, 
+  Theme_PaletteColorOptions.t, 
+  option<int>, 
+  option<int>,
+  option<int>,
+) => Theme_PaletteColor.t = "augmentColor";
 
 let tonalOffset: t => Theme_TonalOffset.case;
+
+let augmentColor: (t, Theme_AugmentColorOptions.t) => Theme_PaletteColor.t;
 
 let make: (
   ~primary: Theme_PaletteColorOptions.t=?,

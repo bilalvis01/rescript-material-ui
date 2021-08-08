@@ -9,7 +9,7 @@ external mode: t => MaterialuiType.palleteMode = "mode";
 @get
 external contrastThreshold: t => float = "contrastThreshold";
 @get
-external tonalOffsetUnsafe: t => Theme_TonalOffset.t = "tonalOffset";
+external tonalOffsetUnsafe: t => Theme_TonalOffset.obj = "tonalOffset";
 @get
 external tonalOffsetUnsafeNumber: t => float = "tonalOffset";
 @get
@@ -39,7 +39,13 @@ external background: t => Theme_BackgroundColor.t = "background";
 @send
 external getContrastText: (t, string) => string = "getContrastText";
 @send
-external augmentColor: (t, Theme_PaletteColorOptions.t) => string = "augmentColor";
+external getAugmentColor: (
+  t, 
+  Theme_PaletteColorOptions.t, 
+  option<int>, 
+  option<int>,
+  option<int>,
+) => Theme_PaletteColor.t = "augmentColor";
 
 
 let tonalOffset = v => {
@@ -48,8 +54,16 @@ let tonalOffset = v => {
     Theme_TonalOffset.Number(Obj.magic(v): float);
   }
   else { 
-    Theme_TonalOffset.Obj(Obj.magic(v): Theme_TonalOffset.t);
+    Theme_TonalOffset.Obj(Obj.magic(v): Theme_TonalOffset.obj);
   }
+};
+
+let augmentColor = (palette, options) => {
+  let color = options->Theme_AugmentColorOptions.color;
+  let mainShade = options->Theme_AugmentColorOptions.mainShade;
+  let lightShade = options->Theme_AugmentColorOptions.lightShade;
+  let darkShade = options->Theme_AugmentColorOptions.darkShade;
+  palette->getAugmentColor(color, mainShade, lightShade, darkShade);
 };
 
 @obj
