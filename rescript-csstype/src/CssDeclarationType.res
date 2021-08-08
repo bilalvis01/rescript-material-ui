@@ -1,4 +1,4 @@
-type prop= [ | #Property(string, CssPropertyValue.t_synthetic) ];
+type property = [ | #Property(string, CssPropertyValue.t_synthetic) ];
 type border = [ | #Border(CssPropertyValue.t_border) ];
 type borderTop = [ | #BorderTop(CssPropertyValue.t_border) ];
 type borderRight = [ | #BorderRight(CssPropertyValue.t_border) ];
@@ -39,8 +39,8 @@ type color = [ | #Color(CssPropertyValue.t_color) ];
 type clear = [ | #Clear(CssPropertyValue.t_clear) ];
 type cursor = [ | #Cursor(CssPropertyValue.t_cursor) ];
 
-type property = [
-  | prop
+type t = [
+  | property
   | border
   | borderTop
   | borderRight

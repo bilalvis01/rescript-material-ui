@@ -5,5 +5,5 @@ module Make: (
 ) => {
   type t = (string, Type.value);
 
-  let make: CssDeclarationType.property => t;
+  let make: CssDeclarationType.t => t;
 };

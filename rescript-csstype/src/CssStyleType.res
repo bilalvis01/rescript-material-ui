@@ -1,5 +1,5 @@
 type declaration<'style> = [
-  | CssDeclarationType.property
+  | CssDeclarationType.t
   | CssSelectorType.t<'style>
   | CssPseudoClassType.t<'style>
   | CssAtRuleType.t

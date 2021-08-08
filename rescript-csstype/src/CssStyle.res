@@ -26,7 +26,7 @@ module Make = (
   let make = declarations => {
     declarations->Belt.Array.map(declaration => {
       switch declaration {
-      | #...CssDeclarationType.property as p => Declaration.make(p)
+      | #...CssDeclarationType.t as p => Declaration.make(p)
       | #...CssSelectorType.t as s => Selector.make(s)
       | #...CssPseudoClassType.t as p => PseudoClass.make(p)
       | #...CssAtRuleType.t as a => AtRule.make(a)

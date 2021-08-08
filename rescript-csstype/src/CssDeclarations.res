@@ -12,7 +12,7 @@ module Make = (
     properties
     ->Belt.Array.map(property => {
       switch property {
-      | #...CssDeclarationType.property as p => Declaration.make(p)
+      | #...CssDeclarationType.t as p => Declaration.make(p)
       }
     })
     ->Js.Dict.fromArray
