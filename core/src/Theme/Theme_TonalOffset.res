@@ -1,9 +1,6 @@
 type t;
 
-type obj = {
-  light: float,
-  dark: float,
-};
+type obj = { "light": float, "dark": float };
 
 type case = 
   | Number(float)

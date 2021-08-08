@@ -456,15 +456,15 @@ describe("custom palette", (.) => {
 
   test("tonalOffset", (.) => {
     expect(palette->Palette.tonalOffsetUnsafe)
-    ->toEqual({ light: 0.3, dark: 0.4 })
+    ->toEqual({ "light": 0.3, "dark": 0.4 })
 
     expect(
       switch palette->Palette.tonalOffset {
       | Obj(v) => v
-      | Number(_) => { light: 0.6, dark: 0.7 }
+      | Number(_) => { "light": 0.6, "dark": 0.7 }
       }
     )
-    ->toEqual({ light: 0.3, dark: 0.4 })
+    ->toEqual({ "light": 0.3, "dark": 0.4 })
   });
 
   test("text", (.) => {
