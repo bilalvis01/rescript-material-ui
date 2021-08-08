@@ -20,7 +20,7 @@ test("style", (function () {
                       Curry._1(Css$Ress.color, Css$Ress.hsla(Css$Ress.deg(360), Css$Ress.pct(100), Css$Ress.pct(50), 0.5)),
                       Curry._1(Css$Ress.hover, [Curry._8(Css$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                     ]),
-                "@font-face": CssFontFace$Ress.style([CssFontFace$Ress.fontDisplay("auto")])
+                "@font-face": CssFontFace$Ress.descriptors([CssFontFace$Ress.fontDisplay("auto")])
               }).toEqual({
               wrapper: {
                 background: "url(\"image.png\")",

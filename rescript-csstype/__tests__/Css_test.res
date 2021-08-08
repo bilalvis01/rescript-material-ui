@@ -18,7 +18,7 @@ test("style", (.) => {
         background(#blue)
       ]),
     ]),
-    "@font-face": FontFace.style([
+    "@font-face": FontFace.descriptors([
       FontFace.fontDisplay(#auto),
     ]),
   })

@@ -6,7 +6,7 @@ var CssFontFace$Ress = require("./CssFontFace.js");
 function fontFace(properties) {
   return {
           NAME: "FontFace",
-          VAL: CssFontFace$Ress.style(properties)
+          VAL: CssFontFace$Ress.descriptors(properties)
         };
 }
 

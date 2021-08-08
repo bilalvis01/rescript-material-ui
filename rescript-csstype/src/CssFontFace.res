@@ -4,9 +4,10 @@ type rec boxValue =
 
 type t = Js.Dict.t<boxValue>;
 
-let style = declarations => {
-  declarations->Belt.Array.map(declaration => {
-    switch declaration {
+let descriptors = descriptors => {
+  descriptors
+  ->Belt.Array.map(descriptor => {
+    switch descriptor {
     | #FontDisplay(value) => ("fontDisplay", BoxValue(value))
     };
   })
