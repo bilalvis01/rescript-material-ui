@@ -88,13 +88,27 @@ describe("default palette", (function () {
                 
               }));
         test("augmentColor", (function () {
-                expect(palette.augmentColor({
-                            main: "#fff"
+                expect(Theme_Palette$Materialui.augmentColor(palette, {
+                            color: {
+                              main: "#fff"
+                            }
                           })).toEqual({
                       contrastText: "rgba(0, 0, 0, 0.87)",
                       dark: "rgb(178, 178, 178)",
                       light: "rgb(255, 255, 255)",
                       main: "#fff"
+                    });
+                expect(Theme_Palette$Materialui.augmentColor(palette, {
+                            color: {
+                              "400": "#fafafa"
+                            },
+                            mainShade: 400
+                          })).toEqual({
+                      "400": "#fafafa",
+                      contrastText: "rgba(0, 0, 0, 0.87)",
+                      dark: "rgb(175, 175, 175)",
+                      light: "rgb(251, 251, 251)",
+                      main: "#fafafa"
                     });
                 
               }));
@@ -112,6 +126,10 @@ describe("default palette", (function () {
                 expect(text.secondary).toBe("rgba(0, 0, 0, 0.54)");
                 expect(text.disabled).toBe("rgba(0, 0, 0, 0.38)");
                 expect(text.hint).toBe("rgba(0, 0, 0, 0.38)");
+                
+              }));
+        test("divider", (function () {
+                expect(palette.divider).toBe("rgba(0, 0, 0, 0.12)");
                 
               }));
         test("background", (function () {
@@ -144,10 +162,75 @@ describe("custom palette", (function () {
                       main: "#fff",
                       dark: "#ababab",
                       contrastText: "#aaaaaa"
-                    }, undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, {
+                    }, {
+                      light: "#fefefe",
+                      main: "#fff",
+                      dark: "#ababab",
+                      contrastText: "#aaaaaa"
+                    }, {
+                      light: "#fefefe",
+                      main: "#fff",
+                      dark: "#ababab",
+                      contrastText: "#aaaaaa"
+                    }, {
+                      light: "#fefefe",
+                      main: "#fff",
+                      dark: "#ababab",
+                      contrastText: "#aaaaaa"
+                    }, {
+                      light: "#fefefe",
+                      main: "#fff",
+                      dark: "#ababab",
+                      contrastText: "#aaaaaa"
+                    }, {
+                      light: "#fefefe",
+                      main: "#fff",
+                      dark: "#ababab",
+                      contrastText: "#aaaaaa"
+                    }, undefined, {
+                      light: 0.3,
+                      dark: 0.4
+                    }, 2.0, {
                       black: "#212121",
                       white: "#fafafa"
-                    }, undefined, undefined, undefined, undefined, undefined, undefined, undefined)), undefined).palette;
+                    }, {
+                      "50": "#000000",
+                      "100": "#000000",
+                      "200": "#000000",
+                      "300": "#000000",
+                      "400": "#000000",
+                      "500": "#000000",
+                      "600": "#000000",
+                      "700": "#000000",
+                      "800": "#000000",
+                      "900": "#000000",
+                      A100: "#000000",
+                      A200: "#000000",
+                      A400: "#000000",
+                      A700: "#000000"
+                    }, {
+                      primary: "#ababab",
+                      secondary: "#aabbcc",
+                      disabled: "#ffffaa",
+                      hint: "#11bb22"
+                    }, "#abbccd", {
+                      active: "#444444",
+                      hover: "#abcdef",
+                      hoverOpacity: 0.9,
+                      selected: "#112233",
+                      selectedOpacity: 0.8,
+                      disabled: "#221100",
+                      disabledOpacity: 0.6,
+                      disabledBackground: "#000000",
+                      focus: "#bbbbbb",
+                      focusOpacity: 0.1,
+                      activatedOpacity: 0.4
+                    }, {
+                      default: "#999999",
+                      paper: "#888888"
+                    }, (function (v) {
+                        return v;
+                      }), undefined)), undefined).palette;
         test("common colors", (function () {
                 var common = palette.common;
                 expect(common.black).toBe("#212121");
@@ -160,6 +243,122 @@ describe("custom palette", (function () {
                 expect(primary.main).toBe("#fff");
                 expect(primary.dark).toBe("#ababab");
                 expect(primary.contrastText).toBe("#aaaaaa");
+                
+              }));
+        test("secondary colors", (function () {
+                var secondary = palette.secondary;
+                expect(secondary.light).toBe("#fefefe");
+                expect(secondary.main).toBe("#fff");
+                expect(secondary.dark).toBe("#ababab");
+                expect(secondary.contrastText).toBe("#aaaaaa");
+                
+              }));
+        test("error colors", (function () {
+                var error = palette.error;
+                expect(error.light).toBe("#fefefe");
+                expect(error.main).toBe("#fff");
+                expect(error.dark).toBe("#ababab");
+                expect(error.contrastText).toBe("#aaaaaa");
+                
+              }));
+        test("warning colors", (function () {
+                var warning = palette.warning;
+                expect(warning.light).toBe("#fefefe");
+                expect(warning.main).toBe("#fff");
+                expect(warning.dark).toBe("#ababab");
+                expect(warning.contrastText).toBe("#aaaaaa");
+                
+              }));
+        test("info colors", (function () {
+                var info = palette.info;
+                expect(info.light).toBe("#fefefe");
+                expect(info.main).toBe("#fff");
+                expect(info.dark).toBe("#ababab");
+                expect(info.contrastText).toBe("#aaaaaa");
+                
+              }));
+        test("success colors", (function () {
+                var success = palette.success;
+                expect(success.light).toBe("#fefefe");
+                expect(success.main).toBe("#fff");
+                expect(success.dark).toBe("#ababab");
+                expect(success.contrastText).toBe("#aaaaaa");
+                
+              }));
+        test("grey", (function () {
+                var grey = palette.grey;
+                expect(grey[50]).toBe("#000000");
+                expect(grey[100]).toBe("#000000");
+                expect(grey[200]).toBe("#000000");
+                expect(grey[300]).toBe("#000000");
+                expect(grey[400]).toBe("#000000");
+                expect(grey[500]).toBe("#000000");
+                expect(grey[600]).toBe("#000000");
+                expect(grey[700]).toBe("#000000");
+                expect(grey[800]).toBe("#000000");
+                expect(grey[900]).toBe("#000000");
+                expect(grey.A100).toBe("#000000");
+                expect(grey.A200).toBe("#000000");
+                expect(grey.A400).toBe("#000000");
+                expect(grey[700]).toBe("#000000");
+                
+              }));
+        test("contrastThreshold", (function () {
+                expect(palette.contrastThreshold).toBe(2.0);
+                
+              }));
+        test("getContrastText", (function () {
+                expect(palette.getContrastText("#fff")).toBe("#fff");
+                
+              }));
+        test("tonalOffset", (function () {
+                expect(palette.tonalOffset).toEqual({
+                      light: 0.3,
+                      dark: 0.4
+                    });
+                var v = Theme_Palette$Materialui.tonalOffset(palette);
+                var tmp;
+                tmp = v.TAG === /* Number */0 ? ({
+                      light: 0.6,
+                      dark: 0.7
+                    }) : v._0;
+                expect(tmp).toEqual({
+                      light: 0.3,
+                      dark: 0.4
+                    });
+                
+              }));
+        test("text", (function () {
+                var text = palette.text;
+                expect(text.primary).toBe("#ababab");
+                expect(text.secondary).toBe("#aabbcc");
+                expect(text.disabled).toBe("#ffffaa");
+                expect(text.hint).toBe("#11bb22");
+                
+              }));
+        test("divider", (function () {
+                expect(palette.divider).toBe("#abbccd");
+                
+              }));
+        test("background", (function () {
+                var background = palette.background;
+                expect(background.paper).toBe("#888888");
+                expect(background.default).toBe("#999999");
+                
+              }));
+        test("action", (function () {
+                var action = palette.action;
+                expect(action.active).toBe("#444444");
+                expect(action.hover).toBe("#abcdef");
+                expect(action.hoverOpacity).toBe(0.9);
+                expect(action.selected).toBe("#112233");
+                expect(action.selectedOpacity).toBe(0.8);
+                expect(action.disabled).toBe("#221100");
+                expect(action.disabledBackground).toBe("#000000");
+                expect(action.disabledOpacity).toBe(0.6);
+                expect(action.focus).toBe("#bbbbbb");
+                expect(action.focusOpacity).toBe(0.1);
+                expect(action.activatedOpacity).toBe(0.4);
                 
               }));
         
