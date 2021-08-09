@@ -4,8 +4,8 @@
 
 var Color = {};
 
-var SimpleColor = {};
+var PaletteColor = {};
 
 exports.Color = Color;
-exports.SimpleColor = SimpleColor;
+exports.PaletteColor = PaletteColor;
 /* No side effect */

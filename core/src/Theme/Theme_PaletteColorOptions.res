@@ -21,7 +21,7 @@ module Color = {
   ) => t = "";
 };
 
-module SimpleColor = {
+module PaletteColor = {
   @obj
   external make: (
     ~light: string=?,

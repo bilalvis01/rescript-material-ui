@@ -3,17 +3,17 @@ type t;
 @get
 external color: t => Theme_PaletteColorOptions.t = "color";
 @get
-external mainShade: t => option<int> = "mainShade";
+external mainShade: t => option<string> = "mainShade";
 @get
-external lightShade: t => option<int> = "lightShade";
+external lightShade: t => option<string> = "lightShade";
 @get
-external darkShade: t => option<int> = "darkShade";
+external darkShade: t => option<string> = "darkShade";
 
 @obj
 external make: (
   ~color: Theme_PaletteColorOptions.t,
-  ~mainShade: int=?,
-  ~lightShade: int=?,
-  ~darkShade: int=?,
+  ~mainShade: string=?,
+  ~lightShade: string=?,
+  ~darkShade: string=?,
   unit
 ) => t = "";

@@ -134,7 +134,7 @@ describe("default palette", (.) => {
       palette
       ->Palette.augmentColor(
         AugmentColorOptions.make(
-          ~color=PaletteColorOptions.SimpleColor.make(~main="#fff", ()),
+          ~color=PaletteColorOptions.PaletteColor.make(~main="#fff", ()),
           ()
         )
       )
@@ -151,7 +151,7 @@ describe("default palette", (.) => {
       ->Palette.augmentColor(
         AugmentColorOptions.make(
           ~color=PaletteColorOptions.Color.make(~\"400"="#fafafa", ()),
-          ~mainShade=400,
+          ~mainShade="400",
           ()
         )
       )
@@ -237,42 +237,42 @@ describe("custom palette", (.) => {
         ~white="#fafafa",
         ()
       ),
-      ~primary=PaletteColorOptions.SimpleColor.make(
+      ~primary=PaletteColorOptions.PaletteColor.make(
         ~main="#fff",
         ~light="#fefefe",
         ~dark="#ababab",
         ~contrastText="#aaaaaa",
         ()
       ),
-      ~secondary=PaletteColorOptions.SimpleColor.make(
+      ~secondary=PaletteColorOptions.PaletteColor.make(
         ~main="#fff",
         ~light="#fefefe",
         ~dark="#ababab",
         ~contrastText="#aaaaaa",
         ()
       ),
-      ~error=PaletteColorOptions.SimpleColor.make(
+      ~error=PaletteColorOptions.PaletteColor.make(
         ~main="#fff",
         ~light="#fefefe",
         ~dark="#ababab",
         ~contrastText="#aaaaaa",
         ()
       ),
-      ~warning=PaletteColorOptions.SimpleColor.make(
+      ~warning=PaletteColorOptions.PaletteColor.make(
         ~main="#fff",
         ~light="#fefefe",
         ~dark="#ababab",
         ~contrastText="#aaaaaa",
         ()
       ),
-      ~info=PaletteColorOptions.SimpleColor.make(
+      ~info=PaletteColorOptions.PaletteColor.make(
         ~main="#fff",
         ~light="#fefefe",
         ~dark="#ababab",
         ~contrastText="#aaaaaa",
         ()
       ),
-      ~success=PaletteColorOptions.SimpleColor.make(
+      ~success=PaletteColorOptions.PaletteColor.make(
         ~main="#fff",
         ~light="#fefefe",
         ~dark="#ababab",

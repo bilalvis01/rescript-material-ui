@@ -40,9 +40,9 @@ external getContrastText: (t, string) => string = "getContrastText";
 external getAugmentColor: (
   t, 
   Theme_PaletteColorOptions.t, 
-  option<int>, 
-  option<int>,
-  option<int>,
+  option<string>, 
+  option<string>,
+  option<string>,
 ) => Theme_PaletteColor.t = "augmentColor";
 
 let tonalOffset: t => Theme_TonalOffset.case;

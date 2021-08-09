@@ -102,7 +102,7 @@ describe("default palette", (function () {
                             color: {
                               "400": "#fafafa"
                             },
-                            mainShade: 400
+                            mainShade: "400"
                           })).toEqual({
                       "400": "#fafafa",
                       contrastText: "rgba(0, 0, 0, 0.87)",
