@@ -63,7 +63,10 @@ test("styles", (.) => {
     ]),
     fontFace([
       FontFace.fontDisplay(#auto),
-    ])
+    ]),
+    hover([
+      color(#blue)
+    ]),
   ]))
   ->toEqual(Obj.magic({
     "wrapper": {
@@ -83,6 +86,9 @@ test("styles", (.) => {
     },
     "@font-face": {
       "fontDisplay": "auto"
+    },
+    "@global :hover": {
+      "color": "blue"
     },
   }));
 });

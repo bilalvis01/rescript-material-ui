@@ -59,7 +59,8 @@ test("styles", (function () {
                           Css$Ress.color(Css$Ress.hsla(Css$Ress.deg(360), Css$Ress.pct(100), Css$Ress.pct(50), 0.5)),
                           Curry._1(Css$Ress.hover, [Css$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                         ]),
-                    Css$Ress.fontFace([CssFontFace$Ress.fontDisplay("auto")])
+                    Css$Ress.fontFace([CssFontFace$Ress.fontDisplay("auto")]),
+                    Curry._1(Css$Ress.hover, [Css$Ress.color("blue")])
                   ])).toEqual({
               wrapper: {
                 background: "url(\"image.png\")",
@@ -78,6 +79,9 @@ test("styles", (function () {
               },
               "@font-face": {
                 fontDisplay: "auto"
+              },
+              "@global :hover": {
+                color: "blue"
               }
             });
         
