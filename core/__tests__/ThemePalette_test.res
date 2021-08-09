@@ -150,16 +150,18 @@ describe("default palette", (.) => {
       palette
       ->Palette.augmentColor(
         AugmentColorOptions.make(
-          ~color=PaletteColorOptions.Color.make(~\"400"="#fafafa", ()),
+          ~color=PaletteColorOptions.Color.make(~\"400"="#fafafa", ~\"A400"="#fcfcfc", ()),
           ~mainShade="400",
+          ~darkShade="A400",
           ()
         )
       )
     )
     ->toEqual(Obj.magic({
       "400": "#fafafa",
+      "A400": "#fcfcfc",
       "contrastText": "rgba(0, 0, 0, 0.87)",
-      "dark": "rgb(175, 175, 175)",
+      "dark": "#fcfcfc",
       "light": "rgb(251, 251, 251)",
       "main": "#fafafa",
     }));

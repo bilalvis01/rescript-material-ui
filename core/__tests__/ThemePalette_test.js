@@ -100,13 +100,16 @@ describe("default palette", (function () {
                     });
                 expect(Theme_Palette$Materialui.augmentColor(palette, {
                             color: {
-                              "400": "#fafafa"
+                              "400": "#fafafa",
+                              A400: "#fcfcfc"
                             },
-                            mainShade: "400"
+                            mainShade: "400",
+                            darkShade: "A400"
                           })).toEqual({
                       "400": "#fafafa",
+                      A400: "#fcfcfc",
                       contrastText: "rgba(0, 0, 0, 0.87)",
-                      dark: "rgb(175, 175, 175)",
+                      dark: "#fcfcfc",
                       light: "rgb(251, 251, 251)",
                       main: "#fafafa"
                     });
