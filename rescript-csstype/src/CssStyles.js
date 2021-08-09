@@ -6,14 +6,27 @@ var Js_dict = require("rescript/lib/js/js_dict.js");
 var Belt_Array = require("rescript/lib/js/belt_Array.js");
 var CssAtRule$Ress = require("./CssAtRule.js");
 var CssSelector$Ress = require("./CssSelector.js");
+var CssPseudoClass$Ress = require("./CssPseudoClass.js");
 
 function Make(funarg) {
   var Selector = CssSelector$Ress.Make({});
   var AtRule = CssAtRule$Ress.Make({});
+  var map = function (v) {
+    return [
+            "@global " + v[0],
+            v[1]
+          ];
+  };
+  var PseudoClass = CssPseudoClass$Ress.Make({
+        map: map
+      });
   var make = function (rules) {
     return Js_dict.fromArray(Belt_Array.map(rules, (function (rule) {
-                      if (rule.NAME === "FontFace") {
+                      var variant = rule.NAME;
+                      if (variant === "FontFace") {
                         return Curry._1(AtRule.make, rule);
+                      } else if (variant === "Hover") {
+                        return Curry._1(PseudoClass.make, rule);
                       } else {
                         return Curry._1(Selector.make, rule);
                       }
