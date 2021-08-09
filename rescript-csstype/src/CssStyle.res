@@ -16,6 +16,10 @@ module Make = (
   module PseudoClass = CssPseudoClass.Make({
     type style = Type.t;
     type value = Type.value;
+    let map = v => {
+      let (selector, style) = v;
+      (`&${selector}`, style);
+    };
   });
 
   module AtRule = CssAtRule.Make({

@@ -12,7 +12,15 @@ var CssPseudoClass$Ress = require("./CssPseudoClass.js");
 function Make(funarg) {
   var Declaration = CssDeclaration$Ress.Make({});
   var Selector = CssSelector$Ress.Make({});
-  var PseudoClass = CssPseudoClass$Ress.Make({});
+  var map = function (v) {
+    return [
+            "&" + v[0],
+            v[1]
+          ];
+  };
+  var PseudoClass = CssPseudoClass$Ress.Make({
+        map: map
+      });
   var AtRule = CssAtRule$Ress.Make({});
   var make = function (declarations) {
     return Js_dict.fromArray(Belt_Array.map(declarations, (function (declaration) {

@@ -2,6 +2,7 @@ module Make = (
   Type: {
     type style;
     type value;
+    let map: ((string, value)) => (string, value);
   }
 ) => {
   external makeValue: Type.style => Type.value = "%identity";
@@ -10,7 +11,8 @@ module Make = (
 
   let make = v => {
     switch v {
-    | #Hover(style) => ("&:hover", makeValue(style))
+    | #Hover(style) => (":hover", makeValue(style))
     }
+    ->Type.map
   };
 }
