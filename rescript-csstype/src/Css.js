@@ -3,14 +3,19 @@
 
 var CssStyle$Ress = require("./CssStyle.js");
 var CssStyles$Ress = require("./CssStyles.js");
-var CssStyleHelper$Ress = require("./CssStyleHelper.js");
 var CssValueHelper$Ress = require("./CssValueHelper.js");
 var CssAtRuleHelper$Ress = require("./CssAtRuleHelper.js");
+var CssSelectorHelper$Ress = require("./CssSelectorHelper.js");
+var CssDeclarationHelper$Ress = require("./CssDeclarationHelper.js");
+var CssPseudoClassHelper$Ress = require("./CssPseudoClassHelper.js");
 
 function Make(Type) {
   var Style = CssStyle$Ress.Make({});
   var Styles = CssStyles$Ress.Make({});
-  var include = CssStyleHelper$Ress.Make({
+  var include = CssSelectorHelper$Ress.Make({
+        style: Style.make
+      });
+  var include$1 = CssPseudoClassHelper$Ress.Make({
         style: Style.make
       });
   return {
@@ -18,132 +23,132 @@ function Make(Type) {
           $$FontFace: undefined,
           Style: Style,
           Styles: Styles,
-          property: include.property,
-          propertyNumber: include.propertyNumber,
-          propertyInteger: include.propertyInteger,
-          border: include.border,
-          borderString: include.borderString,
-          borderTop: include.borderTop,
-          borderTopString: include.borderTopString,
-          borderLeft: include.borderLeft,
-          borderLeftString: include.borderLeftString,
-          borderRight: include.borderRight,
-          borderRightString: include.borderRightString,
-          borderBottom: include.borderBottom,
-          borderBottomString: include.borderBottomString,
-          borderColor: include.borderColor,
-          borderColor2: include.borderColor2,
-          borderColor3: include.borderColor3,
-          borderColor4: include.borderColor4,
-          borderColorString: include.borderColorString,
-          borderTopColor: include.borderTopColor,
-          borderTopColorString: include.borderTopColorString,
-          borderRightColor: include.borderRightColor,
-          borderRightColorString: include.borderRightColorString,
-          borderBottomColor: include.borderBottomColor,
-          borderBottomColorString: include.borderBottomColorString,
-          borderLeftColor: include.borderLeftColor,
-          borderLeftColorString: include.borderLeftColorString,
-          borderStyle: include.borderStyle,
-          borderStyle2: include.borderStyle2,
-          borderStyle3: include.borderStyle3,
-          borderStyle4: include.borderStyle4,
-          borderStyleString: include.borderStyleString,
-          borderTopStyle: include.borderTopStyle,
-          borderTopStyleString: include.borderTopStyleString,
-          borderRightStyle: include.borderRightStyle,
-          borderRightStyleString: include.borderRightStyleString,
-          borderBottomStyle: include.borderBottomStyle,
-          borderBottomStyleString: include.borderBottomStyleString,
-          borderLeftStyle: include.borderLeftStyle,
-          borderLeftStyleString: include.borderLeftStyleString,
-          borderWidth: include.borderWidth,
-          borderWidth2: include.borderWidth2,
-          borderWidth3: include.borderWidth3,
-          borderWidth4: include.borderWidth4,
-          borderWidthString: include.borderWidthString,
-          borderTopWidth: include.borderTopWidth,
-          borderTopWidthString: include.borderTopWidthString,
-          borderRightWidth: include.borderRightWidth,
-          borderRightWidthString: include.borderRightWidthString,
-          borderBottomWidth: include.borderBottomWidth,
-          borderBottomWidthString: include.borderBottomWidthString,
-          borderLeftWidth: include.borderLeftWidth,
-          borderLeftWidthString: include.borderLeftWidthString,
-          background: include.background,
-          backgroundString: include.backgroundString,
-          background2: include.background2,
-          background3: include.background3,
-          background4: include.background4,
-          backgroundAttachment: include.backgroundAttachment,
-          backgroundAttachment2: include.backgroundAttachment2,
-          backgroundAttachment3: include.backgroundAttachment3,
-          backgroundAttachment4: include.backgroundAttachment4,
-          backgroundAttachmentString: include.backgroundAttachmentString,
-          backgroundColor: include.backgroundColor,
-          backgroundColorString: include.backgroundColorString,
-          backgroundImage: include.backgroundImage,
-          backgroundImage2: include.backgroundImage2,
-          backgroundImage3: include.backgroundImage3,
-          backgroundImage4: include.backgroundImage4,
-          backgroundImageString: include.backgroundImageString,
-          backgroundPosition: include.backgroundPosition,
-          backgroundPosition2: include.backgroundPosition2,
-          backgroundPosition3: include.backgroundPosition3,
-          backgroundPosition4: include.backgroundPosition4,
-          backgroundPositionString: include.backgroundPositionString,
-          backgroundStyle: include.backgroundStyle,
-          backgroundStyle2: include.backgroundStyle2,
-          backgroundStyle3: include.backgroundStyle3,
-          backgroundStyle4: include.backgroundStyle4,
-          backgroundStyleString: include.backgroundStyleString,
-          margin: include.margin,
-          margin2: include.margin2,
-          margin3: include.margin3,
-          margin4: include.margin4,
-          marginString: include.marginString,
-          marginNumber: include.marginNumber,
-          marginTop: include.marginTop,
-          marginTopString: include.marginTopString,
-          marginTopNumber: include.marginTopNumber,
-          marginRight: include.marginRight,
-          marginRightString: include.marginRightString,
-          marginRightNumber: include.marginRightNumber,
-          marginBottom: include.marginBottom,
-          marginBottomString: include.marginBottomString,
-          marginBottomNumber: include.marginBottomNumber,
-          marginLeft: include.marginLeft,
-          marginLeftString: include.marginLeftString,
-          marginLeftNumber: include.marginLeftNumber,
-          padding: include.padding,
-          padding2: include.padding2,
-          padding3: include.padding3,
-          padding4: include.padding4,
-          paddingString: include.paddingString,
-          paddingNumber: include.paddingNumber,
-          paddingTop: include.paddingTop,
-          paddingTopString: include.paddingTopString,
-          paddingTopNumber: include.paddingTopNumber,
-          paddingRight: include.paddingRight,
-          paddingRightString: include.paddingRightString,
-          paddingRightNumber: include.paddingRightNumber,
-          paddingBottom: include.paddingBottom,
-          paddingBottomString: include.paddingBottomString,
-          paddingBottomNumber: include.paddingBottomNumber,
-          paddingLeft: include.paddingLeft,
-          paddingLeftString: include.paddingLeftString,
-          paddingLeftNumber: include.paddingLeftNumber,
-          clear: include.clear,
-          color: include.color,
-          colorString: include.colorString,
-          cursor: include.cursor,
-          cursor1: include.cursor1,
-          cursor2: include.cursor2,
-          cursor3: include.cursor3,
-          cursor4: include.cursor4,
-          cursorString: include.cursorString,
+          property: CssDeclarationHelper$Ress.property,
+          propertyNumber: CssDeclarationHelper$Ress.propertyNumber,
+          propertyInteger: CssDeclarationHelper$Ress.propertyInteger,
+          border: CssDeclarationHelper$Ress.border,
+          borderString: CssDeclarationHelper$Ress.borderString,
+          borderTop: CssDeclarationHelper$Ress.borderTop,
+          borderTopString: CssDeclarationHelper$Ress.borderTopString,
+          borderLeft: CssDeclarationHelper$Ress.borderLeft,
+          borderLeftString: CssDeclarationHelper$Ress.borderLeftString,
+          borderRight: CssDeclarationHelper$Ress.borderRight,
+          borderRightString: CssDeclarationHelper$Ress.borderRightString,
+          borderBottom: CssDeclarationHelper$Ress.borderBottom,
+          borderBottomString: CssDeclarationHelper$Ress.borderBottomString,
+          borderColor: CssDeclarationHelper$Ress.borderColor,
+          borderColor2: CssDeclarationHelper$Ress.borderColor2,
+          borderColor3: CssDeclarationHelper$Ress.borderColor3,
+          borderColor4: CssDeclarationHelper$Ress.borderColor4,
+          borderColorString: CssDeclarationHelper$Ress.borderColorString,
+          borderTopColor: CssDeclarationHelper$Ress.borderTopColor,
+          borderTopColorString: CssDeclarationHelper$Ress.borderTopColorString,
+          borderRightColor: CssDeclarationHelper$Ress.borderRightColor,
+          borderRightColorString: CssDeclarationHelper$Ress.borderRightColorString,
+          borderBottomColor: CssDeclarationHelper$Ress.borderBottomColor,
+          borderBottomColorString: CssDeclarationHelper$Ress.borderBottomColorString,
+          borderLeftColor: CssDeclarationHelper$Ress.borderLeftColor,
+          borderLeftColorString: CssDeclarationHelper$Ress.borderLeftColorString,
+          borderStyle: CssDeclarationHelper$Ress.borderStyle,
+          borderStyle2: CssDeclarationHelper$Ress.borderStyle2,
+          borderStyle3: CssDeclarationHelper$Ress.borderStyle3,
+          borderStyle4: CssDeclarationHelper$Ress.borderStyle4,
+          borderStyleString: CssDeclarationHelper$Ress.borderStyleString,
+          borderTopStyle: CssDeclarationHelper$Ress.borderTopStyle,
+          borderTopStyleString: CssDeclarationHelper$Ress.borderTopStyleString,
+          borderRightStyle: CssDeclarationHelper$Ress.borderRightStyle,
+          borderRightStyleString: CssDeclarationHelper$Ress.borderRightStyleString,
+          borderBottomStyle: CssDeclarationHelper$Ress.borderBottomStyle,
+          borderBottomStyleString: CssDeclarationHelper$Ress.borderBottomStyleString,
+          borderLeftStyle: CssDeclarationHelper$Ress.borderLeftStyle,
+          borderLeftStyleString: CssDeclarationHelper$Ress.borderLeftStyleString,
+          borderWidth: CssDeclarationHelper$Ress.borderWidth,
+          borderWidth2: CssDeclarationHelper$Ress.borderWidth2,
+          borderWidth3: CssDeclarationHelper$Ress.borderWidth3,
+          borderWidth4: CssDeclarationHelper$Ress.borderWidth4,
+          borderWidthString: CssDeclarationHelper$Ress.borderWidthString,
+          borderTopWidth: CssDeclarationHelper$Ress.borderTopWidth,
+          borderTopWidthString: CssDeclarationHelper$Ress.borderTopWidthString,
+          borderRightWidth: CssDeclarationHelper$Ress.borderRightWidth,
+          borderRightWidthString: CssDeclarationHelper$Ress.borderRightWidthString,
+          borderBottomWidth: CssDeclarationHelper$Ress.borderBottomWidth,
+          borderBottomWidthString: CssDeclarationHelper$Ress.borderBottomWidthString,
+          borderLeftWidth: CssDeclarationHelper$Ress.borderLeftWidth,
+          borderLeftWidthString: CssDeclarationHelper$Ress.borderLeftWidthString,
+          background: CssDeclarationHelper$Ress.background,
+          backgroundString: CssDeclarationHelper$Ress.backgroundString,
+          background2: CssDeclarationHelper$Ress.background2,
+          background3: CssDeclarationHelper$Ress.background3,
+          background4: CssDeclarationHelper$Ress.background4,
+          backgroundAttachment: CssDeclarationHelper$Ress.backgroundAttachment,
+          backgroundAttachment2: CssDeclarationHelper$Ress.backgroundAttachment2,
+          backgroundAttachment3: CssDeclarationHelper$Ress.backgroundAttachment3,
+          backgroundAttachment4: CssDeclarationHelper$Ress.backgroundAttachment4,
+          backgroundAttachmentString: CssDeclarationHelper$Ress.backgroundAttachmentString,
+          backgroundColor: CssDeclarationHelper$Ress.backgroundColor,
+          backgroundColorString: CssDeclarationHelper$Ress.backgroundColorString,
+          backgroundImage: CssDeclarationHelper$Ress.backgroundImage,
+          backgroundImage2: CssDeclarationHelper$Ress.backgroundImage2,
+          backgroundImage3: CssDeclarationHelper$Ress.backgroundImage3,
+          backgroundImage4: CssDeclarationHelper$Ress.backgroundImage4,
+          backgroundImageString: CssDeclarationHelper$Ress.backgroundImageString,
+          backgroundPosition: CssDeclarationHelper$Ress.backgroundPosition,
+          backgroundPosition2: CssDeclarationHelper$Ress.backgroundPosition2,
+          backgroundPosition3: CssDeclarationHelper$Ress.backgroundPosition3,
+          backgroundPosition4: CssDeclarationHelper$Ress.backgroundPosition4,
+          backgroundPositionString: CssDeclarationHelper$Ress.backgroundPositionString,
+          backgroundStyle: CssDeclarationHelper$Ress.backgroundStyle,
+          backgroundStyle2: CssDeclarationHelper$Ress.backgroundStyle2,
+          backgroundStyle3: CssDeclarationHelper$Ress.backgroundStyle3,
+          backgroundStyle4: CssDeclarationHelper$Ress.backgroundStyle4,
+          backgroundStyleString: CssDeclarationHelper$Ress.backgroundStyleString,
+          margin: CssDeclarationHelper$Ress.margin,
+          margin2: CssDeclarationHelper$Ress.margin2,
+          margin3: CssDeclarationHelper$Ress.margin3,
+          margin4: CssDeclarationHelper$Ress.margin4,
+          marginString: CssDeclarationHelper$Ress.marginString,
+          marginNumber: CssDeclarationHelper$Ress.marginNumber,
+          marginTop: CssDeclarationHelper$Ress.marginTop,
+          marginTopString: CssDeclarationHelper$Ress.marginTopString,
+          marginTopNumber: CssDeclarationHelper$Ress.marginTopNumber,
+          marginRight: CssDeclarationHelper$Ress.marginRight,
+          marginRightString: CssDeclarationHelper$Ress.marginRightString,
+          marginRightNumber: CssDeclarationHelper$Ress.marginRightNumber,
+          marginBottom: CssDeclarationHelper$Ress.marginBottom,
+          marginBottomString: CssDeclarationHelper$Ress.marginBottomString,
+          marginBottomNumber: CssDeclarationHelper$Ress.marginBottomNumber,
+          marginLeft: CssDeclarationHelper$Ress.marginLeft,
+          marginLeftString: CssDeclarationHelper$Ress.marginLeftString,
+          marginLeftNumber: CssDeclarationHelper$Ress.marginLeftNumber,
+          padding: CssDeclarationHelper$Ress.padding,
+          padding2: CssDeclarationHelper$Ress.padding2,
+          padding3: CssDeclarationHelper$Ress.padding3,
+          padding4: CssDeclarationHelper$Ress.padding4,
+          paddingString: CssDeclarationHelper$Ress.paddingString,
+          paddingNumber: CssDeclarationHelper$Ress.paddingNumber,
+          paddingTop: CssDeclarationHelper$Ress.paddingTop,
+          paddingTopString: CssDeclarationHelper$Ress.paddingTopString,
+          paddingTopNumber: CssDeclarationHelper$Ress.paddingTopNumber,
+          paddingRight: CssDeclarationHelper$Ress.paddingRight,
+          paddingRightString: CssDeclarationHelper$Ress.paddingRightString,
+          paddingRightNumber: CssDeclarationHelper$Ress.paddingRightNumber,
+          paddingBottom: CssDeclarationHelper$Ress.paddingBottom,
+          paddingBottomString: CssDeclarationHelper$Ress.paddingBottomString,
+          paddingBottomNumber: CssDeclarationHelper$Ress.paddingBottomNumber,
+          paddingLeft: CssDeclarationHelper$Ress.paddingLeft,
+          paddingLeftString: CssDeclarationHelper$Ress.paddingLeftString,
+          paddingLeftNumber: CssDeclarationHelper$Ress.paddingLeftNumber,
+          clear: CssDeclarationHelper$Ress.clear,
+          color: CssDeclarationHelper$Ress.color,
+          colorString: CssDeclarationHelper$Ress.colorString,
+          cursor: CssDeclarationHelper$Ress.cursor,
+          cursor1: CssDeclarationHelper$Ress.cursor1,
+          cursor2: CssDeclarationHelper$Ress.cursor2,
+          cursor3: CssDeclarationHelper$Ress.cursor3,
+          cursor4: CssDeclarationHelper$Ress.cursor4,
+          cursorString: CssDeclarationHelper$Ress.cursorString,
           selector: include.selector,
-          hover: include.hover,
+          hover: include$1.hover,
           str: CssValueHelper$Ress.str,
           num: CssValueHelper$Ress.num,
           $$int: CssValueHelper$Ress.$$int,
@@ -225,7 +230,11 @@ var Style = CssStyle$Ress.Make({});
 
 var Styles = CssStyles$Ress.Make({});
 
-var include = CssStyleHelper$Ress.Make({
+var include = CssSelectorHelper$Ress.Make({
+      style: Style.make
+    });
+
+var include$1 = CssPseudoClassHelper$Ress.Make({
       style: Style.make
     });
 
@@ -233,257 +242,257 @@ var PropertyValue;
 
 var $$FontFace;
 
-var property = include.property;
+var property = CssDeclarationHelper$Ress.property;
 
-var propertyNumber = include.propertyNumber;
+var propertyNumber = CssDeclarationHelper$Ress.propertyNumber;
 
-var propertyInteger = include.propertyInteger;
+var propertyInteger = CssDeclarationHelper$Ress.propertyInteger;
 
-var border = include.border;
+var border = CssDeclarationHelper$Ress.border;
 
-var borderString = include.borderString;
+var borderString = CssDeclarationHelper$Ress.borderString;
 
-var borderTop = include.borderTop;
+var borderTop = CssDeclarationHelper$Ress.borderTop;
 
-var borderTopString = include.borderTopString;
+var borderTopString = CssDeclarationHelper$Ress.borderTopString;
 
-var borderLeft = include.borderLeft;
+var borderLeft = CssDeclarationHelper$Ress.borderLeft;
 
-var borderLeftString = include.borderLeftString;
+var borderLeftString = CssDeclarationHelper$Ress.borderLeftString;
 
-var borderRight = include.borderRight;
+var borderRight = CssDeclarationHelper$Ress.borderRight;
 
-var borderRightString = include.borderRightString;
+var borderRightString = CssDeclarationHelper$Ress.borderRightString;
 
-var borderBottom = include.borderBottom;
+var borderBottom = CssDeclarationHelper$Ress.borderBottom;
 
-var borderBottomString = include.borderBottomString;
+var borderBottomString = CssDeclarationHelper$Ress.borderBottomString;
 
-var borderColor = include.borderColor;
+var borderColor = CssDeclarationHelper$Ress.borderColor;
 
-var borderColor2 = include.borderColor2;
+var borderColor2 = CssDeclarationHelper$Ress.borderColor2;
 
-var borderColor3 = include.borderColor3;
+var borderColor3 = CssDeclarationHelper$Ress.borderColor3;
 
-var borderColor4 = include.borderColor4;
+var borderColor4 = CssDeclarationHelper$Ress.borderColor4;
 
-var borderColorString = include.borderColorString;
+var borderColorString = CssDeclarationHelper$Ress.borderColorString;
 
-var borderTopColor = include.borderTopColor;
+var borderTopColor = CssDeclarationHelper$Ress.borderTopColor;
 
-var borderTopColorString = include.borderTopColorString;
+var borderTopColorString = CssDeclarationHelper$Ress.borderTopColorString;
 
-var borderRightColor = include.borderRightColor;
+var borderRightColor = CssDeclarationHelper$Ress.borderRightColor;
 
-var borderRightColorString = include.borderRightColorString;
+var borderRightColorString = CssDeclarationHelper$Ress.borderRightColorString;
 
-var borderBottomColor = include.borderBottomColor;
+var borderBottomColor = CssDeclarationHelper$Ress.borderBottomColor;
 
-var borderBottomColorString = include.borderBottomColorString;
+var borderBottomColorString = CssDeclarationHelper$Ress.borderBottomColorString;
 
-var borderLeftColor = include.borderLeftColor;
+var borderLeftColor = CssDeclarationHelper$Ress.borderLeftColor;
 
-var borderLeftColorString = include.borderLeftColorString;
+var borderLeftColorString = CssDeclarationHelper$Ress.borderLeftColorString;
 
-var borderStyle = include.borderStyle;
+var borderStyle = CssDeclarationHelper$Ress.borderStyle;
 
-var borderStyle2 = include.borderStyle2;
+var borderStyle2 = CssDeclarationHelper$Ress.borderStyle2;
 
-var borderStyle3 = include.borderStyle3;
+var borderStyle3 = CssDeclarationHelper$Ress.borderStyle3;
 
-var borderStyle4 = include.borderStyle4;
+var borderStyle4 = CssDeclarationHelper$Ress.borderStyle4;
 
-var borderStyleString = include.borderStyleString;
+var borderStyleString = CssDeclarationHelper$Ress.borderStyleString;
 
-var borderTopStyle = include.borderTopStyle;
+var borderTopStyle = CssDeclarationHelper$Ress.borderTopStyle;
 
-var borderTopStyleString = include.borderTopStyleString;
+var borderTopStyleString = CssDeclarationHelper$Ress.borderTopStyleString;
 
-var borderRightStyle = include.borderRightStyle;
+var borderRightStyle = CssDeclarationHelper$Ress.borderRightStyle;
 
-var borderRightStyleString = include.borderRightStyleString;
+var borderRightStyleString = CssDeclarationHelper$Ress.borderRightStyleString;
 
-var borderBottomStyle = include.borderBottomStyle;
+var borderBottomStyle = CssDeclarationHelper$Ress.borderBottomStyle;
 
-var borderBottomStyleString = include.borderBottomStyleString;
+var borderBottomStyleString = CssDeclarationHelper$Ress.borderBottomStyleString;
 
-var borderLeftStyle = include.borderLeftStyle;
+var borderLeftStyle = CssDeclarationHelper$Ress.borderLeftStyle;
 
-var borderLeftStyleString = include.borderLeftStyleString;
+var borderLeftStyleString = CssDeclarationHelper$Ress.borderLeftStyleString;
 
-var borderWidth = include.borderWidth;
+var borderWidth = CssDeclarationHelper$Ress.borderWidth;
 
-var borderWidth2 = include.borderWidth2;
+var borderWidth2 = CssDeclarationHelper$Ress.borderWidth2;
 
-var borderWidth3 = include.borderWidth3;
+var borderWidth3 = CssDeclarationHelper$Ress.borderWidth3;
 
-var borderWidth4 = include.borderWidth4;
+var borderWidth4 = CssDeclarationHelper$Ress.borderWidth4;
 
-var borderWidthString = include.borderWidthString;
+var borderWidthString = CssDeclarationHelper$Ress.borderWidthString;
 
-var borderTopWidth = include.borderTopWidth;
+var borderTopWidth = CssDeclarationHelper$Ress.borderTopWidth;
 
-var borderTopWidthString = include.borderTopWidthString;
+var borderTopWidthString = CssDeclarationHelper$Ress.borderTopWidthString;
 
-var borderRightWidth = include.borderRightWidth;
+var borderRightWidth = CssDeclarationHelper$Ress.borderRightWidth;
 
-var borderRightWidthString = include.borderRightWidthString;
+var borderRightWidthString = CssDeclarationHelper$Ress.borderRightWidthString;
 
-var borderBottomWidth = include.borderBottomWidth;
+var borderBottomWidth = CssDeclarationHelper$Ress.borderBottomWidth;
 
-var borderBottomWidthString = include.borderBottomWidthString;
+var borderBottomWidthString = CssDeclarationHelper$Ress.borderBottomWidthString;
 
-var borderLeftWidth = include.borderLeftWidth;
+var borderLeftWidth = CssDeclarationHelper$Ress.borderLeftWidth;
 
-var borderLeftWidthString = include.borderLeftWidthString;
+var borderLeftWidthString = CssDeclarationHelper$Ress.borderLeftWidthString;
 
-var background = include.background;
+var background = CssDeclarationHelper$Ress.background;
 
-var backgroundString = include.backgroundString;
+var backgroundString = CssDeclarationHelper$Ress.backgroundString;
 
-var background2 = include.background2;
+var background2 = CssDeclarationHelper$Ress.background2;
 
-var background3 = include.background3;
+var background3 = CssDeclarationHelper$Ress.background3;
 
-var background4 = include.background4;
+var background4 = CssDeclarationHelper$Ress.background4;
 
-var backgroundAttachment = include.backgroundAttachment;
+var backgroundAttachment = CssDeclarationHelper$Ress.backgroundAttachment;
 
-var backgroundAttachment2 = include.backgroundAttachment2;
+var backgroundAttachment2 = CssDeclarationHelper$Ress.backgroundAttachment2;
 
-var backgroundAttachment3 = include.backgroundAttachment3;
+var backgroundAttachment3 = CssDeclarationHelper$Ress.backgroundAttachment3;
 
-var backgroundAttachment4 = include.backgroundAttachment4;
+var backgroundAttachment4 = CssDeclarationHelper$Ress.backgroundAttachment4;
 
-var backgroundAttachmentString = include.backgroundAttachmentString;
+var backgroundAttachmentString = CssDeclarationHelper$Ress.backgroundAttachmentString;
 
-var backgroundColor = include.backgroundColor;
+var backgroundColor = CssDeclarationHelper$Ress.backgroundColor;
 
-var backgroundColorString = include.backgroundColorString;
+var backgroundColorString = CssDeclarationHelper$Ress.backgroundColorString;
 
-var backgroundImage = include.backgroundImage;
+var backgroundImage = CssDeclarationHelper$Ress.backgroundImage;
 
-var backgroundImage2 = include.backgroundImage2;
+var backgroundImage2 = CssDeclarationHelper$Ress.backgroundImage2;
 
-var backgroundImage3 = include.backgroundImage3;
+var backgroundImage3 = CssDeclarationHelper$Ress.backgroundImage3;
 
-var backgroundImage4 = include.backgroundImage4;
+var backgroundImage4 = CssDeclarationHelper$Ress.backgroundImage4;
 
-var backgroundImageString = include.backgroundImageString;
+var backgroundImageString = CssDeclarationHelper$Ress.backgroundImageString;
 
-var backgroundPosition = include.backgroundPosition;
+var backgroundPosition = CssDeclarationHelper$Ress.backgroundPosition;
 
-var backgroundPosition2 = include.backgroundPosition2;
+var backgroundPosition2 = CssDeclarationHelper$Ress.backgroundPosition2;
 
-var backgroundPosition3 = include.backgroundPosition3;
+var backgroundPosition3 = CssDeclarationHelper$Ress.backgroundPosition3;
 
-var backgroundPosition4 = include.backgroundPosition4;
+var backgroundPosition4 = CssDeclarationHelper$Ress.backgroundPosition4;
 
-var backgroundPositionString = include.backgroundPositionString;
+var backgroundPositionString = CssDeclarationHelper$Ress.backgroundPositionString;
 
-var backgroundStyle = include.backgroundStyle;
+var backgroundStyle = CssDeclarationHelper$Ress.backgroundStyle;
 
-var backgroundStyle2 = include.backgroundStyle2;
+var backgroundStyle2 = CssDeclarationHelper$Ress.backgroundStyle2;
 
-var backgroundStyle3 = include.backgroundStyle3;
+var backgroundStyle3 = CssDeclarationHelper$Ress.backgroundStyle3;
 
-var backgroundStyle4 = include.backgroundStyle4;
+var backgroundStyle4 = CssDeclarationHelper$Ress.backgroundStyle4;
 
-var backgroundStyleString = include.backgroundStyleString;
+var backgroundStyleString = CssDeclarationHelper$Ress.backgroundStyleString;
 
-var margin = include.margin;
+var margin = CssDeclarationHelper$Ress.margin;
 
-var margin2 = include.margin2;
+var margin2 = CssDeclarationHelper$Ress.margin2;
 
-var margin3 = include.margin3;
+var margin3 = CssDeclarationHelper$Ress.margin3;
 
-var margin4 = include.margin4;
+var margin4 = CssDeclarationHelper$Ress.margin4;
 
-var marginString = include.marginString;
+var marginString = CssDeclarationHelper$Ress.marginString;
 
-var marginNumber = include.marginNumber;
+var marginNumber = CssDeclarationHelper$Ress.marginNumber;
 
-var marginTop = include.marginTop;
+var marginTop = CssDeclarationHelper$Ress.marginTop;
 
-var marginTopString = include.marginTopString;
+var marginTopString = CssDeclarationHelper$Ress.marginTopString;
 
-var marginTopNumber = include.marginTopNumber;
+var marginTopNumber = CssDeclarationHelper$Ress.marginTopNumber;
 
-var marginRight = include.marginRight;
+var marginRight = CssDeclarationHelper$Ress.marginRight;
 
-var marginRightString = include.marginRightString;
+var marginRightString = CssDeclarationHelper$Ress.marginRightString;
 
-var marginRightNumber = include.marginRightNumber;
+var marginRightNumber = CssDeclarationHelper$Ress.marginRightNumber;
 
-var marginBottom = include.marginBottom;
+var marginBottom = CssDeclarationHelper$Ress.marginBottom;
 
-var marginBottomString = include.marginBottomString;
+var marginBottomString = CssDeclarationHelper$Ress.marginBottomString;
 
-var marginBottomNumber = include.marginBottomNumber;
+var marginBottomNumber = CssDeclarationHelper$Ress.marginBottomNumber;
 
-var marginLeft = include.marginLeft;
+var marginLeft = CssDeclarationHelper$Ress.marginLeft;
 
-var marginLeftString = include.marginLeftString;
+var marginLeftString = CssDeclarationHelper$Ress.marginLeftString;
 
-var marginLeftNumber = include.marginLeftNumber;
+var marginLeftNumber = CssDeclarationHelper$Ress.marginLeftNumber;
 
-var padding = include.padding;
+var padding = CssDeclarationHelper$Ress.padding;
 
-var padding2 = include.padding2;
+var padding2 = CssDeclarationHelper$Ress.padding2;
 
-var padding3 = include.padding3;
+var padding3 = CssDeclarationHelper$Ress.padding3;
 
-var padding4 = include.padding4;
+var padding4 = CssDeclarationHelper$Ress.padding4;
 
-var paddingString = include.paddingString;
+var paddingString = CssDeclarationHelper$Ress.paddingString;
 
-var paddingNumber = include.paddingNumber;
+var paddingNumber = CssDeclarationHelper$Ress.paddingNumber;
 
-var paddingTop = include.paddingTop;
+var paddingTop = CssDeclarationHelper$Ress.paddingTop;
 
-var paddingTopString = include.paddingTopString;
+var paddingTopString = CssDeclarationHelper$Ress.paddingTopString;
 
-var paddingTopNumber = include.paddingTopNumber;
+var paddingTopNumber = CssDeclarationHelper$Ress.paddingTopNumber;
 
-var paddingRight = include.paddingRight;
+var paddingRight = CssDeclarationHelper$Ress.paddingRight;
 
-var paddingRightString = include.paddingRightString;
+var paddingRightString = CssDeclarationHelper$Ress.paddingRightString;
 
-var paddingRightNumber = include.paddingRightNumber;
+var paddingRightNumber = CssDeclarationHelper$Ress.paddingRightNumber;
 
-var paddingBottom = include.paddingBottom;
+var paddingBottom = CssDeclarationHelper$Ress.paddingBottom;
 
-var paddingBottomString = include.paddingBottomString;
+var paddingBottomString = CssDeclarationHelper$Ress.paddingBottomString;
 
-var paddingBottomNumber = include.paddingBottomNumber;
+var paddingBottomNumber = CssDeclarationHelper$Ress.paddingBottomNumber;
 
-var paddingLeft = include.paddingLeft;
+var paddingLeft = CssDeclarationHelper$Ress.paddingLeft;
 
-var paddingLeftString = include.paddingLeftString;
+var paddingLeftString = CssDeclarationHelper$Ress.paddingLeftString;
 
-var paddingLeftNumber = include.paddingLeftNumber;
+var paddingLeftNumber = CssDeclarationHelper$Ress.paddingLeftNumber;
 
-var clear = include.clear;
+var clear = CssDeclarationHelper$Ress.clear;
 
-var color = include.color;
+var color = CssDeclarationHelper$Ress.color;
 
-var colorString = include.colorString;
+var colorString = CssDeclarationHelper$Ress.colorString;
 
-var cursor = include.cursor;
+var cursor = CssDeclarationHelper$Ress.cursor;
 
-var cursor1 = include.cursor1;
+var cursor1 = CssDeclarationHelper$Ress.cursor1;
 
-var cursor2 = include.cursor2;
+var cursor2 = CssDeclarationHelper$Ress.cursor2;
 
-var cursor3 = include.cursor3;
+var cursor3 = CssDeclarationHelper$Ress.cursor3;
 
-var cursor4 = include.cursor4;
+var cursor4 = CssDeclarationHelper$Ress.cursor4;
 
-var cursorString = include.cursorString;
+var cursorString = CssDeclarationHelper$Ress.cursorString;
 
 var selector = include.selector;
 
-var hover = include.hover;
+var hover = include$1.hover;
 
 var str = CssValueHelper$Ress.str;
 

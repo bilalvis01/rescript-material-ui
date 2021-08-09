@@ -18,9 +18,14 @@ module Make = (
     type style = Type.style;
   });
 
-  include CssStyleHelper.Make({
-    type t = Type.style;
-    let style = Style.make;
+  include CssDeclarationHelper;
+  include CssSelectorHelper.Make({ 
+    type style = Type.style; 
+    let style = Style.make; 
+  });
+  include CssPseudoClassHelper.Make({ 
+    type style = Type.style; 
+    let style = Style.make; 
   });
   include CssValueHelper;
   include CssAtRuleHelper;

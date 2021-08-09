@@ -11,13 +11,13 @@ var style = Declarations.make;
 
 test("declarations", (function () {
         expect(Curry._1(style, [
-                    Curry._8(Css$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Ress.url("image.png")),
-                    Curry._1(Css$Ress.color, Css$Ress.rgb(255, 255, 255)),
-                    Curry._1(Css$Ress.paddingTop, Css$Ress.px(24)),
-                    Curry._1(Css$Ress.paddingBottom, Css$Ress.px(24)),
-                    Curry._1(Css$Ress.paddingLeft, Css$Ress.px(40)),
-                    Curry._1(Css$Ress.paddingRight, Css$Ress.px(40)),
-                    Curry._1(Css$Ress.marginNumber, 24)
+                    Css$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Ress.url("image.png")),
+                    Css$Ress.color(Css$Ress.rgb(255, 255, 255)),
+                    Css$Ress.paddingTop(Css$Ress.px(24)),
+                    Css$Ress.paddingBottom(Css$Ress.px(24)),
+                    Css$Ress.paddingLeft(Css$Ress.px(40)),
+                    Css$Ress.paddingRight(Css$Ress.px(40)),
+                    Css$Ress.marginNumber(24)
                   ])).toEqual({
               background: "url(\"image.png\")",
               color: "rgb(255, 255, 255)",
