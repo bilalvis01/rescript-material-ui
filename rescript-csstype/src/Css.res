@@ -33,12 +33,12 @@ module Make = (
 
 type value;
 type declarations;
-type styles;
+type rules;
 
 include Make({
   type value = value;
   type declarations = declarations;
-  type rules = styles;
+  type rules = rules;
 });
 
 let style = Declarations.make;
