@@ -3,7 +3,7 @@ type typeDivider = string;
 type t;
 
 @get
-external common: t => Theme_CommonColors.t = "common";
+external common: t => Theme_CommonColor.t = "common";
 @get
 external mode: t => MaterialuiType.palleteMode = "mode";
 @get
@@ -77,7 +77,7 @@ external make: (
   ~mode: MaterialuiType.palleteMode=?,
   ~tonalOffset: Theme_TonalOffset.t=?,
   ~contrastThreshold: float=?,
-  ~common: Theme_CommonColors.t=?,
+  ~common: Theme_CommonColor.t=?,
   ~grey: Theme_Color.t=?,
   ~text: Theme_TextColor.t=?,
   ~divider: string=?,
