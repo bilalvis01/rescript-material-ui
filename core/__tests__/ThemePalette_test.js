@@ -2,11 +2,11 @@
 'use strict';
 
 var Caml_option = require("rescript/lib/js/caml_option.js");
-var Theme_Theme$Materialui = require("../src/Theme/Theme_Theme.js");
-var Theme_Palette$Materialui = require("../src/Theme/Theme_Palette.js");
+var Styles_Theme$Materialui = require("../src/Theme/Styles_Theme.js");
+var Styles_Palette$Materialui = require("../src/Theme/Styles_Palette.js");
 
 describe("default palette", (function () {
-        var palette = Theme_Theme$Materialui.make(undefined, undefined).palette;
+        var palette = Styles_Theme$Materialui.make(undefined, undefined).palette;
         test("common colors", (function () {
                 var common = palette.common;
                 expect(common.black).toBe("#000");
@@ -88,7 +88,7 @@ describe("default palette", (function () {
                 
               }));
         test("augmentColor", (function () {
-                expect(Theme_Palette$Materialui.augmentColor(palette, {
+                expect(Styles_Palette$Materialui.augmentColor(palette, {
                             color: {
                               main: "#fff"
                             }
@@ -98,7 +98,7 @@ describe("default palette", (function () {
                       light: "rgb(255, 255, 255)",
                       main: "#fff"
                     });
-                expect(Theme_Palette$Materialui.augmentColor(palette, {
+                expect(Styles_Palette$Materialui.augmentColor(palette, {
                             color: {
                               "400": "#fafafa",
                               A400: "#fcfcfc"
@@ -117,7 +117,7 @@ describe("default palette", (function () {
               }));
         test("tanalOffset", (function () {
                 expect(palette.tonalOffset).toBe(0.2);
-                var n = Theme_Palette$Materialui.tonalOffset(palette);
+                var n = Styles_Palette$Materialui.tonalOffset(palette);
                 var tmp;
                 tmp = n.TAG === /* Number */0 ? n._0 : 0.0;
                 expect(tmp).toBe(0.2);
@@ -160,7 +160,7 @@ describe("default palette", (function () {
       }));
 
 describe("custom palette", (function () {
-        var palette = Theme_Theme$Materialui.make(Caml_option.some(Theme_Palette$Materialui.make({
+        var palette = Styles_Theme$Materialui.make(Caml_option.some(Styles_Palette$Materialui.make({
                       light: "#fefefe",
                       main: "#fff",
                       dark: "#ababab",
@@ -319,7 +319,7 @@ describe("custom palette", (function () {
                       light: 0.3,
                       dark: 0.4
                     });
-                var v = Theme_Palette$Materialui.tonalOffset(palette);
+                var v = Styles_Palette$Materialui.tonalOffset(palette);
                 var tmp;
                 tmp = v.TAG === /* Number */0 ? ({
                       light: 0.6,

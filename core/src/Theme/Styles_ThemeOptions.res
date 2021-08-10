@@ -2,6 +2,6 @@ type t;
 
 @obj
 external make: (
-  ~palette: Theme_Palette.t=?,
+  ~palette: Styles_Palette.t=?,
   unit
 ) => t = "";

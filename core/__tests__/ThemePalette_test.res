@@ -1,5 +1,5 @@
 open Jest;
-open! Theme;
+open Styles;
 
 /*
 Default theme

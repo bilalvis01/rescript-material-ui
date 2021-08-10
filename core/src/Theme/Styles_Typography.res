@@ -2,8 +2,8 @@ type t;
 
 @module("@material-ui/core/styles")
 external make: (
-  Theme_Palette.t, 
-  Theme_Palette.t => Theme_TypographyOptions.t,
+  Styles_Palette.t, 
+  Styles_Palette.t => Styles_TypographyOptions.t,
 ) => t = "createTypography";
 
 @get
