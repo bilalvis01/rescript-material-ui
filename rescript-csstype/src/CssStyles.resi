@@ -4,5 +4,5 @@ module Make: (
     type style;
   }
 ) => {
-  let make: array<CssStylesType.rule<Type.style>> => Type.t;
+  let make: array<CssRulesType.rule<Type.style>> => Type.t;
 }
