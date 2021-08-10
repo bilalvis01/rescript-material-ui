@@ -27,6 +27,8 @@ external info: t => Styles_PaletteColor.t = "info";
 @get
 external success: t => Styles_PaletteColor.t = "success";
 @get
+external \"type": t => string = "type";
+@get
 external grey: t => Styles_Color.t = "grey";
 @get
 external text: t => Styles_TextColor.t = "text";
@@ -74,6 +76,7 @@ external make: (
   ~warning: Styles_PaletteColorOptions.t=?,
   ~info: Styles_PaletteColorOptions.t=?,
   ~success: Styles_PaletteColorOptions.t=?,
+  ~\"type": string=?,
   ~mode: MaterialuiType.palleteMode=?,
   ~tonalOffset: Styles_TonalOffset.t=?,
   ~contrastThreshold: float=?,
