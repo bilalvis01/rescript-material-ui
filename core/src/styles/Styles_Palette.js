@@ -47,7 +47,7 @@ function make(prim0, prim1, prim2, prim3, prim4, prim5, prim6, prim7, prim8, pri
     tmp.success = Caml_option.valFromOption(prim5);
   }
   if (prim6 !== undefined) {
-    tmp.type = prim6;
+    tmp.type = Caml_option.valFromOption(prim6);
   }
   if (prim7 !== undefined) {
     tmp.mode = Caml_option.valFromOption(prim7);

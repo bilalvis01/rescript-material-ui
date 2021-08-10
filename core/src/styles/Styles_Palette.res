@@ -5,7 +5,7 @@ type t;
 @get
 external common: t => Styles_CommonColor.t = "common";
 @get
-external mode: t => MaterialuiType.palleteMode = "mode";
+external mode: t => MaterialuiType.palleteType = "mode";
 @get
 external contrastThreshold: t => float = "contrastThreshold";
 @get
@@ -27,7 +27,7 @@ external info: t => Styles_PaletteColor.t = "info";
 @get
 external success: t => Styles_PaletteColor.t = "success";
 @get
-external \"type": t => string = "type";
+external \"type": t => MaterialuiType.palleteType = "type";
 @get
 external grey: t => Styles_Color.t = "grey";
 @get
@@ -76,8 +76,8 @@ external make: (
   ~warning: Styles_PaletteColorOptions.t=?,
   ~info: Styles_PaletteColorOptions.t=?,
   ~success: Styles_PaletteColorOptions.t=?,
-  ~\"type": string=?,
-  ~mode: MaterialuiType.palleteMode=?,
+  ~\"type": MaterialuiType.palleteType=?,
+  ~mode: MaterialuiType.palleteType=?,
   ~tonalOffset: Styles_TonalOffset.t=?,
   ~contrastThreshold: float=?,
   ~common: Styles_CommonColor.t=?,

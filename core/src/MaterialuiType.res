@@ -1,1 +1,1 @@
-type palleteMode = [ | #light | #dark ];
+type palleteType = [ | #light | #dark ];
