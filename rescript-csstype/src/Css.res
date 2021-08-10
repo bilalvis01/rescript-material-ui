@@ -8,7 +8,7 @@ module Make = (
   module PropertyValue = CssPropertyValue;
   module FontFace = CssFontFace;
 
-  module Style = CssStyle.Make({ 
+  module Style = CssAdvancedDeclarations.Make({ 
     type t = Type.style;
     type value = Type.value;
   });
