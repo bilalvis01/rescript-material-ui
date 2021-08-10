@@ -5,8 +5,6 @@ type t;
 @get
 external common: t => Styles_CommonColor.t = "common";
 @get
-external mode: t => MaterialuiType.palleteType = "mode";
-@get
 external contrastThreshold: t => float = "contrastThreshold";
 @get
 external tonalOffsetUnsafe: t => Styles_TonalOffset.obj = "tonalOffset";
@@ -59,7 +57,6 @@ let make: (
   ~info: Styles_PaletteColorOptions.t=?,
   ~success: Styles_PaletteColorOptions.t=?,
   ~\"type": MaterialuiType.palleteType=?,
-  ~mode: MaterialuiType.palleteType=?,
   ~tonalOffset: Styles_TonalOffset.t=?,
   ~contrastThreshold: float=?,
   ~common: Styles_CommonColor.t=?,

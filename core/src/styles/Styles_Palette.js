@@ -26,7 +26,7 @@ function augmentColor(palette, options) {
   return palette.augmentColor(color, mainShade, lightShade, darkShade);
 }
 
-function make(prim0, prim1, prim2, prim3, prim4, prim5, prim6, prim7, prim8, prim9, prim10, prim11, prim12, prim13, prim14, prim15, prim16, prim17) {
+function make(prim0, prim1, prim2, prim3, prim4, prim5, prim6, prim7, prim8, prim9, prim10, prim11, prim12, prim13, prim14, prim15, prim16) {
   var tmp = {};
   if (prim0 !== undefined) {
     tmp.primary = Caml_option.valFromOption(prim0);
@@ -50,34 +50,31 @@ function make(prim0, prim1, prim2, prim3, prim4, prim5, prim6, prim7, prim8, pri
     tmp.type = Caml_option.valFromOption(prim6);
   }
   if (prim7 !== undefined) {
-    tmp.mode = Caml_option.valFromOption(prim7);
+    tmp.tonalOffset = Caml_option.valFromOption(prim7);
   }
   if (prim8 !== undefined) {
-    tmp.tonalOffset = Caml_option.valFromOption(prim8);
+    tmp.contrastThreshold = prim8;
   }
   if (prim9 !== undefined) {
-    tmp.contrastThreshold = prim9;
+    tmp.common = Caml_option.valFromOption(prim9);
   }
   if (prim10 !== undefined) {
-    tmp.common = Caml_option.valFromOption(prim10);
+    tmp.grey = Caml_option.valFromOption(prim10);
   }
   if (prim11 !== undefined) {
-    tmp.grey = Caml_option.valFromOption(prim11);
+    tmp.text = Caml_option.valFromOption(prim11);
   }
   if (prim12 !== undefined) {
-    tmp.text = Caml_option.valFromOption(prim12);
+    tmp.divider = prim12;
   }
   if (prim13 !== undefined) {
-    tmp.divider = prim13;
+    tmp.action = Caml_option.valFromOption(prim13);
   }
   if (prim14 !== undefined) {
-    tmp.action = Caml_option.valFromOption(prim14);
+    tmp.background = Caml_option.valFromOption(prim14);
   }
   if (prim15 !== undefined) {
-    tmp.background = Caml_option.valFromOption(prim15);
-  }
-  if (prim16 !== undefined) {
-    tmp.getContrastText = Caml_option.valFromOption(prim16);
+    tmp.getContrastText = Caml_option.valFromOption(prim15);
   }
   return tmp;
 }

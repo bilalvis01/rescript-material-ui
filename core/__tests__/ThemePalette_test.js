@@ -190,7 +190,7 @@ describe("custom palette", (function () {
                       main: "#fff",
                       dark: "#ababab",
                       contrastText: "#aaaaaa"
-                    }, undefined, undefined, {
+                    }, undefined, {
                       light: 0.3,
                       dark: 0.4
                     }, 2.0, {
