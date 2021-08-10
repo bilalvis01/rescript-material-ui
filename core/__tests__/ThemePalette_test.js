@@ -2,8 +2,8 @@
 'use strict';
 
 var Caml_option = require("rescript/lib/js/caml_option.js");
-var Styles_Theme$Materialui = require("../src/Theme/Styles_Theme.js");
-var Styles_Palette$Materialui = require("../src/Theme/Styles_Palette.js");
+var Styles_Theme$Materialui = require("../src/styles/Styles_Theme.js");
+var Styles_Palette$Materialui = require("../src/styles/Styles_Palette.js");
 
 describe("default palette", (function () {
         var palette = Styles_Theme$Materialui.make(undefined, undefined).palette;
