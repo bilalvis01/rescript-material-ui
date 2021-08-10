@@ -13,7 +13,7 @@ module Make = (
     type value = Type.value;
   });
 
-  module Styles = CssStyles.Make({
+  module Styles = CssRules.Make({
     type t = Type.styles;
     type style = Type.style;
   });
