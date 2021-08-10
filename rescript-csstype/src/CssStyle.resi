@@ -4,5 +4,5 @@ module Make: (
     type value;
   }
 ) => {
-  let make: array<CssStyleType.declaration<Type.t>> => Type.t;
+  let make: array<CssAdvancedDeclarationsType.t<Type.t>> => Type.t;
 };

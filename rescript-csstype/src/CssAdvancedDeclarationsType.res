@@ -1,4 +1,4 @@
-type declaration<'style> = [
+type t<'style> = [
   | CssDeclarationType.t
   | CssSelectorType.t<'style>
   | CssPseudoClassType.t<'style>

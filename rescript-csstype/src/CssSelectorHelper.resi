@@ -1,9 +1,9 @@
 module Make: (
   Type: {
     type style;
-    let style: array<CssStyleType.declaration<style>> => style;
+    let style: array<CssAdvancedDeclarationsType.t<style>> => style;
   }
 ) => {
-  let selector: (string, array<CssStyleType.declaration<Type.style>>) => 
+  let selector: (string, array<CssAdvancedDeclarationsType.t<Type.style>>) => 
     [> CssSelectorType.t<Type.style> ];
 };

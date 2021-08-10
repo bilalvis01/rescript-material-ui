@@ -1,7 +1,7 @@
 module Make = (
   Type: {
     type style;
-    let style: array<CssStyleType.declaration<style>> => style; 
+    let style: array<CssAdvancedDeclarationsType.t<style>> => style; 
   }
 ) => {
   let hover = declarations =>
