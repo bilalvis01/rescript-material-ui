@@ -1,9 +1,9 @@
 module Make: (
   Type: {
-    type style;
-    let style: array<CssAdvancedDeclarationsType.t<style>> => style; 
+    type declarations;
+    let declarations: array<CssAdvancedDeclarationsType.t<declarations>> => declarations; 
   }
 ) => {
-  let hover: array<CssAdvancedDeclarationsType.t<Type.style>> => 
-    [> CssPseudoClassType.hover<Type.style> ];
+  let hover: array<CssAdvancedDeclarationsType.t<Type.declarations>> => 
+    [> CssPseudoClassType.hover<Type.declarations> ];
 }

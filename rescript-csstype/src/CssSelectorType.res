@@ -1,1 +1,1 @@
-type t<'style> = [ | #Selector(string, 'style) ];
+type t<'declarations> = [ | #Selector(string, 'declarations) ];

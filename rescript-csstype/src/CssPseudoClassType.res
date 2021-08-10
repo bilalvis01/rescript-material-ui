@@ -1,4 +1,4 @@
-type hover<'style> = [ | #Hover('style) ];
-type t<'style> = [
-  | hover<'style>
+type hover<'declarations> = [ | #Hover('declarations) ];
+type t<'declarations> = [
+  | hover<'declarations>
 ];

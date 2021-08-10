@@ -1,6 +1,6 @@
-type t<'style> = [
+type t<'declarations> = [
   | CssDeclarationType.t
-  | CssSelectorType.t<'style>
-  | CssPseudoClassType.t<'style>
+  | CssSelectorType.t<'declarations>
+  | CssPseudoClassType.t<'declarations>
   | CssAtRuleType.t
 ];

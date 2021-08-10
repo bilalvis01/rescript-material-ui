@@ -9,7 +9,7 @@ function Make(Type) {
             NAME: "Selector",
             VAL: [
               selector$1,
-              Curry._1(Type.style, declarations)
+              Curry._1(Type.declarations, declarations)
             ]
           };
   };

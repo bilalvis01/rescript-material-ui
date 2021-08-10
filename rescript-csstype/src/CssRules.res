@@ -1,28 +1,28 @@
 module Make = (
   Type: {
     type t;
-    type style;
+    type declarations;
   }
 ) => {
   module Selector = CssSelector.Make({ 
-    type style = Type.style;
-    type value = Type.style;
+    type declarations = Type.declarations;
+    type value = Type.declarations;
   });
 
   module AtRule = CssAtRule.Make({ 
-    type descriptor = Type.style 
+    type descriptor = Type.declarations 
   });
 
   module PseudoClass = CssPseudoClass.Make({
-    type value = Type.style;
-    type style = Type.style;
+    type value = Type.declarations;
+    type declarations = Type.declarations;
     let map = v => {
-      let (selector, style) = v;
-      (`@global ${selector}`, style);
+      let (selector, declarations) = v;
+      (`@global ${selector}`, declarations);
     };
   });
 
-  external makeStyles: Js.Dict.t<Type.style> => Type.t = "%identity";
+  external makeStyles: Js.Dict.t<Type.declarations> => Type.t = "%identity";
 
   let make = rules => {
     Belt.Array.map(rules, rule => {

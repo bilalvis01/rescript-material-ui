@@ -1,5 +1,5 @@
-type rule<'style> = [
-  | CssSelectorType.t<'style>
+type rule<'declarations> = [
+  | CssSelectorType.t<'declarations>
   | CssAtRuleType.t
-  | CssPseudoClassType.t<'style>
+  | CssPseudoClassType.t<'declarations>
 ];

@@ -9,16 +9,16 @@ module Make = (
   });
 
   module Selector = CssSelector.Make({
-    type style = Type.t;
+    type declarations = Type.t;
     type value = Type.value
   });
 
   module PseudoClass = CssPseudoClass.Make({
-    type style = Type.t;
+    type declarations = Type.t;
     type value = Type.value;
     let map = v => {
-      let (selector, style) = v;
-      (`&${selector}`, style);
+      let (selector, declarations) = v;
+      (`&${selector}`, declarations);
     };
   });
 

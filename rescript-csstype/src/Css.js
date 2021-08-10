@@ -10,19 +10,19 @@ var CssPseudoClassHelper$Ress = require("./CssPseudoClassHelper.js");
 var CssAdvancedDeclarations$Ress = require("./CssAdvancedDeclarations.js");
 
 function Make(Type) {
-  var Style = CssAdvancedDeclarations$Ress.Make({});
-  var Styles = CssRules$Ress.Make({});
+  var Declarations = CssAdvancedDeclarations$Ress.Make({});
+  var Rules = CssRules$Ress.Make({});
   var include = CssSelectorHelper$Ress.Make({
-        style: Style.make
+        declarations: Declarations.make
       });
   var include$1 = CssPseudoClassHelper$Ress.Make({
-        style: Style.make
+        declarations: Declarations.make
       });
   return {
           PropertyValue: undefined,
           $$FontFace: undefined,
-          Style: Style,
-          Styles: Styles,
+          Declarations: Declarations,
+          Rules: Rules,
           property: CssDeclarationHelper$Ress.property,
           propertyNumber: CssDeclarationHelper$Ress.propertyNumber,
           propertyInteger: CssDeclarationHelper$Ress.propertyInteger,
@@ -220,22 +220,20 @@ function Make(Type) {
           repeatingConicGradient2: CssValueHelper$Ress.repeatingConicGradient2,
           repeatingConicGradient3: CssValueHelper$Ress.repeatingConicGradient3,
           repeatingConicGradient4: CssValueHelper$Ress.repeatingConicGradient4,
-          fontFace: CssAtRuleHelper$Ress.fontFace,
-          style: Style.make,
-          styles: Styles.make
+          fontFace: CssAtRuleHelper$Ress.fontFace
         };
 }
 
-var Style = CssAdvancedDeclarations$Ress.Make({});
+var Declarations = CssAdvancedDeclarations$Ress.Make({});
 
-var Styles = CssRules$Ress.Make({});
+var Rules = CssRules$Ress.Make({});
 
 var include = CssSelectorHelper$Ress.Make({
-      style: Style.make
+      declarations: Declarations.make
     });
 
 var include$1 = CssPseudoClassHelper$Ress.Make({
-      style: Style.make
+      declarations: Declarations.make
     });
 
 var PropertyValue;
@@ -638,15 +636,15 @@ var repeatingConicGradient4 = CssValueHelper$Ress.repeatingConicGradient4;
 
 var fontFace = CssAtRuleHelper$Ress.fontFace;
 
-var style = Style.make;
+var style = Declarations.make;
 
-var styles = Styles.make;
+var styles = Rules.make;
 
 exports.Make = Make;
 exports.PropertyValue = PropertyValue;
 exports.$$FontFace = $$FontFace;
-exports.Style = Style;
-exports.Styles = Styles;
+exports.Declarations = Declarations;
+exports.Rules = Rules;
 exports.property = property;
 exports.propertyNumber = propertyNumber;
 exports.propertyInteger = propertyInteger;
@@ -847,4 +845,4 @@ exports.repeatingConicGradient4 = repeatingConicGradient4;
 exports.fontFace = fontFace;
 exports.style = style;
 exports.styles = styles;
-/* Style Not a pure module */
+/* Declarations Not a pure module */

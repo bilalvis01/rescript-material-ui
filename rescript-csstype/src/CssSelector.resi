@@ -1,10 +1,10 @@
 module Make: (
   Type: {
-    type style;
+    type declarations;
     type value;
   }
 ) => {
   type t = (string, Type.value);
 
-  let make: CssSelectorType.t<Type.style> => t;
+  let make: CssSelectorType.t<Type.declarations> => t;
 }

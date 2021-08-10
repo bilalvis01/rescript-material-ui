@@ -1,15 +1,15 @@
 module Make = (
   Type: {
-    type style;
+    type declarations;
     type value;
   }
 ) => {
   type t = (string, Type.value);
-  external makeValue: Type.style => Type.value = "%identity";
+  external makeValue: Type.declarations => Type.value = "%identity";
 
   let make = v => {
     switch v {
-    | #Selector(selector, style) => (selector, makeValue(style));
+    | #Selector(selector, declarations) => (selector, makeValue(declarations));
     }
   };
 }

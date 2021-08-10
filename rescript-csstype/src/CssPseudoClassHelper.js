@@ -7,7 +7,7 @@ function Make(Type) {
   var hover = function (declarations) {
     return {
             NAME: "Hover",
-            VAL: Curry._1(Type.style, declarations)
+            VAL: Curry._1(Type.declarations, declarations)
           };
   };
   return {
