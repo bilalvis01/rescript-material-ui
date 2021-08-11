@@ -153,14 +153,14 @@ describe("transformOrigin", (function () {
                 expect(CssValueString$Ress.transformOrigin("left")).toBe("left");
                 expect(CssValueString$Ress.transformOrigin(Css$Ress.px(20))).toBe("20px");
                 expect(CssValueString$Ress.transformOrigin({
-                            NAME: "transformOrigin2",
+                            NAME: "TransformOrigin2",
                             VAL: [
                               "left",
                               "top"
                             ]
                           })).toBe("left top");
                 expect(CssValueString$Ress.transformOrigin({
-                            NAME: "transformOrigin3",
+                            NAME: "TransformOrigin3",
                             VAL: [
                               "left",
                               "top",
@@ -217,14 +217,14 @@ describe("Image data types", (function () {
                 expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", "circle", Css$Ress.px(10), Css$Ress.hexColor("9198e5")))).toBe("radial-gradient(circle 10px at center, #9198e5)");
                 expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", "ellipse", Css$Ress.px(10), Css$Ress.hexColor("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
                 expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", undefined, {
-                                NAME: "ellipse",
+                                NAME: "Ellipse",
                                 VAL: [
                                   Css$Ress.px(10),
                                   Css$Ress.px(10)
                                 ]
                               }, Css$Ress.hexColor("9198e5")))).toBe("radial-gradient(10px 10px at center, #9198e5)");
                 expect(CssValueString$Ress.radialGradient(Css$Ress.radialGradient("center", "ellipse", {
-                                NAME: "ellipse",
+                                NAME: "Ellipse",
                                 VAL: [
                                   Css$Ress.px(10),
                                   Css$Ress.px(10)
@@ -243,14 +243,14 @@ describe("Image data types", (function () {
                 expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", "circle", Css$Ress.px(10), Css$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
                 expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", "ellipse", Css$Ress.px(10), Css$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
                 expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", undefined, {
-                                NAME: "ellipse",
+                                NAME: "Ellipse",
                                 VAL: [
                                   Css$Ress.px(10),
                                   Css$Ress.px(10)
                                 ]
                               }, Css$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(10px 10px at center, #9198e5)");
                 expect(CssValueString$Ress.repeatingRadialGradient(Css$Ress.repeatingRadialGradient("center", "ellipse", {
-                                NAME: "ellipse",
+                                NAME: "Ellipse",
                                 VAL: [
                                   Css$Ress.px(10),
                                   Css$Ress.px(10)

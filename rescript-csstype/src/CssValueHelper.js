@@ -4,28 +4,28 @@
 
 function str(v) {
   return {
-          NAME: "string",
+          NAME: "String",
           VAL: v
         };
 }
 
 function num(v) {
   return {
-          NAME: "number",
+          NAME: "Number",
           VAL: v
         };
 }
 
 function $$int(v) {
   return {
-          NAME: "integer",
+          NAME: "Integer",
           VAL: v
         };
 }
 
 function ratio(v1, v2) {
   return {
-          NAME: "ratio",
+          NAME: "Ratio",
           VAL: [
             v1,
             v2
@@ -140,7 +140,7 @@ function pt(l) {
 
 function pct(v) {
   return {
-          NAME: "pct",
+          NAME: "Pct",
           VAL: v
         };
 }
@@ -231,7 +231,7 @@ function x(v) {
 
 function position2(p1, p2) {
   return {
-          NAME: "position2",
+          NAME: "Position2",
           VAL: [
             p1,
             p2
@@ -241,7 +241,7 @@ function position2(p1, p2) {
 
 function position3(p1, p2, p3) {
   return {
-          NAME: "position3",
+          NAME: "Position3",
           VAL: [
             p1,
             p2,
@@ -252,7 +252,7 @@ function position3(p1, p2, p3) {
 
 function position4(p1, p2, p3, p4) {
   return {
-          NAME: "position4",
+          NAME: "Position4",
           VAL: [
             p1,
             p2,
@@ -264,14 +264,14 @@ function position4(p1, p2, p3, p4) {
 
 function src(v) {
   return {
-          NAME: "src",
+          NAME: "Src",
           VAL: v
         };
 }
 
 function bgLayer(color, position, size, repeat, attachment, origin, clip, imageOrColor) {
   return {
-          NAME: "bgLayer",
+          NAME: "BgLayer",
           VAL: [
             color,
             position,
@@ -287,7 +287,7 @@ function bgLayer(color, position, size, repeat, attachment, origin, clip, imageO
 
 function bgSize2(s1, s2) {
   return {
-          NAME: "bgSize2",
+          NAME: "BgSize2",
           VAL: [
             s1,
             s2
@@ -314,7 +314,7 @@ function hsla(v1, v2, v3, v4) {
             v2,
             v3,
             {
-              NAME: "number",
+              NAME: "Number",
               VAL: v4
             }
           ]
@@ -326,15 +326,15 @@ function rgb(v1, v2, v3) {
           NAME: "rgb",
           VAL: [
             {
-              NAME: "number",
+              NAME: "Number",
               VAL: v1
             },
             {
-              NAME: "number",
+              NAME: "Number",
               VAL: v2
             },
             {
-              NAME: "number",
+              NAME: "Number",
               VAL: v3
             }
           ]
@@ -346,19 +346,19 @@ function rgba(v1, v2, v3, v4) {
           NAME: "rgba",
           VAL: [
             {
-              NAME: "number",
+              NAME: "Number",
               VAL: v1
             },
             {
-              NAME: "number",
+              NAME: "Number",
               VAL: v2
             },
             {
-              NAME: "number",
+              NAME: "Number",
               VAL: v3
             },
             {
-              NAME: "number",
+              NAME: "Number",
               VAL: v4
             }
           ]
@@ -367,21 +367,21 @@ function rgba(v1, v2, v3, v4) {
 
 function hexColor(v) {
   return {
-          NAME: "hexColor",
+          NAME: "HexColor",
           VAL: v
         };
 }
 
 function url(v) {
   return {
-          NAME: "url",
+          NAME: "Url",
           VAL: v
         };
 }
 
 function image(dir, color, imageSrcOrColor) {
   return {
-          NAME: "image",
+          NAME: "Image",
           VAL: [
             dir,
             color,
@@ -392,7 +392,7 @@ function image(dir, color, imageSrcOrColor) {
 
 function linearColorStop2(c, l) {
   return {
-          NAME: "linearColorStop2",
+          NAME: "LinearColorStop2",
           VAL: [
             c,
             l
@@ -402,7 +402,7 @@ function linearColorStop2(c, l) {
 
 function linearColorStop3(c, l1, l2) {
   return {
-          NAME: "linearColorStop3",
+          NAME: "LinearColorStop3",
           VAL: [
             c,
             l1,
@@ -413,7 +413,7 @@ function linearColorStop3(c, l1, l2) {
 
 function linearGradient(angle, c) {
   return {
-          NAME: "linearGradient",
+          NAME: "LinearGradient",
           VAL: [
             angle,
             c
@@ -423,7 +423,7 @@ function linearGradient(angle, c) {
 
 function linearGradient2(angle, c1, c2) {
   return {
-          NAME: "linearGradient2",
+          NAME: "LinearGradient2",
           VAL: [
             angle,
             c1,
@@ -434,7 +434,7 @@ function linearGradient2(angle, c1, c2) {
 
 function linearGradient3(angle, c1, c2, c3) {
   return {
-          NAME: "linearGradient3",
+          NAME: "LinearGradient3",
           VAL: [
             angle,
             c1,
@@ -446,7 +446,7 @@ function linearGradient3(angle, c1, c2, c3) {
 
 function linearGradient4(angle, c1, c2, c3, c4) {
   return {
-          NAME: "linearGradient4",
+          NAME: "LinearGradient4",
           VAL: [
             angle,
             c1,
@@ -459,7 +459,7 @@ function linearGradient4(angle, c1, c2, c3, c4) {
 
 function repeatingLinearGradient(angle, c) {
   return {
-          NAME: "repeatingLinearGradient",
+          NAME: "RepeatingLinearGradient",
           VAL: [
             angle,
             c
@@ -469,7 +469,7 @@ function repeatingLinearGradient(angle, c) {
 
 function repeatingLinearGradient2(angle, c1, c2) {
   return {
-          NAME: "repeatingLinearGradient2",
+          NAME: "RepeatingLinearGradient2",
           VAL: [
             angle,
             c1,
@@ -480,7 +480,7 @@ function repeatingLinearGradient2(angle, c1, c2) {
 
 function repeatingLinearGradient3(angle, c1, c2, c3) {
   return {
-          NAME: "repeatingLinearGradient3",
+          NAME: "RepeatingLinearGradient3",
           VAL: [
             angle,
             c1,
@@ -492,7 +492,7 @@ function repeatingLinearGradient3(angle, c1, c2, c3) {
 
 function repeatingLinearGradient4(angle, c1, c2, c3, c4) {
   return {
-          NAME: "repeatingLinearGradient4",
+          NAME: "RepeatingLinearGradient4",
           VAL: [
             angle,
             c1,
@@ -505,7 +505,7 @@ function repeatingLinearGradient4(angle, c1, c2, c3, c4) {
 
 function radialGradient(position, endingShape, size, c) {
   return {
-          NAME: "radialGradient",
+          NAME: "RadialGradient",
           VAL: [
             position,
             endingShape,
@@ -517,7 +517,7 @@ function radialGradient(position, endingShape, size, c) {
 
 function radialGradient2(position, endingShape, size, c1, c2) {
   return {
-          NAME: "radialGradient2",
+          NAME: "RadialGradient2",
           VAL: [
             position,
             endingShape,
@@ -530,7 +530,7 @@ function radialGradient2(position, endingShape, size, c1, c2) {
 
 function radialGradient3(position, endingShape, size, c1, c2, c3) {
   return {
-          NAME: "radialGradient3",
+          NAME: "RadialGradient3",
           VAL: [
             position,
             endingShape,
@@ -544,7 +544,7 @@ function radialGradient3(position, endingShape, size, c1, c2, c3) {
 
 function radialGradient4(position, endingShape, size, c1, c2, c3, c4) {
   return {
-          NAME: "radialGradient4",
+          NAME: "RadialGradient4",
           VAL: [
             position,
             endingShape,
@@ -559,7 +559,7 @@ function radialGradient4(position, endingShape, size, c1, c2, c3, c4) {
 
 function repeatingRadialGradient(position, endingShape, size, c) {
   return {
-          NAME: "repeatingRadialGradient",
+          NAME: "RepeatingRadialGradient",
           VAL: [
             position,
             endingShape,
@@ -571,7 +571,7 @@ function repeatingRadialGradient(position, endingShape, size, c) {
 
 function repeatingRadialGradient2(position, endingShape, size, c1, c2) {
   return {
-          NAME: "repeatingRadialGradient2",
+          NAME: "RepeatingRadialGradient2",
           VAL: [
             position,
             endingShape,
@@ -584,7 +584,7 @@ function repeatingRadialGradient2(position, endingShape, size, c1, c2) {
 
 function repeatingRadialGradient3(position, endingShape, size, c1, c2, c3) {
   return {
-          NAME: "repeatingRadialGradient3",
+          NAME: "RepeatingRadialGradient3",
           VAL: [
             position,
             endingShape,
@@ -598,7 +598,7 @@ function repeatingRadialGradient3(position, endingShape, size, c1, c2, c3) {
 
 function repeatingRadialGradient4(position, endingShape, size, c1, c2, c3, c4) {
   return {
-          NAME: "repeatingRadialGradient4",
+          NAME: "RepeatingRadialGradient4",
           VAL: [
             position,
             endingShape,
@@ -613,7 +613,7 @@ function repeatingRadialGradient4(position, endingShape, size, c1, c2, c3, c4) {
 
 function conicGradient(angle, position, c) {
   return {
-          NAME: "conicGradient",
+          NAME: "ConicGradient",
           VAL: [
             angle,
             position,
@@ -624,7 +624,7 @@ function conicGradient(angle, position, c) {
 
 function conicGradient2(angle, position, c1, c2) {
   return {
-          NAME: "conicGradient2",
+          NAME: "ConicGradient2",
           VAL: [
             angle,
             position,
@@ -636,7 +636,7 @@ function conicGradient2(angle, position, c1, c2) {
 
 function conicGradient3(angle, position, c1, c2, c3) {
   return {
-          NAME: "conicGradient3",
+          NAME: "ConicGradient3",
           VAL: [
             angle,
             position,
@@ -649,7 +649,7 @@ function conicGradient3(angle, position, c1, c2, c3) {
 
 function conicGradient4(angle, position, c1, c2, c3, c4) {
   return {
-          NAME: "conicGradient4",
+          NAME: "ConicGradient4",
           VAL: [
             angle,
             position,
@@ -663,7 +663,7 @@ function conicGradient4(angle, position, c1, c2, c3, c4) {
 
 function repeatingConicGradient(angle, position, c) {
   return {
-          NAME: "repeatingConicGradient",
+          NAME: "RepeatingConicGradient",
           VAL: [
             angle,
             position,
@@ -674,7 +674,7 @@ function repeatingConicGradient(angle, position, c) {
 
 function repeatingConicGradient2(angle, position, c1, c2) {
   return {
-          NAME: "repeatingConicGradient2",
+          NAME: "RepeatingConicGradient2",
           VAL: [
             angle,
             position,
@@ -686,7 +686,7 @@ function repeatingConicGradient2(angle, position, c1, c2) {
 
 function repeatingConicGradient3(angle, position, c1, c2, c3) {
   return {
-          NAME: "repeatingConicGradient3",
+          NAME: "RepeatingConicGradient3",
           VAL: [
             angle,
             position,
@@ -699,7 +699,7 @@ function repeatingConicGradient3(angle, position, c1, c2, c3) {
 
 function repeatingConicGradient4(angle, position, c1, c2, c3, c4) {
   return {
-          NAME: "repeatingConicGradient4",
+          NAME: "RepeatingConicGradient4",
           VAL: [
             angle,
             position,

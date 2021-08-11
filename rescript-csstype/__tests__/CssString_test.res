@@ -155,8 +155,8 @@ describe("transformOrigin", (.) => {
   test("transformOrigin", (.) => {
     expect(transformOrigin(#left))->toBe("left");
     expect(transformOrigin(Css.px(20.)))->toBe("20px");
-    expect(transformOrigin(#transformOrigin2(#left, #top)))->toBe("left top");
-    expect(transformOrigin(#transformOrigin3(#left, #top, Css.px(10.))))->toBe("left top 10px");
+    expect(transformOrigin(#TransformOrigin2(#left, #top)))->toBe("left top");
+    expect(transformOrigin(#TransformOrigin3(#left, #top, Css.px(10.))))->toBe("left top 10px");
   }); 
 });
 
@@ -271,9 +271,9 @@ describe("Image data types", (.) => {
     ->toBe("radial-gradient(circle 10px at center, #9198e5)");
     expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(ellipse at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~size=#Ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(10px 10px at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=#Ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(ellipse 10px 10px at center, #9198e5)");
     expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(ellipse at center, #9198e5)");
@@ -295,9 +295,9 @@ describe("Image data types", (.) => {
     ->toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
     expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~size=#Ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(10px 10px at center, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=#ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=#Ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(ellipse 10px 10px at center, #9198e5)");
     expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(ellipse at center, #9198e5)");

@@ -126,14 +126,14 @@ test("cursor", (function () {
         expect(CssPropertyValue$Ress.cursor("initial")).toBe("initial");
         expect(CssPropertyValue$Ress.cursor1(CssValueHelper$Ress.url("image.png"), "default")).toBe("url(\"image.png\"), default");
         expect(CssPropertyValue$Ress.cursor1({
-                    NAME: "url2",
+                    NAME: "Url2",
                     VAL: [
                       "image.png",
                       12
                     ]
                   }, "default")).toBe("url(\"image.png\") 12, default");
         expect(CssPropertyValue$Ress.cursor1({
-                    NAME: "url3",
+                    NAME: "Url3",
                     VAL: [
                       "image.png",
                       12,

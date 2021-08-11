@@ -235,7 +235,7 @@ function resolution(v) {
 }
 
 function length_percentage(v) {
-  if (v.NAME === "pct") {
+  if (v.NAME === "Pct") {
     return percentage(v);
   } else {
     return length(v);
@@ -243,7 +243,7 @@ function length_percentage(v) {
 }
 
 function frequency_percentage(v) {
-  if (v.NAME === "pct") {
+  if (v.NAME === "Pct") {
     return percentage(v);
   } else {
     return frequency(v);
@@ -251,7 +251,7 @@ function frequency_percentage(v) {
 }
 
 function angle_percentage(v) {
-  if (v.NAME === "pct") {
+  if (v.NAME === "Pct") {
     return percentage(v);
   } else {
     return angle(v);
@@ -259,7 +259,7 @@ function angle_percentage(v) {
 }
 
 function time_percentage(v) {
-  if (v.NAME === "pct") {
+  if (v.NAME === "Pct") {
     return percentage(v);
   } else {
     return time(v);
@@ -355,11 +355,11 @@ function transformOrigin(v) {
     }
   }
   var variant = v.NAME;
-  if (variant === "transformOrigin2") {
+  if (variant === "TransformOrigin2") {
     var match = v.VAL;
     return xToString(match[0]) + " " + yToString(match[1]);
   }
-  if (variant !== "transformOrigin3") {
+  if (variant !== "TransformOrigin3") {
     return length_percentage(v);
   }
   var match$1 = v.VAL;
@@ -369,18 +369,18 @@ function transformOrigin(v) {
 var hue = angle;
 
 function alpha(v) {
-  if (v.NAME === "number") {
-    return String(v.VAL);
-  } else {
+  if (v.NAME === "Pct") {
     return percentage(v);
+  } else {
+    return String(v.VAL);
   }
 }
 
 function rgbParam(v) {
-  if (v.NAME === "number") {
-    return String(v.VAL);
-  } else {
+  if (v.NAME === "Pct") {
     return percentage(v);
+  } else {
+    return String(v.VAL);
   }
 }
 
@@ -715,7 +715,7 @@ function color(v) {
     var match = v.VAL;
     return rgba(match[0], match[1], match[2], match[3]);
   }
-  if (variant === "hexColor") {
+  if (variant === "HexColor") {
     return "#" + v.VAL;
   }
   if (variant === "hsl") {
@@ -755,7 +755,7 @@ function bgSize(v) {
       return "auto";
     }
   }
-  if (v.NAME !== "bgSize2") {
+  if (v.NAME !== "BgSize2") {
     return length_percentage(v);
   }
   var match = v.VAL;
@@ -777,7 +777,7 @@ function position(v) {
     }
   }
   var variant = v.NAME;
-  if (variant === "position2") {
+  if (variant === "Position2") {
     var match = v.VAL;
     var v2 = match[1];
     var v1 = match[0];
@@ -793,7 +793,7 @@ function position(v) {
       );
     return v1$1 + " " + v2$1;
   }
-  if (variant === "position3") {
+  if (variant === "Position3") {
     var match$1 = v.VAL;
     var v3 = match$1[2];
     var v2$2 = match$1[1];
@@ -811,7 +811,7 @@ function position(v) {
       );
     return v1$3 + " " + v2$3 + " " + v3$1;
   }
-  if (variant !== "position4") {
+  if (variant !== "Position4") {
     return length_percentage(v);
   }
   var match$2 = v.VAL;
@@ -853,14 +853,14 @@ function linearColorStop(v) {
     return color(v);
   }
   var variant = v.NAME;
-  if (variant === "rem" || variant === "pct" || variant === "vw" || variant === "vh" || variant === "px" || variant === "pt" || variant === "pc" || variant === "mm" || variant === "ex" || variant === "em" || variant === "cm" || variant === "ch" || variant === "vmin" || variant === "vmax" || variant === "inch") {
+  if (variant === "rem" || variant === "Pct" || variant === "vw" || variant === "vh" || variant === "px" || variant === "pt" || variant === "pc" || variant === "mm" || variant === "ex" || variant === "em" || variant === "cm" || variant === "ch" || variant === "vmin" || variant === "vmax" || variant === "inch") {
     return length_percentage(v);
   }
-  if (variant === "linearColorStop2") {
+  if (variant === "LinearColorStop2") {
     var match = v.VAL;
     return color(match[0]) + " " + length_percentage(match[1]);
   }
-  if (variant !== "linearColorStop3") {
+  if (variant !== "LinearColorStop3") {
     return color(v);
   }
   var match$1 = v.VAL;
@@ -878,18 +878,18 @@ function linearGradient_(angle, linearColorStop) {
 function linearGradient(v) {
   var variant = v.NAME;
   var arg;
-  if (variant === "linearGradient3") {
+  if (variant === "LinearGradient2") {
     var match = v.VAL;
-    arg = linearGradient_(match[0], linearColorStop(match[1]) + ", " + linearColorStop(match[2]) + ", " + linearColorStop(match[3]));
-  } else if (variant === "linearGradient4") {
+    arg = linearGradient_(match[0], linearColorStop(match[1]) + ", " + linearColorStop(match[2]));
+  } else if (variant === "LinearGradient3") {
     var match$1 = v.VAL;
-    arg = linearGradient_(match$1[0], linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]));
-  } else if (variant === "linearGradient") {
+    arg = linearGradient_(match$1[0], linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]));
+  } else if (variant === "LinearGradient4") {
     var match$2 = v.VAL;
-    arg = linearGradient_(match$2[0], linearColorStop(match$2[1]));
+    arg = linearGradient_(match$2[0], linearColorStop(match$2[1]) + ", " + linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]));
   } else {
     var match$3 = v.VAL;
-    arg = linearGradient_(match$3[0], linearColorStop(match$3[1]) + ", " + linearColorStop(match$3[2]));
+    arg = linearGradient_(match$3[0], linearColorStop(match$3[1]));
   }
   return "linear-gradient(" + arg + ")";
 }
@@ -897,13 +897,13 @@ function linearGradient(v) {
 function repeatingLinearGradient(v) {
   var variant = v.NAME;
   var arg;
-  if (variant === "repeatingLinearGradient2") {
+  if (variant === "RepeatingLinearGradient2") {
     var match = v.VAL;
     arg = linearGradient_(match[0], linearColorStop(match[1]) + ", " + linearColorStop(match[2]));
-  } else if (variant === "repeatingLinearGradient3") {
+  } else if (variant === "RepeatingLinearGradient3") {
     var match$1 = v.VAL;
     arg = linearGradient_(match$1[0], linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]));
-  } else if (variant === "repeatingLinearGradient4") {
+  } else if (variant === "RepeatingLinearGradient4") {
     var match$2 = v.VAL;
     arg = linearGradient_(match$2[0], linearColorStop(match$2[1]) + ", " + linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]));
   } else {
@@ -915,17 +915,17 @@ function repeatingLinearGradient(v) {
 
 function radialGradientSize(v) {
   if (typeof v !== "object") {
-    if (v === "farthest-side") {
-      return "farthest-side";
-    } else if (v === "closest-side") {
+    if (v === "closestSide") {
       return "closest-side";
-    } else if (v === "farthest-corner") {
+    } else if (v === "farthestCorner") {
       return "farthes-corner";
-    } else {
+    } else if (v === "closestCorner") {
       return "closest-corner";
+    } else {
+      return "farthest-side";
     }
   }
-  if (v.NAME !== "ellipse") {
+  if (v.NAME !== "Ellipse") {
     return length(v);
   }
   var match = v.VAL;
@@ -937,7 +937,7 @@ function radialGradientPosition(v) {
     return position(v);
   }
   var variant = v.NAME;
-  if (variant === "transformOrigin3" || variant === "transformOrigin2") {
+  if (variant === "TransformOrigin3" || variant === "TransformOrigin2") {
     return transformOrigin(v);
   } else {
     return position(v);
@@ -957,7 +957,7 @@ function radialGradientEndingShape(position, endingShape, size) {
         }
       } else {
         endingShape$1 = typeof size === "object" ? (
-            size.NAME === "ellipse" ? "circle" : "circle " + radialGradientSize(size)
+            size.NAME === "Ellipse" ? "circle" : "circle " + radialGradientSize(size)
           ) : "circle " + radialGradientSize(size);
       }
     } else {
@@ -997,18 +997,18 @@ function radialGradient_(endingShape, linearColorStop) {
 function radialGradient(v) {
   var variant = v.NAME;
   var arg;
-  if (variant === "radialGradient2") {
+  if (variant === "RadialGradient3") {
     var match = v.VAL;
-    arg = radialGradient_(radialGradientEndingShape(match[0], match[1], match[2]), linearColorStop(match[3]) + ", " + linearColorStop(match[4]));
-  } else if (variant === "radialGradient3") {
+    arg = radialGradient_(radialGradientEndingShape(match[0], match[1], match[2]), linearColorStop(match[3]) + ", " + linearColorStop(match[4]) + ", " + linearColorStop(match[5]));
+  } else if (variant === "RadialGradient4") {
     var match$1 = v.VAL;
-    arg = radialGradient_(radialGradientEndingShape(match$1[0], match$1[1], match$1[2]), linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) + ", " + linearColorStop(match$1[5]));
-  } else if (variant === "radialGradient4") {
+    arg = radialGradient_(radialGradientEndingShape(match$1[0], match$1[1], match$1[2]), linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) + ", " + linearColorStop(match$1[5]) + ", " + linearColorStop(match$1[6]));
+  } else if (variant === "RadialGradient") {
     var match$2 = v.VAL;
-    arg = radialGradient_(radialGradientEndingShape(match$2[0], match$2[1], match$2[2]), linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) + ", " + linearColorStop(match$2[5]) + ", " + linearColorStop(match$2[6]));
+    arg = radialGradient_(radialGradientEndingShape(match$2[0], match$2[1], match$2[2]), linearColorStop(match$2[3]));
   } else {
     var match$3 = v.VAL;
-    arg = radialGradient_(radialGradientEndingShape(match$3[0], match$3[1], match$3[2]), linearColorStop(match$3[3]));
+    arg = radialGradient_(radialGradientEndingShape(match$3[0], match$3[1], match$3[2]), linearColorStop(match$3[3]) + ", " + linearColorStop(match$3[4]));
   }
   return "radial-gradient(" + arg + ")";
 }
@@ -1016,13 +1016,13 @@ function radialGradient(v) {
 function repeatingRadialGradient(v) {
   var variant = v.NAME;
   var arg;
-  if (variant === "repeatingRadialGradient2") {
+  if (variant === "RepeatingRadialGradient2") {
     var match = v.VAL;
     arg = radialGradient_(radialGradientEndingShape(match[0], match[1], match[2]), linearColorStop(match[3]) + ", " + linearColorStop(match[4]));
-  } else if (variant === "repeatingRadialGradient3") {
+  } else if (variant === "RepeatingRadialGradient3") {
     var match$1 = v.VAL;
     arg = radialGradient_(radialGradientEndingShape(match$1[0], match$1[1], match$1[2]), linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) + ", " + linearColorStop(match$1[5]));
-  } else if (variant === "repeatingRadialGradient4") {
+  } else if (variant === "RepeatingRadialGradient4") {
     var match$2 = v.VAL;
     arg = radialGradient_(radialGradientEndingShape(match$2[0], match$2[1], match$2[2]), linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) + ", " + linearColorStop(match$2[5]) + ", " + linearColorStop(match$2[6]));
   } else {
@@ -1057,13 +1057,13 @@ function conicGradient_(angle, linearColorStop) {
 function conicGradient(v) {
   var variant = v.NAME;
   var arg;
-  if (variant === "conicGradient2") {
+  if (variant === "ConicGradient2") {
     var match = v.VAL;
     arg = conicGradient_(conicGradientAngle(match[0], match[1]), linearColorStop(match[2]) + ", " + linearColorStop(match[3]));
-  } else if (variant === "conicGradient3") {
+  } else if (variant === "ConicGradient3") {
     var match$1 = v.VAL;
     arg = conicGradient_(conicGradientAngle(match$1[0], match$1[1]), linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]));
-  } else if (variant === "conicGradient4") {
+  } else if (variant === "ConicGradient4") {
     var match$2 = v.VAL;
     arg = conicGradient_(conicGradientAngle(match$2[0], match$2[1]), linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) + ", " + linearColorStop(match$2[5]));
   } else {
@@ -1076,36 +1076,36 @@ function conicGradient(v) {
 function repeatingConicGradient(v) {
   var variant = v.NAME;
   var arg;
-  if (variant === "repeatingConicGradient3") {
+  if (variant === "RepeatingConicGradient2") {
     var match = v.VAL;
-    arg = conicGradient_(conicGradientAngle(match[0], match[1]), linearColorStop(match[2]) + ", " + linearColorStop(match[3]) + ", " + linearColorStop(match[4]));
-  } else if (variant === "repeatingConicGradient4") {
+    arg = conicGradient_(conicGradientAngle(match[0], match[1]), linearColorStop(match[2]) + ", " + linearColorStop(match[3]));
+  } else if (variant === "RepeatingConicGradient3") {
     var match$1 = v.VAL;
-    arg = conicGradient_(conicGradientAngle(match$1[0], match$1[1]), linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) + ", " + linearColorStop(match$1[5]));
-  } else if (variant === "repeatingConicGradient") {
+    arg = conicGradient_(conicGradientAngle(match$1[0], match$1[1]), linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]));
+  } else if (variant === "RepeatingConicGradient4") {
     var match$2 = v.VAL;
-    arg = conicGradient_(conicGradientAngle(match$2[0], match$2[1]), linearColorStop(match$2[2]));
+    arg = conicGradient_(conicGradientAngle(match$2[0], match$2[1]), linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) + ", " + linearColorStop(match$2[5]));
   } else {
     var match$3 = v.VAL;
-    arg = conicGradient_(conicGradientAngle(match$3[0], match$3[1]), linearColorStop(match$3[2]) + ", " + linearColorStop(match$3[3]));
+    arg = conicGradient_(conicGradientAngle(match$3[0], match$3[1]), linearColorStop(match$3[2]));
   }
   return "repeating-conic-gradient(" + arg + ")";
 }
 
 function gradient(v) {
   var variant = v.NAME;
-  if (variant === "conicGradient4" || variant === "conicGradient3" || variant === "conicGradient2" || variant === "conicGradient") {
-    return conicGradient(v);
-  } else if (variant === "repeatingRadialGradient4" || variant === "repeatingRadialGradient3" || variant === "repeatingRadialGradient2" || variant === "repeatingRadialGradient") {
+  if (variant === "RepeatingRadialGradient4" || variant === "RepeatingRadialGradient3" || variant === "RepeatingRadialGradient2" || variant === "RepeatingRadialGradient") {
     return repeatingRadialGradient(v);
-  } else if (variant === "repeatingLinearGradient4" || variant === "repeatingLinearGradient3" || variant === "repeatingLinearGradient2" || variant === "repeatingLinearGradient") {
+  } else if (variant === "RepeatingLinearGradient4" || variant === "RepeatingLinearGradient3" || variant === "RepeatingLinearGradient2" || variant === "RepeatingLinearGradient") {
     return repeatingLinearGradient(v);
-  } else if (variant === "linearGradient" || variant === "linearGradient4" || variant === "linearGradient3" || variant === "linearGradient2") {
-    return linearGradient(v);
-  } else if (variant === "radialGradient4" || variant === "radialGradient3" || variant === "radialGradient2" || variant === "radialGradient") {
+  } else if (variant === "RadialGradient" || variant === "RadialGradient4" || variant === "RadialGradient3" || variant === "RadialGradient2") {
     return radialGradient(v);
-  } else {
+  } else if (variant === "ConicGradient4" || variant === "ConicGradient3" || variant === "ConicGradient2" || variant === "ConicGradient") {
+    return conicGradient(v);
+  } else if (variant === "RepeatingConicGradient4" || variant === "RepeatingConicGradient3" || variant === "RepeatingConicGradient2" || variant === "RepeatingConicGradient") {
     return repeatingConicGradient(v);
+  } else {
+    return linearGradient(v);
   }
 }
 
@@ -1122,7 +1122,7 @@ function url(v) {
 }
 
 function imageSrc(v) {
-  if (v.NAME === "url") {
+  if (v.NAME === "Url") {
     return url(v);
   } else {
     return "\"" + v.VAL + "\"";
@@ -1131,11 +1131,12 @@ function imageSrc(v) {
 
 function image(v) {
   var variant = v.NAME;
-  if (variant === "url" || variant === "src") {
-    return imageSrc(v);
-  }
-  if (variant !== "image") {
-    return gradient(v);
+  if (variant !== "Image") {
+    if (variant === "Url" || variant === "Src") {
+      return imageSrc(v);
+    } else {
+      return gradient(v);
+    }
   }
   var match = v.VAL;
   var t = match[0];
@@ -1145,7 +1146,7 @@ function image(v) {
     var exit = 0;
     if (typeof c$1 === "object") {
       var variant$1 = c$1.NAME;
-      if (variant$1 === "rgb" || variant$1 === "hsl" || variant$1 === "hexColor" || variant$1 === "rgba" || variant$1 === "hsla") {
+      if (variant$1 === "rgb" || variant$1 === "hsl" || variant$1 === "HexColor" || variant$1 === "rgba" || variant$1 === "hsla") {
         exit = 2;
       }
       
@@ -1165,7 +1166,7 @@ function image(v) {
   var c$3 = match[2];
   if (typeof c$3 === "object") {
     var variant$2 = c$3.NAME;
-    if (variant$2 === "rgb" || variant$2 === "hsl" || variant$2 === "hexColor" || variant$2 === "rgba" || variant$2 === "hsla") {
+    if (variant$2 === "rgb" || variant$2 === "hsl" || variant$2 === "HexColor" || variant$2 === "rgba" || variant$2 === "hsla") {
       return "image(" + color(c$3) + ")";
     }
     
@@ -1280,7 +1281,7 @@ function background(col, pos, size, repeat, att, origin, clip, imageOrColor) {
   var exit = 0;
   if (typeof imageOrColor === "object") {
     var variant = imageOrColor.NAME;
-    exit = variant === "rgb" || variant === "hsl" || variant === "hexColor" || variant === "rgba" || variant === "hsla" ? 2 : 1;
+    exit = variant === "RepeatingConicGradient4" || variant === "RepeatingConicGradient3" || variant === "RepeatingConicGradient2" || variant === "RepeatingConicGradient" || variant === "RadialGradient" || variant === "RepeatingLinearGradient4" || variant === "RepeatingLinearGradient3" || variant === "RepeatingLinearGradient2" || variant === "ConicGradient4" || variant === "ConicGradient3" || variant === "ConicGradient2" || variant === "ConicGradient" || variant === "RadialGradient4" || variant === "RadialGradient3" || variant === "RadialGradient2" || variant === "Url" || variant === "Src" || variant === "RepeatingLinearGradient" || variant === "LinearGradient4" || variant === "LinearGradient3" || variant === "LinearGradient2" || variant === "RepeatingRadialGradient4" || variant === "RepeatingRadialGradient3" || variant === "RepeatingRadialGradient2" || variant === "RepeatingRadialGradient" || variant === "Image" || variant === "LinearGradient" ? 1 : 2;
   } else {
     exit = imageOrColor === "none" ? 1 : 2;
   }
@@ -1316,11 +1317,11 @@ function bgLayer(v) {
     }
   }
   var variant = v.NAME;
-  if (variant === "rgb" || variant === "hsl" || variant === "hexColor" || variant === "rgba" || variant === "hsla") {
-    return color(v);
-  }
-  if (variant !== "bgLayer") {
+  if (variant === "RepeatingConicGradient4" || variant === "RepeatingConicGradient3" || variant === "RepeatingConicGradient2" || variant === "RepeatingConicGradient" || variant === "RadialGradient" || variant === "RepeatingLinearGradient4" || variant === "RepeatingLinearGradient3" || variant === "RepeatingLinearGradient2" || variant === "ConicGradient4" || variant === "ConicGradient3" || variant === "ConicGradient2" || variant === "ConicGradient" || variant === "RadialGradient4" || variant === "RadialGradient3" || variant === "RadialGradient2" || variant === "Url" || variant === "Src" || variant === "RepeatingLinearGradient" || variant === "LinearGradient4" || variant === "LinearGradient3" || variant === "LinearGradient2" || variant === "RepeatingRadialGradient4" || variant === "RepeatingRadialGradient3" || variant === "RepeatingRadialGradient2" || variant === "RepeatingRadialGradient" || variant === "Image" || variant === "LinearGradient") {
     return bgImage(v);
+  }
+  if (variant !== "BgLayer") {
+    return color(v);
   }
   var match = v.VAL;
   return background(match[0], match[1], match[2], match[3], match[4], match[5], match[6], match[7]);
@@ -1460,15 +1461,15 @@ function cursorKeyword_global(v) {
 
 function cursorImage(v) {
   var variant = v.NAME;
-  if (variant === "url3") {
+  if (variant === "Url2") {
     var match = v.VAL;
-    return "url(\"" + match[0] + "\") " + String(match[1]) + " " + String(match[2]);
+    return "url(\"" + match[0] + "\") " + String(match[1]);
   }
-  if (variant === "url") {
+  if (variant !== "Url3") {
     return url(v);
   }
   var match$1 = v.VAL;
-  return "url(\"" + match$1[0] + "\") " + String(match$1[1]);
+  return "url(\"" + match$1[0] + "\") " + String(match$1[1]) + " " + String(match$1[2]);
 }
 
 function fontWeight(v) {

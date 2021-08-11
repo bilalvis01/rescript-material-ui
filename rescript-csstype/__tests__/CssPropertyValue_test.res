@@ -153,8 +153,8 @@ test("cursor", (.) => {
   expect(cursor(#auto))->toBe(cursorString("auto"));
   expect(cursor(#initial))->toBe(cursorString("initial"));
   expect(cursor1(url("image.png"), #default))->toBe(cursorString(`url("image.png"), default`));
-  expect(cursor1(#url2("image.png", 12.), #default))->toBe(cursorString(`url("image.png") 12, default`));
-  expect(cursor1(#url3("image.png", 12., 24.), #default))->toBe(cursorString(`url("image.png") 12 24, default`));
+  expect(cursor1(#Url2("image.png", 12.), #default))->toBe(cursorString(`url("image.png") 12, default`));
+  expect(cursor1(#Url3("image.png", 12., 24.), #default))->toBe(cursorString(`url("image.png") 12 24, default`));
   expect(cursor2(url("image.png"), url("image2.png"), #default))
   ->toBe(cursorString(`url("image.png"), url("image2.png"), default`));
   expect(cursor3(url("image.png"), url("image2.png"), url("image3.png"), #default))
