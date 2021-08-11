@@ -162,3 +162,8 @@ test("cursor", (.) => {
   expect(cursor4(url("image.png"), url("image2.png"), url("image3.png"), url("image4.png"), #default))
   ->toBe(cursorString(`url("image.png"), url("image2.png"), url("image3.png"), url("image4.png"), default`));
 });
+
+test("fontWeight", (.) => {
+  expect(fontWeight(#initial))->toBe(fontWeightString("initial"));
+  expect(fontWeight(#bold))->toBe(fontWeightString("bold"));
+});

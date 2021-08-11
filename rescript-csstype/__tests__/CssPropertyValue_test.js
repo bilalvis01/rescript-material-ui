@@ -146,4 +146,10 @@ test("cursor", (function () {
         
       }));
 
+test("fontWeight", (function () {
+        expect(CssPropertyValue$Ress.fontWeight("initial")).toBe("initial");
+        expect(CssPropertyValue$Ress.fontWeight("bold")).toBe("bold");
+        
+      }));
+
 /*  Not a pure module */
