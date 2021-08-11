@@ -261,6 +261,12 @@ var cursor4 = include.cursor4;
 
 var cursorString = include.cursorString;
 
+var fontWeight = include.fontWeight;
+
+var fontWeightString = include.fontWeightString;
+
+var fontWeightNumber = include.fontWeightNumber;
+
 var selector = include.selector;
 
 var hover = include.hover;
@@ -543,6 +549,9 @@ exports.cursor2 = cursor2;
 exports.cursor3 = cursor3;
 exports.cursor4 = cursor4;
 exports.cursorString = cursorString;
+exports.fontWeight = fontWeight;
+exports.fontWeightString = fontWeightString;
+exports.fontWeightNumber = fontWeightNumber;
 exports.selector = selector;
 exports.hover = hover;
 exports.str = str;
