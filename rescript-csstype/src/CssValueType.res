@@ -1305,19 +1305,6 @@ type fontStyle_global = [
   | global
 ];
 
-type fontWeight = [
-  | #normal
-  | #bold
-  | #lighter
-  | #bolder
-  | #num(float)
-];
-
-type fontWeight_global = [
-  | fontWeight
-  | global
-];
-
 type letterSpacing = [
   | #normal
   | length
@@ -1710,4 +1697,16 @@ type cursorImage = [
   | url
   | #url2(string, float)
   | #url3(string, float, float)
+];
+
+type fontWeight = [
+  | #normal
+  | #bold
+  | #lighter
+  | #bolder
+];
+
+type fontWeight_global = [
+  | fontWeight
+  | global
 ];

@@ -147,6 +147,9 @@ function Make(Type) {
           cursor3: CssDeclarationHelper$Ress.cursor3,
           cursor4: CssDeclarationHelper$Ress.cursor4,
           cursorString: CssDeclarationHelper$Ress.cursorString,
+          fontWeight: CssDeclarationHelper$Ress.fontWeight,
+          fontWeightString: CssDeclarationHelper$Ress.fontWeightString,
+          fontWeightNumber: CssDeclarationHelper$Ress.fontWeightNumber,
           selector: include.selector,
           hover: include$1.hover,
           str: CssValueHelper$Ress.str,
@@ -488,6 +491,12 @@ var cursor4 = CssDeclarationHelper$Ress.cursor4;
 
 var cursorString = CssDeclarationHelper$Ress.cursorString;
 
+var fontWeight = CssDeclarationHelper$Ress.fontWeight;
+
+var fontWeightString = CssDeclarationHelper$Ress.fontWeightString;
+
+var fontWeightNumber = CssDeclarationHelper$Ress.fontWeightNumber;
+
 var selector = include.selector;
 
 var hover = include$1.hover;
@@ -769,6 +778,9 @@ exports.cursor2 = cursor2;
 exports.cursor3 = cursor3;
 exports.cursor4 = cursor4;
 exports.cursorString = cursorString;
+exports.fontWeight = fontWeight;
+exports.fontWeightString = fontWeightString;
+exports.fontWeightNumber = fontWeightNumber;
 exports.selector = selector;
 exports.hover = hover;
 exports.str = str;

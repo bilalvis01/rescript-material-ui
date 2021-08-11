@@ -38,6 +38,7 @@ type paddingLeft = [ | #PaddingLeft(CssPropertyValue.t_paddingLeft) ];
 type color = [ | #Color(CssPropertyValue.t_color) ];
 type clear = [ | #Clear(CssPropertyValue.t_clear) ];
 type cursor = [ | #Cursor(CssPropertyValue.t_cursor) ];
+type fontWeight = [ | #FontWeight(CssPropertyValue.t_fontWeight) ];
 
 type t = [
   | property
@@ -80,4 +81,5 @@ type t = [
   | color
   | clear
   | cursor
+  | fontWeight
 ];

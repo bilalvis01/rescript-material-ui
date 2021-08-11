@@ -330,3 +330,8 @@ type t_fontFamily = synthetic<tag_fontFamily>;
 
 type tag_fontWeight;
 type t_fontWeight = synthetic<tag_fontWeight>;
+external fontWeightString: string => t_fontWeight = "%identity";
+external fontWeightNumber: float => t_fontWeight = "%identity";
+let fontWeight = v => 
+  CssValueString.fontWeight_global(v)
+  ->fontWeightString;

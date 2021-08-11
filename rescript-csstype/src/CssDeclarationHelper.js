@@ -880,6 +880,27 @@ function cursorString(v) {
         };
 }
 
+function fontWeight(v) {
+  return {
+          NAME: "FontWeight",
+          VAL: CssPropertyValue$Ress.fontWeight(v)
+        };
+}
+
+function fontWeightString(v) {
+  return {
+          NAME: "FontWeight",
+          VAL: v
+        };
+}
+
+function fontWeightNumber(v) {
+  return {
+          NAME: "FontWeight",
+          VAL: v
+        };
+}
+
 exports.property = property;
 exports.propertyNumber = propertyNumber;
 exports.propertyInteger = propertyInteger;
@@ -1004,4 +1025,7 @@ exports.cursor2 = cursor2;
 exports.cursor3 = cursor3;
 exports.cursor4 = cursor4;
 exports.cursorString = cursorString;
+exports.fontWeight = fontWeight;
+exports.fontWeightString = fontWeightString;
+exports.fontWeightNumber = fontWeightNumber;
 /* No side effect */

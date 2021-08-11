@@ -303,3 +303,10 @@ let cursor4 = (i1, i2, i3, i4, k) =>
   #Cursor(CssPropertyValue.cursor4(i1, i2, i3, i4, k));
 let cursorString = v =>
   #Cursor(CssPropertyValue.cursorString(v));
+
+let fontWeight = v =>
+  #FontWeight(CssPropertyValue.fontWeight(v));
+let fontWeightString = v =>
+  #FontWeight(CssPropertyValue.fontWeightString(v));
+let fontWeightNumber = v =>
+  #FontWeight(CssPropertyValue.fontWeightNumber(v));

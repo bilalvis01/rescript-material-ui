@@ -1471,6 +1471,26 @@ function cursorImage(v) {
   return "url(\"" + match$1[0] + "\") " + String(match$1[1]);
 }
 
+function fontWeight(v) {
+  if (v === "bolder") {
+    return "bolder";
+  } else if (v === "lighter") {
+    return "lighter";
+  } else if (v === "normal") {
+    return "normal";
+  } else {
+    return "bold";
+  }
+}
+
+function fontWeight_global(v) {
+  if (v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
+    return $$global(v);
+  } else {
+    return fontWeight(v);
+  }
+}
+
 exports.$$global = $$global;
 exports.string = string;
 exports.num = num;
@@ -1564,4 +1584,6 @@ exports.clear_global = clear_global;
 exports.cursorKeyword = cursorKeyword;
 exports.cursorKeyword_global = cursorKeyword_global;
 exports.cursorImage = cursorImage;
+exports.fontWeight = fontWeight;
+exports.fontWeight_global = fontWeight_global;
 /* No side effect */

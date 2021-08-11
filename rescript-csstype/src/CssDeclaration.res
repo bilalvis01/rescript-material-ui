@@ -49,6 +49,7 @@ module Make = (
     | #Color(value) => ("color", makeValue(value))
     | #Clear(value) => ("clear", makeValue(value))
     | #Cursor(value) => ("cursor", makeValue(value))
+    | #FontWeight(value) => ("fontWeight", makeValue(value))
     };
   };
 };

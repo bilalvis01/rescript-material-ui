@@ -145,3 +145,6 @@ let clear_global: clear_global => string;
 let cursorKeyword: cursorKeyword => string;
 let cursorKeyword_global: cursorKeyword_global => string;
 let cursorImage: cursorImage => string;
+
+let fontWeight: fontWeight => string;
+let fontWeight_global: fontWeight_global => string;

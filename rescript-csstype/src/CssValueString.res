@@ -934,3 +934,19 @@ let cursorImage = v => {
   | #url3(u, x, y) => `url("${u}") ${Belt.Float.toString(x)} ${Belt.Float.toString(y)}` 
   };
 };
+
+let fontWeight = v => {
+  switch v {
+  | #bolder => "bolder"
+  | #lighter => "lighter"
+  | #normal => "normal"
+  | #bold => "bold"
+  };
+};
+
+let fontWeight_global = v => {
+  switch v {
+  | #...fontWeight as w => fontWeight(w)
+  | #...global as g => global(g)
+  };
+};

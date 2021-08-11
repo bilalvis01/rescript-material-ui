@@ -325,3 +325,7 @@ let cursor4: (
   CssValueType.cursorKeyword
 ) => [> CssDeclarationType.cursor ];
 let cursorString: string => [> CssDeclarationType.cursor ];
+
+let fontWeight: CssValueType.fontWeight_global => [> CssDeclarationType.fontWeight ];
+let fontWeightString: string => [> CssDeclarationType.fontWeight ];
+let fontWeightNumber: float => [> CssDeclarationType.fontWeight ];

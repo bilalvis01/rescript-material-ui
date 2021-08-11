@@ -233,6 +233,8 @@ function cursor4(i1, i2, i3, i4, k) {
   return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorImage(i3) + ", " + CssValueString$Ress.cursorImage(i4) + ", " + CssValueString$Ress.cursorKeyword(k);
 }
 
+var fontWeight = CssValueString$Ress.fontWeight_global;
+
 exports.border = border;
 exports.borderColor = borderColor;
 exports.borderColor2 = borderColor2;
@@ -302,4 +304,5 @@ exports.cursor1 = cursor1;
 exports.cursor2 = cursor2;
 exports.cursor3 = cursor3;
 exports.cursor4 = cursor4;
+exports.fontWeight = fontWeight;
 /* No side effect */

@@ -196,6 +196,11 @@ function Make(Type) {
                 "backgroundStyle",
                 declaration.VAL
               ];
+      } else if (variant === "FontWeight") {
+        return [
+                "fontWeight",
+                declaration.VAL
+              ];
       } else if (variant === "PaddingTop") {
         return [
                 "paddingTop",
