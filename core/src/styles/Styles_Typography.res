@@ -29,7 +29,7 @@ external body2: t => Css.declarations = "body2";
 @get
 external caption: t => Css.declarations = "caption";
 @get
-external button: t => Css.declarations = "caption";
+external button: t => Css.declarations = "button";
 @get
 external overline: t => Css.declarations = "overline";
 @get
@@ -37,13 +37,13 @@ external fontFamily: t => string = "fontFamily";
 @get
 external fontSize: t => float = "fontSize";
 @get
-external fontWeightLight: t => string = "fontWeightLight";
+external fontWeightLight: t => Css.PropertyValue.t_fontWeight = "fontWeightLight";
 @get
-external fontWeightRegular: t => string = "fontWeightRegular";
+external fontWeightRegular: t => Css.PropertyValue.t_fontWeight = "fontWeightRegular";
 @get
-external fontWeightMedium: t => string = "fontWeightMedium";
+external fontWeightMedium: t => Css.PropertyValue.t_fontWeight = "fontWeightMedium";
 @get
-external fontWeightBold: t => string = "fontWeightBold";
+external fontWeightBold: t => Css.PropertyValue.t_fontWeight = "fontWeightBold";
 @get
 external htmlFontSize: t => float = "htmlFontSize";
 @send
