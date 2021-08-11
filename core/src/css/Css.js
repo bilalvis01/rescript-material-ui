@@ -5,13 +5,13 @@ var Css$Ress = require("@bilalvis01/rescript-csstype/src/Css.js");
 
 var include = Css$Ress.Make({});
 
+var Declarations = include.Declarations;
+
+var Rules = include.Rules;
+
 var PropertyValue = include.PropertyValue;
 
 var $$FontFace = include.$$FontFace;
-
-var Style = include.Style;
-
-var Styles = include.Styles;
 
 var property = include.property;
 
@@ -409,16 +409,16 @@ var repeatingConicGradient4 = include.repeatingConicGradient4;
 
 var fontFace = include.fontFace;
 
-var style = include.style;
+var style = Declarations.make;
 
-var styles = include.styles;
+var styles = Rules.make;
 
 var React;
 
 exports.PropertyValue = PropertyValue;
 exports.$$FontFace = $$FontFace;
-exports.Style = Style;
-exports.Styles = Styles;
+exports.Declarations = Declarations;
+exports.Rules = Rules;
 exports.property = property;
 exports.propertyNumber = propertyNumber;
 exports.propertyInteger = propertyInteger;

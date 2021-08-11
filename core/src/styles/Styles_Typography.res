@@ -7,31 +7,31 @@ external make: (
 ) => t = "createTypography";
 
 @get
-external h1: t => Css.style = "h1";
+external h1: t => Css.declarations = "h1";
 @get
-external h2: t => Css.style = "h2";
+external h2: t => Css.declarations = "h2";
 @get
-external h3: t => Css.style = "h3";
+external h3: t => Css.declarations = "h3";
 @get
-external h4: t => Css.style = "h4";
+external h4: t => Css.declarations = "h4";
 @get
-external h5: t => Css.style = "h5";
+external h5: t => Css.declarations = "h5";
 @get
-external h6: t => Css.style = "h6";
+external h6: t => Css.declarations = "h6";
 @get
-external subtitle1: t => Css.style = "subtitle1";
+external subtitle1: t => Css.declarations = "subtitle1";
 @get
-external subtitle2: t => Css.style = "subtitle2";
+external subtitle2: t => Css.declarations = "subtitle2";
 @get
-external body1: t => Css.style = "body1";
+external body1: t => Css.declarations = "body1";
 @get
-external body2: t => Css.style = "body2";
+external body2: t => Css.declarations = "body2";
 @get
-external caption: t => Css.style = "caption";
+external caption: t => Css.declarations = "caption";
 @get
-external button: t => Css.style = "caption";
+external button: t => Css.declarations = "caption";
 @get
-external overline: t => Css.style = "overline";
+external overline: t => Css.declarations = "overline";
 @get
 external fontFamily: t => string = "fontFamily";
 @get
