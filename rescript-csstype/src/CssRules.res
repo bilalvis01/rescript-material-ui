@@ -22,7 +22,7 @@ module Make = (
     };
   });
 
-  external makeStyles: Js.Dict.t<Type.declarations> => Type.t = "%identity";
+  external makeRules: Js.Dict.t<Type.declarations> => Type.t = "%identity";
 
   let make = rules => {
     Belt.Array.map(rules, rule => {
@@ -33,6 +33,6 @@ module Make = (
       }
     })
     ->Js.Dict.fromArray
-    ->makeStyles
+    ->makeRules
   };
 }

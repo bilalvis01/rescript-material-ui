@@ -1,8 +1,8 @@
 module Make: (
   Type: {
+    type t;
     type value;
-    type style;
   }
 ) => {
-  let make: array<CssDeclarationType.t> => Type.style;
+  let make: array<CssDeclarationType.t> => Type.t;
 }

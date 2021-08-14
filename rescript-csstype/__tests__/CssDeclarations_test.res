@@ -1,11 +1,11 @@
 open Jest;
 
 type value;
-type style;
+type declarations;
 
 module Declarations = CssDeclarations.Make({
+  type t = declarations;
   type value = value;
-  type style = style;
 });
 
 let style = Declarations.make;

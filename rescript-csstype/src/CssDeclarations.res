@@ -1,10 +1,10 @@
 module Make = (
   Type: {
+    type t;
     type value;
-    type style;
   }
 ) => {
-  external makeStyle: Js.Dict.t<Type.value> => Type.style = "%identity";
+  external makeDeclarations: Js.Dict.t<Type.value> => Type.t = "%identity";
 
   module Declaration = CssDeclaration.Make({ type value = Type.value });
 
@@ -16,6 +16,6 @@ module Make = (
       }
     })
     ->Js.Dict.fromArray
-    ->makeStyle
+    ->makeDeclarations
   };
 }
