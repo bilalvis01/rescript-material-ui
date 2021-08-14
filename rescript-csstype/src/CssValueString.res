@@ -251,7 +251,6 @@ let rgbParam = v => {
   switch v {
     | #...percentage as l => percentage(l)
     | #...number as n => number(n)
-    // | #...rgbDecimalValue as c => Obj.magic(c)->Int.toString
   };
 };
 let hsl = (v1, v2, v3) => `hsl(${hue(v1)}, ${percentage(v2)}, ${percentage(v3)})`;
