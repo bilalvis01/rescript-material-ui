@@ -928,10 +928,10 @@ type rgbParam = [
   | number
 ];
 
-type hsl = [ | #hsl(hue, percentage, percentage) ];
-type hsla = [ | #hsla(hue, percentage, percentage, alpha) ];
-type rgb = [ | #rgb(rgbParam, rgbParam, rgbParam) ];
-type rgba = [ | #rgba(rgbParam, rgbParam, rgbParam, alpha) ];
+type hsl = [ | #Hsl(hue, percentage, percentage) ];
+type hsla = [ | #Hsla(hue, percentage, percentage, alpha) ];
+type rgb = [ | #Rgb(rgbParam, rgbParam, rgbParam) ];
+type rgba = [ | #Rgba(rgbParam, rgbParam, rgbParam, alpha) ];
 type hexColor = [ | #HexColor(string) ];
 
 type color = [

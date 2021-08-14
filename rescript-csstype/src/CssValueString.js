@@ -711,23 +711,23 @@ function color(v) {
     return colorKeyword(v);
   }
   var variant = v.NAME;
-  if (variant === "rgba") {
+  if (variant === "Hsl") {
     var match = v.VAL;
-    return rgba(match[0], match[1], match[2], match[3]);
+    return hsl(match[0], match[1], match[2]);
   }
-  if (variant === "HexColor") {
+  if (variant === "Rgb") {
+    var match$1 = v.VAL;
+    return rgb(match$1[0], match$1[1], match$1[2]);
+  }
+  if (variant === "Hsla") {
+    var match$2 = v.VAL;
+    return hsla(match$2[0], match$2[1], match$2[2], match$2[3]);
+  }
+  if (variant !== "Rgba") {
     return "#" + v.VAL;
   }
-  if (variant === "hsl") {
-    var match$1 = v.VAL;
-    return hsl(match$1[0], match$1[1], match$1[2]);
-  }
-  if (variant === "rgb") {
-    var match$2 = v.VAL;
-    return rgb(match$2[0], match$2[1], match$2[2]);
-  }
   var match$3 = v.VAL;
-  return hsla(match$3[0], match$3[1], match$3[2], match$3[3]);
+  return rgba(match$3[0], match$3[1], match$3[2], match$3[3]);
 }
 
 function color_global(v) {
@@ -853,15 +853,16 @@ function linearColorStop(v) {
     return color(v);
   }
   var variant = v.NAME;
-  if (variant === "rem" || variant === "Pct" || variant === "vw" || variant === "vh" || variant === "px" || variant === "pt" || variant === "pc" || variant === "mm" || variant === "ex" || variant === "em" || variant === "cm" || variant === "ch" || variant === "vmin" || variant === "vmax" || variant === "inch") {
-    return length_percentage(v);
-  }
   if (variant === "LinearColorStop2") {
     var match = v.VAL;
     return color(match[0]) + " " + length_percentage(match[1]);
   }
   if (variant !== "LinearColorStop3") {
-    return color(v);
+    if (variant === "Rgba" || variant === "Hsla" || variant === "Rgb" || variant === "Hsl" || variant === "HexColor") {
+      return color(v);
+    } else {
+      return length_percentage(v);
+    }
   }
   var match$1 = v.VAL;
   return color(match$1[0]) + " " + length_percentage(match$1[1]) + " " + length_percentage(match$1[2]);
@@ -1146,7 +1147,7 @@ function image(v) {
     var exit = 0;
     if (typeof c$1 === "object") {
       var variant$1 = c$1.NAME;
-      if (variant$1 === "rgb" || variant$1 === "hsl" || variant$1 === "HexColor" || variant$1 === "rgba" || variant$1 === "hsla") {
+      if (variant$1 === "Rgba" || variant$1 === "Hsla" || variant$1 === "Rgb" || variant$1 === "Hsl" || variant$1 === "HexColor") {
         exit = 2;
       }
       
@@ -1166,7 +1167,7 @@ function image(v) {
   var c$3 = match[2];
   if (typeof c$3 === "object") {
     var variant$2 = c$3.NAME;
-    if (variant$2 === "rgb" || variant$2 === "hsl" || variant$2 === "HexColor" || variant$2 === "rgba" || variant$2 === "hsla") {
+    if (variant$2 === "Rgba" || variant$2 === "Hsla" || variant$2 === "Rgb" || variant$2 === "Hsl" || variant$2 === "HexColor") {
       return "image(" + color(c$3) + ")";
     }
     
@@ -1281,7 +1282,7 @@ function background(col, pos, size, repeat, att, origin, clip, imageOrColor) {
   var exit = 0;
   if (typeof imageOrColor === "object") {
     var variant = imageOrColor.NAME;
-    exit = variant === "RepeatingConicGradient4" || variant === "RepeatingConicGradient3" || variant === "RepeatingConicGradient2" || variant === "RepeatingConicGradient" || variant === "RadialGradient" || variant === "RepeatingLinearGradient4" || variant === "RepeatingLinearGradient3" || variant === "RepeatingLinearGradient2" || variant === "ConicGradient4" || variant === "ConicGradient3" || variant === "ConicGradient2" || variant === "ConicGradient" || variant === "RadialGradient4" || variant === "RadialGradient3" || variant === "RadialGradient2" || variant === "Url" || variant === "Src" || variant === "RepeatingLinearGradient" || variant === "LinearGradient4" || variant === "LinearGradient3" || variant === "LinearGradient2" || variant === "RepeatingRadialGradient4" || variant === "RepeatingRadialGradient3" || variant === "RepeatingRadialGradient2" || variant === "RepeatingRadialGradient" || variant === "Image" || variant === "LinearGradient" ? 1 : 2;
+    exit = variant === "Rgba" || variant === "Hsla" || variant === "Rgb" || variant === "Hsl" || variant === "HexColor" ? 2 : 1;
   } else {
     exit = imageOrColor === "none" ? 1 : 2;
   }
@@ -1317,11 +1318,11 @@ function bgLayer(v) {
     }
   }
   var variant = v.NAME;
-  if (variant === "RepeatingConicGradient4" || variant === "RepeatingConicGradient3" || variant === "RepeatingConicGradient2" || variant === "RepeatingConicGradient" || variant === "RadialGradient" || variant === "RepeatingLinearGradient4" || variant === "RepeatingLinearGradient3" || variant === "RepeatingLinearGradient2" || variant === "ConicGradient4" || variant === "ConicGradient3" || variant === "ConicGradient2" || variant === "ConicGradient" || variant === "RadialGradient4" || variant === "RadialGradient3" || variant === "RadialGradient2" || variant === "Url" || variant === "Src" || variant === "RepeatingLinearGradient" || variant === "LinearGradient4" || variant === "LinearGradient3" || variant === "LinearGradient2" || variant === "RepeatingRadialGradient4" || variant === "RepeatingRadialGradient3" || variant === "RepeatingRadialGradient2" || variant === "RepeatingRadialGradient" || variant === "Image" || variant === "LinearGradient") {
-    return bgImage(v);
+  if (variant === "Rgba" || variant === "Hsla" || variant === "Rgb" || variant === "Hsl" || variant === "HexColor") {
+    return color(v);
   }
   if (variant !== "BgLayer") {
-    return color(v);
+    return bgImage(v);
   }
   var match = v.VAL;
   return background(match[0], match[1], match[2], match[3], match[4], match[5], match[6], match[7]);

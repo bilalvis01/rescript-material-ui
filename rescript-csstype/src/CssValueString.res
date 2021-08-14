@@ -414,10 +414,10 @@ let colorKeyword = v => {
 }; 
 let color = v => {
   switch v {
-    | #hsl(v1, v2, v3) => hsl(v1, v2, v3)
-    | #hsla(v1, v2, v3, v4) => hsla(v1, v2, v3, v4)
-    | #rgb(v1, v2, v3) => rgb(v1, v2, v3)
-    | #rgba(v1, v2, v3, v4) =>  rgba(v1, v2, v3, v4)
+    | #Hsl(v1, v2, v3) => hsl(v1, v2, v3)
+    | #Hsla(v1, v2, v3, v4) => hsla(v1, v2, v3, v4)
+    | #Rgb(v1, v2, v3) => rgb(v1, v2, v3)
+    | #Rgba(v1, v2, v3, v4) =>  rgba(v1, v2, v3, v4)
     | #HexColor(v) => hexColor(v)
     | #...colorKeyword as c => colorKeyword(c)
   };

@@ -297,7 +297,7 @@ function bgSize2(s1, s2) {
 
 function hsl(v1, v2, v3) {
   return {
-          NAME: "hsl",
+          NAME: "Hsl",
           VAL: [
             v1,
             v2,
@@ -308,7 +308,7 @@ function hsl(v1, v2, v3) {
 
 function hsla(v1, v2, v3, v4) {
   return {
-          NAME: "hsla",
+          NAME: "Hsla",
           VAL: [
             v1,
             v2,
@@ -323,7 +323,7 @@ function hsla(v1, v2, v3, v4) {
 
 function rgb(v1, v2, v3) {
   return {
-          NAME: "rgb",
+          NAME: "Rgb",
           VAL: [
             {
               NAME: "Number",
@@ -343,7 +343,7 @@ function rgb(v1, v2, v3) {
 
 function rgba(v1, v2, v3, v4) {
   return {
-          NAME: "rgba",
+          NAME: "Rgba",
           VAL: [
             {
               NAME: "Number",
