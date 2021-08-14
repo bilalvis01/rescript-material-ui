@@ -9,15 +9,7 @@ var Declarations = include.Declarations;
 
 var Rules = include.Rules;
 
-var PropertyValue = include.PropertyValue;
-
-var $$FontFace = include.$$FontFace;
-
 var property = include.property;
-
-var propertyNumber = include.propertyNumber;
-
-var propertyInteger = include.propertyInteger;
 
 var border = include.border;
 
@@ -415,19 +407,91 @@ var repeatingConicGradient4 = include.repeatingConicGradient4;
 
 var fontFace = include.fontFace;
 
+var Background = include.Background;
+
+var BackgroundAttachment = include.BackgroundAttachment;
+
+var BackgroundColor = include.BackgroundColor;
+
+var BackgroundImage = include.BackgroundImage;
+
+var BackgroundPosition = include.BackgroundPosition;
+
+var BackgroundStyle = include.BackgroundStyle;
+
+var Border = include.Border;
+
+var BorderBottomColor = include.BorderBottomColor;
+
+var BorderBottomStyle = include.BorderBottomStyle;
+
+var BorderBottomWidth = include.BorderBottomWidth;
+
+var BorderColor = include.BorderColor;
+
+var BorderLeftColor = include.BorderLeftColor;
+
+var BorderLeftStyle = include.BorderLeftStyle;
+
+var BorderLeftWidth = include.BorderLeftWidth;
+
+var BorderRightColor = include.BorderRightColor;
+
+var BorderRightStyle = include.BorderRightStyle;
+
+var BorderRightWidth = include.BorderRightWidth;
+
+var BorderStyle = include.BorderStyle;
+
+var BorderTopColor = include.BorderTopColor;
+
+var BorderTopStyle = include.BorderTopStyle;
+
+var BorderTopWidth = include.BorderTopWidth;
+
+var BorderWidth = include.BorderWidth;
+
+var Clear = include.Clear;
+
+var Color = include.Color;
+
+var Cursor = include.Cursor;
+
+var FontFamily = include.FontFamily;
+
+var FontWeight = include.FontWeight;
+
+var Margin = include.Margin;
+
+var MarginBottom = include.MarginBottom;
+
+var MarginLeft = include.MarginLeft;
+
+var MarginRight = include.MarginRight;
+
+var MarginTop = include.MarginTop;
+
+var Padding = include.Padding;
+
+var PaddingBottom = include.PaddingBottom;
+
+var PaddingLeft = include.PaddingLeft;
+
+var PaddingRight = include.PaddingRight;
+
+var PaddingTop = include.PaddingTop;
+
+var $$FontFace = include.$$FontFace;
+
 var style = Declarations.make;
 
 var styles = Rules.make;
 
 var React;
 
-exports.PropertyValue = PropertyValue;
-exports.$$FontFace = $$FontFace;
 exports.Declarations = Declarations;
 exports.Rules = Rules;
 exports.property = property;
-exports.propertyNumber = propertyNumber;
-exports.propertyInteger = propertyInteger;
 exports.border = border;
 exports.borderString = borderString;
 exports.borderTop = borderTop;
@@ -626,6 +690,44 @@ exports.repeatingConicGradient2 = repeatingConicGradient2;
 exports.repeatingConicGradient3 = repeatingConicGradient3;
 exports.repeatingConicGradient4 = repeatingConicGradient4;
 exports.fontFace = fontFace;
+exports.Background = Background;
+exports.BackgroundAttachment = BackgroundAttachment;
+exports.BackgroundColor = BackgroundColor;
+exports.BackgroundImage = BackgroundImage;
+exports.BackgroundPosition = BackgroundPosition;
+exports.BackgroundStyle = BackgroundStyle;
+exports.Border = Border;
+exports.BorderBottomColor = BorderBottomColor;
+exports.BorderBottomStyle = BorderBottomStyle;
+exports.BorderBottomWidth = BorderBottomWidth;
+exports.BorderColor = BorderColor;
+exports.BorderLeftColor = BorderLeftColor;
+exports.BorderLeftStyle = BorderLeftStyle;
+exports.BorderLeftWidth = BorderLeftWidth;
+exports.BorderRightColor = BorderRightColor;
+exports.BorderRightStyle = BorderRightStyle;
+exports.BorderRightWidth = BorderRightWidth;
+exports.BorderStyle = BorderStyle;
+exports.BorderTopColor = BorderTopColor;
+exports.BorderTopStyle = BorderTopStyle;
+exports.BorderTopWidth = BorderTopWidth;
+exports.BorderWidth = BorderWidth;
+exports.Clear = Clear;
+exports.Color = Color;
+exports.Cursor = Cursor;
+exports.FontFamily = FontFamily;
+exports.FontWeight = FontWeight;
+exports.Margin = Margin;
+exports.MarginBottom = MarginBottom;
+exports.MarginLeft = MarginLeft;
+exports.MarginRight = MarginRight;
+exports.MarginTop = MarginTop;
+exports.Padding = Padding;
+exports.PaddingBottom = PaddingBottom;
+exports.PaddingLeft = PaddingLeft;
+exports.PaddingRight = PaddingRight;
+exports.PaddingTop = PaddingTop;
+exports.$$FontFace = $$FontFace;
 exports.style = style;
 exports.styles = styles;
 exports.React = React;

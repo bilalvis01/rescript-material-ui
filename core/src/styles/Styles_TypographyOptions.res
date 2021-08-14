@@ -2,12 +2,12 @@ type t;
 
 @obj
 external make: (
-  ~fontFamily: Css.PropertyValue.t_fontFamily=?,
+  ~fontFamily: Css.FontFamily.t=?,
   ~fontSize: float=?,
-  ~fontWeightLight: Css.PropertyValue.t_fontWeight=?,
-  ~fontWeightRegular: Css.PropertyValue.t_fontWeight=?,
-  ~fontWeightMedium: Css.PropertyValue.t_fontWeight=?,
-  ~fontWeightBold: Css.PropertyValue.t_fontWeight=?,
+  ~fontWeightLight: Css.FontWeight.t=?,
+  ~fontWeightRegular: Css.FontWeight.t=?,
+  ~fontWeightMedium: Css.FontWeight.t=?,
+  ~fontWeightBold: Css.FontWeight.t=?,
   ~htmlFontSize: float=?,
   ~allVariants: Css.declarations=?,
   ~h1: Css.declarations=?,

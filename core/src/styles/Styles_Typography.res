@@ -37,13 +37,13 @@ external fontFamily: t => string = "fontFamily";
 @get
 external fontSize: t => float = "fontSize";
 @get
-external fontWeightLight: t => Css.PropertyValue.t_fontWeight = "fontWeightLight";
+external fontWeightLight: t => Css.FontWeight.t = "fontWeightLight";
 @get
-external fontWeightRegular: t => Css.PropertyValue.t_fontWeight = "fontWeightRegular";
+external fontWeightRegular: t => Css.FontWeight.t = "fontWeightRegular";
 @get
-external fontWeightMedium: t => Css.PropertyValue.t_fontWeight = "fontWeightMedium";
+external fontWeightMedium: t => Css.FontWeight.t = "fontWeightMedium";
 @get
-external fontWeightBold: t => Css.PropertyValue.t_fontWeight = "fontWeightBold";
+external fontWeightBold: t => Css.FontWeight.t = "fontWeightBold";
 @get
 external htmlFontSize: t => float = "htmlFontSize";
 @send
