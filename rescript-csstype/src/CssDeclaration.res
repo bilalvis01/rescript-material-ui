@@ -5,7 +5,7 @@ module Make = (
 ) => {
   type t = (string, Type.value);
 
-  external makeValue: CssPropertyValue.synthetic<'a> => Type.value = "%identity";
+  external makeValue: 'a => Type.value = "%identity";
 
   let make = declaration => {
     switch declaration {

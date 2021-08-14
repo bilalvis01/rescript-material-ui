@@ -1,6 +1,4 @@
-let property: (string, string) => [> CssDeclarationType.property ];
-let propertyNumber: (string, float) => [> CssDeclarationType.property ];
-let propertyInteger: (string, int) => [> CssDeclarationType.property ];
+let property: (string, 'a) => [> CssDeclarationType.property ];
 
 let border: (
   ~width: CssValueType.lineWidth=?, 

@@ -1,127 +1,123 @@
 let property = (name, value) => 
-  #Property(name, CssPropertyValue.string(value));
-let propertyNumber = (name, value) => 
-  #Property(name, CssPropertyValue.number(value));
-let propertyInteger = (name, value) => 
-  #Property(name, CssPropertyValue.integer(value));
+  #Property(name, CssDeclarationType.PropertyValue(value));
 
 let border = (~width=?, ~color=?, style) => 
-  #Border(CssPropertyValue.border(~width=?width, ~color=?color, style));
+  #Border(CssBorder.value(~width=?width, ~color=?color, style));
 let borderString = v => 
-  #Border(CssPropertyValue.borderString(v));
+  #Border(CssBorder.string(v));
 
 let borderTop = (~width=?, ~color=?, style) => 
-  #BorderTop(CssPropertyValue.border(~width=?width, ~color=?color, style));
+  #BorderTop(CssBorder.value(~width=?width, ~color=?color, style));
 let borderTopString = v => 
-  #BorderTop(CssPropertyValue.borderString(v));
+  #BorderTop(CssBorder.string(v));
 
 let borderLeft = (~width=?, ~color=?, style) => 
-  #BorderLeft(CssPropertyValue.border(~width=?width, ~color=?color, style));
+  #BorderLeft(CssBorder.value(~width=?width, ~color=?color, style));
 let borderLeftString = v => 
-  #BorderLeft(CssPropertyValue.borderString(v));
+  #BorderLeft(CssBorder.string(v));
 
 let borderRight = (~width=?, ~color=?, style) => 
-  #BorderRight(CssPropertyValue.border(~width=?width, ~color=?color, style));
+  #BorderRight(CssBorder.value(~width=?width, ~color=?color, style));
 let borderRightString = v => 
-  #BorderRight(CssPropertyValue.borderString(v));
+  #BorderRight(CssBorder.string(v));
 
 let borderBottom = (~width=?, ~color=?, style) => 
-  #BorderBottom(CssPropertyValue.border(~width=?width, ~color=?color, style));
+  #BorderBottom(CssBorder.value(~width=?width, ~color=?color, style));
 let borderBottomString = v => 
-  #BorderBottom(CssPropertyValue.borderString(v));
+  #BorderBottom(CssBorder.string(v));
 
 let borderColor = v => 
-  #BorderColor(CssPropertyValue.borderColor(v));
+  #BorderColor(CssBorderColor.value(v));
 let borderColor2 = (~tb, ~lr) => 
-  #BorderColor(CssPropertyValue.borderColor2(~tb, ~lr));
+  #BorderColor(CssBorderColor.value2(~tb, ~lr));
 let borderColor3 = (~top, ~lr, ~bottom) =>
-  #BorderColor(CssPropertyValue.borderColor3(~top, ~lr, ~bottom));
+  #BorderColor(CssBorderColor.value3(~top, ~lr, ~bottom));
 let borderColor4 = (~top, ~right, ~bottom, ~left) =>
-  #BorderColor(CssPropertyValue.borderColor4(~top, ~right, ~bottom, ~left));
+  #BorderColor(CssBorderColor.value4(~top, ~right, ~bottom, ~left));
 let borderColorString = v => 
-  #BorderColor(CssPropertyValue.borderColorString(v));
+  #BorderColor(CssBorderColor.string(v));
 
 let borderTopColor = v => 
-  #BorderTopColor(CssPropertyValue.borderTopColor(v));
+  #BorderTopColor(CssBorderTopColor.value(v));
 let borderTopColorString = v => 
-  #BorderTopColor(CssPropertyValue.borderTopColorString(v));
+  #BorderTopColor(CssBorderTopColor.string(v));
 
 let borderRightColor = v => 
-  #BorderRightColor(CssPropertyValue.borderRightColor(v));
+  #BorderRightColor(CssBorderRightColor.value(v));
 let borderRightColorString = v => 
-  #BorderRightColor(CssPropertyValue.borderRightColorString(v));
+  #BorderRightColor(CssBorderRightColor.string(v));
 
 let borderBottomColor = v => 
-  #BorderBottomColor(CssPropertyValue.borderBottomColor(v));
+  #BorderBottomColor(CssBorderBottomColor.value(v));
 let borderBottomColorString = v => 
-  #BorderBottomColor(CssPropertyValue.borderBottomColorString(v));
+  #BorderBottomColor(CssBorderBottomColor.string(v));
 
 let borderLeftColor = v => 
-  #BorderLeftColor(CssPropertyValue.borderLeftColor(v));
+  #BorderLeftColor(CssBorderLeftColor.value(v));
 let borderLeftColorString = v => 
-  #BorderLeftColor(CssPropertyValue.borderLeftColorString(v));
+  #BorderLeftColor(CssBorderLeftColor.string(v));
 
 let borderStyle = v => 
-  #BorderStyle(CssPropertyValue.borderStyle(v));
+  #BorderStyle(CssBorderStyle.value(v));
 let borderStyle2 = (~tb, ~lr) => 
-  #BorderStyle(CssPropertyValue.borderStyle2(~tb, ~lr));
+  #BorderStyle(CssBorderStyle.value2(~tb, ~lr));
 let borderStyle3 = (~top, ~lr, ~bottom) =>
-  #BorderStyle(CssPropertyValue.borderStyle3(~top, ~lr, ~bottom));
+  #BorderStyle(CssBorderStyle.value3(~top, ~lr, ~bottom));
 let borderStyle4 = (~top, ~right, ~bottom, ~left) =>
-  #BorderStyle(CssPropertyValue.borderStyle4(~top, ~right, ~bottom, ~left));
+  #BorderStyle(CssBorderStyle.value4(~top, ~right, ~bottom, ~left));
 let borderStyleString = v => 
-  #BorderStyle(CssPropertyValue.borderStyleString(v));
+  #BorderStyle(CssBorderStyle.string(v));
 
 let borderTopStyle = v => 
-  #BorderTopStyle(CssPropertyValue.borderTopStyle(v));
+  #BorderTopStyle(CssBorderTopStyle.value(v));
 let borderTopStyleString = v => 
-  #BorderTopStyle(CssPropertyValue.borderTopStyleString(v));
+  #BorderTopStyle(CssBorderTopStyle.string(v));
 
 let borderRightStyle = v => 
-  #BorderRightStyle(CssPropertyValue.borderRightStyle(v));
+  #BorderRightStyle(CssBorderRightStyle.value(v));
 let borderRightStyleString = v => 
-  #BorderRightStyle(CssPropertyValue.borderRightStyleString(v));
+  #BorderRightStyle(CssBorderRightStyle.string(v));
 
 let borderBottomStyle = v => 
-  #BorderBottomStyle(CssPropertyValue.borderBottomStyle(v));
+  #BorderBottomStyle(CssBorderBottomStyle.value(v));
 let borderBottomStyleString = v =>
-  #BorderBottomStyle(CssPropertyValue.borderBottomStyleString(v));
+  #BorderBottomStyle(CssBorderBottomStyle.string(v));
 
 let borderLeftStyle = v => 
-  #BorderLeftStyle(CssPropertyValue.borderLeftStyle(v));
+  #BorderLeftStyle(CssBorderLeftStyle.value(v));
 let borderLeftStyleString = v => 
-  #BorderLeftStyle(CssPropertyValue.borderLeftStyleString(v));
+  #BorderLeftStyle(CssBorderLeftStyle.string(v));
 
 let borderWidth = v => 
-  #BorderWidth(CssPropertyValue.borderWidth(v));
+  #BorderWidth(CssBorderWidth.value(v));
 let borderWidth2 = (~tb, ~lr) => 
-  #BorderWidth(CssPropertyValue.borderWidth2(~tb, ~lr));
+  #BorderWidth(CssBorderWidth.value2(~tb, ~lr));
 let borderWidth3 = (~top, ~lr, ~bottom) =>
-  #BorderWidth(CssPropertyValue.borderWidth3(~top, ~lr, ~bottom));
+  #BorderWidth(CssBorderWidth.value3(~top, ~lr, ~bottom));
 let borderWidth4 = (~top, ~right, ~bottom, ~left) =>
-  #BorderWidth(CssPropertyValue.borderWidth4(~top, ~right, ~bottom, ~left));
+  #BorderWidth(CssBorderWidth.value4(~top, ~right, ~bottom, ~left));
 let borderWidthString = v => 
-  #BorderWidth(CssPropertyValue.borderWidthString(v));
+  #BorderWidth(CssBorderWidth.string(v));
 
 let borderTopWidth = v => 
-  #BorderTopWidth(CssPropertyValue.borderTopWidth(v));
+  #BorderTopWidth(CssBorderTopWidth.value(v));
 let borderTopWidthString = v => 
-  #BorderTopWidth(CssPropertyValue.borderTopWidthString(v));
+  #BorderTopWidth(CssBorderTopWidth.string(v));
 
 let borderRightWidth = v => 
-  #BorderRightWidth(CssPropertyValue.borderRightWidth(v));
+  #BorderRightWidth(CssBorderRightWidth.value(v));
 let borderRightWidthString = v => 
-  #BorderRightWidth(CssPropertyValue.borderRightWidthString(v));
+  #BorderRightWidth(CssBorderRightWidth.string(v));
 
 let borderBottomWidth = v => 
-  #BorderBottomWidth(CssPropertyValue.borderBottomWidth(v));
+  #BorderBottomWidth(CssBorderBottomWidth.value(v));
 let borderBottomWidthString = v => 
-  #BorderBottomWidth(CssPropertyValue.borderBottomWidthString(v));
+  #BorderBottomWidth(CssBorderBottomWidth.string(v));
 
 let borderLeftWidth = v => 
-  #BorderLeftWidth(CssPropertyValue.borderLeftWidth(v));
+  #BorderLeftWidth(CssBorderLeftWidth.value(v));
 let borderLeftWidthString = v => 
-  #BorderLeftWidth(CssPropertyValue.borderLeftWidthString(v));
+  #BorderLeftWidth(CssBorderLeftWidth.string(v));
 
 let background = (
   ~color=?,
@@ -133,7 +129,7 @@ let background = (
   ~clip=?,
   imageOrColor
 ) => 
-  #Background(CssPropertyValue.background(
+  #Background(CssBackground.value(
     ~color=?color,
     ~position=?position,
     ~size=?size,
@@ -144,169 +140,169 @@ let background = (
     imageOrColor
   ));
 let background2 = (l1, l2) => 
-  #Background(CssPropertyValue.background2(l1, l2));
+  #Background(CssBackground.value2(l1, l2));
 let background3 = (l1, l2, l3) => 
-  #Background(CssPropertyValue.background3(l1, l2, l3));
+  #Background(CssBackground.value3(l1, l2, l3));
 let background4 = (l1, l2, l3, l4) => 
-  #Background(CssPropertyValue.background4(l1, l2, l3, l4));
+  #Background(CssBackground.value4(l1, l2, l3, l4));
 let backgroundString = v => 
-  #Background(CssPropertyValue.backgroundString(v));
+  #Background(CssBackground.string(v));
 
 let backgroundAttachment = v => 
-  #BackgroundAttachment(CssPropertyValue.backgroundAttachment(v));
+  #BackgroundAttachment(CssBackgroundAttachment.value(v));
 let backgroundAttachment2 = (v1, v2) =>
-  #BackgroundAttachment(CssPropertyValue.backgroundAttachment2(v1, v2));
+  #BackgroundAttachment(CssBackgroundAttachment.value2(v1, v2));
 let backgroundAttachment3 = (v1, v2, v3) =>
-  #BackgroundAttachment(CssPropertyValue.backgroundAttachment3(v1, v2, v3));
+  #BackgroundAttachment(CssBackgroundAttachment.value3(v1, v2, v3));
 let backgroundAttachment4 = (v1, v2, v3, v4) =>
-  #BackgroundAttachment(CssPropertyValue.backgroundAttachment4(v1, v2, v3, v4));
+  #BackgroundAttachment(CssBackgroundAttachment.value4(v1, v2, v3, v4));
 let backgroundAttachmentString = v => 
-  #BackgroundAttachment(CssPropertyValue.backgroundAttachmentString(v));
+  #BackgroundAttachment(CssBackgroundAttachment.string(v));
 
 let backgroundColor = v =>
-  #BackgroundColor(CssPropertyValue.backgroundColor(v));
+  #BackgroundColor(CssBackgroundColor.value(v));
 let backgroundColorString = v =>
-  #BackgroundColor(CssPropertyValue.backgroundColorString(v));
+  #BackgroundColor(CssBackgroundColor.string(v));
 
 let backgroundImage = v =>
-  #BackgroundImage(CssPropertyValue.backgroundImage(v));
+  #BackgroundImage(CssBackgroundImage.value(v));
 let backgroundImage2 = (v1, v2) =>
-  #BackgroundImage(CssPropertyValue.backgroundImage2(v1, v2));
+  #BackgroundImage(CssBackgroundImage.value2(v1, v2));
 let backgroundImage3 = (v1, v2, v3) =>
-  #BackgroundImage(CssPropertyValue.backgroundImage3(v1, v2, v3));
+  #BackgroundImage(CssBackgroundImage.value3(v1, v2, v3));
 let backgroundImage4 = (v1, v2, v3, v4) =>
-  #BackgroundImage(CssPropertyValue.backgroundImage4(v1, v2, v3, v4));
+  #BackgroundImage(CssBackgroundImage.value4(v1, v2, v3, v4));
 let backgroundImageString = v =>
-  #BackgroundImage(CssPropertyValue.backgroundImageString(v));
+  #BackgroundImage(CssBackgroundImage.string(v));
 
 let backgroundPosition = v =>
-  #BackgroundPosition(CssPropertyValue.backgroundPosition(v));
+  #BackgroundPosition(CssBackgroundPosition.value(v));
 let backgroundPosition2 = (v1, v2) =>
-  #BackgroundPosition(CssPropertyValue.backgroundPosition2(v1, v2));
+  #BackgroundPosition(CssBackgroundPosition.value2(v1, v2));
 let backgroundPosition3 = (v1, v2, v3) =>
-  #BackgroundPosition(CssPropertyValue.backgroundPosition3(v1, v2, v3));
+  #BackgroundPosition(CssBackgroundPosition.value3(v1, v2, v3));
 let backgroundPosition4 = (v1, v2, v3, v4) =>
-  #BackgroundPosition(CssPropertyValue.backgroundPosition4(v1, v2, v3, v4));
+  #BackgroundPosition(CssBackgroundPosition.value4(v1, v2, v3, v4));
 let backgroundPositionString = v =>
-  #BackgroundPosition(CssPropertyValue.backgroundPositionString(v));
+  #BackgroundPosition(CssBackgroundPosition.string(v));
 
 let backgroundStyle = v =>
-  #BackgroundStyle(CssPropertyValue.backgroundStyle(v));
+  #BackgroundStyle(CssBackgroundStyle.value(v));
 let backgroundStyle2 = (v1, v2) =>
-  #BackgroundStyle(CssPropertyValue.backgroundStyle2(v1, v2));
+  #BackgroundStyle(CssBackgroundStyle.value2(v1, v2));
 let backgroundStyle3 = (v1, v2, v3) =>
-  #BackgroundStyle(CssPropertyValue.backgroundStyle3(v1, v2, v3));
+  #BackgroundStyle(CssBackgroundStyle.value3(v1, v2, v3));
 let backgroundStyle4 = (v1, v2, v3, v4) =>
-  #BackgroundStyle(CssPropertyValue.backgroundStyle4(v1, v2, v3, v4));
+  #BackgroundStyle(CssBackgroundStyle.value4(v1, v2, v3, v4));
 let backgroundStyleString = v =>
-  #BackgroundStyle(CssPropertyValue.backgroundStyleString(v));
+  #BackgroundStyle(CssBackgroundStyle.string(v));
 
 let margin = v => 
-  #Margin(CssPropertyValue.margin(v));
+  #Margin(CssMargin.value(v));
 let margin2 = (~tb, ~lr) =>
-  #Margin(CssPropertyValue.margin2(~tb, ~lr));
+  #Margin(CssMargin.value2(~tb, ~lr));
 let margin3 = (~top, ~lr, ~bottom) =>
-  #Margin(CssPropertyValue.margin3(~top, ~lr, ~bottom));
+  #Margin(CssMargin.value3(~top, ~lr, ~bottom));
 let margin4 = (~top, ~right, ~bottom, ~left) =>
-  #Margin(CssPropertyValue.margin4(~top, ~right, ~bottom, ~left));
+  #Margin(CssMargin.value4(~top, ~right, ~bottom, ~left));
 let marginString = v =>
-  #Margin(CssPropertyValue.marginString(v));
+  #Margin(CssMargin.string(v));
 let marginNumber = v =>
-  #Margin(CssPropertyValue.marginNumber(v));
+  #Margin(CssMargin.number(v));
 
 let marginTop = v =>
-  #MarginTop(CssPropertyValue.marginTop(v));
+  #MarginTop(CssMarginTop.value(v));
 let marginTopString = v =>
-  #MarginTop(CssPropertyValue.marginTopString(v));
+  #MarginTop(CssMarginTop.string(v));
 let marginTopNumber = v =>
-  #MarginTop(CssPropertyValue.marginTopNumber(v));
+  #MarginTop(CssMarginTop.number(v));
 
 let marginRight = v =>
-  #MarginRight(CssPropertyValue.marginRight(v));
+  #MarginRight(CssMarginRight.value(v));
 let marginRightString = v =>
-  #MarginRight(CssPropertyValue.marginRightString(v));
+  #MarginRight(CssMarginRight.string(v));
 let marginRightNumber = v =>
-  #MarginRight(CssPropertyValue.marginRightNumber(v));
+  #MarginRight(CssMarginRight.number(v));
 
 let marginBottom = v =>
-  #MarginBottom(CssPropertyValue.marginBottom(v));
+  #MarginBottom(CssMarginBottom.value(v));
 let marginBottomString = v =>
-  #MarginBottom(CssPropertyValue.marginBottomString(v));
+  #MarginBottom(CssMarginBottom.string(v));
 let marginBottomNumber = v =>
-  #MarginBottom(CssPropertyValue.marginBottomNumber(v));
+  #MarginBottom(CssMarginBottom.number(v));
 
 let marginLeft = v =>
-  #MarginLeft(CssPropertyValue.marginLeft(v));
+  #MarginLeft(CssMarginLeft.value(v));
 let marginLeftString = v =>
-  #MarginLeft(CssPropertyValue.marginLeftString(v));
+  #MarginLeft(CssMarginLeft.string(v));
 let marginLeftNumber = v =>
-  #MarginLeft(CssPropertyValue.marginLeftNumber(v));
+  #MarginLeft(CssMarginLeft.number(v));
 
 let padding = v => 
-  #Padding(CssPropertyValue.padding(v));
+  #Padding(CssPadding.value(v));
 let padding2 = (~tb, ~lr) =>
-  #Padding(CssPropertyValue.padding2(~tb, ~lr));
+  #Padding(CssPadding.value2(~tb, ~lr));
 let padding3 = (~top, ~lr, ~bottom) =>
-  #Padding(CssPropertyValue.padding3(~top, ~lr, ~bottom));
+  #Padding(CssPadding.value3(~top, ~lr, ~bottom));
 let padding4 = (~top, ~right, ~bottom, ~left) =>
-  #Padding(CssPropertyValue.padding4(~top, ~right, ~bottom, ~left));
+  #Padding(CssPadding.value4(~top, ~right, ~bottom, ~left));
 let paddingString = v =>
-  #Padding(CssPropertyValue.paddingString(v));
+  #Padding(CssPadding.string(v));
 let paddingNumber = v =>
-  #Padding(CssPropertyValue.paddingNumber(v));
+  #Padding(CssPadding.number(v));
 
 let paddingTop = v =>
-  #PaddingTop(CssPropertyValue.paddingTop(v));
+  #PaddingTop(CssPaddingTop.value(v));
 let paddingTopString = v =>
-  #PaddingTop(CssPropertyValue.paddingTopString(v));
+  #PaddingTop(CssPaddingTop.string(v));
 let paddingTopNumber = v =>
-  #PaddingTop(CssPropertyValue.paddingTopNumber(v));
+  #PaddingTop(CssPaddingTop.number(v));
 
 let paddingRight = v =>
-  #PaddingRight(CssPropertyValue.paddingRight(v));
+  #PaddingRight(CssPaddingRight.value(v));
 let paddingRightString = v =>
-  #PaddingRight(CssPropertyValue.paddingRightString(v));
+  #PaddingRight(CssPaddingRight.string(v));
 let paddingRightNumber = v =>
-  #PaddingRight(CssPropertyValue.paddingRightNumber(v));
+  #PaddingRight(CssPaddingRight.number(v));
 
 let paddingBottom = v =>
-  #PaddingBottom(CssPropertyValue.paddingBottom(v));
+  #PaddingBottom(CssPaddingBottom.value(v));
 let paddingBottomString = v =>
-  #PaddingBottom(CssPropertyValue.paddingBottomString(v));
+  #PaddingBottom(CssPaddingBottom.string(v));
 let paddingBottomNumber = v =>
-  #PaddingBottom(CssPropertyValue.paddingBottomNumber(v));
+  #PaddingBottom(CssPaddingBottom.number(v));
 
 let paddingLeft = v =>
-  #PaddingLeft(CssPropertyValue.paddingLeft(v));
+  #PaddingLeft(CssPaddingLeft.value(v));
 let paddingLeftString = v =>
-  #PaddingLeft(CssPropertyValue.paddingLeftString(v));
+  #PaddingLeft(CssPaddingLeft.string(v));
 let paddingLeftNumber = v =>
-  #PaddingLeft(CssPropertyValue.paddingLeftNumber(v));
+  #PaddingLeft(CssPaddingLeft.number(v));
 
 let clear = v =>
-  #Clear(CssPropertyValue.clear(v));
+  #Clear(CssClear.value(v));
 
 let color = v =>
-  #Color(CssPropertyValue.color(v));
+  #Color(CssColor.value(v));
 let colorString = v =>
-  #Color(CssPropertyValue.colorString(v));
+  #Color(CssColor.string(v));
 
 let cursor = v =>
-  #Cursor(CssPropertyValue.cursor(v));
+  #Cursor(CssCursor.value(v));
 let cursor1 = (i, k) =>
-  #Cursor(CssPropertyValue.cursor1(i, k));
+  #Cursor(CssCursor.value1(i, k));
 let cursor2 = (i1, i2, k) =>
-  #Cursor(CssPropertyValue.cursor2(i1, i2, k));
+  #Cursor(CssCursor.value2(i1, i2, k));
 let cursor3 = (i1, i2, i3, k) =>
-  #Cursor(CssPropertyValue.cursor3(i1, i2, i3, k));
+  #Cursor(CssCursor.value3(i1, i2, i3, k));
 let cursor4 = (i1, i2, i3, i4, k) =>
-  #Cursor(CssPropertyValue.cursor4(i1, i2, i3, i4, k));
+  #Cursor(CssCursor.value4(i1, i2, i3, i4, k));
 let cursorString = v =>
-  #Cursor(CssPropertyValue.cursorString(v));
+  #Cursor(CssCursor.string(v));
 
 let fontWeight = v =>
-  #FontWeight(CssPropertyValue.fontWeight(v));
+  #FontWeight(CssFontWeight.value(v));
 let fontWeightString = v =>
-  #FontWeight(CssPropertyValue.fontWeightString(v));
+  #FontWeight(CssFontWeight.string(v));
 let fontWeightNumber = v =>
-  #FontWeight(CssPropertyValue.fontWeightNumber(v));
+  #FontWeight(CssFontWeight.number(v));

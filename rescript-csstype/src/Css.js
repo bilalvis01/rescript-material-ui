@@ -19,13 +19,9 @@ function Make(Type) {
         declarations: Declarations.make
       });
   return {
-          PropertyValue: undefined,
-          $$FontFace: undefined,
           Declarations: Declarations,
           Rules: Rules,
           property: CssDeclarationHelper$Ress.property,
-          propertyNumber: CssDeclarationHelper$Ress.propertyNumber,
-          propertyInteger: CssDeclarationHelper$Ress.propertyInteger,
           border: CssDeclarationHelper$Ress.border,
           borderString: CssDeclarationHelper$Ress.borderString,
           borderTop: CssDeclarationHelper$Ress.borderTop,
@@ -223,7 +219,45 @@ function Make(Type) {
           repeatingConicGradient2: CssValueHelper$Ress.repeatingConicGradient2,
           repeatingConicGradient3: CssValueHelper$Ress.repeatingConicGradient3,
           repeatingConicGradient4: CssValueHelper$Ress.repeatingConicGradient4,
-          fontFace: CssAtRuleHelper$Ress.fontFace
+          fontFace: CssAtRuleHelper$Ress.fontFace,
+          Background: undefined,
+          BackgroundAttachment: undefined,
+          BackgroundColor: undefined,
+          BackgroundImage: undefined,
+          BackgroundPosition: undefined,
+          BackgroundStyle: undefined,
+          Border: undefined,
+          BorderBottomColor: undefined,
+          BorderBottomStyle: undefined,
+          BorderBottomWidth: undefined,
+          BorderColor: undefined,
+          BorderLeftColor: undefined,
+          BorderLeftStyle: undefined,
+          BorderLeftWidth: undefined,
+          BorderRightColor: undefined,
+          BorderRightStyle: undefined,
+          BorderRightWidth: undefined,
+          BorderStyle: undefined,
+          BorderTopColor: undefined,
+          BorderTopStyle: undefined,
+          BorderTopWidth: undefined,
+          BorderWidth: undefined,
+          Clear: undefined,
+          Color: undefined,
+          Cursor: undefined,
+          FontFamily: undefined,
+          FontWeight: undefined,
+          Margin: undefined,
+          MarginBottom: undefined,
+          MarginLeft: undefined,
+          MarginRight: undefined,
+          MarginTop: undefined,
+          Padding: undefined,
+          PaddingBottom: undefined,
+          PaddingLeft: undefined,
+          PaddingRight: undefined,
+          PaddingTop: undefined,
+          $$FontFace: undefined
         };
 }
 
@@ -239,15 +273,7 @@ var include$1 = CssPseudoClassHelper$Ress.Make({
       declarations: Declarations.make
     });
 
-var PropertyValue;
-
-var $$FontFace;
-
 var property = CssDeclarationHelper$Ress.property;
-
-var propertyNumber = CssDeclarationHelper$Ress.propertyNumber;
-
-var propertyInteger = CssDeclarationHelper$Ress.propertyInteger;
 
 var border = CssDeclarationHelper$Ress.border;
 
@@ -645,18 +671,90 @@ var repeatingConicGradient4 = CssValueHelper$Ress.repeatingConicGradient4;
 
 var fontFace = CssAtRuleHelper$Ress.fontFace;
 
+var Background;
+
+var BackgroundAttachment;
+
+var BackgroundColor;
+
+var BackgroundImage;
+
+var BackgroundPosition;
+
+var BackgroundStyle;
+
+var Border;
+
+var BorderBottomColor;
+
+var BorderBottomStyle;
+
+var BorderBottomWidth;
+
+var BorderColor;
+
+var BorderLeftColor;
+
+var BorderLeftStyle;
+
+var BorderLeftWidth;
+
+var BorderRightColor;
+
+var BorderRightStyle;
+
+var BorderRightWidth;
+
+var BorderStyle;
+
+var BorderTopColor;
+
+var BorderTopStyle;
+
+var BorderTopWidth;
+
+var BorderWidth;
+
+var Clear;
+
+var Color;
+
+var Cursor;
+
+var FontFamily;
+
+var FontWeight;
+
+var Margin;
+
+var MarginBottom;
+
+var MarginLeft;
+
+var MarginRight;
+
+var MarginTop;
+
+var Padding;
+
+var PaddingBottom;
+
+var PaddingLeft;
+
+var PaddingRight;
+
+var PaddingTop;
+
+var $$FontFace;
+
 var style = Declarations.make;
 
 var styles = Rules.make;
 
 exports.Make = Make;
-exports.PropertyValue = PropertyValue;
-exports.$$FontFace = $$FontFace;
 exports.Declarations = Declarations;
 exports.Rules = Rules;
 exports.property = property;
-exports.propertyNumber = propertyNumber;
-exports.propertyInteger = propertyInteger;
 exports.border = border;
 exports.borderString = borderString;
 exports.borderTop = borderTop;
@@ -855,6 +953,44 @@ exports.repeatingConicGradient2 = repeatingConicGradient2;
 exports.repeatingConicGradient3 = repeatingConicGradient3;
 exports.repeatingConicGradient4 = repeatingConicGradient4;
 exports.fontFace = fontFace;
+exports.Background = Background;
+exports.BackgroundAttachment = BackgroundAttachment;
+exports.BackgroundColor = BackgroundColor;
+exports.BackgroundImage = BackgroundImage;
+exports.BackgroundPosition = BackgroundPosition;
+exports.BackgroundStyle = BackgroundStyle;
+exports.Border = Border;
+exports.BorderBottomColor = BorderBottomColor;
+exports.BorderBottomStyle = BorderBottomStyle;
+exports.BorderBottomWidth = BorderBottomWidth;
+exports.BorderColor = BorderColor;
+exports.BorderLeftColor = BorderLeftColor;
+exports.BorderLeftStyle = BorderLeftStyle;
+exports.BorderLeftWidth = BorderLeftWidth;
+exports.BorderRightColor = BorderRightColor;
+exports.BorderRightStyle = BorderRightStyle;
+exports.BorderRightWidth = BorderRightWidth;
+exports.BorderStyle = BorderStyle;
+exports.BorderTopColor = BorderTopColor;
+exports.BorderTopStyle = BorderTopStyle;
+exports.BorderTopWidth = BorderTopWidth;
+exports.BorderWidth = BorderWidth;
+exports.Clear = Clear;
+exports.Color = Color;
+exports.Cursor = Cursor;
+exports.FontFamily = FontFamily;
+exports.FontWeight = FontWeight;
+exports.Margin = Margin;
+exports.MarginBottom = MarginBottom;
+exports.MarginLeft = MarginLeft;
+exports.MarginRight = MarginRight;
+exports.MarginTop = MarginTop;
+exports.Padding = Padding;
+exports.PaddingBottom = PaddingBottom;
+exports.PaddingLeft = PaddingLeft;
+exports.PaddingRight = PaddingRight;
+exports.PaddingTop = PaddingTop;
+exports.$$FontFace = $$FontFace;
 exports.style = style;
 exports.styles = styles;
 /* Declarations Not a pure module */
