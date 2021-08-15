@@ -131,6 +131,9 @@ function Make(Type) {
           marginUnion: CssDeclarationHelper$Ress.marginUnion,
           marginString: CssDeclarationHelper$Ress.marginString,
           marginNumber: CssDeclarationHelper$Ress.marginNumber,
+          margin2Number: CssDeclarationHelper$Ress.margin2Number,
+          margin3Number: CssDeclarationHelper$Ress.margin3Number,
+          margin4Number: CssDeclarationHelper$Ress.margin4Number,
           marginTop: CssDeclarationHelper$Ress.marginTop,
           marginTopUnion: CssDeclarationHelper$Ress.marginTopUnion,
           marginTopString: CssDeclarationHelper$Ress.marginTopString,
@@ -537,6 +540,12 @@ var marginUnion = CssDeclarationHelper$Ress.marginUnion;
 var marginString = CssDeclarationHelper$Ress.marginString;
 
 var marginNumber = CssDeclarationHelper$Ress.marginNumber;
+
+var margin2Number = CssDeclarationHelper$Ress.margin2Number;
+
+var margin3Number = CssDeclarationHelper$Ress.margin3Number;
+
+var margin4Number = CssDeclarationHelper$Ress.margin4Number;
 
 var marginTop = CssDeclarationHelper$Ress.marginTop;
 
@@ -999,6 +1008,9 @@ exports.margin4 = margin4;
 exports.marginUnion = marginUnion;
 exports.marginString = marginString;
 exports.marginNumber = marginNumber;
+exports.margin2Number = margin2Number;
+exports.margin3Number = margin3Number;
+exports.margin4Number = margin4Number;
 exports.marginTop = marginTop;
 exports.marginTopUnion = marginTopUnion;
 exports.marginTopString = marginTopString;

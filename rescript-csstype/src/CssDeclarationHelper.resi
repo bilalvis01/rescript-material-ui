@@ -269,6 +269,21 @@ let margin4: (
 let marginUnion: CssMargin.t => [> CssDeclarationConstructor.margin ];
 let marginString: string => [> CssDeclarationConstructor.margin ];
 let marginNumber: float => [> CssDeclarationConstructor.margin ];
+let margin2Number: (
+  ~tb: float, 
+  ~lr: float,
+) => [> CssDeclarationConstructor.margin ];
+let margin3Number: (
+  ~top: float, 
+  ~lr: float, 
+  ~bottom: float,
+) => [> CssDeclarationConstructor.margin ];
+let margin4Number: (
+  ~top: float, 
+  ~right: float, 
+  ~bottom: float, 
+  ~left: float,
+) => [> CssDeclarationConstructor.margin ];
 
 let marginTop: CssValueType.margin_global => [> CssDeclarationConstructor.marginTop ];
 let marginTopUnion: CssMarginTop.t => [> CssDeclarationConstructor.marginTop ];

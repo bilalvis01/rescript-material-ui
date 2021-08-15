@@ -263,6 +263,12 @@ let marginString = v =>
   #Margin(CssMargin.string(v));
 let marginNumber = v =>
   #Margin(CssMargin.number(v));
+let margin2Number = (~tb, ~lr) =>
+  #Margin(CssMargin.number2(~tb, ~lr));
+let margin3Number = (~top, ~lr, ~bottom) =>
+  #Margin(CssMargin.number3(~top, ~lr, ~bottom));
+let margin4Number = (~top, ~right, ~bottom, ~left) =>
+  #Margin(CssMargin.number4(~top, ~right, ~bottom, ~left));
 
 let marginTop = v =>
   #MarginTop(CssMarginTop.value(v));

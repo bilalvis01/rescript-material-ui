@@ -812,6 +812,27 @@ function marginNumber(v) {
         };
 }
 
+function margin2Number(tb, lr) {
+  return {
+          NAME: "Margin",
+          VAL: CssMargin$Ress.number2(tb, lr)
+        };
+}
+
+function margin3Number(top, lr, bottom) {
+  return {
+          NAME: "Margin",
+          VAL: CssMargin$Ress.number3(top, lr, bottom)
+        };
+}
+
+function margin4Number(top, right, bottom, left) {
+  return {
+          NAME: "Margin",
+          VAL: CssMargin$Ress.number4(top, right, bottom, left)
+        };
+}
+
 function marginTop(v) {
   return {
           NAME: "MarginTop",
@@ -1342,6 +1363,9 @@ exports.margin4 = margin4;
 exports.marginUnion = marginUnion;
 exports.marginString = marginString;
 exports.marginNumber = marginNumber;
+exports.margin2Number = margin2Number;
+exports.margin3Number = margin3Number;
+exports.margin4Number = margin4Number;
 exports.marginTop = marginTop;
 exports.marginTopUnion = marginTopUnion;
 exports.marginTopString = marginTopString;
