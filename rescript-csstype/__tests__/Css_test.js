@@ -3,6 +3,7 @@
 
 var Curry = require("rescript/lib/js/curry.js");
 var Css$Ress = require("../src/Css.js");
+var CssBorder$Ress = require("../src/property_value/CssBorder.js");
 var CssFontFace$Ress = require("../src/CssFontFace.js");
 
 test("style", (function () {
@@ -14,7 +15,8 @@ test("style", (function () {
                       Css$Ress.paddingBottom(Css$Ress.px(24)),
                       Css$Ress.paddingLeft(Css$Ress.px(40)),
                       Css$Ress.paddingRight(Css$Ress.px(40)),
-                      Css$Ress.marginNumber(24)
+                      Css$Ress.marginNumber(24),
+                      Css$Ress.borderUnion(CssBorder$Ress.value(Css$Ress.px(2), Css$Ress.rgb(200, 200, 200), "solid"))
                     ]),
                 button: Curry._1(Css$Ress.style, [
                       Css$Ress.color(Css$Ress.hsla(Css$Ress.deg(360), Css$Ress.pct(100), Css$Ress.pct(50), 0.5)),
@@ -29,7 +31,8 @@ test("style", (function () {
                 paddingBottom: "24px",
                 paddingLeft: "40px",
                 paddingRight: "40px",
-                margin: 24
+                margin: 24,
+                border: "2px rgb(200, 200, 200) solid"
               },
               button: {
                 color: "hsla(360deg, 100%, 50%, 0.5)",

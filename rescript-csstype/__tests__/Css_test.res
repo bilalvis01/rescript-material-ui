@@ -11,6 +11,7 @@ test("style", (.) => {
       paddingLeft(px(40.)),
       paddingRight(px(40.)),
       marginNumber(24.),
+      borderUnion(Border.value(~color=rgb(200., 200., 200.), ~width=px(2.), #solid)),
     ]),
     "button": style([
       color(hsla(deg(360.), pct(100.), pct(50.), 0.5)),
@@ -31,6 +32,7 @@ test("style", (.) => {
       "paddingLeft": "40px",
       "paddingRight": "40px",
       "margin": 24,
+      "border": "2px rgb(200, 200, 200) solid",
     },
     "button": {
       "color": "hsla(360deg, 100%, 50%, 0.5)"
