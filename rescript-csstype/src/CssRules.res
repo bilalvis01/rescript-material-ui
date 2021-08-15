@@ -27,7 +27,7 @@ module Make = (
   let make = rules => {
     Belt.Array.map(rules, rule => {
       switch rule {
-      | #...CssSelectorType.t as s => Selector.make(s)
+      | #...CssSelectorConstructor.t as s => Selector.make(s)
       | #...CssAtRuleConstructor.t as a => AtRule.make(a)
       | #...CssPseudoClassConstructor.t as p => PseudoClass.make(p)
       }

@@ -31,7 +31,7 @@ module Make = (
     declarations->Belt.Array.map(declaration => {
       switch declaration {
       | #...CssDeclarationConstructor.t as p => Declaration.make(p)
-      | #...CssSelectorType.t as s => Selector.make(s)
+      | #...CssSelectorConstructor.t as s => Selector.make(s)
       | #...CssPseudoClassConstructor.t as p => PseudoClass.make(p)
       | #...CssAtRuleConstructor.t as a => AtRule.make(a)
       };

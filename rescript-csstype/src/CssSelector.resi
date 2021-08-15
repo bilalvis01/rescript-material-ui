@@ -6,5 +6,5 @@ module Make: (
 ) => {
   type t = (string, Type.value);
 
-  let make: CssSelectorType.t<Type.declarations> => t;
+  let make: CssSelectorConstructor.t<Type.declarations> => t;
 }

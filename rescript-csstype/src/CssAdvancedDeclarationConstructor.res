@@ -1,6 +1,6 @@
 type t<'declarations> = [
   | CssDeclarationConstructor.t
-  | CssSelectorType.t<'declarations>
+  | CssSelectorConstructor.t<'declarations>
   | CssPseudoClassConstructor.t<'declarations>
   | CssAtRuleConstructor.t
 ];

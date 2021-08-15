@@ -5,5 +5,5 @@ module Make: (
   }
 ) => {
   let selector: (string, array<CssAdvancedDeclarationConstructor.t<Type.declarations>>) => 
-    [> CssSelectorType.t<Type.declarations> ];
+    [> CssSelectorConstructor.t<Type.declarations> ];
 };
