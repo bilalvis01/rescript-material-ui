@@ -7,5 +7,5 @@ module Make: (
 ) => {
   type t = (string, Type.value);
 
-  let make: CssPseudoClassType.t<Type.declarations> => t;
+  let make: CssPseudoClassConstructor.t<Type.declarations> => t;
 }

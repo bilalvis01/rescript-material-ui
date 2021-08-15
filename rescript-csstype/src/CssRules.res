@@ -29,7 +29,7 @@ module Make = (
       switch rule {
       | #...CssSelectorType.t as s => Selector.make(s)
       | #...CssAtRuleConstructor.t as a => AtRule.make(a)
-      | #...CssPseudoClassType.t as p => PseudoClass.make(p)
+      | #...CssPseudoClassConstructor.t as p => PseudoClass.make(p)
       }
     })
     ->Js.Dict.fromArray

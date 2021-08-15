@@ -32,7 +32,7 @@ module Make = (
       switch declaration {
       | #...CssDeclarationConstructor.t as p => Declaration.make(p)
       | #...CssSelectorType.t as s => Selector.make(s)
-      | #...CssPseudoClassType.t as p => PseudoClass.make(p)
+      | #...CssPseudoClassConstructor.t as p => PseudoClass.make(p)
       | #...CssAtRuleConstructor.t as a => AtRule.make(a)
       };
     })

@@ -5,5 +5,5 @@ module Make: (
   }
 ) => {
   let hover: array<CssAdvancedDeclarationsConstructor.t<Type.declarations>> => 
-    [> CssPseudoClassType.hover<Type.declarations> ];
+    [> CssPseudoClassConstructor.hover<Type.declarations> ];
 }
