@@ -320,6 +320,12 @@ let paddingString = v =>
   #Padding(CssPadding.string(v));
 let paddingNumber = v =>
   #Padding(CssPadding.number(v));
+let padding2Number = (~tb, ~lr) =>
+  #Padding(CssPadding.number2(~tb, ~lr));
+let padding3Number = (~top, ~lr, ~bottom) =>
+  #Padding(CssPadding.number3(~top, ~lr, ~bottom));
+let padding4Number = (~top, ~right, ~bottom, ~left) =>
+  #Padding(CssPadding.number4(~top, ~right, ~bottom, ~left));
 
 let paddingTop = v =>
   #PaddingTop(CssPaddingTop.value(v));

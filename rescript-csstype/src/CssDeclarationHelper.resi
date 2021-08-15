@@ -324,6 +324,21 @@ let padding4: (
 let paddingUnion: CssPadding.t => [> CssDeclarationConstructor.padding ];
 let paddingString: string => [> CssDeclarationConstructor.padding ];
 let paddingNumber: float => [> CssDeclarationConstructor.padding ];
+let padding2Number: (
+  ~tb: float, 
+  ~lr: float,
+) => [> CssDeclarationConstructor.padding ];
+let padding3Number: (
+  ~top: float, 
+  ~lr: float, 
+  ~bottom: float,
+) => [> CssDeclarationConstructor.padding ];
+let padding4Number: (
+  ~top: float, 
+  ~right: float, 
+  ~bottom: float, 
+  ~left: float,
+) => [> CssDeclarationConstructor.padding ];
 
 let paddingTop: CssValueType.padding_global => [> CssDeclarationConstructor.paddingTop ];
 let paddingTopUnion: CssPaddingTop.t => [> CssDeclarationConstructor.paddingTop ];

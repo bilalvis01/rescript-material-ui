@@ -157,6 +157,9 @@ function Make(Type) {
           paddingUnion: CssDeclarationHelper$Ress.paddingUnion,
           paddingString: CssDeclarationHelper$Ress.paddingString,
           paddingNumber: CssDeclarationHelper$Ress.paddingNumber,
+          padding2Number: CssDeclarationHelper$Ress.padding2Number,
+          padding3Number: CssDeclarationHelper$Ress.padding3Number,
+          padding4Number: CssDeclarationHelper$Ress.padding4Number,
           paddingTop: CssDeclarationHelper$Ress.paddingTop,
           paddingTopUnion: CssDeclarationHelper$Ress.paddingTopUnion,
           paddingTopString: CssDeclarationHelper$Ress.paddingTopString,
@@ -592,6 +595,12 @@ var paddingUnion = CssDeclarationHelper$Ress.paddingUnion;
 var paddingString = CssDeclarationHelper$Ress.paddingString;
 
 var paddingNumber = CssDeclarationHelper$Ress.paddingNumber;
+
+var padding2Number = CssDeclarationHelper$Ress.padding2Number;
+
+var padding3Number = CssDeclarationHelper$Ress.padding3Number;
+
+var padding4Number = CssDeclarationHelper$Ress.padding4Number;
 
 var paddingTop = CssDeclarationHelper$Ress.paddingTop;
 
@@ -1034,6 +1043,9 @@ exports.padding4 = padding4;
 exports.paddingUnion = paddingUnion;
 exports.paddingString = paddingString;
 exports.paddingNumber = paddingNumber;
+exports.padding2Number = padding2Number;
+exports.padding3Number = padding3Number;
+exports.padding4Number = padding4Number;
 exports.paddingTop = paddingTop;
 exports.paddingTopUnion = paddingTopUnion;
 exports.paddingTopString = paddingTopString;

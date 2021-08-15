@@ -994,6 +994,27 @@ function paddingNumber(v) {
         };
 }
 
+function padding2Number(tb, lr) {
+  return {
+          NAME: "Padding",
+          VAL: CssPadding$Ress.number2(tb, lr)
+        };
+}
+
+function padding3Number(top, lr, bottom) {
+  return {
+          NAME: "Padding",
+          VAL: CssPadding$Ress.number3(top, lr, bottom)
+        };
+}
+
+function padding4Number(top, right, bottom, left) {
+  return {
+          NAME: "Padding",
+          VAL: CssPadding$Ress.number4(top, right, bottom, left)
+        };
+}
+
 function paddingTop(v) {
   return {
           NAME: "PaddingTop",
@@ -1389,6 +1410,9 @@ exports.padding4 = padding4;
 exports.paddingUnion = paddingUnion;
 exports.paddingString = paddingString;
 exports.paddingNumber = paddingNumber;
+exports.padding2Number = padding2Number;
+exports.padding3Number = padding3Number;
+exports.padding4Number = padding4Number;
 exports.paddingTop = paddingTop;
 exports.paddingTopUnion = paddingTopUnion;
 exports.paddingTopString = paddingTopString;

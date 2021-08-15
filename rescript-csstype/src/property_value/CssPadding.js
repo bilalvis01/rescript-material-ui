@@ -3,6 +3,30 @@
 
 var CssValueString$Ress = require("../CssValueString.js");
 
+function number2(tb, lr) {
+  return [
+          tb,
+          lr
+        ];
+}
+
+function number3(top, lr, bottom) {
+  return [
+          top,
+          lr,
+          bottom
+        ];
+}
+
+function number4(top, right, bottom, left) {
+  return [
+          top,
+          right,
+          bottom,
+          left
+        ];
+}
+
 var value = CssValueString$Ress.padding_global;
 
 function value2(tb, lr) {
@@ -17,6 +41,9 @@ function value4(top, right, bottom, left) {
   return CssValueString$Ress.padding(top) + " " + CssValueString$Ress.padding(right) + " " + CssValueString$Ress.padding(bottom) + " " + CssValueString$Ress.padding(left);
 }
 
+exports.number2 = number2;
+exports.number3 = number3;
+exports.number4 = number4;
 exports.value = value;
 exports.value2 = value2;
 exports.value3 = value3;
