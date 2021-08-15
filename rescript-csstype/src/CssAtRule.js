@@ -2,7 +2,7 @@
 'use strict';
 
 
-function Make(Type) {
+function Make($star) {
   var make = function (v) {
     return [
             "@font-face",

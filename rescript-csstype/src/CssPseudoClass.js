@@ -7,7 +7,9 @@ function Make(Type) {
   var make = function (v) {
     return Curry._1(Type.map, [
                 ":hover",
-                v.VAL
+                /* BoxDeclarations */{
+                  _0: v.VAL
+                }
               ]);
   };
   return {

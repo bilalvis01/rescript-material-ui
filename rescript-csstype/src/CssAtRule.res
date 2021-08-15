@@ -1,13 +1,13 @@
-module Make = (
-  Type: {
-    type descriptor;
-  }
-) => {
-  type t = (string, Type.descriptor);
-  external makeDescriptor: 'a => Type.descriptor = "%identity";
+@unboxed
+type rec boxDescriptors =
+  | BoxDescriptors('a): boxDescriptors;
+
+module Make = () => {
+  type t = (string, boxDescriptors);
+
   let make = v => {
     switch v {
-    | #FontFace(descriptor) => ("@font-face", makeDescriptor(descriptor))
+    | #FontFace(descriptor) => ("@font-face", BoxDescriptors(descriptor))
     }
   };
 };

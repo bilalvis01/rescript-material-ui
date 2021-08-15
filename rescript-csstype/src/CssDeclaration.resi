@@ -1,9 +1,9 @@
-module Make: (
-  Type: {
-    type value;
-  }
-) => {
-  type t = (string, Type.value);
+@unboxed
+type rec boxValue =
+  | BoxValue('a): boxValue;
+
+module Make: () => {
+  type t = (string, boxValue);
 
   let make: CssDeclarationConstructor.t => t;
 };

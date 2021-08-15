@@ -7,7 +7,9 @@ function Make(Type) {
     var match = v.VAL;
     return [
             match[0],
-            match[1]
+            /* BoxDeclarations */{
+              _0: match[1]
+            }
           ];
   };
   return {

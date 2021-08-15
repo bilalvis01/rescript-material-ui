@@ -1,9 +1,9 @@
 module Make: (
   Type: {
-    type declarations;
-    let declarations: array<CssAdvancedDeclarationConstructor.t<declarations>> => declarations;
+    type declarations<'data>;
+    let declarations: array<CssAdvancedDeclarationConstructor.t<'data, declarations<'data>>> => declarations<'data>;
   }
 ) => {
-  let selector: (string, array<CssAdvancedDeclarationConstructor.t<Type.declarations>>) => 
-    [> CssSelectorConstructor.t<Type.declarations> ];
+  let selector: (string, array<CssAdvancedDeclarationConstructor.t<'data, Type.declarations<'data>>>) => 
+    [> CssSelectorConstructor.t<Type.declarations<'data>> ];
 };

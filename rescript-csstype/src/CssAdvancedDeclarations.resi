@@ -1,8 +1,8 @@
 module Make: (
   Type: {
-    type t;
-    type value;
+    type t<'data>;
+    type value<'data>;
   }
 ) => {
-  let make: array<CssAdvancedDeclarationConstructor.t<Type.t>> => Type.t;
+  let make: array<CssAdvancedDeclarationConstructor.t<'data, Type.t<'data>>> => Type.t<'data>;
 };

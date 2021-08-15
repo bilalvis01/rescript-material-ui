@@ -1,18 +1,18 @@
 module Make = (
   Type: {
-    type value;
-    type declarations;
-    type rules;
+    type value<'data>;
+    type declarations<'data>;
+    type rules<'data>;
   }
 ) => {
   module Declarations = CssAdvancedDeclarations.Make({ 
-    type t = Type.declarations;
-    type value = Type.value;
+    type t<'data> = Type.declarations<'data>;
+    type value<'data> = Type.value<'data>;
   });
 
   module Rules = CssRules.Make({
-    type t = Type.rules;
-    type declarations = Type.declarations;
+    type t<'data> = Type.rules<'data>;
+    type declarations<'data> = Type.declarations<'data>;
   });
 
   /*
@@ -20,11 +20,11 @@ module Make = (
   */
   include CssDeclarationHelper;
   include CssSelectorHelper.Make({ 
-    type declarations = Type.declarations; 
+    type declarations<'data> = Type.declarations<'data>; 
     let declarations = Declarations.make; 
   });
   include CssPseudoClassHelper.Make({ 
-    type declarations = Type.declarations; 
+    type declarations<'data> = Type.declarations<'data>; 
     let declarations = Declarations.make; 
   });
   include CssValueHelper;
@@ -77,14 +77,14 @@ module Make = (
   module FontFace = CssFontFace;
 }
 
-type value;
-type declarations;
-type rules;
+type value<'data>;
+type declarations<'data>;
+type rules<'data>;
 
 include Make({
-  type value = value;
-  type declarations = declarations;
-  type rules = rules;
+  type value<'data> = value<'data>;
+  type declarations<'data> = declarations<'data>;
+  type rules<'data> = rules<'data>;
 });
 
 let style = Declarations.make;

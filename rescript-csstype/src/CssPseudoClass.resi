@@ -1,11 +1,14 @@
+type rec boxDeclarations<'a> =
+  | BoxDeclarations('a): boxDeclarations<'a>;
+
 module Make: (
   Type: {
-    type declarations;
-    type value;
-    let map: ((string, value)) => (string, value);
+    type declarations<'data>;
+    let map: ((string, boxDeclarations<declarations<'data>>)) => 
+      (string, boxDeclarations<declarations<'data>>);
   }
 ) => {
-  type t = (string, Type.value);
+  type t<'data> = (string, boxDeclarations<Type.declarations<'data>>);
 
-  let make: CssPseudoClassConstructor.t<Type.declarations> => t;
+  let make: CssPseudoClassConstructor.t<Type.declarations<'data>> => t<'data>;
 }

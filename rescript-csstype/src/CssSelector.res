@@ -1,15 +1,16 @@
+type rec boxDeclarations<'a> =
+  | BoxDeclarations('a): boxDeclarations<'a>;
+
 module Make = (
   Type: {
-    type declarations;
-    type value;
+    type declarations<'data>;
   }
 ) => {
-  type t = (string, Type.value);
-  external makeValue: Type.declarations => Type.value = "%identity";
+  type t<'data> = (string, boxDeclarations<Type.declarations<'data>>);
 
   let make = v => {
     switch v {
-    | #Selector(selector, declarations) => (selector, makeValue(declarations));
+    | #Selector(selector, declarations) => (selector, BoxDeclarations(declarations));
     }
   };
 }

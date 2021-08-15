@@ -8,9 +8,11 @@ var CssAtRule$Ress = require("./CssAtRule.js");
 var CssSelector$Ress = require("./CssSelector.js");
 var CssDeclaration$Ress = require("./CssDeclaration.js");
 var CssPseudoClass$Ress = require("./CssPseudoClass.js");
+var CssDeclarationFn$Ress = require("./CssDeclarationFn.js");
 
 function Make(funarg) {
   var Declaration = CssDeclaration$Ress.Make({});
+  var DeclarationFn = CssDeclarationFn$Ress.Make({});
   var Selector = CssSelector$Ress.Make({});
   var map = function (v) {
     return [
@@ -25,14 +27,16 @@ function Make(funarg) {
   var make = function (declarations) {
     return Js_dict.fromArray(Belt_Array.map(declarations, (function (declaration) {
                       var variant = declaration.NAME;
-                      if (variant === "Selector") {
+                      if (variant === "BorderWidth" || variant === "BorderColor" || variant === "BorderRightStyle" || variant === "PaddingTop" || variant === "FontWeight" || variant === "BackgroundStyle" || variant === "BorderTop" || variant === "BackgroundPosition" || variant === "BorderBottomStyle" || variant === "Padding" || variant === "Background" || variant === "Border" || variant === "MarginRight" || variant === "PaddingBottom" || variant === "FontFamily" || variant === "MarginTop" || variant === "BorderBottom" || variant === "BorderLeftWidth" || variant === "BorderLeftColor" || variant === "MarginBottom" || variant === "Property" || variant === "BorderTopStyle" || variant === "MarginLeft" || variant === "BorderRightWidth" || variant === "BorderRightColor" || variant === "BorderLeft" || variant === "BorderStyle" || variant === "Cursor" || variant === "Margin" || variant === "BackgroundColor" || variant === "PaddingLeft" || variant === "BorderBottomWidth" || variant === "BorderBottomColor" || variant === "PaddingRight" || variant === "BackgroundImage" || variant === "Color" || variant === "Clear" || variant === "BackgroundAttachment" || variant === "BorderRight" || variant === "BorderTopWidth" || variant === "BorderTopColor" || variant === "BorderLeftStyle") {
+                        return Curry._1(Declaration.make, declaration);
+                      } else if (variant === "Selector") {
                         return Curry._1(Selector.make, declaration);
                       } else if (variant === "FontFace") {
                         return Curry._1(AtRule.make, declaration);
                       } else if (variant === "Hover") {
                         return Curry._1(PseudoClass.make, declaration);
                       } else {
-                        return Curry._1(Declaration.make, declaration);
+                        return Curry._1(DeclarationFn.make, declaration);
                       }
                     })));
   };
