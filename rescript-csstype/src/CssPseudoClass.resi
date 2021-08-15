@@ -1,3 +1,4 @@
+@unboxed
 type rec boxDeclarations<'a> =
   | BoxDeclarations('a): boxDeclarations<'a>;
 
