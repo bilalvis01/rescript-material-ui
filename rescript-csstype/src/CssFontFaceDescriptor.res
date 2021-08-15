@@ -1,4 +1,4 @@
 type fontDisplay = [ | #FontDisplay(CssFontFacePropertyValue.t_fontDisplay) ];
-type descriptor = [
+type t = [
   | fontDisplay
 ];

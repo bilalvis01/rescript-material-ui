@@ -4,7 +4,7 @@ type t;
 type rec boxValue = 
   | BoxValue('a): boxValue;
 
-let descriptors: array<CssFontFaceType.descriptor> => t;
+let descriptors: array<CssFontFaceDescriptor.t> => t;
 
-let fontDisplay: CssFontFaceValueType.fontDisplay => [> CssFontFaceType.fontDisplay ];
-let fontDisplayString: string => [ CssFontFaceType.fontDisplay ];
+let fontDisplay: CssFontFaceValueType.fontDisplay => [> CssFontFaceDescriptor.fontDisplay ];
+let fontDisplayString: string => [ CssFontFaceDescriptor.fontDisplay ];

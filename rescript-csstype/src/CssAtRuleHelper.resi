@@ -1,2 +1,2 @@
-let fontFace: array<CssFontFaceType.descriptor> => 
+let fontFace: array<CssFontFaceDescriptor.t> => 
     [> CssAtRuleConstructor.fontFace ];
