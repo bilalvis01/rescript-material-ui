@@ -1,5 +1,5 @@
 type t<'declarations> = [
-  | CssDeclarationType.t
+  | CssDeclarationConstructor.t
   | CssSelectorType.t<'declarations>
   | CssPseudoClassType.t<'declarations>
   | CssAtRuleConstructor.t

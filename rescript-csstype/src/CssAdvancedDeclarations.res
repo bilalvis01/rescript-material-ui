@@ -30,7 +30,7 @@ module Make = (
   let make = declarations => {
     declarations->Belt.Array.map(declaration => {
       switch declaration {
-      | #...CssDeclarationType.t as p => Declaration.make(p)
+      | #...CssDeclarationConstructor.t as p => Declaration.make(p)
       | #...CssSelectorType.t as s => Selector.make(s)
       | #...CssPseudoClassType.t as p => PseudoClass.make(p)
       | #...CssAtRuleConstructor.t as a => AtRule.make(a)
