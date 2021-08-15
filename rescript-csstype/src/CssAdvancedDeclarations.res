@@ -33,7 +33,7 @@ module Make = (
       | #...CssDeclarationType.t as p => Declaration.make(p)
       | #...CssSelectorType.t as s => Selector.make(s)
       | #...CssPseudoClassType.t as p => PseudoClass.make(p)
-      | #...CssAtRuleType.t as a => AtRule.make(a)
+      | #...CssAtRuleConstructor.t as a => AtRule.make(a)
       };
     })
     ->Js.Dict.fromArray

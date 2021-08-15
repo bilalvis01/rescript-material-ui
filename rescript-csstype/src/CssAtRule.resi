@@ -4,5 +4,5 @@ module Make: (
   }
 ) => {
   type t = (string, Type.descriptor);
-  let make: CssAtRuleType.t => t;
+  let make: CssAtRuleConstructor.t => t;
 };
