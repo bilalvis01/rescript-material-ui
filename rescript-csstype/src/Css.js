@@ -23,133 +23,173 @@ function Make(Type) {
           Rules: Rules,
           property: CssDeclarationHelper$Ress.property,
           border: CssDeclarationHelper$Ress.border,
+          borderUnion: CssDeclarationHelper$Ress.borderUnion,
           borderString: CssDeclarationHelper$Ress.borderString,
           borderTop: CssDeclarationHelper$Ress.borderTop,
+          borderTopUnion: CssDeclarationHelper$Ress.borderTopUnion,
           borderTopString: CssDeclarationHelper$Ress.borderTopString,
           borderLeft: CssDeclarationHelper$Ress.borderLeft,
+          borderLeftUnion: CssDeclarationHelper$Ress.borderLeftUnion,
           borderLeftString: CssDeclarationHelper$Ress.borderLeftString,
           borderRight: CssDeclarationHelper$Ress.borderRight,
+          borderRightUnion: CssDeclarationHelper$Ress.borderRightUnion,
           borderRightString: CssDeclarationHelper$Ress.borderRightString,
           borderBottom: CssDeclarationHelper$Ress.borderBottom,
+          borderBottomUnion: CssDeclarationHelper$Ress.borderBottomUnion,
           borderBottomString: CssDeclarationHelper$Ress.borderBottomString,
           borderColor: CssDeclarationHelper$Ress.borderColor,
           borderColor2: CssDeclarationHelper$Ress.borderColor2,
           borderColor3: CssDeclarationHelper$Ress.borderColor3,
           borderColor4: CssDeclarationHelper$Ress.borderColor4,
+          borderColorUnion: CssDeclarationHelper$Ress.borderColorUnion,
           borderColorString: CssDeclarationHelper$Ress.borderColorString,
           borderTopColor: CssDeclarationHelper$Ress.borderTopColor,
+          borderTopColorUnion: CssDeclarationHelper$Ress.borderTopColorUnion,
           borderTopColorString: CssDeclarationHelper$Ress.borderTopColorString,
           borderRightColor: CssDeclarationHelper$Ress.borderRightColor,
+          borderRightColorUnion: CssDeclarationHelper$Ress.borderRightColorUnion,
           borderRightColorString: CssDeclarationHelper$Ress.borderRightColorString,
           borderBottomColor: CssDeclarationHelper$Ress.borderBottomColor,
+          borderBottomColorUnion: CssDeclarationHelper$Ress.borderBottomColorUnion,
           borderBottomColorString: CssDeclarationHelper$Ress.borderBottomColorString,
           borderLeftColor: CssDeclarationHelper$Ress.borderLeftColor,
+          borderLeftColorUnion: CssDeclarationHelper$Ress.borderLeftColorUnion,
           borderLeftColorString: CssDeclarationHelper$Ress.borderLeftColorString,
           borderStyle: CssDeclarationHelper$Ress.borderStyle,
           borderStyle2: CssDeclarationHelper$Ress.borderStyle2,
           borderStyle3: CssDeclarationHelper$Ress.borderStyle3,
           borderStyle4: CssDeclarationHelper$Ress.borderStyle4,
+          borderStyleUnion: CssDeclarationHelper$Ress.borderStyleUnion,
           borderStyleString: CssDeclarationHelper$Ress.borderStyleString,
           borderTopStyle: CssDeclarationHelper$Ress.borderTopStyle,
+          borderTopStyleUnion: CssDeclarationHelper$Ress.borderTopStyleUnion,
           borderTopStyleString: CssDeclarationHelper$Ress.borderTopStyleString,
           borderRightStyle: CssDeclarationHelper$Ress.borderRightStyle,
+          borderRightStyleUnion: CssDeclarationHelper$Ress.borderRightStyleUnion,
           borderRightStyleString: CssDeclarationHelper$Ress.borderRightStyleString,
           borderBottomStyle: CssDeclarationHelper$Ress.borderBottomStyle,
+          borderBottomStyleUnion: CssDeclarationHelper$Ress.borderBottomStyleUnion,
           borderBottomStyleString: CssDeclarationHelper$Ress.borderBottomStyleString,
           borderLeftStyle: CssDeclarationHelper$Ress.borderLeftStyle,
+          borderLeftStyleUnion: CssDeclarationHelper$Ress.borderLeftStyleUnion,
           borderLeftStyleString: CssDeclarationHelper$Ress.borderLeftStyleString,
           borderWidth: CssDeclarationHelper$Ress.borderWidth,
           borderWidth2: CssDeclarationHelper$Ress.borderWidth2,
           borderWidth3: CssDeclarationHelper$Ress.borderWidth3,
           borderWidth4: CssDeclarationHelper$Ress.borderWidth4,
+          borderWidthUnion: CssDeclarationHelper$Ress.borderWidthUnion,
           borderWidthString: CssDeclarationHelper$Ress.borderWidthString,
           borderTopWidth: CssDeclarationHelper$Ress.borderTopWidth,
+          borderTopWidthUnion: CssDeclarationHelper$Ress.borderTopWidthUnion,
           borderTopWidthString: CssDeclarationHelper$Ress.borderTopWidthString,
           borderRightWidth: CssDeclarationHelper$Ress.borderRightWidth,
+          borderRightWidthUnion: CssDeclarationHelper$Ress.borderRightWidthUnion,
           borderRightWidthString: CssDeclarationHelper$Ress.borderRightWidthString,
           borderBottomWidth: CssDeclarationHelper$Ress.borderBottomWidth,
+          borderBottomWidthUnion: CssDeclarationHelper$Ress.borderBottomWidthUnion,
           borderBottomWidthString: CssDeclarationHelper$Ress.borderBottomWidthString,
           borderLeftWidth: CssDeclarationHelper$Ress.borderLeftWidth,
+          borderLeftWidthUnion: CssDeclarationHelper$Ress.borderLeftWidthUnion,
           borderLeftWidthString: CssDeclarationHelper$Ress.borderLeftWidthString,
           background: CssDeclarationHelper$Ress.background,
-          backgroundString: CssDeclarationHelper$Ress.backgroundString,
           background2: CssDeclarationHelper$Ress.background2,
           background3: CssDeclarationHelper$Ress.background3,
           background4: CssDeclarationHelper$Ress.background4,
+          backgroundUnion: CssDeclarationHelper$Ress.backgroundUnion,
+          backgroundString: CssDeclarationHelper$Ress.backgroundString,
           backgroundAttachment: CssDeclarationHelper$Ress.backgroundAttachment,
           backgroundAttachment2: CssDeclarationHelper$Ress.backgroundAttachment2,
           backgroundAttachment3: CssDeclarationHelper$Ress.backgroundAttachment3,
           backgroundAttachment4: CssDeclarationHelper$Ress.backgroundAttachment4,
+          backgroundAttachmentUnion: CssDeclarationHelper$Ress.backgroundAttachmentUnion,
           backgroundAttachmentString: CssDeclarationHelper$Ress.backgroundAttachmentString,
           backgroundColor: CssDeclarationHelper$Ress.backgroundColor,
+          backgroundColorUnion: CssDeclarationHelper$Ress.backgroundColorUnion,
           backgroundColorString: CssDeclarationHelper$Ress.backgroundColorString,
           backgroundImage: CssDeclarationHelper$Ress.backgroundImage,
           backgroundImage2: CssDeclarationHelper$Ress.backgroundImage2,
           backgroundImage3: CssDeclarationHelper$Ress.backgroundImage3,
           backgroundImage4: CssDeclarationHelper$Ress.backgroundImage4,
+          backgroundImageUnion: CssDeclarationHelper$Ress.backgroundImageUnion,
           backgroundImageString: CssDeclarationHelper$Ress.backgroundImageString,
           backgroundPosition: CssDeclarationHelper$Ress.backgroundPosition,
           backgroundPosition2: CssDeclarationHelper$Ress.backgroundPosition2,
           backgroundPosition3: CssDeclarationHelper$Ress.backgroundPosition3,
           backgroundPosition4: CssDeclarationHelper$Ress.backgroundPosition4,
+          backgroundPositionUnion: CssDeclarationHelper$Ress.backgroundPositionUnion,
           backgroundPositionString: CssDeclarationHelper$Ress.backgroundPositionString,
           backgroundStyle: CssDeclarationHelper$Ress.backgroundStyle,
           backgroundStyle2: CssDeclarationHelper$Ress.backgroundStyle2,
           backgroundStyle3: CssDeclarationHelper$Ress.backgroundStyle3,
           backgroundStyle4: CssDeclarationHelper$Ress.backgroundStyle4,
+          backgroundStyleUnion: CssDeclarationHelper$Ress.backgroundStyleUnion,
           backgroundStyleString: CssDeclarationHelper$Ress.backgroundStyleString,
           margin: CssDeclarationHelper$Ress.margin,
           margin2: CssDeclarationHelper$Ress.margin2,
           margin3: CssDeclarationHelper$Ress.margin3,
           margin4: CssDeclarationHelper$Ress.margin4,
+          marginUnion: CssDeclarationHelper$Ress.marginUnion,
           marginString: CssDeclarationHelper$Ress.marginString,
           marginNumber: CssDeclarationHelper$Ress.marginNumber,
           marginTop: CssDeclarationHelper$Ress.marginTop,
+          marginTopUnion: CssDeclarationHelper$Ress.marginTopUnion,
           marginTopString: CssDeclarationHelper$Ress.marginTopString,
           marginTopNumber: CssDeclarationHelper$Ress.marginTopNumber,
           marginRight: CssDeclarationHelper$Ress.marginRight,
+          marginRightUnion: CssDeclarationHelper$Ress.marginRightUnion,
           marginRightString: CssDeclarationHelper$Ress.marginRightString,
           marginRightNumber: CssDeclarationHelper$Ress.marginRightNumber,
           marginBottom: CssDeclarationHelper$Ress.marginBottom,
+          marginBottomUnion: CssDeclarationHelper$Ress.marginBottomUnion,
           marginBottomString: CssDeclarationHelper$Ress.marginBottomString,
           marginBottomNumber: CssDeclarationHelper$Ress.marginBottomNumber,
           marginLeft: CssDeclarationHelper$Ress.marginLeft,
+          marginLeftUnion: CssDeclarationHelper$Ress.marginLeftUnion,
           marginLeftString: CssDeclarationHelper$Ress.marginLeftString,
           marginLeftNumber: CssDeclarationHelper$Ress.marginLeftNumber,
           padding: CssDeclarationHelper$Ress.padding,
           padding2: CssDeclarationHelper$Ress.padding2,
           padding3: CssDeclarationHelper$Ress.padding3,
           padding4: CssDeclarationHelper$Ress.padding4,
+          paddingUnion: CssDeclarationHelper$Ress.paddingUnion,
           paddingString: CssDeclarationHelper$Ress.paddingString,
           paddingNumber: CssDeclarationHelper$Ress.paddingNumber,
           paddingTop: CssDeclarationHelper$Ress.paddingTop,
+          paddingTopUnion: CssDeclarationHelper$Ress.paddingTopUnion,
           paddingTopString: CssDeclarationHelper$Ress.paddingTopString,
           paddingTopNumber: CssDeclarationHelper$Ress.paddingTopNumber,
           paddingRight: CssDeclarationHelper$Ress.paddingRight,
+          paddingRightUnion: CssDeclarationHelper$Ress.paddingRightUnion,
           paddingRightString: CssDeclarationHelper$Ress.paddingRightString,
           paddingRightNumber: CssDeclarationHelper$Ress.paddingRightNumber,
           paddingBottom: CssDeclarationHelper$Ress.paddingBottom,
+          paddingBottomUnion: CssDeclarationHelper$Ress.paddingBottomUnion,
           paddingBottomString: CssDeclarationHelper$Ress.paddingBottomString,
           paddingBottomNumber: CssDeclarationHelper$Ress.paddingBottomNumber,
           paddingLeft: CssDeclarationHelper$Ress.paddingLeft,
+          paddingLeftUnion: CssDeclarationHelper$Ress.paddingLeftUnion,
           paddingLeftString: CssDeclarationHelper$Ress.paddingLeftString,
           paddingLeftNumber: CssDeclarationHelper$Ress.paddingLeftNumber,
           clear: CssDeclarationHelper$Ress.clear,
           color: CssDeclarationHelper$Ress.color,
+          colorUnion: CssDeclarationHelper$Ress.colorUnion,
           colorString: CssDeclarationHelper$Ress.colorString,
           cursor: CssDeclarationHelper$Ress.cursor,
           cursor1: CssDeclarationHelper$Ress.cursor1,
           cursor2: CssDeclarationHelper$Ress.cursor2,
           cursor3: CssDeclarationHelper$Ress.cursor3,
           cursor4: CssDeclarationHelper$Ress.cursor4,
+          cursorUnion: CssDeclarationHelper$Ress.cursorUnion,
           cursorString: CssDeclarationHelper$Ress.cursorString,
           fontWeight: CssDeclarationHelper$Ress.fontWeight,
+          fontWeightUnion: CssDeclarationHelper$Ress.fontWeightUnion,
           fontWeightString: CssDeclarationHelper$Ress.fontWeightString,
           fontWeightNumber: CssDeclarationHelper$Ress.fontWeightNumber,
           fontFamily: CssDeclarationHelper$Ress.fontFamily,
           fontFamily2: CssDeclarationHelper$Ress.fontFamily2,
           fontFamily3: CssDeclarationHelper$Ress.fontFamily3,
           fontFamily4: CssDeclarationHelper$Ress.fontFamily4,
+          fontFamilyUnion: CssDeclarationHelper$Ress.fontFamilyUnion,
           fontFamilyString: CssDeclarationHelper$Ress.fontFamilyString,
           selector: include.selector,
           hover: include$1.hover,
@@ -282,21 +322,31 @@ var property = CssDeclarationHelper$Ress.property;
 
 var border = CssDeclarationHelper$Ress.border;
 
+var borderUnion = CssDeclarationHelper$Ress.borderUnion;
+
 var borderString = CssDeclarationHelper$Ress.borderString;
 
 var borderTop = CssDeclarationHelper$Ress.borderTop;
+
+var borderTopUnion = CssDeclarationHelper$Ress.borderTopUnion;
 
 var borderTopString = CssDeclarationHelper$Ress.borderTopString;
 
 var borderLeft = CssDeclarationHelper$Ress.borderLeft;
 
+var borderLeftUnion = CssDeclarationHelper$Ress.borderLeftUnion;
+
 var borderLeftString = CssDeclarationHelper$Ress.borderLeftString;
 
 var borderRight = CssDeclarationHelper$Ress.borderRight;
 
+var borderRightUnion = CssDeclarationHelper$Ress.borderRightUnion;
+
 var borderRightString = CssDeclarationHelper$Ress.borderRightString;
 
 var borderBottom = CssDeclarationHelper$Ress.borderBottom;
+
+var borderBottomUnion = CssDeclarationHelper$Ress.borderBottomUnion;
 
 var borderBottomString = CssDeclarationHelper$Ress.borderBottomString;
 
@@ -308,21 +358,31 @@ var borderColor3 = CssDeclarationHelper$Ress.borderColor3;
 
 var borderColor4 = CssDeclarationHelper$Ress.borderColor4;
 
+var borderColorUnion = CssDeclarationHelper$Ress.borderColorUnion;
+
 var borderColorString = CssDeclarationHelper$Ress.borderColorString;
 
 var borderTopColor = CssDeclarationHelper$Ress.borderTopColor;
+
+var borderTopColorUnion = CssDeclarationHelper$Ress.borderTopColorUnion;
 
 var borderTopColorString = CssDeclarationHelper$Ress.borderTopColorString;
 
 var borderRightColor = CssDeclarationHelper$Ress.borderRightColor;
 
+var borderRightColorUnion = CssDeclarationHelper$Ress.borderRightColorUnion;
+
 var borderRightColorString = CssDeclarationHelper$Ress.borderRightColorString;
 
 var borderBottomColor = CssDeclarationHelper$Ress.borderBottomColor;
 
+var borderBottomColorUnion = CssDeclarationHelper$Ress.borderBottomColorUnion;
+
 var borderBottomColorString = CssDeclarationHelper$Ress.borderBottomColorString;
 
 var borderLeftColor = CssDeclarationHelper$Ress.borderLeftColor;
+
+var borderLeftColorUnion = CssDeclarationHelper$Ress.borderLeftColorUnion;
 
 var borderLeftColorString = CssDeclarationHelper$Ress.borderLeftColorString;
 
@@ -334,21 +394,31 @@ var borderStyle3 = CssDeclarationHelper$Ress.borderStyle3;
 
 var borderStyle4 = CssDeclarationHelper$Ress.borderStyle4;
 
+var borderStyleUnion = CssDeclarationHelper$Ress.borderStyleUnion;
+
 var borderStyleString = CssDeclarationHelper$Ress.borderStyleString;
 
 var borderTopStyle = CssDeclarationHelper$Ress.borderTopStyle;
+
+var borderTopStyleUnion = CssDeclarationHelper$Ress.borderTopStyleUnion;
 
 var borderTopStyleString = CssDeclarationHelper$Ress.borderTopStyleString;
 
 var borderRightStyle = CssDeclarationHelper$Ress.borderRightStyle;
 
+var borderRightStyleUnion = CssDeclarationHelper$Ress.borderRightStyleUnion;
+
 var borderRightStyleString = CssDeclarationHelper$Ress.borderRightStyleString;
 
 var borderBottomStyle = CssDeclarationHelper$Ress.borderBottomStyle;
 
+var borderBottomStyleUnion = CssDeclarationHelper$Ress.borderBottomStyleUnion;
+
 var borderBottomStyleString = CssDeclarationHelper$Ress.borderBottomStyleString;
 
 var borderLeftStyle = CssDeclarationHelper$Ress.borderLeftStyle;
+
+var borderLeftStyleUnion = CssDeclarationHelper$Ress.borderLeftStyleUnion;
 
 var borderLeftStyleString = CssDeclarationHelper$Ress.borderLeftStyleString;
 
@@ -360,33 +430,45 @@ var borderWidth3 = CssDeclarationHelper$Ress.borderWidth3;
 
 var borderWidth4 = CssDeclarationHelper$Ress.borderWidth4;
 
+var borderWidthUnion = CssDeclarationHelper$Ress.borderWidthUnion;
+
 var borderWidthString = CssDeclarationHelper$Ress.borderWidthString;
 
 var borderTopWidth = CssDeclarationHelper$Ress.borderTopWidth;
+
+var borderTopWidthUnion = CssDeclarationHelper$Ress.borderTopWidthUnion;
 
 var borderTopWidthString = CssDeclarationHelper$Ress.borderTopWidthString;
 
 var borderRightWidth = CssDeclarationHelper$Ress.borderRightWidth;
 
+var borderRightWidthUnion = CssDeclarationHelper$Ress.borderRightWidthUnion;
+
 var borderRightWidthString = CssDeclarationHelper$Ress.borderRightWidthString;
 
 var borderBottomWidth = CssDeclarationHelper$Ress.borderBottomWidth;
+
+var borderBottomWidthUnion = CssDeclarationHelper$Ress.borderBottomWidthUnion;
 
 var borderBottomWidthString = CssDeclarationHelper$Ress.borderBottomWidthString;
 
 var borderLeftWidth = CssDeclarationHelper$Ress.borderLeftWidth;
 
+var borderLeftWidthUnion = CssDeclarationHelper$Ress.borderLeftWidthUnion;
+
 var borderLeftWidthString = CssDeclarationHelper$Ress.borderLeftWidthString;
 
 var background = CssDeclarationHelper$Ress.background;
-
-var backgroundString = CssDeclarationHelper$Ress.backgroundString;
 
 var background2 = CssDeclarationHelper$Ress.background2;
 
 var background3 = CssDeclarationHelper$Ress.background3;
 
 var background4 = CssDeclarationHelper$Ress.background4;
+
+var backgroundUnion = CssDeclarationHelper$Ress.backgroundUnion;
+
+var backgroundString = CssDeclarationHelper$Ress.backgroundString;
 
 var backgroundAttachment = CssDeclarationHelper$Ress.backgroundAttachment;
 
@@ -396,9 +478,13 @@ var backgroundAttachment3 = CssDeclarationHelper$Ress.backgroundAttachment3;
 
 var backgroundAttachment4 = CssDeclarationHelper$Ress.backgroundAttachment4;
 
+var backgroundAttachmentUnion = CssDeclarationHelper$Ress.backgroundAttachmentUnion;
+
 var backgroundAttachmentString = CssDeclarationHelper$Ress.backgroundAttachmentString;
 
 var backgroundColor = CssDeclarationHelper$Ress.backgroundColor;
+
+var backgroundColorUnion = CssDeclarationHelper$Ress.backgroundColorUnion;
 
 var backgroundColorString = CssDeclarationHelper$Ress.backgroundColorString;
 
@@ -410,6 +496,8 @@ var backgroundImage3 = CssDeclarationHelper$Ress.backgroundImage3;
 
 var backgroundImage4 = CssDeclarationHelper$Ress.backgroundImage4;
 
+var backgroundImageUnion = CssDeclarationHelper$Ress.backgroundImageUnion;
+
 var backgroundImageString = CssDeclarationHelper$Ress.backgroundImageString;
 
 var backgroundPosition = CssDeclarationHelper$Ress.backgroundPosition;
@@ -419,6 +507,8 @@ var backgroundPosition2 = CssDeclarationHelper$Ress.backgroundPosition2;
 var backgroundPosition3 = CssDeclarationHelper$Ress.backgroundPosition3;
 
 var backgroundPosition4 = CssDeclarationHelper$Ress.backgroundPosition4;
+
+var backgroundPositionUnion = CssDeclarationHelper$Ress.backgroundPositionUnion;
 
 var backgroundPositionString = CssDeclarationHelper$Ress.backgroundPositionString;
 
@@ -430,6 +520,8 @@ var backgroundStyle3 = CssDeclarationHelper$Ress.backgroundStyle3;
 
 var backgroundStyle4 = CssDeclarationHelper$Ress.backgroundStyle4;
 
+var backgroundStyleUnion = CssDeclarationHelper$Ress.backgroundStyleUnion;
+
 var backgroundStyleString = CssDeclarationHelper$Ress.backgroundStyleString;
 
 var margin = CssDeclarationHelper$Ress.margin;
@@ -440,11 +532,15 @@ var margin3 = CssDeclarationHelper$Ress.margin3;
 
 var margin4 = CssDeclarationHelper$Ress.margin4;
 
+var marginUnion = CssDeclarationHelper$Ress.marginUnion;
+
 var marginString = CssDeclarationHelper$Ress.marginString;
 
 var marginNumber = CssDeclarationHelper$Ress.marginNumber;
 
 var marginTop = CssDeclarationHelper$Ress.marginTop;
+
+var marginTopUnion = CssDeclarationHelper$Ress.marginTopUnion;
 
 var marginTopString = CssDeclarationHelper$Ress.marginTopString;
 
@@ -452,17 +548,23 @@ var marginTopNumber = CssDeclarationHelper$Ress.marginTopNumber;
 
 var marginRight = CssDeclarationHelper$Ress.marginRight;
 
+var marginRightUnion = CssDeclarationHelper$Ress.marginRightUnion;
+
 var marginRightString = CssDeclarationHelper$Ress.marginRightString;
 
 var marginRightNumber = CssDeclarationHelper$Ress.marginRightNumber;
 
 var marginBottom = CssDeclarationHelper$Ress.marginBottom;
 
+var marginBottomUnion = CssDeclarationHelper$Ress.marginBottomUnion;
+
 var marginBottomString = CssDeclarationHelper$Ress.marginBottomString;
 
 var marginBottomNumber = CssDeclarationHelper$Ress.marginBottomNumber;
 
 var marginLeft = CssDeclarationHelper$Ress.marginLeft;
+
+var marginLeftUnion = CssDeclarationHelper$Ress.marginLeftUnion;
 
 var marginLeftString = CssDeclarationHelper$Ress.marginLeftString;
 
@@ -476,11 +578,15 @@ var padding3 = CssDeclarationHelper$Ress.padding3;
 
 var padding4 = CssDeclarationHelper$Ress.padding4;
 
+var paddingUnion = CssDeclarationHelper$Ress.paddingUnion;
+
 var paddingString = CssDeclarationHelper$Ress.paddingString;
 
 var paddingNumber = CssDeclarationHelper$Ress.paddingNumber;
 
 var paddingTop = CssDeclarationHelper$Ress.paddingTop;
+
+var paddingTopUnion = CssDeclarationHelper$Ress.paddingTopUnion;
 
 var paddingTopString = CssDeclarationHelper$Ress.paddingTopString;
 
@@ -488,17 +594,23 @@ var paddingTopNumber = CssDeclarationHelper$Ress.paddingTopNumber;
 
 var paddingRight = CssDeclarationHelper$Ress.paddingRight;
 
+var paddingRightUnion = CssDeclarationHelper$Ress.paddingRightUnion;
+
 var paddingRightString = CssDeclarationHelper$Ress.paddingRightString;
 
 var paddingRightNumber = CssDeclarationHelper$Ress.paddingRightNumber;
 
 var paddingBottom = CssDeclarationHelper$Ress.paddingBottom;
 
+var paddingBottomUnion = CssDeclarationHelper$Ress.paddingBottomUnion;
+
 var paddingBottomString = CssDeclarationHelper$Ress.paddingBottomString;
 
 var paddingBottomNumber = CssDeclarationHelper$Ress.paddingBottomNumber;
 
 var paddingLeft = CssDeclarationHelper$Ress.paddingLeft;
+
+var paddingLeftUnion = CssDeclarationHelper$Ress.paddingLeftUnion;
 
 var paddingLeftString = CssDeclarationHelper$Ress.paddingLeftString;
 
@@ -507,6 +619,8 @@ var paddingLeftNumber = CssDeclarationHelper$Ress.paddingLeftNumber;
 var clear = CssDeclarationHelper$Ress.clear;
 
 var color = CssDeclarationHelper$Ress.color;
+
+var colorUnion = CssDeclarationHelper$Ress.colorUnion;
 
 var colorString = CssDeclarationHelper$Ress.colorString;
 
@@ -520,9 +634,13 @@ var cursor3 = CssDeclarationHelper$Ress.cursor3;
 
 var cursor4 = CssDeclarationHelper$Ress.cursor4;
 
+var cursorUnion = CssDeclarationHelper$Ress.cursorUnion;
+
 var cursorString = CssDeclarationHelper$Ress.cursorString;
 
 var fontWeight = CssDeclarationHelper$Ress.fontWeight;
+
+var fontWeightUnion = CssDeclarationHelper$Ress.fontWeightUnion;
 
 var fontWeightString = CssDeclarationHelper$Ress.fontWeightString;
 
@@ -535,6 +653,8 @@ var fontFamily2 = CssDeclarationHelper$Ress.fontFamily2;
 var fontFamily3 = CssDeclarationHelper$Ress.fontFamily3;
 
 var fontFamily4 = CssDeclarationHelper$Ress.fontFamily4;
+
+var fontFamilyUnion = CssDeclarationHelper$Ress.fontFamilyUnion;
 
 var fontFamilyString = CssDeclarationHelper$Ress.fontFamilyString;
 
@@ -771,133 +891,173 @@ exports.Declarations = Declarations;
 exports.Rules = Rules;
 exports.property = property;
 exports.border = border;
+exports.borderUnion = borderUnion;
 exports.borderString = borderString;
 exports.borderTop = borderTop;
+exports.borderTopUnion = borderTopUnion;
 exports.borderTopString = borderTopString;
 exports.borderLeft = borderLeft;
+exports.borderLeftUnion = borderLeftUnion;
 exports.borderLeftString = borderLeftString;
 exports.borderRight = borderRight;
+exports.borderRightUnion = borderRightUnion;
 exports.borderRightString = borderRightString;
 exports.borderBottom = borderBottom;
+exports.borderBottomUnion = borderBottomUnion;
 exports.borderBottomString = borderBottomString;
 exports.borderColor = borderColor;
 exports.borderColor2 = borderColor2;
 exports.borderColor3 = borderColor3;
 exports.borderColor4 = borderColor4;
+exports.borderColorUnion = borderColorUnion;
 exports.borderColorString = borderColorString;
 exports.borderTopColor = borderTopColor;
+exports.borderTopColorUnion = borderTopColorUnion;
 exports.borderTopColorString = borderTopColorString;
 exports.borderRightColor = borderRightColor;
+exports.borderRightColorUnion = borderRightColorUnion;
 exports.borderRightColorString = borderRightColorString;
 exports.borderBottomColor = borderBottomColor;
+exports.borderBottomColorUnion = borderBottomColorUnion;
 exports.borderBottomColorString = borderBottomColorString;
 exports.borderLeftColor = borderLeftColor;
+exports.borderLeftColorUnion = borderLeftColorUnion;
 exports.borderLeftColorString = borderLeftColorString;
 exports.borderStyle = borderStyle;
 exports.borderStyle2 = borderStyle2;
 exports.borderStyle3 = borderStyle3;
 exports.borderStyle4 = borderStyle4;
+exports.borderStyleUnion = borderStyleUnion;
 exports.borderStyleString = borderStyleString;
 exports.borderTopStyle = borderTopStyle;
+exports.borderTopStyleUnion = borderTopStyleUnion;
 exports.borderTopStyleString = borderTopStyleString;
 exports.borderRightStyle = borderRightStyle;
+exports.borderRightStyleUnion = borderRightStyleUnion;
 exports.borderRightStyleString = borderRightStyleString;
 exports.borderBottomStyle = borderBottomStyle;
+exports.borderBottomStyleUnion = borderBottomStyleUnion;
 exports.borderBottomStyleString = borderBottomStyleString;
 exports.borderLeftStyle = borderLeftStyle;
+exports.borderLeftStyleUnion = borderLeftStyleUnion;
 exports.borderLeftStyleString = borderLeftStyleString;
 exports.borderWidth = borderWidth;
 exports.borderWidth2 = borderWidth2;
 exports.borderWidth3 = borderWidth3;
 exports.borderWidth4 = borderWidth4;
+exports.borderWidthUnion = borderWidthUnion;
 exports.borderWidthString = borderWidthString;
 exports.borderTopWidth = borderTopWidth;
+exports.borderTopWidthUnion = borderTopWidthUnion;
 exports.borderTopWidthString = borderTopWidthString;
 exports.borderRightWidth = borderRightWidth;
+exports.borderRightWidthUnion = borderRightWidthUnion;
 exports.borderRightWidthString = borderRightWidthString;
 exports.borderBottomWidth = borderBottomWidth;
+exports.borderBottomWidthUnion = borderBottomWidthUnion;
 exports.borderBottomWidthString = borderBottomWidthString;
 exports.borderLeftWidth = borderLeftWidth;
+exports.borderLeftWidthUnion = borderLeftWidthUnion;
 exports.borderLeftWidthString = borderLeftWidthString;
 exports.background = background;
-exports.backgroundString = backgroundString;
 exports.background2 = background2;
 exports.background3 = background3;
 exports.background4 = background4;
+exports.backgroundUnion = backgroundUnion;
+exports.backgroundString = backgroundString;
 exports.backgroundAttachment = backgroundAttachment;
 exports.backgroundAttachment2 = backgroundAttachment2;
 exports.backgroundAttachment3 = backgroundAttachment3;
 exports.backgroundAttachment4 = backgroundAttachment4;
+exports.backgroundAttachmentUnion = backgroundAttachmentUnion;
 exports.backgroundAttachmentString = backgroundAttachmentString;
 exports.backgroundColor = backgroundColor;
+exports.backgroundColorUnion = backgroundColorUnion;
 exports.backgroundColorString = backgroundColorString;
 exports.backgroundImage = backgroundImage;
 exports.backgroundImage2 = backgroundImage2;
 exports.backgroundImage3 = backgroundImage3;
 exports.backgroundImage4 = backgroundImage4;
+exports.backgroundImageUnion = backgroundImageUnion;
 exports.backgroundImageString = backgroundImageString;
 exports.backgroundPosition = backgroundPosition;
 exports.backgroundPosition2 = backgroundPosition2;
 exports.backgroundPosition3 = backgroundPosition3;
 exports.backgroundPosition4 = backgroundPosition4;
+exports.backgroundPositionUnion = backgroundPositionUnion;
 exports.backgroundPositionString = backgroundPositionString;
 exports.backgroundStyle = backgroundStyle;
 exports.backgroundStyle2 = backgroundStyle2;
 exports.backgroundStyle3 = backgroundStyle3;
 exports.backgroundStyle4 = backgroundStyle4;
+exports.backgroundStyleUnion = backgroundStyleUnion;
 exports.backgroundStyleString = backgroundStyleString;
 exports.margin = margin;
 exports.margin2 = margin2;
 exports.margin3 = margin3;
 exports.margin4 = margin4;
+exports.marginUnion = marginUnion;
 exports.marginString = marginString;
 exports.marginNumber = marginNumber;
 exports.marginTop = marginTop;
+exports.marginTopUnion = marginTopUnion;
 exports.marginTopString = marginTopString;
 exports.marginTopNumber = marginTopNumber;
 exports.marginRight = marginRight;
+exports.marginRightUnion = marginRightUnion;
 exports.marginRightString = marginRightString;
 exports.marginRightNumber = marginRightNumber;
 exports.marginBottom = marginBottom;
+exports.marginBottomUnion = marginBottomUnion;
 exports.marginBottomString = marginBottomString;
 exports.marginBottomNumber = marginBottomNumber;
 exports.marginLeft = marginLeft;
+exports.marginLeftUnion = marginLeftUnion;
 exports.marginLeftString = marginLeftString;
 exports.marginLeftNumber = marginLeftNumber;
 exports.padding = padding;
 exports.padding2 = padding2;
 exports.padding3 = padding3;
 exports.padding4 = padding4;
+exports.paddingUnion = paddingUnion;
 exports.paddingString = paddingString;
 exports.paddingNumber = paddingNumber;
 exports.paddingTop = paddingTop;
+exports.paddingTopUnion = paddingTopUnion;
 exports.paddingTopString = paddingTopString;
 exports.paddingTopNumber = paddingTopNumber;
 exports.paddingRight = paddingRight;
+exports.paddingRightUnion = paddingRightUnion;
 exports.paddingRightString = paddingRightString;
 exports.paddingRightNumber = paddingRightNumber;
 exports.paddingBottom = paddingBottom;
+exports.paddingBottomUnion = paddingBottomUnion;
 exports.paddingBottomString = paddingBottomString;
 exports.paddingBottomNumber = paddingBottomNumber;
 exports.paddingLeft = paddingLeft;
+exports.paddingLeftUnion = paddingLeftUnion;
 exports.paddingLeftString = paddingLeftString;
 exports.paddingLeftNumber = paddingLeftNumber;
 exports.clear = clear;
 exports.color = color;
+exports.colorUnion = colorUnion;
 exports.colorString = colorString;
 exports.cursor = cursor;
 exports.cursor1 = cursor1;
 exports.cursor2 = cursor2;
 exports.cursor3 = cursor3;
 exports.cursor4 = cursor4;
+exports.cursorUnion = cursorUnion;
 exports.cursorString = cursorString;
 exports.fontWeight = fontWeight;
+exports.fontWeightUnion = fontWeightUnion;
 exports.fontWeightString = fontWeightString;
 exports.fontWeightNumber = fontWeightNumber;
 exports.fontFamily = fontFamily;
 exports.fontFamily2 = fontFamily2;
 exports.fontFamily3 = fontFamily3;
 exports.fontFamily4 = fontFamily4;
+exports.fontFamilyUnion = fontFamilyUnion;
 exports.fontFamilyString = fontFamilyString;
 exports.selector = selector;
 exports.hover = hover;

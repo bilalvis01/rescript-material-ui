@@ -56,6 +56,13 @@ function border(width, color, style) {
         };
 }
 
+function borderUnion(v) {
+  return {
+          NAME: "Border",
+          VAL: v
+        };
+}
+
 function borderString(v) {
   return {
           NAME: "Border",
@@ -67,6 +74,13 @@ function borderTop(width, color, style) {
   return {
           NAME: "BorderTop",
           VAL: CssBorder$Ress.value(width, color, style)
+        };
+}
+
+function borderTopUnion(v) {
+  return {
+          NAME: "BorderTop",
+          VAL: v
         };
 }
 
@@ -84,6 +98,13 @@ function borderLeft(width, color, style) {
         };
 }
 
+function borderLeftUnion(v) {
+  return {
+          NAME: "BorderLeft",
+          VAL: v
+        };
+}
+
 function borderLeftString(v) {
   return {
           NAME: "BorderLeft",
@@ -98,6 +119,13 @@ function borderRight(width, color, style) {
         };
 }
 
+function borderRightUnion(v) {
+  return {
+          NAME: "BorderRight",
+          VAL: v
+        };
+}
+
 function borderRightString(v) {
   return {
           NAME: "BorderRight",
@@ -109,6 +137,13 @@ function borderBottom(width, color, style) {
   return {
           NAME: "BorderBottom",
           VAL: CssBorder$Ress.value(width, color, style)
+        };
+}
+
+function borderBottomUnion(v) {
+  return {
+          NAME: "BorderBottom",
+          VAL: v
         };
 }
 
@@ -147,6 +182,13 @@ function borderColor4(top, right, bottom, left) {
         };
 }
 
+function borderColorUnion(v) {
+  return {
+          NAME: "BorderColor",
+          VAL: v
+        };
+}
+
 function borderColorString(v) {
   return {
           NAME: "BorderColor",
@@ -158,6 +200,13 @@ function borderTopColor(v) {
   return {
           NAME: "BorderTopColor",
           VAL: CssBorderTopColor$Ress.value(v)
+        };
+}
+
+function borderTopColorUnion(v) {
+  return {
+          NAME: "BorderTopColor",
+          VAL: v
         };
 }
 
@@ -175,6 +224,13 @@ function borderRightColor(v) {
         };
 }
 
+function borderRightColorUnion(v) {
+  return {
+          NAME: "BorderRightColor",
+          VAL: v
+        };
+}
+
 function borderRightColorString(v) {
   return {
           NAME: "BorderRightColor",
@@ -189,6 +245,13 @@ function borderBottomColor(v) {
         };
 }
 
+function borderBottomColorUnion(v) {
+  return {
+          NAME: "BorderBottomColor",
+          VAL: v
+        };
+}
+
 function borderBottomColorString(v) {
   return {
           NAME: "BorderBottomColor",
@@ -200,6 +263,13 @@ function borderLeftColor(v) {
   return {
           NAME: "BorderLeftColor",
           VAL: CssBorderLeftColor$Ress.value(v)
+        };
+}
+
+function borderLeftColorUnion(v) {
+  return {
+          NAME: "BorderLeftColor",
+          VAL: v
         };
 }
 
@@ -238,6 +308,13 @@ function borderStyle4(top, right, bottom, left) {
         };
 }
 
+function borderStyleUnion(v) {
+  return {
+          NAME: "BorderStyle",
+          VAL: v
+        };
+}
+
 function borderStyleString(v) {
   return {
           NAME: "BorderStyle",
@@ -249,6 +326,13 @@ function borderTopStyle(v) {
   return {
           NAME: "BorderTopStyle",
           VAL: CssBorderTopStyle$Ress.value(v)
+        };
+}
+
+function borderTopStyleUnion(v) {
+  return {
+          NAME: "BorderTopStyle",
+          VAL: v
         };
 }
 
@@ -266,6 +350,13 @@ function borderRightStyle(v) {
         };
 }
 
+function borderRightStyleUnion(v) {
+  return {
+          NAME: "BorderRightStyle",
+          VAL: v
+        };
+}
+
 function borderRightStyleString(v) {
   return {
           NAME: "BorderRightStyle",
@@ -280,6 +371,13 @@ function borderBottomStyle(v) {
         };
 }
 
+function borderBottomStyleUnion(v) {
+  return {
+          NAME: "BorderBottomStyle",
+          VAL: v
+        };
+}
+
 function borderBottomStyleString(v) {
   return {
           NAME: "BorderBottomStyle",
@@ -291,6 +389,13 @@ function borderLeftStyle(v) {
   return {
           NAME: "BorderLeftStyle",
           VAL: CssBorderLeftStyle$Ress.value(v)
+        };
+}
+
+function borderLeftStyleUnion(v) {
+  return {
+          NAME: "BorderLeftStyle",
+          VAL: v
         };
 }
 
@@ -329,6 +434,13 @@ function borderWidth4(top, right, bottom, left) {
         };
 }
 
+function borderWidthUnion(v) {
+  return {
+          NAME: "BorderWidth",
+          VAL: v
+        };
+}
+
 function borderWidthString(v) {
   return {
           NAME: "BorderWidth",
@@ -340,6 +452,13 @@ function borderTopWidth(v) {
   return {
           NAME: "BorderTopWidth",
           VAL: CssBorderTopWidth$Ress.value(v)
+        };
+}
+
+function borderTopWidthUnion(v) {
+  return {
+          NAME: "BorderTopWidth",
+          VAL: v
         };
 }
 
@@ -357,6 +476,13 @@ function borderRightWidth(v) {
         };
 }
 
+function borderRightWidthUnion(v) {
+  return {
+          NAME: "BorderRightWidth",
+          VAL: v
+        };
+}
+
 function borderRightWidthString(v) {
   return {
           NAME: "BorderRightWidth",
@@ -371,6 +497,13 @@ function borderBottomWidth(v) {
         };
 }
 
+function borderBottomWidthUnion(v) {
+  return {
+          NAME: "BorderBottomWidth",
+          VAL: v
+        };
+}
+
 function borderBottomWidthString(v) {
   return {
           NAME: "BorderBottomWidth",
@@ -382,6 +515,13 @@ function borderLeftWidth(v) {
   return {
           NAME: "BorderLeftWidth",
           VAL: CssBorderLeftWidth$Ress.value(v)
+        };
+}
+
+function borderLeftWidthUnion(v) {
+  return {
+          NAME: "BorderLeftWidth",
+          VAL: v
         };
 }
 
@@ -420,6 +560,13 @@ function background4(l1, l2, l3, l4) {
         };
 }
 
+function backgroundUnion(v) {
+  return {
+          NAME: "Background",
+          VAL: v
+        };
+}
+
 function backgroundString(v) {
   return {
           NAME: "Background",
@@ -455,6 +602,13 @@ function backgroundAttachment4(v1, v2, v3, v4) {
         };
 }
 
+function backgroundAttachmentUnion(v) {
+  return {
+          NAME: "BackgroundAttachment",
+          VAL: v
+        };
+}
+
 function backgroundAttachmentString(v) {
   return {
           NAME: "BackgroundAttachment",
@@ -466,6 +620,13 @@ function backgroundColor(v) {
   return {
           NAME: "BackgroundColor",
           VAL: CssBackgroundColor$Ress.value(v)
+        };
+}
+
+function backgroundColorUnion(v) {
+  return {
+          NAME: "BackgroundColor",
+          VAL: v
         };
 }
 
@@ -504,6 +665,13 @@ function backgroundImage4(v1, v2, v3, v4) {
         };
 }
 
+function backgroundImageUnion(v) {
+  return {
+          NAME: "BackgroundImage",
+          VAL: v
+        };
+}
+
 function backgroundImageString(v) {
   return {
           NAME: "BackgroundImage",
@@ -536,6 +704,13 @@ function backgroundPosition4(v1, v2, v3, v4) {
   return {
           NAME: "BackgroundPosition",
           VAL: CssBackgroundPosition$Ress.value4(v1, v2, v3, v4)
+        };
+}
+
+function backgroundPositionUnion(v) {
+  return {
+          NAME: "BackgroundPosition",
+          VAL: v
         };
 }
 
@@ -574,6 +749,13 @@ function backgroundStyle4(v1, v2, v3, v4) {
         };
 }
 
+function backgroundStyleUnion(v) {
+  return {
+          NAME: "BackgroundStyle",
+          VAL: v
+        };
+}
+
 function backgroundStyleString(v) {
   return {
           NAME: "BackgroundStyle",
@@ -609,6 +791,13 @@ function margin4(top, right, bottom, left) {
         };
 }
 
+function marginUnion(v) {
+  return {
+          NAME: "Margin",
+          VAL: v
+        };
+}
+
 function marginString(v) {
   return {
           NAME: "Margin",
@@ -627,6 +816,13 @@ function marginTop(v) {
   return {
           NAME: "MarginTop",
           VAL: CssMarginTop$Ress.value(v)
+        };
+}
+
+function marginTopUnion(v) {
+  return {
+          NAME: "MarginTop",
+          VAL: v
         };
 }
 
@@ -651,6 +847,13 @@ function marginRight(v) {
         };
 }
 
+function marginRightUnion(v) {
+  return {
+          NAME: "MarginRight",
+          VAL: v
+        };
+}
+
 function marginRightString(v) {
   return {
           NAME: "MarginRight",
@@ -672,6 +875,13 @@ function marginBottom(v) {
         };
 }
 
+function marginBottomUnion(v) {
+  return {
+          NAME: "MarginBottom",
+          VAL: v
+        };
+}
+
 function marginBottomString(v) {
   return {
           NAME: "MarginBottom",
@@ -690,6 +900,13 @@ function marginLeft(v) {
   return {
           NAME: "MarginLeft",
           VAL: CssMarginLeft$Ress.value(v)
+        };
+}
+
+function marginLeftUnion(v) {
+  return {
+          NAME: "MarginLeft",
+          VAL: v
         };
 }
 
@@ -735,6 +952,13 @@ function padding4(top, right, bottom, left) {
         };
 }
 
+function paddingUnion(v) {
+  return {
+          NAME: "Padding",
+          VAL: v
+        };
+}
+
 function paddingString(v) {
   return {
           NAME: "Padding",
@@ -753,6 +977,13 @@ function paddingTop(v) {
   return {
           NAME: "PaddingTop",
           VAL: CssPaddingTop$Ress.value(v)
+        };
+}
+
+function paddingTopUnion(v) {
+  return {
+          NAME: "PaddingTop",
+          VAL: v
         };
 }
 
@@ -777,6 +1008,13 @@ function paddingRight(v) {
         };
 }
 
+function paddingRightUnion(v) {
+  return {
+          NAME: "PaddingRight",
+          VAL: v
+        };
+}
+
 function paddingRightString(v) {
   return {
           NAME: "PaddingRight",
@@ -798,6 +1036,13 @@ function paddingBottom(v) {
         };
 }
 
+function paddingBottomUnion(v) {
+  return {
+          NAME: "PaddingBottom",
+          VAL: v
+        };
+}
+
 function paddingBottomString(v) {
   return {
           NAME: "PaddingBottom",
@@ -816,6 +1061,13 @@ function paddingLeft(v) {
   return {
           NAME: "PaddingLeft",
           VAL: CssPaddingLeft$Ress.value(v)
+        };
+}
+
+function paddingLeftUnion(v) {
+  return {
+          NAME: "PaddingLeft",
+          VAL: v
         };
 }
 
@@ -844,6 +1096,13 @@ function color(v) {
   return {
           NAME: "Color",
           VAL: CssColor$Ress.value(v)
+        };
+}
+
+function colorUnion(v) {
+  return {
+          NAME: "Color",
+          VAL: v
         };
 }
 
@@ -889,6 +1148,13 @@ function cursor4(i1, i2, i3, i4, k) {
         };
 }
 
+function cursorUnion(v) {
+  return {
+          NAME: "Cursor",
+          VAL: v
+        };
+}
+
 function cursorString(v) {
   return {
           NAME: "Cursor",
@@ -900,6 +1166,13 @@ function fontWeight(v) {
   return {
           NAME: "FontWeight",
           VAL: CssFontWeight$Ress.value(v)
+        };
+}
+
+function fontWeightUnion(v) {
+  return {
+          NAME: "FontWeight",
+          VAL: v
         };
 }
 
@@ -945,6 +1218,13 @@ function fontFamily4(v1, v2, v3, v4) {
         };
 }
 
+function fontFamilyUnion(v) {
+  return {
+          NAME: "FontFamily",
+          VAL: v
+        };
+}
+
 function fontFamilyString(v) {
   return {
           NAME: "FontFamily",
@@ -954,132 +1234,172 @@ function fontFamilyString(v) {
 
 exports.property = property;
 exports.border = border;
+exports.borderUnion = borderUnion;
 exports.borderString = borderString;
 exports.borderTop = borderTop;
+exports.borderTopUnion = borderTopUnion;
 exports.borderTopString = borderTopString;
 exports.borderLeft = borderLeft;
+exports.borderLeftUnion = borderLeftUnion;
 exports.borderLeftString = borderLeftString;
 exports.borderRight = borderRight;
+exports.borderRightUnion = borderRightUnion;
 exports.borderRightString = borderRightString;
 exports.borderBottom = borderBottom;
+exports.borderBottomUnion = borderBottomUnion;
 exports.borderBottomString = borderBottomString;
 exports.borderColor = borderColor;
 exports.borderColor2 = borderColor2;
 exports.borderColor3 = borderColor3;
 exports.borderColor4 = borderColor4;
+exports.borderColorUnion = borderColorUnion;
 exports.borderColorString = borderColorString;
 exports.borderTopColor = borderTopColor;
+exports.borderTopColorUnion = borderTopColorUnion;
 exports.borderTopColorString = borderTopColorString;
 exports.borderRightColor = borderRightColor;
+exports.borderRightColorUnion = borderRightColorUnion;
 exports.borderRightColorString = borderRightColorString;
 exports.borderBottomColor = borderBottomColor;
+exports.borderBottomColorUnion = borderBottomColorUnion;
 exports.borderBottomColorString = borderBottomColorString;
 exports.borderLeftColor = borderLeftColor;
+exports.borderLeftColorUnion = borderLeftColorUnion;
 exports.borderLeftColorString = borderLeftColorString;
 exports.borderStyle = borderStyle;
 exports.borderStyle2 = borderStyle2;
 exports.borderStyle3 = borderStyle3;
 exports.borderStyle4 = borderStyle4;
+exports.borderStyleUnion = borderStyleUnion;
 exports.borderStyleString = borderStyleString;
 exports.borderTopStyle = borderTopStyle;
+exports.borderTopStyleUnion = borderTopStyleUnion;
 exports.borderTopStyleString = borderTopStyleString;
 exports.borderRightStyle = borderRightStyle;
+exports.borderRightStyleUnion = borderRightStyleUnion;
 exports.borderRightStyleString = borderRightStyleString;
 exports.borderBottomStyle = borderBottomStyle;
+exports.borderBottomStyleUnion = borderBottomStyleUnion;
 exports.borderBottomStyleString = borderBottomStyleString;
 exports.borderLeftStyle = borderLeftStyle;
+exports.borderLeftStyleUnion = borderLeftStyleUnion;
 exports.borderLeftStyleString = borderLeftStyleString;
 exports.borderWidth = borderWidth;
 exports.borderWidth2 = borderWidth2;
 exports.borderWidth3 = borderWidth3;
 exports.borderWidth4 = borderWidth4;
+exports.borderWidthUnion = borderWidthUnion;
 exports.borderWidthString = borderWidthString;
 exports.borderTopWidth = borderTopWidth;
+exports.borderTopWidthUnion = borderTopWidthUnion;
 exports.borderTopWidthString = borderTopWidthString;
 exports.borderRightWidth = borderRightWidth;
+exports.borderRightWidthUnion = borderRightWidthUnion;
 exports.borderRightWidthString = borderRightWidthString;
 exports.borderBottomWidth = borderBottomWidth;
+exports.borderBottomWidthUnion = borderBottomWidthUnion;
 exports.borderBottomWidthString = borderBottomWidthString;
 exports.borderLeftWidth = borderLeftWidth;
+exports.borderLeftWidthUnion = borderLeftWidthUnion;
 exports.borderLeftWidthString = borderLeftWidthString;
 exports.background = background;
-exports.backgroundString = backgroundString;
 exports.background2 = background2;
 exports.background3 = background3;
 exports.background4 = background4;
+exports.backgroundUnion = backgroundUnion;
+exports.backgroundString = backgroundString;
 exports.backgroundAttachment = backgroundAttachment;
 exports.backgroundAttachment2 = backgroundAttachment2;
 exports.backgroundAttachment3 = backgroundAttachment3;
 exports.backgroundAttachment4 = backgroundAttachment4;
+exports.backgroundAttachmentUnion = backgroundAttachmentUnion;
 exports.backgroundAttachmentString = backgroundAttachmentString;
 exports.backgroundColor = backgroundColor;
+exports.backgroundColorUnion = backgroundColorUnion;
 exports.backgroundColorString = backgroundColorString;
 exports.backgroundImage = backgroundImage;
 exports.backgroundImage2 = backgroundImage2;
 exports.backgroundImage3 = backgroundImage3;
 exports.backgroundImage4 = backgroundImage4;
+exports.backgroundImageUnion = backgroundImageUnion;
 exports.backgroundImageString = backgroundImageString;
 exports.backgroundPosition = backgroundPosition;
 exports.backgroundPosition2 = backgroundPosition2;
 exports.backgroundPosition3 = backgroundPosition3;
 exports.backgroundPosition4 = backgroundPosition4;
+exports.backgroundPositionUnion = backgroundPositionUnion;
 exports.backgroundPositionString = backgroundPositionString;
 exports.backgroundStyle = backgroundStyle;
 exports.backgroundStyle2 = backgroundStyle2;
 exports.backgroundStyle3 = backgroundStyle3;
 exports.backgroundStyle4 = backgroundStyle4;
+exports.backgroundStyleUnion = backgroundStyleUnion;
 exports.backgroundStyleString = backgroundStyleString;
 exports.margin = margin;
 exports.margin2 = margin2;
 exports.margin3 = margin3;
 exports.margin4 = margin4;
+exports.marginUnion = marginUnion;
 exports.marginString = marginString;
 exports.marginNumber = marginNumber;
 exports.marginTop = marginTop;
+exports.marginTopUnion = marginTopUnion;
 exports.marginTopString = marginTopString;
 exports.marginTopNumber = marginTopNumber;
 exports.marginRight = marginRight;
+exports.marginRightUnion = marginRightUnion;
 exports.marginRightString = marginRightString;
 exports.marginRightNumber = marginRightNumber;
 exports.marginBottom = marginBottom;
+exports.marginBottomUnion = marginBottomUnion;
 exports.marginBottomString = marginBottomString;
 exports.marginBottomNumber = marginBottomNumber;
 exports.marginLeft = marginLeft;
+exports.marginLeftUnion = marginLeftUnion;
 exports.marginLeftString = marginLeftString;
 exports.marginLeftNumber = marginLeftNumber;
 exports.padding = padding;
 exports.padding2 = padding2;
 exports.padding3 = padding3;
 exports.padding4 = padding4;
+exports.paddingUnion = paddingUnion;
 exports.paddingString = paddingString;
 exports.paddingNumber = paddingNumber;
 exports.paddingTop = paddingTop;
+exports.paddingTopUnion = paddingTopUnion;
 exports.paddingTopString = paddingTopString;
 exports.paddingTopNumber = paddingTopNumber;
 exports.paddingRight = paddingRight;
+exports.paddingRightUnion = paddingRightUnion;
 exports.paddingRightString = paddingRightString;
 exports.paddingRightNumber = paddingRightNumber;
 exports.paddingBottom = paddingBottom;
+exports.paddingBottomUnion = paddingBottomUnion;
 exports.paddingBottomString = paddingBottomString;
 exports.paddingBottomNumber = paddingBottomNumber;
 exports.paddingLeft = paddingLeft;
+exports.paddingLeftUnion = paddingLeftUnion;
 exports.paddingLeftString = paddingLeftString;
 exports.paddingLeftNumber = paddingLeftNumber;
 exports.clear = clear;
 exports.color = color;
+exports.colorUnion = colorUnion;
 exports.colorString = colorString;
 exports.cursor = cursor;
 exports.cursor1 = cursor1;
 exports.cursor2 = cursor2;
 exports.cursor3 = cursor3;
 exports.cursor4 = cursor4;
+exports.cursorUnion = cursorUnion;
 exports.cursorString = cursorString;
 exports.fontWeight = fontWeight;
+exports.fontWeightUnion = fontWeightUnion;
 exports.fontWeightString = fontWeightString;
 exports.fontWeightNumber = fontWeightNumber;
 exports.fontFamily = fontFamily;
 exports.fontFamily2 = fontFamily2;
 exports.fontFamily3 = fontFamily3;
 exports.fontFamily4 = fontFamily4;
+exports.fontFamilyUnion = fontFamilyUnion;
 exports.fontFamilyString = fontFamilyString;
 /* No side effect */
