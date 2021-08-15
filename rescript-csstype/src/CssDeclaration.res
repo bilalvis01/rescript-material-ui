@@ -50,6 +50,7 @@ module Make = (
     | #Clear(value) => ("clear", makeValue(value))
     | #Cursor(value) => ("cursor", makeValue(value))
     | #FontWeight(value) => ("fontWeight", makeValue(value))
+    | #FontFamily(value) => ("fontFamily", makeValue(value))
     };
   };
 };

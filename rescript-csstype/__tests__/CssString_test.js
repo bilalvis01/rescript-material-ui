@@ -367,4 +367,22 @@ describe("Spacing", (function () {
         
       }));
 
+describe("fontFamily", (function () {
+        test("fontFamily", (function () {
+                expect(CssValueString$Ress.fontFamily({
+                            NAME: "Family",
+                            VAL: "Goudy Bookletter 1911"
+                          })).toBe("\"Goudy Bookletter 1911\"");
+                expect(CssValueString$Ress.fontFamily("serif")).toBe("serif");
+                expect(CssValueString$Ress.fontFamily("sansSerif")).toBe("sans-serif");
+                expect(CssValueString$Ress.fontFamily_global("initial")).toBe("initial");
+                expect(CssValueString$Ress.fontFamily_global({
+                            NAME: "Family",
+                            VAL: "Gill Sans Extrabold"
+                          })).toBe("\"Gill Sans Extrabold\"");
+                
+              }));
+        
+      }));
+
 /*  Not a pure module */

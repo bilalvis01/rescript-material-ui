@@ -146,6 +146,11 @@ function Make(Type) {
           fontWeight: CssDeclarationHelper$Ress.fontWeight,
           fontWeightString: CssDeclarationHelper$Ress.fontWeightString,
           fontWeightNumber: CssDeclarationHelper$Ress.fontWeightNumber,
+          fontFamily: CssDeclarationHelper$Ress.fontFamily,
+          fontFamily2: CssDeclarationHelper$Ress.fontFamily2,
+          fontFamily3: CssDeclarationHelper$Ress.fontFamily3,
+          fontFamily4: CssDeclarationHelper$Ress.fontFamily4,
+          fontFamilyString: CssDeclarationHelper$Ress.fontFamilyString,
           selector: include.selector,
           hover: include$1.hover,
           str: CssValueHelper$Ress.str,
@@ -523,6 +528,16 @@ var fontWeightString = CssDeclarationHelper$Ress.fontWeightString;
 
 var fontWeightNumber = CssDeclarationHelper$Ress.fontWeightNumber;
 
+var fontFamily = CssDeclarationHelper$Ress.fontFamily;
+
+var fontFamily2 = CssDeclarationHelper$Ress.fontFamily2;
+
+var fontFamily3 = CssDeclarationHelper$Ress.fontFamily3;
+
+var fontFamily4 = CssDeclarationHelper$Ress.fontFamily4;
+
+var fontFamilyString = CssDeclarationHelper$Ress.fontFamilyString;
+
 var selector = include.selector;
 
 var hover = include$1.hover;
@@ -879,6 +894,11 @@ exports.cursorString = cursorString;
 exports.fontWeight = fontWeight;
 exports.fontWeightString = fontWeightString;
 exports.fontWeightNumber = fontWeightNumber;
+exports.fontFamily = fontFamily;
+exports.fontFamily2 = fontFamily2;
+exports.fontFamily3 = fontFamily3;
+exports.fontFamily4 = fontFamily4;
+exports.fontFamilyString = fontFamilyString;
 exports.selector = selector;
 exports.hover = hover;
 exports.str = str;

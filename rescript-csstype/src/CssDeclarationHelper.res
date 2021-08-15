@@ -306,3 +306,14 @@ let fontWeightString = v =>
   #FontWeight(CssFontWeight.string(v));
 let fontWeightNumber = v =>
   #FontWeight(CssFontWeight.number(v));
+
+let fontFamily = v =>
+  #FontFamily(CssFontFamily.value(v));
+let fontFamily2 = (v1, v2) =>
+  #FontFamily(CssFontFamily.value2(v1, v2));
+let fontFamily3 = (v1, v2, v3) =>
+  #FontFamily(CssFontFamily.value3(v1, v2, v3));
+let fontFamily4 = (v1, v2, v3, v4) =>
+  #FontFamily(CssFontFamily.value4(v1, v2, v3, v4));
+let fontFamilyString = v =>
+  #FontFamily(CssFontFamily.string(v));

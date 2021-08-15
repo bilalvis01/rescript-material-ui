@@ -1493,6 +1493,52 @@ function fontWeight_global(v) {
   }
 }
 
+function genericFontFamilyName(v) {
+  if (v === "math") {
+    return "math";
+  } else if (v === "cursive") {
+    return "cursive";
+  } else if (v === "sansSerif") {
+    return "sans-serif";
+  } else if (v === "monospace") {
+    return "monospace";
+  } else if (v === "systemUi") {
+    return "system-ui";
+  } else if (v === "emoji") {
+    return "emoji";
+  } else if (v === "serif") {
+    return "serif";
+  } else if (v === "fantasy") {
+    return "fantasy";
+  } else if (v === "uiSerif") {
+    return "ui-serif";
+  } else if (v === "fangsong") {
+    return "fangsong";
+  } else if (v === "uiRounded") {
+    return "ui-rounded";
+  } else if (v === "uiSansSerif") {
+    return "ui-sans-serif";
+  } else {
+    return "ui-monospace";
+  }
+}
+
+function fontFamily(v) {
+  if (typeof v === "object") {
+    return "\"" + v.VAL + "\"";
+  } else {
+    return genericFontFamilyName(v);
+  }
+}
+
+function fontFamily_global(v) {
+  if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
+    return fontFamily(v);
+  } else {
+    return $$global(v);
+  }
+}
+
 exports.$$global = $$global;
 exports.string = string;
 exports.num = num;
@@ -1588,4 +1634,7 @@ exports.cursorKeyword_global = cursorKeyword_global;
 exports.cursorImage = cursorImage;
 exports.fontWeight = fontWeight;
 exports.fontWeight_global = fontWeight_global;
+exports.genericFontFamilyName = genericFontFamilyName;
+exports.fontFamily = fontFamily;
+exports.fontFamily_global = fontFamily_global;
 /* No side effect */

@@ -949,3 +949,35 @@ let fontWeight_global = v => {
   | #...global as g => global(g)
   };
 };
+
+let genericFontFamilyName = v => {
+  switch v {
+  | #serif => "serif"
+  | #sansSerif => "sans-serif"
+  | #monospace => "monospace"
+  | #cursive => "cursive"
+  | #fantasy => "fantasy"
+  | #systemUi => "system-ui"
+  | #uiSerif => "ui-serif"
+  | #uiSansSerif => "ui-sans-serif"
+  | #uiMonospace => "ui-monospace"
+  | #uiRounded => "ui-rounded"
+  | #emoji => "emoji"
+  | #math => "math"
+  | #fangsong => "fangsong"
+  };
+};
+
+let fontFamily = v => {
+  switch v {
+  | #...genericFontFamilyName as g => genericFontFamilyName(g)
+  | #Family(n) => `"${n}"`
+  };
+};
+
+let fontFamily_global = v => {
+  switch v {
+  | #...global as g => global(g)
+  | #...fontFamily as f => fontFamily(f) 
+  };
+};

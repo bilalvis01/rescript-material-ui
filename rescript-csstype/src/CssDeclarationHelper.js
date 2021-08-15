@@ -9,6 +9,7 @@ var CssMargin$Ress = require("./property_value/CssMargin.js");
 var CssPadding$Ress = require("./property_value/CssPadding.js");
 var CssMarginTop$Ress = require("./property_value/CssMarginTop.js");
 var CssBackground$Ress = require("./property_value/CssBackground.js");
+var CssFontFamily$Ress = require("./property_value/CssFontFamily.js");
 var CssFontWeight$Ress = require("./property_value/CssFontWeight.js");
 var CssMarginLeft$Ress = require("./property_value/CssMarginLeft.js");
 var CssPaddingTop$Ress = require("./property_value/CssPaddingTop.js");
@@ -916,6 +917,41 @@ function fontWeightNumber(v) {
         };
 }
 
+function fontFamily(v) {
+  return {
+          NAME: "FontFamily",
+          VAL: CssFontFamily$Ress.value(v)
+        };
+}
+
+function fontFamily2(v1, v2) {
+  return {
+          NAME: "FontFamily",
+          VAL: CssFontFamily$Ress.value2(v1, v2)
+        };
+}
+
+function fontFamily3(v1, v2, v3) {
+  return {
+          NAME: "FontFamily",
+          VAL: CssFontFamily$Ress.value3(v1, v2, v3)
+        };
+}
+
+function fontFamily4(v1, v2, v3, v4) {
+  return {
+          NAME: "FontFamily",
+          VAL: CssFontFamily$Ress.value4(v1, v2, v3, v4)
+        };
+}
+
+function fontFamilyString(v) {
+  return {
+          NAME: "FontFamily",
+          VAL: v
+        };
+}
+
 exports.property = property;
 exports.border = border;
 exports.borderString = borderString;
@@ -1041,4 +1077,9 @@ exports.cursorString = cursorString;
 exports.fontWeight = fontWeight;
 exports.fontWeightString = fontWeightString;
 exports.fontWeightNumber = fontWeightNumber;
+exports.fontFamily = fontFamily;
+exports.fontFamily2 = fontFamily2;
+exports.fontFamily3 = fontFamily3;
+exports.fontFamily4 = fontFamily4;
+exports.fontFamilyString = fontFamilyString;
 /* No side effect */

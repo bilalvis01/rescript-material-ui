@@ -1710,3 +1710,29 @@ type fontWeight_global = [
   | fontWeight
   | global
 ];
+
+type genericFontFamilyName = [
+  | #serif
+  | #sansSerif
+  | #monospace
+  | #cursive
+  | #fantasy
+  | #systemUi
+  | #uiSerif
+  | #uiSansSerif
+  | #uiMonospace
+  | #uiRounded
+  | #emoji
+  | #math
+  | #fangsong
+];
+
+type fontFamily = [
+  | #Family(string)
+  | genericFontFamilyName
+];
+
+type fontFamily_global = [
+  | fontFamily
+  | global
+];

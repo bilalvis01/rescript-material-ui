@@ -7,6 +7,7 @@ var CssMargin$Ress = require("../src/property_value/CssMargin.js");
 var CssPadding$Ress = require("../src/property_value/CssPadding.js");
 var CssMarginTop$Ress = require("../src/property_value/CssMarginTop.js");
 var CssBackground$Ress = require("../src/property_value/CssBackground.js");
+var CssFontFamily$Ress = require("../src/property_value/CssFontFamily.js");
 var CssFontWeight$Ress = require("../src/property_value/CssFontWeight.js");
 var CssMarginLeft$Ress = require("../src/property_value/CssMarginLeft.js");
 var CssPaddingTop$Ress = require("../src/property_value/CssPaddingTop.js");
@@ -170,6 +171,37 @@ test("cursor", (function () {
 test("fontWeight", (function () {
         expect(CssFontWeight$Ress.value("initial")).toBe("initial");
         expect(CssFontWeight$Ress.value("bold")).toBe("bold");
+        
+      }));
+
+test("FontFamily", (function () {
+        expect(CssFontFamily$Ress.value("initial")).toBe("initial");
+        expect(CssFontFamily$Ress.value("sansSerif")).toBe("sans-serif");
+        expect(CssFontFamily$Ress.value({
+                    NAME: "Family",
+                    VAL: "Gill Sans Extrabold"
+                  })).toBe("\"Gill Sans Extrabold\"");
+        expect(CssFontFamily$Ress.value2({
+                    NAME: "Family",
+                    VAL: "Gill Sans Extrabold"
+                  }, "sansSerif")).toBe("\"Gill Sans Extrabold\", sans-serif");
+        expect(CssFontFamily$Ress.value3({
+                    NAME: "Family",
+                    VAL: "Roboto"
+                  }, {
+                    NAME: "Family",
+                    VAL: "Helvetica"
+                  }, "sansSerif")).toBe("\"Roboto\", \"Helvetica\", sans-serif");
+        expect(CssFontFamily$Ress.value4({
+                    NAME: "Family",
+                    VAL: "Roboto"
+                  }, {
+                    NAME: "Family",
+                    VAL: "Helvetica"
+                  }, {
+                    NAME: "Family",
+                    VAL: "Arial"
+                  }, "sansSerif")).toBe("\"Roboto\", \"Helvetica\", \"Arial\", sans-serif");
         
       }));
 

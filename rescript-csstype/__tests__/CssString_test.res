@@ -431,3 +431,18 @@ describe("Spacing", (.) => {
     expect(padding_global(#initial))->toBe("initial");
   });
 });
+
+describe("fontFamily", (.) => {
+  test("fontFamily", (.) => {
+    expect(fontFamily(#Family("Goudy Bookletter 1911")))
+    ->toBe(`"Goudy Bookletter 1911"`);
+    expect(fontFamily(#serif))
+    ->toBe("serif");
+    expect(fontFamily(#sansSerif))
+    ->toBe("sans-serif");
+    expect(fontFamily_global(#initial))
+    ->toBe("initial");
+    expect(fontFamily_global(#Family("Gill Sans Extrabold")))
+    ->toBe(`"Gill Sans Extrabold"`);
+  });
+});

@@ -217,3 +217,18 @@ test("fontWeight", (.) => {
   expect(CssFontWeight.value(#bold))
   ->toBe(CssFontWeight.string("bold"));
 });
+
+test("FontFamily", (.) => {
+  expect(CssFontFamily.value(#initial))
+  ->toBe(CssFontFamily.string("initial"));
+  expect(CssFontFamily.value(#sansSerif))
+  ->toBe(CssFontFamily.string("sans-serif"));
+  expect(CssFontFamily.value(#Family("Gill Sans Extrabold")))
+  ->toBe(CssFontFamily.string(`"Gill Sans Extrabold"`));
+  expect(CssFontFamily.value2(#Family("Gill Sans Extrabold"), #sansSerif))
+  ->toBe(CssFontFamily.string(`"Gill Sans Extrabold", sans-serif`));
+  expect(CssFontFamily.value3(#Family("Roboto"), #Family("Helvetica"), #sansSerif))
+  ->toBe(CssFontFamily.string(`"Roboto", "Helvetica", sans-serif`));
+  expect(CssFontFamily.value4(#Family("Roboto"), #Family("Helvetica"), #Family("Arial"), #sansSerif))
+  ->toBe(CssFontFamily.string(`"Roboto", "Helvetica", "Arial", sans-serif`));
+});

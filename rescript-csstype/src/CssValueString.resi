@@ -148,3 +148,10 @@ let cursorImage: cursorImage => string;
 
 let fontWeight: fontWeight => string;
 let fontWeight_global: fontWeight_global => string;
+
+/*
+Font Family
+*/
+let genericFontFamilyName: genericFontFamilyName => string;
+let fontFamily: fontFamily => string;
+let fontFamily_global: fontFamily_global => string;

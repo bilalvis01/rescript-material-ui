@@ -327,3 +327,21 @@ let cursorString: string => [> CssDeclarationType.cursor ];
 let fontWeight: CssValueType.fontWeight_global => [> CssDeclarationType.fontWeight ];
 let fontWeightString: string => [> CssDeclarationType.fontWeight ];
 let fontWeightNumber: float => [> CssDeclarationType.fontWeight ];
+
+let fontFamily: CssValueType.fontFamily_global => [> CssDeclarationType.fontFamily ];
+let fontFamily2: (
+  CssValueType.fontFamily,
+  CssValueType.fontFamily,
+) => [> CssDeclarationType.fontFamily ];
+let fontFamily3: (
+  CssValueType.fontFamily,
+  CssValueType.fontFamily,
+  CssValueType.fontFamily,
+) => [> CssDeclarationType.fontFamily ];
+let fontFamily4: (
+  CssValueType.fontFamily,
+  CssValueType.fontFamily,
+  CssValueType.fontFamily,
+  CssValueType.fontFamily,
+) => [> CssDeclarationType.fontFamily ];
+let fontFamilyString: string => [> CssDeclarationType.fontFamily ];

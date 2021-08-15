@@ -43,6 +43,7 @@ type color = [ | #Color(CssColor.t) ];
 type clear = [ | #Clear(CssClear.t) ];
 type cursor = [ | #Cursor(CssCursor.t) ];
 type fontWeight = [ | #FontWeight(CssFontWeight.t) ];
+type fontFamily = [ | #FontFamily(CssFontFamily.t) ];
 
 type t = [
   | property
@@ -86,4 +87,5 @@ type t = [
   | clear
   | cursor
   | fontWeight
+  | fontFamily
 ];

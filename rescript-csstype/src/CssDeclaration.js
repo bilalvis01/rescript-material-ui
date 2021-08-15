@@ -151,6 +151,11 @@ function Make(Type) {
                 "marginTop",
                 declaration.VAL
               ];
+      } else if (variant === "FontFamily") {
+        return [
+                "fontFamily",
+                declaration.VAL
+              ];
       } else if (variant === "PaddingBottom") {
         return [
                 "paddingBottom",
