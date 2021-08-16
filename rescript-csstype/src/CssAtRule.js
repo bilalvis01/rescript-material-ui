@@ -2,17 +2,12 @@
 'use strict';
 
 
-function Make($star) {
-  var make = function (v) {
-    return [
-            "@font-face",
-            v.VAL
-          ];
-  };
-  return {
-          make: make
-        };
+function make(v) {
+  return [
+          "@font-face",
+          v.VAL
+        ];
 }
 
-exports.Make = Make;
+exports.make = make;
 /* No side effect */

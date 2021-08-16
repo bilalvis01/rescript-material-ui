@@ -1,5 +1,5 @@
 let property = (name, value) => 
-  #Property(name, CssDeclarationConstructor.PropertyValue(value));
+  #Property(name, CssDeclarationConstructor.BoxValue(value));
 
 let border = (~width=?, ~color=?, style) => 
   #Border(CssBorder.value(~width=?width, ~color=?color, style));

@@ -1,8 +1,8 @@
 @unboxed
-type rec propertyValue =
-  | PropertyValue('a): propertyValue;
+type rec boxValue<'data> =
+  | BoxValue('data => option<'a>): boxValue<'data>;
 
-type property<'data> = [ | #PropertyFn(string, 'data => option<propertyValue>) ];
+type property<'data> = [ | #PropertyFn(string, boxValue<'data>) ];
 type border<'data> = [ | #BorderFn('data => option<CssBorder.t>) ];
 type borderTop<'data> = [ | #BorderTopFn('data => option<CssBorder.t>) ];
 type borderRight<'data> = [ | #BorderRightFn('data => option<CssBorder.t>) ];

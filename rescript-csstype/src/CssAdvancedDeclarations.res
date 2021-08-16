@@ -4,9 +4,9 @@ module Make = (
     type value<'data>;
   }
 ) => {
-  module Declaration = CssDeclaration.Make();
+  module Declaration = CssDeclaration;
 
-  module DeclarationFn = CssDeclarationFn.Make();
+  module DeclarationFn = CssDeclarationFn;
 
   module Selector = CssSelector.Make({
     type declarations<'data> = Type.t<'data>;
@@ -20,7 +20,7 @@ module Make = (
     };
   });
 
-  module AtRule = CssAtRule.Make();
+  module AtRule = CssAtRule;
 
   type declaration<'data> = (string, Type.value<'data>);
 

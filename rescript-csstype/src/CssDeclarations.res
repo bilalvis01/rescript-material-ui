@@ -3,9 +3,9 @@ module Make = (
     type t;
   }
 ) => {
-  external makeDeclarations: Js.Dict.t<CssDeclaration.boxValue> => Type.t = "%identity";
+  external makeDeclarations: Js.Dict.t<CssDeclarationConstructor.boxValue> => Type.t = "%identity";
 
-  module Declaration = CssDeclaration.Make();
+  module Declaration = CssDeclaration;
 
   let make = properties => {
     properties

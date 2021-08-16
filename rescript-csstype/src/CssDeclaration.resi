@@ -1,9 +1,3 @@
-@unboxed
-type rec boxValue =
-  | BoxValue('a): boxValue;
+type t = (string, CssDeclarationConstructor.boxValue);
 
-module Make: () => {
-  type t = (string, boxValue);
-
-  let make: CssDeclarationConstructor.t => t;
-};
+let make: CssDeclarationConstructor.t => t;

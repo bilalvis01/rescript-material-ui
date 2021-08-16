@@ -1,4 +1,4 @@
-// let propertyFn: (string, 'data => option<'a>) => [> CssDeclarationFnConstructor.property<'data> ];
+let propertyFn: (string, 'data => option<'a>) => [> CssDeclarationFnConstructor.property<'data> ];
 let borderFn: ('data => option<CssBorder.t>) => [> CssDeclarationFnConstructor.border<'data> ];
 let borderTopFn: ('data => option<CssBorder.t>) => [> CssDeclarationFnConstructor.borderTop<'data> ];
 let borderLeftFn: ('data => option<CssBorder.t>) => [> CssDeclarationFnConstructor.borderLeft<'data> ];

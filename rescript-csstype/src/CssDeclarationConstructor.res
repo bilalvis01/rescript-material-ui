@@ -1,8 +1,8 @@
 @unboxed
-type rec propertyValue =
-  | PropertyValue('a): propertyValue;
+type rec boxValue =
+  | BoxValue('a): boxValue;
 
-type property = [ | #Property(string, propertyValue) ];
+type property = [ | #Property(string, boxValue) ];
 type border = [ | #Border(CssBorder.t) ];
 type borderTop = [ | #BorderTop(CssBorder.t) ];
 type borderRight = [ | #BorderRight(CssBorder.t) ];

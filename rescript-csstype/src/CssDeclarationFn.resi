@@ -1,9 +1,3 @@
-@unboxed
-type rec boxValue<'data> =
-  | BoxValue('data => option<'a>): boxValue<'data>;
+type t<'data> = (string, CssDeclarationFnConstructor.boxValue<'data>);
 
-module Make: () => {  
-  type t<'data> = (string, boxValue<'data>);
-
-  let make: CssDeclarationFnConstructor.t<'data> => t<'data>;
-};
+let make: CssDeclarationFnConstructor.t<'data> => t<'data>;

@@ -1,4 +1,4 @@
-// let propertyFn = v => #PropertyFn(v);
+let propertyFn = (s, v) => #PropertyFn(s, CssDeclarationFnConstructor.BoxValue(v));
 let borderFn = v => #BorderFn(v);
 let borderTopFn = v => #BorderTopFn(v);
 let borderLeftFn = v => #BorderLeftFn(v);

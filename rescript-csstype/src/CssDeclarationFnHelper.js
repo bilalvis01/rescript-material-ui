@@ -2,6 +2,16 @@
 'use strict';
 
 
+function propertyFn(s, v) {
+  return {
+          NAME: "PropertyFn",
+          VAL: [
+            s,
+            v
+          ]
+        };
+}
+
 function borderFn(v) {
   return {
           NAME: "BorderFn",
@@ -289,6 +299,7 @@ function fontFamilyFn(v) {
         };
 }
 
+exports.propertyFn = propertyFn;
 exports.borderFn = borderFn;
 exports.borderTopFn = borderTopFn;
 exports.borderLeftFn = borderLeftFn;

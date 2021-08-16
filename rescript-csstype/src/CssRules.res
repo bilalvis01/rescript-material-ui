@@ -8,7 +8,7 @@ module Make = (
     type declarations<'data> = Type.declarations<'data>;
   });
 
-  module AtRule = CssAtRule.Make();
+  module AtRule = CssAtRule;
 
   module PseudoClass = CssPseudoClass.Make({
     type declarations<'data> = Type.declarations<'data>;

@@ -10,7 +10,6 @@ var CssPseudoClass$Ress = require("./CssPseudoClass.js");
 
 function Make(funarg) {
   var Selector = CssSelector$Ress.Make({});
-  var AtRule = CssAtRule$Ress.Make({});
   var map = function (v) {
     return [
             "@global " + v[0],
@@ -24,7 +23,7 @@ function Make(funarg) {
     return Js_dict.fromArray(Belt_Array.map(rules, (function (rule) {
                       var variant = rule.NAME;
                       if (variant === "FontFace") {
-                        return Curry._1(AtRule.make, rule);
+                        return CssAtRule$Ress.make(rule);
                       } else if (variant === "Hover") {
                         return Curry._1(PseudoClass.make, rule);
                       } else {
