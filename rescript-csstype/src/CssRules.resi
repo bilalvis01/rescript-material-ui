@@ -4,5 +4,5 @@ module Make: (
     type declarations<'data>;
   }
 ) => {
-  let make: array<CssRuleConstructor.rule<Type.declarations<'data>>> => Type.t<'data>;
+  let make: array<CssRuleConstructor.t<Type.declarations<'data>>> => Type.t<'data>;
 }

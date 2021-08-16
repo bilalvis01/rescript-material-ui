@@ -1,7 +1,3 @@
-@unboxed
-type rec boxDescriptors =
-  | BoxDescriptors('a): boxDescriptors;
-
-type t = (string, boxDescriptors);
+type t = (string, CssAtRuleConstructor.boxDescriptors);
   
 let make: CssAtRuleConstructor.t => t;
