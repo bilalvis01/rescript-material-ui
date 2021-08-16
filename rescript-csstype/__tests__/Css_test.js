@@ -3,6 +3,8 @@
 
 var Curry = require("rescript/lib/js/curry.js");
 var Css$Ress = require("../src/Css.js");
+var Caml_option = require("rescript/lib/js/caml_option.js");
+var CssColor$Ress = require("../src/property_value/CssColor.js");
 var CssBorder$Ress = require("../src/property_value/CssBorder.js");
 var CssFontFace$Ress = require("../src/CssFontFace.js");
 
@@ -48,23 +50,34 @@ test("style", (function () {
       }));
 
 test("styles", (function () {
-        expect(Curry._1(Css$Ress.styles, [
-                    Curry._2(Css$Ress.selector, "wrapper", [
-                          Css$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Ress.url("image.png")),
-                          Css$Ress.color(Css$Ress.rgb(255, 255, 255)),
-                          Css$Ress.paddingTop(Css$Ress.px(24)),
-                          Css$Ress.paddingBottom(Css$Ress.px(24)),
-                          Css$Ress.paddingLeft(Css$Ress.px(40)),
-                          Css$Ress.paddingRight(Css$Ress.px(40)),
-                          Css$Ress.marginNumber(24)
-                        ]),
-                    Curry._2(Css$Ress.selector, "button", [
-                          Css$Ress.color(Css$Ress.hsla(Css$Ress.deg(360), Css$Ress.pct(100), Css$Ress.pct(50), 0.5)),
-                          Curry._1(Css$Ress.hover, [Css$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
-                        ]),
-                    Css$Ress.fontFace([CssFontFace$Ress.fontDisplay("auto")]),
-                    Curry._1(Css$Ress.hover, [Css$Ress.color("blue")])
-                  ])).toEqual({
+        var colorFunction = function (data) {
+          return Caml_option.some(CssColor$Ress.value(data.color));
+        };
+        var marginFunction = function (data) {
+          return Caml_option.some(data.space);
+        };
+        var styles = Curry._1(Css$Ress.styles, [
+              Curry._2(Css$Ress.selector, "wrapper", [
+                    Css$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Ress.url("image.png")),
+                    Css$Ress.color(Css$Ress.rgb(255, 255, 255)),
+                    Css$Ress.paddingTop(Css$Ress.px(24)),
+                    Css$Ress.paddingBottom(Css$Ress.px(24)),
+                    Css$Ress.paddingLeft(Css$Ress.px(40)),
+                    Css$Ress.paddingRight(Css$Ress.px(40)),
+                    Css$Ress.marginNumber(24)
+                  ]),
+              Curry._2(Css$Ress.selector, "tab", [
+                    Css$Ress.colorFn(colorFunction),
+                    Css$Ress.marginFn(marginFunction)
+                  ]),
+              Curry._2(Css$Ress.selector, "button", [
+                    Css$Ress.color(Css$Ress.hsla(Css$Ress.deg(360), Css$Ress.pct(100), Css$Ress.pct(50), 0.5)),
+                    Curry._1(Css$Ress.hover, [Css$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
+                  ]),
+              Css$Ress.fontFace([CssFontFace$Ress.fontDisplay("auto")]),
+              Curry._1(Css$Ress.hover, [Css$Ress.color("blue")])
+            ]);
+        expect(styles).toEqual({
               wrapper: {
                 background: "url(\"image.png\")",
                 color: "rgb(255, 255, 255)",
@@ -79,6 +92,10 @@ test("styles", (function () {
                 "&:hover": {
                   background: "blue"
                 }
+              },
+              tab: {
+                color: colorFunction,
+                margin: marginFunction
               },
               "@font-face": {
                 fontDisplay: "auto"

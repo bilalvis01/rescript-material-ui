@@ -46,30 +46,42 @@ test("style", (.) => {
   }));
 });
 
+type data = { "color": ValueType.color_global, "space": float };
+
 test("styles", (.) => {
-  expect(styles([
-    selector("wrapper", [
-      background(url("image.png")),
-      color(rgb(255., 255., 255.)),
-      paddingTop(px(24.)),
-      paddingBottom(px(24.)),
-      paddingLeft(px(40.)),
-      paddingRight(px(40.)),
-      marginNumber(24.),
-    ]),
-    selector("button", [
-      color(hsla(deg(360.), pct(100.), pct(50.), 0.5)),
-      hover([
-        background(#blue)
+  let colorFunction: data => option<Color.t> = data => Some(Color.value(data["color"]));
+  let marginFunction: data => option<Margin.t> = data => Some(Margin.number(data["space"]));
+
+  let styles: rules<data> = 
+    styles([
+      selector("wrapper", [
+        background(url("image.png")),
+        color(rgb(255., 255., 255.)),
+        paddingTop(px(24.)),
+        paddingBottom(px(24.)),
+        paddingLeft(px(40.)),
+        paddingRight(px(40.)),
+        marginNumber(24.),
       ]),
-    ]),
-    fontFace([
-      FontFace.fontDisplay(#auto),
-    ]),
-    hover([
-      color(#blue)
-    ]),
-  ]))
+      selector("tab", [
+        colorFn(colorFunction),
+        marginFn(marginFunction),
+      ]),
+      selector("button", [
+        color(hsla(deg(360.), pct(100.), pct(50.), 0.5)),
+        hover([
+          background(#blue)
+        ]),
+      ]),
+      fontFace([
+        FontFace.fontDisplay(#auto),
+      ]),
+      hover([
+        color(#blue)
+      ]),
+    ]);
+  
+  expect(styles)
   ->toEqual(Obj.magic({
     "wrapper": {
       "background": `url("image.png")`,
@@ -85,6 +97,10 @@ test("styles", (.) => {
       "&:hover": {
         "background": "blue"
       }
+    },
+    "tab": {
+      "color": colorFunction,
+      "margin": marginFunction,
     },
     "@font-face": {
       "fontDisplay": "auto"
