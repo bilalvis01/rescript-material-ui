@@ -1,59 +1,12 @@
 open Jest;
 open Css;
 
-test("style", (.) => {
-  expect({
-    "wrapper": style([
-      background(url("image.png")),
-      color(rgb(255., 255., 255.)),
-      paddingTop(px(24.)),
-      paddingBottom(px(24.)),
-      paddingLeft(px(40.)),
-      paddingRight(px(40.)),
-      marginNumber(24.),
-      borderUnion(Border.value(~color=rgb(200., 200., 200.), ~width=px(2.), #solid)),
-    ]),
-    "button": style([
-      color(hsla(deg(360.), pct(100.), pct(50.), 0.5)),
-      hover([
-        background(#blue)
-      ]),
-    ]),
-    "@font-face": FontFace.descriptors([
-      FontFace.fontDisplay(#auto),
-    ]),
-  })
-  ->toEqual(Obj.magic({
-    "wrapper": {
-      "background": `url("image.png")`,
-      "color": "rgb(255, 255, 255)",
-      "paddingTop": "24px",
-      "paddingBottom": "24px",
-      "paddingLeft": "40px",
-      "paddingRight": "40px",
-      "margin": 24,
-      "border": "2px rgb(200, 200, 200) solid",
-    },
-    "button": {
-      "color": "hsla(360deg, 100%, 50%, 0.5)"
-      "&:hover": {
-        "background": "blue"
-      }
-    },
-    "@font-face": {
-      "fontDisplay": "auto"
-    },
-  }));
-});
-
-type data = { "color": ValueType.color_global, "space": float };
+let _ = 
+  Jss.jss
+  ->Jss.setup(Jss.preset());
 
 test("styles", (.) => {
-  let colorFunction: data => option<Color.t> = data => Some(Color.value(data["color"]));
-  let marginFunction: data => option<Margin.t> = data => Some(Margin.number(data["space"]));
-
-  let styles: rules<data> = 
-    styles([
+  expect(styles([
       selector("wrapper", [
         background(url("image.png")),
         color(rgb(255., 255., 255.)),
@@ -63,15 +16,14 @@ test("styles", (.) => {
         paddingRight(px(40.)),
         marginNumber(24.),
       ]),
-      selector("tab", [
-        colorFn(colorFunction),
-        marginFn(marginFunction),
-      ]),
       selector("button", [
         color(hsla(deg(360.), pct(100.), pct(50.), 0.5)),
         hover([
           background(#blue)
         ]),
+      ]),
+      selector("tab", [
+        margin2Number(~tb=24., ~lr=24.),
       ]),
       fontFace([
         FontFace.fontDisplay(#auto),
@@ -79,9 +31,7 @@ test("styles", (.) => {
       hover([
         color(#blue)
       ]),
-    ]);
-  
-  expect(styles)
+    ]))
   ->toEqual(Obj.magic({
     "wrapper": {
       "background": `url("image.png")`,
@@ -99,8 +49,7 @@ test("styles", (.) => {
       }
     },
     "tab": {
-      "color": colorFunction,
-      "margin": marginFunction,
+      "margin": [[24., 24.]],
     },
     "@font-face": {
       "fontDisplay": "auto"
@@ -109,4 +58,53 @@ test("styles", (.) => {
       "color": "blue"
     },
   }));
+});
+
+type data = { 
+  color: option<ValueType.color_global>, 
+  space: option<float> 
+};
+
+test("styles snapshot", (.) => {
+  let stylesObj: rules<data> = 
+    styles([
+      selector("wrapper", [
+        background(url("image.png")),
+        color(rgb(255., 255., 255.)),
+        paddingTop(px(24.)),
+        paddingBottom(px(24.)),
+        paddingLeft(px(40.)),
+        paddingRight(px(40.)),
+        marginNumber(24.),
+      ]),
+      selector("button", [
+        color(hsla(deg(360.), pct(100.), pct(50.), 0.5)),
+        hover([
+          background(#blue)
+        ]),
+      ]),
+      selector("tab", [
+        colorFn(data => data.color->Belt.Option.map(color => Color.value(color))),
+        marginFn(data => data.space->Belt.Option.map(space => Margin.number2(~tb=space, ~lr=space))),
+      ]),
+      fontFace([
+        FontFace.fontDisplay(#auto),
+      ]),
+      hover([
+        color(#blue)
+      ]),
+    ]);
+
+  let data = {
+    color: Some(#red),
+    space: Some(24.),
+  };
+
+  expect(
+    Jss.jss
+    ->Jss.createStyleSheet(stylesObj)
+    ->Jss.update(data)
+    ->Jss.toString
+  )
+  ->toMatchSnapshot;
 });
