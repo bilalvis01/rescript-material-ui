@@ -7,6 +7,7 @@ var CssAtRuleHelper$Ress = require("./CssAtRuleHelper.js");
 var CssSelectorHelper$Ress = require("./CssSelectorHelper.js");
 var CssDeclarationHelper$Ress = require("./CssDeclarationHelper.js");
 var CssPseudoClassHelper$Ress = require("./CssPseudoClassHelper.js");
+var CssDeclarationFnHelper$Ress = require("./CssDeclarationFnHelper.js");
 var CssAdvancedDeclarations$Ress = require("./CssAdvancedDeclarations.js");
 
 function Make(Type) {
@@ -21,6 +22,80 @@ function Make(Type) {
   return {
           Declarations: Declarations,
           Rules: Rules,
+          style: Declarations.make,
+          styles: Rules.make,
+          ValueType: undefined,
+          str: CssValueHelper$Ress.str,
+          num: CssValueHelper$Ress.num,
+          $$int: CssValueHelper$Ress.$$int,
+          pct: CssValueHelper$Ress.pct,
+          ratio: CssValueHelper$Ress.ratio,
+          fr: CssValueHelper$Ress.fr,
+          ch: CssValueHelper$Ress.ch,
+          em: CssValueHelper$Ress.em,
+          ex: CssValueHelper$Ress.ex,
+          rem: CssValueHelper$Ress.rem,
+          vh: CssValueHelper$Ress.vh,
+          vw: CssValueHelper$Ress.vw,
+          vmin: CssValueHelper$Ress.vmin,
+          vmax: CssValueHelper$Ress.vmax,
+          px: CssValueHelper$Ress.px,
+          cm: CssValueHelper$Ress.cm,
+          mm: CssValueHelper$Ress.mm,
+          inch: CssValueHelper$Ress.inch,
+          pc: CssValueHelper$Ress.pc,
+          pt: CssValueHelper$Ress.pt,
+          deg: CssValueHelper$Ress.deg,
+          grad: CssValueHelper$Ress.grad,
+          rad: CssValueHelper$Ress.rad,
+          turn: CssValueHelper$Ress.turn,
+          s: CssValueHelper$Ress.s,
+          ms: CssValueHelper$Ress.ms,
+          hz: CssValueHelper$Ress.hz,
+          kHz: CssValueHelper$Ress.kHz,
+          dpi: CssValueHelper$Ress.dpi,
+          dpcm: CssValueHelper$Ress.dpcm,
+          dppx: CssValueHelper$Ress.dppx,
+          x: CssValueHelper$Ress.x,
+          position2: CssValueHelper$Ress.position2,
+          position3: CssValueHelper$Ress.position3,
+          position4: CssValueHelper$Ress.position4,
+          src: CssValueHelper$Ress.src,
+          bgLayer: CssValueHelper$Ress.bgLayer,
+          bgSize2: CssValueHelper$Ress.bgSize2,
+          hsl: CssValueHelper$Ress.hsl,
+          hsla: CssValueHelper$Ress.hsla,
+          rgb: CssValueHelper$Ress.rgb,
+          rgba: CssValueHelper$Ress.rgba,
+          hexColor: CssValueHelper$Ress.hexColor,
+          url: CssValueHelper$Ress.url,
+          image: CssValueHelper$Ress.image,
+          linearColorStop2: CssValueHelper$Ress.linearColorStop2,
+          linearColorStop3: CssValueHelper$Ress.linearColorStop3,
+          linearGradient: CssValueHelper$Ress.linearGradient,
+          linearGradient2: CssValueHelper$Ress.linearGradient2,
+          linearGradient3: CssValueHelper$Ress.linearGradient3,
+          linearGradient4: CssValueHelper$Ress.linearGradient4,
+          repeatingLinearGradient: CssValueHelper$Ress.repeatingLinearGradient,
+          repeatingLinearGradient2: CssValueHelper$Ress.repeatingLinearGradient2,
+          repeatingLinearGradient3: CssValueHelper$Ress.repeatingLinearGradient3,
+          repeatingLinearGradient4: CssValueHelper$Ress.repeatingLinearGradient4,
+          radialGradient: CssValueHelper$Ress.radialGradient,
+          radialGradient2: CssValueHelper$Ress.radialGradient2,
+          radialGradient3: CssValueHelper$Ress.radialGradient3,
+          radialGradient4: CssValueHelper$Ress.radialGradient4,
+          repeatingRadialGradient: CssValueHelper$Ress.repeatingRadialGradient,
+          repeatingRadialGradient2: CssValueHelper$Ress.repeatingRadialGradient2,
+          repeatingRadialGradient3: CssValueHelper$Ress.repeatingRadialGradient3,
+          repeatingRadialGradient4: CssValueHelper$Ress.repeatingRadialGradient4,
+          conicGradient: CssValueHelper$Ress.conicGradient,
+          conicGradient2: CssValueHelper$Ress.conicGradient2,
+          conicGradient3: CssValueHelper$Ress.conicGradient3,
+          conicGradient4: CssValueHelper$Ress.conicGradient4,
+          repeatingConicGradient: CssValueHelper$Ress.repeatingConicGradient,
+          repeatingConicGradient2: CssValueHelper$Ress.repeatingConicGradient2,
+          repeatingConicGradient3: CssValueHelper$Ress.repeatingConicGradient3,
+          repeatingConicGradient4: CssValueHelper$Ress.repeatingConicGradient4,
           property: CssDeclarationHelper$Ress.property,
           border: CssDeclarationHelper$Ress.border,
           borderUnion: CssDeclarationHelper$Ress.borderUnion,
@@ -197,79 +272,50 @@ function Make(Type) {
           fontFamily4: CssDeclarationHelper$Ress.fontFamily4,
           fontFamilyUnion: CssDeclarationHelper$Ress.fontFamilyUnion,
           fontFamilyString: CssDeclarationHelper$Ress.fontFamilyString,
+          propertyFn: CssDeclarationFnHelper$Ress.propertyFn,
+          borderFn: CssDeclarationFnHelper$Ress.borderFn,
+          borderTopFn: CssDeclarationFnHelper$Ress.borderTopFn,
+          borderLeftFn: CssDeclarationFnHelper$Ress.borderLeftFn,
+          borderRightFn: CssDeclarationFnHelper$Ress.borderRightFn,
+          borderBottomFn: CssDeclarationFnHelper$Ress.borderBottomFn,
+          borderColorFn: CssDeclarationFnHelper$Ress.borderColorFn,
+          borderTopColorFn: CssDeclarationFnHelper$Ress.borderTopColorFn,
+          borderRightColorFn: CssDeclarationFnHelper$Ress.borderRightColorFn,
+          borderBottomColorFn: CssDeclarationFnHelper$Ress.borderBottomColorFn,
+          borderLeftColorFn: CssDeclarationFnHelper$Ress.borderLeftColorFn,
+          borderStyleFn: CssDeclarationFnHelper$Ress.borderStyleFn,
+          borderTopStyleFn: CssDeclarationFnHelper$Ress.borderTopStyleFn,
+          borderRightStyleFn: CssDeclarationFnHelper$Ress.borderRightStyleFn,
+          borderBottomStyleFn: CssDeclarationFnHelper$Ress.borderBottomStyleFn,
+          borderLeftStyleFn: CssDeclarationFnHelper$Ress.borderLeftStyleFn,
+          borderWidthFn: CssDeclarationFnHelper$Ress.borderWidthFn,
+          borderTopWidthFn: CssDeclarationFnHelper$Ress.borderTopWidthFn,
+          borderRightWidthFn: CssDeclarationFnHelper$Ress.borderRightWidthFn,
+          borderBottomWidthFn: CssDeclarationFnHelper$Ress.borderBottomWidthFn,
+          borderLeftWidthFn: CssDeclarationFnHelper$Ress.borderLeftWidthFn,
+          backgroundFn: CssDeclarationFnHelper$Ress.backgroundFn,
+          backgroundAttachmentFn: CssDeclarationFnHelper$Ress.backgroundAttachmentFn,
+          backgroundColorFn: CssDeclarationFnHelper$Ress.backgroundColorFn,
+          backgroundImageFn: CssDeclarationFnHelper$Ress.backgroundImageFn,
+          backgroundPositionFn: CssDeclarationFnHelper$Ress.backgroundPositionFn,
+          backgroundStyleFn: CssDeclarationFnHelper$Ress.backgroundStyleFn,
+          marginFn: CssDeclarationFnHelper$Ress.marginFn,
+          marginTopFn: CssDeclarationFnHelper$Ress.marginTopFn,
+          marginRightFn: CssDeclarationFnHelper$Ress.marginRightFn,
+          marginBottomFn: CssDeclarationFnHelper$Ress.marginBottomFn,
+          marginLeftFn: CssDeclarationFnHelper$Ress.marginLeftFn,
+          paddingFn: CssDeclarationFnHelper$Ress.paddingFn,
+          paddingTopFn: CssDeclarationFnHelper$Ress.paddingTopFn,
+          paddingRightFn: CssDeclarationFnHelper$Ress.paddingRightFn,
+          paddingBottomFn: CssDeclarationFnHelper$Ress.paddingBottomFn,
+          paddingLeftFn: CssDeclarationFnHelper$Ress.paddingLeftFn,
+          clearFn: CssDeclarationFnHelper$Ress.clearFn,
+          colorFn: CssDeclarationFnHelper$Ress.colorFn,
+          cursorFn: CssDeclarationFnHelper$Ress.cursorFn,
+          fontWeightFn: CssDeclarationFnHelper$Ress.fontWeightFn,
+          fontFamilyFn: CssDeclarationFnHelper$Ress.fontFamilyFn,
           selector: include.selector,
           hover: include$1.hover,
-          str: CssValueHelper$Ress.str,
-          num: CssValueHelper$Ress.num,
-          $$int: CssValueHelper$Ress.$$int,
-          pct: CssValueHelper$Ress.pct,
-          ratio: CssValueHelper$Ress.ratio,
-          fr: CssValueHelper$Ress.fr,
-          ch: CssValueHelper$Ress.ch,
-          em: CssValueHelper$Ress.em,
-          ex: CssValueHelper$Ress.ex,
-          rem: CssValueHelper$Ress.rem,
-          vh: CssValueHelper$Ress.vh,
-          vw: CssValueHelper$Ress.vw,
-          vmin: CssValueHelper$Ress.vmin,
-          vmax: CssValueHelper$Ress.vmax,
-          px: CssValueHelper$Ress.px,
-          cm: CssValueHelper$Ress.cm,
-          mm: CssValueHelper$Ress.mm,
-          inch: CssValueHelper$Ress.inch,
-          pc: CssValueHelper$Ress.pc,
-          pt: CssValueHelper$Ress.pt,
-          deg: CssValueHelper$Ress.deg,
-          grad: CssValueHelper$Ress.grad,
-          rad: CssValueHelper$Ress.rad,
-          turn: CssValueHelper$Ress.turn,
-          s: CssValueHelper$Ress.s,
-          ms: CssValueHelper$Ress.ms,
-          hz: CssValueHelper$Ress.hz,
-          kHz: CssValueHelper$Ress.kHz,
-          dpi: CssValueHelper$Ress.dpi,
-          dpcm: CssValueHelper$Ress.dpcm,
-          dppx: CssValueHelper$Ress.dppx,
-          x: CssValueHelper$Ress.x,
-          position2: CssValueHelper$Ress.position2,
-          position3: CssValueHelper$Ress.position3,
-          position4: CssValueHelper$Ress.position4,
-          src: CssValueHelper$Ress.src,
-          bgLayer: CssValueHelper$Ress.bgLayer,
-          bgSize2: CssValueHelper$Ress.bgSize2,
-          hsl: CssValueHelper$Ress.hsl,
-          hsla: CssValueHelper$Ress.hsla,
-          rgb: CssValueHelper$Ress.rgb,
-          rgba: CssValueHelper$Ress.rgba,
-          hexColor: CssValueHelper$Ress.hexColor,
-          url: CssValueHelper$Ress.url,
-          image: CssValueHelper$Ress.image,
-          linearColorStop2: CssValueHelper$Ress.linearColorStop2,
-          linearColorStop3: CssValueHelper$Ress.linearColorStop3,
-          linearGradient: CssValueHelper$Ress.linearGradient,
-          linearGradient2: CssValueHelper$Ress.linearGradient2,
-          linearGradient3: CssValueHelper$Ress.linearGradient3,
-          linearGradient4: CssValueHelper$Ress.linearGradient4,
-          repeatingLinearGradient: CssValueHelper$Ress.repeatingLinearGradient,
-          repeatingLinearGradient2: CssValueHelper$Ress.repeatingLinearGradient2,
-          repeatingLinearGradient3: CssValueHelper$Ress.repeatingLinearGradient3,
-          repeatingLinearGradient4: CssValueHelper$Ress.repeatingLinearGradient4,
-          radialGradient: CssValueHelper$Ress.radialGradient,
-          radialGradient2: CssValueHelper$Ress.radialGradient2,
-          radialGradient3: CssValueHelper$Ress.radialGradient3,
-          radialGradient4: CssValueHelper$Ress.radialGradient4,
-          repeatingRadialGradient: CssValueHelper$Ress.repeatingRadialGradient,
-          repeatingRadialGradient2: CssValueHelper$Ress.repeatingRadialGradient2,
-          repeatingRadialGradient3: CssValueHelper$Ress.repeatingRadialGradient3,
-          repeatingRadialGradient4: CssValueHelper$Ress.repeatingRadialGradient4,
-          conicGradient: CssValueHelper$Ress.conicGradient,
-          conicGradient2: CssValueHelper$Ress.conicGradient2,
-          conicGradient3: CssValueHelper$Ress.conicGradient3,
-          conicGradient4: CssValueHelper$Ress.conicGradient4,
-          repeatingConicGradient: CssValueHelper$Ress.repeatingConicGradient,
-          repeatingConicGradient2: CssValueHelper$Ress.repeatingConicGradient2,
-          repeatingConicGradient3: CssValueHelper$Ress.repeatingConicGradient3,
-          repeatingConicGradient4: CssValueHelper$Ress.repeatingConicGradient4,
           fontFace: CssAtRuleHelper$Ress.fontFace,
           Background: undefined,
           BackgroundAttachment: undefined,
@@ -323,6 +369,154 @@ var include = CssSelectorHelper$Ress.Make({
 var include$1 = CssPseudoClassHelper$Ress.Make({
       declarations: Declarations.make
     });
+
+var style = Declarations.make;
+
+var styles = Rules.make;
+
+var ValueType;
+
+var str = CssValueHelper$Ress.str;
+
+var num = CssValueHelper$Ress.num;
+
+var $$int = CssValueHelper$Ress.$$int;
+
+var pct = CssValueHelper$Ress.pct;
+
+var ratio = CssValueHelper$Ress.ratio;
+
+var fr = CssValueHelper$Ress.fr;
+
+var ch = CssValueHelper$Ress.ch;
+
+var em = CssValueHelper$Ress.em;
+
+var ex = CssValueHelper$Ress.ex;
+
+var rem = CssValueHelper$Ress.rem;
+
+var vh = CssValueHelper$Ress.vh;
+
+var vw = CssValueHelper$Ress.vw;
+
+var vmin = CssValueHelper$Ress.vmin;
+
+var vmax = CssValueHelper$Ress.vmax;
+
+var px = CssValueHelper$Ress.px;
+
+var cm = CssValueHelper$Ress.cm;
+
+var mm = CssValueHelper$Ress.mm;
+
+var inch = CssValueHelper$Ress.inch;
+
+var pc = CssValueHelper$Ress.pc;
+
+var pt = CssValueHelper$Ress.pt;
+
+var deg = CssValueHelper$Ress.deg;
+
+var grad = CssValueHelper$Ress.grad;
+
+var rad = CssValueHelper$Ress.rad;
+
+var turn = CssValueHelper$Ress.turn;
+
+var s = CssValueHelper$Ress.s;
+
+var ms = CssValueHelper$Ress.ms;
+
+var hz = CssValueHelper$Ress.hz;
+
+var kHz = CssValueHelper$Ress.kHz;
+
+var dpi = CssValueHelper$Ress.dpi;
+
+var dpcm = CssValueHelper$Ress.dpcm;
+
+var dppx = CssValueHelper$Ress.dppx;
+
+var x = CssValueHelper$Ress.x;
+
+var position2 = CssValueHelper$Ress.position2;
+
+var position3 = CssValueHelper$Ress.position3;
+
+var position4 = CssValueHelper$Ress.position4;
+
+var src = CssValueHelper$Ress.src;
+
+var bgLayer = CssValueHelper$Ress.bgLayer;
+
+var bgSize2 = CssValueHelper$Ress.bgSize2;
+
+var hsl = CssValueHelper$Ress.hsl;
+
+var hsla = CssValueHelper$Ress.hsla;
+
+var rgb = CssValueHelper$Ress.rgb;
+
+var rgba = CssValueHelper$Ress.rgba;
+
+var hexColor = CssValueHelper$Ress.hexColor;
+
+var url = CssValueHelper$Ress.url;
+
+var image = CssValueHelper$Ress.image;
+
+var linearColorStop2 = CssValueHelper$Ress.linearColorStop2;
+
+var linearColorStop3 = CssValueHelper$Ress.linearColorStop3;
+
+var linearGradient = CssValueHelper$Ress.linearGradient;
+
+var linearGradient2 = CssValueHelper$Ress.linearGradient2;
+
+var linearGradient3 = CssValueHelper$Ress.linearGradient3;
+
+var linearGradient4 = CssValueHelper$Ress.linearGradient4;
+
+var repeatingLinearGradient = CssValueHelper$Ress.repeatingLinearGradient;
+
+var repeatingLinearGradient2 = CssValueHelper$Ress.repeatingLinearGradient2;
+
+var repeatingLinearGradient3 = CssValueHelper$Ress.repeatingLinearGradient3;
+
+var repeatingLinearGradient4 = CssValueHelper$Ress.repeatingLinearGradient4;
+
+var radialGradient = CssValueHelper$Ress.radialGradient;
+
+var radialGradient2 = CssValueHelper$Ress.radialGradient2;
+
+var radialGradient3 = CssValueHelper$Ress.radialGradient3;
+
+var radialGradient4 = CssValueHelper$Ress.radialGradient4;
+
+var repeatingRadialGradient = CssValueHelper$Ress.repeatingRadialGradient;
+
+var repeatingRadialGradient2 = CssValueHelper$Ress.repeatingRadialGradient2;
+
+var repeatingRadialGradient3 = CssValueHelper$Ress.repeatingRadialGradient3;
+
+var repeatingRadialGradient4 = CssValueHelper$Ress.repeatingRadialGradient4;
+
+var conicGradient = CssValueHelper$Ress.conicGradient;
+
+var conicGradient2 = CssValueHelper$Ress.conicGradient2;
+
+var conicGradient3 = CssValueHelper$Ress.conicGradient3;
+
+var conicGradient4 = CssValueHelper$Ress.conicGradient4;
+
+var repeatingConicGradient = CssValueHelper$Ress.repeatingConicGradient;
+
+var repeatingConicGradient2 = CssValueHelper$Ress.repeatingConicGradient2;
+
+var repeatingConicGradient3 = CssValueHelper$Ress.repeatingConicGradient3;
+
+var repeatingConicGradient4 = CssValueHelper$Ress.repeatingConicGradient4;
 
 var property = CssDeclarationHelper$Ress.property;
 
@@ -676,151 +870,93 @@ var fontFamilyUnion = CssDeclarationHelper$Ress.fontFamilyUnion;
 
 var fontFamilyString = CssDeclarationHelper$Ress.fontFamilyString;
 
+var propertyFn = CssDeclarationFnHelper$Ress.propertyFn;
+
+var borderFn = CssDeclarationFnHelper$Ress.borderFn;
+
+var borderTopFn = CssDeclarationFnHelper$Ress.borderTopFn;
+
+var borderLeftFn = CssDeclarationFnHelper$Ress.borderLeftFn;
+
+var borderRightFn = CssDeclarationFnHelper$Ress.borderRightFn;
+
+var borderBottomFn = CssDeclarationFnHelper$Ress.borderBottomFn;
+
+var borderColorFn = CssDeclarationFnHelper$Ress.borderColorFn;
+
+var borderTopColorFn = CssDeclarationFnHelper$Ress.borderTopColorFn;
+
+var borderRightColorFn = CssDeclarationFnHelper$Ress.borderRightColorFn;
+
+var borderBottomColorFn = CssDeclarationFnHelper$Ress.borderBottomColorFn;
+
+var borderLeftColorFn = CssDeclarationFnHelper$Ress.borderLeftColorFn;
+
+var borderStyleFn = CssDeclarationFnHelper$Ress.borderStyleFn;
+
+var borderTopStyleFn = CssDeclarationFnHelper$Ress.borderTopStyleFn;
+
+var borderRightStyleFn = CssDeclarationFnHelper$Ress.borderRightStyleFn;
+
+var borderBottomStyleFn = CssDeclarationFnHelper$Ress.borderBottomStyleFn;
+
+var borderLeftStyleFn = CssDeclarationFnHelper$Ress.borderLeftStyleFn;
+
+var borderWidthFn = CssDeclarationFnHelper$Ress.borderWidthFn;
+
+var borderTopWidthFn = CssDeclarationFnHelper$Ress.borderTopWidthFn;
+
+var borderRightWidthFn = CssDeclarationFnHelper$Ress.borderRightWidthFn;
+
+var borderBottomWidthFn = CssDeclarationFnHelper$Ress.borderBottomWidthFn;
+
+var borderLeftWidthFn = CssDeclarationFnHelper$Ress.borderLeftWidthFn;
+
+var backgroundFn = CssDeclarationFnHelper$Ress.backgroundFn;
+
+var backgroundAttachmentFn = CssDeclarationFnHelper$Ress.backgroundAttachmentFn;
+
+var backgroundColorFn = CssDeclarationFnHelper$Ress.backgroundColorFn;
+
+var backgroundImageFn = CssDeclarationFnHelper$Ress.backgroundImageFn;
+
+var backgroundPositionFn = CssDeclarationFnHelper$Ress.backgroundPositionFn;
+
+var backgroundStyleFn = CssDeclarationFnHelper$Ress.backgroundStyleFn;
+
+var marginFn = CssDeclarationFnHelper$Ress.marginFn;
+
+var marginTopFn = CssDeclarationFnHelper$Ress.marginTopFn;
+
+var marginRightFn = CssDeclarationFnHelper$Ress.marginRightFn;
+
+var marginBottomFn = CssDeclarationFnHelper$Ress.marginBottomFn;
+
+var marginLeftFn = CssDeclarationFnHelper$Ress.marginLeftFn;
+
+var paddingFn = CssDeclarationFnHelper$Ress.paddingFn;
+
+var paddingTopFn = CssDeclarationFnHelper$Ress.paddingTopFn;
+
+var paddingRightFn = CssDeclarationFnHelper$Ress.paddingRightFn;
+
+var paddingBottomFn = CssDeclarationFnHelper$Ress.paddingBottomFn;
+
+var paddingLeftFn = CssDeclarationFnHelper$Ress.paddingLeftFn;
+
+var clearFn = CssDeclarationFnHelper$Ress.clearFn;
+
+var colorFn = CssDeclarationFnHelper$Ress.colorFn;
+
+var cursorFn = CssDeclarationFnHelper$Ress.cursorFn;
+
+var fontWeightFn = CssDeclarationFnHelper$Ress.fontWeightFn;
+
+var fontFamilyFn = CssDeclarationFnHelper$Ress.fontFamilyFn;
+
 var selector = include.selector;
 
 var hover = include$1.hover;
-
-var str = CssValueHelper$Ress.str;
-
-var num = CssValueHelper$Ress.num;
-
-var $$int = CssValueHelper$Ress.$$int;
-
-var pct = CssValueHelper$Ress.pct;
-
-var ratio = CssValueHelper$Ress.ratio;
-
-var fr = CssValueHelper$Ress.fr;
-
-var ch = CssValueHelper$Ress.ch;
-
-var em = CssValueHelper$Ress.em;
-
-var ex = CssValueHelper$Ress.ex;
-
-var rem = CssValueHelper$Ress.rem;
-
-var vh = CssValueHelper$Ress.vh;
-
-var vw = CssValueHelper$Ress.vw;
-
-var vmin = CssValueHelper$Ress.vmin;
-
-var vmax = CssValueHelper$Ress.vmax;
-
-var px = CssValueHelper$Ress.px;
-
-var cm = CssValueHelper$Ress.cm;
-
-var mm = CssValueHelper$Ress.mm;
-
-var inch = CssValueHelper$Ress.inch;
-
-var pc = CssValueHelper$Ress.pc;
-
-var pt = CssValueHelper$Ress.pt;
-
-var deg = CssValueHelper$Ress.deg;
-
-var grad = CssValueHelper$Ress.grad;
-
-var rad = CssValueHelper$Ress.rad;
-
-var turn = CssValueHelper$Ress.turn;
-
-var s = CssValueHelper$Ress.s;
-
-var ms = CssValueHelper$Ress.ms;
-
-var hz = CssValueHelper$Ress.hz;
-
-var kHz = CssValueHelper$Ress.kHz;
-
-var dpi = CssValueHelper$Ress.dpi;
-
-var dpcm = CssValueHelper$Ress.dpcm;
-
-var dppx = CssValueHelper$Ress.dppx;
-
-var x = CssValueHelper$Ress.x;
-
-var position2 = CssValueHelper$Ress.position2;
-
-var position3 = CssValueHelper$Ress.position3;
-
-var position4 = CssValueHelper$Ress.position4;
-
-var src = CssValueHelper$Ress.src;
-
-var bgLayer = CssValueHelper$Ress.bgLayer;
-
-var bgSize2 = CssValueHelper$Ress.bgSize2;
-
-var hsl = CssValueHelper$Ress.hsl;
-
-var hsla = CssValueHelper$Ress.hsla;
-
-var rgb = CssValueHelper$Ress.rgb;
-
-var rgba = CssValueHelper$Ress.rgba;
-
-var hexColor = CssValueHelper$Ress.hexColor;
-
-var url = CssValueHelper$Ress.url;
-
-var image = CssValueHelper$Ress.image;
-
-var linearColorStop2 = CssValueHelper$Ress.linearColorStop2;
-
-var linearColorStop3 = CssValueHelper$Ress.linearColorStop3;
-
-var linearGradient = CssValueHelper$Ress.linearGradient;
-
-var linearGradient2 = CssValueHelper$Ress.linearGradient2;
-
-var linearGradient3 = CssValueHelper$Ress.linearGradient3;
-
-var linearGradient4 = CssValueHelper$Ress.linearGradient4;
-
-var repeatingLinearGradient = CssValueHelper$Ress.repeatingLinearGradient;
-
-var repeatingLinearGradient2 = CssValueHelper$Ress.repeatingLinearGradient2;
-
-var repeatingLinearGradient3 = CssValueHelper$Ress.repeatingLinearGradient3;
-
-var repeatingLinearGradient4 = CssValueHelper$Ress.repeatingLinearGradient4;
-
-var radialGradient = CssValueHelper$Ress.radialGradient;
-
-var radialGradient2 = CssValueHelper$Ress.radialGradient2;
-
-var radialGradient3 = CssValueHelper$Ress.radialGradient3;
-
-var radialGradient4 = CssValueHelper$Ress.radialGradient4;
-
-var repeatingRadialGradient = CssValueHelper$Ress.repeatingRadialGradient;
-
-var repeatingRadialGradient2 = CssValueHelper$Ress.repeatingRadialGradient2;
-
-var repeatingRadialGradient3 = CssValueHelper$Ress.repeatingRadialGradient3;
-
-var repeatingRadialGradient4 = CssValueHelper$Ress.repeatingRadialGradient4;
-
-var conicGradient = CssValueHelper$Ress.conicGradient;
-
-var conicGradient2 = CssValueHelper$Ress.conicGradient2;
-
-var conicGradient3 = CssValueHelper$Ress.conicGradient3;
-
-var conicGradient4 = CssValueHelper$Ress.conicGradient4;
-
-var repeatingConicGradient = CssValueHelper$Ress.repeatingConicGradient;
-
-var repeatingConicGradient2 = CssValueHelper$Ress.repeatingConicGradient2;
-
-var repeatingConicGradient3 = CssValueHelper$Ress.repeatingConicGradient3;
-
-var repeatingConicGradient4 = CssValueHelper$Ress.repeatingConicGradient4;
 
 var fontFace = CssAtRuleHelper$Ress.fontFace;
 
@@ -900,13 +1036,83 @@ var PaddingTop;
 
 var $$FontFace;
 
-var style = Declarations.make;
-
-var styles = Rules.make;
-
 exports.Make = Make;
 exports.Declarations = Declarations;
 exports.Rules = Rules;
+exports.style = style;
+exports.styles = styles;
+exports.ValueType = ValueType;
+exports.str = str;
+exports.num = num;
+exports.$$int = $$int;
+exports.pct = pct;
+exports.ratio = ratio;
+exports.fr = fr;
+exports.ch = ch;
+exports.em = em;
+exports.ex = ex;
+exports.rem = rem;
+exports.vh = vh;
+exports.vw = vw;
+exports.vmin = vmin;
+exports.vmax = vmax;
+exports.px = px;
+exports.cm = cm;
+exports.mm = mm;
+exports.inch = inch;
+exports.pc = pc;
+exports.pt = pt;
+exports.deg = deg;
+exports.grad = grad;
+exports.rad = rad;
+exports.turn = turn;
+exports.s = s;
+exports.ms = ms;
+exports.hz = hz;
+exports.kHz = kHz;
+exports.dpi = dpi;
+exports.dpcm = dpcm;
+exports.dppx = dppx;
+exports.x = x;
+exports.position2 = position2;
+exports.position3 = position3;
+exports.position4 = position4;
+exports.src = src;
+exports.bgLayer = bgLayer;
+exports.bgSize2 = bgSize2;
+exports.hsl = hsl;
+exports.hsla = hsla;
+exports.rgb = rgb;
+exports.rgba = rgba;
+exports.hexColor = hexColor;
+exports.url = url;
+exports.image = image;
+exports.linearColorStop2 = linearColorStop2;
+exports.linearColorStop3 = linearColorStop3;
+exports.linearGradient = linearGradient;
+exports.linearGradient2 = linearGradient2;
+exports.linearGradient3 = linearGradient3;
+exports.linearGradient4 = linearGradient4;
+exports.repeatingLinearGradient = repeatingLinearGradient;
+exports.repeatingLinearGradient2 = repeatingLinearGradient2;
+exports.repeatingLinearGradient3 = repeatingLinearGradient3;
+exports.repeatingLinearGradient4 = repeatingLinearGradient4;
+exports.radialGradient = radialGradient;
+exports.radialGradient2 = radialGradient2;
+exports.radialGradient3 = radialGradient3;
+exports.radialGradient4 = radialGradient4;
+exports.repeatingRadialGradient = repeatingRadialGradient;
+exports.repeatingRadialGradient2 = repeatingRadialGradient2;
+exports.repeatingRadialGradient3 = repeatingRadialGradient3;
+exports.repeatingRadialGradient4 = repeatingRadialGradient4;
+exports.conicGradient = conicGradient;
+exports.conicGradient2 = conicGradient2;
+exports.conicGradient3 = conicGradient3;
+exports.conicGradient4 = conicGradient4;
+exports.repeatingConicGradient = repeatingConicGradient;
+exports.repeatingConicGradient2 = repeatingConicGradient2;
+exports.repeatingConicGradient3 = repeatingConicGradient3;
+exports.repeatingConicGradient4 = repeatingConicGradient4;
 exports.property = property;
 exports.border = border;
 exports.borderUnion = borderUnion;
@@ -1083,79 +1289,50 @@ exports.fontFamily3 = fontFamily3;
 exports.fontFamily4 = fontFamily4;
 exports.fontFamilyUnion = fontFamilyUnion;
 exports.fontFamilyString = fontFamilyString;
+exports.propertyFn = propertyFn;
+exports.borderFn = borderFn;
+exports.borderTopFn = borderTopFn;
+exports.borderLeftFn = borderLeftFn;
+exports.borderRightFn = borderRightFn;
+exports.borderBottomFn = borderBottomFn;
+exports.borderColorFn = borderColorFn;
+exports.borderTopColorFn = borderTopColorFn;
+exports.borderRightColorFn = borderRightColorFn;
+exports.borderBottomColorFn = borderBottomColorFn;
+exports.borderLeftColorFn = borderLeftColorFn;
+exports.borderStyleFn = borderStyleFn;
+exports.borderTopStyleFn = borderTopStyleFn;
+exports.borderRightStyleFn = borderRightStyleFn;
+exports.borderBottomStyleFn = borderBottomStyleFn;
+exports.borderLeftStyleFn = borderLeftStyleFn;
+exports.borderWidthFn = borderWidthFn;
+exports.borderTopWidthFn = borderTopWidthFn;
+exports.borderRightWidthFn = borderRightWidthFn;
+exports.borderBottomWidthFn = borderBottomWidthFn;
+exports.borderLeftWidthFn = borderLeftWidthFn;
+exports.backgroundFn = backgroundFn;
+exports.backgroundAttachmentFn = backgroundAttachmentFn;
+exports.backgroundColorFn = backgroundColorFn;
+exports.backgroundImageFn = backgroundImageFn;
+exports.backgroundPositionFn = backgroundPositionFn;
+exports.backgroundStyleFn = backgroundStyleFn;
+exports.marginFn = marginFn;
+exports.marginTopFn = marginTopFn;
+exports.marginRightFn = marginRightFn;
+exports.marginBottomFn = marginBottomFn;
+exports.marginLeftFn = marginLeftFn;
+exports.paddingFn = paddingFn;
+exports.paddingTopFn = paddingTopFn;
+exports.paddingRightFn = paddingRightFn;
+exports.paddingBottomFn = paddingBottomFn;
+exports.paddingLeftFn = paddingLeftFn;
+exports.clearFn = clearFn;
+exports.colorFn = colorFn;
+exports.cursorFn = cursorFn;
+exports.fontWeightFn = fontWeightFn;
+exports.fontFamilyFn = fontFamilyFn;
 exports.selector = selector;
 exports.hover = hover;
-exports.str = str;
-exports.num = num;
-exports.$$int = $$int;
-exports.pct = pct;
-exports.ratio = ratio;
-exports.fr = fr;
-exports.ch = ch;
-exports.em = em;
-exports.ex = ex;
-exports.rem = rem;
-exports.vh = vh;
-exports.vw = vw;
-exports.vmin = vmin;
-exports.vmax = vmax;
-exports.px = px;
-exports.cm = cm;
-exports.mm = mm;
-exports.inch = inch;
-exports.pc = pc;
-exports.pt = pt;
-exports.deg = deg;
-exports.grad = grad;
-exports.rad = rad;
-exports.turn = turn;
-exports.s = s;
-exports.ms = ms;
-exports.hz = hz;
-exports.kHz = kHz;
-exports.dpi = dpi;
-exports.dpcm = dpcm;
-exports.dppx = dppx;
-exports.x = x;
-exports.position2 = position2;
-exports.position3 = position3;
-exports.position4 = position4;
-exports.src = src;
-exports.bgLayer = bgLayer;
-exports.bgSize2 = bgSize2;
-exports.hsl = hsl;
-exports.hsla = hsla;
-exports.rgb = rgb;
-exports.rgba = rgba;
-exports.hexColor = hexColor;
-exports.url = url;
-exports.image = image;
-exports.linearColorStop2 = linearColorStop2;
-exports.linearColorStop3 = linearColorStop3;
-exports.linearGradient = linearGradient;
-exports.linearGradient2 = linearGradient2;
-exports.linearGradient3 = linearGradient3;
-exports.linearGradient4 = linearGradient4;
-exports.repeatingLinearGradient = repeatingLinearGradient;
-exports.repeatingLinearGradient2 = repeatingLinearGradient2;
-exports.repeatingLinearGradient3 = repeatingLinearGradient3;
-exports.repeatingLinearGradient4 = repeatingLinearGradient4;
-exports.radialGradient = radialGradient;
-exports.radialGradient2 = radialGradient2;
-exports.radialGradient3 = radialGradient3;
-exports.radialGradient4 = radialGradient4;
-exports.repeatingRadialGradient = repeatingRadialGradient;
-exports.repeatingRadialGradient2 = repeatingRadialGradient2;
-exports.repeatingRadialGradient3 = repeatingRadialGradient3;
-exports.repeatingRadialGradient4 = repeatingRadialGradient4;
-exports.conicGradient = conicGradient;
-exports.conicGradient2 = conicGradient2;
-exports.conicGradient3 = conicGradient3;
-exports.conicGradient4 = conicGradient4;
-exports.repeatingConicGradient = repeatingConicGradient;
-exports.repeatingConicGradient2 = repeatingConicGradient2;
-exports.repeatingConicGradient3 = repeatingConicGradient3;
-exports.repeatingConicGradient4 = repeatingConicGradient4;
 exports.fontFace = fontFace;
 exports.Background = Background;
 exports.BackgroundAttachment = BackgroundAttachment;
@@ -1195,6 +1372,4 @@ exports.PaddingLeft = PaddingLeft;
 exports.PaddingRight = PaddingRight;
 exports.PaddingTop = PaddingTop;
 exports.$$FontFace = $$FontFace;
-exports.style = style;
-exports.styles = styles;
 /* Declarations Not a pure module */

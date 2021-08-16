@@ -15,10 +15,20 @@ module Make = (
     type declarations<'data> = Type.declarations<'data>;
   });
 
+  let style = Declarations.make;
+  let styles = Rules.make;
+
+  /*
+  Type
+  */
+  module ValueType = CssValueType;
+
   /*
   Helper
   */
+  include CssValueHelper;
   include CssDeclarationHelper;
+  include CssDeclarationFnHelper;
   include CssSelectorHelper.Make({ 
     type declarations<'data> = Type.declarations<'data>; 
     let declarations = Declarations.make; 
@@ -27,7 +37,6 @@ module Make = (
     type declarations<'data> = Type.declarations<'data>; 
     let declarations = Declarations.make; 
   });
-  include CssValueHelper;
   include CssAtRuleHelper;
 
   /*
@@ -86,6 +95,3 @@ include Make({
   type declarations<'data> = declarations<'data>;
   type rules<'data> = rules<'data>;
 });
-
-let style = Declarations.make;
-let styles = Rules.make;
