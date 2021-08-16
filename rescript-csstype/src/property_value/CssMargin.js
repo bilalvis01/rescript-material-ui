@@ -4,27 +4,27 @@
 var CssValueString$Ress = require("../CssValueString.js");
 
 function number2(tb, lr) {
-  return [
-          tb,
-          lr
-        ];
+  return [[
+            tb,
+            lr
+          ]];
 }
 
 function number3(top, lr, bottom) {
-  return [
-          top,
-          lr,
-          bottom
-        ];
+  return [[
+            top,
+            lr,
+            bottom
+          ]];
 }
 
 function number4(top, right, bottom, left) {
-  return [
-          top,
-          right,
-          bottom,
-          left
-        ];
+  return [[
+            top,
+            right,
+            bottom,
+            left
+          ]];
 }
 
 var value = CssValueString$Ress.margin_global;

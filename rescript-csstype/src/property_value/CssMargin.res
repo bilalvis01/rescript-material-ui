@@ -1,15 +1,15 @@
 type t;
 external string: string => t = "%identity";
 external number: float => t = "%identity";
-external numberArray: array<float> => t = "%identity";
+external numberArray: array<array<float>> => t = "%identity";
 let number2 = (~tb, ~lr) => 
-  [tb, lr]
+  [[tb, lr]]
   ->numberArray;
 let number3 = (~top, ~lr, ~bottom) => 
-  [top, lr, bottom]
+  [[top, lr, bottom]]
   ->numberArray;
 let number4 = (~top, ~right, ~bottom, ~left) => 
-  [top, right, bottom, left]
+  [[top, right, bottom, left]]
   ->numberArray;
 let value = v => CssValueString.margin_global(v)->string;
 let value2 = (~tb, ~lr) => 
