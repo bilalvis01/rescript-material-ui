@@ -12,6 +12,10 @@
     {
       "dir": "__tests__",
       "subdirs": true
+    },
+    {
+      "dir": "bindings",
+      "subdirs": true
     }
   ],
   "package-specs": [
