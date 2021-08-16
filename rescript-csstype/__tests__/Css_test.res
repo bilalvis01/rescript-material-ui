@@ -61,8 +61,8 @@ test("styles", (.) => {
 });
 
 type data = { 
-  color: option<ValueType.color_global>, 
-  space: option<float> 
+  "color": option<ValueType.color_global>, 
+  "space": option<float> 
 };
 
 test("styles snapshot", (.) => {
@@ -84,8 +84,8 @@ test("styles snapshot", (.) => {
         ]),
       ]),
       selector("tab", [
-        colorFn(data => data.color->Belt.Option.map(color => Color.value(color))),
-        marginFn(data => data.space->Belt.Option.map(space => Margin.number2(~tb=space, ~lr=space))),
+        colorFn(data => data["color"]->Belt.Option.map(color => Color.value(color))),
+        marginFn(data => data["space"]->Belt.Option.map(space => Margin.number2(~tb=space, ~lr=space))),
       ]),
       fontFace([
         FontFace.fontDisplay(#auto),
@@ -96,8 +96,8 @@ test("styles snapshot", (.) => {
     ]);
 
   let data = {
-    color: Some(#red),
-    space: Some(24.),
+    "color": Some(#red),
+    "space": Some(24.),
   };
 
   expect(

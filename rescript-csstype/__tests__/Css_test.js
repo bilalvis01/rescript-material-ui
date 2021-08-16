@@ -90,10 +90,11 @@ test("styles snapshot", (function () {
               Css$Ress.fontFace([CssFontFace$Ress.fontDisplay("auto")]),
               Curry._1(Css$Ress.hover, [Css$Ress.color("blue")])
             ]);
-        expect(Jss.createStyleSheet(stylesObj).update({
-                      color: "red",
-                      space: 24
-                    }).toString()).toMatchSnapshot();
+        var data = {
+          color: "red",
+          space: 24
+        };
+        expect(Jss.createStyleSheet(stylesObj).update(data).toString()).toMatchSnapshot();
         
       }));
 
