@@ -4,4 +4,5 @@ type t<'data, 'declarations> = [
   | CssSelectorConstructor.t<'declarations>
   | CssPseudoClassConstructor.t<'declarations>
   | CssAtRuleConstructor.t
+  | CssImportantConstructor.t<'data>
 ];

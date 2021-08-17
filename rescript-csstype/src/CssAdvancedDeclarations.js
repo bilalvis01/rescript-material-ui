@@ -6,6 +6,7 @@ var Js_dict = require("rescript/lib/js/js_dict.js");
 var Belt_Array = require("rescript/lib/js/belt_Array.js");
 var CssAtRule$Ress = require("./CssAtRule.js");
 var CssSelector$Ress = require("./CssSelector.js");
+var CssImportant$Ress = require("./CssImportant.js");
 var CssDeclaration$Ress = require("./CssDeclaration.js");
 var CssPseudoClass$Ress = require("./CssPseudoClass.js");
 var CssDeclarationFn$Ress = require("./CssDeclarationFn.js");
@@ -21,11 +22,14 @@ function Make(funarg) {
   var PseudoClass = CssPseudoClass$Ress.Make({
         map: map
       });
+  var Important = CssImportant$Ress.Make({});
   var make = function (declarations) {
     return Js_dict.fromArray(Belt_Array.map(declarations, (function (declaration) {
                       var variant = declaration.NAME;
                       if (variant === "BorderWidth" || variant === "BorderColor" || variant === "BorderRightStyle" || variant === "PaddingTop" || variant === "FontWeight" || variant === "BackgroundStyle" || variant === "BorderTop" || variant === "BackgroundPosition" || variant === "BorderBottomStyle" || variant === "Padding" || variant === "Background" || variant === "Border" || variant === "MarginRight" || variant === "PaddingBottom" || variant === "FontFamily" || variant === "MarginTop" || variant === "BorderBottom" || variant === "BorderLeftWidth" || variant === "BorderLeftColor" || variant === "MarginBottom" || variant === "Property" || variant === "BorderTopStyle" || variant === "MarginLeft" || variant === "BorderRightWidth" || variant === "BorderRightColor" || variant === "BorderLeft" || variant === "BorderStyle" || variant === "Cursor" || variant === "Margin" || variant === "BackgroundColor" || variant === "PaddingLeft" || variant === "BorderBottomWidth" || variant === "BorderBottomColor" || variant === "PaddingRight" || variant === "BackgroundImage" || variant === "Color" || variant === "Clear" || variant === "BackgroundAttachment" || variant === "BorderRight" || variant === "BorderTopWidth" || variant === "BorderTopColor" || variant === "BorderLeftStyle") {
                         return CssDeclaration$Ress.make(declaration);
+                      } else if (variant === "Important") {
+                        return Curry._1(Important.make, declaration);
                       } else if (variant === "Selector") {
                         return Curry._1(Selector.make, declaration);
                       } else if (variant === "FontFace") {

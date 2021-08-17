@@ -38,6 +38,7 @@ module Make = (
     let declarations = Declarations.make; 
   });
   include CssAtRuleHelper;
+  include CssImportantHelper;
 
   /*
   Property Value

@@ -5,6 +5,7 @@ var CssRules$Ress = require("./CssRules.js");
 var CssValueHelper$Ress = require("./CssValueHelper.js");
 var CssAtRuleHelper$Ress = require("./CssAtRuleHelper.js");
 var CssSelectorHelper$Ress = require("./CssSelectorHelper.js");
+var CssImportantHelper$Ress = require("./CssImportantHelper.js");
 var CssDeclarationHelper$Ress = require("./CssDeclarationHelper.js");
 var CssPseudoClassHelper$Ress = require("./CssPseudoClassHelper.js");
 var CssDeclarationFnHelper$Ress = require("./CssDeclarationFnHelper.js");
@@ -317,6 +318,7 @@ function Make(Type) {
           selector: include.selector,
           hover: include$1.hover,
           fontFace: CssAtRuleHelper$Ress.fontFace,
+          important: CssImportantHelper$Ress.important,
           Background: undefined,
           BackgroundAttachment: undefined,
           BackgroundColor: undefined,
@@ -960,6 +962,8 @@ var hover = include$1.hover;
 
 var fontFace = CssAtRuleHelper$Ress.fontFace;
 
+var important = CssImportantHelper$Ress.important;
+
 var Background;
 
 var BackgroundAttachment;
@@ -1334,6 +1338,7 @@ exports.fontFamilyFn = fontFamilyFn;
 exports.selector = selector;
 exports.hover = hover;
 exports.fontFace = fontFace;
+exports.important = important;
 exports.Background = Background;
 exports.BackgroundAttachment = BackgroundAttachment;
 exports.BackgroundColor = BackgroundColor;
