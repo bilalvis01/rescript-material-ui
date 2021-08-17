@@ -25,6 +25,10 @@ test("styles", (.) => {
       selector("tab", [
         margin2Number(~tb=24., ~lr=24.),
       ]),
+      selector("tabRed", [
+        important(margin2Number(~tb=24., ~lr=24.)),
+        important(property("background", [`url("image.png")`, `url("image.png")`])),
+      ]),
       fontFace([
         FontFace.fontDisplay(#auto),
       ]),
@@ -50,6 +54,10 @@ test("styles", (.) => {
     },
     "tab": {
       "margin": [[24., 24.]],
+    },
+    "tabRed": {
+      "margin": ([24., 24.], "!important"),
+      "background": (`url("image.png")`, `url("image.png")`, "!important"),
     },
     "@font-face": {
       "fontDisplay": "auto"
@@ -86,6 +94,10 @@ test("styles snapshot", (.) => {
       selector("tab", [
         colorFn(data => data["color"]->Belt.Option.map(color => Color.value(color))),
         marginFn(data => data["space"]->Belt.Option.map(space => Margin.number2(~tb=space, ~lr=space))),
+      ]),
+      selector("tabRed", [
+        important(marginFn(data => data["space"]->Belt.Option.map(space => Margin.number2(~tb=space, ~lr=space)))),
+        important(property("background", [`url("image.png")`, `url("image.png")`])),
       ]),
       fontFace([
         FontFace.fontDisplay(#auto),

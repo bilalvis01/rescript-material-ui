@@ -20,6 +20,10 @@ exports[`styles snapshot 1`] = `
   color: red;
   margin: 24px 24px;
 }
+.tabRed-0-0-4 {
+  background: url(\\"image.png\\"), url(\\"image.png\\") !important;
+  margin: 24px 24px !important;
+}
 @font-face {
   font-display: auto;
 }

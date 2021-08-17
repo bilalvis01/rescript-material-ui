@@ -28,6 +28,13 @@ test("styles", (function () {
                           Curry._1(Css$Ress.hover, [Css$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                         ]),
                     Curry._2(Css$Ress.selector, "tab", [Css$Ress.margin2Number(24, 24)]),
+                    Curry._2(Css$Ress.selector, "tabRed", [
+                          Css$Ress.important(Css$Ress.margin2Number(24, 24)),
+                          Css$Ress.important(Css$Ress.property("background", [
+                                    "url(\"image.png\")",
+                                    "url(\"image.png\")"
+                                  ]))
+                        ]),
                     Css$Ress.fontFace([CssFontFace$Ress.fontDisplay("auto")]),
                     Curry._1(Css$Ress.hover, [Css$Ress.color("blue")])
                   ])).toEqual({
@@ -51,6 +58,20 @@ test("styles", (function () {
                     24,
                     24
                   ]]
+              },
+              tabRed: {
+                margin: [
+                  [
+                    24,
+                    24
+                  ],
+                  "!important"
+                ],
+                background: [
+                  "url(\"image.png\")",
+                  "url(\"image.png\")",
+                  "!important"
+                ]
               },
               "@font-face": {
                 fontDisplay: "auto"
@@ -86,6 +107,17 @@ test("styles snapshot", (function () {
                                         return CssMargin$Ress.number2(space, space);
                                       }));
                         })
+                  ]),
+              Curry._2(Css$Ress.selector, "tabRed", [
+                    Css$Ress.important(Css$Ress.marginFn(function (data) {
+                              return Belt_Option.map(data.space, (function (space) {
+                                            return CssMargin$Ress.number2(space, space);
+                                          }));
+                            })),
+                    Css$Ress.important(Css$Ress.property("background", [
+                              "url(\"image.png\")",
+                              "url(\"image.png\")"
+                            ]))
                   ]),
               Css$Ress.fontFace([CssFontFace$Ress.fontDisplay("auto")]),
               Curry._1(Css$Ress.hover, [Css$Ress.color("blue")])
