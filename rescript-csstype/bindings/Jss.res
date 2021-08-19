@@ -12,7 +12,7 @@ external preset: unit => options = "default";
 external setup: (t, options) => t = "setup";
 
 @send
-external createStyleSheet: (t, Css.rules<'data>) => styleSheet<'data> = "createStyleSheet";
+external createStyleSheet: (t, Css.statementBlocks<'data>) => styleSheet<'data> = "createStyleSheet";
 
 @send
 external toString: styleSheet<'data> => string = "toString";

@@ -1,22 +1,22 @@
 module Make = (
   Type: {
     type value<'data>;
-    type declarations<'data>;
-    type rules<'data>;
+    type declarationBlocks<'data>;
+    type statementBlocks<'data>;
   }
 ) => {
-  module Declarations = CssAdvancedDeclarations.Make({ 
-    type t<'data> = Type.declarations<'data>;
+  module DeclarationBlocks = CssAdvancedDeclarationBlocks.Make({ 
+    type t<'data> = Type.declarationBlocks<'data>;
     type value<'data> = Type.value<'data>;
   });
 
-  module Rules = CssRules.Make({
-    type t<'data> = Type.rules<'data>;
-    type declarations<'data> = Type.declarations<'data>;
+  module StatementBlocks = CssStatementBlocks.Make({
+    type t<'data> = Type.statementBlocks<'data>;
+    type declarationBlocks<'data> = Type.declarationBlocks<'data>;
   });
 
-  let style = Declarations.make;
-  let styles = Rules.make;
+  let style = DeclarationBlocks.make;
+  let styles = StatementBlocks.make;
 
   /*
   Type
@@ -29,13 +29,13 @@ module Make = (
   include CssValueHelper;
   include CssDeclarationHelper;
   include CssDeclarationFnHelper;
-  include CssSelectorHelper.Make({ 
-    type declarations<'data> = Type.declarations<'data>; 
-    let declarations = Declarations.make; 
+  include CssRuleHelper.Make({ 
+    type declarationBlocks<'data> = Type.declarationBlocks<'data>; 
+    let declarationBlocks = DeclarationBlocks.make; 
   });
   include CssPseudoClassHelper.Make({ 
-    type declarations<'data> = Type.declarations<'data>; 
-    let declarations = Declarations.make; 
+    type declarationBlocks<'data> = Type.declarationBlocks<'data>; 
+    let declarationBlocks = DeclarationBlocks.make; 
   });
   include CssAtRuleHelper;
   include CssImportantHelper;
@@ -88,11 +88,11 @@ module Make = (
 }
 
 type value<'data>;
-type declarations<'data>;
-type rules<'data>;
+type declarationBlocks<'data>;
+type statementBlocks<'data>;
 
 include Make({
   type value<'data> = value<'data>;
-  type declarations<'data> = declarations<'data>;
-  type rules<'data> = rules<'data>;
+  type declarationBlocks<'data> = declarationBlocks<'data>;
+  type statementBlocks<'data> = statementBlocks<'data>;
 });

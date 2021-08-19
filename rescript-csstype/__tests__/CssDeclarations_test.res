@@ -3,12 +3,12 @@ open Jest;
 type value;
 type declarations;
 
-module Declarations = CssDeclarations.Make({
+module DeclarationBlocks = CssDeclarationBlocks.Make({
   type t = declarations;
   type value = value;
 });
 
-let style = Declarations.make;
+let style = DeclarationBlocks.make;
 
 test("declarations", (.) => {
   expect(style([

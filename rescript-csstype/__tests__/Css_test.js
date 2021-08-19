@@ -7,14 +7,14 @@ var Css$Ress = require("../src/Css.js");
 var Belt_Option = require("rescript/lib/js/belt_Option.js");
 var CssColor$Ress = require("../src/property_value/CssColor.js");
 var CssMargin$Ress = require("../src/property_value/CssMargin.js");
-var CssFontFace$Ress = require("../src/CssFontFace.js");
+var CssFontFace$Ress = require("../src/at_rule/CssFontFace.js");
 var JssPresetDefault = require("jss-preset-default").default;
 
 Jss.setup(JssPresetDefault());
 
 test("styles", (function () {
         expect(Curry._1(Css$Ress.styles, [
-                    Curry._2(Css$Ress.selector, "wrapper", [
+                    Curry._2(Css$Ress.rule, "wrapper", [
                           Css$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Ress.url("image.png")),
                           Css$Ress.color(Css$Ress.rgb(255, 255, 255)),
                           Css$Ress.paddingTop(Css$Ress.px(24)),
@@ -23,14 +23,14 @@ test("styles", (function () {
                           Css$Ress.paddingRight(Css$Ress.px(40)),
                           Css$Ress.marginNumber(24)
                         ]),
-                    Curry._2(Css$Ress.selector, "button", [
+                    Curry._2(Css$Ress.rule, "button", [
                           Css$Ress.color(Css$Ress.hsla(Css$Ress.deg(360), Css$Ress.pct(100), Css$Ress.pct(50), 0.5)),
                           Curry._1(Css$Ress.hover, [Css$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                         ]),
-                    Curry._2(Css$Ress.selector, "tab", [Css$Ress.margin2Number(24, 24)]),
-                    Curry._2(Css$Ress.selector, "tabRed", [
+                    Curry._2(Css$Ress.rule, "tab", [Css$Ress.margin2Number(24, 24)]),
+                    Curry._2(Css$Ress.rule, "tabRed", [
                           Css$Ress.important(Css$Ress.margin2Number(24, 24)),
-                          Css$Ress.important(Css$Ress.property("background", [
+                          Css$Ress.important(Css$Ress.declaration("background", [
                                     "url(\"image.png\")",
                                     "url(\"image.png\")"
                                   ]))
@@ -68,8 +68,8 @@ test("styles", (function () {
                   "!important"
                 ],
                 background: [
-                  "url(\"image.png\")",
-                  "url(\"image.png\")",
+                  ["url(\"image.png\")"],
+                  ["url(\"image.png\")"],
                   "!important"
                 ]
               },
@@ -85,7 +85,7 @@ test("styles", (function () {
 
 test("styles snapshot", (function () {
         var stylesObj = Curry._1(Css$Ress.styles, [
-              Curry._2(Css$Ress.selector, "wrapper", [
+              Curry._2(Css$Ress.rule, "wrapper", [
                     Css$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, Css$Ress.url("image.png")),
                     Css$Ress.color(Css$Ress.rgb(255, 255, 255)),
                     Css$Ress.paddingTop(Css$Ress.px(24)),
@@ -94,11 +94,11 @@ test("styles snapshot", (function () {
                     Css$Ress.paddingRight(Css$Ress.px(40)),
                     Css$Ress.marginNumber(24)
                   ]),
-              Curry._2(Css$Ress.selector, "button", [
+              Curry._2(Css$Ress.rule, "button", [
                     Css$Ress.color(Css$Ress.hsla(Css$Ress.deg(360), Css$Ress.pct(100), Css$Ress.pct(50), 0.5)),
                     Curry._1(Css$Ress.hover, [Css$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                   ]),
-              Curry._2(Css$Ress.selector, "tab", [
+              Curry._2(Css$Ress.rule, "tab", [
                     Css$Ress.colorFn(function (data) {
                           return Belt_Option.map(data.color, CssColor$Ress.value);
                         }),
@@ -108,13 +108,13 @@ test("styles snapshot", (function () {
                                       }));
                         })
                   ]),
-              Curry._2(Css$Ress.selector, "tabRed", [
+              Curry._2(Css$Ress.rule, "tabRed", [
                     Css$Ress.important(Css$Ress.marginFn(function (data) {
                               return Belt_Option.map(data.space, (function (space) {
                                             return CssMargin$Ress.number2(space, space);
                                           }));
                             })),
-                    Css$Ress.important(Css$Ress.property("background", [
+                    Css$Ress.important(Css$Ress.declaration("background", [
                               "url(\"image.png\")",
                               "url(\"image.png\")"
                             ]))

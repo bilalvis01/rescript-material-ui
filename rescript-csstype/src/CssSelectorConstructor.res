@@ -1,1 +1,0 @@
-type t<'declarations> = [ | #Selector(string, 'declarations) ];

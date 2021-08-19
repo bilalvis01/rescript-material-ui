@@ -3,11 +3,11 @@
 
 var Curry = require("rescript/lib/js/curry.js");
 var Css$Ress = require("../src/Css.js");
-var CssDeclarations$Ress = require("../src/CssDeclarations.js");
+var CssDeclarationBlocks$Ress = require("../src/declaration/CssDeclarationBlocks.js");
 
-var Declarations = CssDeclarations$Ress.Make({});
+var DeclarationBlocks = CssDeclarationBlocks$Ress.Make({});
 
-var style = Declarations.make;
+var style = DeclarationBlocks.make;
 
 test("declarations", (function () {
         expect(Curry._1(style, [
@@ -30,6 +30,6 @@ test("declarations", (function () {
         
       }));
 
-exports.Declarations = Declarations;
+exports.DeclarationBlocks = DeclarationBlocks;
 exports.style = style;
-/* Declarations Not a pure module */
+/* DeclarationBlocks Not a pure module */
