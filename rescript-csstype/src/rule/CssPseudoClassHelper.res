@@ -1,8 +1,9 @@
 module Make = (
   Type: {
     type declarationBlocks<'data>;
+    type declarationConstructor<'data>;
     let declarationBlocks: 
-      array<CssAdvancedDeclarationConstructor.t<'data, declarationBlocks<'data>>> => 
+      array<declarationConstructor<'data>> => 
       declarationBlocks<'data>; 
   }
 ) => {

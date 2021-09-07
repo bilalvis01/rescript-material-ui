@@ -1,6 +1,8 @@
 open Jest;
 open CssValueString;
 
+module Css = CssValueHelper;
+
 /*
 Numeric data types
 */
