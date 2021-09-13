@@ -1,47 +1,12 @@
 open CssValueHelper;
 open Jest;
 
-module Background = {
-  type t;
-  include CssBackground.Make({
-    type t = t;
-  });
-};
-
-module BackgroundAttachment = {
-  type t;
-  include CssBackgroundAttachment.Make({
-    type t = t;
-  });
-};
-
-module BackgroundColor = {
-  type t;
-  include CssBackgroundColor.Make({
-    type t = t;
-  })
-};
-
-module BackgroundImage = {
-  type t;
-  include CssBackgroundImage.Make({
-    type t = t;
-  });
-};
-
-module BackgroundPosition = {
-  type t;
-  include CssBackgroundPosition.Make({
-    type t = t;
-  });
-};
-
-module BackgroundStyle = {
-  type t;
-  include CssBackgroundStyle.Make({
-    type t = t;
-  });
-};
+module Background = CssBackground;
+module BackgroundAttachment = CssBackgroundAttachment;
+module BackgroundColor = CssBackgroundColor;
+module BackgroundImage = CssBackgroundImage;
+module BackgroundPosition = CssBackgroundPosition;
+module BackgroundStyle = CssBackgroundStyle;
 
 test("background", (.) => {
   expect(Background.value(#initial))

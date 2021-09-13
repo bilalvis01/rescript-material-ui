@@ -5,61 +5,62 @@ var CssValueString$Ress = require("../value/CssValueString.js");
 
 var property = "backgroundColor";
 
-function Make(Type) {
-  var value = CssValueString$Ress.color;
-  var backgroundColor = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              CssValueString$Ress.color(v)
-            ]
-          };
-  };
-  var backgroundColorUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var backgroundColorString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    backgroundColor: backgroundColor,
-    backgroundColorUnion: backgroundColorUnion,
-    backgroundColorString: backgroundColorString
-  };
-  var backgroundColorFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    backgroundColor: backgroundColor,
-    backgroundColorUnion: backgroundColorUnion,
-    backgroundColorString: backgroundColorString,
-    backgroundColorFn: backgroundColorFn
-  };
+var value = CssValueString$Ress.color;
+
+function backgroundColor(v) {
   return {
-          value: value,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            CssValueString$Ress.color(v)
+          ]
         };
 }
 
-exports.Make = Make;
+function backgroundColorUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function backgroundColorString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  backgroundColor: backgroundColor,
+  backgroundColorUnion: backgroundColorUnion,
+  backgroundColorString: backgroundColorString
+};
+
+function backgroundColorFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  backgroundColor: backgroundColor,
+  backgroundColorUnion: backgroundColorUnion,
+  backgroundColorString: backgroundColorString,
+  backgroundColorFn: backgroundColorFn
+};
+
+exports.value = value;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

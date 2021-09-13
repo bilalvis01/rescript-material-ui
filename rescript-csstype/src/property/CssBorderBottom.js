@@ -2,66 +2,68 @@
 'use strict';
 
 var Curry = require("rescript/lib/js/curry.js");
-var CssBorderValue$Ress = require("./CssBorderValue.js");
+var CssBorder$Ress = require("./CssBorder.js");
 
 var property = "borderBottom";
 
-function Make(Type) {
-  var include = CssBorderValue$Ress.Make({});
-  var value = include.value;
-  var borderBottom = function (width, color, style) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              Curry._3(value, width, color, style)
-            ]
-          };
-  };
-  var borderBottomUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var borderBottomString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    borderBottom: borderBottom,
-    borderBottomUnion: borderBottomUnion,
-    borderBottomString: borderBottomString
-  };
-  var borderBottomFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    borderBottom: borderBottom,
-    borderBottomUnion: borderBottomUnion,
-    borderBottomString: borderBottomString,
-    borderBottomFn: borderBottomFn
-  };
+var include = CssBorder$Ress.MakeValue({});
+
+var value = include.value;
+
+function borderBottom(width, color, style) {
   return {
-          value: value,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            Curry._3(value, width, color, style)
+          ]
         };
 }
 
-exports.Make = Make;
-/* No side effect */
+function borderBottomUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function borderBottomString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  borderBottom: borderBottom,
+  borderBottomUnion: borderBottomUnion,
+  borderBottomString: borderBottomString
+};
+
+function borderBottomFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  borderBottom: borderBottom,
+  borderBottomUnion: borderBottomUnion,
+  borderBottomString: borderBottomString,
+  borderBottomFn: borderBottomFn
+};
+
+exports.value = value;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
+/* include Not a pure module */

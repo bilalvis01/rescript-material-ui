@@ -5,117 +5,125 @@ var CssValueString$Ress = require("../value/CssValueString.js");
 
 var property = "padding";
 
-function Make(Type) {
-  var value = CssValueString$Ress.padding_global;
-  var value2 = function (tb, lr) {
-    return CssValueString$Ress.padding(tb) + " " + CssValueString$Ress.padding(lr);
-  };
-  var value3 = function (top, lr, bottom) {
-    return CssValueString$Ress.padding(top) + " " + CssValueString$Ress.padding(lr) + " " + CssValueString$Ress.padding(bottom);
-  };
-  var value4 = function (top, right, bottom, left) {
-    return CssValueString$Ress.padding(top) + " " + CssValueString$Ress.padding(right) + " " + CssValueString$Ress.padding(bottom) + " " + CssValueString$Ress.padding(left);
-  };
-  var padding = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              CssValueString$Ress.padding_global(v)
-            ]
-          };
-  };
-  var padding2 = function (tb, lr) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value2(tb, lr)
-            ]
-          };
-  };
-  var padding3 = function (top, lr, bottom) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value3(top, lr, bottom)
-            ]
-          };
-  };
-  var padding4 = function (top, right, bottom, left) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value4(top, right, bottom, left)
-            ]
-          };
-  };
-  var paddingUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var paddingString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var paddingNumber = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    padding: padding,
-    padding2: padding2,
-    padding3: padding3,
-    padding4: padding4,
-    paddingUnion: paddingUnion,
-    paddingString: paddingString,
-    paddingNumber: paddingNumber
-  };
-  var paddingFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    padding: padding,
-    padding2: padding2,
-    padding3: padding3,
-    padding4: padding4,
-    paddingUnion: paddingUnion,
-    paddingString: paddingString,
-    paddingNumber: paddingNumber,
-    paddingFn: paddingFn
-  };
+var value = CssValueString$Ress.padding_global;
+
+function value2(tb, lr) {
+  return CssValueString$Ress.padding(tb) + " " + CssValueString$Ress.padding(lr);
+}
+
+function value3(top, lr, bottom) {
+  return CssValueString$Ress.padding(top) + " " + CssValueString$Ress.padding(lr) + " " + CssValueString$Ress.padding(bottom);
+}
+
+function value4(top, right, bottom, left) {
+  return CssValueString$Ress.padding(top) + " " + CssValueString$Ress.padding(right) + " " + CssValueString$Ress.padding(bottom) + " " + CssValueString$Ress.padding(left);
+}
+
+function padding(v) {
   return {
-          value: value,
-          value2: value2,
-          value3: value3,
-          value4: value4,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            CssValueString$Ress.padding_global(v)
+          ]
         };
 }
 
-exports.Make = Make;
+function padding2(tb, lr) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value2(tb, lr)
+          ]
+        };
+}
+
+function padding3(top, lr, bottom) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value3(top, lr, bottom)
+          ]
+        };
+}
+
+function padding4(top, right, bottom, left) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value4(top, right, bottom, left)
+          ]
+        };
+}
+
+function paddingUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function paddingString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function paddingNumber(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  padding: padding,
+  padding2: padding2,
+  padding3: padding3,
+  padding4: padding4,
+  paddingUnion: paddingUnion,
+  paddingString: paddingString,
+  paddingNumber: paddingNumber
+};
+
+function paddingFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  padding: padding,
+  padding2: padding2,
+  padding3: padding3,
+  padding4: padding4,
+  paddingUnion: paddingUnion,
+  paddingString: paddingString,
+  paddingNumber: paddingNumber,
+  paddingFn: paddingFn
+};
+
+exports.value = value;
+exports.value2 = value2;
+exports.value3 = value3;
+exports.value4 = value4;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

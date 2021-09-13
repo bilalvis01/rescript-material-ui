@@ -1,12 +1,7 @@
 open CssValueHelper;
 open Jest;
 
-module Cursor = {
-  type t;
-  include CssCursor.Make({
-    type t = t;
-  });
-};
+module Cursor = CssCursor;
 
 test("cursor", (.) => {
   expect(Cursor.value(#auto))

@@ -6,73 +6,76 @@ var CssPaddingSide$Ress = require("./CssPaddingSide.js");
 
 var property = "paddingLeft";
 
-function Make(Type) {
-  var include = CssPaddingSide$Ress.Make({});
-  var value = include.value;
-  var paddingLeft = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              Curry._1(value, v)
-            ]
-          };
-  };
-  var paddingLeftUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var paddingLeftString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var paddingLeftNumber = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    paddingLeft: paddingLeft,
-    paddingLeftUnion: paddingLeftUnion,
-    paddingLeftString: paddingLeftString,
-    paddingLeftNumber: paddingLeftNumber
-  };
-  var paddingLeftFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    paddingLeft: paddingLeft,
-    paddingLeftUnion: paddingLeftUnion,
-    paddingLeftString: paddingLeftString,
-    paddingLeftNumber: paddingLeftNumber,
-    paddingLeftFn: paddingLeftFn
-  };
+var include = CssPaddingSide$Ress.MakeValue({});
+
+var value = include.value;
+
+function paddingLeft(v) {
   return {
-          value: value,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            Curry._1(value, v)
+          ]
         };
 }
 
-exports.Make = Make;
-/* No side effect */
+function paddingLeftUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function paddingLeftString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function paddingLeftNumber(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  paddingLeft: paddingLeft,
+  paddingLeftUnion: paddingLeftUnion,
+  paddingLeftString: paddingLeftString,
+  paddingLeftNumber: paddingLeftNumber
+};
+
+function paddingLeftFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  paddingLeft: paddingLeft,
+  paddingLeftUnion: paddingLeftUnion,
+  paddingLeftString: paddingLeftString,
+  paddingLeftNumber: paddingLeftNumber,
+  paddingLeftFn: paddingLeftFn
+};
+
+exports.value = value;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
+/* include Not a pure module */

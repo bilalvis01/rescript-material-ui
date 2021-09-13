@@ -5,61 +5,62 @@ var CssValueString$Ress = require("../value/CssValueString.js");
 
 var property = "color";
 
-function Make(Type) {
-  var value = CssValueString$Ress.color_global;
-  var color = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              CssValueString$Ress.color_global(v)
-            ]
-          };
-  };
-  var colorUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var colorString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    color: color,
-    colorUnion: colorUnion,
-    colorString: colorString
-  };
-  var colorFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    color: color,
-    colorUnion: colorUnion,
-    colorString: colorString,
-    colorFn: colorFn
-  };
+var value = CssValueString$Ress.color_global;
+
+function color(v) {
   return {
-          value: value,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            CssValueString$Ress.color_global(v)
+          ]
         };
 }
 
-exports.Make = Make;
+function colorUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function colorString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  color: color,
+  colorUnion: colorUnion,
+  colorString: colorString
+};
+
+function colorFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  color: color,
+  colorUnion: colorUnion,
+  colorString: colorString,
+  colorFn: colorFn
+};
+
+exports.value = value;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

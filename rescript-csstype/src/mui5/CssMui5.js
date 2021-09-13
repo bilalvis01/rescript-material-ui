@@ -98,457 +98,10 @@ function Make(Type) {
   var DeclarationBlocks = {
     make: make$3
   };
-  var include = CssBackground$Ress.Make({});
-  var DeclarationFnHelper = include.DeclarationFnHelper;
-  var Background_value = include.value;
-  var Background_value2 = include.value2;
-  var Background_value3 = include.value3;
-  var Background_value4 = include.value4;
-  var Background_DeclarationHelper = include.DeclarationHelper;
-  var Background = {
-    value: Background_value,
-    value2: Background_value2,
-    value3: Background_value3,
-    value4: Background_value4,
-    DeclarationHelper: Background_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper
-  };
-  var include$1 = CssBackgroundAttachment$Ress.Make({});
-  var DeclarationFnHelper$1 = include$1.DeclarationFnHelper;
-  var BackgroundAttachment_value = include$1.value;
-  var BackgroundAttachment_value2 = include$1.value2;
-  var BackgroundAttachment_value3 = include$1.value3;
-  var BackgroundAttachment_value4 = include$1.value4;
-  var BackgroundAttachment_DeclarationHelper = include$1.DeclarationHelper;
-  var BackgroundAttachment = {
-    value: BackgroundAttachment_value,
-    value2: BackgroundAttachment_value2,
-    value3: BackgroundAttachment_value3,
-    value4: BackgroundAttachment_value4,
-    DeclarationHelper: BackgroundAttachment_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$1
-  };
-  var include$2 = CssBackgroundColor$Ress.Make({});
-  var DeclarationFnHelper$2 = include$2.DeclarationFnHelper;
-  var BackgroundColor_value = include$2.value;
-  var BackgroundColor_DeclarationHelper = include$2.DeclarationHelper;
-  var BackgroundColor = {
-    value: BackgroundColor_value,
-    DeclarationHelper: BackgroundColor_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$2
-  };
-  var include$3 = CssBackgroundImage$Ress.Make({});
-  var DeclarationFnHelper$3 = include$3.DeclarationFnHelper;
-  var BackgroundImage_value = include$3.value;
-  var BackgroundImage_value2 = include$3.value2;
-  var BackgroundImage_value3 = include$3.value3;
-  var BackgroundImage_value4 = include$3.value4;
-  var BackgroundImage_DeclarationHelper = include$3.DeclarationHelper;
-  var BackgroundImage = {
-    value: BackgroundImage_value,
-    value2: BackgroundImage_value2,
-    value3: BackgroundImage_value3,
-    value4: BackgroundImage_value4,
-    DeclarationHelper: BackgroundImage_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$3
-  };
-  var include$4 = CssBackgroundPosition$Ress.Make({});
-  var DeclarationFnHelper$4 = include$4.DeclarationFnHelper;
-  var BackgroundPosition_value = include$4.value;
-  var BackgroundPosition_value2 = include$4.value2;
-  var BackgroundPosition_value3 = include$4.value3;
-  var BackgroundPosition_value4 = include$4.value4;
-  var BackgroundPosition_DeclarationHelper = include$4.DeclarationHelper;
-  var BackgroundPosition = {
-    value: BackgroundPosition_value,
-    value2: BackgroundPosition_value2,
-    value3: BackgroundPosition_value3,
-    value4: BackgroundPosition_value4,
-    DeclarationHelper: BackgroundPosition_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$4
-  };
-  var include$5 = CssBackgroundStyle$Ress.Make({});
-  var DeclarationFnHelper$5 = include$5.DeclarationFnHelper;
-  var BackgroundStyle_value = include$5.value;
-  var BackgroundStyle_value2 = include$5.value2;
-  var BackgroundStyle_value3 = include$5.value3;
-  var BackgroundStyle_value4 = include$5.value4;
-  var BackgroundStyle_DeclarationHelper = include$5.DeclarationHelper;
-  var BackgroundStyle = {
-    value: BackgroundStyle_value,
-    value2: BackgroundStyle_value2,
-    value3: BackgroundStyle_value3,
-    value4: BackgroundStyle_value4,
-    DeclarationHelper: BackgroundStyle_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$5
-  };
-  var include$6 = CssBorder$Ress.Make({});
-  var DeclarationFnHelper$6 = include$6.DeclarationFnHelper;
-  var Border_value = include$6.value;
-  var Border_DeclarationHelper = include$6.DeclarationHelper;
-  var Border = {
-    value: Border_value,
-    DeclarationHelper: Border_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$6
-  };
-  var include$7 = CssBorderTop$Ress.Make({});
-  var DeclarationFnHelper$7 = include$7.DeclarationFnHelper;
-  var BorderTop_value = include$7.value;
-  var BorderTop_DeclarationHelper = include$7.DeclarationHelper;
-  var BorderTop = {
-    value: BorderTop_value,
-    DeclarationHelper: BorderTop_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$7
-  };
-  var include$8 = CssBorderRight$Ress.Make({});
-  var DeclarationFnHelper$8 = include$8.DeclarationFnHelper;
-  var BorderRight_value = include$8.value;
-  var BorderRight_DeclarationHelper = include$8.DeclarationHelper;
-  var BorderRight = {
-    value: BorderRight_value,
-    DeclarationHelper: BorderRight_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$8
-  };
-  var include$9 = CssBorderBottom$Ress.Make({});
-  var DeclarationFnHelper$9 = include$9.DeclarationFnHelper;
-  var BorderBottom_value = include$9.value;
-  var BorderBottom_DeclarationHelper = include$9.DeclarationHelper;
-  var BorderBottom = {
-    value: BorderBottom_value,
-    DeclarationHelper: BorderBottom_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$9
-  };
-  var include$10 = CssBorderLeft$Ress.Make({});
-  var DeclarationFnHelper$10 = include$10.DeclarationFnHelper;
-  var BorderLeft_value = include$10.value;
-  var BorderLeft_DeclarationHelper = include$10.DeclarationHelper;
-  var BorderLeft = {
-    value: BorderLeft_value,
-    DeclarationHelper: BorderLeft_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$10
-  };
-  var include$11 = CssBorderTopColor$Ress.Make({});
-  var DeclarationFnHelper$11 = include$11.DeclarationFnHelper;
-  var BorderTopColor_value = include$11.value;
-  var BorderTopColor_DeclarationHelper = include$11.DeclarationHelper;
-  var BorderTopColor = {
-    value: BorderTopColor_value,
-    DeclarationHelper: BorderTopColor_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$11
-  };
-  var include$12 = CssBorderRightColor$Ress.Make({});
-  var DeclarationFnHelper$12 = include$12.DeclarationFnHelper;
-  var BorderRightColor_value = include$12.value;
-  var BorderRightColor_DeclarationHelper = include$12.DeclarationHelper;
-  var BorderRightColor = {
-    value: BorderRightColor_value,
-    DeclarationHelper: BorderRightColor_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$12
-  };
-  var include$13 = CssBorderBottomColor$Ress.Make({});
-  var DeclarationFnHelper$13 = include$13.DeclarationFnHelper;
-  var BorderBottomColor_value = include$13.value;
-  var BorderBottomColor_DeclarationHelper = include$13.DeclarationHelper;
-  var BorderBottomColor = {
-    value: BorderBottomColor_value,
-    DeclarationHelper: BorderBottomColor_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$13
-  };
-  var include$14 = CssBorderLeftColor$Ress.Make({});
-  var DeclarationFnHelper$14 = include$14.DeclarationFnHelper;
-  var BorderLeftColor_value = include$14.value;
-  var BorderLeftColor_DeclarationHelper = include$14.DeclarationHelper;
-  var BorderLeftColor = {
-    value: BorderLeftColor_value,
-    DeclarationHelper: BorderLeftColor_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$14
-  };
-  var include$15 = CssBorderTopStyle$Ress.Make({});
-  var DeclarationFnHelper$15 = include$15.DeclarationFnHelper;
-  var BorderTopStyle_value = include$15.value;
-  var BorderTopStyle_DeclarationHelper = include$15.DeclarationHelper;
-  var BorderTopStyle = {
-    value: BorderTopStyle_value,
-    DeclarationHelper: BorderTopStyle_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$15
-  };
-  var include$16 = CssBorderRightStyle$Ress.Make({});
-  var DeclarationFnHelper$16 = include$16.DeclarationFnHelper;
-  var BorderRightStyle_value = include$16.value;
-  var BorderRightStyle_DeclarationHelper = include$16.DeclarationHelper;
-  var BorderRightStyle = {
-    value: BorderRightStyle_value,
-    DeclarationHelper: BorderRightStyle_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$16
-  };
-  var include$17 = CssBorderBottomStyle$Ress.Make({});
-  var DeclarationFnHelper$17 = include$17.DeclarationFnHelper;
-  var BorderBottomStyle_value = include$17.value;
-  var BorderBottomStyle_DeclarationHelper = include$17.DeclarationHelper;
-  var BorderBottomStyle = {
-    value: BorderBottomStyle_value,
-    DeclarationHelper: BorderBottomStyle_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$17
-  };
-  var include$18 = CssBorderLeftStyle$Ress.Make({});
-  var DeclarationFnHelper$18 = include$18.DeclarationFnHelper;
-  var BorderLeftStyle_value = include$18.value;
-  var BorderLeftStyle_DeclarationHelper = include$18.DeclarationHelper;
-  var BorderLeftStyle = {
-    value: BorderLeftStyle_value,
-    DeclarationHelper: BorderLeftStyle_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$18
-  };
-  var include$19 = CssBorderTopWidth$Ress.Make({});
-  var DeclarationFnHelper$19 = include$19.DeclarationFnHelper;
-  var BorderTopWidth_value = include$19.value;
-  var BorderTopWidth_DeclarationHelper = include$19.DeclarationHelper;
-  var BorderTopWidth = {
-    value: BorderTopWidth_value,
-    DeclarationHelper: BorderTopWidth_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$19
-  };
-  var include$20 = CssBorderRightWidth$Ress.Make({});
-  var DeclarationFnHelper$20 = include$20.DeclarationFnHelper;
-  var BorderRightWidth_value = include$20.value;
-  var BorderRightWidth_DeclarationHelper = include$20.DeclarationHelper;
-  var BorderRightWidth = {
-    value: BorderRightWidth_value,
-    DeclarationHelper: BorderRightWidth_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$20
-  };
-  var include$21 = CssBorderBottomWidth$Ress.Make({});
-  var DeclarationFnHelper$21 = include$21.DeclarationFnHelper;
-  var BorderBottomWidth_value = include$21.value;
-  var BorderBottomWidth_DeclarationHelper = include$21.DeclarationHelper;
-  var BorderBottomWidth = {
-    value: BorderBottomWidth_value,
-    DeclarationHelper: BorderBottomWidth_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$21
-  };
-  var include$22 = CssBorderLeftWidth$Ress.Make({});
-  var DeclarationFnHelper$22 = include$22.DeclarationFnHelper;
-  var BorderLeftWidth_value = include$22.value;
-  var BorderLeftWidth_DeclarationHelper = include$22.DeclarationHelper;
-  var BorderLeftWidth = {
-    value: BorderLeftWidth_value,
-    DeclarationHelper: BorderLeftWidth_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$22
-  };
-  var include$23 = CssBorderColor$Ress.Make({});
-  var DeclarationFnHelper$23 = include$23.DeclarationFnHelper;
-  var BorderColor_value = include$23.value;
-  var BorderColor_value2 = include$23.value2;
-  var BorderColor_value3 = include$23.value3;
-  var BorderColor_value4 = include$23.value4;
-  var BorderColor_DeclarationHelper = include$23.DeclarationHelper;
-  var BorderColor = {
-    value: BorderColor_value,
-    value2: BorderColor_value2,
-    value3: BorderColor_value3,
-    value4: BorderColor_value4,
-    DeclarationHelper: BorderColor_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$23
-  };
-  var include$24 = CssBorderStyle$Ress.Make({});
-  var DeclarationFnHelper$24 = include$24.DeclarationFnHelper;
-  var BorderStyle_value = include$24.value;
-  var BorderStyle_value2 = include$24.value2;
-  var BorderStyle_value3 = include$24.value3;
-  var BorderStyle_value4 = include$24.value4;
-  var BorderStyle_DeclarationConstructor = include$24.DeclarationConstructor;
-  var BorderStyle_DeclarationFnConstructor = include$24.DeclarationFnConstructor;
-  var BorderStyle_DeclarationHelper = include$24.DeclarationHelper;
-  var BorderStyle = {
-    value: BorderStyle_value,
-    value2: BorderStyle_value2,
-    value3: BorderStyle_value3,
-    value4: BorderStyle_value4,
-    DeclarationConstructor: BorderStyle_DeclarationConstructor,
-    DeclarationFnConstructor: BorderStyle_DeclarationFnConstructor,
-    DeclarationHelper: BorderStyle_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$24
-  };
-  var include$25 = CssBorderWidth$Ress.Make({});
-  var DeclarationFnHelper$25 = include$25.DeclarationFnHelper;
-  var BorderWidth_value = include$25.value;
-  var BorderWidth_value2 = include$25.value2;
-  var BorderWidth_value3 = include$25.value3;
-  var BorderWidth_value4 = include$25.value4;
-  var BorderWidth_DeclarationHelper = include$25.DeclarationHelper;
-  var BorderWidth = {
-    value: BorderWidth_value,
-    value2: BorderWidth_value2,
-    value3: BorderWidth_value3,
-    value4: BorderWidth_value4,
-    DeclarationHelper: BorderWidth_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$25
-  };
-  var include$26 = CssClear$Ress.Make({});
-  var DeclarationFnHelper$26 = include$26.DeclarationFnHelper;
-  var Clear_value = include$26.value;
-  var Clear_DeclarationHelper = include$26.DeclarationHelper;
-  var Clear = {
-    value: Clear_value,
-    DeclarationHelper: Clear_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$26
-  };
-  var include$27 = CssColor$Ress.Make({});
-  var DeclarationFnHelper$27 = include$27.DeclarationFnHelper;
-  var Color_value = include$27.value;
-  var Color_DeclarationHelper = include$27.DeclarationHelper;
-  var Color = {
-    value: Color_value,
-    DeclarationHelper: Color_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$27
-  };
-  var include$28 = CssCursor$Ress.Make({});
-  var DeclarationFnHelper$28 = include$28.DeclarationFnHelper;
-  var Cursor_value = include$28.value;
-  var Cursor_value1 = include$28.value1;
-  var Cursor_value2 = include$28.value2;
-  var Cursor_value3 = include$28.value3;
-  var Cursor_value4 = include$28.value4;
-  var Cursor_DeclarationHelper = include$28.DeclarationHelper;
-  var Cursor = {
-    value: Cursor_value,
-    value1: Cursor_value1,
-    value2: Cursor_value2,
-    value3: Cursor_value3,
-    value4: Cursor_value4,
-    DeclarationHelper: Cursor_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$28
-  };
-  var include$29 = CssFontFamily$Ress.Make({});
-  var DeclarationFnHelper$29 = include$29.DeclarationFnHelper;
-  var FontFamily_value = include$29.value;
-  var FontFamily_value2 = include$29.value2;
-  var FontFamily_value3 = include$29.value3;
-  var FontFamily_value4 = include$29.value4;
-  var FontFamily_DeclarationHelper = include$29.DeclarationHelper;
-  var FontFamily = {
-    value: FontFamily_value,
-    value2: FontFamily_value2,
-    value3: FontFamily_value3,
-    value4: FontFamily_value4,
-    DeclarationHelper: FontFamily_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$29
-  };
-  var include$30 = CssFontWeight$Ress.Make({});
-  var DeclarationFnHelper$30 = include$30.DeclarationFnHelper;
-  var FontWeight_value = include$30.value;
-  var FontWeight_DeclarationHelper = include$30.DeclarationHelper;
-  var FontWeight = {
-    value: FontWeight_value,
-    DeclarationHelper: FontWeight_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$30
-  };
-  var include$31 = CssMargin$Ress.Make({});
-  var DeclarationFnHelper$31 = include$31.DeclarationFnHelper;
-  var Margin_value = include$31.value;
-  var Margin_value2 = include$31.value2;
-  var Margin_value3 = include$31.value3;
-  var Margin_value4 = include$31.value4;
-  var Margin_DeclarationHelper = include$31.DeclarationHelper;
-  var Margin = {
-    value: Margin_value,
-    value2: Margin_value2,
-    value3: Margin_value3,
-    value4: Margin_value4,
-    DeclarationHelper: Margin_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$31
-  };
-  var include$32 = CssMarginTop$Ress.Make({});
-  var DeclarationFnHelper$32 = include$32.DeclarationFnHelper;
-  var MarginTop_value = include$32.value;
-  var MarginTop_DeclarationHelper = include$32.DeclarationHelper;
-  var MarginTop = {
-    value: MarginTop_value,
-    DeclarationHelper: MarginTop_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$32
-  };
-  var include$33 = CssMarginRight$Ress.Make({});
-  var DeclarationFnHelper$33 = include$33.DeclarationFnHelper;
-  var MarginRight_value = include$33.value;
-  var MarginRight_DeclarationHelper = include$33.DeclarationHelper;
-  var MarginRight = {
-    value: MarginRight_value,
-    DeclarationHelper: MarginRight_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$33
-  };
-  var include$34 = CssMarginBottom$Ress.Make({});
-  var DeclarationFnHelper$34 = include$34.DeclarationFnHelper;
-  var MarginBottom_value = include$34.value;
-  var MarginBottom_DeclarationHelper = include$34.DeclarationHelper;
-  var MarginBottom = {
-    value: MarginBottom_value,
-    DeclarationHelper: MarginBottom_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$34
-  };
-  var include$35 = CssMarginLeft$Ress.Make({});
-  var DeclarationFnHelper$35 = include$35.DeclarationFnHelper;
-  var MarginLeft_value = include$35.value;
-  var MarginLeft_DeclarationHelper = include$35.DeclarationHelper;
-  var MarginLeft = {
-    value: MarginLeft_value,
-    DeclarationHelper: MarginLeft_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$35
-  };
-  var include$36 = CssPadding$Ress.Make({});
-  var DeclarationFnHelper$36 = include$36.DeclarationFnHelper;
-  var Padding_value = include$36.value;
-  var Padding_value2 = include$36.value2;
-  var Padding_value3 = include$36.value3;
-  var Padding_value4 = include$36.value4;
-  var Padding_DeclarationHelper = include$36.DeclarationHelper;
-  var Padding = {
-    value: Padding_value,
-    value2: Padding_value2,
-    value3: Padding_value3,
-    value4: Padding_value4,
-    DeclarationHelper: Padding_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$36
-  };
-  var include$37 = CssPaddingTop$Ress.Make({});
-  var DeclarationFnHelper$37 = include$37.DeclarationFnHelper;
-  var PaddingTop_value = include$37.value;
-  var PaddingTop_DeclarationHelper = include$37.DeclarationHelper;
-  var PaddingTop = {
-    value: PaddingTop_value,
-    DeclarationHelper: PaddingTop_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$37
-  };
-  var include$38 = CssPaddingRight$Ress.Make({});
-  var DeclarationFnHelper$38 = include$38.DeclarationFnHelper;
-  var PaddingRight_value = include$38.value;
-  var PaddingRight_DeclarationHelper = include$38.DeclarationHelper;
-  var PaddingRight = {
-    value: PaddingRight_value,
-    DeclarationHelper: PaddingRight_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$38
-  };
-  var include$39 = CssPaddingBottom$Ress.Make({});
-  var DeclarationFnHelper$39 = include$39.DeclarationFnHelper;
-  var PaddingBottom_value = include$39.value;
-  var PaddingBottom_DeclarationHelper = include$39.DeclarationHelper;
-  var PaddingBottom = {
-    value: PaddingBottom_value,
-    DeclarationHelper: PaddingBottom_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$39
-  };
-  var include$40 = CssPaddingLeft$Ress.Make({});
-  var DeclarationFnHelper$40 = include$40.DeclarationFnHelper;
-  var PaddingLeft_value = include$40.value;
-  var PaddingLeft_DeclarationHelper = include$40.DeclarationHelper;
-  var PaddingLeft = {
-    value: PaddingLeft_value,
-    DeclarationHelper: PaddingLeft_DeclarationHelper,
-    DeclarationFnHelper: DeclarationFnHelper$40
-  };
-  var include$41 = CssRuleHelper$Ress.Make({
+  var include = CssRuleHelper$Ress.Make({
         declarationBlocks: make$3
       });
-  var include$42 = CssPseudoClassHelper$Ress.Make({
+  var include$1 = CssPseudoClassHelper$Ress.Make({
         declarationBlocks: make$3
       });
   return {
@@ -560,47 +113,47 @@ function Make(Type) {
           AdvancedDeclaration: AdvancedDeclaration,
           DeclarationBlocks: DeclarationBlocks,
           style: make$3,
-          Background: Background,
-          BackgroundAttachment: BackgroundAttachment,
-          BackgroundColor: BackgroundColor,
-          BackgroundImage: BackgroundImage,
-          BackgroundPosition: BackgroundPosition,
-          BackgroundStyle: BackgroundStyle,
-          Border: Border,
-          BorderTop: BorderTop,
-          BorderRight: BorderRight,
-          BorderBottom: BorderBottom,
-          BorderLeft: BorderLeft,
-          BorderTopColor: BorderTopColor,
-          BorderRightColor: BorderRightColor,
-          BorderBottomColor: BorderBottomColor,
-          BorderLeftColor: BorderLeftColor,
-          BorderTopStyle: BorderTopStyle,
-          BorderRightStyle: BorderRightStyle,
-          BorderBottomStyle: BorderBottomStyle,
-          BorderLeftStyle: BorderLeftStyle,
-          BorderTopWidth: BorderTopWidth,
-          BorderRightWidth: BorderRightWidth,
-          BorderBottomWidth: BorderBottomWidth,
-          BorderLeftWidth: BorderLeftWidth,
-          BorderColor: BorderColor,
-          BorderStyle: BorderStyle,
-          BorderWidth: BorderWidth,
-          Clear: Clear,
-          Color: Color,
-          Cursor: Cursor,
-          FontFamily: FontFamily,
-          FontWeight: FontWeight,
-          Margin: Margin,
-          MarginTop: MarginTop,
-          MarginRight: MarginRight,
-          MarginBottom: MarginBottom,
-          MarginLeft: MarginLeft,
-          Padding: Padding,
-          PaddingTop: PaddingTop,
-          PaddingRight: PaddingRight,
-          PaddingBottom: PaddingBottom,
-          PaddingLeft: PaddingLeft,
+          Background: undefined,
+          BackgroundAttachment: undefined,
+          BackgroundColor: undefined,
+          BackgroundImage: undefined,
+          BackgroundPosition: undefined,
+          BackgroundStyle: undefined,
+          Border: undefined,
+          BorderTop: undefined,
+          BorderRight: undefined,
+          BorderBottom: undefined,
+          BorderLeft: undefined,
+          BorderTopColor: undefined,
+          BorderRightColor: undefined,
+          BorderBottomColor: undefined,
+          BorderLeftColor: undefined,
+          BorderTopStyle: undefined,
+          BorderRightStyle: undefined,
+          BorderBottomStyle: undefined,
+          BorderLeftStyle: undefined,
+          BorderTopWidth: undefined,
+          BorderRightWidth: undefined,
+          BorderBottomWidth: undefined,
+          BorderLeftWidth: undefined,
+          BorderColor: undefined,
+          BorderStyle: undefined,
+          BorderWidth: undefined,
+          Clear: undefined,
+          Color: undefined,
+          Cursor: undefined,
+          FontFamily: undefined,
+          FontWeight: undefined,
+          Margin: undefined,
+          MarginTop: undefined,
+          MarginRight: undefined,
+          MarginBottom: undefined,
+          MarginLeft: undefined,
+          Padding: undefined,
+          PaddingTop: undefined,
+          PaddingRight: undefined,
+          PaddingBottom: undefined,
+          PaddingLeft: undefined,
           $$FontFace: undefined,
           str: CssValueHelper$Ress.str,
           num: CssValueHelper$Ress.num,
@@ -673,221 +226,221 @@ function Make(Type) {
           repeatingConicGradient2: CssValueHelper$Ress.repeatingConicGradient2,
           repeatingConicGradient3: CssValueHelper$Ress.repeatingConicGradient3,
           repeatingConicGradient4: CssValueHelper$Ress.repeatingConicGradient4,
-          rule: include$41.rule,
+          rule: include.rule,
           fontFace: CssAtRuleHelper$Ress.fontFace,
-          hover: include$42.hover,
-          background: DeclarationFnHelper.background,
-          background2: DeclarationFnHelper.background2,
-          background3: DeclarationFnHelper.background3,
-          background4: DeclarationFnHelper.background4,
-          backgroundUnion: DeclarationFnHelper.backgroundUnion,
-          backgroundString: DeclarationFnHelper.backgroundString,
-          backgroundFn: DeclarationFnHelper.backgroundFn,
-          backgroundAttachment: DeclarationFnHelper$1.backgroundAttachment,
-          backgroundAttachment2: DeclarationFnHelper$1.backgroundAttachment2,
-          backgroundAttachment3: DeclarationFnHelper$1.backgroundAttachment3,
-          backgroundAttachment4: DeclarationFnHelper$1.backgroundAttachment4,
-          backgroundAttachmentUnion: DeclarationFnHelper$1.backgroundAttachmentUnion,
-          backgroundAttachmentString: DeclarationFnHelper$1.backgroundAttachmentString,
-          backgroundAttachmentFn: DeclarationFnHelper$1.backgroundAttachmentFn,
-          backgroundColor: DeclarationFnHelper$2.backgroundColor,
-          backgroundColorUnion: DeclarationFnHelper$2.backgroundColorUnion,
-          backgroundColorString: DeclarationFnHelper$2.backgroundColorString,
-          backgroundColorFn: DeclarationFnHelper$2.backgroundColorFn,
-          backgroundImage: DeclarationFnHelper$3.backgroundImage,
-          backgroundImage2: DeclarationFnHelper$3.backgroundImage2,
-          backgroundImage3: DeclarationFnHelper$3.backgroundImage3,
-          backgroundImage4: DeclarationFnHelper$3.backgroundImage4,
-          backgroundImageUnion: DeclarationFnHelper$3.backgroundImageUnion,
-          backgroundImageString: DeclarationFnHelper$3.backgroundImageString,
-          backgroundImageFn: DeclarationFnHelper$3.backgroundImageFn,
-          backgroundPosition: DeclarationFnHelper$4.backgroundPosition,
-          backgroundPosition2: DeclarationFnHelper$4.backgroundPosition2,
-          backgroundPosition3: DeclarationFnHelper$4.backgroundPosition3,
-          backgroundPosition4: DeclarationFnHelper$4.backgroundPosition4,
-          backgroundPositionUnion: DeclarationFnHelper$4.backgroundPositionUnion,
-          backgroundPositionString: DeclarationFnHelper$4.backgroundPositionString,
-          backgroundPositionFn: DeclarationFnHelper$4.backgroundPositionFn,
-          backgroundStyle: DeclarationFnHelper$5.backgroundStyle,
-          backgroundStyle2: DeclarationFnHelper$5.backgroundStyle2,
-          backgroundStyle3: DeclarationFnHelper$5.backgroundStyle3,
-          backgroundStyle4: DeclarationFnHelper$5.backgroundStyle4,
-          backgroundStyleUnion: DeclarationFnHelper$5.backgroundStyleUnion,
-          backgroundStyleString: DeclarationFnHelper$5.backgroundStyleString,
-          backgroundStyleFn: DeclarationFnHelper$5.backgroundStyleFn,
-          border: DeclarationFnHelper$6.border,
-          borderUnion: DeclarationFnHelper$6.borderUnion,
-          borderString: DeclarationFnHelper$6.borderString,
-          borderFn: DeclarationFnHelper$6.borderFn,
-          borderTop: DeclarationFnHelper$7.borderTop,
-          borderTopUnion: DeclarationFnHelper$7.borderTopUnion,
-          borderTopString: DeclarationFnHelper$7.borderTopString,
-          borderTopFn: DeclarationFnHelper$7.borderTopFn,
-          borderRight: DeclarationFnHelper$8.borderRight,
-          borderRightUnion: DeclarationFnHelper$8.borderRightUnion,
-          borderRightString: DeclarationFnHelper$8.borderRightString,
-          borderRightFn: DeclarationFnHelper$8.borderRightFn,
-          borderBottom: DeclarationFnHelper$9.borderBottom,
-          borderBottomUnion: DeclarationFnHelper$9.borderBottomUnion,
-          borderBottomString: DeclarationFnHelper$9.borderBottomString,
-          borderBottomFn: DeclarationFnHelper$9.borderBottomFn,
-          borderLeft: DeclarationFnHelper$10.borderLeft,
-          borderLeftUnion: DeclarationFnHelper$10.borderLeftUnion,
-          borderLeftString: DeclarationFnHelper$10.borderLeftString,
-          borderLeftFn: DeclarationFnHelper$10.borderLeftFn,
-          borderTopColor: DeclarationFnHelper$11.borderTopColor,
-          borderTopColorUnion: DeclarationFnHelper$11.borderTopColorUnion,
-          borderTopColorString: DeclarationFnHelper$11.borderTopColorString,
-          borderTopColorFn: DeclarationFnHelper$11.borderTopColorFn,
-          borderRightColor: DeclarationFnHelper$12.borderRightColor,
-          borderRightColorUnion: DeclarationFnHelper$12.borderRightColorUnion,
-          borderRightColorString: DeclarationFnHelper$12.borderRightColorString,
-          borderRightColorFn: DeclarationFnHelper$12.borderRightColorFn,
-          borderBottomColor: DeclarationFnHelper$13.borderBottomColor,
-          borderBottomColorUnion: DeclarationFnHelper$13.borderBottomColorUnion,
-          borderBottomColorString: DeclarationFnHelper$13.borderBottomColorString,
-          borderBottomColorFn: DeclarationFnHelper$13.borderBottomColorFn,
-          borderLeftColor: DeclarationFnHelper$14.borderLeftColor,
-          borderLeftColorUnion: DeclarationFnHelper$14.borderLeftColorUnion,
-          borderLeftColorString: DeclarationFnHelper$14.borderLeftColorString,
-          borderLeftColorFn: DeclarationFnHelper$14.borderLeftColorFn,
-          borderTopStyle: DeclarationFnHelper$15.borderTopStyle,
-          borderTopStyleUnion: DeclarationFnHelper$15.borderTopStyleUnion,
-          borderTopStyleString: DeclarationFnHelper$15.borderTopStyleString,
-          borderTopStyleFn: DeclarationFnHelper$15.borderTopStyleFn,
-          borderRightStyle: DeclarationFnHelper$16.borderRightStyle,
-          borderRightStyleUnion: DeclarationFnHelper$16.borderRightStyleUnion,
-          borderRightStyleString: DeclarationFnHelper$16.borderRightStyleString,
-          borderRightStyleFn: DeclarationFnHelper$16.borderRightStyleFn,
-          borderBottomStyle: DeclarationFnHelper$17.borderBottomStyle,
-          borderBottomStyleUnion: DeclarationFnHelper$17.borderBottomStyleUnion,
-          borderBottomStyleString: DeclarationFnHelper$17.borderBottomStyleString,
-          borderBottomStyleFn: DeclarationFnHelper$17.borderBottomStyleFn,
-          borderLeftStyle: DeclarationFnHelper$18.borderLeftStyle,
-          borderLeftStyleUnion: DeclarationFnHelper$18.borderLeftStyleUnion,
-          borderLeftStyleString: DeclarationFnHelper$18.borderLeftStyleString,
-          borderLeftStyleFn: DeclarationFnHelper$18.borderLeftStyleFn,
-          borderTopWidth: DeclarationFnHelper$19.borderTopWidth,
-          borderTopWidthUnion: DeclarationFnHelper$19.borderTopWidthUnion,
-          borderTopWidthString: DeclarationFnHelper$19.borderTopWidthString,
-          borderTopWidthFn: DeclarationFnHelper$19.borderTopWidthFn,
-          borderRightWidth: DeclarationFnHelper$20.borderRightWidth,
-          borderRightWidthUnion: DeclarationFnHelper$20.borderRightWidthUnion,
-          borderRightWidthString: DeclarationFnHelper$20.borderRightWidthString,
-          borderRightWidthFn: DeclarationFnHelper$20.borderRightWidthFn,
-          borderBottomWidth: DeclarationFnHelper$21.borderBottomWidth,
-          borderBottomWidthUnion: DeclarationFnHelper$21.borderBottomWidthUnion,
-          borderBottomWidthString: DeclarationFnHelper$21.borderBottomWidthString,
-          borderBottomWidthFn: DeclarationFnHelper$21.borderBottomWidthFn,
-          borderLeftWidth: DeclarationFnHelper$22.borderLeftWidth,
-          borderLeftWidthUnion: DeclarationFnHelper$22.borderLeftWidthUnion,
-          borderLeftWidthString: DeclarationFnHelper$22.borderLeftWidthString,
-          borderLeftWidthFn: DeclarationFnHelper$22.borderLeftWidthFn,
-          borderColor: DeclarationFnHelper$23.borderColor,
-          borderColor2: DeclarationFnHelper$23.borderColor2,
-          borderColor3: DeclarationFnHelper$23.borderColor3,
-          borderColor4: DeclarationFnHelper$23.borderColor4,
-          borderColorUnion: DeclarationFnHelper$23.borderColorUnion,
-          borderColorString: DeclarationFnHelper$23.borderColorString,
-          borderColorFn: DeclarationFnHelper$23.borderColorFn,
-          borderStyle: DeclarationFnHelper$24.borderStyle,
-          borderStyle2: DeclarationFnHelper$24.borderStyle2,
-          borderStyle3: DeclarationFnHelper$24.borderStyle3,
-          borderStyle4: DeclarationFnHelper$24.borderStyle4,
-          borderStyleUnion: DeclarationFnHelper$24.borderStyleUnion,
-          borderStyleString: DeclarationFnHelper$24.borderStyleString,
-          borderStyleFn: DeclarationFnHelper$24.borderStyleFn,
-          borderWidth: DeclarationFnHelper$25.borderWidth,
-          borderWidth2: DeclarationFnHelper$25.borderWidth2,
-          borderWidth3: DeclarationFnHelper$25.borderWidth3,
-          borderWidth4: DeclarationFnHelper$25.borderWidth4,
-          borderWidthUnion: DeclarationFnHelper$25.borderWidthUnion,
-          borderWidthString: DeclarationFnHelper$25.borderWidthString,
-          borderWidthFn: DeclarationFnHelper$25.borderWidthFn,
-          clear: DeclarationFnHelper$26.clear,
-          clearFn: DeclarationFnHelper$26.clearFn,
-          color: DeclarationFnHelper$27.color,
-          colorUnion: DeclarationFnHelper$27.colorUnion,
-          colorString: DeclarationFnHelper$27.colorString,
-          colorFn: DeclarationFnHelper$27.colorFn,
-          cursor: DeclarationFnHelper$28.cursor,
-          cursor1: DeclarationFnHelper$28.cursor1,
-          cursor2: DeclarationFnHelper$28.cursor2,
-          cursor3: DeclarationFnHelper$28.cursor3,
-          cursor4: DeclarationFnHelper$28.cursor4,
-          cursorUnion: DeclarationFnHelper$28.cursorUnion,
-          cursorString: DeclarationFnHelper$28.cursorString,
-          cursorFn: DeclarationFnHelper$28.cursorFn,
-          fontFamily: DeclarationFnHelper$29.fontFamily,
-          fontFamily2: DeclarationFnHelper$29.fontFamily2,
-          fontFamily3: DeclarationFnHelper$29.fontFamily3,
-          fontFamily4: DeclarationFnHelper$29.fontFamily4,
-          fontFamilyUnion: DeclarationFnHelper$29.fontFamilyUnion,
-          fontFamilyString: DeclarationFnHelper$29.fontFamilyString,
-          fontFamilyFn: DeclarationFnHelper$29.fontFamilyFn,
-          fontWeight: DeclarationFnHelper$30.fontWeight,
-          fontWeightUnion: DeclarationFnHelper$30.fontWeightUnion,
-          fontWeightString: DeclarationFnHelper$30.fontWeightString,
-          fontWeightNumber: DeclarationFnHelper$30.fontWeightNumber,
-          fontWeightFn: DeclarationFnHelper$30.fontWeightFn,
-          margin: DeclarationFnHelper$31.margin,
-          margin2: DeclarationFnHelper$31.margin2,
-          margin3: DeclarationFnHelper$31.margin3,
-          margin4: DeclarationFnHelper$31.margin4,
-          marginUnion: DeclarationFnHelper$31.marginUnion,
-          marginString: DeclarationFnHelper$31.marginString,
-          marginNumber: DeclarationFnHelper$31.marginNumber,
-          marginFn: DeclarationFnHelper$31.marginFn,
-          marginTop: DeclarationFnHelper$32.marginTop,
-          marginTopUnion: DeclarationFnHelper$32.marginTopUnion,
-          marginTopString: DeclarationFnHelper$32.marginTopString,
-          marginTopNumber: DeclarationFnHelper$32.marginTopNumber,
-          marginTopFn: DeclarationFnHelper$32.marginTopFn,
-          marginRight: DeclarationFnHelper$33.marginRight,
-          marginRightUnion: DeclarationFnHelper$33.marginRightUnion,
-          marginRightString: DeclarationFnHelper$33.marginRightString,
-          marginRightNumber: DeclarationFnHelper$33.marginRightNumber,
-          marginRightFn: DeclarationFnHelper$33.marginRightFn,
-          marginBottom: DeclarationFnHelper$34.marginBottom,
-          marginBottomUnion: DeclarationFnHelper$34.marginBottomUnion,
-          marginBottomString: DeclarationFnHelper$34.marginBottomString,
-          marginBottomNumber: DeclarationFnHelper$34.marginBottomNumber,
-          marginBottomFn: DeclarationFnHelper$34.marginBottomFn,
-          marginLeft: DeclarationFnHelper$35.marginLeft,
-          marginLeftUnion: DeclarationFnHelper$35.marginLeftUnion,
-          marginLeftString: DeclarationFnHelper$35.marginLeftString,
-          marginLeftNumber: DeclarationFnHelper$35.marginLeftNumber,
-          marginLeftFn: DeclarationFnHelper$35.marginLeftFn,
-          padding: DeclarationFnHelper$36.padding,
-          padding2: DeclarationFnHelper$36.padding2,
-          padding3: DeclarationFnHelper$36.padding3,
-          padding4: DeclarationFnHelper$36.padding4,
-          paddingUnion: DeclarationFnHelper$36.paddingUnion,
-          paddingString: DeclarationFnHelper$36.paddingString,
-          paddingNumber: DeclarationFnHelper$36.paddingNumber,
-          paddingFn: DeclarationFnHelper$36.paddingFn,
-          paddingTop: DeclarationFnHelper$37.paddingTop,
-          paddingTopUnion: DeclarationFnHelper$37.paddingTopUnion,
-          paddingTopString: DeclarationFnHelper$37.paddingTopString,
-          paddingTopNumber: DeclarationFnHelper$37.paddingTopNumber,
-          paddingTopFn: DeclarationFnHelper$37.paddingTopFn,
-          paddingRight: DeclarationFnHelper$38.paddingRight,
-          paddingRightUnion: DeclarationFnHelper$38.paddingRightUnion,
-          paddingRightString: DeclarationFnHelper$38.paddingRightString,
-          paddingRightNumber: DeclarationFnHelper$38.paddingRightNumber,
-          paddingRightFn: DeclarationFnHelper$38.paddingRightFn,
-          paddingBottom: DeclarationFnHelper$39.paddingBottom,
-          paddingBottomUnion: DeclarationFnHelper$39.paddingBottomUnion,
-          paddingBottomString: DeclarationFnHelper$39.paddingBottomString,
-          paddingBottomNumber: DeclarationFnHelper$39.paddingBottomNumber,
-          paddingBottomFn: DeclarationFnHelper$39.paddingBottomFn,
-          paddingLeft: DeclarationFnHelper$40.paddingLeft,
-          paddingLeftUnion: DeclarationFnHelper$40.paddingLeftUnion,
-          paddingLeftString: DeclarationFnHelper$40.paddingLeftString,
-          paddingLeftNumber: DeclarationFnHelper$40.paddingLeftNumber,
-          paddingLeftFn: DeclarationFnHelper$40.paddingLeftFn
+          hover: include$1.hover,
+          background: CssBackground$Ress.DeclarationFnHelper.background,
+          background2: CssBackground$Ress.DeclarationFnHelper.background2,
+          background3: CssBackground$Ress.DeclarationFnHelper.background3,
+          background4: CssBackground$Ress.DeclarationFnHelper.background4,
+          backgroundUnion: CssBackground$Ress.DeclarationFnHelper.backgroundUnion,
+          backgroundString: CssBackground$Ress.DeclarationFnHelper.backgroundString,
+          backgroundFn: CssBackground$Ress.DeclarationFnHelper.backgroundFn,
+          backgroundAttachment: CssBackgroundAttachment$Ress.DeclarationFnHelper.backgroundAttachment,
+          backgroundAttachment2: CssBackgroundAttachment$Ress.DeclarationFnHelper.backgroundAttachment2,
+          backgroundAttachment3: CssBackgroundAttachment$Ress.DeclarationFnHelper.backgroundAttachment3,
+          backgroundAttachment4: CssBackgroundAttachment$Ress.DeclarationFnHelper.backgroundAttachment4,
+          backgroundAttachmentUnion: CssBackgroundAttachment$Ress.DeclarationFnHelper.backgroundAttachmentUnion,
+          backgroundAttachmentString: CssBackgroundAttachment$Ress.DeclarationFnHelper.backgroundAttachmentString,
+          backgroundAttachmentFn: CssBackgroundAttachment$Ress.DeclarationFnHelper.backgroundAttachmentFn,
+          backgroundColor: CssBackgroundColor$Ress.DeclarationFnHelper.backgroundColor,
+          backgroundColorUnion: CssBackgroundColor$Ress.DeclarationFnHelper.backgroundColorUnion,
+          backgroundColorString: CssBackgroundColor$Ress.DeclarationFnHelper.backgroundColorString,
+          backgroundColorFn: CssBackgroundColor$Ress.DeclarationFnHelper.backgroundColorFn,
+          backgroundImage: CssBackgroundImage$Ress.DeclarationFnHelper.backgroundImage,
+          backgroundImage2: CssBackgroundImage$Ress.DeclarationFnHelper.backgroundImage2,
+          backgroundImage3: CssBackgroundImage$Ress.DeclarationFnHelper.backgroundImage3,
+          backgroundImage4: CssBackgroundImage$Ress.DeclarationFnHelper.backgroundImage4,
+          backgroundImageUnion: CssBackgroundImage$Ress.DeclarationFnHelper.backgroundImageUnion,
+          backgroundImageString: CssBackgroundImage$Ress.DeclarationFnHelper.backgroundImageString,
+          backgroundImageFn: CssBackgroundImage$Ress.DeclarationFnHelper.backgroundImageFn,
+          backgroundPosition: CssBackgroundPosition$Ress.DeclarationFnHelper.backgroundPosition,
+          backgroundPosition2: CssBackgroundPosition$Ress.DeclarationFnHelper.backgroundPosition2,
+          backgroundPosition3: CssBackgroundPosition$Ress.DeclarationFnHelper.backgroundPosition3,
+          backgroundPosition4: CssBackgroundPosition$Ress.DeclarationFnHelper.backgroundPosition4,
+          backgroundPositionUnion: CssBackgroundPosition$Ress.DeclarationFnHelper.backgroundPositionUnion,
+          backgroundPositionString: CssBackgroundPosition$Ress.DeclarationFnHelper.backgroundPositionString,
+          backgroundPositionFn: CssBackgroundPosition$Ress.DeclarationFnHelper.backgroundPositionFn,
+          backgroundStyle: CssBackgroundStyle$Ress.DeclarationFnHelper.backgroundStyle,
+          backgroundStyle2: CssBackgroundStyle$Ress.DeclarationFnHelper.backgroundStyle2,
+          backgroundStyle3: CssBackgroundStyle$Ress.DeclarationFnHelper.backgroundStyle3,
+          backgroundStyle4: CssBackgroundStyle$Ress.DeclarationFnHelper.backgroundStyle4,
+          backgroundStyleUnion: CssBackgroundStyle$Ress.DeclarationFnHelper.backgroundStyleUnion,
+          backgroundStyleString: CssBackgroundStyle$Ress.DeclarationFnHelper.backgroundStyleString,
+          backgroundStyleFn: CssBackgroundStyle$Ress.DeclarationFnHelper.backgroundStyleFn,
+          border: CssBorder$Ress.DeclarationFnHelper.border,
+          borderUnion: CssBorder$Ress.DeclarationFnHelper.borderUnion,
+          borderString: CssBorder$Ress.DeclarationFnHelper.borderString,
+          borderFn: CssBorder$Ress.DeclarationFnHelper.borderFn,
+          borderTop: CssBorderTop$Ress.DeclarationFnHelper.borderTop,
+          borderTopUnion: CssBorderTop$Ress.DeclarationFnHelper.borderTopUnion,
+          borderTopString: CssBorderTop$Ress.DeclarationFnHelper.borderTopString,
+          borderTopFn: CssBorderTop$Ress.DeclarationFnHelper.borderTopFn,
+          borderRight: CssBorderRight$Ress.DeclarationFnHelper.borderRight,
+          borderRightUnion: CssBorderRight$Ress.DeclarationFnHelper.borderRightUnion,
+          borderRightString: CssBorderRight$Ress.DeclarationFnHelper.borderRightString,
+          borderRightFn: CssBorderRight$Ress.DeclarationFnHelper.borderRightFn,
+          borderBottom: CssBorderBottom$Ress.DeclarationFnHelper.borderBottom,
+          borderBottomUnion: CssBorderBottom$Ress.DeclarationFnHelper.borderBottomUnion,
+          borderBottomString: CssBorderBottom$Ress.DeclarationFnHelper.borderBottomString,
+          borderBottomFn: CssBorderBottom$Ress.DeclarationFnHelper.borderBottomFn,
+          borderLeft: CssBorderLeft$Ress.DeclarationFnHelper.borderLeft,
+          borderLeftUnion: CssBorderLeft$Ress.DeclarationFnHelper.borderLeftUnion,
+          borderLeftString: CssBorderLeft$Ress.DeclarationFnHelper.borderLeftString,
+          borderLeftFn: CssBorderLeft$Ress.DeclarationFnHelper.borderLeftFn,
+          borderTopColor: CssBorderTopColor$Ress.DeclarationFnHelper.borderTopColor,
+          borderTopColorUnion: CssBorderTopColor$Ress.DeclarationFnHelper.borderTopColorUnion,
+          borderTopColorString: CssBorderTopColor$Ress.DeclarationFnHelper.borderTopColorString,
+          borderTopColorFn: CssBorderTopColor$Ress.DeclarationFnHelper.borderTopColorFn,
+          borderRightColor: CssBorderRightColor$Ress.DeclarationFnHelper.borderRightColor,
+          borderRightColorUnion: CssBorderRightColor$Ress.DeclarationFnHelper.borderRightColorUnion,
+          borderRightColorString: CssBorderRightColor$Ress.DeclarationFnHelper.borderRightColorString,
+          borderRightColorFn: CssBorderRightColor$Ress.DeclarationFnHelper.borderRightColorFn,
+          borderBottomColor: CssBorderBottomColor$Ress.DeclarationFnHelper.borderBottomColor,
+          borderBottomColorUnion: CssBorderBottomColor$Ress.DeclarationFnHelper.borderBottomColorUnion,
+          borderBottomColorString: CssBorderBottomColor$Ress.DeclarationFnHelper.borderBottomColorString,
+          borderBottomColorFn: CssBorderBottomColor$Ress.DeclarationFnHelper.borderBottomColorFn,
+          borderLeftColor: CssBorderLeftColor$Ress.DeclarationFnHelper.borderLeftColor,
+          borderLeftColorUnion: CssBorderLeftColor$Ress.DeclarationFnHelper.borderLeftColorUnion,
+          borderLeftColorString: CssBorderLeftColor$Ress.DeclarationFnHelper.borderLeftColorString,
+          borderLeftColorFn: CssBorderLeftColor$Ress.DeclarationFnHelper.borderLeftColorFn,
+          borderTopStyle: CssBorderTopStyle$Ress.DeclarationFnHelper.borderTopStyle,
+          borderTopStyleUnion: CssBorderTopStyle$Ress.DeclarationFnHelper.borderTopStyleUnion,
+          borderTopStyleString: CssBorderTopStyle$Ress.DeclarationFnHelper.borderTopStyleString,
+          borderTopStyleFn: CssBorderTopStyle$Ress.DeclarationFnHelper.borderTopStyleFn,
+          borderRightStyle: CssBorderRightStyle$Ress.DeclarationFnHelper.borderRightStyle,
+          borderRightStyleUnion: CssBorderRightStyle$Ress.DeclarationFnHelper.borderRightStyleUnion,
+          borderRightStyleString: CssBorderRightStyle$Ress.DeclarationFnHelper.borderRightStyleString,
+          borderRightStyleFn: CssBorderRightStyle$Ress.DeclarationFnHelper.borderRightStyleFn,
+          borderBottomStyle: CssBorderBottomStyle$Ress.DeclarationFnHelper.borderBottomStyle,
+          borderBottomStyleUnion: CssBorderBottomStyle$Ress.DeclarationFnHelper.borderBottomStyleUnion,
+          borderBottomStyleString: CssBorderBottomStyle$Ress.DeclarationFnHelper.borderBottomStyleString,
+          borderBottomStyleFn: CssBorderBottomStyle$Ress.DeclarationFnHelper.borderBottomStyleFn,
+          borderLeftStyle: CssBorderLeftStyle$Ress.DeclarationFnHelper.borderLeftStyle,
+          borderLeftStyleUnion: CssBorderLeftStyle$Ress.DeclarationFnHelper.borderLeftStyleUnion,
+          borderLeftStyleString: CssBorderLeftStyle$Ress.DeclarationFnHelper.borderLeftStyleString,
+          borderLeftStyleFn: CssBorderLeftStyle$Ress.DeclarationFnHelper.borderLeftStyleFn,
+          borderTopWidth: CssBorderTopWidth$Ress.DeclarationFnHelper.borderTopWidth,
+          borderTopWidthUnion: CssBorderTopWidth$Ress.DeclarationFnHelper.borderTopWidthUnion,
+          borderTopWidthString: CssBorderTopWidth$Ress.DeclarationFnHelper.borderTopWidthString,
+          borderTopWidthFn: CssBorderTopWidth$Ress.DeclarationFnHelper.borderTopWidthFn,
+          borderRightWidth: CssBorderRightWidth$Ress.DeclarationFnHelper.borderRightWidth,
+          borderRightWidthUnion: CssBorderRightWidth$Ress.DeclarationFnHelper.borderRightWidthUnion,
+          borderRightWidthString: CssBorderRightWidth$Ress.DeclarationFnHelper.borderRightWidthString,
+          borderRightWidthFn: CssBorderRightWidth$Ress.DeclarationFnHelper.borderRightWidthFn,
+          borderBottomWidth: CssBorderBottomWidth$Ress.DeclarationFnHelper.borderBottomWidth,
+          borderBottomWidthUnion: CssBorderBottomWidth$Ress.DeclarationFnHelper.borderBottomWidthUnion,
+          borderBottomWidthString: CssBorderBottomWidth$Ress.DeclarationFnHelper.borderBottomWidthString,
+          borderBottomWidthFn: CssBorderBottomWidth$Ress.DeclarationFnHelper.borderBottomWidthFn,
+          borderLeftWidth: CssBorderLeftWidth$Ress.DeclarationFnHelper.borderLeftWidth,
+          borderLeftWidthUnion: CssBorderLeftWidth$Ress.DeclarationFnHelper.borderLeftWidthUnion,
+          borderLeftWidthString: CssBorderLeftWidth$Ress.DeclarationFnHelper.borderLeftWidthString,
+          borderLeftWidthFn: CssBorderLeftWidth$Ress.DeclarationFnHelper.borderLeftWidthFn,
+          borderColor: CssBorderColor$Ress.DeclarationFnHelper.borderColor,
+          borderColor2: CssBorderColor$Ress.DeclarationFnHelper.borderColor2,
+          borderColor3: CssBorderColor$Ress.DeclarationFnHelper.borderColor3,
+          borderColor4: CssBorderColor$Ress.DeclarationFnHelper.borderColor4,
+          borderColorUnion: CssBorderColor$Ress.DeclarationFnHelper.borderColorUnion,
+          borderColorString: CssBorderColor$Ress.DeclarationFnHelper.borderColorString,
+          borderColorFn: CssBorderColor$Ress.DeclarationFnHelper.borderColorFn,
+          borderStyle: CssBorderStyle$Ress.DeclarationFnHelper.borderStyle,
+          borderStyle2: CssBorderStyle$Ress.DeclarationFnHelper.borderStyle2,
+          borderStyle3: CssBorderStyle$Ress.DeclarationFnHelper.borderStyle3,
+          borderStyle4: CssBorderStyle$Ress.DeclarationFnHelper.borderStyle4,
+          borderStyleUnion: CssBorderStyle$Ress.DeclarationFnHelper.borderStyleUnion,
+          borderStyleString: CssBorderStyle$Ress.DeclarationFnHelper.borderStyleString,
+          borderStyleFn: CssBorderStyle$Ress.DeclarationFnHelper.borderStyleFn,
+          borderWidth: CssBorderWidth$Ress.DeclarationFnHelper.borderWidth,
+          borderWidth2: CssBorderWidth$Ress.DeclarationFnHelper.borderWidth2,
+          borderWidth3: CssBorderWidth$Ress.DeclarationFnHelper.borderWidth3,
+          borderWidth4: CssBorderWidth$Ress.DeclarationFnHelper.borderWidth4,
+          borderWidthUnion: CssBorderWidth$Ress.DeclarationFnHelper.borderWidthUnion,
+          borderWidthString: CssBorderWidth$Ress.DeclarationFnHelper.borderWidthString,
+          borderWidthFn: CssBorderWidth$Ress.DeclarationFnHelper.borderWidthFn,
+          clear: CssClear$Ress.DeclarationFnHelper.clear,
+          clearFn: CssClear$Ress.DeclarationFnHelper.clearFn,
+          color: CssColor$Ress.DeclarationFnHelper.color,
+          colorUnion: CssColor$Ress.DeclarationFnHelper.colorUnion,
+          colorString: CssColor$Ress.DeclarationFnHelper.colorString,
+          colorFn: CssColor$Ress.DeclarationFnHelper.colorFn,
+          cursor: CssCursor$Ress.DeclarationFnHelper.cursor,
+          cursor1: CssCursor$Ress.DeclarationFnHelper.cursor1,
+          cursor2: CssCursor$Ress.DeclarationFnHelper.cursor2,
+          cursor3: CssCursor$Ress.DeclarationFnHelper.cursor3,
+          cursor4: CssCursor$Ress.DeclarationFnHelper.cursor4,
+          cursorUnion: CssCursor$Ress.DeclarationFnHelper.cursorUnion,
+          cursorString: CssCursor$Ress.DeclarationFnHelper.cursorString,
+          cursorFn: CssCursor$Ress.DeclarationFnHelper.cursorFn,
+          fontFamily: CssFontFamily$Ress.DeclarationFnHelper.fontFamily,
+          fontFamily2: CssFontFamily$Ress.DeclarationFnHelper.fontFamily2,
+          fontFamily3: CssFontFamily$Ress.DeclarationFnHelper.fontFamily3,
+          fontFamily4: CssFontFamily$Ress.DeclarationFnHelper.fontFamily4,
+          fontFamilyUnion: CssFontFamily$Ress.DeclarationFnHelper.fontFamilyUnion,
+          fontFamilyString: CssFontFamily$Ress.DeclarationFnHelper.fontFamilyString,
+          fontFamilyFn: CssFontFamily$Ress.DeclarationFnHelper.fontFamilyFn,
+          fontWeight: CssFontWeight$Ress.DeclarationFnHelper.fontWeight,
+          fontWeightUnion: CssFontWeight$Ress.DeclarationFnHelper.fontWeightUnion,
+          fontWeightString: CssFontWeight$Ress.DeclarationFnHelper.fontWeightString,
+          fontWeightNumber: CssFontWeight$Ress.DeclarationFnHelper.fontWeightNumber,
+          fontWeightFn: CssFontWeight$Ress.DeclarationFnHelper.fontWeightFn,
+          margin: CssMargin$Ress.DeclarationFnHelper.margin,
+          margin2: CssMargin$Ress.DeclarationFnHelper.margin2,
+          margin3: CssMargin$Ress.DeclarationFnHelper.margin3,
+          margin4: CssMargin$Ress.DeclarationFnHelper.margin4,
+          marginUnion: CssMargin$Ress.DeclarationFnHelper.marginUnion,
+          marginString: CssMargin$Ress.DeclarationFnHelper.marginString,
+          marginNumber: CssMargin$Ress.DeclarationFnHelper.marginNumber,
+          marginFn: CssMargin$Ress.DeclarationFnHelper.marginFn,
+          marginTop: CssMarginTop$Ress.DeclarationFnHelper.marginTop,
+          marginTopUnion: CssMarginTop$Ress.DeclarationFnHelper.marginTopUnion,
+          marginTopString: CssMarginTop$Ress.DeclarationFnHelper.marginTopString,
+          marginTopNumber: CssMarginTop$Ress.DeclarationFnHelper.marginTopNumber,
+          marginTopFn: CssMarginTop$Ress.DeclarationFnHelper.marginTopFn,
+          marginRight: CssMarginRight$Ress.DeclarationFnHelper.marginRight,
+          marginRightUnion: CssMarginRight$Ress.DeclarationFnHelper.marginRightUnion,
+          marginRightString: CssMarginRight$Ress.DeclarationFnHelper.marginRightString,
+          marginRightNumber: CssMarginRight$Ress.DeclarationFnHelper.marginRightNumber,
+          marginRightFn: CssMarginRight$Ress.DeclarationFnHelper.marginRightFn,
+          marginBottom: CssMarginBottom$Ress.DeclarationFnHelper.marginBottom,
+          marginBottomUnion: CssMarginBottom$Ress.DeclarationFnHelper.marginBottomUnion,
+          marginBottomString: CssMarginBottom$Ress.DeclarationFnHelper.marginBottomString,
+          marginBottomNumber: CssMarginBottom$Ress.DeclarationFnHelper.marginBottomNumber,
+          marginBottomFn: CssMarginBottom$Ress.DeclarationFnHelper.marginBottomFn,
+          marginLeft: CssMarginLeft$Ress.DeclarationFnHelper.marginLeft,
+          marginLeftUnion: CssMarginLeft$Ress.DeclarationFnHelper.marginLeftUnion,
+          marginLeftString: CssMarginLeft$Ress.DeclarationFnHelper.marginLeftString,
+          marginLeftNumber: CssMarginLeft$Ress.DeclarationFnHelper.marginLeftNumber,
+          marginLeftFn: CssMarginLeft$Ress.DeclarationFnHelper.marginLeftFn,
+          padding: CssPadding$Ress.DeclarationFnHelper.padding,
+          padding2: CssPadding$Ress.DeclarationFnHelper.padding2,
+          padding3: CssPadding$Ress.DeclarationFnHelper.padding3,
+          padding4: CssPadding$Ress.DeclarationFnHelper.padding4,
+          paddingUnion: CssPadding$Ress.DeclarationFnHelper.paddingUnion,
+          paddingString: CssPadding$Ress.DeclarationFnHelper.paddingString,
+          paddingNumber: CssPadding$Ress.DeclarationFnHelper.paddingNumber,
+          paddingFn: CssPadding$Ress.DeclarationFnHelper.paddingFn,
+          paddingTop: CssPaddingTop$Ress.DeclarationFnHelper.paddingTop,
+          paddingTopUnion: CssPaddingTop$Ress.DeclarationFnHelper.paddingTopUnion,
+          paddingTopString: CssPaddingTop$Ress.DeclarationFnHelper.paddingTopString,
+          paddingTopNumber: CssPaddingTop$Ress.DeclarationFnHelper.paddingTopNumber,
+          paddingTopFn: CssPaddingTop$Ress.DeclarationFnHelper.paddingTopFn,
+          paddingRight: CssPaddingRight$Ress.DeclarationFnHelper.paddingRight,
+          paddingRightUnion: CssPaddingRight$Ress.DeclarationFnHelper.paddingRightUnion,
+          paddingRightString: CssPaddingRight$Ress.DeclarationFnHelper.paddingRightString,
+          paddingRightNumber: CssPaddingRight$Ress.DeclarationFnHelper.paddingRightNumber,
+          paddingRightFn: CssPaddingRight$Ress.DeclarationFnHelper.paddingRightFn,
+          paddingBottom: CssPaddingBottom$Ress.DeclarationFnHelper.paddingBottom,
+          paddingBottomUnion: CssPaddingBottom$Ress.DeclarationFnHelper.paddingBottomUnion,
+          paddingBottomString: CssPaddingBottom$Ress.DeclarationFnHelper.paddingBottomString,
+          paddingBottomNumber: CssPaddingBottom$Ress.DeclarationFnHelper.paddingBottomNumber,
+          paddingBottomFn: CssPaddingBottom$Ress.DeclarationFnHelper.paddingBottomFn,
+          paddingLeft: CssPaddingLeft$Ress.DeclarationFnHelper.paddingLeft,
+          paddingLeftUnion: CssPaddingLeft$Ress.DeclarationFnHelper.paddingLeftUnion,
+          paddingLeftString: CssPaddingLeft$Ress.DeclarationFnHelper.paddingLeftString,
+          paddingLeftNumber: CssPaddingLeft$Ress.DeclarationFnHelper.paddingLeftNumber,
+          paddingLeftFn: CssPaddingLeft$Ress.DeclarationFnHelper.paddingLeftFn
         };
 }
 
 exports.Make = Make;
-/* No side effect */
+/* CssBorderTop-Ress Not a pure module */

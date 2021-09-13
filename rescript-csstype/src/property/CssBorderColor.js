@@ -5,106 +5,113 @@ var CssValueString$Ress = require("../value/CssValueString.js");
 
 var property = "borderColor";
 
-function Make(Type) {
-  var value = CssValueString$Ress.color_global;
-  var value2 = function (tb, lr) {
-    return CssValueString$Ress.color(tb) + " " + CssValueString$Ress.color(lr);
-  };
-  var value3 = function (top, lr, bottom) {
-    return CssValueString$Ress.color(top) + " " + CssValueString$Ress.color(lr) + " " + CssValueString$Ress.color(bottom);
-  };
-  var value4 = function (top, right, bottom, left) {
-    return CssValueString$Ress.color(top) + " " + CssValueString$Ress.color(right) + " " + CssValueString$Ress.color(bottom) + " " + CssValueString$Ress.color(left);
-  };
-  var borderColor = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              CssValueString$Ress.color_global(v)
-            ]
-          };
-  };
-  var borderColor2 = function (tb, lr) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value2(tb, lr)
-            ]
-          };
-  };
-  var borderColor3 = function (top, lr, bottom) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value3(top, lr, bottom)
-            ]
-          };
-  };
-  var borderColor4 = function (top, right, bottom, left) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value4(top, right, bottom, left)
-            ]
-          };
-  };
-  var borderColorUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var borderColorString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    borderColor: borderColor,
-    borderColor2: borderColor2,
-    borderColor3: borderColor3,
-    borderColor4: borderColor4,
-    borderColorUnion: borderColorUnion,
-    borderColorString: borderColorString
-  };
-  var borderColorFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    borderColor: borderColor,
-    borderColor2: borderColor2,
-    borderColor3: borderColor3,
-    borderColor4: borderColor4,
-    borderColorUnion: borderColorUnion,
-    borderColorString: borderColorString,
-    borderColorFn: borderColorFn
-  };
+var value = CssValueString$Ress.color_global;
+
+function value2(tb, lr) {
+  return CssValueString$Ress.color(tb) + " " + CssValueString$Ress.color(lr);
+}
+
+function value3(top, lr, bottom) {
+  return CssValueString$Ress.color(top) + " " + CssValueString$Ress.color(lr) + " " + CssValueString$Ress.color(bottom);
+}
+
+function value4(top, right, bottom, left) {
+  return CssValueString$Ress.color(top) + " " + CssValueString$Ress.color(right) + " " + CssValueString$Ress.color(bottom) + " " + CssValueString$Ress.color(left);
+}
+
+function borderColor(v) {
   return {
-          value: value,
-          value2: value2,
-          value3: value3,
-          value4: value4,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            CssValueString$Ress.color_global(v)
+          ]
         };
 }
 
-exports.Make = Make;
+function borderColor2(tb, lr) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value2(tb, lr)
+          ]
+        };
+}
+
+function borderColor3(top, lr, bottom) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value3(top, lr, bottom)
+          ]
+        };
+}
+
+function borderColor4(top, right, bottom, left) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value4(top, right, bottom, left)
+          ]
+        };
+}
+
+function borderColorUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function borderColorString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  borderColor: borderColor,
+  borderColor2: borderColor2,
+  borderColor3: borderColor3,
+  borderColor4: borderColor4,
+  borderColorUnion: borderColorUnion,
+  borderColorString: borderColorString
+};
+
+function borderColorFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  borderColor: borderColor,
+  borderColor2: borderColor2,
+  borderColor3: borderColor3,
+  borderColor4: borderColor4,
+  borderColorUnion: borderColorUnion,
+  borderColorString: borderColorString,
+  borderColorFn: borderColorFn
+};
+
+exports.value = value;
+exports.value2 = value2;
+exports.value3 = value3;
+exports.value4 = value4;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

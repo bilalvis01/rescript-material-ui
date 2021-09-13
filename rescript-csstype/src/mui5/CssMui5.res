@@ -80,170 +80,47 @@ module Make = (
   /*
   Property Value
   */
-  module Background = {
-    type t;
-    include CssBackground.Make({ type t = t; });
-  };
-  module BackgroundAttachment = {
-    type t;
-    include CssBackgroundAttachment.Make({ type t = t; });
-  };
-  module BackgroundColor = {
-    type t;
-    include CssBackgroundColor.Make({ type t = t; });
-  };
-  module BackgroundImage = {
-    type t;
-    include CssBackgroundImage.Make({ type t = t; });
-  };
-  module BackgroundPosition = {
-    type t;
-    include CssBackgroundPosition.Make({ type t = t; });
-  };
-  module BackgroundStyle = {
-    type t;
-    include CssBackgroundStyle.Make({ type t = t; });
-  };
-  module Border = {
-    type t;
-    include CssBorder.Make({ type t = t; });
-  };
-  module BorderTop = {
-    type t;
-    include CssBorderTop.Make({ type t = t; });
-  };
-  module BorderRight = {
-    type t;
-    include CssBorderRight.Make({ type t = t; });
-  };
-  module BorderBottom = {
-    type t;
-    include CssBorderBottom.Make({ type t = t; });
-  };
-  module BorderLeft = {
-    type t;
-    include CssBorderLeft.Make({ type t = t; });
-  };
-  module BorderTopColor = {
-    type t;
-    include CssBorderTopColor.Make({ type t = t; });
-  };
-  module BorderRightColor = {
-    type t;
-    include CssBorderRightColor.Make({ type t = t; });
-  };
-  module BorderBottomColor = {
-    type t;
-    include CssBorderBottomColor.Make({ type t = t; });
-  };
-  module BorderLeftColor = {
-    type t;
-    include CssBorderLeftColor.Make({ type t = t; });
-  };
-  module BorderTopStyle = {
-    type t;
-    include CssBorderTopStyle.Make({ type t = t; });
-  };
-  module BorderRightStyle = {
-    type t;
-    include CssBorderRightStyle.Make({ type t = t; });
-  };
-  module BorderBottomStyle = {
-    type t;
-    include CssBorderBottomStyle.Make({ type t = t; });
-  };
-  module BorderLeftStyle = {
-    type t;
-    include CssBorderLeftStyle.Make({ type t = t; });
-  };
-  module BorderTopWidth = {
-    type t;
-    include CssBorderTopWidth.Make({ type t = t; });
-  };
-  module BorderRightWidth = {
-    type t;
-    include CssBorderRightWidth.Make({ type t = t; });
-  };
-  module BorderBottomWidth = {
-    type t;
-    include CssBorderBottomWidth.Make({ type t = t; });
-  };
-  module BorderLeftWidth = {
-    type t;
-    include CssBorderLeftWidth.Make({ type t = t; });
-  };
-  module BorderColor = {
-    type t;
-    include CssBorderColor.Make({ type t = t; });
-  };
-  module BorderStyle = {
-    type t;
-    include CssBorderStyle.Make({ type t = t; });
-  };
-  module BorderWidth = {
-    type t;
-    include CssBorderWidth.Make({ type t = t; });
-  };
-  module Clear = {
-    type t;
-    include CssClear.Make({ type t = t; });
-  };
-  module Color = {
-    type t;
-    include CssColor.Make({ type t = t; });
-  };
-  module Cursor = {
-    type t;
-    include CssCursor.Make({ type t = t; });
-  };
-  module FontFamily = {
-    type t;
-    include CssFontFamily.Make({ type t = t; });
-  };
-  module FontWeight = {
-    type t;
-    include CssFontWeight.Make({ type t = t; });
-  };
-  module Margin = {
-    type t;
-    include CssMargin.Make({ type t = t; });
-  };
-  module MarginTop = {
-    type t;
-    include CssMarginTop.Make({ type t = t; });
-  };
-  module MarginRight = {
-    type t;
-    include CssMarginRight.Make({ type t = t; });
-  };
-  module MarginBottom = {
-    type t;
-    include CssMarginBottom.Make({ type t = t; });
-  };
-  module MarginLeft = {
-    type t;
-    include CssMarginLeft.Make({ type t = t; });
-  };
-  module Padding = {
-    type t;
-    include CssPadding.Make({ type t = t; });
-  };
-  module PaddingTop = {
-    type t;
-    include CssPaddingTop.Make({ type t = t; });
-  };
-  module PaddingRight = {
-    type t;
-    include CssPaddingRight.Make({ type t = t; });
-  };
-  module PaddingBottom = {
-    type t;
-    include CssPaddingBottom.Make({ type t = t; });
-  };
-  module PaddingLeft = {
-    type t;
-    include CssPaddingLeft.Make({ type t = t; });
-  };
+  module Background = CssBackground;
+  module BackgroundAttachment = CssBackgroundAttachment;
+  module BackgroundColor = CssBackgroundColor;
+  module BackgroundImage = CssBackgroundImage;
+  module BackgroundPosition = CssBackgroundPosition;
+  module BackgroundStyle = CssBackgroundStyle;
+  module Border = CssBorder;
+  module BorderTop = CssBorderTop;
+  module BorderRight = CssBorderRight;
+  module BorderBottom = CssBorderBottom;
+  module BorderLeft = CssBorderLeft;
+  module BorderTopColor = CssBorderTopColor;
+  module BorderRightColor = CssBorderRightColor;
+  module BorderBottomColor = CssBorderBottomColor;
+  module BorderLeftColor = CssBorderLeftColor;
+  module BorderTopStyle = CssBorderTopStyle;
+  module BorderRightStyle = CssBorderRightStyle;
+  module BorderBottomStyle = CssBorderBottomStyle;
+  module BorderLeftStyle = CssBorderLeftStyle;
+  module BorderTopWidth = CssBorderTopWidth;
+  module BorderRightWidth = CssBorderRightWidth;
+  module BorderBottomWidth = CssBorderBottomWidth;
+  module BorderLeftWidth = CssBorderLeftWidth;
+  module BorderColor = CssBorderColor;
+  module BorderStyle = CssBorderStyle;
+  module BorderWidth = CssBorderWidth;
+  module Clear = CssClear;
+  module Color = CssColor;
+  module Cursor = CssCursor;
+  module FontFamily = CssFontFamily;
+  module FontWeight = CssFontWeight;
+  module Margin = CssMargin;
+  module MarginTop = CssMarginTop;
+  module MarginRight = CssMarginRight;
+  module MarginBottom = CssMarginBottom;
+  module MarginLeft = CssMarginLeft;
+  module Padding = CssPadding;
+  module PaddingTop = CssPaddingTop;
+  module PaddingRight = CssPaddingRight;
+  module PaddingBottom = CssPaddingBottom;
+  module PaddingLeft = CssPaddingLeft;
 
   /*
   AtRule

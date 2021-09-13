@@ -5,106 +5,113 @@ var CssValueString$Ress = require("../value/CssValueString.js");
 
 var property = "backgroundAttachment";
 
-function Make(Type) {
-  var value = CssValueString$Ress.attachment;
-  var value2 = function (v1, v2) {
-    return CssValueString$Ress.attachment(v1) + ", " + CssValueString$Ress.attachment(v2);
-  };
-  var value3 = function (v1, v2, v3) {
-    return CssValueString$Ress.attachment(v1) + ", " + CssValueString$Ress.attachment(v2) + ", " + CssValueString$Ress.attachment(v3);
-  };
-  var value4 = function (v1, v2, v3, v4) {
-    return CssValueString$Ress.attachment(v1) + ", " + CssValueString$Ress.attachment(v2) + ", " + CssValueString$Ress.attachment(v3) + ", " + CssValueString$Ress.attachment(v4);
-  };
-  var backgroundAttachment = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              CssValueString$Ress.attachment(v)
-            ]
-          };
-  };
-  var backgroundAttachment2 = function (v1, v2) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value2(v1, v2)
-            ]
-          };
-  };
-  var backgroundAttachment3 = function (v1, v2, v3) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value3(v1, v2, v3)
-            ]
-          };
-  };
-  var backgroundAttachment4 = function (v1, v2, v3, v4) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value4(v1, v2, v3, v4)
-            ]
-          };
-  };
-  var backgroundAttachmentUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var backgroundAttachmentString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    backgroundAttachment: backgroundAttachment,
-    backgroundAttachment2: backgroundAttachment2,
-    backgroundAttachment3: backgroundAttachment3,
-    backgroundAttachment4: backgroundAttachment4,
-    backgroundAttachmentUnion: backgroundAttachmentUnion,
-    backgroundAttachmentString: backgroundAttachmentString
-  };
-  var backgroundAttachmentFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    backgroundAttachment: backgroundAttachment,
-    backgroundAttachment2: backgroundAttachment2,
-    backgroundAttachment3: backgroundAttachment3,
-    backgroundAttachment4: backgroundAttachment4,
-    backgroundAttachmentUnion: backgroundAttachmentUnion,
-    backgroundAttachmentString: backgroundAttachmentString,
-    backgroundAttachmentFn: backgroundAttachmentFn
-  };
+var value = CssValueString$Ress.attachment;
+
+function value2(v1, v2) {
+  return CssValueString$Ress.attachment(v1) + ", " + CssValueString$Ress.attachment(v2);
+}
+
+function value3(v1, v2, v3) {
+  return CssValueString$Ress.attachment(v1) + ", " + CssValueString$Ress.attachment(v2) + ", " + CssValueString$Ress.attachment(v3);
+}
+
+function value4(v1, v2, v3, v4) {
+  return CssValueString$Ress.attachment(v1) + ", " + CssValueString$Ress.attachment(v2) + ", " + CssValueString$Ress.attachment(v3) + ", " + CssValueString$Ress.attachment(v4);
+}
+
+function backgroundAttachment(v) {
   return {
-          value: value,
-          value2: value2,
-          value3: value3,
-          value4: value4,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            CssValueString$Ress.attachment(v)
+          ]
         };
 }
 
-exports.Make = Make;
+function backgroundAttachment2(v1, v2) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value2(v1, v2)
+          ]
+        };
+}
+
+function backgroundAttachment3(v1, v2, v3) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value3(v1, v2, v3)
+          ]
+        };
+}
+
+function backgroundAttachment4(v1, v2, v3, v4) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value4(v1, v2, v3, v4)
+          ]
+        };
+}
+
+function backgroundAttachmentUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function backgroundAttachmentString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  backgroundAttachment: backgroundAttachment,
+  backgroundAttachment2: backgroundAttachment2,
+  backgroundAttachment3: backgroundAttachment3,
+  backgroundAttachment4: backgroundAttachment4,
+  backgroundAttachmentUnion: backgroundAttachmentUnion,
+  backgroundAttachmentString: backgroundAttachmentString
+};
+
+function backgroundAttachmentFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  backgroundAttachment: backgroundAttachment,
+  backgroundAttachment2: backgroundAttachment2,
+  backgroundAttachment3: backgroundAttachment3,
+  backgroundAttachment4: backgroundAttachment4,
+  backgroundAttachmentUnion: backgroundAttachmentUnion,
+  backgroundAttachmentString: backgroundAttachmentString,
+  backgroundAttachmentFn: backgroundAttachmentFn
+};
+
+exports.value = value;
+exports.value2 = value2;
+exports.value3 = value3;
+exports.value4 = value4;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

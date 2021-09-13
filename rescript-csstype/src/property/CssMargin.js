@@ -5,117 +5,125 @@ var CssValueString$Ress = require("../value/CssValueString.js");
 
 var property = "margin";
 
-function Make(Type) {
-  var value = CssValueString$Ress.margin_global;
-  var value2 = function (tb, lr) {
-    return CssValueString$Ress.margin(tb) + " " + CssValueString$Ress.margin(lr);
-  };
-  var value3 = function (top, lr, bottom) {
-    return CssValueString$Ress.margin(top) + " " + CssValueString$Ress.margin(lr) + " " + CssValueString$Ress.margin(bottom);
-  };
-  var value4 = function (top, right, bottom, left) {
-    return CssValueString$Ress.margin(top) + " " + CssValueString$Ress.margin(right) + " " + CssValueString$Ress.margin(bottom) + " " + CssValueString$Ress.margin(left);
-  };
-  var margin = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              CssValueString$Ress.margin_global(v)
-            ]
-          };
-  };
-  var margin2 = function (tb, lr) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value2(tb, lr)
-            ]
-          };
-  };
-  var margin3 = function (top, lr, bottom) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value3(top, lr, bottom)
-            ]
-          };
-  };
-  var margin4 = function (top, right, bottom, left) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value4(top, right, bottom, left)
-            ]
-          };
-  };
-  var marginUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var marginString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var marginNumber = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    margin: margin,
-    margin2: margin2,
-    margin3: margin3,
-    margin4: margin4,
-    marginUnion: marginUnion,
-    marginString: marginString,
-    marginNumber: marginNumber
-  };
-  var marginFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    margin: margin,
-    margin2: margin2,
-    margin3: margin3,
-    margin4: margin4,
-    marginUnion: marginUnion,
-    marginString: marginString,
-    marginNumber: marginNumber,
-    marginFn: marginFn
-  };
+var value = CssValueString$Ress.margin_global;
+
+function value2(tb, lr) {
+  return CssValueString$Ress.margin(tb) + " " + CssValueString$Ress.margin(lr);
+}
+
+function value3(top, lr, bottom) {
+  return CssValueString$Ress.margin(top) + " " + CssValueString$Ress.margin(lr) + " " + CssValueString$Ress.margin(bottom);
+}
+
+function value4(top, right, bottom, left) {
+  return CssValueString$Ress.margin(top) + " " + CssValueString$Ress.margin(right) + " " + CssValueString$Ress.margin(bottom) + " " + CssValueString$Ress.margin(left);
+}
+
+function margin(v) {
   return {
-          value: value,
-          value2: value2,
-          value3: value3,
-          value4: value4,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            CssValueString$Ress.margin_global(v)
+          ]
         };
 }
 
-exports.Make = Make;
+function margin2(tb, lr) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value2(tb, lr)
+          ]
+        };
+}
+
+function margin3(top, lr, bottom) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value3(top, lr, bottom)
+          ]
+        };
+}
+
+function margin4(top, right, bottom, left) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value4(top, right, bottom, left)
+          ]
+        };
+}
+
+function marginUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function marginString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function marginNumber(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  margin: margin,
+  margin2: margin2,
+  margin3: margin3,
+  margin4: margin4,
+  marginUnion: marginUnion,
+  marginString: marginString,
+  marginNumber: marginNumber
+};
+
+function marginFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  margin: margin,
+  margin2: margin2,
+  margin3: margin3,
+  margin4: margin4,
+  marginUnion: marginUnion,
+  marginString: marginString,
+  marginNumber: marginNumber,
+  marginFn: marginFn
+};
+
+exports.value = value;
+exports.value2 = value2;
+exports.value3 = value3;
+exports.value4 = value4;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

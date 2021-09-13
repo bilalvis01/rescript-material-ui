@@ -3,89 +3,98 @@
 
 var CssValueString$Ress = require("../value/CssValueString.js");
 
-function Make(Type) {
-  var value = CssValueString$Ress.lineStyle_global;
-  var value2 = function (tb, lr) {
-    return CssValueString$Ress.lineStyle(tb) + " " + CssValueString$Ress.lineStyle(lr);
-  };
-  var value3 = function (top, lr, bottom) {
-    return CssValueString$Ress.lineStyle(top) + " " + CssValueString$Ress.lineStyle(lr) + " " + CssValueString$Ress.lineStyle(bottom);
-  };
-  var value4 = function (top, right, bottom, left) {
-    return CssValueString$Ress.lineStyle(top) + " " + CssValueString$Ress.lineStyle(right) + " " + CssValueString$Ress.lineStyle(bottom) + " " + CssValueString$Ress.lineStyle(left);
-  };
-  var DeclarationConstructor = {};
-  var DeclarationFnConstructor = {};
-  var borderStyle = function (v) {
-    return {
-            NAME: "BorderStyle",
-            VAL: CssValueString$Ress.lineStyle_global(v)
-          };
-  };
-  var borderStyle2 = function (tb, lr) {
-    return {
-            NAME: "BorderStyle",
-            VAL: value2(tb, lr)
-          };
-  };
-  var borderStyle3 = function (top, lr, bottom) {
-    return {
-            NAME: "BorderStyle",
-            VAL: value3(top, lr, bottom)
-          };
-  };
-  var borderStyle4 = function (top, right, bottom, left) {
-    return {
-            NAME: "BorderStyle",
-            VAL: value4(top, right, bottom, left)
-          };
-  };
-  var borderStyleUnion = function (v) {
-    return {
-            NAME: "BorderStyle",
-            VAL: v
-          };
-  };
-  var borderStyleString = function (v) {
-    return {
-            NAME: "BorderStyle",
-            VAL: v
-          };
-  };
-  var DeclarationHelper = {
-    borderStyle: borderStyle,
-    borderStyle2: borderStyle2,
-    borderStyle3: borderStyle3,
-    borderStyle4: borderStyle4,
-    borderStyleUnion: borderStyleUnion,
-    borderStyleString: borderStyleString
-  };
-  var borderStyleFn = function (v) {
-    return {
-            NAME: "BorderStyleFn",
-            VAL: v
-          };
-  };
-  var DeclarationFnHelper = {
-    borderStyle: borderStyle,
-    borderStyle2: borderStyle2,
-    borderStyle3: borderStyle3,
-    borderStyle4: borderStyle4,
-    borderStyleUnion: borderStyleUnion,
-    borderStyleString: borderStyleString,
-    borderStyleFn: borderStyleFn
-  };
+var value = CssValueString$Ress.lineStyle_global;
+
+function value2(tb, lr) {
+  return CssValueString$Ress.lineStyle(tb) + " " + CssValueString$Ress.lineStyle(lr);
+}
+
+function value3(top, lr, bottom) {
+  return CssValueString$Ress.lineStyle(top) + " " + CssValueString$Ress.lineStyle(lr) + " " + CssValueString$Ress.lineStyle(bottom);
+}
+
+function value4(top, right, bottom, left) {
+  return CssValueString$Ress.lineStyle(top) + " " + CssValueString$Ress.lineStyle(right) + " " + CssValueString$Ress.lineStyle(bottom) + " " + CssValueString$Ress.lineStyle(left);
+}
+
+var DeclarationConstructor = {};
+
+var DeclarationFnConstructor = {};
+
+function borderStyle(v) {
   return {
-          value: value,
-          value2: value2,
-          value3: value3,
-          value4: value4,
-          DeclarationConstructor: DeclarationConstructor,
-          DeclarationFnConstructor: DeclarationFnConstructor,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "BorderStyle",
+          VAL: CssValueString$Ress.lineStyle_global(v)
         };
 }
 
-exports.Make = Make;
+function borderStyle2(tb, lr) {
+  return {
+          NAME: "BorderStyle",
+          VAL: value2(tb, lr)
+        };
+}
+
+function borderStyle3(top, lr, bottom) {
+  return {
+          NAME: "BorderStyle",
+          VAL: value3(top, lr, bottom)
+        };
+}
+
+function borderStyle4(top, right, bottom, left) {
+  return {
+          NAME: "BorderStyle",
+          VAL: value4(top, right, bottom, left)
+        };
+}
+
+function borderStyleUnion(v) {
+  return {
+          NAME: "BorderStyle",
+          VAL: v
+        };
+}
+
+function borderStyleString(v) {
+  return {
+          NAME: "BorderStyle",
+          VAL: v
+        };
+}
+
+var DeclarationHelper = {
+  borderStyle: borderStyle,
+  borderStyle2: borderStyle2,
+  borderStyle3: borderStyle3,
+  borderStyle4: borderStyle4,
+  borderStyleUnion: borderStyleUnion,
+  borderStyleString: borderStyleString
+};
+
+function borderStyleFn(v) {
+  return {
+          NAME: "BorderStyleFn",
+          VAL: v
+        };
+}
+
+var DeclarationFnHelper = {
+  borderStyle: borderStyle,
+  borderStyle2: borderStyle2,
+  borderStyle3: borderStyle3,
+  borderStyle4: borderStyle4,
+  borderStyleUnion: borderStyleUnion,
+  borderStyleString: borderStyleString,
+  borderStyleFn: borderStyleFn
+};
+
+exports.value = value;
+exports.value2 = value2;
+exports.value3 = value3;
+exports.value4 = value4;
+exports.DeclarationConstructor = DeclarationConstructor;
+exports.DeclarationFnConstructor = DeclarationFnConstructor;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

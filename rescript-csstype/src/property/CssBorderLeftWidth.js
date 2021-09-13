@@ -6,62 +6,64 @@ var CssBorderSideWidth$Ress = require("./CssBorderSideWidth.js");
 
 var property = "borderLeftWidth";
 
-function Make(Type) {
-  var include = CssBorderSideWidth$Ress.Make({});
-  var value = include.value;
-  var borderLeftWidth = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              Curry._1(value, v)
-            ]
-          };
-  };
-  var borderLeftWidthUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var borderLeftWidthString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    borderLeftWidth: borderLeftWidth,
-    borderLeftWidthUnion: borderLeftWidthUnion,
-    borderLeftWidthString: borderLeftWidthString
-  };
-  var borderLeftWidthFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    borderLeftWidth: borderLeftWidth,
-    borderLeftWidthUnion: borderLeftWidthUnion,
-    borderLeftWidthString: borderLeftWidthString,
-    borderLeftWidthFn: borderLeftWidthFn
-  };
+var include = CssBorderSideWidth$Ress.MakeValue({});
+
+var value = include.value;
+
+function borderLeftWidth(v) {
   return {
-          value: value,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            Curry._1(value, v)
+          ]
         };
 }
 
-exports.Make = Make;
-/* No side effect */
+function borderLeftWidthUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function borderLeftWidthString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  borderLeftWidth: borderLeftWidth,
+  borderLeftWidthUnion: borderLeftWidthUnion,
+  borderLeftWidthString: borderLeftWidthString
+};
+
+function borderLeftWidthFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  borderLeftWidth: borderLeftWidth,
+  borderLeftWidthUnion: borderLeftWidthUnion,
+  borderLeftWidthString: borderLeftWidthString,
+  borderLeftWidthFn: borderLeftWidthFn
+};
+
+exports.value = value;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
+/* include Not a pure module */

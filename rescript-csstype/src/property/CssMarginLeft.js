@@ -6,73 +6,76 @@ var CssMarginSide$Ress = require("./CssMarginSide.js");
 
 var property = "marginLeft";
 
-function Make(Type) {
-  var include = CssMarginSide$Ress.Make({});
-  var value = include.value;
-  var marginLeft = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              Curry._1(value, v)
-            ]
-          };
-  };
-  var marginLeftUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var marginLeftString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var marginLeftNumber = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    marginLeft: marginLeft,
-    marginLeftUnion: marginLeftUnion,
-    marginLeftString: marginLeftString,
-    marginLeftNumber: marginLeftNumber
-  };
-  var marginLeftFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    marginLeft: marginLeft,
-    marginLeftUnion: marginLeftUnion,
-    marginLeftString: marginLeftString,
-    marginLeftNumber: marginLeftNumber,
-    marginLeftFn: marginLeftFn
-  };
+var include = CssMarginSide$Ress.MakeValue({});
+
+var value = include.value;
+
+function marginLeft(v) {
   return {
-          value: value,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            Curry._1(value, v)
+          ]
         };
 }
 
-exports.Make = Make;
-/* No side effect */
+function marginLeftUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function marginLeftString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function marginLeftNumber(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  marginLeft: marginLeft,
+  marginLeftUnion: marginLeftUnion,
+  marginLeftString: marginLeftString,
+  marginLeftNumber: marginLeftNumber
+};
+
+function marginLeftFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  marginLeft: marginLeft,
+  marginLeftUnion: marginLeftUnion,
+  marginLeftString: marginLeftString,
+  marginLeftNumber: marginLeftNumber,
+  marginLeftFn: marginLeftFn
+};
+
+exports.value = value;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
+/* include Not a pure module */

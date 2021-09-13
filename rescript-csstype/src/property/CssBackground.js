@@ -5,117 +5,124 @@ var CssValueString$Ress = require("../value/CssValueString.js");
 
 var property = "background";
 
-function Make(Type) {
-  var value = function (color, position, size, repeat, attachment, origin, clip, imageOrColor) {
-    var imageOrColor$1;
-    if (typeof imageOrColor === "object") {
-      imageOrColor$1 = imageOrColor;
-    } else {
-      if (imageOrColor === "inherit" || imageOrColor === "unset" || imageOrColor === "revert" || imageOrColor === "initial") {
-        return CssValueString$Ress.$$global(imageOrColor);
-      }
-      imageOrColor$1 = imageOrColor;
+function value(color, position, size, repeat, attachment, origin, clip, imageOrColor) {
+  var imageOrColor$1;
+  if (typeof imageOrColor === "object") {
+    imageOrColor$1 = imageOrColor;
+  } else {
+    if (imageOrColor === "inherit" || imageOrColor === "unset" || imageOrColor === "revert" || imageOrColor === "initial") {
+      return CssValueString$Ress.$$global(imageOrColor);
     }
-    return CssValueString$Ress.background(color, position, size, repeat, attachment, origin, clip, imageOrColor$1);
-  };
-  var value2 = function (l1, l2) {
-    return CssValueString$Ress.bgLayer(l1) + ", " + CssValueString$Ress.bgLayer(l2);
-  };
-  var value3 = function (l1, l2, l3) {
-    return CssValueString$Ress.bgLayer(l1) + ", " + CssValueString$Ress.bgLayer(l2) + ", " + CssValueString$Ress.bgLayer(l3);
-  };
-  var value4 = function (l1, l2, l3, l4) {
-    return CssValueString$Ress.bgLayer(l1) + ", " + CssValueString$Ress.bgLayer(l2) + ", " + CssValueString$Ress.bgLayer(l3) + ", " + CssValueString$Ress.bgLayer(l4);
-  };
-  var background = function (color, position, size, repeat, attachment, origin, clip, imageOrColor) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value(color, position, size, repeat, attachment, origin, clip, imageOrColor)
-            ]
-          };
-  };
-  var background2 = function (l1, l2) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value2(l1, l2)
-            ]
-          };
-  };
-  var background3 = function (l1, l2, l3) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value3(l1, l2, l3)
-            ]
-          };
-  };
-  var background4 = function (l1, l2, l3, l4) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value4(l1, l2, l3, l4)
-            ]
-          };
-  };
-  var backgroundUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var backgroundString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    background: background,
-    background2: background2,
-    background3: background3,
-    background4: background4,
-    backgroundUnion: backgroundUnion,
-    backgroundString: backgroundString
-  };
-  var backgroundFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    background: background,
-    background2: background2,
-    background3: background3,
-    background4: background4,
-    backgroundUnion: backgroundUnion,
-    backgroundString: backgroundString,
-    backgroundFn: backgroundFn
-  };
+    imageOrColor$1 = imageOrColor;
+  }
+  return CssValueString$Ress.background(color, position, size, repeat, attachment, origin, clip, imageOrColor$1);
+}
+
+function value2(l1, l2) {
+  return CssValueString$Ress.bgLayer(l1) + ", " + CssValueString$Ress.bgLayer(l2);
+}
+
+function value3(l1, l2, l3) {
+  return CssValueString$Ress.bgLayer(l1) + ", " + CssValueString$Ress.bgLayer(l2) + ", " + CssValueString$Ress.bgLayer(l3);
+}
+
+function value4(l1, l2, l3, l4) {
+  return CssValueString$Ress.bgLayer(l1) + ", " + CssValueString$Ress.bgLayer(l2) + ", " + CssValueString$Ress.bgLayer(l3) + ", " + CssValueString$Ress.bgLayer(l4);
+}
+
+function background(color, position, size, repeat, attachment, origin, clip, imageOrColor) {
   return {
-          value: value,
-          value2: value2,
-          value3: value3,
-          value4: value4,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value(color, position, size, repeat, attachment, origin, clip, imageOrColor)
+          ]
         };
 }
 
-exports.Make = Make;
+function background2(l1, l2) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value2(l1, l2)
+          ]
+        };
+}
+
+function background3(l1, l2, l3) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value3(l1, l2, l3)
+          ]
+        };
+}
+
+function background4(l1, l2, l3, l4) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value4(l1, l2, l3, l4)
+          ]
+        };
+}
+
+function backgroundUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function backgroundString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  background: background,
+  background2: background2,
+  background3: background3,
+  background4: background4,
+  backgroundUnion: backgroundUnion,
+  backgroundString: backgroundString
+};
+
+function backgroundFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  background: background,
+  background2: background2,
+  background3: background3,
+  background4: background4,
+  backgroundUnion: backgroundUnion,
+  backgroundString: backgroundString,
+  backgroundFn: backgroundFn
+};
+
+exports.value = value;
+exports.value2 = value2;
+exports.value3 = value3;
+exports.value4 = value4;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

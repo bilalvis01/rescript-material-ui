@@ -1,11 +1,6 @@
 open Jest;
 
-module FontFamily = {
-  type t;
-  include CssFontFamily.Make({
-    type t = t;
-  });
-};
+module FontFamily = CssFontFamily;
 
 test("FontFamily", (.) => {
   expect(FontFamily.value(#initial))

@@ -5,106 +5,113 @@ var CssValueString$Ress = require("../value/CssValueString.js");
 
 var property = "borderWidth";
 
-function Make(Type) {
-  var value = CssValueString$Ress.lineWidth_global;
-  var value2 = function (tb, lr) {
-    return CssValueString$Ress.lineWidth(tb) + " " + CssValueString$Ress.lineWidth(lr);
-  };
-  var value3 = function (top, lr, bottom) {
-    return CssValueString$Ress.lineWidth(top) + " " + CssValueString$Ress.lineWidth(lr) + " " + CssValueString$Ress.lineWidth(bottom);
-  };
-  var value4 = function (top, right, bottom, left) {
-    return CssValueString$Ress.lineWidth(top) + " " + CssValueString$Ress.lineWidth(right) + " " + CssValueString$Ress.lineWidth(bottom) + " " + CssValueString$Ress.lineWidth(left);
-  };
-  var borderWidth = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              CssValueString$Ress.lineWidth_global(v)
-            ]
-          };
-  };
-  var borderWidth2 = function (tb, lr) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value2(tb, lr)
-            ]
-          };
-  };
-  var borderWidth3 = function (top, lr, bottom) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value3(top, lr, bottom)
-            ]
-          };
-  };
-  var borderWidth4 = function (top, right, bottom, left) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value4(top, right, bottom, left)
-            ]
-          };
-  };
-  var borderWidthUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var borderWidthString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    borderWidth: borderWidth,
-    borderWidth2: borderWidth2,
-    borderWidth3: borderWidth3,
-    borderWidth4: borderWidth4,
-    borderWidthUnion: borderWidthUnion,
-    borderWidthString: borderWidthString
-  };
-  var borderWidthFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    borderWidth: borderWidth,
-    borderWidth2: borderWidth2,
-    borderWidth3: borderWidth3,
-    borderWidth4: borderWidth4,
-    borderWidthUnion: borderWidthUnion,
-    borderWidthString: borderWidthString,
-    borderWidthFn: borderWidthFn
-  };
+var value = CssValueString$Ress.lineWidth_global;
+
+function value2(tb, lr) {
+  return CssValueString$Ress.lineWidth(tb) + " " + CssValueString$Ress.lineWidth(lr);
+}
+
+function value3(top, lr, bottom) {
+  return CssValueString$Ress.lineWidth(top) + " " + CssValueString$Ress.lineWidth(lr) + " " + CssValueString$Ress.lineWidth(bottom);
+}
+
+function value4(top, right, bottom, left) {
+  return CssValueString$Ress.lineWidth(top) + " " + CssValueString$Ress.lineWidth(right) + " " + CssValueString$Ress.lineWidth(bottom) + " " + CssValueString$Ress.lineWidth(left);
+}
+
+function borderWidth(v) {
   return {
-          value: value,
-          value2: value2,
-          value3: value3,
-          value4: value4,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            CssValueString$Ress.lineWidth_global(v)
+          ]
         };
 }
 
-exports.Make = Make;
+function borderWidth2(tb, lr) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value2(tb, lr)
+          ]
+        };
+}
+
+function borderWidth3(top, lr, bottom) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value3(top, lr, bottom)
+          ]
+        };
+}
+
+function borderWidth4(top, right, bottom, left) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value4(top, right, bottom, left)
+          ]
+        };
+}
+
+function borderWidthUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function borderWidthString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  borderWidth: borderWidth,
+  borderWidth2: borderWidth2,
+  borderWidth3: borderWidth3,
+  borderWidth4: borderWidth4,
+  borderWidthUnion: borderWidthUnion,
+  borderWidthString: borderWidthString
+};
+
+function borderWidthFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  borderWidth: borderWidth,
+  borderWidth2: borderWidth2,
+  borderWidth3: borderWidth3,
+  borderWidth4: borderWidth4,
+  borderWidthUnion: borderWidthUnion,
+  borderWidthString: borderWidthString,
+  borderWidthFn: borderWidthFn
+};
+
+exports.value = value;
+exports.value2 = value2;
+exports.value3 = value3;
+exports.value4 = value4;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

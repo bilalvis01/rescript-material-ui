@@ -1,16 +1,10 @@
 open CssValueHelper;
 open Jest;
 
-module Margin = {
+module Margin = CssMargin;
+module MarginSide = {
   type t;
-  include CssMargin.Make({
-    type t = t;
-  });
-};
-
-module MarginTop = {
-  type t;
-  include CssMarginSide.Make({
+  include CssMarginSide.MakeValue({
     type t = t;
   });
 };
@@ -26,8 +20,8 @@ test("margin", (.) => {
   ->toBe(Margin.string("10px 24px 40px"));
   expect(Margin.value4(~top=px(20.), ~bottom=px(20.), ~left=px(40.), ~right=px(40.)))
   ->toBe(Margin.string("20px 40px 20px 40px"));
-  expect(MarginTop.value(px(24.)))
-  ->toBe(MarginTop.string("24px"));
-  expect(MarginTop.value(#initial))
-  ->toBe(MarginTop.string("initial"));
+  expect(MarginSide.value(px(24.)))
+  ->toBe(MarginSide.string("24px"));
+  expect(MarginSide.value(#initial))
+  ->toBe(MarginSide.string("initial"));
 });

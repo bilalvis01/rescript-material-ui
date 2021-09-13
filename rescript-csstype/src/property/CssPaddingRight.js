@@ -6,73 +6,76 @@ var CssPaddingSide$Ress = require("./CssPaddingSide.js");
 
 var property = "paddingRight";
 
-function Make(Type) {
-  var include = CssPaddingSide$Ress.Make({});
-  var value = include.value;
-  var paddingRight = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              Curry._1(value, v)
-            ]
-          };
-  };
-  var paddingRightUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var paddingRightString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var paddingRightNumber = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    paddingRight: paddingRight,
-    paddingRightUnion: paddingRightUnion,
-    paddingRightString: paddingRightString,
-    paddingRightNumber: paddingRightNumber
-  };
-  var paddingRightFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    paddingRight: paddingRight,
-    paddingRightUnion: paddingRightUnion,
-    paddingRightString: paddingRightString,
-    paddingRightNumber: paddingRightNumber,
-    paddingRightFn: paddingRightFn
-  };
+var include = CssPaddingSide$Ress.MakeValue({});
+
+var value = include.value;
+
+function paddingRight(v) {
   return {
-          value: value,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            Curry._1(value, v)
+          ]
         };
 }
 
-exports.Make = Make;
-/* No side effect */
+function paddingRightUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function paddingRightString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function paddingRightNumber(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  paddingRight: paddingRight,
+  paddingRightUnion: paddingRightUnion,
+  paddingRightString: paddingRightString,
+  paddingRightNumber: paddingRightNumber
+};
+
+function paddingRightFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  paddingRight: paddingRight,
+  paddingRightUnion: paddingRightUnion,
+  paddingRightString: paddingRightString,
+  paddingRightNumber: paddingRightNumber,
+  paddingRightFn: paddingRightFn
+};
+
+exports.value = value;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
+/* include Not a pure module */

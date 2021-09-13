@@ -1,33 +1,10 @@
 open CssValueHelper;
 open Jest;
 
-module Border = {
-  type t;
-  include CssBorder.Make({
-    type t = t;
-  });
-};
-
-module BorderColor = {
-  type t;
-  include CssBorderColor.Make({
-    type t = t;
-  });
-};
-
-module BorderStyle = {
-  type t;
-  include CssBorderStyle.Make({
-    type t = t;
-  });
-};
-
-module BorderWidth = {
-  type t;
-  include CssBorderWidth.Make({
-    type t = t;
-  });
-};
+module Border = CssBorder;
+module BorderColor = CssBorderColor;
+module BorderStyle = CssBorderStyle;
+module BorderWidth = CssBorderWidth;
 
 test("border", (.) => {
   expect(Border.value(#solid))

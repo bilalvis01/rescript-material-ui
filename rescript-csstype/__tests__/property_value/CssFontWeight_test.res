@@ -1,11 +1,6 @@
 open Jest;
 
-module FontWeight = {
-  type t;
-  include CssFontWeight.Make({
-    type t = t;
-  });
-};
+module FontWeight = CssFontWeight;
 
 test("fontWeight", (.) => {
   expect(FontWeight.value(#initial))

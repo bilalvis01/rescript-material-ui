@@ -5,106 +5,113 @@ var CssValueString$Ress = require("../value/CssValueString.js");
 
 var property = "backgroundImage";
 
-function Make(Type) {
-  var value = CssValueString$Ress.bgImage;
-  var value2 = function (v1, v2) {
-    return CssValueString$Ress.bgImage(v1) + ", " + CssValueString$Ress.bgImage(v2);
-  };
-  var value3 = function (v1, v2, v3) {
-    return CssValueString$Ress.bgImage(v1) + ", " + CssValueString$Ress.bgImage(v2) + ", " + CssValueString$Ress.bgImage(v3);
-  };
-  var value4 = function (v1, v2, v3, v4) {
-    return CssValueString$Ress.bgImage(v1) + ", " + CssValueString$Ress.bgImage(v2) + ", " + CssValueString$Ress.bgImage(v3) + ", " + CssValueString$Ress.bgImage(v4);
-  };
-  var backgroundImage = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              CssValueString$Ress.bgImage(v)
-            ]
-          };
-  };
-  var backgroundImage2 = function (v1, v2) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value2(v1, v2)
-            ]
-          };
-  };
-  var backgroundImage3 = function (v1, v2, v3) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value3(v1, v2, v3)
-            ]
-          };
-  };
-  var backgroundImage4 = function (v1, v2, v3, v4) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value4(v1, v2, v3, v4)
-            ]
-          };
-  };
-  var backgroundImageUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var backgroundImageString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    backgroundImage: backgroundImage,
-    backgroundImage2: backgroundImage2,
-    backgroundImage3: backgroundImage3,
-    backgroundImage4: backgroundImage4,
-    backgroundImageUnion: backgroundImageUnion,
-    backgroundImageString: backgroundImageString
-  };
-  var backgroundImageFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    backgroundImage: backgroundImage,
-    backgroundImage2: backgroundImage2,
-    backgroundImage3: backgroundImage3,
-    backgroundImage4: backgroundImage4,
-    backgroundImageUnion: backgroundImageUnion,
-    backgroundImageString: backgroundImageString,
-    backgroundImageFn: backgroundImageFn
-  };
+var value = CssValueString$Ress.bgImage;
+
+function value2(v1, v2) {
+  return CssValueString$Ress.bgImage(v1) + ", " + CssValueString$Ress.bgImage(v2);
+}
+
+function value3(v1, v2, v3) {
+  return CssValueString$Ress.bgImage(v1) + ", " + CssValueString$Ress.bgImage(v2) + ", " + CssValueString$Ress.bgImage(v3);
+}
+
+function value4(v1, v2, v3, v4) {
+  return CssValueString$Ress.bgImage(v1) + ", " + CssValueString$Ress.bgImage(v2) + ", " + CssValueString$Ress.bgImage(v3) + ", " + CssValueString$Ress.bgImage(v4);
+}
+
+function backgroundImage(v) {
   return {
-          value: value,
-          value2: value2,
-          value3: value3,
-          value4: value4,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            CssValueString$Ress.bgImage(v)
+          ]
         };
 }
 
-exports.Make = Make;
+function backgroundImage2(v1, v2) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value2(v1, v2)
+          ]
+        };
+}
+
+function backgroundImage3(v1, v2, v3) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value3(v1, v2, v3)
+          ]
+        };
+}
+
+function backgroundImage4(v1, v2, v3, v4) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value4(v1, v2, v3, v4)
+          ]
+        };
+}
+
+function backgroundImageUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function backgroundImageString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  backgroundImage: backgroundImage,
+  backgroundImage2: backgroundImage2,
+  backgroundImage3: backgroundImage3,
+  backgroundImage4: backgroundImage4,
+  backgroundImageUnion: backgroundImageUnion,
+  backgroundImageString: backgroundImageString
+};
+
+function backgroundImageFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  backgroundImage: backgroundImage,
+  backgroundImage2: backgroundImage2,
+  backgroundImage3: backgroundImage3,
+  backgroundImage4: backgroundImage4,
+  backgroundImageUnion: backgroundImageUnion,
+  backgroundImageString: backgroundImageString,
+  backgroundImageFn: backgroundImageFn
+};
+
+exports.value = value;
+exports.value2 = value2;
+exports.value3 = value3;
+exports.value4 = value4;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

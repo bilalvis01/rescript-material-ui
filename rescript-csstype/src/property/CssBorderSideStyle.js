@@ -3,12 +3,12 @@
 
 var CssValueString$Ress = require("../value/CssValueString.js");
 
-function Make(Type) {
+function MakeValue(Type) {
   var value = CssValueString$Ress.lineStyle_global;
   return {
           value: value
         };
 }
 
-exports.Make = Make;
+exports.MakeValue = MakeValue;
 /* No side effect */

@@ -1,4 +1,4 @@
-module Make = (
+module MakeValue = (
   Type: {
     type t;
   }

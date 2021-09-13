@@ -5,121 +5,130 @@ var CssValueString$Ress = require("../value/CssValueString.js");
 
 var property = "cursor";
 
-function Make(Type) {
-  var value = CssValueString$Ress.cursorKeyword_global;
-  var value1 = function (i, k) {
-    return CssValueString$Ress.cursorImage(i) + ", " + CssValueString$Ress.cursorKeyword(k);
-  };
-  var value2 = function (i1, i2, k) {
-    return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorKeyword(k);
-  };
-  var value3 = function (i1, i2, i3, k) {
-    return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorImage(i3) + ", " + CssValueString$Ress.cursorKeyword(k);
-  };
-  var value4 = function (i1, i2, i3, i4, k) {
-    return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorImage(i3) + ", " + CssValueString$Ress.cursorImage(i4) + ", " + CssValueString$Ress.cursorKeyword(k);
-  };
-  var cursor = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              CssValueString$Ress.cursorKeyword_global(v)
-            ]
-          };
-  };
-  var cursor1 = function (i, k) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value1(i, k)
-            ]
-          };
-  };
-  var cursor2 = function (i1, i2, k) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value2(i1, i2, k)
-            ]
-          };
-  };
-  var cursor3 = function (i1, i2, i3, k) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value3(i1, i2, i3, k)
-            ]
-          };
-  };
-  var cursor4 = function (i1, i2, i3, i4, k) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value4(i1, i2, i3, i4, k)
-            ]
-          };
-  };
-  var cursorUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var cursorString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    cursor: cursor,
-    cursor1: cursor1,
-    cursor2: cursor2,
-    cursor3: cursor3,
-    cursor4: cursor4,
-    cursorUnion: cursorUnion,
-    cursorString: cursorString
-  };
-  var cursorFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    cursor: cursor,
-    cursor1: cursor1,
-    cursor2: cursor2,
-    cursor3: cursor3,
-    cursor4: cursor4,
-    cursorUnion: cursorUnion,
-    cursorString: cursorString,
-    cursorFn: cursorFn
-  };
+var value = CssValueString$Ress.cursorKeyword_global;
+
+function value1(i, k) {
+  return CssValueString$Ress.cursorImage(i) + ", " + CssValueString$Ress.cursorKeyword(k);
+}
+
+function value2(i1, i2, k) {
+  return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorKeyword(k);
+}
+
+function value3(i1, i2, i3, k) {
+  return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorImage(i3) + ", " + CssValueString$Ress.cursorKeyword(k);
+}
+
+function value4(i1, i2, i3, i4, k) {
+  return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorImage(i3) + ", " + CssValueString$Ress.cursorImage(i4) + ", " + CssValueString$Ress.cursorKeyword(k);
+}
+
+function cursor(v) {
   return {
-          value: value,
-          value1: value1,
-          value2: value2,
-          value3: value3,
-          value4: value4,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            CssValueString$Ress.cursorKeyword_global(v)
+          ]
         };
 }
 
-exports.Make = Make;
+function cursor1(i, k) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value1(i, k)
+          ]
+        };
+}
+
+function cursor2(i1, i2, k) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value2(i1, i2, k)
+          ]
+        };
+}
+
+function cursor3(i1, i2, i3, k) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value3(i1, i2, i3, k)
+          ]
+        };
+}
+
+function cursor4(i1, i2, i3, i4, k) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value4(i1, i2, i3, i4, k)
+          ]
+        };
+}
+
+function cursorUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function cursorString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  cursor: cursor,
+  cursor1: cursor1,
+  cursor2: cursor2,
+  cursor3: cursor3,
+  cursor4: cursor4,
+  cursorUnion: cursorUnion,
+  cursorString: cursorString
+};
+
+function cursorFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  cursor: cursor,
+  cursor1: cursor1,
+  cursor2: cursor2,
+  cursor3: cursor3,
+  cursor4: cursor4,
+  cursorUnion: cursorUnion,
+  cursorString: cursorString,
+  cursorFn: cursorFn
+};
+
+exports.value = value;
+exports.value1 = value1;
+exports.value2 = value2;
+exports.value3 = value3;
+exports.value4 = value4;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

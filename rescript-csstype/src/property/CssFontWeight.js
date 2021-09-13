@@ -5,72 +5,74 @@ var CssValueString$Ress = require("../value/CssValueString.js");
 
 var property = "fontWeight";
 
-function Make(Type) {
-  var value = CssValueString$Ress.fontWeight_global;
-  var fontWeight = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              CssValueString$Ress.fontWeight_global(v)
-            ]
-          };
-  };
-  var fontWeightUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var fontWeightString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var fontWeightNumber = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    fontWeight: fontWeight,
-    fontWeightUnion: fontWeightUnion,
-    fontWeightString: fontWeightString,
-    fontWeightNumber: fontWeightNumber
-  };
-  var fontWeightFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    fontWeight: fontWeight,
-    fontWeightUnion: fontWeightUnion,
-    fontWeightString: fontWeightString,
-    fontWeightNumber: fontWeightNumber,
-    fontWeightFn: fontWeightFn
-  };
+var value = CssValueString$Ress.fontWeight_global;
+
+function fontWeight(v) {
   return {
-          value: value,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            CssValueString$Ress.fontWeight_global(v)
+          ]
         };
 }
 
-exports.Make = Make;
+function fontWeightUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function fontWeightString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function fontWeightNumber(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  fontWeight: fontWeight,
+  fontWeightUnion: fontWeightUnion,
+  fontWeightString: fontWeightString,
+  fontWeightNumber: fontWeightNumber
+};
+
+function fontWeightFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  fontWeight: fontWeight,
+  fontWeightUnion: fontWeightUnion,
+  fontWeightString: fontWeightString,
+  fontWeightNumber: fontWeightNumber,
+  fontWeightFn: fontWeightFn
+};
+
+exports.value = value;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

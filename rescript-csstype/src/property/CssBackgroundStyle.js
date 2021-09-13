@@ -5,106 +5,113 @@ var CssValueString$Ress = require("../value/CssValueString.js");
 
 var property = "backgroundStyle";
 
-function Make(Type) {
-  var value = CssValueString$Ress.repeatStyle;
-  var value2 = function (v1, v2) {
-    return CssValueString$Ress.repeatStyle(v1) + ", " + CssValueString$Ress.repeatStyle(v2);
-  };
-  var value3 = function (v1, v2, v3) {
-    return CssValueString$Ress.repeatStyle(v1) + ", " + CssValueString$Ress.repeatStyle(v2) + ", " + CssValueString$Ress.repeatStyle(v3);
-  };
-  var value4 = function (v1, v2, v3, v4) {
-    return CssValueString$Ress.repeatStyle(v1) + ", " + CssValueString$Ress.repeatStyle(v2) + ", " + CssValueString$Ress.repeatStyle(v3) + ", " + CssValueString$Ress.repeatStyle(v4);
-  };
-  var backgroundStyle = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              CssValueString$Ress.repeatStyle(v)
-            ]
-          };
-  };
-  var backgroundStyle2 = function (v1, v2) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value2(v1, v2)
-            ]
-          };
-  };
-  var backgroundStyle3 = function (v1, v2, v3) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value3(v1, v2, v3)
-            ]
-          };
-  };
-  var backgroundStyle4 = function (v1, v2, v3, v4) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              value4(v1, v2, v3, v4)
-            ]
-          };
-  };
-  var backgroundStyleUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var backgroundStyleString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    backgroundStyle: backgroundStyle,
-    backgroundStyle2: backgroundStyle2,
-    backgroundStyle3: backgroundStyle3,
-    backgroundStyle4: backgroundStyle4,
-    backgroundStyleUnion: backgroundStyleUnion,
-    backgroundStyleString: backgroundStyleString
-  };
-  var backgroundStyleFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    backgroundStyle: backgroundStyle,
-    backgroundStyle2: backgroundStyle2,
-    backgroundStyle3: backgroundStyle3,
-    backgroundStyle4: backgroundStyle4,
-    backgroundStyleUnion: backgroundStyleUnion,
-    backgroundStyleString: backgroundStyleString,
-    backgroundStyleFn: backgroundStyleFn
-  };
+var value = CssValueString$Ress.repeatStyle;
+
+function value2(v1, v2) {
+  return CssValueString$Ress.repeatStyle(v1) + ", " + CssValueString$Ress.repeatStyle(v2);
+}
+
+function value3(v1, v2, v3) {
+  return CssValueString$Ress.repeatStyle(v1) + ", " + CssValueString$Ress.repeatStyle(v2) + ", " + CssValueString$Ress.repeatStyle(v3);
+}
+
+function value4(v1, v2, v3, v4) {
+  return CssValueString$Ress.repeatStyle(v1) + ", " + CssValueString$Ress.repeatStyle(v2) + ", " + CssValueString$Ress.repeatStyle(v3) + ", " + CssValueString$Ress.repeatStyle(v4);
+}
+
+function backgroundStyle(v) {
   return {
-          value: value,
-          value2: value2,
-          value3: value3,
-          value4: value4,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            CssValueString$Ress.repeatStyle(v)
+          ]
         };
 }
 
-exports.Make = Make;
+function backgroundStyle2(v1, v2) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value2(v1, v2)
+          ]
+        };
+}
+
+function backgroundStyle3(v1, v2, v3) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value3(v1, v2, v3)
+          ]
+        };
+}
+
+function backgroundStyle4(v1, v2, v3, v4) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value4(v1, v2, v3, v4)
+          ]
+        };
+}
+
+function backgroundStyleUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function backgroundStyleString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  backgroundStyle: backgroundStyle,
+  backgroundStyle2: backgroundStyle2,
+  backgroundStyle3: backgroundStyle3,
+  backgroundStyle4: backgroundStyle4,
+  backgroundStyleUnion: backgroundStyleUnion,
+  backgroundStyleString: backgroundStyleString
+};
+
+function backgroundStyleFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  backgroundStyle: backgroundStyle,
+  backgroundStyle2: backgroundStyle2,
+  backgroundStyle3: backgroundStyle3,
+  backgroundStyle4: backgroundStyle4,
+  backgroundStyleUnion: backgroundStyleUnion,
+  backgroundStyleString: backgroundStyleString,
+  backgroundStyleFn: backgroundStyleFn
+};
+
+exports.value = value;
+exports.value2 = value2;
+exports.value3 = value3;
+exports.value4 = value4;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

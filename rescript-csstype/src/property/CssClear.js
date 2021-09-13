@@ -5,39 +5,38 @@ var CssValueString$Ress = require("../value/CssValueString.js");
 
 var property = "clear";
 
-function Make(Type) {
-  var value = CssValueString$Ress.clear_global;
-  var clear = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              CssValueString$Ress.clear_global(v)
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    clear: clear
-  };
-  var clearFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    clear: clear,
-    clearFn: clearFn
-  };
+var value = CssValueString$Ress.clear_global;
+
+function clear(v) {
   return {
-          value: value,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            CssValueString$Ress.clear_global(v)
+          ]
         };
 }
 
-exports.Make = Make;
+var DeclarationHelper = {
+  clear: clear
+};
+
+function clearFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  clear: clear,
+  clearFn: clearFn
+};
+
+exports.value = value;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
 /* No side effect */

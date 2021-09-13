@@ -6,62 +6,64 @@ var CssBorderSideColor$Ress = require("./CssBorderSideColor.js");
 
 var property = "borderLeftColor";
 
-function Make(Type) {
-  var include = CssBorderSideColor$Ress.Make({});
-  var value = include.value;
-  var borderLeftColor = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              Curry._1(value, v)
-            ]
-          };
-  };
-  var borderLeftColorUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var borderLeftColorString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    borderLeftColor: borderLeftColor,
-    borderLeftColorUnion: borderLeftColorUnion,
-    borderLeftColorString: borderLeftColorString
-  };
-  var borderLeftColorFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    borderLeftColor: borderLeftColor,
-    borderLeftColorUnion: borderLeftColorUnion,
-    borderLeftColorString: borderLeftColorString,
-    borderLeftColorFn: borderLeftColorFn
-  };
+var include = CssBorderSideColor$Ress.MakeValue({});
+
+var value = include.value;
+
+function borderLeftColor(v) {
   return {
-          value: value,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            Curry._1(value, v)
+          ]
         };
 }
 
-exports.Make = Make;
-/* No side effect */
+function borderLeftColorUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function borderLeftColorString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  borderLeftColor: borderLeftColor,
+  borderLeftColorUnion: borderLeftColorUnion,
+  borderLeftColorString: borderLeftColorString
+};
+
+function borderLeftColorFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  borderLeftColor: borderLeftColor,
+  borderLeftColorUnion: borderLeftColorUnion,
+  borderLeftColorString: borderLeftColorString,
+  borderLeftColorFn: borderLeftColorFn
+};
+
+exports.value = value;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
+/* include Not a pure module */

@@ -6,73 +6,76 @@ var CssPaddingSide$Ress = require("./CssPaddingSide.js");
 
 var property = "paddingTop";
 
-function Make(Type) {
-  var include = CssPaddingSide$Ress.Make({});
-  var value = include.value;
-  var paddingTop = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              Curry._1(value, v)
-            ]
-          };
-  };
-  var paddingTopUnion = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var paddingTopString = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var paddingTopNumber = function (v) {
-    return {
-            NAME: "Declaration",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationHelper = {
-    paddingTop: paddingTop,
-    paddingTopUnion: paddingTopUnion,
-    paddingTopString: paddingTopString,
-    paddingTopNumber: paddingTopNumber
-  };
-  var paddingTopFn = function (v) {
-    return {
-            NAME: "DeclarationFn",
-            VAL: [
-              property,
-              v
-            ]
-          };
-  };
-  var DeclarationFnHelper = {
-    paddingTop: paddingTop,
-    paddingTopUnion: paddingTopUnion,
-    paddingTopString: paddingTopString,
-    paddingTopNumber: paddingTopNumber,
-    paddingTopFn: paddingTopFn
-  };
+var include = CssPaddingSide$Ress.MakeValue({});
+
+var value = include.value;
+
+function paddingTop(v) {
   return {
-          value: value,
-          DeclarationHelper: DeclarationHelper,
-          DeclarationFnHelper: DeclarationFnHelper
+          NAME: "Declaration",
+          VAL: [
+            property,
+            Curry._1(value, v)
+          ]
         };
 }
 
-exports.Make = Make;
-/* No side effect */
+function paddingTopUnion(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function paddingTopString(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+function paddingTopNumber(v) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationHelper = {
+  paddingTop: paddingTop,
+  paddingTopUnion: paddingTopUnion,
+  paddingTopString: paddingTopString,
+  paddingTopNumber: paddingTopNumber
+};
+
+function paddingTopFn(v) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            v
+          ]
+        };
+}
+
+var DeclarationFnHelper = {
+  paddingTop: paddingTop,
+  paddingTopUnion: paddingTopUnion,
+  paddingTopString: paddingTopString,
+  paddingTopNumber: paddingTopNumber,
+  paddingTopFn: paddingTopFn
+};
+
+exports.value = value;
+exports.DeclarationHelper = DeclarationHelper;
+exports.DeclarationFnHelper = DeclarationFnHelper;
+/* include Not a pure module */
