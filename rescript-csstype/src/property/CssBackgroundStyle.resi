@@ -1,4 +1,5 @@
-type t;
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 external string: string => t = "%identity";
 let value: CssValueType.repeatStyle => t;
@@ -12,27 +13,27 @@ let value4: (
 ) => t;
 
 module DeclarationHelper: {
-  let backgroundStyle: CssValueType.repeatStyle => [> CssDeclarationConstructor.t ];
+  let backgroundStyle: CssValueType.repeatStyle => [> CssDeclaration.constructor ];
   let backgroundStyle2: (
     CssValueType.repeatStyle, 
     CssValueType.repeatStyle
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let backgroundStyle3: (
     CssValueType.repeatStyle, 
     CssValueType.repeatStyle, 
     CssValueType.repeatStyle
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let backgroundStyle4: (
     CssValueType.repeatStyle, 
     CssValueType.repeatStyle, 
     CssValueType.repeatStyle, 
     CssValueType.repeatStyle
-  ) => [> CssDeclarationConstructor.t ];
-  let backgroundStyleUnion: t => [> CssDeclarationConstructor.t ];
-  let backgroundStyleString: string => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
+  let backgroundStyleUnion: t => [> CssDeclaration.constructor ];
+  let backgroundStyleString: string => [> CssDeclaration.constructor ];
 };
 
 module DeclarationFnHelper: {
   include (module type of DeclarationHelper);
-  let backgroundStyleFn: ('data => option<t>) => [> CssDeclarationFnConstructor.t<'data> ];
+  let backgroundStyleFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };

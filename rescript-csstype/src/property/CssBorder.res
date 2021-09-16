@@ -1,9 +1,10 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "border";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 module MakeValue = (
   Type: {
@@ -33,14 +34,14 @@ include MakeValue({
 
 module DeclarationHelper = {
   let border = (~width=?, ~color=?, style) => 
-    #Declaration(property, D.BoxValue(value(~width=?width, ~color=?color, style)));
+    declaration(property, value(~width=?width, ~color=?color, style));
   let borderUnion = v => 
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let borderString = v => 
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let borderFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let borderFn = v => declarationFn(property, v);
 };

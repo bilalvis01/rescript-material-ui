@@ -1,22 +1,23 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "borderBottomStyle";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 include CssBorderSideStyle.MakeValue({ type t = t; });
 
 module DeclarationHelper = {
   let borderBottomStyle = v => 
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let borderBottomStyleUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let borderBottomStyleString = v => 
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let borderBottomStyleFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let borderBottomStyleFn = v => declarationFn(property, v);
 };

@@ -1,24 +1,25 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "paddingBottom";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 include CssPaddingSide.MakeValue({ type t = t; });
 
 module DeclarationHelper = {
   let paddingBottom = v =>
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let paddingBottomUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let paddingBottomString = v =>
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
   let paddingBottomNumber = v =>
-    #Declaration(property, D.BoxValue(number(v)));
+    declaration(property, number(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let paddingBottomFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let paddingBottomFn = v => declarationFn(property, v);
 };

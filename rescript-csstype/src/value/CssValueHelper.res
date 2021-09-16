@@ -2,13 +2,13 @@
 Textual data types
 */
 // String
-let str = v => #String(v);
+let str = v => #Str(v);
 
 /*
 Numeric data types
 */
-let num = v => #Number(v);
-let int = v => #Integer(v);
+let num = v => #Num(v);
+let int = v => #Int(v);
 let ratio = (v1, v2) => #Ratio(v1, v2);
 let fr = v => #fr(v);
 

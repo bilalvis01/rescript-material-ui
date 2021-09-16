@@ -1,23 +1,24 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "color";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 external string: string => t = "%identity";
 let value = v => CssValueString.color_global(v)->string;
 
 module DeclarationHelper = {
   let color = v =>
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let colorUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let colorString = v =>
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let colorFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let colorFn = v => declarationFn(property, v);
 };

@@ -2,7 +2,9 @@
 'use strict';
 
 var Curry = require("rescript/lib/js/curry.js");
+var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
 var CssPaddingSide$Ress = require("./CssPaddingSide.js");
+var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 
 var property = "paddingTop";
 
@@ -11,43 +13,19 @@ var include = CssPaddingSide$Ress.MakeValue({});
 var value = include.value;
 
 function paddingTop(v) {
-  return {
-          NAME: "Declaration",
-          VAL: [
-            property,
-            Curry._1(value, v)
-          ]
-        };
+  return CssDeclaration$Ress.Helper.declaration(property, Curry._1(value, v));
 }
 
 function paddingTopUnion(v) {
-  return {
-          NAME: "Declaration",
-          VAL: [
-            property,
-            v
-          ]
-        };
+  return CssDeclaration$Ress.Helper.declaration(property, v);
 }
 
 function paddingTopString(v) {
-  return {
-          NAME: "Declaration",
-          VAL: [
-            property,
-            v
-          ]
-        };
+  return CssDeclaration$Ress.Helper.declaration(property, v);
 }
 
 function paddingTopNumber(v) {
-  return {
-          NAME: "Declaration",
-          VAL: [
-            property,
-            v
-          ]
-        };
+  return CssDeclaration$Ress.Helper.declaration(property, v);
 }
 
 var DeclarationHelper = {
@@ -58,13 +36,7 @@ var DeclarationHelper = {
 };
 
 function paddingTopFn(v) {
-  return {
-          NAME: "DeclarationFn",
-          VAL: [
-            property,
-            v
-          ]
-        };
+  return CssDeclarationFn$Ress.Helper.declarationFn(property, v);
 }
 
 var DeclarationFnHelper = {

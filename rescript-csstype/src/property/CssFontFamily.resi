@@ -1,4 +1,5 @@
-type t;
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 external string: string => t = "%identity";
 let value: CssValueType.fontFamily_global => t;
@@ -19,27 +20,27 @@ let value4: (
 ) => t;
 
 module DeclarationHelper: {
-  let fontFamily: CssValueType.fontFamily_global => [> CssDeclarationConstructor.t ];
+  let fontFamily: CssValueType.fontFamily_global => [> CssDeclaration.constructor ];
   let fontFamily2: (
     CssValueType.fontFamily,
     CssValueType.fontFamily,
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let fontFamily3: (
     CssValueType.fontFamily,
     CssValueType.fontFamily,
     CssValueType.fontFamily,
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let fontFamily4: (
     CssValueType.fontFamily,
     CssValueType.fontFamily,
     CssValueType.fontFamily,
     CssValueType.fontFamily,
-  ) => [> CssDeclarationConstructor.t ];
-  let fontFamilyUnion: t => [> CssDeclarationConstructor.t ];
-  let fontFamilyString: string => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
+  let fontFamilyUnion: t => [> CssDeclaration.constructor ];
+  let fontFamilyString: string => [> CssDeclaration.constructor ];
 };
 
 module DeclarationFnHelper: {
   include (module type of DeclarationHelper);
-  let fontFamilyFn: ('data => option<t>) => [> CssDeclarationFnConstructor.t<'data> ];
+  let fontFamilyFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };

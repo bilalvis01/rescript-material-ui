@@ -1,1 +1,0 @@
-let important: CssImportantConstructor.declaration<'data> => [> CssImportantConstructor.t<'data> ];

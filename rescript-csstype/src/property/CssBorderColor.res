@@ -1,9 +1,10 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "borderColor";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 external string: string => t = "%identity";
 let value = v => CssValueString.color_global(v)->string;
@@ -16,20 +17,20 @@ let value4 = (~top, ~right, ~bottom, ~left) =>
 
 module DeclarationHelper = {
   let borderColor = v => 
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let borderColor2 = (~tb, ~lr) => 
-    #Declaration(property, D.BoxValue(value2(~tb, ~lr)));
+    declaration(property, value2(~tb, ~lr));
   let borderColor3 = (~top, ~lr, ~bottom) =>
-    #Declaration(property, D.BoxValue(value3(~top, ~lr, ~bottom)));
+    declaration(property, value3(~top, ~lr, ~bottom));
   let borderColor4 = (~top, ~right, ~bottom, ~left) =>
-    #Declaration(property, D.BoxValue(value4(~top, ~right, ~bottom, ~left)));
+    declaration(property, value4(~top, ~right, ~bottom, ~left));
   let borderColorUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let borderColorString = v => 
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let borderColorFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let borderColorFn = v => declarationFn(property, v);
 };

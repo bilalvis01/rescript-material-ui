@@ -1,24 +1,25 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "marginLeft";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 include CssMarginSide.MakeValue({ type t = t });
 
 module DeclarationHelper = {
   let marginLeft = v =>
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let marginLeftUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let marginLeftString = v =>
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
   let marginLeftNumber = v =>
-    #Declaration(property, D.BoxValue(number(v)));
+    declaration(property, number(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let marginLeftFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let marginLeftFn = v => declarationFn(property, v);
 };

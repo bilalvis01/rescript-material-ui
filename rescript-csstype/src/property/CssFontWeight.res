@@ -1,9 +1,10 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "fontWeight";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 external string: string => t = "%identity";
 external number: float => t = "%identity";
@@ -13,16 +14,16 @@ let value = v =>
 
 module DeclarationHelper = {
   let fontWeight = v =>
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let fontWeightUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let fontWeightString = v =>
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
   let fontWeightNumber = v =>
-    #Declaration(property, D.BoxValue(number(v)));
+    declaration(property, number(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let fontWeightFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let fontWeightFn = v => declarationFn(property, v);
 };

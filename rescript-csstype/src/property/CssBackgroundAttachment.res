@@ -1,9 +1,10 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "backgroundAttachment";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 external string: string => t = "%identity";
 let value = v => CssValueString.attachment(v)->string;
@@ -19,20 +20,20 @@ let value4 = (v1, v2, v3, v4) =>
 
 module DeclarationHelper = {
   let backgroundAttachment = v => 
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let backgroundAttachment2 = (v1, v2) =>
-    #Declaration(property, D.BoxValue(value2(v1, v2)));
+    declaration(property, value2(v1, v2));
   let backgroundAttachment3 = (v1, v2, v3) =>
-    #Declaration(property, D.BoxValue(value3(v1, v2, v3)));
+    declaration(property, value3(v1, v2, v3));
   let backgroundAttachment4 = (v1, v2, v3, v4) =>
-    #Declaration(property, D.BoxValue(value4(v1, v2, v3, v4)));
+    declaration(property, value4(v1, v2, v3, v4));
   let backgroundAttachmentUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let backgroundAttachmentString = v => 
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let backgroundAttachmentFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let backgroundAttachmentFn = v => declarationFn(property, v);
 };

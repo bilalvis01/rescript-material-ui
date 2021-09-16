@@ -10,5 +10,20 @@ function make(declaration) {
         ];
 }
 
+function declaration(property, value) {
+  return {
+          NAME: "Declaration",
+          VAL: [
+            property,
+            value
+          ]
+        };
+}
+
+var Helper = {
+  declaration: declaration
+};
+
 exports.make = make;
+exports.Helper = Helper;
 /* No side effect */

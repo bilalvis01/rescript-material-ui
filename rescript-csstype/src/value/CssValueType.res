@@ -1,3 +1,9 @@
+type propertyValue<'a>;
+
+type propertyString = propertyValue<string>;
+type propertyNumber = propertyValue<float>;
+type propertyInteger = propertyValue<int>;
+
 /* 
 Textual data types
 */
@@ -8,19 +14,19 @@ type global = [
   | #revert
 ];
 
-type cssString = [
-  | #String(string)
+type cssStr = [
+  | #Str(string)
 ];
 
 /* 
  Numeric data type
 */
-type number = [
-  | #Number(float)
+type cssNum = [
+  | #Num(float)
 ];
 
-type integer = [
-  | #Integer(int)
+type cssInt = [
+  | #Int(int)
 ];
 
 // percentage
@@ -916,7 +922,7 @@ type rgbDecimalValue = [
 
 type alpha = [
   | percentage
-  | number
+  | cssNum
 ];
 
 type hue = [
@@ -925,7 +931,7 @@ type hue = [
 
 type rgbParam = [
   | percentage
-  | number
+  | cssNum
 ];
 
 type hsl = [ | #Hsl(hue, percentage, percentage) ];

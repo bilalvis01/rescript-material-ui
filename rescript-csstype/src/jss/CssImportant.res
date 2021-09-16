@@ -1,3 +1,12 @@
+type declaration<'data> = [ 
+  | CssDeclaration.constructor 
+  | CssDeclarationFn.constructor<'data> 
+];
+
+type constructor<'data> = [
+  | #Important(declaration<'data>)
+];
+
 module Make = (
   Type: {
     type value<'data>;
@@ -15,10 +24,10 @@ module Make = (
     switch v {
     | #Important(v) =>
       switch v {
-      | #...CssDeclarationConstructor.t as d =>
+      | #...CssDeclaration.constructor as d =>
         {
           let (selector, value) = CssDeclaration.make(d);
-          let makeImportant: CssDeclarationConstructor.boxValue => CssDeclarationConstructor.boxValue =
+          let makeImportant: CssDeclaration.boxValue => CssDeclaration.boxValue =
             %raw(`
               function (value) {                
                 if (Array.isArray(value)) {
@@ -39,7 +48,7 @@ module Make = (
           let value = makeImportant(value);
           (selector, value)->declarationToImportant;
         }
-      | #...CssDeclarationFnConstructor.t as d =>
+      | #...CssDeclarationFn.constructor as d =>
         {
           let (selector, valueFn) = DeclarationFn.make(d);
           let makeImportant: Type.value<'data> => Type.value<'data> =
@@ -71,4 +80,8 @@ module Make = (
       }
     }
   };
+};
+
+module Helper = {
+  let important = v => #Important(v);
 };

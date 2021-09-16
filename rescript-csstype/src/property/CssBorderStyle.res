@@ -1,4 +1,10 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
+
+let property = "borderStyle";
 
 external string: string => t = "%identity";
 let value = v => CssValueString.lineStyle_global(v)->string;
@@ -11,34 +17,22 @@ let value4 = (~top, ~right, ~bottom, ~left) =>
   `${CssValueString.lineStyle(top)} ${CssValueString.lineStyle(right)} ${CssValueString.lineStyle(bottom)} ${CssValueString.lineStyle(left)}`
   ->string;
 
-module DeclarationConstructor = {
-  type t = [ | #BorderStyle(t) ];
-};
-
-module DeclarationFnConstructor = {
-  type borderStyle<'data> = [ | #BorderStyleFn('data => option<t>) ];
-  type t<'data> = [
-    | DeclarationConstructor.t
-    | borderStyle<'data>
-  ];
-};
-
 module DeclarationHelper = {
   let borderStyle = v => 
-    #BorderStyle(value(v));
+    declaration(property, value(v));
   let borderStyle2 = (~tb, ~lr) => 
-    #BorderStyle(value2(~tb, ~lr));
+    declaration(property, value2(~tb, ~lr));
   let borderStyle3 = (~top, ~lr, ~bottom) =>
-    #BorderStyle(value3(~top, ~lr, ~bottom));
+    declaration(property, value3(~top, ~lr, ~bottom));
   let borderStyle4 = (~top, ~right, ~bottom, ~left) =>
-    #BorderStyle(value4(~top, ~right, ~bottom, ~left));
+    declaration(property, value4(~top, ~right, ~bottom, ~left));
   let borderStyleUnion = v =>
-    #BorderStyle(v);
+    declaration(property, v);
   let borderStyleString = v => 
-    #BorderStyle(string(v));
+    declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let borderStyleFn = v => #BorderStyleFn(v);
+  let borderStyleFn = v => declarationFn(property, v);
 };

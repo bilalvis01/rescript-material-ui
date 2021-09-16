@@ -1,9 +1,10 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "borderWidth";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 external string: string => t = "%identity";
 external number: float => t = "%identity";
@@ -19,20 +20,20 @@ let value4 = (~top, ~right, ~bottom, ~left) =>
 
 module DeclarationHelper = {
   let borderWidth = v => 
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let borderWidth2 = (~tb, ~lr) => 
-    #Declaration(property, D.BoxValue(value2(~tb, ~lr)));
+    declaration(property, value2(~tb, ~lr));
   let borderWidth3 = (~top, ~lr, ~bottom) =>
-    #Declaration(property, D.BoxValue(value3(~top, ~lr, ~bottom)));
+    declaration(property, value3(~top, ~lr, ~bottom));
   let borderWidth4 = (~top, ~right, ~bottom, ~left) =>
-    #Declaration(property, D.BoxValue(value4(~top, ~right, ~bottom, ~left)));
+    declaration(property, value4(~top, ~right, ~bottom, ~left));
   let borderWidthUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let borderWidthString = v => 
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let borderWidthFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let borderWidthFn = v => declarationFn(property, v);
 };

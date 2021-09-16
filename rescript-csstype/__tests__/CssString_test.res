@@ -8,13 +8,11 @@ Numeric data types
 */
 describe("Numeric data types", (.) => {
   test("number", (.) => {
-    expect(num(1.))->toBe("1");
-    expect(number(Css.num(1.)))->toBe("1");
+    expect(num(Css.num(1.)))->toBe("1");
   });
 
   test("integer", (.) => {
-    expect(int(1))->toBe("1");
-    expect(integer(Css.int(1)))->toBe("1");
+    expect(int(Css.int(1)))->toBe("1");
   });
 
   test("percentage", (.) => {

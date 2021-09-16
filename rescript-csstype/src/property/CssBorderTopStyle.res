@@ -1,22 +1,23 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "borderTopStyle";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 include CssBorderSideStyle.MakeValue({ type t = t; });
 
 module DeclarationHelper = {
   let borderTopStyle = v => 
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let borderTopStyleUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let borderTopStyleString = v => 
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let borderTopStyleFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let borderTopStyleFn = v => declarationFn(property, v);
 };

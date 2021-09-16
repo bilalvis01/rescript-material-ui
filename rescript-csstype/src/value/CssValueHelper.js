@@ -4,21 +4,21 @@
 
 function str(v) {
   return {
-          NAME: "String",
+          NAME: "Str",
           VAL: v
         };
 }
 
 function num(v) {
   return {
-          NAME: "Number",
+          NAME: "Num",
           VAL: v
         };
 }
 
 function $$int(v) {
   return {
-          NAME: "Integer",
+          NAME: "Int",
           VAL: v
         };
 }
@@ -314,7 +314,7 @@ function hsla(v1, v2, v3, v4) {
             v2,
             v3,
             {
-              NAME: "Number",
+              NAME: "Num",
               VAL: v4
             }
           ]
@@ -326,15 +326,15 @@ function rgb(v1, v2, v3) {
           NAME: "Rgb",
           VAL: [
             {
-              NAME: "Number",
+              NAME: "Num",
               VAL: v1
             },
             {
-              NAME: "Number",
+              NAME: "Num",
               VAL: v2
             },
             {
-              NAME: "Number",
+              NAME: "Num",
               VAL: v3
             }
           ]
@@ -346,19 +346,19 @@ function rgba(v1, v2, v3, v4) {
           NAME: "Rgba",
           VAL: [
             {
-              NAME: "Number",
+              NAME: "Num",
               VAL: v1
             },
             {
-              NAME: "Number",
+              NAME: "Num",
               VAL: v2
             },
             {
-              NAME: "Number",
+              NAME: "Num",
               VAL: v3
             },
             {
-              NAME: "Number",
+              NAME: "Num",
               VAL: v4
             }
           ]

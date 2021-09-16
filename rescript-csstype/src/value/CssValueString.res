@@ -13,26 +13,24 @@ let global = v => {
   }
 };
 
-let string = v => {
+let str = v => {
   switch v {
-    | #String(v) => `"${v}"`
+    | #Str(v) => `"${v}"`
   };
 };
 
 /*
 Numeric data type
 */
-let num = v => Float.toString(v);
-let number = v => {
+let num = v => {
   switch v {
-    | #Number(v) => num(v)
+    | #Num(v) => Float.toString(v)
   }
 };
 
-let int = v => Int.toString(v);
-let integer = v => {
+let int = v => {
   switch v {
-    | #Integer(v) => int(v)
+    | #Int(v) => Int.toString(v)
   };
 };
 
@@ -244,13 +242,13 @@ let hue = v => {
 let alpha = v => { 
   switch v {
     | #...percentage as l => percentage(l)
-    | #...number as n => number(n)
+    | #...cssNum as n => num(n)
   };
 };
 let rgbParam = v => {
   switch v {
     | #...percentage as l => percentage(l)
-    | #...number as n => number(n)
+    | #...cssNum as n => num(n)
   };
 };
 let hsl = (v1, v2, v3) => `hsl(${hue(v1)}, ${percentage(v2)}, ${percentage(v3)})`;

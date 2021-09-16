@@ -6,13 +6,11 @@ var CssValueString$Ress = require("../src/value/CssValueString.js");
 
 describe("Numeric data types", (function () {
         test("number", (function () {
-                expect(CssValueString$Ress.num(1)).toBe("1");
-                expect(CssValueString$Ress.number(CssValueHelper$Ress.num(1))).toBe("1");
+                expect(CssValueString$Ress.num(CssValueHelper$Ress.num(1))).toBe("1");
                 
               }));
         test("integer", (function () {
-                expect(CssValueString$Ress.$$int(1)).toBe("1");
-                expect(CssValueString$Ress.integer(CssValueHelper$Ress.$$int(1))).toBe("1");
+                expect(CssValueString$Ress.$$int(CssValueHelper$Ress.$$int(1))).toBe("1");
                 
               }));
         test("percentage", (function () {

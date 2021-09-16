@@ -1,4 +1,5 @@
-type t;
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 external string: string => t = "%identity";
 external number: float => t = "%identity";
@@ -23,45 +24,45 @@ let value4: (
   ~left: CssValueType.margin,
 ) => t;
 module DeclarationHelper: {
-  let margin: CssValueType.margin_global => [> CssDeclarationConstructor.t ];
+  let margin: CssValueType.margin_global => [> CssDeclaration.constructor ];
   let margin2: (
     ~tb: CssValueType.margin, 
     ~lr: CssValueType.margin
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let margin3: (
     ~top: CssValueType.margin, 
     ~lr: CssValueType.margin, 
     ~bottom: CssValueType.margin
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let margin4: (
     ~top: CssValueType.margin, 
     ~right: CssValueType.margin, 
     ~bottom: CssValueType.margin, 
     ~left: CssValueType.margin
-  ) => [> CssDeclarationConstructor.t ];
-  let marginUnion: t => [> CssDeclarationConstructor.t ];
-  let marginString: string => [> CssDeclarationConstructor.t ];
-  let marginNumber: float => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
+  let marginUnion: t => [> CssDeclaration.constructor ];
+  let marginString: string => [> CssDeclaration.constructor ];
+  let marginNumber: float => [> CssDeclaration.constructor ];
   /*
   let margin2Number: (
     ~tb: float, 
     ~lr: float,
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let margin3Number: (
     ~top: float, 
     ~lr: float, 
     ~bottom: float,
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let margin4Number: (
     ~top: float, 
     ~right: float, 
     ~bottom: float, 
     ~left: float,
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   */
 };
 
 module DeclarationFnHelper: {
   include (module type of DeclarationHelper);
-  let marginFn: ('data => option<t>) => [> CssDeclarationFnConstructor.t<'data> ];
+  let marginFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };

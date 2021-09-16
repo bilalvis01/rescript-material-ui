@@ -1,9 +1,10 @@
-type t
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "backgroundImage";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 external string: string => t = "%identity";
 let value = v => CssValueString.bgImage(v)->string;
@@ -19,20 +20,20 @@ let value4 = (v1, v2, v3, v4) =>
 
 module DeclarationHelper = {
   let backgroundImage = v =>
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let backgroundImage2 = (v1, v2) =>
-    #Declaration(property, D.BoxValue(value2(v1, v2)));
+    declaration(property, value2(v1, v2));
   let backgroundImage3 = (v1, v2, v3) =>
-    #Declaration(property, D.BoxValue(value3(v1, v2, v3)));
+    declaration(property, value3(v1, v2, v3));
   let backgroundImage4 = (v1, v2, v3, v4) =>
-    #Declaration(property, D.BoxValue(value4(v1, v2, v3, v4)));
+    declaration(property, value4(v1, v2, v3, v4));
   let backgroundImageUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let backgroundImageString = v =>
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let backgroundImageFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let backgroundImageFn = v => declarationFn(property, v);
 };

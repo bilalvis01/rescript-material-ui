@@ -1,4 +1,5 @@
-type t
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 include (module type of CssBorder.MakeValue({ type t = t }));
 
@@ -7,12 +8,12 @@ module DeclarationHelper: {
     ~width: CssValueType.lineWidth=?, 
     ~color: CssValueType.color=?, 
     CssValueType.lineStyle_global
-  ) => [> CssDeclarationConstructor.t ];
-  let borderRightUnion: t => [> CssDeclarationConstructor.t ];
-  let borderRightString: string => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
+  let borderRightUnion: t => [> CssDeclaration.constructor ];
+  let borderRightString: string => [> CssDeclaration.constructor ];
 };
 
 module DeclarationFnHelper: {
   include (module type of DeclarationHelper);
-  let borderRightFn: ('data => option<t>) => [> CssDeclarationFnConstructor.t<'data> ];
+  let borderRightFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };

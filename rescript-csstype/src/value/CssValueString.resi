@@ -4,15 +4,13 @@ open CssValueType;
 Textual data types
 */
 let global: global => string;
-let string: cssString => string;
+let str: cssStr => string;
 
 /*
 Numeric data types
 */
-let num: float => string;
-let number: number => string;
-let int: int => string;
-let integer: integer => string;
+let num: cssNum => string;
+let int: cssInt => string;
 let pct: float => string;
 let percentage: percentage => string;
 let ratio: ratio => string;

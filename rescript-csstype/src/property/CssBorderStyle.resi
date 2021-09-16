@@ -1,4 +1,5 @@
-type t;
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 external string: string => t = "%identity";
 let value: CssValueType.lineStyle_global => t;
@@ -15,40 +16,28 @@ let value4: (
   ~left: CssValueType.lineStyle
 ) => t;
 
-module DeclarationConstructor: {
-  type t = [ | #BorderStyle(t) ];
-};
-
-module DeclarationFnConstructor: {
-  type borderStyle<'data> = [ | #BorderStyleFn('data => option<t>) ];
-  type t<'data> = [
-    | DeclarationConstructor.t
-    | borderStyle<'data>
-  ];
-};
-
 module DeclarationHelper: {
-  let borderStyle: CssValueType.lineStyle_global => [> DeclarationConstructor.t ];
+  let borderStyle: CssValueType.lineStyle_global => [> CssDeclaration.constructor ];
   let borderStyle2: (
     ~tb: CssValueType.lineStyle, 
     ~lr: CssValueType.lineStyle
-  ) => [> DeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let borderStyle3: (
     ~top: CssValueType.lineStyle, 
     ~lr: CssValueType.lineStyle, 
     ~bottom: CssValueType.lineStyle
-  ) => [> DeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let borderStyle4: (
     ~top: CssValueType.lineStyle, 
     ~right: CssValueType.lineStyle, 
     ~bottom: CssValueType.lineStyle, 
     ~left: CssValueType.lineStyle
-  ) => [> DeclarationConstructor.t ];
-  let borderStyleUnion: t => [> DeclarationConstructor.t ];
-  let borderStyleString: string => [> DeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
+  let borderStyleUnion: t => [> CssDeclaration.constructor ];
+  let borderStyleString: string => [> CssDeclaration.constructor ];
 };
 
 module DeclarationFnHelper: {
   include (module type of DeclarationHelper);
-  let borderStyleFn: ('data => option<t>) => [> DeclarationFnConstructor.borderStyle<'data> ];
+  let borderStyleFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };

@@ -1,9 +1,10 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "backgroundStyle";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 external string: string => t = "%identity";
 let value = v => CssValueString.repeatStyle(v)->string;
@@ -19,20 +20,20 @@ let value4 = (v1, v2, v3, v4) =>
 
 module DeclarationHelper = {
   let backgroundStyle = v =>
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let backgroundStyle2 = (v1, v2) =>
-    #Declaration(property, D.BoxValue(value2(v1, v2)));
+    declaration(property, value2(v1, v2));
   let backgroundStyle3 = (v1, v2, v3) =>
-    #Declaration(property, D.BoxValue(value3(v1, v2, v3)));
+    declaration(property, value3(v1, v2, v3));
   let backgroundStyle4 = (v1, v2, v3, v4) =>
-    #Declaration(property, D.BoxValue(value4(v1, v2, v3, v4)));
+    declaration(property, value4(v1, v2, v3, v4));
   let backgroundStyleUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let backgroundStyleString = v =>
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let backgroundStyleFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let backgroundStyleFn = v => declarationFn(property, v);
 };

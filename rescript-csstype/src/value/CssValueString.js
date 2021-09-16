@@ -14,23 +14,15 @@ function $$global(v) {
   }
 }
 
-function string(v) {
+function str(v) {
   return "\"" + v.VAL + "\"";
 }
 
 function num(v) {
-  return String(v);
-}
-
-function number(v) {
   return String(v.VAL);
 }
 
 function $$int(v) {
-  return String(v);
-}
-
-function integer(v) {
   return String(v.VAL);
 }
 
@@ -1540,11 +1532,9 @@ function fontFamily_global(v) {
 }
 
 exports.$$global = $$global;
-exports.string = string;
+exports.str = str;
 exports.num = num;
-exports.number = number;
 exports.$$int = $$int;
-exports.integer = integer;
 exports.pct = pct;
 exports.percentage = percentage;
 exports.ratio = ratio;

@@ -1,4 +1,5 @@
-type t;
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 external string: string => t = "%identity";
 external number: float => t = "%identity";
@@ -17,27 +18,27 @@ let value4: (
 ) => t;
 
 module DeclarationHelper: {
-  let borderWidth: CssValueType.lineWidth_global => [> CssDeclarationConstructor.t ];
+  let borderWidth: CssValueType.lineWidth_global => [> CssDeclaration.constructor ];
   let borderWidth2: (
     ~tb: CssValueType.lineWidth, 
     ~lr: CssValueType.lineWidth
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let borderWidth3: (
     ~top: CssValueType.lineWidth, 
     ~lr: CssValueType.lineWidth, 
     ~bottom: CssValueType.lineWidth
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let borderWidth4: (
     ~top: CssValueType.lineWidth, 
     ~right: CssValueType.lineWidth, 
     ~bottom: CssValueType.lineWidth, 
     ~left: CssValueType.lineWidth
-  ) => [> CssDeclarationConstructor.t ];
-  let borderWidthUnion: t => [> CssDeclarationConstructor.t ];
-  let borderWidthString: string => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
+  let borderWidthUnion: t => [> CssDeclaration.constructor ];
+  let borderWidthString: string => [> CssDeclaration.constructor ];
 };
 
 module DeclarationFnHelper: {
   include (module type of DeclarationHelper);
-  let borderWidthFn: ('data => option<t>) => [> CssDeclarationFnConstructor.t<'data> ];
+  let borderWidthFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };

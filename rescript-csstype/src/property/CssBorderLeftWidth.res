@@ -1,22 +1,23 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "borderLeftWidth";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 include CssBorderSideWidth.MakeValue({ type t = t; });
 
 module DeclarationHelper = {
   let borderLeftWidth = v => 
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let borderLeftWidthUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let borderLeftWidthString = v => 
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let borderLeftWidthFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let borderLeftWidthFn = v => declarationFn(property, v);
 };

@@ -1,4 +1,5 @@
-type t;
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 external string: string => t = "%identity";
 let value: CssValueType.color_global => t;
@@ -16,27 +17,27 @@ let value4: (
 ) => t;
 
 module DeclarationHelper: {
-  let borderColor: CssValueType.color_global => [> CssDeclarationConstructor.t ];
+  let borderColor: CssValueType.color_global => [> CssDeclaration.constructor ];
   let borderColor2: (
     ~tb: CssValueType.color, 
     ~lr: CssValueType.color
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let borderColor3: (
     ~top: CssValueType.color, 
     ~lr: CssValueType.color, 
     ~bottom: CssValueType.color
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let borderColor4: (
     ~top: CssValueType.color, 
     ~right: CssValueType.color, 
     ~bottom: CssValueType.color, 
     ~left: CssValueType.color
-  ) => [> CssDeclarationConstructor.t ];
-  let borderColorUnion: t => [> CssDeclarationConstructor.t ];
-  let borderColorString: string => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
+  let borderColorUnion: t => [> CssDeclaration.constructor ];
+  let borderColorString: string => [> CssDeclaration.constructor ];
 };
 
 module DeclarationFnHelper: {
   include (module type of DeclarationHelper);
-  let borderColorFn: ('data => option<t>) => [> CssDeclarationFnConstructor.t<'data> ];
+  let borderColorFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };

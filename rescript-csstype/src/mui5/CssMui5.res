@@ -5,8 +5,8 @@ module Make = (
   }
 ) => {
   type advancedDeclarationConstructorLike<'data, 'declarationBlocks> = [
-    | CssDeclarationConstructor.t
-    | CssDeclarationFnConstructor.t<'data>
+    | CssDeclaration.constructor
+    | CssDeclarationFn.constructor<'data>
     | CssRuleConstructor.t<'declarationBlocks>
     | CssPseudoClassConstructor.t<'declarationBlocks>
     | CssAtRuleConstructor.t
@@ -50,8 +50,8 @@ module Make = (
   } = {
     let make = declaration => {
       switch declaration {
-      | #...CssDeclarationConstructor.t as d => Declaration.make(d)
-      | #...CssDeclarationFnConstructor.t as d => DeclarationFn.make(d)
+      | #...CssDeclaration.constructor as d => Declaration.make(d)
+      | #...CssDeclarationFn.constructor as d => DeclarationFn.make(d)
       | #...CssRuleConstructor.t as d => Rule.make(d)
       | #...CssPseudoClassConstructor.t as d => PseudoClass.make(d)
       | #...CssAtRuleConstructor.t as d => AtRule.make(d)

@@ -1,4 +1,5 @@
-type t;
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 external string: string => t = "%identity";
 let value: CssValueType.cursorKeyword_global => t;
@@ -19,34 +20,34 @@ let value4: (
 ) => t;
 
 module DeclarationHelper: {
-  let cursor: CssValueType.cursorKeyword_global => [> CssDeclarationConstructor.t ];
+  let cursor: CssValueType.cursorKeyword_global => [> CssDeclaration.constructor ];
   let cursor1: (
     CssValueType.cursorImage, 
     CssValueType.cursorKeyword
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let cursor2: (
     CssValueType.cursorImage, 
     CssValueType.cursorImage, 
     CssValueType.cursorKeyword
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let cursor3: (
     CssValueType.cursorImage, 
     CssValueType.cursorImage, 
     CssValueType.cursorImage, 
     CssValueType.cursorKeyword
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let cursor4: (
     CssValueType.cursorImage, 
     CssValueType.cursorImage, 
     CssValueType.cursorImage, 
     CssValueType.cursorImage, 
     CssValueType.cursorKeyword
-  ) => [> CssDeclarationConstructor.t ];
-  let cursorUnion: t => [> CssDeclarationConstructor.t ];
-  let cursorString: string => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
+  let cursorUnion: t => [> CssDeclaration.constructor ];
+  let cursorString: string => [> CssDeclaration.constructor ];
 };
 
 module DeclarationFnHelper: {
   include (module type of DeclarationHelper);
-  let cursorFn: ('data => option<t>) => [> CssDeclarationFnConstructor.t<'data> ];
+  let cursorFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };

@@ -3,6 +3,8 @@
 
 var Curry = require("rescript/lib/js/curry.js");
 var CssMarginSide$Ress = require("./CssMarginSide.js");
+var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
+var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 
 var property = "marginRight";
 
@@ -11,43 +13,19 @@ var include = CssMarginSide$Ress.MakeValue({});
 var value = include.value;
 
 function marginRight(v) {
-  return {
-          NAME: "Declaration",
-          VAL: [
-            property,
-            Curry._1(value, v)
-          ]
-        };
+  return CssDeclaration$Ress.Helper.declaration(property, Curry._1(value, v));
 }
 
 function marginRightUnion(v) {
-  return {
-          NAME: "Declaration",
-          VAL: [
-            property,
-            v
-          ]
-        };
+  return CssDeclaration$Ress.Helper.declaration(property, v);
 }
 
 function marginRightString(v) {
-  return {
-          NAME: "Declaration",
-          VAL: [
-            property,
-            v
-          ]
-        };
+  return CssDeclaration$Ress.Helper.declaration(property, v);
 }
 
 function marginRightNumber(v) {
-  return {
-          NAME: "Declaration",
-          VAL: [
-            property,
-            v
-          ]
-        };
+  return CssDeclaration$Ress.Helper.declaration(property, v);
 }
 
 var DeclarationHelper = {
@@ -58,13 +36,7 @@ var DeclarationHelper = {
 };
 
 function marginRightFn(v) {
-  return {
-          NAME: "DeclarationFn",
-          VAL: [
-            property,
-            v
-          ]
-        };
+  return CssDeclarationFn$Ress.Helper.declarationFn(property, v);
 }
 
 var DeclarationFnHelper = {

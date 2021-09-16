@@ -1,9 +1,10 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "margin";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 external string: string => t = "%identity";
 external number: float => t = "%identity";
@@ -33,30 +34,30 @@ let value4 = (~top, ~right, ~bottom, ~left) =>
 
 module DeclarationHelper = {
   let margin = v => 
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let margin2 = (~tb, ~lr) =>
-    #Declaration(property, D.BoxValue(value2(~tb, ~lr)));
+    declaration(property, value2(~tb, ~lr));
   let margin3 = (~top, ~lr, ~bottom) =>
-    #Declaration(property, D.BoxValue(value3(~top, ~lr, ~bottom)));
+    declaration(property, value3(~top, ~lr, ~bottom));
   let margin4 = (~top, ~right, ~bottom, ~left) =>
-    #Declaration(property, D.BoxValue(value4(~top, ~right, ~bottom, ~left)));
+    declaration(property, value4(~top, ~right, ~bottom, ~left));
   let marginUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let marginString = v =>
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
   let marginNumber = v =>
-    #Declaration(property, D.BoxValue(number(v)));
+    declaration(property, number(v));
   /*
   let margin2Number = (~tb, ~lr) =>
-    #Declaration(number2(~tb, ~lr));
+    declaration(number2(~tb, ~lr);
   let margin3Number = (~top, ~lr, ~bottom) =>
-    #Declaration(number3(~top, ~lr, ~bottom));
+    declaration(number3(~top, ~lr, ~bottom);
   let margin4Number = (~top, ~right, ~bottom, ~left) =>
-    #Declaration(number4(~top, ~right, ~bottom, ~left));
+    declaration(number4(~top, ~right, ~bottom, ~left);
   */
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let marginFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let marginFn = v => declarationFn(property, v);
 };

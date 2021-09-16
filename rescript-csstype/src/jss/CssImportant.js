@@ -5,6 +5,17 @@ var Curry = require("rescript/lib/js/curry.js");
 var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 
+function important(v) {
+  return {
+          NAME: "Important",
+          VAL: v
+        };
+}
+
+var Helper = {
+  important: important
+};
+
 function Make(funarg) {
   var DeclarationFn = CssDeclarationFn$Ress.Make({});
   var make = function (v) {
@@ -65,4 +76,5 @@ function Make(funarg) {
 }
 
 exports.Make = Make;
+exports.Helper = Helper;
 /* No side effect */

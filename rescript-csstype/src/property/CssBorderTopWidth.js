@@ -2,6 +2,8 @@
 'use strict';
 
 var Curry = require("rescript/lib/js/curry.js");
+var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
+var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 var CssBorderSideWidth$Ress = require("./CssBorderSideWidth.js");
 
 var property = "borderTopWidth";
@@ -11,33 +13,15 @@ var include = CssBorderSideWidth$Ress.MakeValue({});
 var value = include.value;
 
 function borderTopWidth(v) {
-  return {
-          NAME: "Declaration",
-          VAL: [
-            property,
-            Curry._1(value, v)
-          ]
-        };
+  return CssDeclaration$Ress.Helper.declaration(property, Curry._1(value, v));
 }
 
 function borderTopWidthUnion(v) {
-  return {
-          NAME: "Declaration",
-          VAL: [
-            property,
-            v
-          ]
-        };
+  return CssDeclaration$Ress.Helper.declaration(property, v);
 }
 
 function borderTopWidthString(v) {
-  return {
-          NAME: "Declaration",
-          VAL: [
-            property,
-            v
-          ]
-        };
+  return CssDeclaration$Ress.Helper.declaration(property, v);
 }
 
 var DeclarationHelper = {
@@ -47,13 +31,7 @@ var DeclarationHelper = {
 };
 
 function borderTopWidthFn(v) {
-  return {
-          NAME: "DeclarationFn",
-          VAL: [
-            property,
-            v
-          ]
-        };
+  return CssDeclarationFn$Ress.Helper.declarationFn(property, v);
 }
 
 var DeclarationFnHelper = {

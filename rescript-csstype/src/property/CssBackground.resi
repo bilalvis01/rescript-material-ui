@@ -1,4 +1,7 @@
-type t;
+type tag;
+type t = CssValueType.propertyValue<tag>;
+
+
 external string: string => t = "%identity";
 let value: (
   ~color: CssValueType.color=?,
@@ -29,24 +32,24 @@ module DeclarationHelper: {
     ~origin: CssValueType.box=?,
     ~clip: CssValueType.box=?,
     [ | CssValueType.global | CssValueType.bgImage | CssValueType.color]
-  ) => [> CssDeclarationConstructor.t ];
-  let background2: (CssValueType.bgLayer, CssValueType.bgLayer) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
+  let background2: (CssValueType.bgLayer, CssValueType.bgLayer) => [> CssDeclaration.constructor ];
   let background3: (
     CssValueType.bgLayer, 
     CssValueType.bgLayer, 
     CssValueType.bgLayer,
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let background4: (
     CssValueType.bgLayer, 
     CssValueType.bgLayer, 
     CssValueType.bgLayer, 
     CssValueType.bgLayer,
-  ) => [> CssDeclarationConstructor.t ];
-  let backgroundUnion: t => [> CssDeclarationConstructor.t ];
-  let backgroundString: string => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
+  let backgroundUnion: t => [> CssDeclaration.constructor ];
+  let backgroundString: string => [> CssDeclaration.constructor ];
 };
 
 module DeclarationFnHelper: {
   include (module type of DeclarationHelper);
-  let backgroundFn: ('data => option<t>) => [> CssDeclarationFnConstructor.t<'data> ];
+  let backgroundFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };

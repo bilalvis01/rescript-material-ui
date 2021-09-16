@@ -15,5 +15,20 @@ function Make(Type) {
         };
 }
 
+function declarationFn(property, value) {
+  return {
+          NAME: "DeclarationFn",
+          VAL: [
+            property,
+            value
+          ]
+        };
+}
+
+var Helper = {
+  declarationFn: declarationFn
+};
+
 exports.Make = Make;
+exports.Helper = Helper;
 /* No side effect */

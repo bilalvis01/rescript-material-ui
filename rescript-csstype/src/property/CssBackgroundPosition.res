@@ -1,9 +1,10 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "backgroundPosition";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 external string: string => t = "%identity";
 let value = v => CssValueString.position(v)->string;
@@ -19,20 +20,20 @@ let value4 = (v1, v2, v3, v4) =>
 
 module DeclarationHelper = {
   let backgroundPosition = v =>
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let backgroundPosition2 = (v1, v2) =>
-    #Declaration(property, D.BoxValue(value2(v1, v2)));
+    declaration(property, value2(v1, v2));
   let backgroundPosition3 = (v1, v2, v3) =>
-    #Declaration(property, D.BoxValue(value3(v1, v2, v3)));
+    declaration(property, value3(v1, v2, v3));
   let backgroundPosition4 = (v1, v2, v3, v4) =>
-    #Declaration(property, D.BoxValue(value4(v1, v2, v3, v4)));
+    declaration(property, value4(v1, v2, v3, v4));
   let backgroundPositionUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let backgroundPositionString = v =>
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let backgroundPositionFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let backgroundPositionFn = v => declarationFn(property, v);
 };

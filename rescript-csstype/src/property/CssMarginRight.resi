@@ -1,15 +1,16 @@
-type t;
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 include (module type of CssMarginSide.MakeValue({ type t = t; }));
 
 module DeclarationHelper: {
-  let marginRight: CssValueType.margin_global => [> CssDeclarationConstructor.t ];
-  let marginRightUnion: t => [> CssDeclarationConstructor.t ];
-  let marginRightString: string => [> CssDeclarationConstructor.t ];
-  let marginRightNumber: float => [> CssDeclarationConstructor.t ];
+  let marginRight: CssValueType.margin_global => [> CssDeclaration.constructor ];
+  let marginRightUnion: t => [> CssDeclaration.constructor ];
+  let marginRightString: string => [> CssDeclaration.constructor ];
+  let marginRightNumber: float => [> CssDeclaration.constructor ];
 };
 
 module DeclarationFnHelper: {
   include (module type of DeclarationHelper);
-  let marginRightFn: ('data => option<t>) => [> CssDeclarationFnConstructor.t<'data> ];
+  let marginRightFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };

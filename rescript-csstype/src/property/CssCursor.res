@@ -1,9 +1,10 @@
-type t;
+open CssDeclaration.Helper;
+open CssDeclarationFn.Helper;
+
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 let property = "cursor";
-
-module D = CssDeclarationConstructor;
-module DF = CssDeclarationFnConstructor;
 
 external string: string => t = "%identity";
 let value = v => CssValueString.cursorKeyword_global(v)->string;
@@ -22,22 +23,22 @@ let value4 = (i1, i2, i3, i4, k) =>
 
 module DeclarationHelper = {
   let cursor = v =>
-    #Declaration(property, D.BoxValue(value(v)));
+    declaration(property, value(v));
   let cursor1 = (i, k) =>
-    #Declaration(property, D.BoxValue(value1(i, k)));
+    declaration(property, value1(i, k));
   let cursor2 = (i1, i2, k) =>
-    #Declaration(property, D.BoxValue(value2(i1, i2, k)));
+    declaration(property, value2(i1, i2, k));
   let cursor3 = (i1, i2, i3, k) =>
-    #Declaration(property, D.BoxValue(value3(i1, i2, i3, k)));
+    declaration(property, value3(i1, i2, i3, k));
   let cursor4 = (i1, i2, i3, i4, k) =>
-    #Declaration(property, D.BoxValue(value4(i1, i2, i3, i4, k)));
+    declaration(property, value4(i1, i2, i3, i4, k));
   let cursorUnion = v =>
-    #Declaration(property, D.BoxValue(v));
+    declaration(property, v);
   let cursorString = v =>
-    #Declaration(property, D.BoxValue(string(v)));
+    declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {
   include DeclarationHelper;
-  let cursorFn = v => #DeclarationFn(property, DF.BoxValue(v));
+  let cursorFn = v => declarationFn(property, v);
 };

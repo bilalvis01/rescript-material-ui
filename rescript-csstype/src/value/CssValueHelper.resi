@@ -1,13 +1,13 @@
 /*
 Textual data types
 */
-let str: string => [> CssValueType.cssString ];
+let str: string => [> CssValueType.cssStr ];
 
 /*
 Numeric data types
 */
-let num: float => [> CssValueType.number ];
-let int: int => [> CssValueType.integer ];
+let num: float => [> CssValueType.cssNum ];
+let int: int => [> CssValueType.cssInt ];
 let pct: float => [> CssValueType.percentage ];
 let ratio: (int, int) => [> CssValueType.ratio ];
 let fr: float => [> CssValueType.flexUnit ];

@@ -1,4 +1,5 @@
-type t;
+type tag;
+type t = CssValueType.propertyValue<tag>;
 
 external string: string => t = "%identity";
 let value: CssValueType.bgImage => t;
@@ -12,27 +13,27 @@ let value4: (
 ) => t;
 
 module DeclarationHelper: {
-  let backgroundImage: CssValueType.bgImage => [> CssDeclarationConstructor.t ];
+  let backgroundImage: CssValueType.bgImage => [> CssDeclaration.constructor ];
   let backgroundImage2: (
     CssValueType.bgImage, 
     CssValueType.bgImage
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let backgroundImage3: (
     CssValueType.bgImage, 
     CssValueType.bgImage, 
     CssValueType.bgImage
-  ) => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
   let backgroundImage4: (
     CssValueType.bgImage, 
     CssValueType.bgImage, 
     CssValueType.bgImage, 
     CssValueType.bgImage
-  ) => [> CssDeclarationConstructor.t ];
-  let backgroundImageUnion: t => [> CssDeclarationConstructor.t ];
-  let backgroundImageString: string => [> CssDeclarationConstructor.t ];
+  ) => [> CssDeclaration.constructor ];
+  let backgroundImageUnion: t => [> CssDeclaration.constructor ];
+  let backgroundImageString: string => [> CssDeclaration.constructor ];
 };
 
 module DeclarationFnHelper: {
   include (module type of DeclarationHelper);
-  let backgroundImageFn: ('data => option<t>) => [> CssDeclarationFnConstructor.t<'data> ];
+  let backgroundImageFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };
