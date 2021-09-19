@@ -10,11 +10,7 @@ var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
 var CssPseudoClass$Ress = require("../rule/CssPseudoClass.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 
-function Make(Type) {
-  var make = CssDeclaration$Ress.make;
-  var Declaration = {
-    make: make
-  };
+function Make(funarg) {
   var DeclarationFn = CssDeclarationFn$Ress.Make({});
   var map = function (v) {
     return [
@@ -26,38 +22,24 @@ function Make(Type) {
         map: map
       });
   var Rule = CssRule$Ress.Make({});
-  var make$1 = CssAtRule$Ress.make;
-  var AtRule = {
-    make: make$1
-  };
-  var make$2 = function (declaration) {
-    var variant = declaration.NAME;
-    if (variant === "AtRule") {
-      return CssAtRule$Ress.make(declaration);
-    } else if (variant === "PseudoClass") {
-      return Curry._1(PseudoClass.make, declaration);
-    } else if (variant === "DeclarationFn") {
-      return Curry._1(DeclarationFn.make, declaration);
-    } else if (variant === "Rule") {
-      return Curry._1(Rule.make, declaration);
-    } else {
-      return CssDeclaration$Ress.make(declaration);
-    }
-  };
-  var AdvancedDeclaration = {
-    make: make$2
-  };
-  var make$3 = function (declarations) {
-    return Js_dict.fromArray(Belt_Array.map(declarations, make$2));
+  var make = function (declarations) {
+    return Js_dict.fromArray(Belt_Array.map(declarations, (function (declaration) {
+                      var variant = declaration.NAME;
+                      if (variant === "AtRule") {
+                        return CssAtRule$Ress.make(declaration);
+                      } else if (variant === "PseudoClass") {
+                        return Curry._1(PseudoClass.make, declaration);
+                      } else if (variant === "DeclarationFn") {
+                        return Curry._1(DeclarationFn.make, declaration);
+                      } else if (variant === "Rule") {
+                        return Curry._1(Rule.make, declaration);
+                      } else {
+                        return CssDeclaration$Ress.make(declaration);
+                      }
+                    })));
   };
   return {
-          Declaration: Declaration,
-          DeclarationFn: DeclarationFn,
-          PseudoClass: PseudoClass,
-          Rule: Rule,
-          AtRule: AtRule,
-          AdvancedDeclaration: AdvancedDeclaration,
-          make: make$3
+          make: make
         };
 }
 
