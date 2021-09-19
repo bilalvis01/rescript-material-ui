@@ -72,6 +72,7 @@ function Make(Type) {
           AdvancedDeclaration: AdvancedDeclaration,
           DeclarationBlocks: DeclarationBlocks,
           style: make$3,
+          Property: undefined,
           Background: undefined,
           BackgroundAttachment: undefined,
           BackgroundColor: undefined,

@@ -80,6 +80,7 @@ module Make = (
   /*
   Property Value
   */
+  module Property = CssProperty;
   module Background = CssBackground;
   module BackgroundAttachment = CssBackgroundAttachment;
   module BackgroundColor = CssBackgroundColor;
