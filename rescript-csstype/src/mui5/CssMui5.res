@@ -2,6 +2,7 @@ module Make = (
   Type: {
     type value<'data>;
     type declarationBlocks<'data>;
+    type statementBlocks<'data>;
   }
 ) => {
   module DeclarationBlocks = CssMui5DeclarationBlocks.Make({
@@ -9,7 +10,13 @@ module Make = (
     type declarationBlocks<'data> = Type.declarationBlocks<'data>;
   });
 
+  module StatementBlocks = CssMui5StatementBlocks.Make({
+    type t<'data> = Type.declarationBlocks<'data>;
+    type declarationBlocks<'data> = Type.declarationBlocks<'data>;
+  });
+
   let style = DeclarationBlocks.make;
+  let styles = StatementBlocks.make;
 
   /*
   Property Value

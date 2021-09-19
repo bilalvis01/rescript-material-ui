@@ -7,10 +7,12 @@ var CssValueHelper$Ress = require("../value/CssValueHelper.js");
 var CssAtRuleHelper$Ress = require("../at_rule/CssAtRuleHelper.js");
 var CssDeclarationHelper$Ress = require("../declaration/CssDeclarationHelper.js");
 var CssDeclarationFnHelper$Ress = require("../declaration/CssDeclarationFnHelper.js");
+var CssMui5StatementBlocks$Ress = require("./CssMui5StatementBlocks.js");
 var CssMui5DeclarationBlocks$Ress = require("./CssMui5DeclarationBlocks.js");
 
 function Make(Type) {
   var DeclarationBlocks = CssMui5DeclarationBlocks$Ress.Make({});
+  var StatementBlocks = CssMui5StatementBlocks$Ress.Make({});
   var include = CssRule$Ress.MakeHelper({
         declarationBlocks: DeclarationBlocks.make
       });
@@ -19,7 +21,9 @@ function Make(Type) {
       });
   return {
           DeclarationBlocks: DeclarationBlocks,
+          StatementBlocks: StatementBlocks,
           style: DeclarationBlocks.make,
+          styles: StatementBlocks.make,
           Property: undefined,
           Background: undefined,
           BackgroundAttachment: undefined,
