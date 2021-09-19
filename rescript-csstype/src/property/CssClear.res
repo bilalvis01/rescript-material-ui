@@ -14,6 +14,5 @@ module DeclarationHelper = {
 };
 
 module DeclarationFnHelper = {
-  include DeclarationHelper;
   let clearFn = v => declarationFn(property, v);
 };

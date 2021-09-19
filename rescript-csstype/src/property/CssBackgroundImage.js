@@ -59,12 +59,6 @@ function backgroundImageFn(v) {
 }
 
 var DeclarationFnHelper = {
-  backgroundImage: backgroundImage,
-  backgroundImage2: backgroundImage2,
-  backgroundImage3: backgroundImage3,
-  backgroundImage4: backgroundImage4,
-  backgroundImageUnion: backgroundImageUnion,
-  backgroundImageString: backgroundImageString,
   backgroundImageFn: backgroundImageFn
 };
 

@@ -41,6 +41,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  include (module type of DeclarationHelper);
   let fontFamilyFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };

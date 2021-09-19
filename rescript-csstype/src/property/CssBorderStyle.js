@@ -59,12 +59,6 @@ function borderStyleFn(v) {
 }
 
 var DeclarationFnHelper = {
-  borderStyle: borderStyle,
-  borderStyle2: borderStyle2,
-  borderStyle3: borderStyle3,
-  borderStyle4: borderStyle4,
-  borderStyleUnion: borderStyleUnion,
-  borderStyleString: borderStyleString,
   borderStyleFn: borderStyleFn
 };
 

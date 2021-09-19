@@ -18,6 +18,5 @@ module DeclarationHelper = {
 };
 
 module DeclarationFnHelper = {
-  include DeclarationHelper;
   let borderBottomStyleFn = v => declarationFn(property, v);
 };

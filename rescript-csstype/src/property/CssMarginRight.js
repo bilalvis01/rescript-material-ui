@@ -40,10 +40,6 @@ function marginRightFn(v) {
 }
 
 var DeclarationFnHelper = {
-  marginRight: marginRight,
-  marginRightUnion: marginRightUnion,
-  marginRightString: marginRightString,
-  marginRightNumber: marginRightNumber,
   marginRightFn: marginRightFn
 };
 

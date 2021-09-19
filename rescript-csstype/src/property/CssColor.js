@@ -32,9 +32,6 @@ function colorFn(v) {
 }
 
 var DeclarationFnHelper = {
-  color: color,
-  colorUnion: colorUnion,
-  colorString: colorString,
   colorFn: colorFn
 };
 

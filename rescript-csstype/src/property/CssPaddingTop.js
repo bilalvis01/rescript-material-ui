@@ -40,10 +40,6 @@ function paddingTopFn(v) {
 }
 
 var DeclarationFnHelper = {
-  paddingTop: paddingTop,
-  paddingTopUnion: paddingTopUnion,
-  paddingTopString: paddingTopString,
-  paddingTopNumber: paddingTopNumber,
   paddingTopFn: paddingTopFn
 };
 

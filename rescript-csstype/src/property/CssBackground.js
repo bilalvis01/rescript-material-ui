@@ -70,12 +70,6 @@ function backgroundFn(v) {
 }
 
 var DeclarationFnHelper = {
-  background: background,
-  background2: background2,
-  background3: background3,
-  background4: background4,
-  backgroundUnion: backgroundUnion,
-  backgroundString: backgroundString,
   backgroundFn: backgroundFn
 };
 

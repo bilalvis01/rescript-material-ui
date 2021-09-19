@@ -65,9 +65,6 @@ function borderFn(v) {
 }
 
 var DeclarationFnHelper = {
-  border: border,
-  borderUnion: borderUnion,
-  borderString: borderString,
   borderFn: borderFn
 };
 

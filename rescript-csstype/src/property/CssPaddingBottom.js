@@ -40,10 +40,6 @@ function paddingBottomFn(v) {
 }
 
 var DeclarationFnHelper = {
-  paddingBottom: paddingBottom,
-  paddingBottomUnion: paddingBottomUnion,
-  paddingBottomString: paddingBottomString,
-  paddingBottomNumber: paddingBottomNumber,
   paddingBottomFn: paddingBottomFn
 };
 

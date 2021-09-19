@@ -59,12 +59,6 @@ function borderColorFn(v) {
 }
 
 var DeclarationFnHelper = {
-  borderColor: borderColor,
-  borderColor2: borderColor2,
-  borderColor3: borderColor3,
-  borderColor4: borderColor4,
-  borderColorUnion: borderColorUnion,
-  borderColorString: borderColorString,
   borderColorFn: borderColorFn
 };
 

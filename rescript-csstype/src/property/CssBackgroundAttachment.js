@@ -59,12 +59,6 @@ function backgroundAttachmentFn(v) {
 }
 
 var DeclarationFnHelper = {
-  backgroundAttachment: backgroundAttachment,
-  backgroundAttachment2: backgroundAttachment2,
-  backgroundAttachment3: backgroundAttachment3,
-  backgroundAttachment4: backgroundAttachment4,
-  backgroundAttachmentUnion: backgroundAttachmentUnion,
-  backgroundAttachmentString: backgroundAttachmentString,
   backgroundAttachmentFn: backgroundAttachmentFn
 };
 

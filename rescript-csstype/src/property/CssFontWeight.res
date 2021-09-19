@@ -24,6 +24,5 @@ module DeclarationHelper = {
 };
 
 module DeclarationFnHelper = {
-  include DeclarationHelper;
   let fontWeightFn = v => declarationFn(property, v);
 };

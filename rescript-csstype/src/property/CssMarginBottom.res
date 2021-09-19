@@ -20,6 +20,5 @@ module DeclarationHelper = {
 };
 
 module DeclarationFnHelper = {
-  include DeclarationHelper;
   let marginBottomFn = v => declarationFn(property, v);
 };

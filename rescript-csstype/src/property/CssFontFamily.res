@@ -36,6 +36,5 @@ module DeclarationHelper = {
 };
 
 module DeclarationFnHelper = {
-  include DeclarationHelper;
   let fontFamilyFn = v => declarationFn(property, v);
 };  

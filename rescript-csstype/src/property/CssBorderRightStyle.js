@@ -35,9 +35,6 @@ function borderRightStyleFn(v) {
 }
 
 var DeclarationFnHelper = {
-  borderRightStyle: borderRightStyle,
-  borderRightStyleUnion: borderRightStyleUnion,
-  borderRightStyleString: borderRightStyleString,
   borderRightStyleFn: borderRightStyleFn
 };
 

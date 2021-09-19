@@ -20,6 +20,5 @@ module DeclarationHelper = {
 };
 
 module DeclarationFnHelper = {
-  include DeclarationHelper;
   let paddingTopFn = v => declarationFn(property, v);
 };

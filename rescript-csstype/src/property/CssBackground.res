@@ -79,6 +79,5 @@ module DeclarationHelper = {
 };
 
 module DeclarationFnHelper = {
-  include DeclarationHelper;
   let backgroundFn = v => declarationFn(property, v);
 };

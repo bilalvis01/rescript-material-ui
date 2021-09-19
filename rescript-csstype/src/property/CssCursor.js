@@ -68,13 +68,6 @@ function cursorFn(v) {
 }
 
 var DeclarationFnHelper = {
-  cursor: cursor,
-  cursor1: cursor1,
-  cursor2: cursor2,
-  cursor3: cursor3,
-  cursor4: cursor4,
-  cursorUnion: cursorUnion,
-  cursorString: cursorString,
   cursorFn: cursorFn
 };
 

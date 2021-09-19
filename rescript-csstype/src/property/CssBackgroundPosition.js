@@ -59,12 +59,6 @@ function backgroundPositionFn(v) {
 }
 
 var DeclarationFnHelper = {
-  backgroundPosition: backgroundPosition,
-  backgroundPosition2: backgroundPosition2,
-  backgroundPosition3: backgroundPosition3,
-  backgroundPosition4: backgroundPosition4,
-  backgroundPositionUnion: backgroundPositionUnion,
-  backgroundPositionString: backgroundPositionString,
   backgroundPositionFn: backgroundPositionFn
 };
 

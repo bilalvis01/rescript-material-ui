@@ -40,10 +40,6 @@ function marginBottomFn(v) {
 }
 
 var DeclarationFnHelper = {
-  marginBottom: marginBottom,
-  marginBottomUnion: marginBottomUnion,
-  marginBottomString: marginBottomString,
-  marginBottomNumber: marginBottomNumber,
   marginBottomFn: marginBottomFn
 };
 

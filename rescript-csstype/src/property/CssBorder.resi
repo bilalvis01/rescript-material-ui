@@ -27,6 +27,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  include (module type of DeclarationHelper);
   let borderFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };

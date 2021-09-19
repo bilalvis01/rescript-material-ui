@@ -22,7 +22,6 @@ function clearFn(v) {
 }
 
 var DeclarationFnHelper = {
-  clear: clear,
   clearFn: clearFn
 };
 

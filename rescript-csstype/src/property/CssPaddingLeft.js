@@ -40,10 +40,6 @@ function paddingLeftFn(v) {
 }
 
 var DeclarationFnHelper = {
-  paddingLeft: paddingLeft,
-  paddingLeftUnion: paddingLeftUnion,
-  paddingLeftString: paddingLeftString,
-  paddingLeftNumber: paddingLeftNumber,
   paddingLeftFn: paddingLeftFn
 };
 

@@ -59,12 +59,6 @@ function fontFamilyFn(v) {
 }
 
 var DeclarationFnHelper = {
-  fontFamily: fontFamily,
-  fontFamily2: fontFamily2,
-  fontFamily3: fontFamily3,
-  fontFamily4: fontFamily4,
-  fontFamilyUnion: fontFamilyUnion,
-  fontFamilyString: fontFamilyString,
   fontFamilyFn: fontFamilyFn
 };
 

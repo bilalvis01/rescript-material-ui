@@ -37,10 +37,6 @@ function fontWeightFn(v) {
 }
 
 var DeclarationFnHelper = {
-  fontWeight: fontWeight,
-  fontWeightUnion: fontWeightUnion,
-  fontWeightString: fontWeightString,
-  fontWeightNumber: fontWeightNumber,
   fontWeightFn: fontWeightFn
 };
 

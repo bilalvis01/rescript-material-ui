@@ -59,12 +59,6 @@ function backgroundStyleFn(v) {
 }
 
 var DeclarationFnHelper = {
-  backgroundStyle: backgroundStyle,
-  backgroundStyle2: backgroundStyle2,
-  backgroundStyle3: backgroundStyle3,
-  backgroundStyle4: backgroundStyle4,
-  backgroundStyleUnion: backgroundStyleUnion,
-  backgroundStyleString: backgroundStyleString,
   backgroundStyleFn: backgroundStyleFn
 };
 

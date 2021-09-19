@@ -39,6 +39,5 @@ module DeclarationHelper = {
 };
 
 module DeclarationFnHelper = {
-  include DeclarationHelper;
   let cursorFn = v => declarationFn(property, v);
 };

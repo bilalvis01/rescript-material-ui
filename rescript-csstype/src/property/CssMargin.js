@@ -64,13 +64,6 @@ function marginFn(v) {
 }
 
 var DeclarationFnHelper = {
-  margin: margin,
-  margin2: margin2,
-  margin3: margin3,
-  margin4: margin4,
-  marginUnion: marginUnion,
-  marginString: marginString,
-  marginNumber: marginNumber,
   marginFn: marginFn
 };
 

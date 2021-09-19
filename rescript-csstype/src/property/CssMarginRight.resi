@@ -11,6 +11,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  include (module type of DeclarationHelper);
   let marginRightFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
 };

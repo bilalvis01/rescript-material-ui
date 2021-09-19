@@ -35,9 +35,6 @@ function borderLeftFn(v) {
 }
 
 var DeclarationFnHelper = {
-  borderLeft: borderLeft,
-  borderLeftUnion: borderLeftUnion,
-  borderLeftString: borderLeftString,
   borderLeftFn: borderLeftFn
 };
 

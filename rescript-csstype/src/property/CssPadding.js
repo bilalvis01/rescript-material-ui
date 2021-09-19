@@ -64,13 +64,6 @@ function paddingFn(v) {
 }
 
 var DeclarationFnHelper = {
-  padding: padding,
-  padding2: padding2,
-  padding3: padding3,
-  padding4: padding4,
-  paddingUnion: paddingUnion,
-  paddingString: paddingString,
-  paddingNumber: paddingNumber,
   paddingFn: paddingFn
 };
 

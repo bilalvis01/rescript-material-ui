@@ -32,9 +32,6 @@ function backgroundColorFn(v) {
 }
 
 var DeclarationFnHelper = {
-  backgroundColor: backgroundColor,
-  backgroundColorUnion: backgroundColorUnion,
-  backgroundColorString: backgroundColorString,
   backgroundColorFn: backgroundColorFn
 };
 

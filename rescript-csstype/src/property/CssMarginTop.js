@@ -40,10 +40,6 @@ function marginTopFn(v) {
 }
 
 var DeclarationFnHelper = {
-  marginTop: marginTop,
-  marginTopUnion: marginTopUnion,
-  marginTopString: marginTopString,
-  marginTopNumber: marginTopNumber,
   marginTopFn: marginTopFn
 };
 
