@@ -1,7 +1,7 @@
 module Make: (
   Type: {
+    type t<'data>;
     type value<'data>;
-    type declarationBlocks<'data>;
   }
 ) => {
   type advancedDeclarationConstructorLike<'data, 'declarationBlocks> = [
@@ -13,7 +13,7 @@ module Make: (
   ];
 
   type advancedDeclarationConstructor<'data> = 
-    advancedDeclarationConstructorLike<'data, Type.declarationBlocks<'data>>;
+    advancedDeclarationConstructorLike<'data, Type.t<'data>>;
 
-  let make: array<advancedDeclarationConstructor<'data>> => Type.declarationBlocks<'data>;
+  let make: array<advancedDeclarationConstructor<'data>> => Type.t<'data>;
 };

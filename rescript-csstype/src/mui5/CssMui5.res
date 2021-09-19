@@ -6,8 +6,8 @@ module Make = (
   }
 ) => {
   module DeclarationBlocks = CssMui5DeclarationBlocks.Make({
+    type t<'data> = Type.declarationBlocks<'data>;
     type value<'data> = Type.value<'data>;
-    type declarationBlocks<'data> = Type.declarationBlocks<'data>;
   });
 
   module StatementBlocks = CssMui5StatementBlocks.Make({

@@ -1,7 +1,7 @@
 module Make = (
   Type: {
+    type t<'data>;
     type value<'data>;
-    type declarationBlocks<'data>;
   }
 ) => {
   type advancedDeclarationConstructorLike<'data, 'declarationBlocks> = [
@@ -13,7 +13,7 @@ module Make = (
   ];
 
   type advancedDeclarationConstructor<'data> = 
-    advancedDeclarationConstructorLike<'data, Type.declarationBlocks<'data>>;
+    advancedDeclarationConstructorLike<'data, Type.t<'data>>;
 
   type advancedDeclaration<'data> = (string, Type.value<'data>);
 
@@ -28,7 +28,7 @@ module Make = (
 
   module PseudoClass = CssPseudoClass.Make({
     type value<'data> = Type.value<'data>;
-    type declarationBlocks<'data> = Type.declarationBlocks<'data>;
+    type declarationBlocks<'data> = Type.t<'data>;
     let map = v => {
       let (selector, declarations) = v;
       (`&${selector}`, declarations);
@@ -37,7 +37,7 @@ module Make = (
 
   module Rule = CssRule.Make({
     type value<'data> = Type.value<'data>;
-    type declarationBlocks<'data> = Type.declarationBlocks<'data>;
+    type declarationBlocks<'data> = Type.t<'data>;
   });
 
   module AtRule = {
@@ -59,7 +59,7 @@ module Make = (
     };
   };
 
-  external makeDeclarationBlocks: Js.Dict.t<Type.value<'data>> => Type.declarationBlocks<'data> = "%identity";
+  external makeDeclarationBlocks: Js.Dict.t<Type.value<'data>> => Type.t<'data> = "%identity";
 
   let make = declarations => {
     declarations
