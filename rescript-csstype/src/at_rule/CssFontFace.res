@@ -1,20 +1,55 @@
+type tag;
+type t = CssAtRule.rule<tag>;
+
+type value;
+
 @unboxed
 type rec boxValue = 
-  | BoxValue('a): boxValue;
+  | BoxValue(value): boxValue;
 
-type t = Js.Dict.t<boxValue>;
+type descriptor = (string, boxValue);
+
+external makeRule: Js.Dict.t<boxValue> => t = "%identity";
 
 let descriptors = descriptors => {
   descriptors
-  ->Belt.Array.map(descriptor => {
-    switch descriptor {
-    | #FontDisplay(value) => ("fontDisplay", BoxValue(value))
-    };
-  })
   ->Js.Dict.fromArray
+  ->makeRule;
 };
 
+module AtRuleHelper = {
+  let fontFace = d => 
+    CssAtRule.Helper.atRule("@font-face", descriptors(d))
+};
+
+module ValueType = {
+  type fontDisplay = [
+    | #auto
+    | #block
+    | #swap
+    | #fallback
+    | #optional
+  ];
+};
+
+module ValueString = {
+  let fontDisplay = v => {
+    switch v {
+    | #auto => "auto"
+    | #block => "block"
+    | #swap => "swap"
+    | #fallback => "fallback"
+    | #optional => "optional"
+    }
+  };
+};
+
+external string: string => value = "%identity";
+external integer: int => value = "%identity";
+
+let descriptor = (property, value) => (property, BoxValue(value));
+
 let fontDisplay = v => 
-  #FontDisplay(CssFontFacePropertyValue.fontDisplay(v));
+  descriptor("fontDisplay", ValueString.fontDisplay(v)->string);
 let fontDisplayString = v =>
-  #FontDisplay(CssFontFacePropertyValue.fontDisplayString(v));
+  descriptor("fontDisplay", string(v));

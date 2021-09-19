@@ -9,7 +9,7 @@ module Make = (
     | CssDeclarationFn.constructor<'data>
     | CssRule.constructor<'declarationBlocks>
     | CssPseudoClass.constructor<'declarationBlocks>
-    | CssAtRuleConstructor.t
+    | CssAtRule.constructor
   ];
 
   type advancedDeclarationConstructor<'data> = 
@@ -54,7 +54,7 @@ module Make = (
       | #...CssDeclarationFn.constructor as d => DeclarationFn.make(d)
       | #...CssRule.constructor as d => Rule.make(d)
       | #...CssPseudoClass.constructor as d => PseudoClass.make(d)
-      | #...CssAtRuleConstructor.t as d => AtRule.make(d)
+      | #...CssAtRule.constructor as d => AtRule.make(d)
       };
     };
   };

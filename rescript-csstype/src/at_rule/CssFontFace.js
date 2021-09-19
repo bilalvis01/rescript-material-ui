@@ -2,33 +2,64 @@
 'use strict';
 
 var Js_dict = require("rescript/lib/js/js_dict.js");
-var Belt_Array = require("rescript/lib/js/belt_Array.js");
-var CssFontFacePropertyValue$Ress = require("./CssFontFacePropertyValue.js");
+var CssAtRule$Ress = require("./CssAtRule.js");
 
-function descriptors(descriptors$1) {
-  return Js_dict.fromArray(Belt_Array.map(descriptors$1, (function (descriptor) {
-                    return [
-                            "fontDisplay",
-                            descriptor.VAL
-                          ];
-                  })));
+var descriptors = Js_dict.fromArray;
+
+function fontFace(d) {
+  return CssAtRule$Ress.Helper.atRule("@font-face", Js_dict.fromArray(d));
 }
 
+var AtRuleHelper = {
+  fontFace: fontFace
+};
+
+var ValueType = {};
+
 function fontDisplay(v) {
-  return {
-          NAME: "FontDisplay",
-          VAL: CssFontFacePropertyValue$Ress.fontDisplay(v)
-        };
+  if (v === "swap") {
+    return "swap";
+  } else if (v === "optional") {
+    return "optional";
+  } else if (v === "fallback") {
+    return "fallback";
+  } else if (v === "block") {
+    return "block";
+  } else {
+    return "auto";
+  }
+}
+
+var ValueString = {
+  fontDisplay: fontDisplay
+};
+
+function descriptor(property, value) {
+  return [
+          property,
+          value
+        ];
+}
+
+function fontDisplay$1(v) {
+  return [
+          "fontDisplay",
+          fontDisplay(v)
+        ];
 }
 
 function fontDisplayString(v) {
-  return {
-          NAME: "FontDisplay",
-          VAL: v
-        };
+  return [
+          "fontDisplay",
+          v
+        ];
 }
 
 exports.descriptors = descriptors;
-exports.fontDisplay = fontDisplay;
+exports.AtRuleHelper = AtRuleHelper;
+exports.ValueType = ValueType;
+exports.ValueString = ValueString;
+exports.descriptor = descriptor;
+exports.fontDisplay = fontDisplay$1;
 exports.fontDisplayString = fontDisplayString;
 /* No side effect */

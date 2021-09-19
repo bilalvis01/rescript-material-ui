@@ -3,11 +3,27 @@
 
 
 function make(v) {
+  var match = v.VAL;
   return [
-          "@font-face",
-          v.VAL
+          match[0],
+          match[1]
         ];
 }
 
+function atRule(identifier, rule) {
+  return {
+          NAME: "AtRule",
+          VAL: [
+            identifier,
+            rule
+          ]
+        };
+}
+
+var Helper = {
+  atRule: atRule
+};
+
 exports.make = make;
+exports.Helper = Helper;
 /* No side effect */

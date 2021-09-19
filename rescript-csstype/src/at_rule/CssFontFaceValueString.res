@@ -1,1 +1,0 @@
-external fontDisplay: CssFontFaceValueType.fontDisplay => string = "%identity";

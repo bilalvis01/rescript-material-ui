@@ -36,10 +36,10 @@ function Make(Type) {
   };
   var make$2 = function (declaration) {
     var variant = declaration.NAME;
-    if (variant === "PseudoClass") {
-      return Curry._1(PseudoClass.make, declaration);
-    } else if (variant === "FontFace") {
+    if (variant === "AtRule") {
       return CssAtRule$Ress.make(declaration);
+    } else if (variant === "PseudoClass") {
+      return Curry._1(PseudoClass.make, declaration);
     } else if (variant === "DeclarationFn") {
       return Curry._1(DeclarationFn.make, declaration);
     } else if (variant === "Rule") {
@@ -187,6 +187,7 @@ function Make(Type) {
           repeatingConicGradient3: CssValueHelper$Ress.repeatingConicGradient3,
           repeatingConicGradient4: CssValueHelper$Ress.repeatingConicGradient4,
           rule: include.rule,
+          atRule: CssAtRuleHelper$Ress.atRule,
           fontFace: CssAtRuleHelper$Ress.fontFace,
           pseudoClass: include$1.pseudoClass,
           hover: include$1.hover,
