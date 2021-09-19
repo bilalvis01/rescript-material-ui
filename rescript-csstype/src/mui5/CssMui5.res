@@ -7,7 +7,7 @@ module Make = (
   type advancedDeclarationConstructorLike<'data, 'declarationBlocks> = [
     | CssDeclaration.constructor
     | CssDeclarationFn.constructor<'data>
-    | CssRuleConstructor.t<'declarationBlocks>
+    | CssRule.constructor<'declarationBlocks>
     | CssPseudoClassConstructor.t<'declarationBlocks>
     | CssAtRuleConstructor.t
   ];
@@ -52,7 +52,7 @@ module Make = (
       switch declaration {
       | #...CssDeclaration.constructor as d => Declaration.make(d)
       | #...CssDeclarationFn.constructor as d => DeclarationFn.make(d)
-      | #...CssRuleConstructor.t as d => Rule.make(d)
+      | #...CssRule.constructor as d => Rule.make(d)
       | #...CssPseudoClassConstructor.t as d => PseudoClass.make(d)
       | #...CssAtRuleConstructor.t as d => AtRule.make(d)
       };
@@ -131,7 +131,7 @@ module Make = (
   Helper
   */
   include CssValueHelper;
-  include CssRuleHelper.Make({ 
+  include CssRule.MakeHelper({ 
     type declarationBlocks<'data> = Type.declarationBlocks<'data>; 
     type declarationConstructor<'data> = advancedDeclarationConstructor<'data>;
     let declarationBlocks = DeclarationBlocks.make; 

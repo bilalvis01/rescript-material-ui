@@ -1,3 +1,5 @@
+type constructor<'declarationBlocks> = [ | #Rule(string, 'declarationBlocks) ];
+
 module Make = (
   Type: {
     type value<'data>;
@@ -13,4 +15,17 @@ module Make = (
     | #Rule(selector, declarationBlocks) => (selector, makeValue(declarationBlocks));
     }
   };
+}
+
+module MakeHelper = (
+  Type: {
+    type declarationBlocks<'data>;
+    type declarationConstructor<'data>;
+    let declarationBlocks: 
+      array<declarationConstructor<'data>> => 
+      declarationBlocks<'data>;
+  }
+) => {
+  let rule = (selector, declarations) => 
+    #Rule(selector, Type.declarationBlocks(declarations));
 }

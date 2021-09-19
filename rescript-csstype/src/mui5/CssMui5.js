@@ -6,7 +6,6 @@ var Js_dict = require("rescript/lib/js/js_dict.js");
 var Belt_Array = require("rescript/lib/js/belt_Array.js");
 var CssRule$Ress = require("../rule/CssRule.js");
 var CssAtRule$Ress = require("../at_rule/CssAtRule.js");
-var CssRuleHelper$Ress = require("../rule/CssRuleHelper.js");
 var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
 var CssPseudoClass$Ress = require("../rule/CssPseudoClass.js");
 var CssValueHelper$Ress = require("../value/CssValueHelper.js");
@@ -59,7 +58,7 @@ function Make(Type) {
   var DeclarationBlocks = {
     make: make$3
   };
-  var include = CssRuleHelper$Ress.Make({
+  var include = CssRule$Ress.MakeHelper({
         declarationBlocks: make$3
       });
   var include$1 = CssPseudoClassHelper$Ress.Make({

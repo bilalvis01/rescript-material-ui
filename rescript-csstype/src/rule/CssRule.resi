@@ -1,3 +1,5 @@
+type constructor<'declarationBlocks> = [ | #Rule(string, 'declarationBlocks) ];
+
 module Make: (
   Type: {
     type value<'data>;
@@ -6,5 +8,19 @@ module Make: (
 ) => {
   type t<'data> = (string, Type.value<'data>);
 
-  let make: CssRuleConstructor.t<Type.declarationBlocks<'data>> => t<'data>;
+  let make: constructor<Type.declarationBlocks<'data>> => t<'data>;
 }
+
+module MakeHelper: (
+  Type: {
+    type declarationBlocks<'data>;
+    type declarationConstructor<'data>;
+    let declarationBlocks: 
+      array<declarationConstructor<'data>> => 
+      declarationBlocks<'data>;
+  }
+) => {
+  let rule: 
+    (string, array<Type.declarationConstructor<'data>>) => 
+    [> constructor<Type.declarationBlocks<'data>> ];
+};
