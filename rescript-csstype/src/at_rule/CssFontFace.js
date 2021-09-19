@@ -4,10 +4,10 @@
 var Js_dict = require("rescript/lib/js/js_dict.js");
 var CssAtRule$Ress = require("./CssAtRule.js");
 
-var descriptors = Js_dict.fromArray;
+var descriptorBlocks = Js_dict.fromArray;
 
-function fontFace(d) {
-  return CssAtRule$Ress.Helper.atRule("@font-face", Js_dict.fromArray(d));
+function fontFace(descriptors) {
+  return CssAtRule$Ress.Helper.atRule("@font-face", Js_dict.fromArray(descriptors));
 }
 
 var AtRuleHelper = {
@@ -55,7 +55,7 @@ function fontDisplayString(v) {
         ];
 }
 
-exports.descriptors = descriptors;
+exports.descriptorBlocks = descriptorBlocks;
 exports.AtRuleHelper = AtRuleHelper;
 exports.ValueType = ValueType;
 exports.ValueString = ValueString;

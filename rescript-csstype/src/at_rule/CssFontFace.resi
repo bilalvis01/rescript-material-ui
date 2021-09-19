@@ -9,7 +9,7 @@ type rec boxValue =
 
 type descriptor = (string, boxValue);
 
-let descriptors: array<descriptor> => t;
+let descriptorBlocks: array<descriptor> => t;
 
 module AtRuleHelper: {
   let fontFace: array<descriptor> => [> CssAtRule.constructor ];

@@ -11,15 +11,15 @@ type descriptor = (string, boxValue);
 
 external makeRule: Js.Dict.t<boxValue> => t = "%identity";
 
-let descriptors = descriptors => {
+let descriptorBlocks = descriptors => {
   descriptors
   ->Js.Dict.fromArray
   ->makeRule;
 };
 
 module AtRuleHelper = {
-  let fontFace = d => 
-    CssAtRule.Helper.atRule("@font-face", descriptors(d))
+  let fontFace = descriptors => 
+    CssAtRule.Helper.atRule("@font-face", descriptorBlocks(descriptors))
 };
 
 module ValueType = {
