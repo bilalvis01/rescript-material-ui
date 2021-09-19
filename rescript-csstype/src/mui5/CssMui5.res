@@ -8,7 +8,7 @@ module Make = (
     | CssDeclaration.constructor
     | CssDeclarationFn.constructor<'data>
     | CssRule.constructor<'declarationBlocks>
-    | CssPseudoClassConstructor.t<'declarationBlocks>
+    | CssPseudoClass.constructor<'declarationBlocks>
     | CssAtRuleConstructor.t
   ];
 
@@ -53,7 +53,7 @@ module Make = (
       | #...CssDeclaration.constructor as d => Declaration.make(d)
       | #...CssDeclarationFn.constructor as d => DeclarationFn.make(d)
       | #...CssRule.constructor as d => Rule.make(d)
-      | #...CssPseudoClassConstructor.t as d => PseudoClass.make(d)
+      | #...CssPseudoClass.constructor as d => PseudoClass.make(d)
       | #...CssAtRuleConstructor.t as d => AtRule.make(d)
       };
     };
@@ -137,7 +137,7 @@ module Make = (
     let declarationBlocks = DeclarationBlocks.make; 
   });
   include CssAtRuleHelper;
-  include CssPseudoClassHelper.Make({ 
+  include CssPseudoClass.MakeHelper({ 
     type declarationBlocks<'data> = Type.declarationBlocks<'data>; 
     type declarationConstructor<'data> = advancedDeclarationConstructor<'data>;
     let declarationBlocks = DeclarationBlocks.make; 

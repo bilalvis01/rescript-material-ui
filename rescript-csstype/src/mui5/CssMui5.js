@@ -12,7 +12,6 @@ var CssValueHelper$Ress = require("../value/CssValueHelper.js");
 var CssAtRuleHelper$Ress = require("../at_rule/CssAtRuleHelper.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 var CssDeclarationHelper$Ress = require("../declaration/CssDeclarationHelper.js");
-var CssPseudoClassHelper$Ress = require("../rule/CssPseudoClassHelper.js");
 var CssDeclarationFnHelper$Ress = require("../declaration/CssDeclarationFnHelper.js");
 
 function Make(Type) {
@@ -37,14 +36,14 @@ function Make(Type) {
   };
   var make$2 = function (declaration) {
     var variant = declaration.NAME;
-    if (variant === "FontFace") {
+    if (variant === "PseudoClass") {
+      return Curry._1(PseudoClass.make, declaration);
+    } else if (variant === "FontFace") {
       return CssAtRule$Ress.make(declaration);
     } else if (variant === "DeclarationFn") {
       return Curry._1(DeclarationFn.make, declaration);
     } else if (variant === "Rule") {
       return Curry._1(Rule.make, declaration);
-    } else if (variant === "Hover") {
-      return Curry._1(PseudoClass.make, declaration);
     } else {
       return CssDeclaration$Ress.make(declaration);
     }
@@ -61,7 +60,7 @@ function Make(Type) {
   var include = CssRule$Ress.MakeHelper({
         declarationBlocks: make$3
       });
-  var include$1 = CssPseudoClassHelper$Ress.Make({
+  var include$1 = CssPseudoClass$Ress.MakeHelper({
         declarationBlocks: make$3
       });
   return {
@@ -188,6 +187,7 @@ function Make(Type) {
           repeatingConicGradient4: CssValueHelper$Ress.repeatingConicGradient4,
           rule: include.rule,
           fontFace: CssAtRuleHelper$Ress.fontFace,
+          pseudoClass: include$1.pseudoClass,
           hover: include$1.hover,
           background: CssDeclarationHelper$Ress.background,
           background2: CssDeclarationHelper$Ress.background2,

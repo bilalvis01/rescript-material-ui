@@ -5,9 +5,10 @@ var Curry = require("rescript/lib/js/curry.js");
 
 function Make(Type) {
   var make = function (v) {
+    var match = v.VAL;
     return Curry._1(Type.map, [
-                ":hover",
-                v.VAL
+                match[0],
+                match[1]
               ]);
   };
   return {
@@ -15,5 +16,25 @@ function Make(Type) {
         };
 }
 
+function MakeHelper(Type) {
+  var pseudoClass = function (selector, declarations) {
+    return {
+            NAME: "PseudoClass",
+            VAL: [
+              selector,
+              Curry._1(Type.declarationBlocks, declarations)
+            ]
+          };
+  };
+  var hover = function (declarations) {
+    return pseudoClass(":hover", declarations);
+  };
+  return {
+          pseudoClass: pseudoClass,
+          hover: hover
+        };
+}
+
 exports.Make = Make;
+exports.MakeHelper = MakeHelper;
 /* No side effect */
