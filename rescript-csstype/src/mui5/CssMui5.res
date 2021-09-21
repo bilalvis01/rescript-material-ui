@@ -10,13 +10,13 @@ module Make = (
     type value<'data> = Type.value<'data>;
   });
 
-  module StatementBlocks = CssMui5StatementBlocks.Make({
+  module Statements = CssMui5Statements.Make({
     type t<'data> = Type.declarationBlock<'data>;
     type declarationBlock<'data> = Type.declarationBlock<'data>;
   });
 
   let style = DeclarationBlock.make;
-  let styles = StatementBlocks.make;
+  let styles = Statements.make;
 
   /*
   Property Value

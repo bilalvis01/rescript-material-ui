@@ -5,14 +5,14 @@ var CssRule$Ress = require("../rule/CssRule.js");
 var CssPseudoClass$Ress = require("../rule/CssPseudoClass.js");
 var CssValueHelper$Ress = require("../value/CssValueHelper.js");
 var CssAtRuleHelper$Ress = require("../at_rule/CssAtRuleHelper.js");
+var CssMui5Statements$Ress = require("./CssMui5Statements.js");
 var CssDeclarationHelper$Ress = require("../declaration/CssDeclarationHelper.js");
 var CssDeclarationFnHelper$Ress = require("../declaration/CssDeclarationFnHelper.js");
-var CssMui5StatementBlocks$Ress = require("./CssMui5StatementBlocks.js");
 var CssMui5DeclarationBlock$Ress = require("./CssMui5DeclarationBlock.js");
 
 function Make(Type) {
   var DeclarationBlock = CssMui5DeclarationBlock$Ress.Make({});
-  var StatementBlocks = CssMui5StatementBlocks$Ress.Make({});
+  var Statements = CssMui5Statements$Ress.Make({});
   var include = CssRule$Ress.MakeHelper({
         declarationBlock: DeclarationBlock.make
       });
@@ -21,9 +21,9 @@ function Make(Type) {
       });
   return {
           DeclarationBlock: DeclarationBlock,
-          StatementBlocks: StatementBlocks,
+          Statements: Statements,
           style: DeclarationBlock.make,
-          styles: StatementBlocks.make,
+          styles: Statements.make,
           Property: undefined,
           Background: undefined,
           BackgroundAttachment: undefined,
