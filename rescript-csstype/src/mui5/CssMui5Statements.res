@@ -10,7 +10,7 @@ module Make = (
     | CssPseudoClass.constructor<'declarationBlock>
   ];
   
-  type t<'data> = (string, Type.declarationBlock<'data>);
+  type statement<'data> = (string, Type.declarationBlock<'data>);
 
   module Rule = CssRule.Make({ 
     type value<'data> = Type.declarationBlock<'data>;
@@ -18,7 +18,7 @@ module Make = (
   });
 
   module AtRule = {
-    external toStatement: CssAtRule.t => t<'data> = "%identity";
+    external toStatement: CssAtRule.t => statement<'data> = "%identity";
     let make = v => CssAtRule.make(v)->toStatement;
   };
 
