@@ -1,9 +1,5 @@
 type propertyValue<'a>;
 
-type propertyString = propertyValue<string>;
-type propertyNumber = propertyValue<float>;
-type propertyInteger = propertyValue<int>;
-
 /* 
 Textual data types
 */
