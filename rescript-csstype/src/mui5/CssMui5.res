@@ -1,21 +1,21 @@
 module Make = (
   Type: {
     type value<'data>;
-    type declarationBlocks<'data>;
+    type declarationBlock<'data>;
     type statementBlocks<'data>;
   }
 ) => {
-  module DeclarationBlocks = CssMui5DeclarationBlocks.Make({
-    type t<'data> = Type.declarationBlocks<'data>;
+  module DeclarationBlock = CssMui5DeclarationBlock.Make({
+    type t<'data> = Type.declarationBlock<'data>;
     type value<'data> = Type.value<'data>;
   });
 
   module StatementBlocks = CssMui5StatementBlocks.Make({
-    type t<'data> = Type.declarationBlocks<'data>;
-    type declarationBlocks<'data> = Type.declarationBlocks<'data>;
+    type t<'data> = Type.declarationBlock<'data>;
+    type declarationBlock<'data> = Type.declarationBlock<'data>;
   });
 
-  let style = DeclarationBlocks.make;
+  let style = DeclarationBlock.make;
   let styles = StatementBlocks.make;
 
   /*
@@ -74,15 +74,15 @@ module Make = (
   */
   include CssValueHelper;
   include CssRule.MakeHelper({ 
-    type declarationBlocks<'data> = Type.declarationBlocks<'data>; 
-    type declarationConstructor<'data> = DeclarationBlocks.advancedDeclarationConstructor<'data>;
-    let declarationBlocks = DeclarationBlocks.make; 
+    type declarationBlock<'data> = Type.declarationBlock<'data>; 
+    type declarationConstructor<'data> = DeclarationBlock.advancedDeclarationConstructor<'data>;
+    let declarationBlock = DeclarationBlock.make; 
   });
   include CssAtRuleHelper;
   include CssPseudoClass.MakeHelper({ 
-    type declarationBlocks<'data> = Type.declarationBlocks<'data>; 
-    type declarationConstructor<'data> = DeclarationBlocks.advancedDeclarationConstructor<'data>;
-    let declarationBlocks = DeclarationBlocks.make; 
+    type declarationBlock<'data> = Type.declarationBlock<'data>; 
+    type declarationConstructor<'data> = DeclarationBlock.advancedDeclarationConstructor<'data>;
+    let declarationBlock = DeclarationBlock.make; 
   });
   include CssDeclarationHelper;
   include CssDeclarationFnHelper;

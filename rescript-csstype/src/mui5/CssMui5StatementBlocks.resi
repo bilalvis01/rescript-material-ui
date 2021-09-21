@@ -1,14 +1,14 @@
 module Make: (
   Type: {
     type t<'data>;
-    type declarationBlocks<'data>;
+    type declarationBlock<'data>;
   }
 ) => {
-  type statementConstructor<'declarationBlocks> = [
-    | CssRule.constructor<'declarationBlocks>
+  type statementConstructor<'declarationBlock> = [
+    | CssRule.constructor<'declarationBlock>
     | CssAtRule.constructor
-    | CssPseudoClass.constructor<'declarationBlocks>
+    | CssPseudoClass.constructor<'declarationBlock>
   ];
 
-  let make: array<statementConstructor<Type.declarationBlocks<'data>>> => Type.t<'data>;
+  let make: array<statementConstructor<Type.declarationBlock<'data>>> => Type.t<'data>;
 }

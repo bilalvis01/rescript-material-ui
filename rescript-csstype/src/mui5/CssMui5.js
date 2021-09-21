@@ -8,21 +8,21 @@ var CssAtRuleHelper$Ress = require("../at_rule/CssAtRuleHelper.js");
 var CssDeclarationHelper$Ress = require("../declaration/CssDeclarationHelper.js");
 var CssDeclarationFnHelper$Ress = require("../declaration/CssDeclarationFnHelper.js");
 var CssMui5StatementBlocks$Ress = require("./CssMui5StatementBlocks.js");
-var CssMui5DeclarationBlocks$Ress = require("./CssMui5DeclarationBlocks.js");
+var CssMui5DeclarationBlock$Ress = require("./CssMui5DeclarationBlock.js");
 
 function Make(Type) {
-  var DeclarationBlocks = CssMui5DeclarationBlocks$Ress.Make({});
+  var DeclarationBlock = CssMui5DeclarationBlock$Ress.Make({});
   var StatementBlocks = CssMui5StatementBlocks$Ress.Make({});
   var include = CssRule$Ress.MakeHelper({
-        declarationBlocks: DeclarationBlocks.make
+        declarationBlock: DeclarationBlock.make
       });
   var include$1 = CssPseudoClass$Ress.MakeHelper({
-        declarationBlocks: DeclarationBlocks.make
+        declarationBlock: DeclarationBlock.make
       });
   return {
-          DeclarationBlocks: DeclarationBlocks,
+          DeclarationBlock: DeclarationBlock,
           StatementBlocks: StatementBlocks,
-          style: DeclarationBlocks.make,
+          style: DeclarationBlock.make,
           styles: StatementBlocks.make,
           Property: undefined,
           Background: undefined,

@@ -1,20 +1,20 @@
 module Make = (
   Type: {
     type t<'data>;
-    type declarationBlocks<'data>;
+    type declarationBlock<'data>;
   }
 ) => {
-  type statementConstructor<'declarationBlocks> = [
-    | CssRule.constructor<'declarationBlocks>
+  type statementConstructor<'declarationBlock> = [
+    | CssRule.constructor<'declarationBlock>
     | CssAtRule.constructor
-    | CssPseudoClass.constructor<'declarationBlocks>
+    | CssPseudoClass.constructor<'declarationBlock>
   ];
   
-  type t<'data> = (string, Type.declarationBlocks<'data>);
+  type t<'data> = (string, Type.declarationBlock<'data>);
 
   module Rule = CssRule.Make({ 
-    type value<'data> = Type.declarationBlocks<'data>;
-    type declarationBlocks<'data> = Type.declarationBlocks<'data>;
+    type value<'data> = Type.declarationBlock<'data>;
+    type declarationBlock<'data> = Type.declarationBlock<'data>;
   });
 
   module AtRule = {
@@ -23,8 +23,8 @@ module Make = (
   };
 
   module PseudoClass = CssPseudoClass.Make({
-    type value<'data> = Type.declarationBlocks<'data>;
-    type declarationBlocks<'data> = Type.declarationBlocks<'data>;
+    type value<'data> = Type.declarationBlock<'data>;
+    type declarationBlock<'data> = Type.declarationBlock<'data>;
     let map = v => v;
   });
 
@@ -38,7 +38,7 @@ module Make = (
     };
   };
 
-  external makeRules: Js.Dict.t<Type.declarationBlocks<'data>> => Type.t<'data> = "%identity";
+  external makeRules: Js.Dict.t<Type.declarationBlock<'data>> => Type.t<'data> = "%identity";
 
   let make = rules => {
     Belt.Array.map(rules, rule => {

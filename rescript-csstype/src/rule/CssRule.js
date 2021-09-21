@@ -22,7 +22,7 @@ function MakeHelper(Type) {
             NAME: "Rule",
             VAL: [
               selector,
-              Curry._1(Type.declarationBlocks, declarations)
+              Curry._1(Type.declarationBlock, declarations)
             ]
           };
   };

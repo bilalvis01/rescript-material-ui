@@ -1,31 +1,31 @@
-type constructor<'declarationBlocks> = [ | #Rule(string, 'declarationBlocks) ];
+type constructor<'declarationBlock> = [ | #Rule(string, 'declarationBlock) ];
 
 module Make = (
   Type: {
     type value<'data>;
-    type declarationBlocks<'data>;
+    type declarationBlock<'data>;
   }
 ) => {
   type t<'data> = (string, Type.value<'data>);
 
-  external makeValue: Type.declarationBlocks<'data> => Type.value<'data> = "%identity";
+  external makeValue: Type.declarationBlock<'data> => Type.value<'data> = "%identity";
 
   let make = v => {
     switch v {
-    | #Rule(selector, declarationBlocks) => (selector, makeValue(declarationBlocks));
+    | #Rule(selector, declarationBlock) => (selector, makeValue(declarationBlock));
     }
   };
 }
 
 module MakeHelper = (
   Type: {
-    type declarationBlocks<'data>;
+    type declarationBlock<'data>;
     type declarationConstructor<'data>;
-    let declarationBlocks: 
+    let declarationBlock: 
       array<declarationConstructor<'data>> => 
-      declarationBlocks<'data>;
+      declarationBlock<'data>;
   }
 ) => {
   let rule = (selector, declarations) => 
-    #Rule(selector, Type.declarationBlocks(declarations));
+    #Rule(selector, Type.declarationBlock(declarations));
 }

@@ -1,21 +1,21 @@
-type constructor<'declarationBlocks> = [
-  | #PseudoClass(string, 'declarationBlocks)
+type constructor<'declarationBlock> = [
+  | #PseudoClass(string, 'declarationBlock)
 ];
 
 module Make = (
   Type: {
     type value<'data>;
-    type declarationBlocks<'data>;
+    type declarationBlock<'data>;
     let map: ((string, value<'data>)) => (string, value<'data>);
   }
 ) => {
   type t<'data> = (string, Type.value<'data>);
 
-  external makeValue: Type.declarationBlocks<'data> => Type.value<'data> = "%identity";
+  external makeValue: Type.declarationBlock<'data> => Type.value<'data> = "%identity";
 
   let make = v => {
     switch v {
-    | #PseudoClass(selector, declarationBlocks) => (selector, makeValue(declarationBlocks))
+    | #PseudoClass(selector, declarationBlock) => (selector, makeValue(declarationBlock))
     }
     ->Type.map
   };
@@ -23,14 +23,14 @@ module Make = (
 
 module MakeHelper = (
   Type: {
-    type declarationBlocks<'data>;
+    type declarationBlock<'data>;
     type declarationConstructor<'data>;
-    let declarationBlocks: 
+    let declarationBlock: 
       array<declarationConstructor<'data>> => 
-      declarationBlocks<'data>; 
+      declarationBlock<'data>; 
   }
 ) => {
   let pseudoClass = (selector, declarations) => 
-    #PseudoClass(selector, Type.declarationBlocks(declarations));
+    #PseudoClass(selector, Type.declarationBlock(declarations));
   let hover = declarations => pseudoClass(":hover", declarations);
 }
