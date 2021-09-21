@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:start": "jest --watch",
-    "updateSnapshot": "jest --updateSnapshot", 
+    "updateSnapshot": "jest --updateSnapshot",
     "re:build": "rescript",
     "re:start": "rescript build -w",
     "re:clean": "rescript clean"
@@ -19,10 +19,13 @@
   "author": "BILAL <bilalvis01@gmail.com>",
   "license": "MIT",
   "devDependencies": {
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "@mui/material": "^5.0.0-rc.1",
     "@rescript/react": "^0.10.3",
     "jest": "^27.0.6",
-    "rescript": "^9.1.4",
     "jss": "^10.7.1",
-    "jss-preset-default": "^10.7.1"
+    "jss-preset-default": "^10.7.1",
+    "rescript": "^9.1.4"
   }
 }
