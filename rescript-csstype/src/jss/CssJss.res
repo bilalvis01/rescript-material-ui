@@ -2,7 +2,7 @@ module Make = (
   Type: {
     type value<'data>;
     type declarationBlock<'data>;
-    type statementBlocks<'data>;
+    type statements<'data>;
   }
 ) => {
   module DeclarationBlock = CssJssDeclarationBlock.Make({
@@ -11,7 +11,7 @@ module Make = (
   });
 
   module Statements = CssJssStatements.Make({
-    type t<'data> = Type.declarationBlock<'data>;
+    type t<'data> = Type.statements<'data>;
     type declarationBlock<'data> = Type.declarationBlock<'data>;
   });
 
