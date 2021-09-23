@@ -2,12 +2,12 @@ open Jest;
 
 type value<'data>;
 type declarationBlock<'data>;
-type statementBlocks<'data>;
+type statements<'data>;
 
 module Css = CssMui5.Make({
   type value<'data> = value<'data>;
   type declarationBlock<'data> = declarationBlock<'data>;
-  type statementBlocks<'data> = statementBlocks<'data>;
+  type statements<'data> = statements<'data>;
 });
 
 open Css;
