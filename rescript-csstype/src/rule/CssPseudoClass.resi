@@ -3,30 +3,29 @@ type constructor<'declarationBlock> = [
 ];
 
 module Make: (
-  Type: {
-    type value<'data>;
+  D: {
     type declarationBlock<'data>;
-    let map: ((string, value<'data>)) => (string, value<'data>);
+    let map: ((string, declarationBlock<'data>)) => (string, declarationBlock<'data>);
   }
 ) => {
-  type t<'data> = (string, Type.value<'data>);
+  type t<'data> = (string, D.declarationBlock<'data>);
 
-  let make: constructor<Type.declarationBlock<'data>> => t<'data>;
+  let make: constructor<D.declarationBlock<'data>> => t<'data>;
 }
 
 module MakeHelper: (
-  Type: {
+  D: {
     type declarationBlock<'data>;
     type declarationConstructor<'data>;
-    let declarationBlock: 
+    let style: 
       array<declarationConstructor<'data>> => 
       declarationBlock<'data>; 
   }
 ) => {
   let pseudoClass:
-    (string, array<Type.declarationConstructor<'data>>) => 
-    [> constructor<Type.declarationBlock<'data>> ];
+    (string, array<D.declarationConstructor<'data>>) => 
+    [> constructor<D.declarationBlock<'data>> ];
   let hover: 
-    array<Type.declarationConstructor<'data>> => 
-    [> constructor<Type.declarationBlock<'data>> ];
+    array<D.declarationConstructor<'data>> => 
+    [> constructor<D.declarationBlock<'data>> ];
 }

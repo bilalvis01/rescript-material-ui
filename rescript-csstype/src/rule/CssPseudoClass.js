@@ -3,10 +3,11 @@
 
 var Curry = require("rescript/lib/js/curry.js");
 
-function Make(Type) {
+function Make(funarg) {
+  var map = funarg.map;
   var make = function (v) {
     var match = v.VAL;
-    return Curry._1(Type.map, [
+    return Curry._1(map, [
                 match[0],
                 match[1]
               ]);
@@ -16,13 +17,14 @@ function Make(Type) {
         };
 }
 
-function MakeHelper(Type) {
+function MakeHelper(funarg) {
+  var style = funarg.style;
   var pseudoClass = function (selector, declarations) {
     return {
             NAME: "PseudoClass",
             VAL: [
               selector,
-              Curry._1(Type.declarationBlock, declarations)
+              Curry._1(style, declarations)
             ]
           };
   };

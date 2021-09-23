@@ -22,12 +22,12 @@ module Make = (
     let make = v => CssDeclaration.make(v)->toAdvancedDeclaration;
   };
 
-  module DeclarationFn = CssDeclarationFn.Make({
-    type value<'data> = Type.value<'data>
-  });
+  module DeclarationFn = {
+    external toAdvancedDeclaration: CssDeclarationFn.t<'data> => advancedDeclaration<'data> = "%identity";
+    let make = v => CssDeclarationFn.make(v)->toAdvancedDeclaration;
+  };
 
-  module PseudoClass = CssPseudoClass.Make({
-    type value<'data> = Type.value<'data>;
+  module PseudoClassBase = CssPseudoClass.Make({
     type declarationBlock<'data> = Type.t<'data>;
     let map = v => {
       let (selector, declarations) = v;
@@ -35,14 +35,23 @@ module Make = (
     };
   });
 
-  module Rule = CssRule.Make({
-    type value<'data> = Type.value<'data>;
+  module PseudoClass = {
+    external toAdvancedDeclaration: PseudoClassBase.t<'data> => advancedDeclaration<'data> = "%identity";
+    let make = v => PseudoClassBase.make(v)->toAdvancedDeclaration;
+  };
+
+  module RuleBase = CssRule.Make({
     type declarationBlock<'data> = Type.t<'data>;
   });
 
+  module Rule = {
+    external toAdvancedDeclaration: RuleBase.t<'data> => advancedDeclaration<'data> = "%identity";
+    let make = v => RuleBase.make(v)->toAdvancedDeclaration;
+  };
+
   module AtRule = {
-    external toDeclaration: CssAtRule.t => advancedDeclaration<'data> = "%identity";
-    let make = v => CssAtRule.make(v)->toDeclaration;
+    external toAdvancedDeclaration: CssAtRule.t => advancedDeclaration<'data> = "%identity";
+    let make = v => CssAtRule.make(v)->toAdvancedDeclaration;
   };
 
   module AdvancedDeclaration: {

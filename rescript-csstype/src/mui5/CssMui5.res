@@ -76,13 +76,13 @@ module Make = (
   include CssRule.MakeHelper({ 
     type declarationBlock<'data> = Type.declarationBlock<'data>; 
     type declarationConstructor<'data> = DeclarationBlock.advancedDeclarationConstructor<'data>;
-    let declarationBlock = DeclarationBlock.make; 
+    let style = DeclarationBlock.make; 
   });
   include CssAtRuleHelper;
   include CssPseudoClass.MakeHelper({ 
     type declarationBlock<'data> = Type.declarationBlock<'data>; 
     type declarationConstructor<'data> = DeclarationBlock.advancedDeclarationConstructor<'data>;
-    let declarationBlock = DeclarationBlock.make; 
+    let style = DeclarationBlock.make; 
   });
   include CssDeclarationHelper;
   include CssDeclarationFnHelper;

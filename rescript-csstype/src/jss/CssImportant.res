@@ -14,11 +14,15 @@ module Make = (
 ) => {
   type t<'data> = (string, Type.value<'data>);
 
-  module DeclarationFn = CssDeclarationFn.Make({
-    type value<'data> = Type.value<'data>;
-  });
+  module Declaration = {
+    external toImportant: CssDeclaration.t => t<'data> = "%identity";
+    let make = v => CssDeclaration.make(v)->toImportant;
+  };
 
-  external declarationToImportant: CssDeclaration.t => t<'data> = "%identity";
+  module DeclarationFn = {
+    external toImportant: CssDeclarationFn.t<'data> => t<'data> = "%identity";
+    let make = v => CssDeclarationFn.make(v)->toImportant;
+  };
 
   let make = v => {
     switch v {
@@ -26,8 +30,8 @@ module Make = (
       switch v {
       | #...CssDeclaration.constructor as d =>
         {
-          let (selector, value) = CssDeclaration.make(d);
-          let makeImportant: CssDeclaration.boxValue => CssDeclaration.boxValue =
+          let (selector, value) = Declaration.make(d);
+          let makeImportant: Type.value<'data> => Type.value<'data> =
             %raw(`
               function (value) {                
                 if (Array.isArray(value)) {
@@ -46,7 +50,7 @@ module Make = (
               }
             `);
           let value = makeImportant(value);
-          (selector, value)->declarationToImportant;
+          (selector, value);
         }
       | #...CssDeclarationFn.constructor as d =>
         {

@@ -8,15 +8,9 @@ type constructor<'data> = [
   | #DeclarationFn(string, boxValue<'data>)
 ];
 
-module Make: (
-  Type: {
-    type value<'data>;
-  }
-) => {
-  type t<'data> = (string, Type.value<'data>);
+type t<'data> = (string, boxValue<'data>);
 
-  let make: constructor<'data> => t<'data>;
-};
+let make: constructor<'data> => t<'data>;
 
 module Helper: {
   let declarationFn: 

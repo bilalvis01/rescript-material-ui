@@ -2,25 +2,24 @@ type constructor<'declarationBlock> = [ | #Rule(string, 'declarationBlock) ];
 
 module Make: (
   Type: {
-    type value<'data>;
     type declarationBlock<'data>;
   }
 ) => {
-  type t<'data> = (string, Type.value<'data>);
+  type t<'data> = (string, Type.declarationBlock<'data>);
 
   let make: constructor<Type.declarationBlock<'data>> => t<'data>;
 }
 
 module MakeHelper: (
-  Type: {
+  D: {
     type declarationBlock<'data>;
     type declarationConstructor<'data>;
-    let declarationBlock: 
+    let style: 
       array<declarationConstructor<'data>> => 
       declarationBlock<'data>;
   }
 ) => {
   let rule: 
-    (string, array<Type.declarationConstructor<'data>>) => 
-    [> constructor<Type.declarationBlock<'data>> ];
+    (string, array<D.declarationConstructor<'data>>) => 
+    [> constructor<D.declarationBlock<'data>> ];
 };

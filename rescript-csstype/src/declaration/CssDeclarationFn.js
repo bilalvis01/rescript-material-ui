@@ -2,17 +2,12 @@
 'use strict';
 
 
-function Make(Type) {
-  var make = function (declaration) {
-    var match = declaration.VAL;
-    return [
-            match[0],
-            match[1]
-          ];
-  };
-  return {
-          make: make
-        };
+function make(declaration) {
+  var match = declaration.VAL;
+  return [
+          match[0],
+          match[1]
+        ];
 }
 
 function declarationFn(property, value) {
@@ -29,6 +24,6 @@ var Helper = {
   declarationFn: declarationFn
 };
 
-exports.Make = Make;
+exports.make = make;
 exports.Helper = Helper;
 /* No side effect */

@@ -14,10 +14,10 @@ function Make(Type) {
   var DeclarationBlock = CssMui5DeclarationBlock$Ress.Make({});
   var Statements = CssMui5Statements$Ress.Make({});
   var include = CssRule$Ress.MakeHelper({
-        declarationBlock: DeclarationBlock.make
+        style: DeclarationBlock.make
       });
   var include$1 = CssPseudoClass$Ress.MakeHelper({
-        declarationBlock: DeclarationBlock.make
+        style: DeclarationBlock.make
       });
   return {
           DeclarationBlock: DeclarationBlock,

@@ -11,28 +11,27 @@ var CssPseudoClass$Ress = require("../rule/CssPseudoClass.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 
 function Make(funarg) {
-  var DeclarationFn = CssDeclarationFn$Ress.Make({});
   var map = function (v) {
     return [
             "&" + v[0],
             v[1]
           ];
   };
-  var PseudoClass = CssPseudoClass$Ress.Make({
+  var PseudoClassBase = CssPseudoClass$Ress.Make({
         map: map
       });
-  var Rule = CssRule$Ress.Make({});
+  var RuleBase = CssRule$Ress.Make({});
   var make = function (declarations) {
     return Js_dict.fromArray(Belt_Array.map(declarations, (function (declaration) {
                       var variant = declaration.NAME;
                       if (variant === "AtRule") {
                         return CssAtRule$Ress.make(declaration);
                       } else if (variant === "PseudoClass") {
-                        return Curry._1(PseudoClass.make, declaration);
+                        return Curry._1(PseudoClassBase.make, declaration);
                       } else if (variant === "DeclarationFn") {
-                        return Curry._1(DeclarationFn.make, declaration);
+                        return CssDeclarationFn$Ress.make(declaration);
                       } else if (variant === "Rule") {
-                        return Curry._1(Rule.make, declaration);
+                        return Curry._1(RuleBase.make, declaration);
                       } else {
                         return CssDeclaration$Ress.make(declaration);
                       }

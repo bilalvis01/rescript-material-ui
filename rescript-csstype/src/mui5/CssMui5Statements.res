@@ -13,7 +13,6 @@ module Make = (
   type statement<'data> = (string, Type.declarationBlock<'data>);
 
   module Rule = CssRule.Make({ 
-    type value<'data> = Type.declarationBlock<'data>;
     type declarationBlock<'data> = Type.declarationBlock<'data>;
   });
 
@@ -23,7 +22,6 @@ module Make = (
   };
 
   module PseudoClass = CssPseudoClass.Make({
-    type value<'data> = Type.declarationBlock<'data>;
     type declarationBlock<'data> = Type.declarationBlock<'data>;
     let map = v => v;
   });

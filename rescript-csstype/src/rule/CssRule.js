@@ -16,13 +16,14 @@ function Make(Type) {
         };
 }
 
-function MakeHelper(Type) {
+function MakeHelper(funarg) {
+  var style = funarg.style;
   var rule = function (selector, declarations) {
     return {
             NAME: "Rule",
             VAL: [
               selector,
-              Curry._1(Type.declarationBlock, declarations)
+              Curry._1(style, declarations)
             ]
           };
   };
