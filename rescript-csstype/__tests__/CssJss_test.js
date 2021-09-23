@@ -2,29 +2,64 @@
 'use strict';
 
 var Curry = require("rescript/lib/js/curry.js");
-var CssMui5$Ress = require("../src/mui5/CssMui5.js");
+var Jss$Ress = require("../bindings/Jss.js");
 
-var Css = CssMui5$Ress.Make({});
+test("declarationBlock", (function () {
+        expect(Curry._1(Jss$Ress.Css.style, [
+                    Curry._2(Jss$Ress.Css.rule, "& .wrapper", [
+                          Curry._8(Jss$Ress.Css.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Curry._1(Jss$Ress.Css.url, "image.png")),
+                          Curry._1(Jss$Ress.Css.color, Curry._3(Jss$Ress.Css.rgb, 255, 255, 255)),
+                          Curry._1(Jss$Ress.Css.paddingTop, Curry._1(Jss$Ress.Css.px, 24)),
+                          Curry._1(Jss$Ress.Css.paddingBottom, Curry._1(Jss$Ress.Css.px, 24)),
+                          Curry._1(Jss$Ress.Css.paddingLeft, Curry._1(Jss$Ress.Css.px, 40)),
+                          Curry._1(Jss$Ress.Css.paddingRight, Curry._1(Jss$Ress.Css.px, 40)),
+                          Curry._1(Jss$Ress.Css.marginNumber, 24)
+                        ]),
+                    Curry._2(Jss$Ress.Css.rule, "& .button", [
+                          Curry._1(Jss$Ress.Css.color, Curry._4(Jss$Ress.Css.hsla, Curry._1(Jss$Ress.Css.deg, 360), Curry._1(Jss$Ress.Css.pct, 100), Curry._1(Jss$Ress.Css.pct, 50), 0.5)),
+                          Curry._1(Jss$Ress.Css.hover, [Curry._8(Jss$Ress.Css.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
+                        ]),
+                    Curry._1(Jss$Ress.Css.hover, [Curry._1(Jss$Ress.Css.color, "blue")])
+                  ])).toEqual({
+              "& .wrapper": {
+                background: "url(\"image.png\")",
+                color: "rgb(255, 255, 255)",
+                paddingTop: "24px",
+                paddingBottom: "24px",
+                paddingLeft: "40px",
+                paddingRight: "40px",
+                margin: 24
+              },
+              "& .button": {
+                color: "hsla(360deg, 100%, 50%, 0.5)",
+                "&:hover": {
+                  background: "blue"
+                }
+              },
+              "&:hover": {
+                color: "blue"
+              }
+            });
+        
+      }));
 
-test("style", (function () {
-        expect({
-                app: Curry._1(Css.style, [
-                      Curry._2(Css.rule, "& .wrapper", [
-                            Curry._8(Css.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Curry._1(Css.url, "image.png")),
-                            Curry._1(Css.color, Curry._3(Css.rgb, 255, 255, 255)),
-                            Curry._1(Css.paddingTop, Curry._1(Css.px, 24)),
-                            Curry._1(Css.paddingBottom, Curry._1(Css.px, 24)),
-                            Curry._1(Css.paddingLeft, Curry._1(Css.px, 40)),
-                            Curry._1(Css.paddingRight, Curry._1(Css.px, 40)),
-                            Curry._1(Css.marginNumber, 24)
-                          ]),
-                      Curry._2(Css.rule, "& .button", [
-                            Curry._1(Css.color, Curry._4(Css.hsla, Curry._1(Css.deg, 360), Curry._1(Css.pct, 100), Curry._1(Css.pct, 50), 0.5)),
-                            Curry._1(Css.hover, [Curry._8(Css.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
-                          ]),
-                      Curry._1(Css.hover, [Curry._1(Css.color, "blue")])
-                    ])
-              }).toEqual({
+test("statements", (function () {
+        expect(Curry._1(Jss$Ress.Css.styles, [Curry._2(Jss$Ress.Css.rule, "app", [
+                          Curry._2(Jss$Ress.Css.rule, "& .wrapper", [
+                                Curry._8(Jss$Ress.Css.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Curry._1(Jss$Ress.Css.url, "image.png")),
+                                Curry._1(Jss$Ress.Css.color, Curry._3(Jss$Ress.Css.rgb, 255, 255, 255)),
+                                Curry._1(Jss$Ress.Css.paddingTop, Curry._1(Jss$Ress.Css.px, 24)),
+                                Curry._1(Jss$Ress.Css.paddingBottom, Curry._1(Jss$Ress.Css.px, 24)),
+                                Curry._1(Jss$Ress.Css.paddingLeft, Curry._1(Jss$Ress.Css.px, 40)),
+                                Curry._1(Jss$Ress.Css.paddingRight, Curry._1(Jss$Ress.Css.px, 40)),
+                                Curry._1(Jss$Ress.Css.marginNumber, 24)
+                              ]),
+                          Curry._2(Jss$Ress.Css.rule, "& .button", [
+                                Curry._1(Jss$Ress.Css.color, Curry._4(Jss$Ress.Css.hsla, Curry._1(Jss$Ress.Css.deg, 360), Curry._1(Jss$Ress.Css.pct, 100), Curry._1(Jss$Ress.Css.pct, 50), 0.5)),
+                                Curry._1(Jss$Ress.Css.hover, [Curry._8(Jss$Ress.Css.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
+                              ]),
+                          Curry._1(Jss$Ress.Css.hover, [Curry._1(Jss$Ress.Css.color, "blue")])
+                        ])])).toEqual({
               app: {
                 "& .wrapper": {
                   background: "url(\"image.png\")",
@@ -49,5 +84,4 @@ test("style", (function () {
         
       }));
 
-exports.Css = Css;
-/* Css Not a pure module */
+/*  Not a pure module */
