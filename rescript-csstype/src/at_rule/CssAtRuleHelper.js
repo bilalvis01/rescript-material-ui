@@ -8,6 +8,9 @@ var atRule = CssAtRule$Ress.Helper.atRule;
 
 var fontFace = CssFontFace$Ress.AtRuleHelper.fontFace;
 
+var $$FontFace;
+
 exports.atRule = atRule;
 exports.fontFace = fontFace;
+exports.$$FontFace = $$FontFace;
 /* No side effect */
