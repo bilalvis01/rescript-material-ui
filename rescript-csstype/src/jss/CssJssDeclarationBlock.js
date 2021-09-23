@@ -6,9 +6,9 @@ var Js_dict = require("rescript/lib/js/js_dict.js");
 var Belt_Array = require("rescript/lib/js/belt_Array.js");
 var CssRule$Ress = require("../rule/CssRule.js");
 var CssAtRule$Ress = require("../at_rule/CssAtRule.js");
-var CssImportant$Ress = require("./CssImportant.js");
 var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
 var CssPseudoClass$Ress = require("../rule/CssPseudoClass.js");
+var CssJssImportant$Ress = require("./CssJssImportant.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 
 function Make(funarg) {
@@ -22,7 +22,7 @@ function Make(funarg) {
         map: map
       });
   var RuleBase = CssRule$Ress.Make({});
-  var Important = CssImportant$Ress.Make({});
+  var Important = CssJssImportant$Ress.Make({});
   var make = function (declarations) {
     return Js_dict.fromArray(Belt_Array.map(declarations, (function (declaration) {
                       var variant = declaration.NAME;

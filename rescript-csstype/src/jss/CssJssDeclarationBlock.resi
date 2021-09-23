@@ -10,7 +10,7 @@ module Make: (
     | CssRule.constructor<'declarationBlocks>
     | CssPseudoClass.constructor<'declarationBlocks>
     | CssAtRule.constructor
-    | CssImportant.constructor<'data>
+    | CssJssImportant.constructor<'data>
   ];
 
   type advancedDeclarationConstructor<'data> = 

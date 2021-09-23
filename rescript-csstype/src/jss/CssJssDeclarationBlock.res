@@ -10,7 +10,7 @@ module Make = (
     | CssRule.constructor<'declarationBlock>
     | CssPseudoClass.constructor<'declarationBlock>
     | CssAtRule.constructor
-    | CssImportant.constructor<'data>
+    | CssJssImportant.constructor<'data>
   ];
 
   type advancedDeclarationConstructor<'data> = 
@@ -55,7 +55,7 @@ module Make = (
     let make = v => CssAtRule.make(v)->toAdvancedDeclaration;
   };
 
-  module Important = CssImportant.Make({
+  module Important = CssJssImportant.Make({
     type value<'data> = Type.value<'data>;
   });
 
@@ -69,7 +69,7 @@ module Make = (
       | #...CssRule.constructor as d => Rule.make(d)
       | #...CssPseudoClass.constructor as d => PseudoClass.make(d)
       | #...CssAtRule.constructor as d => AtRule.make(d)
-      | #...CssImportant.constructor as d => Important.make(d)
+      | #...CssJssImportant.constructor as d => Important.make(d)
       };
     };
   };
