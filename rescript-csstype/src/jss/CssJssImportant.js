@@ -4,18 +4,7 @@
 var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 
-function important(v) {
-  return {
-          NAME: "Important",
-          VAL: v
-        };
-}
-
-var Helper = {
-  important: important
-};
-
-function Make(funarg) {
+function Make(Type) {
   var makeValueImportant = (function (value) {                
           if (Array.isArray(value)) {
             let val = value.map(item => {
@@ -31,6 +20,17 @@ function Make(funarg) {
 
           return [[value], '!important'];
         });
+  var make = function (v) {
+    var match = CssDeclaration$Ress.make(v);
+    return [
+            match[0],
+            makeValueImportant(match[1])
+          ];
+  };
+  var Declaration = {
+    makeValueImportant: makeValueImportant,
+    make: make
+  };
   var makeValueImportant$1 = (function (valueFn) {
           return function (data) {
             let value = valueFn(data)
@@ -51,26 +51,42 @@ function Make(funarg) {
             return [[value], '!important'];
           }
         });
-  var make = function (v) {
+  var make$1 = function (v) {
+    var match = CssDeclarationFn$Ress.make(v);
+    return [
+            match[0],
+            makeValueImportant$1(match[1])
+          ];
+  };
+  var DeclarationFn = {
+    makeValueImportant: makeValueImportant$1,
+    make: make$1
+  };
+  var make$2 = function (v) {
     var v$1 = v.VAL;
     if (v$1.NAME === "DeclarationFn") {
-      var match = CssDeclarationFn$Ress.make(v$1);
-      return [
-              match[0],
-              makeValueImportant$1(match[1])
-            ];
+      return make$1(v$1);
     } else {
-      var match$1 = CssDeclaration$Ress.make(v$1);
-      return [
-              match$1[0],
-              makeValueImportant(match$1[1])
-            ];
+      return make(v$1);
     }
   };
   return {
-          make: make
+          Declaration: Declaration,
+          DeclarationFn: DeclarationFn,
+          make: make$2
         };
 }
+
+function important(v) {
+  return {
+          NAME: "Important",
+          VAL: v
+        };
+}
+
+var Helper = {
+  important: important
+};
 
 exports.Make = Make;
 exports.Helper = Helper;

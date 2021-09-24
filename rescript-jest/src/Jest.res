@@ -13,4 +13,4 @@ external toBe: (expect<'a>, 'a) => unit = "toBe";
 @send
 external toEqual: (expect<'a>, 'a) => unit = "toEqual";
 @send
-external toMatchSnapshot: expect<'a> => unit = "toMatchSnapshot";
+external toMatchSnapshot: (expect<'a>, unit) => unit = "toMatchSnapshot";

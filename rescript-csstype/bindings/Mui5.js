@@ -5,5 +5,11 @@ var CssMui5$Ress = require("../src/mui5/CssMui5.js");
 
 var Css = CssMui5$Ress.Make({});
 
+var Theme = {};
+
+var Box = {};
+
 exports.Css = Css;
+exports.Theme = Theme;
+exports.Box = Box;
 /* Css Not a pure module */

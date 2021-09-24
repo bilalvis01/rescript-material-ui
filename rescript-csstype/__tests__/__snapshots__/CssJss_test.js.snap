@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`jss 1`] = `
+".app-0-0-1 .wrapper {
+  color: rgb(255, 255, 255);
+  margin: 24px;
+  background: url(\\"image.png\\");
+  padding-top: 24px;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 24px;
+}
+.app-0-0-1 .button {
+  color: hsla(360deg, 100%, 50%, 0.5);
+}
+.app-0-0-1:hover {
+  color: blue;
+}
+.app-0-0-1 .button:hover {
+  background: blue;
+}"
+`;

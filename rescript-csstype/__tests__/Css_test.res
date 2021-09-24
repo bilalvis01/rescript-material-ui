@@ -30,9 +30,15 @@ include CssHelper.Make({
 
 test("declarationBlock", (.) => {
   expect(DeclarationBlock.make([
-    rule("& .wrapper", [
-      declaration("background", Property.string(`url("image.png")`)),
-      color(rgb(255., 255., 255.)),
+    declaration("background", Property.string(`url("image.png")`)),
+    declaration("color", Property.string("rgb(200, 200, 200)")),
+    declaration("margin", Property.number(24.)),
+    paddingTop(px(24.)),
+    paddingBottom(px(24.)),
+    paddingLeft(px(40.)),
+    paddingRight(px(40.)),
+    rule("& .header", [
+      color(rgb(200., 200., 200.)),
       paddingTop(px(24.)),
       paddingBottom(px(24.)),
       paddingLeft(px(40.)),
@@ -50,14 +56,20 @@ test("declarationBlock", (.) => {
     ]),
   ]))
   ->toEqual(Obj.magic({
-    "& .wrapper": {
-      "background": `url("image.png")`,
-      "color": "rgb(255, 255, 255)",
+    "background": `url("image.png")`,
+    "color": "rgb(200, 200, 200)",
+    "margin": 24,
+    "paddingTop": "24px",
+    "paddingBottom": "24px",
+    "paddingLeft": "40px",
+    "paddingRight": "40px",
+    "& .header": {
+      "color": "rgb(200, 200, 200)",
+      "margin": 24,
       "paddingTop": "24px",
       "paddingBottom": "24px",
       "paddingLeft": "40px",
       "paddingRight": "40px",
-      "margin": 24,
     },
     "& .button": {
       "color": "hsla(360deg, 100%, 50%, 0.5)"
@@ -74,9 +86,16 @@ test("declarationBlock", (.) => {
 test("statements", (.) => {
   expect(Statements.make([
     rule("app", [
-      rule("& .wrapper", [
+      declaration("background", Property.string(`url("image.png")`)),
+      declaration("color", Property.string("rgb(200, 200, 200)")),
+      declaration("margin", Property.number(24.)),
+      paddingTop(px(24.)),
+      paddingBottom(px(24.)),
+      paddingLeft(px(40.)),
+      paddingRight(px(40.)),
+      rule("& .header", [
         background(url("image.png")),
-        color(rgb(255., 255., 255.)),
+        color(rgb(200., 200., 200.)),
         paddingTop(px(24.)),
         paddingBottom(px(24.)),
         paddingLeft(px(40.)),
@@ -96,14 +115,21 @@ test("statements", (.) => {
   ]))
   ->toEqual(Obj.magic({
     "app": {
-      "& .wrapper": {
+      "background": `url("image.png")`,
+      "color": "rgb(200, 200, 200)",
+      "margin": 24,
+      "paddingTop": "24px",
+      "paddingBottom": "24px",
+      "paddingLeft": "40px",
+      "paddingRight": "40px",
+      "& .header": {
         "background": `url("image.png")`,
-        "color": "rgb(255, 255, 255)",
+        "color": "rgb(200, 200, 200)",
+        "margin": 24,
         "paddingTop": "24px",
         "paddingBottom": "24px",
         "paddingLeft": "40px",
         "paddingRight": "40px",
-        "margin": 24,
       },
       "& .button": {
         "color": "hsla(360deg, 100%, 50%, 0.5)"

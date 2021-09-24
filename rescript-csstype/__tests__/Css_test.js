@@ -49,9 +49,15 @@ var declaration = include.declaration;
 
 test("declarationBlock", (function () {
         expect(Curry._1(DeclarationBlock.make, [
-                    Curry._2(rule, "& .wrapper", [
-                          Curry._2(declaration, "background", "url(\"image.png\")"),
-                          Curry._1(color, Curry._3(rgb, 255, 255, 255)),
+                    Curry._2(declaration, "background", "url(\"image.png\")"),
+                    Curry._2(declaration, "color", "rgb(200, 200, 200)"),
+                    Curry._2(declaration, "margin", 24),
+                    Curry._1(paddingTop, Curry._1(px, 24)),
+                    Curry._1(paddingBottom, Curry._1(px, 24)),
+                    Curry._1(paddingLeft, Curry._1(px, 40)),
+                    Curry._1(paddingRight, Curry._1(px, 40)),
+                    Curry._2(rule, "& .header", [
+                          Curry._1(color, Curry._3(rgb, 200, 200, 200)),
                           Curry._1(paddingTop, Curry._1(px, 24)),
                           Curry._1(paddingBottom, Curry._1(px, 24)),
                           Curry._1(paddingLeft, Curry._1(px, 40)),
@@ -64,14 +70,20 @@ test("declarationBlock", (function () {
                         ]),
                     Curry._1(hover, [Curry._1(color, "blue")])
                   ])).toEqual({
-              "& .wrapper": {
-                background: "url(\"image.png\")",
-                color: "rgb(255, 255, 255)",
+              background: "url(\"image.png\")",
+              color: "rgb(200, 200, 200)",
+              margin: 24,
+              paddingTop: "24px",
+              paddingBottom: "24px",
+              paddingLeft: "40px",
+              paddingRight: "40px",
+              "& .header": {
+                color: "rgb(200, 200, 200)",
+                margin: 24,
                 paddingTop: "24px",
                 paddingBottom: "24px",
                 paddingLeft: "40px",
-                paddingRight: "40px",
-                margin: 24
+                paddingRight: "40px"
               },
               "& .button": {
                 color: "hsla(360deg, 100%, 50%, 0.5)",
@@ -88,9 +100,16 @@ test("declarationBlock", (function () {
 
 test("statements", (function () {
         expect(Curry._1(Statements.make, [Curry._2(rule, "app", [
-                          Curry._2(rule, "& .wrapper", [
+                          Curry._2(declaration, "background", "url(\"image.png\")"),
+                          Curry._2(declaration, "color", "rgb(200, 200, 200)"),
+                          Curry._2(declaration, "margin", 24),
+                          Curry._1(paddingTop, Curry._1(px, 24)),
+                          Curry._1(paddingBottom, Curry._1(px, 24)),
+                          Curry._1(paddingLeft, Curry._1(px, 40)),
+                          Curry._1(paddingRight, Curry._1(px, 40)),
+                          Curry._2(rule, "& .header", [
                                 Curry._8(background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Curry._1(url, "image.png")),
-                                Curry._1(color, Curry._3(rgb, 255, 255, 255)),
+                                Curry._1(color, Curry._3(rgb, 200, 200, 200)),
                                 Curry._1(paddingTop, Curry._1(px, 24)),
                                 Curry._1(paddingBottom, Curry._1(px, 24)),
                                 Curry._1(paddingLeft, Curry._1(px, 40)),
@@ -104,14 +123,21 @@ test("statements", (function () {
                           Curry._1(hover, [Curry._1(color, "blue")])
                         ])])).toEqual({
               app: {
-                "& .wrapper": {
+                background: "url(\"image.png\")",
+                color: "rgb(200, 200, 200)",
+                margin: 24,
+                paddingTop: "24px",
+                paddingBottom: "24px",
+                paddingLeft: "40px",
+                paddingRight: "40px",
+                "& .header": {
                   background: "url(\"image.png\")",
-                  color: "rgb(255, 255, 255)",
+                  color: "rgb(200, 200, 200)",
+                  margin: 24,
                   paddingTop: "24px",
                   paddingBottom: "24px",
                   paddingLeft: "40px",
-                  paddingRight: "40px",
-                  margin: 24
+                  paddingRight: "40px"
                 },
                 "& .button": {
                   color: "hsla(360deg, 100%, 50%, 0.5)",
