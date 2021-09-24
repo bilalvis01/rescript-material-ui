@@ -16,57 +16,56 @@ var Helper = {
 };
 
 function Make(funarg) {
+  var makeValueImportant = (function (value) {                
+          if (Array.isArray(value)) {
+            let val = value.map(item => {
+              if (Array.isArray(item)) {
+                return item;
+              }
+
+              return [item];
+            });
+            
+            return [...val, '!important'];
+          }
+
+          return [[value], '!important'];
+        });
+  var makeValueImportant$1 = (function (valueFn) {
+          return function (data) {
+            let value = valueFn(data)
+        
+            if (Array.isArray(value)) {
+              let val = value
+                .map(item => {
+                  if (Array.isArray(item)) {
+                    return item
+                  }
+
+                  return [item]
+                });
+              
+              return [...val, '!important'];
+            }
+
+            return [[value], '!important'];
+          }
+        });
   var make = function (v) {
     var v$1 = v.VAL;
     if (v$1.NAME === "DeclarationFn") {
       var match = CssDeclarationFn$Ress.make(v$1);
-      var makeImportant = (function (valueFn) {
-                return function (data) {
-                  let value = valueFn(data)
-              
-                  if (Array.isArray(value)) {
-                    let val = value
-                      .map(item => {
-                        if (Array.isArray(item)) {
-                          return item
-                        }
-
-                        return [item]
-                      });
-                    
-                    return [...val, '!important'];
-                  }
-
-                  return [[value], '!important'];
-                }
-              });
-      var valueFn = makeImportant(match[1]);
       return [
               match[0],
-              valueFn
+              makeValueImportant$1(match[1])
+            ];
+    } else {
+      var match$1 = CssDeclaration$Ress.make(v$1);
+      return [
+              match$1[0],
+              makeValueImportant(match$1[1])
             ];
     }
-    var match$1 = CssDeclaration$Ress.make(v$1);
-    var makeImportant$1 = (function (value) {                
-                if (Array.isArray(value)) {
-                  let val = value.map(item => {
-                    if (Array.isArray(item)) {
-                      return item;
-                    }
-
-                    return [item];
-                  });
-                  
-                  return [...val, '!important'];
-                }
-
-                return [[value], '!important'];
-              });
-    var value = makeImportant$1(match$1[1]);
-    return [
-            match$1[0],
-            value
-          ];
   };
   return {
           make: make
