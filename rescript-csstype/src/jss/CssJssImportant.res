@@ -14,8 +14,9 @@ module Make = (
 ) => {
   type t<'data> = (string, Type.value<'data>);
 
-  module Declaration = {
-    let makeValueImportant: CssDeclaration.boxValue => CssDeclaration.boxValue =
+  module Declaration = CssDeclaration.Make({
+    type value<'data> = Type.value<'data>;
+    let makeValueImportant: CssDeclaration.boxValue => value<'data> = value =>
       %raw(`
         function (value) {                
           if (Array.isArray(value)) {
@@ -32,17 +33,13 @@ module Make = (
 
           return [[value], '!important'];
         }
-      `);
-    external toImportant: CssDeclaration.t => t<'data> = "%identity";
-    let make = v => {
-      let (selector, value) = CssDeclaration.make(v);
-      (selector, makeValueImportant(value))
-      ->toImportant
-    } 
-  };
+      `)(value);
+    let map = ((selector, value)) => (selector, makeValueImportant(value));
+  });
 
-  module DeclarationFn = {
-    let makeValueImportant =
+  module DeclarationFn = CssDeclarationFn.Make({
+    type value<'data> = Type.value<'data>;
+    let makeValueImportant: CssDeclarationFn.boxValue<'data> => value<'data> = value => 
       %raw(`
         function (valueFn) {
           return function (data) {
@@ -64,14 +61,9 @@ module Make = (
             return [[value], '!important'];
           }
         }
-      `);
-    external toImportant: CssDeclarationFn.t<'data> => t<'data> = "%identity";
-    let make: CssDeclarationFn.constructor<'data> => t<'data> = v => {
-      let (selector, value) = CssDeclarationFn.make(v);
-      (selector, makeValueImportant(value))
-      ->toImportant
-    }
-  };
+      `)(value);
+    let map = ((selector, value)) => (selector, makeValueImportant(value));
+  });
 
   let make = v => {
     switch v { 

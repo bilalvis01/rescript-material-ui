@@ -12,32 +12,51 @@ var CssJssImportant$Ress = require("./CssJssImportant.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 
 function Make(funarg) {
+  var Declaration = CssDeclaration$Ress.Make({
+        map: (function (prim) {
+            return prim;
+          })
+      });
+  var DeclarationFn = CssDeclarationFn$Ress.Make({
+        map: (function (prim) {
+            return prim;
+          })
+      });
   var map = function (v) {
     return [
             "&" + v[0],
             v[1]
           ];
   };
-  var PseudoClassBase = CssPseudoClass$Ress.Make({
+  var PseudoClass = CssPseudoClass$Ress.Make({
         map: map
       });
-  var RuleBase = CssRule$Ress.Make({});
+  var Rule = CssRule$Ress.Make({
+        map: (function (prim) {
+            return prim;
+          })
+      });
+  var AtRule = CssAtRule$Ress.Make({
+        map: (function (prim) {
+            return prim;
+          })
+      });
   var Important = CssJssImportant$Ress.Make({});
   var make = function (declarations) {
     return Js_dict.fromArray(Belt_Array.map(declarations, (function (declaration) {
                       var variant = declaration.NAME;
                       if (variant === "AtRule") {
-                        return CssAtRule$Ress.make(declaration);
+                        return Curry._1(AtRule.make, declaration);
                       } else if (variant === "PseudoClass") {
-                        return Curry._1(PseudoClassBase.make, declaration);
+                        return Curry._1(PseudoClass.make, declaration);
                       } else if (variant === "Important") {
                         return Curry._1(Important.make, declaration);
                       } else if (variant === "DeclarationFn") {
-                        return CssDeclarationFn$Ress.make(declaration);
+                        return Curry._1(DeclarationFn.make, declaration);
                       } else if (variant === "Rule") {
-                        return Curry._1(RuleBase.make, declaration);
+                        return Curry._1(Rule.make, declaration);
                       } else {
-                        return CssDeclaration$Ress.make(declaration);
+                        return Curry._1(Declaration.make, declaration);
                       }
                     })));
   };

@@ -12,16 +12,19 @@ module Make = (
   
   type statement<'data> = (string, Type.declarationBlock<'data>);
 
-  module Rule = CssRule.Make({ 
+  module Rule = CssRule.Make({
+    type value<'data> = Type.declarationBlock<'data>;
     type declarationBlock<'data> = Type.declarationBlock<'data>;
+    let map = v => v;
   });
 
-  module AtRule = {
-    external toStatement: CssAtRule.t => statement<'data> = "%identity";
-    let make = v => CssAtRule.make(v)->toStatement;
-  };
+  module AtRule = CssAtRule.Make({
+    type value<'data> = Type.declarationBlock<'data>;
+    external map: ((string, CssAtRule.boxRule)) => statement<'data> = "%identity";
+  });
 
   module PseudoClass = CssPseudoClass.Make({
+    type value<'data> = Type.declarationBlock<'data>;
     type declarationBlock<'data> = Type.declarationBlock<'data>;
     let map = v => v;
   });

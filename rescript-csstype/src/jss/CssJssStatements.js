@@ -9,15 +9,25 @@ var CssAtRule$Ress = require("../at_rule/CssAtRule.js");
 var CssPseudoClass$Ress = require("../rule/CssPseudoClass.js");
 
 function Make(funarg) {
-  var Rule = CssRule$Ress.Make({});
   var map = function (v) {
+    return v;
+  };
+  var Rule = CssRule$Ress.Make({
+        map: map
+      });
+  var AtRule = CssAtRule$Ress.Make({
+        map: (function (prim) {
+            return prim;
+          })
+      });
+  var map$1 = function (param) {
     return [
-            "@global " + v[0],
-            v[1]
+            "@global " + param[0],
+            param[1]
           ];
   };
   var PseudoClass = CssPseudoClass$Ress.Make({
-        map: map
+        map: map$1
       });
   var make = function (rules) {
     return Js_dict.fromArray(Belt_Array.map(rules, (function (rule) {
@@ -27,7 +37,7 @@ function Make(funarg) {
                       } else if (variant === "Rule") {
                         return Curry._1(Rule.make, rule);
                       } else {
-                        return CssAtRule$Ress.make(rule);
+                        return Curry._1(AtRule.make, rule);
                       }
                     })));
   };

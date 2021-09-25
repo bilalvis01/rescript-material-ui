@@ -1,16 +1,19 @@
 type constructor<'declarationBlock> = [ | #Rule(string, 'declarationBlock) ];
 
 module Make = (
-  Type: {
+  D: {
+    type value<'data>;
     type declarationBlock<'data>;
+    let map: ((string, declarationBlock<'data>)) => (string, value<'data>); 
   }
 ) => {
-  type t<'data> = (string, Type.declarationBlock<'data>);
-
+  type t<'data> = (string, D.value<'data>);
+  let { map } = module(D);
   let make = v => {
     switch v {
     | #Rule(selector, declarationBlock) => (selector, declarationBlock);
     }
+    ->map;
   };
 }
 

@@ -8,11 +8,19 @@ type constructor<'data> = [
   | #DeclarationFn(string, boxValue<'data>)
 ];
 
-type t<'data> = (string, boxValue<'data>);
-
-let make = declaration => {
-  switch declaration {
-  | #DeclarationFn(name, value) => (name, value)
+module Make = (
+  D: {
+    type value<'data>; 
+    let map: ((string, boxValue<'data>)) => (string, value<'data>);
+  }
+) => {
+  type t<'data> = (string, D.value<'data>);
+  let { map } = module(D);
+  let make = declaration => {
+    switch declaration {
+    | #DeclarationFn(name, value) => (name, value)
+    }
+    ->map;
   };
 };
 

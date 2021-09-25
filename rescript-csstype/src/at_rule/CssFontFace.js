@@ -6,7 +6,7 @@ var CssAtRule$Ress = require("./CssAtRule.js");
 
 var make = Js_dict.fromArray;
 
-var DescriptorBlock = {
+var Rule = {
   make: make
 };
 
@@ -59,7 +59,7 @@ function fontDisplayString(v) {
         ];
 }
 
-exports.DescriptorBlock = DescriptorBlock;
+exports.Rule = Rule;
 exports.AtRuleHelper = AtRuleHelper;
 exports.ValueType = ValueType;
 exports.ValueString = ValueString;

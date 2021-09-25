@@ -4,11 +4,12 @@ type constructor<'declarationBlock> = [
 
 module Make: (
   D: {
+    type value<'data>;
     type declarationBlock<'data>;
-    let map: ((string, declarationBlock<'data>)) => (string, declarationBlock<'data>);
+    let map: ((string, declarationBlock<'data>)) => (string, value<'data>);
   }
 ) => {
-  type t<'data> = (string, D.declarationBlock<'data>);
+  type t<'data> = (string, D.value<'data>);
 
   let make: constructor<D.declarationBlock<'data>> => t<'data>;
 }

@@ -8,12 +8,20 @@ type constructor = [
   | #AtRule(string, boxRule)
 ];
 
-type t = (string, boxRule);
-
-let make = v => {
-  switch v {
-  | #AtRule(identifier, rule) => (identifier, rule)
+module Make = (
+  At: {
+    type value<'data>;
+    let map: ((string, boxRule)) => (string, value<'data>);
   }
+) => {
+  type t<'data> = (string, At.value<'data>);
+  let { map } = module(At);
+  let make = v => {
+    switch v {
+    | #AtRule(identifier, rule) => (identifier, rule)
+    }
+    ->map;
+  };
 };
 
 module Helper = {

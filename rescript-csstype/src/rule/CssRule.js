@@ -3,13 +3,14 @@
 
 var Curry = require("rescript/lib/js/curry.js");
 
-function Make(Type) {
+function Make(funarg) {
+  var map = funarg.map;
   var make = function (v) {
     var match = v.VAL;
-    return [
-            match[0],
-            match[1]
-          ];
+    return Curry._1(map, [
+                match[0],
+                match[1]
+              ]);
   };
   return {
           make: make

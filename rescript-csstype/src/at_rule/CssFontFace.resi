@@ -9,7 +9,7 @@ type rec boxValue =
 
 type descriptor = (string, boxValue);
 
-module DescriptorBlock: {
+module Rule: {
   let make: array<descriptor> => t;
 };
 
