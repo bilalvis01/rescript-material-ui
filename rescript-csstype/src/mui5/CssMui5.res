@@ -15,7 +15,7 @@ module Make = (
     type declarationBlock<'data> = Type.declarationBlock<'data>;
   });
 
-  let style = DeclarationBlock.make;
+  let sx = DeclarationBlock.make;
   let styles = Statements.make;
   
   /*

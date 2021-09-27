@@ -1,12 +1,12 @@
 open Jest;
+open Mui5.Css;
 open Mui5;
-open Css;
 
 test("mui5", (.) => {
   let tree = 
     TestRenderer.create(
       <Box 
-        sx=style([
+        sx=sx([
           color(#blue),
           margin(px(24.)),
         ]) 

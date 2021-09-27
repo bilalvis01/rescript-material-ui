@@ -9,7 +9,7 @@ var ReactTestRenderer = require("react-test-renderer");
 
 test("mui5", (function () {
         var tree = ReactTestRenderer.create(React.createElement(Box, {
-                    sx: Curry._1(Mui5$Ress.Css.style, [
+                    sx: Curry._1(Mui5$Ress.Css.sx, [
                           Curry._1(Mui5$Ress.Css.color, "blue"),
                           Curry._1(Mui5$Ress.Css.margin, Curry._1(Mui5$Ress.Css.px, 24))
                         ])
