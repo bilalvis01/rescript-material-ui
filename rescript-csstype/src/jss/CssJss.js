@@ -2,6 +2,7 @@
 'use strict';
 
 var CssHelper$Ress = require("../helper/CssHelper.js");
+var CssJssImportant$Ress = require("./CssJssImportant.js");
 var CssJssStatements$Ress = require("./CssJssStatements.js");
 var CssJssDeclarationBlock$Ress = require("./CssJssDeclarationBlock.js");
 
@@ -344,7 +345,8 @@ function Make(Type) {
           paddingTopFn: include.paddingTopFn,
           paddingRightFn: include.paddingRightFn,
           paddingBottomFn: include.paddingBottomFn,
-          paddingLeftFn: include.paddingLeftFn
+          paddingLeftFn: include.paddingLeftFn,
+          important: CssJssImportant$Ress.Helper.important
         };
 }
 

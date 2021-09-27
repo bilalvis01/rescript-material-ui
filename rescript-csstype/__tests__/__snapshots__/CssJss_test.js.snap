@@ -18,5 +18,9 @@ exports[`jss 1`] = `
 }
 .app-0-0-1 .button:hover {
   background: blue;
+}
+.header-0-0-2 {
+  color: blue !important;
+  margin: 24px;
 }"
 `;

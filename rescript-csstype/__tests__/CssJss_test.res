@@ -6,6 +6,20 @@ let _ =
   Jss.jss
   ->Jss.setup(Jss.preset());
 
+type color =
+  | Blue
+  | Red;
+
+type data = {
+  space: option<float>,
+  color: option<color>, 
+};
+
+let data = {
+  space: Some(24.),
+  color: Some(Blue),
+};
+
 test("jss", (.) => {
   let s = styles([
     rule("app", [
@@ -28,11 +42,27 @@ test("jss", (.) => {
         color(#blue)
       ]),
     ]),
+    rule("header", [
+      important(colorFn(data =>
+        data.color
+        ->Belt.Option.map(color => 
+          switch color {
+            | Blue => Color.value(#blue)
+            | Red => Color.value(#red)
+          }
+        )
+      )),
+      marginFn(data => 
+        data.space
+        ->Belt.Option.map(space => Margin.number(space))
+      ),
+    ]),
   ]);
 
   expect(
     Jss.jss
     ->Jss.createStyleSheet(s)
+    ->Jss.update(data)
     ->Jss.toString
   )
   ->toMatchSnapshot()

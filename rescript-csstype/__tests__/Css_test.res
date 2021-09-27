@@ -107,6 +107,9 @@ test("statements", (.) => {
         color(#blue)
       ]),
     ]),
+    hover([
+      color(rgb(100, 100, 100))
+    ]),
   ]))
   ->toEqual(Obj.magic({
     "app": {
@@ -135,6 +138,9 @@ test("statements", (.) => {
       "&:hover": {
         "color": "blue"
       },
+    },
+    ":hover": {
+      "color": "rgb(100, 100, 100)",
     },
   }));
 });

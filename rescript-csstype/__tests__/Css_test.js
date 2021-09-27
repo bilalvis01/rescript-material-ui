@@ -96,7 +96,8 @@ test("declarationBlock", (function () {
       }));
 
 test("statements", (function () {
-        expect(Curry._1(Statements.make, [Curry._2(rule, "app", [
+        expect(Curry._1(Statements.make, [
+                    Curry._2(rule, "app", [
                           Curry._2(declaration, "background", "url(\"image.png\")"),
                           Curry._2(declaration, "color", "rgb(200, 200, 200)"),
                           Curry._2(declaration, "margin", 24),
@@ -118,7 +119,9 @@ test("statements", (function () {
                                 Curry._1(hover, [Curry._8(background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                               ]),
                           Curry._1(hover, [Curry._1(color, "blue")])
-                        ])])).toEqual({
+                        ]),
+                    Curry._1(hover, [Curry._1(color, Curry._3(rgb, 100, 100, 100))])
+                  ])).toEqual({
               app: {
                 background: "url(\"image.png\")",
                 color: "rgb(200, 200, 200)",
@@ -145,6 +148,9 @@ test("statements", (function () {
                 "&:hover": {
                   color: "blue"
                 }
+              },
+              ":hover": {
+                color: "rgb(100, 100, 100)"
               }
             });
         

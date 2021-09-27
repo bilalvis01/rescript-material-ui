@@ -4,12 +4,20 @@
 var Jss = require("jss").default;
 var Curry = require("rescript/lib/js/curry.js");
 var Jss$Ress = require("../bindings/Jss.js");
+var Belt_Option = require("rescript/lib/js/belt_Option.js");
+var CssColor$Ress = require("../src/property/CssColor.js");
 var JssPresetDefault = require("jss-preset-default").default;
 
 Jss.setup(JssPresetDefault());
 
+var data = {
+  space: 24,
+  color: /* Blue */0
+};
+
 test("jss", (function () {
-        var s = Curry._1(Jss$Ress.Css.styles, [Curry._2(Jss$Ress.Css.rule, "app", [
+        var s = Curry._1(Jss$Ress.Css.styles, [
+              Curry._2(Jss$Ress.Css.rule, "app", [
                     Curry._2(Jss$Ress.Css.rule, "& .wrapper", [
                           Curry._8(Jss$Ress.Css.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Curry._1(Jss$Ress.Css.url, "image.png")),
                           Curry._1(Jss$Ress.Css.color, Curry._3(Jss$Ress.Css.rgb, 255, 255, 255)),
@@ -24,9 +32,27 @@ test("jss", (function () {
                           Curry._1(Jss$Ress.Css.hover, [Curry._8(Jss$Ress.Css.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                         ]),
                     Curry._1(Jss$Ress.Css.hover, [Curry._1(Jss$Ress.Css.color, "blue")])
-                  ])]);
-        expect(Jss.createStyleSheet(s).toString()).toMatchSnapshot();
+                  ]),
+              Curry._2(Jss$Ress.Css.rule, "header", [
+                    Curry._1(Jss$Ress.Css.important, Curry._1(Jss$Ress.Css.colorFn, (function (data) {
+                                return Belt_Option.map(data.color, (function (color) {
+                                              if (color) {
+                                                return CssColor$Ress.value("red");
+                                              } else {
+                                                return CssColor$Ress.value("blue");
+                                              }
+                                            }));
+                              }))),
+                    Curry._1(Jss$Ress.Css.marginFn, (function (data) {
+                            return Belt_Option.map(data.space, (function (space) {
+                                          return space;
+                                        }));
+                          }))
+                  ])
+            ]);
+        expect(Jss.createStyleSheet(s).update(data).toString()).toMatchSnapshot();
         
       }));
 
+exports.data = data;
 /*  Not a pure module */

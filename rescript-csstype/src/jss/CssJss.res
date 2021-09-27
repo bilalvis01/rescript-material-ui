@@ -25,4 +25,5 @@ module Make = (
     type declarationConstructor<'data> = CssJssDeclarationBlock.constructor<'data, Type.declarationBlock<'data>>;
     let style = DeclarationBlock.make; 
   });
+  include CssJssImportant.Helper;
 };
