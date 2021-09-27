@@ -19,7 +19,7 @@ test("jss", (.) => {
         marginNumber(24.),
       ]),
       rule("& .button", [
-        color(hsla(deg(360.), pct(100.), pct(50.), 0.5)),
+        color(hsla(360, pct(100.), pct(50.), 0.5)),
         hover([
           background(#blue)
         ]),

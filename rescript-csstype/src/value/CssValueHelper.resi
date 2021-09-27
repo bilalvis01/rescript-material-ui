@@ -97,9 +97,9 @@ let bgSize2: (
 /*
 Color functions
 */
-let hsl: (CssValueType.hue, CssValueType.percentage, CssValueType.percentage) => 
+let hsl: (int, CssValueType.percentage, CssValueType.percentage) => 
   [> CssValueType.hsl ];
-let hsla: (CssValueType.hue, CssValueType.percentage, CssValueType.percentage, float) => 
+let hsla: (int, CssValueType.percentage, CssValueType.percentage, float) => 
   [> CssValueType.hsla ];
 let rgb: (int, int, int) => 
   [> CssValueType.rgb ];

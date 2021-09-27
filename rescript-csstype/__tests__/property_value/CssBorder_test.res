@@ -24,7 +24,7 @@ test("borderColor", (.) => {
   ->toBe(BorderColor.string("red"));
   expect(BorderColor.value2(~tb=#red, ~lr=hexColor("000000ff")))
   ->toBe(BorderColor.string("red #000000ff"));
-  expect(BorderColor.value3(~top=#red, ~lr=rgb(255, 255, 255), ~bottom=hsl(deg(360.), pct(100.), pct(50.))))
+  expect(BorderColor.value3(~top=#red, ~lr=rgb(255, 255, 255), ~bottom=hsl(360, pct(100.), pct(50.))))
   ->toBe(BorderColor.string("red rgb(255, 255, 255) hsl(360deg, 100%, 50%)"));
   expect(BorderColor.value4(~bottom=#red, ~top=#blue, ~left=rgb(255, 255, 255), ~right=rgba(0, 0, 0, 0.5)))
   ->toBe(BorderColor.string("blue rgba(0, 0, 0, 0.5) red rgb(255, 255, 255)"));

@@ -20,7 +20,7 @@ test("jss", (function () {
                           Curry._1(Jss$Ress.Css.marginNumber, 24)
                         ]),
                     Curry._2(Jss$Ress.Css.rule, "& .button", [
-                          Curry._1(Jss$Ress.Css.color, Curry._4(Jss$Ress.Css.hsla, Curry._1(Jss$Ress.Css.deg, 360), Curry._1(Jss$Ress.Css.pct, 100), Curry._1(Jss$Ress.Css.pct, 50), 0.5)),
+                          Curry._1(Jss$Ress.Css.color, Curry._4(Jss$Ress.Css.hsla, 360, Curry._1(Jss$Ress.Css.pct, 100), Curry._1(Jss$Ress.Css.pct, 50), 0.5)),
                           Curry._1(Jss$Ress.Css.hover, [Curry._8(Jss$Ress.Css.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                         ]),
                     Curry._1(Jss$Ress.Css.hover, [Curry._1(Jss$Ress.Css.color, "blue")])

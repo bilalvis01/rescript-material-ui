@@ -19,7 +19,7 @@ test("border", (function () {
 test("borderColor", (function () {
         expect(CssBorderColor$Ress.value("red")).toBe("red");
         expect(CssBorderColor$Ress.value2("red", CssValueHelper$Ress.hexColor("000000ff"))).toBe("red #000000ff");
-        expect(CssBorderColor$Ress.value3("red", CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.hsl(CssValueHelper$Ress.deg(360), CssValueHelper$Ress.pct(100), CssValueHelper$Ress.pct(50)))).toBe("red rgb(255, 255, 255) hsl(360deg, 100%, 50%)");
+        expect(CssBorderColor$Ress.value3("red", CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.hsl(360, CssValueHelper$Ress.pct(100), CssValueHelper$Ress.pct(50)))).toBe("red rgb(255, 255, 255) hsl(360deg, 100%, 50%)");
         expect(CssBorderColor$Ress.value4("blue", CssValueHelper$Ress.rgba(0, 0, 0, 0.5), "red", CssValueHelper$Ress.rgb(255, 255, 255))).toBe("blue rgba(0, 0, 0, 0.5) red rgb(255, 255, 255)");
         
       }));

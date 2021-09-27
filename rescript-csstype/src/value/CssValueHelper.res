@@ -94,8 +94,8 @@ let bgSize2 = (s1, s2) => #BgSize2(s1, s2);
 /*
 Color data types
 */
-let hsl = (v1, v2, v3) => #Hsl(v1, v2, v3);
-let hsla = (v1, v2, v3, v4) => #Hsla(v1, v2, v3, num(v4));
+let hsl = (v1, v2, v3) => #Hsl(int(v1), v2, v3);
+let hsla = (v1, v2, v3, v4) => #Hsla(int(v1), v2, v3, num(v4));
 let rgb = (v1, v2, v3) => #Rgb(int(v1), int(v2), int(v3));
 let rgba = (v1, v2, v3, v4) => 
   #Rgba(int(v1), int(v2), int(v3), num(v4));

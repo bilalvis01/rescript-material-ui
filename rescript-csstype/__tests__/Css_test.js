@@ -18,8 +18,6 @@ var pct = include.pct;
 
 var px = include.px;
 
-var deg = include.deg;
-
 var hsla = include.hsla;
 
 var rgb = include.rgb;
@@ -64,7 +62,7 @@ test("declarationBlock", (function () {
                           Curry._1(marginNumber, 24)
                         ]),
                     Curry._2(rule, "& .button", [
-                          Curry._1(color, Curry._4(hsla, Curry._1(deg, 360), Curry._1(pct, 100), Curry._1(pct, 50), 0.5)),
+                          Curry._1(color, Curry._4(hsla, 360, Curry._1(pct, 100), Curry._1(pct, 50), 0.5)),
                           Curry._1(hover, [Curry._8(background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                         ]),
                     Curry._1(hover, [Curry._1(color, "blue")])
@@ -116,7 +114,7 @@ test("statements", (function () {
                                 Curry._1(marginNumber, 24)
                               ]),
                           Curry._2(rule, "& .button", [
-                                Curry._1(color, Curry._4(hsla, Curry._1(deg, 360), Curry._1(pct, 100), Curry._1(pct, 50), 0.5)),
+                                Curry._1(color, Curry._4(hsla, 360, Curry._1(pct, 100), Curry._1(pct, 50), 0.5)),
                                 Curry._1(hover, [Curry._8(background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                               ]),
                           Curry._1(hover, [Curry._1(color, "blue")])
@@ -271,6 +269,8 @@ var inch = include.inch;
 var pc = include.pc;
 
 var pt = include.pt;
+
+var deg = include.deg;
 
 var grad = include.grad;
 
