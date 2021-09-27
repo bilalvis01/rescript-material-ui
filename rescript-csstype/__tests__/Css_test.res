@@ -15,11 +15,6 @@ module Statements = CssJssStatements.Make({
 });
 
 /*
-Property Value
-*/
-include CssPropertyValue;
-
-/*
 Helper
 */
 include CssHelper.Make({ 

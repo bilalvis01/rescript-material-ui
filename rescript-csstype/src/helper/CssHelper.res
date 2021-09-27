@@ -7,6 +7,7 @@ module Make = (
       declarationBlock<'data>;
   }
 ) => {
+  include CssPropertyValue;
   include CssValueHelper;
   include CssRule.MakeHelper({ 
     type declarationBlock<'data> = D.declarationBlock<'data>; 

@@ -5,6 +5,7 @@ var CssRule$Ress = require("../rule/CssRule.js");
 var CssPseudoClass$Ress = require("../rule/CssPseudoClass.js");
 var CssValueHelper$Ress = require("../value/CssValueHelper.js");
 var CssAtRuleHelper$Ress = require("../at_rule/CssAtRuleHelper.js");
+var CssPropertyValue$Ress = require("../value/CssPropertyValue.js");
 var CssDeclarationHelper$Ress = require("../declaration/CssDeclarationHelper.js");
 var CssDeclarationFnHelper$Ress = require("../declaration/CssDeclarationFnHelper.js");
 
@@ -12,6 +13,48 @@ function Make(D) {
   var include = CssRule$Ress.MakeHelper(D);
   var include$1 = CssPseudoClass$Ress.MakeHelper(D);
   return {
+          Property: CssPropertyValue$Ress.Property,
+          Background: CssPropertyValue$Ress.Background,
+          BackgroundAttachment: CssPropertyValue$Ress.BackgroundAttachment,
+          BackgroundColor: CssPropertyValue$Ress.BackgroundColor,
+          BackgroundImage: CssPropertyValue$Ress.BackgroundImage,
+          BackgroundPosition: CssPropertyValue$Ress.BackgroundPosition,
+          BackgroundStyle: CssPropertyValue$Ress.BackgroundStyle,
+          Border: CssPropertyValue$Ress.Border,
+          BorderTop: CssPropertyValue$Ress.BorderTop,
+          BorderRight: CssPropertyValue$Ress.BorderRight,
+          BorderBottom: CssPropertyValue$Ress.BorderBottom,
+          BorderLeft: CssPropertyValue$Ress.BorderLeft,
+          BorderTopColor: CssPropertyValue$Ress.BorderTopColor,
+          BorderRightColor: CssPropertyValue$Ress.BorderRightColor,
+          BorderBottomColor: CssPropertyValue$Ress.BorderBottomColor,
+          BorderLeftColor: CssPropertyValue$Ress.BorderLeftColor,
+          BorderTopStyle: CssPropertyValue$Ress.BorderTopStyle,
+          BorderRightStyle: CssPropertyValue$Ress.BorderRightStyle,
+          BorderBottomStyle: CssPropertyValue$Ress.BorderBottomStyle,
+          BorderLeftStyle: CssPropertyValue$Ress.BorderLeftStyle,
+          BorderTopWidth: CssPropertyValue$Ress.BorderTopWidth,
+          BorderRightWidth: CssPropertyValue$Ress.BorderRightWidth,
+          BorderBottomWidth: CssPropertyValue$Ress.BorderBottomWidth,
+          BorderLeftWidth: CssPropertyValue$Ress.BorderLeftWidth,
+          BorderColor: CssPropertyValue$Ress.BorderColor,
+          BorderStyle: CssPropertyValue$Ress.BorderStyle,
+          BorderWidth: CssPropertyValue$Ress.BorderWidth,
+          Clear: CssPropertyValue$Ress.Clear,
+          Color: CssPropertyValue$Ress.Color,
+          Cursor: CssPropertyValue$Ress.Cursor,
+          FontFamily: CssPropertyValue$Ress.FontFamily,
+          FontWeight: CssPropertyValue$Ress.FontWeight,
+          Margin: CssPropertyValue$Ress.Margin,
+          MarginTop: CssPropertyValue$Ress.MarginTop,
+          MarginRight: CssPropertyValue$Ress.MarginRight,
+          MarginBottom: CssPropertyValue$Ress.MarginBottom,
+          MarginLeft: CssPropertyValue$Ress.MarginLeft,
+          Padding: CssPropertyValue$Ress.Padding,
+          PaddingTop: CssPropertyValue$Ress.PaddingTop,
+          PaddingRight: CssPropertyValue$Ress.PaddingRight,
+          PaddingBottom: CssPropertyValue$Ress.PaddingBottom,
+          PaddingLeft: CssPropertyValue$Ress.PaddingLeft,
           str: CssValueHelper$Ress.str,
           num: CssValueHelper$Ress.num,
           $$int: CssValueHelper$Ress.$$int,

@@ -4,7 +4,6 @@
 var Curry = require("rescript/lib/js/curry.js");
 var CssHelper$Ress = require("../src/helper/CssHelper.js");
 var CssJssStatements$Ress = require("../src/jss/CssJssStatements.js");
-var CssPropertyValue$Ress = require("../src/value/CssPropertyValue.js");
 var CssJssDeclarationBlock$Ress = require("../src/jss/CssJssDeclarationBlock.js");
 
 var DeclarationBlock = CssJssDeclarationBlock$Ress.Make({});
@@ -153,89 +152,89 @@ test("statements", (function () {
         
       }));
 
-var Property = CssPropertyValue$Ress.Property;
+var Property = include.Property;
 
-var Background = CssPropertyValue$Ress.Background;
+var Background = include.Background;
 
-var BackgroundAttachment = CssPropertyValue$Ress.BackgroundAttachment;
+var BackgroundAttachment = include.BackgroundAttachment;
 
-var BackgroundColor = CssPropertyValue$Ress.BackgroundColor;
+var BackgroundColor = include.BackgroundColor;
 
-var BackgroundImage = CssPropertyValue$Ress.BackgroundImage;
+var BackgroundImage = include.BackgroundImage;
 
-var BackgroundPosition = CssPropertyValue$Ress.BackgroundPosition;
+var BackgroundPosition = include.BackgroundPosition;
 
-var BackgroundStyle = CssPropertyValue$Ress.BackgroundStyle;
+var BackgroundStyle = include.BackgroundStyle;
 
-var Border = CssPropertyValue$Ress.Border;
+var Border = include.Border;
 
-var BorderTop = CssPropertyValue$Ress.BorderTop;
+var BorderTop = include.BorderTop;
 
-var BorderRight = CssPropertyValue$Ress.BorderRight;
+var BorderRight = include.BorderRight;
 
-var BorderBottom = CssPropertyValue$Ress.BorderBottom;
+var BorderBottom = include.BorderBottom;
 
-var BorderLeft = CssPropertyValue$Ress.BorderLeft;
+var BorderLeft = include.BorderLeft;
 
-var BorderTopColor = CssPropertyValue$Ress.BorderTopColor;
+var BorderTopColor = include.BorderTopColor;
 
-var BorderRightColor = CssPropertyValue$Ress.BorderRightColor;
+var BorderRightColor = include.BorderRightColor;
 
-var BorderBottomColor = CssPropertyValue$Ress.BorderBottomColor;
+var BorderBottomColor = include.BorderBottomColor;
 
-var BorderLeftColor = CssPropertyValue$Ress.BorderLeftColor;
+var BorderLeftColor = include.BorderLeftColor;
 
-var BorderTopStyle = CssPropertyValue$Ress.BorderTopStyle;
+var BorderTopStyle = include.BorderTopStyle;
 
-var BorderRightStyle = CssPropertyValue$Ress.BorderRightStyle;
+var BorderRightStyle = include.BorderRightStyle;
 
-var BorderBottomStyle = CssPropertyValue$Ress.BorderBottomStyle;
+var BorderBottomStyle = include.BorderBottomStyle;
 
-var BorderLeftStyle = CssPropertyValue$Ress.BorderLeftStyle;
+var BorderLeftStyle = include.BorderLeftStyle;
 
-var BorderTopWidth = CssPropertyValue$Ress.BorderTopWidth;
+var BorderTopWidth = include.BorderTopWidth;
 
-var BorderRightWidth = CssPropertyValue$Ress.BorderRightWidth;
+var BorderRightWidth = include.BorderRightWidth;
 
-var BorderBottomWidth = CssPropertyValue$Ress.BorderBottomWidth;
+var BorderBottomWidth = include.BorderBottomWidth;
 
-var BorderLeftWidth = CssPropertyValue$Ress.BorderLeftWidth;
+var BorderLeftWidth = include.BorderLeftWidth;
 
-var BorderColor = CssPropertyValue$Ress.BorderColor;
+var BorderColor = include.BorderColor;
 
-var BorderStyle = CssPropertyValue$Ress.BorderStyle;
+var BorderStyle = include.BorderStyle;
 
-var BorderWidth = CssPropertyValue$Ress.BorderWidth;
+var BorderWidth = include.BorderWidth;
 
-var Clear = CssPropertyValue$Ress.Clear;
+var Clear = include.Clear;
 
-var Color = CssPropertyValue$Ress.Color;
+var Color = include.Color;
 
-var Cursor = CssPropertyValue$Ress.Cursor;
+var Cursor = include.Cursor;
 
-var FontFamily = CssPropertyValue$Ress.FontFamily;
+var FontFamily = include.FontFamily;
 
-var FontWeight = CssPropertyValue$Ress.FontWeight;
+var FontWeight = include.FontWeight;
 
-var Margin = CssPropertyValue$Ress.Margin;
+var Margin = include.Margin;
 
-var MarginTop = CssPropertyValue$Ress.MarginTop;
+var MarginTop = include.MarginTop;
 
-var MarginRight = CssPropertyValue$Ress.MarginRight;
+var MarginRight = include.MarginRight;
 
-var MarginBottom = CssPropertyValue$Ress.MarginBottom;
+var MarginBottom = include.MarginBottom;
 
-var MarginLeft = CssPropertyValue$Ress.MarginLeft;
+var MarginLeft = include.MarginLeft;
 
-var Padding = CssPropertyValue$Ress.Padding;
+var Padding = include.Padding;
 
-var PaddingTop = CssPropertyValue$Ress.PaddingTop;
+var PaddingTop = include.PaddingTop;
 
-var PaddingRight = CssPropertyValue$Ress.PaddingRight;
+var PaddingRight = include.PaddingRight;
 
-var PaddingBottom = CssPropertyValue$Ress.PaddingBottom;
+var PaddingBottom = include.PaddingBottom;
 
-var PaddingLeft = CssPropertyValue$Ress.PaddingLeft;
+var PaddingLeft = include.PaddingLeft;
 
 var str = include.str;
 

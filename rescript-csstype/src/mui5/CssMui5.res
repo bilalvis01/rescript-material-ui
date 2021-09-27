@@ -17,11 +17,6 @@ module Make = (
 
   let style = DeclarationBlock.make;
   let styles = Statements.make;
-
-  /*
-  Property Value
-  */
-  include CssPropertyValue;
   
   /*
   Helper
