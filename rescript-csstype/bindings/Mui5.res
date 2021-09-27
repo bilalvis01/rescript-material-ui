@@ -8,8 +8,25 @@ module Css = CssMui5.Make({
   type statements<'data> = statements<'data>;
 });
 
+module Primary = {
+  type t;
+
+  @get
+  external main: t => string = "main";
+};
+
+module Palette = {
+  type t;
+
+  @get
+  external primary: t => Primary.t = "primary";
+};
+
 module Theme = {
   type t;
+
+  @get
+  external palette: t => Palette.t = "palette";
 };
 
 module Box = {
@@ -22,6 +39,6 @@ module Box = {
 module GlobalStyles = {
   @react.component @module("@mui/material/GlobalStyles")
   external make: (
-    ~styles: 'data => statements<'data>
+    ~styles: Theme.t => statements<Theme.t>
   ) => React.element = "default";
 };

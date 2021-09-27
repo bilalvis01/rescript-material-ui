@@ -5,6 +5,10 @@ var CssMui5$Ress = require("../src/mui5/CssMui5.js");
 
 var Css = CssMui5$Ress.Make({});
 
+var Primary = {};
+
+var Palette = {};
+
 var Theme = {};
 
 var Box = {};
@@ -12,6 +16,8 @@ var Box = {};
 var GlobalStyles = {};
 
 exports.Css = Css;
+exports.Primary = Primary;
+exports.Palette = Palette;
 exports.Theme = Theme;
 exports.Box = Box;
 exports.GlobalStyles = GlobalStyles;
