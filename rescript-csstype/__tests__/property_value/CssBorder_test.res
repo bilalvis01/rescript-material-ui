@@ -15,7 +15,7 @@ test("border", (.) => {
   ->toBe(Border.string("1rem solid"));
   expect(Border.value(~width=#thick, ~color=hexColor("32a1ce"), #double))
   ->toBe(Border.string("thick #32a1ce double"));
-  expect(Border.value(~width=mm(4.), ~color=rgba(170., 50., 220., 0.6), #ridge))
+  expect(Border.value(~width=mm(4.), ~color=rgba(170, 50, 220, 0.6), #ridge))
   ->toBe(Border.string("4mm rgba(170, 50, 220, 0.6) ridge"));
 });
 
@@ -24,9 +24,9 @@ test("borderColor", (.) => {
   ->toBe(BorderColor.string("red"));
   expect(BorderColor.value2(~tb=#red, ~lr=hexColor("000000ff")))
   ->toBe(BorderColor.string("red #000000ff"));
-  expect(BorderColor.value3(~top=#red, ~lr=rgb(255., 255., 255.), ~bottom=hsl(deg(360.), pct(100.), pct(50.))))
+  expect(BorderColor.value3(~top=#red, ~lr=rgb(255, 255, 255), ~bottom=hsl(deg(360.), pct(100.), pct(50.))))
   ->toBe(BorderColor.string("red rgb(255, 255, 255) hsl(360deg, 100%, 50%)"));
-  expect(BorderColor.value4(~bottom=#red, ~top=#blue, ~left=rgb(255., 255., 255.), ~right=rgba(0., 0., 0., 0.5)))
+  expect(BorderColor.value4(~bottom=#red, ~top=#blue, ~left=rgb(255, 255, 255), ~right=rgba(0, 0, 0, 0.5)))
   ->toBe(BorderColor.string("blue rgba(0, 0, 0, 0.5) red rgb(255, 255, 255)"));
 });
 

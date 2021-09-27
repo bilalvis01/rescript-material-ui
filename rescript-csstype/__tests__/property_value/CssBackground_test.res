@@ -15,26 +15,26 @@ test("background", (.) => {
   ->toBe(Background.string("initial"));
   expect(Background.value(#red))
   ->toBe(Background.string("red"));
-  expect(Background.value(rgb(255., 255., 255.)))
+  expect(Background.value(rgb(255, 255, 255)))
   ->toBe(Background.string("rgb(255, 255, 255)"));
   expect(Background.value(~repeat=#repeatY, url("test.jpg")))
   ->toBe(Background.string(`url("test.jpg") repeat-y`))
   expect(Background.value2(
-    linearGradient2(~angle=deg(217.), rgba(255., 0., 0., 0.8), linearColorStop2(rgba(255., 0., 0., 0.), pct(70.71))),
-    linearGradient2(~angle=deg(127.), rgba(0., 255., 0., 0.8), linearColorStop2(rgba(0., 255., 0., 0.), pct(70.71))),
+    linearGradient2(~angle=deg(217.), rgba(255, 0, 0, 0.8), linearColorStop2(rgba(255, 0, 0, 0.), pct(70.71))),
+    linearGradient2(~angle=deg(127.), rgba(0, 255, 0, 0.8), linearColorStop2(rgba(0, 255, 0, 0.), pct(70.71))),
   ))
   ->toBe(Background.string("linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%)"));
   expect(Background.value3(
-    linearGradient2(~angle=deg(217.), rgba(255., 0., 0., 0.8), linearColorStop2(rgba(255., 0., 0., 0.), pct(70.71))),
-    linearGradient2(~angle=deg(127.), rgba(0., 255., 0., 0.8), linearColorStop2(rgba(0., 255., 0., 0.), pct(70.71))),
-    linearGradient2(~angle=deg(217.), rgba(255., 0., 0., 0.8), linearColorStop2(rgba(255., 0., 0., 0.), pct(70.71))),
+    linearGradient2(~angle=deg(217.), rgba(255, 0, 0, 0.8), linearColorStop2(rgba(255, 0, 0, 0.), pct(70.71))),
+    linearGradient2(~angle=deg(127.), rgba(0, 255, 0, 0.8), linearColorStop2(rgba(0, 255, 0, 0.), pct(70.71))),
+    linearGradient2(~angle=deg(217.), rgba(255, 0, 0, 0.8), linearColorStop2(rgba(255, 0, 0, 0.), pct(70.71))),
   ))
   ->toBe(Background.string("linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%)"));
   expect(Background.value4(
-    linearGradient2(~angle=deg(217.), rgba(255., 0., 0., 0.8), linearColorStop2(rgba(255., 0., 0., 0.), pct(70.71))),
-    linearGradient2(~angle=deg(127.), rgba(0., 255., 0., 0.8), linearColorStop2(rgba(0., 255., 0., 0.), pct(70.71))),
-    linearGradient2(~angle=deg(217.), rgba(255., 0., 0., 0.8), linearColorStop2(rgba(255., 0., 0., 0.), pct(70.71))),
-    linearGradient2(~angle=deg(127.), rgba(0., 255., 0., 0.8), linearColorStop2(rgba(0., 255., 0., 0.), pct(70.71))),
+    linearGradient2(~angle=deg(217.), rgba(255, 0, 0, 0.8), linearColorStop2(rgba(255, 0, 0, 0.), pct(70.71))),
+    linearGradient2(~angle=deg(127.), rgba(0, 255, 0, 0.8), linearColorStop2(rgba(0, 255, 0, 0.), pct(70.71))),
+    linearGradient2(~angle=deg(217.), rgba(255, 0, 0, 0.8), linearColorStop2(rgba(255, 0, 0, 0.), pct(70.71))),
+    linearGradient2(~angle=deg(127.), rgba(0, 255, 0, 0.8), linearColorStop2(rgba(0, 255, 0, 0.), pct(70.71))),
   ))
   ->toBe(Background.string("linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%)"));
   expect(Background.value4(
@@ -58,7 +58,7 @@ test("backgroundAttachment", (.) => {
 });
 
 test("backgroundColor", (.) => {
-  expect(BackgroundColor.value(rgb(200., 200., 200.)))
+  expect(BackgroundColor.value(rgb(200, 200, 200)))
   ->toBe(BackgroundColor.string("rgb(200, 200, 200)"));
 });
 

@@ -326,15 +326,15 @@ function rgb(v1, v2, v3) {
           NAME: "Rgb",
           VAL: [
             {
-              NAME: "Num",
+              NAME: "Int",
               VAL: v1
             },
             {
-              NAME: "Num",
+              NAME: "Int",
               VAL: v2
             },
             {
-              NAME: "Num",
+              NAME: "Int",
               VAL: v3
             }
           ]
@@ -346,15 +346,15 @@ function rgba(v1, v2, v3, v4) {
           NAME: "Rgba",
           VAL: [
             {
-              NAME: "Num",
+              NAME: "Int",
               VAL: v1
             },
             {
-              NAME: "Num",
+              NAME: "Int",
               VAL: v2
             },
             {
-              NAME: "Num",
+              NAME: "Int",
               VAL: v3
             },
             {

@@ -101,9 +101,9 @@ let hsl: (CssValueType.hue, CssValueType.percentage, CssValueType.percentage) =>
   [> CssValueType.hsl ];
 let hsla: (CssValueType.hue, CssValueType.percentage, CssValueType.percentage, float) => 
   [> CssValueType.hsla ];
-let rgb: (float, float, float) => 
+let rgb: (int, int, int) => 
   [> CssValueType.rgb ];
-let rgba: (float, float, float, float) => 
+let rgba: (int, int, int, float) => 
   [> CssValueType.rgba ];
 let hexColor: string => [> CssValueType.hexColor ];
 

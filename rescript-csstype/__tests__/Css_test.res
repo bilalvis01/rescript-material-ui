@@ -33,7 +33,7 @@ test("declarationBlock", (.) => {
     paddingLeft(px(40)),
     paddingRight(px(40)),
     rule("& .header", [
-      color(rgb(200., 200., 200.)),
+      color(rgb(200, 200, 200)),
       paddingTop(px(24)),
       paddingBottom(px(24)),
       paddingLeft(px(40)),
@@ -90,7 +90,7 @@ test("statements", (.) => {
       paddingRight(px(40)),
       rule("& .header", [
         background(url("image.png")),
-        color(rgb(200., 200., 200.)),
+        color(rgb(200, 200, 200)),
         paddingTop(px(24)),
         paddingBottom(px(24)),
         paddingLeft(px(40)),

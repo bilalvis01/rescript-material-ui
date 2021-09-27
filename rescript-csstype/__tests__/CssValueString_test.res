@@ -129,12 +129,12 @@ describe("Color data types", (.) => {
       ->toBe("rgba(0, 0, 0, 1)");
     expect(hexColor("000000"))->toBe("#000000");
     expect(color(Css.hexColor("000000")))->toBe("#000000");
-    expect(color(Css.rgb(10., 10., 10.)))
+    expect(color(Css.rgb(10, 10, 10)))
       ->toBe("rgb(10, 10, 10)");
   });
 
   test("color_global", (.) => {
-    expect(color_global(Css.rgb(244., 244., 244.)))->toBe("rgb(244, 244, 244)");
+    expect(color_global(Css.rgb(244, 244, 244)))->toBe("rgb(244, 244, 244)");
     expect(color_global(#initial))->toBe("initial");
   });
 });
@@ -169,93 +169,93 @@ describe("Image data types", (.) => {
 
   test("linearColorStop", (.) => {
     expect(linearColorStop(#red))->toBe("red");
-    expect(linearColorStop(Css.rgb(255., 255., 255.)))->toBe("rgb(255, 255, 255)");
+    expect(linearColorStop(Css.rgb(255, 255, 255)))->toBe("rgb(255, 255, 255)");
     expect(linearColorStop(Css.pct(10.)))->toBe("10%");
     expect(linearColorStop(Css.px(25)))->toBe("25px");
     expect(linearColorStop(Css.linearColorStop2(#red, Css.pct(10.))))->toBe("red 10%");
-    expect(linearColorStop(Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(10.), Css.pct(50.))))
+    expect(linearColorStop(Css.linearColorStop3(Css.rgb(255, 255, 255), Css.pct(10.), Css.pct(50.))))
       ->toBe("rgb(255, 255, 255) 10% 50%");
   });
 
   test("linearGradient", (.) => {
-    expect(linearGradient(Css.linearGradient(Css.rgb(0., 0., 0.))))->toBe("linear-gradient(rgb(0, 0, 0))");
-    expect(linearGradient(Css.linearGradient(~angle=Css.turn(0.25), Css.rgb(0., 0., 0.))))
+    expect(linearGradient(Css.linearGradient(Css.rgb(0, 0, 0))))->toBe("linear-gradient(rgb(0, 0, 0))");
+    expect(linearGradient(Css.linearGradient(~angle=Css.turn(0.25), Css.rgb(0, 0, 0))))
       ->toBe("linear-gradient(0.25turn, rgb(0, 0, 0))");
-    expect(linearGradient(Css.linearGradient(~angle=Css.turn(0.25), Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)))))
+    expect(linearGradient(Css.linearGradient(~angle=Css.turn(0.25), Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)))))
       ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%)");
     expect(linearGradient(Css.linearGradient2(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(40.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%)");
     expect(linearGradient(Css.linearGradient3(
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
-      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(40.)),
+      Css.linearColorStop3(Css.rgb(255, 255, 255), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("linear-gradient(rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
     expect(linearGradient(Css.linearGradient3(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
-      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(40.)),
+      Css.linearColorStop3(Css.rgb(255, 255, 255), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
     expect(linearGradient(Css.linearGradient3(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)),
       Css.pct(30.),
-      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop3(Css.rgb(255, 255, 255), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
     expect(linearGradient(Css.linearGradient4(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
-      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(40.)),
+      Css.linearColorStop3(Css.rgb(255, 255, 255), Css.pct(50.), Css.pct(60.)),
       Css.linearColorStop3(#red, Css.pct(70.), Css.pct(100.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
   });
 
   test("repeatingLinearGradient", (.) => {
-    expect(repeatingLinearGradient(Css.repeatingLinearGradient(Css.rgb(0., 0., 0.))))->toBe("repeating-linear-gradient(rgb(0, 0, 0))");
-    expect(repeatingLinearGradient(Css.repeatingLinearGradient(~angle=Css.turn(0.25), Css.rgb(0., 0., 0.))))
+    expect(repeatingLinearGradient(Css.repeatingLinearGradient(Css.rgb(0, 0, 0))))->toBe("repeating-linear-gradient(rgb(0, 0, 0))");
+    expect(repeatingLinearGradient(Css.repeatingLinearGradient(~angle=Css.turn(0.25), Css.rgb(0, 0, 0))))
       ->toBe("repeating-linear-gradient(0.25turn, rgb(0, 0, 0))");
-    expect(repeatingLinearGradient(Css.repeatingLinearGradient(~angle=Css.turn(0.25), Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)))))
+    expect(repeatingLinearGradient(Css.repeatingLinearGradient(~angle=Css.turn(0.25), Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)))))
       ->toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%)");
     expect(repeatingLinearGradient(Css.repeatingLinearGradient2(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(40.)),
     )))
     ->toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%)");
     expect(repeatingLinearGradient(Css.repeatingLinearGradient3(
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
-      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(40.)),
+      Css.linearColorStop3(Css.rgb(255, 255, 255), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("repeating-linear-gradient(rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
     expect(repeatingLinearGradient(Css.repeatingLinearGradient3(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
-      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(40.)),
+      Css.linearColorStop3(Css.rgb(255, 255, 255), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
     expect(repeatingLinearGradient(Css.repeatingLinearGradient3(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)),
       Css.pct(30.),
-      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop3(Css.rgb(255, 255, 255), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
     expect(repeatingLinearGradient(Css.repeatingLinearGradient4(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
-      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(40.)),
+      Css.linearColorStop3(Css.rgb(255, 255, 255), Css.pct(50.), Css.pct(60.)),
       Css.linearColorStop3(#red, Css.pct(70.), Css.pct(100.)),
     )))
     ->toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
@@ -279,9 +279,9 @@ describe("Image data types", (.) => {
     ->toBe("radial-gradient(ellipse at center, #9198e5)");
     expect(radialGradient(Css.radialGradient2(~endingShape=#circle, Css.hexColor("9198e5"), #red)))
     ->toBe("radial-gradient(circle, #9198e5, red)");
-    expect(radialGradient(Css.radialGradient3(~endingShape=#circle, Css.hexColor("9198e5"), #red, Css.rgb(255., 255., 255.))))
+    expect(radialGradient(Css.radialGradient3(~endingShape=#circle, Css.hexColor("9198e5"), #red, Css.rgb(255, 255, 255))))
     ->toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
-    expect(radialGradient(Css.radialGradient4(~endingShape=#circle, Css.hexColor("9198e5"), #red, Css.rgb(255., 255., 255.), Css.linearColorStop2(#blue, Css.pct(10.)))))
+    expect(radialGradient(Css.radialGradient4(~endingShape=#circle, Css.hexColor("9198e5"), #red, Css.rgb(255, 255, 255), Css.linearColorStop2(#blue, Css.pct(10.)))))
     ->toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
   });
 
@@ -303,9 +303,9 @@ describe("Image data types", (.) => {
     ->toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
     expect(repeatingRadialGradient(Css.repeatingRadialGradient2(~endingShape=#circle, Css.hexColor("9198e5"), #red)))
     ->toBe("repeating-radial-gradient(circle, #9198e5, red)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient3(~endingShape=#circle, Css.hexColor("9198e5"), #red, Css.rgb(255., 255., 255.))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient3(~endingShape=#circle, Css.hexColor("9198e5"), #red, Css.rgb(255, 255, 255))))
     ->toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient4(~endingShape=#circle, Css.hexColor("9198e5"), #red, Css.rgb(255., 255., 255.), Css.linearColorStop2(#blue, Css.pct(10.)))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient4(~endingShape=#circle, Css.hexColor("9198e5"), #red, Css.rgb(255, 255, 255), Css.linearColorStop2(#blue, Css.pct(10.)))))
     ->toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
   });
 
@@ -315,7 +315,7 @@ describe("Image data types", (.) => {
     expect(conicGradient(Css.conicGradient(~angle=Css.deg(360.), ~position=Css.px(10), #red)))->toBe("conic-gradient(from 360deg at 10px, red)");
     expect(conicGradient(Css.conicGradient2(#red, #blue)))->toBe("conic-gradient(red, blue)");
     expect(conicGradient(Css.conicGradient3(#red, #blue, #yellow)))->toBe("conic-gradient(red, blue, yellow)");
-    expect(conicGradient(Css.conicGradient4(#red, #blue, #yellow, Css.rgb(250., 250., 250.))))->toBe("conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
+    expect(conicGradient(Css.conicGradient4(#red, #blue, #yellow, Css.rgb(250, 250, 250))))->toBe("conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
   });
 
   test("repeatingConicGradient", (.) => {
@@ -324,22 +324,22 @@ describe("Image data types", (.) => {
     expect(repeatingConicGradient(Css.repeatingConicGradient(~angle=Css.deg(360.), ~position=Css.px(10), #red)))->toBe("repeating-conic-gradient(from 360deg at 10px, red)");
     expect(repeatingConicGradient(Css.repeatingConicGradient2(#red, #blue)))->toBe("repeating-conic-gradient(red, blue)");
     expect(repeatingConicGradient(Css.repeatingConicGradient3(#red, #blue, #yellow)))->toBe("repeating-conic-gradient(red, blue, yellow)");
-    expect(repeatingConicGradient(Css.repeatingConicGradient4(#red, #blue, #yellow, Css.rgb(250., 250., 250.))))->toBe("repeating-conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
+    expect(repeatingConicGradient(Css.repeatingConicGradient4(#red, #blue, #yellow, Css.rgb(250, 250, 250))))->toBe("repeating-conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
   });
 
   test("gradient", (.) => {
     expect(gradient(Css.linearGradient3(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)),
       Css.pct(30.),
-      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop3(Css.rgb(255, 255, 255), Css.pct(50.), Css.pct(60.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
     expect(gradient(Css.linearGradient4(
       ~angle=Css.turn(0.25), 
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(10.)),
-      Css.linearColorStop2(Css.rgb(255., 255., 255.), Css.pct(40.)),
-      Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(50.), Css.pct(60.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(10.)),
+      Css.linearColorStop2(Css.rgb(255, 255, 255), Css.pct(40.)),
+      Css.linearColorStop3(Css.rgb(255, 255, 255), Css.pct(50.), Css.pct(60.)),
       Css.linearColorStop3(#red, Css.pct(70.), Css.pct(100.)),
     )))
     ->toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
@@ -365,8 +365,8 @@ describe("Image data types", (.) => {
   test("image", (.) => {
     expect(image(Css.image(Css.src("myimage.webp#xywh=0,20,40,60"))))->toBe(`image("myimage.webp#xywh=0,20,40,60")`);
     expect(image(Css.image(Css.url("myimage.png"))))->toBe(`image(url("myimage.png"))`);
-    expect(image(Css.image(Css.rgba(0., 0., 0., 0.25))))->toBe("image(rgba(0, 0, 0, 0.25))");
-    expect(image(Css.image(~color=Css.rgba(0., 0., 0., 0.25), #red)))->toBe("image(red)");
+    expect(image(Css.image(Css.rgba(0, 0, 0, 0.25))))->toBe("image(rgba(0, 0, 0, 0.25))");
+    expect(image(Css.image(~color=Css.rgba(0, 0, 0, 0.25), #red)))->toBe("image(red)");
     expect(image(Css.image(~dir=#ltr, Css.src("myimage.png"))))->toBe(`image(ltr "myimage.png")`);
     expect(image(Css.image(~dir=#ltr, ~color=#red, Css.src("myimage.png"))))->toBe(`image(ltr "myimage.png", red)`);
   });
@@ -392,8 +392,8 @@ describe("Image data types", (.) => {
 describe("background", (.) => {
   test("background", (.) => {
     expect(background(#red))->toBe("red");
-    expect(background(Css.rgb(255., 255., 255.)))->toBe("rgb(255, 255, 255)");
-    expect(background(~color=#red, Css.rgb(255., 255., 255.)))->toBe("rgb(255, 255, 255)");
+    expect(background(Css.rgb(255, 255, 255)))->toBe("rgb(255, 255, 255)");
+    expect(background(~color=#red, Css.rgb(255, 255, 255)))->toBe("rgb(255, 255, 255)");
     expect(background(Css.url("myimage.png")))->toBe(`url("myimage.png")`);
     expect(background(~repeat=#repeatY, Css.url("test.jpg")))
       ->toBe(`url("test.jpg") repeat-y`)
