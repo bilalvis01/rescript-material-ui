@@ -923,6 +923,8 @@ type alpha = [
 
 type hue = [
   | angle
+  | cssNum
+  | cssInt
 ];
 
 type rgbParam = [

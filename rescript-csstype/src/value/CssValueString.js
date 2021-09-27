@@ -358,7 +358,14 @@ function transformOrigin(v) {
   return xToString(match$1[0]) + " " + yToString(match$1[1]) + " " + length(match$1[2]);
 }
 
-var hue = angle;
+function hue(v) {
+  var variant = v.NAME;
+  if (variant === "Int" || variant === "Num") {
+    return String(v.VAL);
+  } else {
+    return angle(v);
+  }
+}
 
 function alpha(v) {
   if (v.NAME === "Pct") {
@@ -378,11 +385,11 @@ function rgbParam(v) {
 }
 
 function hsl(v1, v2, v3) {
-  return "hsl(" + angle(v1) + ", " + percentage(v2) + ", " + percentage(v3) + ")";
+  return "hsl(" + hue(v1) + ", " + percentage(v2) + ", " + percentage(v3) + ")";
 }
 
 function hsla(v1, v2, v3, v4) {
-  return "hsla(" + angle(v1) + ", " + percentage(v2) + ", " + percentage(v3) + ", " + alpha(v4) + ")";
+  return "hsla(" + hue(v1) + ", " + percentage(v2) + ", " + percentage(v3) + ", " + alpha(v4) + ")";
 }
 
 function rgb(v1, v2, v3) {

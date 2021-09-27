@@ -235,8 +235,8 @@ Color
 let hue = v => { 
   switch v {
     | #...angle as a => angle(a)
-    // | #...number as n => number(n)
-    // | #...degree as d => Obj.magic(d)->Int.toString
+    | #...cssNum as n => num(n)
+    | #...cssInt as i => int(i)
   };
 };
 let alpha = v => { 
