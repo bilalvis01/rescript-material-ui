@@ -67,7 +67,7 @@ test("declarationBlock", (.) => {
       "paddingRight": "40px",
     },
     "& .button": {
-      "color": "hsla(360deg, 100%, 50%, 0.5)"
+      "color": "hsla(360, 100%, 50%, 0.5)"
       "&:hover": {
         "background": "blue"
       }
@@ -127,7 +127,7 @@ test("statements", (.) => {
         "paddingRight": "40px",
       },
       "& .button": {
-        "color": "hsla(360deg, 100%, 50%, 0.5)"
+        "color": "hsla(360, 100%, 50%, 0.5)"
         "&:hover": {
           "background": "blue"
         }

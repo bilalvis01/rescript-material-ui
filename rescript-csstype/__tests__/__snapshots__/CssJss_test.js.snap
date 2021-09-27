@@ -11,7 +11,7 @@ exports[`jss 1`] = `
   padding-bottom: 24px;
 }
 .app-0-0-1 .button {
-  color: hsla(360deg, 100%, 50%, 0.5);
+  color: hsla(360, 100%, 50%, 0.5);
 }
 .app-0-0-1:hover {
   color: blue;
