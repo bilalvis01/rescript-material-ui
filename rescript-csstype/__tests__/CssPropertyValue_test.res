@@ -94,3 +94,147 @@ test("backgroundStyle", (.) => {
   expect(BackgroundStyle.value4(#repeatX, #repeat__repeat, #noRepeat, #space))
   ->toBe(BackgroundStyle.string("repeat-x, repeat repeat, no-repeat, space"));
 });
+
+module Border = CssBorder;
+module BorderColor = CssBorderColor;
+module BorderStyle = CssBorderStyle;
+module BorderWidth = CssBorderWidth;
+
+test("border", (.) => {
+  expect(Border.value(#solid))
+  ->toBe(Border.string("solid"));
+  expect(Border.value(~color=#red, #dashed))
+  ->toBe(Border.string("red dashed"));
+  expect(Border.value(~width=rem(1.0), #solid))
+  ->toBe(Border.string("1rem solid"));
+  expect(Border.value(~width=#thick, ~color=hexColor("32a1ce"), #double))
+  ->toBe(Border.string("thick #32a1ce double"));
+  expect(Border.value(~width=mm(4.), ~color=rgba(170, 50, 220, 0.6), #ridge))
+  ->toBe(Border.string("4mm rgba(170, 50, 220, 0.6) ridge"));
+});
+
+test("borderColor", (.) => {
+  expect(BorderColor.value(#red))
+  ->toBe(BorderColor.string("red"));
+  expect(BorderColor.value2(~tb=#red, ~lr=hexColor("000000ff")))
+  ->toBe(BorderColor.string("red #000000ff"));
+  expect(BorderColor.value3(~top=#red, ~lr=rgb(255, 255, 255), ~bottom=hsl(360, pct(100.), pct(50.))))
+  ->toBe(BorderColor.string("red rgb(255, 255, 255) hsl(360, 100%, 50%)"));
+  expect(BorderColor.value4(~bottom=#red, ~top=#blue, ~left=rgb(255, 255, 255), ~right=rgba(0, 0, 0, 0.5)))
+  ->toBe(BorderColor.string("blue rgba(0, 0, 0, 0.5) red rgb(255, 255, 255)"));
+});
+
+test("borderStyle", (.) => {
+  expect(BorderStyle.value(#solid))
+  ->toBe(BorderStyle.string("solid"));
+  expect(BorderStyle.value2(~tb=#solid, ~lr=#dashed))
+  ->toBe(BorderStyle.string("solid dashed"));
+  expect(BorderStyle.value3(~top=#solid, ~lr=#dashed, ~bottom=#dotted))
+  ->toBe(BorderStyle.string("solid dashed dotted"));
+  expect(BorderStyle.value4(~bottom=#dotted, ~top=#dashed, ~left=#inset, ~right=#solid))
+  ->toBe(BorderStyle.string("dashed solid dotted inset"));
+});
+
+test("borderWidth", (.) => {
+  expect(BorderWidth.value(px(1)))
+  ->toBe(BorderWidth.string("1px"));
+  expect(BorderWidth.value2(~tb=#thin, ~lr=#medium))
+  ->toBe(BorderWidth.string("thin medium"));
+  expect(BorderWidth.value3(~top=#thin, ~lr=#medium, ~bottom=px(2)))
+  ->toBe(BorderWidth.string("thin medium 2px"));
+  expect(BorderWidth.value4(~bottom=#thin, ~top=#medium, ~left=px(4), ~right=px(2)))
+  ->toBe(BorderWidth.string("medium 2px thin 4px"));
+});
+
+module Cursor = CssCursor;
+
+test("cursor", (.) => {
+  expect(Cursor.value(#auto))
+  ->toBe(Cursor.string("auto"));
+  expect(Cursor.value(#initial))
+  ->toBe(Cursor.string("initial"));
+  expect(Cursor.value1(url("image.png"), #default))
+  ->toBe(Cursor.string(`url("image.png"), default`));
+  expect(Cursor.value2(url("image.png"), url("image2.png"), #default))
+  ->toBe(Cursor.string(`url("image.png"), url("image2.png"), default`));
+  expect(Cursor.value3(url("image.png"), url("image2.png"), url("image3.png"), #default))
+  ->toBe(Cursor.string(`url("image.png"), url("image2.png"), url("image3.png"), default`));
+  expect(Cursor.value4(url("image.png"), url("image2.png"), url("image3.png"), url("image4.png"), #default))
+  ->toBe(Cursor.string(`url("image.png"), url("image2.png"), url("image3.png"), url("image4.png"), default`));
+});
+
+module FontFamily = CssFontFamily;
+
+test("FontFamily", (.) => {
+  expect(FontFamily.value(#initial))
+  ->toBe(FontFamily.string("initial"));
+  expect(FontFamily.value(#sansSerif))
+  ->toBe(FontFamily.string("sans-serif"));
+  expect(FontFamily.value(#Family("Gill Sans Extrabold")))
+  ->toBe(FontFamily.string(`"Gill Sans Extrabold"`));
+  expect(FontFamily.value2(#Family("Gill Sans Extrabold"), #sansSerif))
+  ->toBe(FontFamily.string(`"Gill Sans Extrabold", sans-serif`));
+  expect(FontFamily.value3(#Family("Roboto"), #Family("Helvetica"), #sansSerif))
+  ->toBe(FontFamily.string(`"Roboto", "Helvetica", sans-serif`));
+  expect(FontFamily.value4(#Family("Roboto"), #Family("Helvetica"), #Family("Arial"), #sansSerif))
+  ->toBe(FontFamily.string(`"Roboto", "Helvetica", "Arial", sans-serif`));
+});
+
+module FontWeight = CssFontWeight;
+
+test("fontWeight", (.) => {
+  expect(FontWeight.value(#initial))
+  ->toBe(FontWeight.string("initial"));
+  expect(FontWeight.value(#bold))
+  ->toBe(FontWeight.string("bold"));
+});
+
+module Margin = CssMargin;
+module MarginSide = {
+  type t;
+  include CssMarginSide.MakeValue({
+    type t = t;
+  });
+};
+
+test("margin", (.) => {
+  expect(Margin.value(px(24)))
+  ->toBe(Margin.string("24px"));
+  expect(Margin.value(#initial))
+  ->toBe(Margin.string("initial"));
+  expect(Margin.value2(~tb=rem(2.), ~lr=rem(4.)))
+  ->toBe(Margin.string("2rem 4rem"));
+  expect(Margin.value3(~top=px(10), ~lr=px(24), ~bottom=px(40)))
+  ->toBe(Margin.string("10px 24px 40px"));
+  expect(Margin.value4(~top=px(20), ~bottom=px(20), ~left=px(40), ~right=px(40)))
+  ->toBe(Margin.string("20px 40px 20px 40px"));
+  expect(MarginSide.value(px(24)))
+  ->toBe(MarginSide.string("24px"));
+  expect(MarginSide.value(#initial))
+  ->toBe(MarginSide.string("initial"));
+});
+
+module Padding = CssPadding;
+module PaddingSide = {
+  type t;
+  include CssPaddingSide.MakeValue({
+    type t = t;
+  });
+};
+
+test("padding", (.) => {
+  expect(Padding.value(px(24)))
+  ->toBe(Padding.string("24px"));
+  expect(Padding.value(#initial))
+  ->toBe(Padding.string("initial"));
+  expect(Padding.value2(~tb=rem(2.), ~lr=rem(4.)))
+  ->toBe(Padding.string("2rem 4rem"));
+  expect(Padding.value3(~top=px(10), ~lr=px(24), ~bottom=px(40)))
+  ->toBe(Padding.string("10px 24px 40px"));
+  expect(Padding.value4(~top=px(20), ~bottom=px(20), ~left=px(40), ~right=px(40)))
+  ->toBe(Padding.string("20px 40px 20px 40px"));
+  expect(PaddingSide.value(px(24)))
+  ->toBe(PaddingSide.string("24px"));
+  expect(PaddingSide.value(#initial))
+  ->toBe(PaddingSide.string("initial"));
+});
