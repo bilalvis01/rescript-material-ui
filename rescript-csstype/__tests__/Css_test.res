@@ -9,7 +9,7 @@ module DeclarationBlock = CssAdvancedDeclarationBlock.Make({
   type value<'data> = value<'data>;
 });
 
-module Statements = CssJssStatements.Make({
+module Statements = CssStatements.Make({
   type t<'data> = statements<'data>;
   type declarationBlock<'data> = declarationBlock<'data>;
 });
