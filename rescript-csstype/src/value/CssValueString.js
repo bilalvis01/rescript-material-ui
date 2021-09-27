@@ -361,10 +361,11 @@ function transformOrigin(v) {
 var hue = angle;
 
 function alpha(v) {
-  if (v.NAME === "Pct") {
-    return percentage(v);
-  } else {
+  var variant = v.NAME;
+  if (variant === "Num" || variant !== "Pct") {
     return String(v.VAL);
+  } else {
+    return percentage(v);
   }
 }
 
