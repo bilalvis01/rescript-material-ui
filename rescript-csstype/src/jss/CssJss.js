@@ -14,7 +14,6 @@ function Make(Type) {
   return {
           DeclarationBlock: DeclarationBlock,
           Statements: Statements,
-          style: DeclarationBlock.make,
           styles: Statements.make,
           Property: include.Property,
           Background: include.Background,
