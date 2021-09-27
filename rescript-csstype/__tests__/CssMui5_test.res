@@ -8,7 +8,7 @@ test("mui5", (.) => {
       <Box 
         sx=sx([
           color(#blue),
-          margin(px(24.)),
+          margin(px(24)),
         ]) 
       />
     )

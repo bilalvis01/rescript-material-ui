@@ -66,7 +66,7 @@ let vh = l => `${l->Float.toString}vh`;
 let vw = l => `${l->Float.toString}vw`;
 let vmin = l => `${l->Float.toString}vmin`;
 let vmax = l => `${l->Float.toString}vmax`;
-let px = l => `${l->Float.toString}px`;
+let px = l => `${l->Int.toString}px`;
 let cm = l => `${l->Float.toString}cm`;
 let mm = l => `${l->Float.toString}mm`;
 let inch = l => `${l->Float.toString}in`;

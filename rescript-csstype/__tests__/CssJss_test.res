@@ -12,10 +12,10 @@ test("jss", (.) => {
       rule("& .wrapper", [
         background(url("image.png")),
         color(rgb(255., 255., 255.)),
-        paddingTop(px(24.)),
-        paddingBottom(px(24.)),
-        paddingLeft(px(40.)),
-        paddingRight(px(40.)),
+        paddingTop(px(24)),
+        paddingBottom(px(24)),
+        paddingLeft(px(40)),
+        paddingRight(px(40)),
         marginNumber(24.),
       ]),
       rule("& .button", [

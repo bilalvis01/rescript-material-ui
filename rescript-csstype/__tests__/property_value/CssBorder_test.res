@@ -42,12 +42,12 @@ test("borderStyle", (.) => {
 });
 
 test("borderWidth", (.) => {
-  expect(BorderWidth.value(px(1.)))
+  expect(BorderWidth.value(px(1)))
   ->toBe(BorderWidth.string("1px"));
   expect(BorderWidth.value2(~tb=#thin, ~lr=#medium))
   ->toBe(BorderWidth.string("thin medium"));
-  expect(BorderWidth.value3(~top=#thin, ~lr=#medium, ~bottom=px(2.)))
+  expect(BorderWidth.value3(~top=#thin, ~lr=#medium, ~bottom=px(2)))
   ->toBe(BorderWidth.string("thin medium 2px"));
-  expect(BorderWidth.value4(~bottom=#thin, ~top=#medium, ~left=px(4.), ~right=px(2.)))
+  expect(BorderWidth.value4(~bottom=#thin, ~top=#medium, ~left=px(4), ~right=px(2)))
   ->toBe(BorderWidth.string("medium 2px thin 4px"));
 });

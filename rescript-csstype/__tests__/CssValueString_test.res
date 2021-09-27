@@ -43,7 +43,7 @@ describe("Quantities data types", (.) => {
     expect(vw(1.))->toBe("1vw");
     expect(vmin(1.))->toBe("1vmin");
     expect(vmax(1.))->toBe("1vmax");
-    expect(px(1.))->toBe("1px");
+    expect(px(1))->toBe("1px");
     expect(cm(1.))->toBe("1cm");
     expect(mm(1.))->toBe("1mm");
     expect(inch(1.))->toBe("1in");
@@ -154,9 +154,9 @@ describe("Line", (.) => {
 describe("transformOrigin", (.) => {
   test("transformOrigin", (.) => {
     expect(transformOrigin(#left))->toBe("left");
-    expect(transformOrigin(Css.px(20.)))->toBe("20px");
+    expect(transformOrigin(Css.px(20)))->toBe("20px");
     expect(transformOrigin(#TransformOrigin2(#left, #top)))->toBe("left top");
-    expect(transformOrigin(#TransformOrigin3(#left, #top, Css.px(10.))))->toBe("left top 10px");
+    expect(transformOrigin(#TransformOrigin3(#left, #top, Css.px(10))))->toBe("left top 10px");
   }); 
 });
 
@@ -171,7 +171,7 @@ describe("Image data types", (.) => {
     expect(linearColorStop(#red))->toBe("red");
     expect(linearColorStop(Css.rgb(255., 255., 255.)))->toBe("rgb(255, 255, 255)");
     expect(linearColorStop(Css.pct(10.)))->toBe("10%");
-    expect(linearColorStop(Css.px(25.)))->toBe("25px");
+    expect(linearColorStop(Css.px(25)))->toBe("25px");
     expect(linearColorStop(Css.linearColorStop2(#red, Css.pct(10.))))->toBe("red 10%");
     expect(linearColorStop(Css.linearColorStop3(Css.rgb(255., 255., 255.), Css.pct(10.), Css.pct(50.))))
       ->toBe("rgb(255, 255, 255) 10% 50%");
@@ -267,15 +267,15 @@ describe("Image data types", (.) => {
     ->toBe("radial-gradient(circle, #9198e5)");
     expect(radialGradient(Css.radialGradient(~endingShape=#circle, ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(circle at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#circle, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~endingShape=#circle, ~size=Css.px(10), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(circle 10px at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=Css.px(10), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(ellipse at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~size=#Ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~size=#Ellipse(Css.px(10), Css.px(10)), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(10px 10px at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=#Ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=#Ellipse(Css.px(10), Css.px(10)), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(ellipse 10px 10px at center, #9198e5)");
-    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
+    expect(radialGradient(Css.radialGradient(~endingShape=#ellipse, ~size=Css.px(10), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(ellipse at center, #9198e5)");
     expect(radialGradient(Css.radialGradient2(~endingShape=#circle, Css.hexColor("9198e5"), #red)))
     ->toBe("radial-gradient(circle, #9198e5, red)");
@@ -291,15 +291,15 @@ describe("Image data types", (.) => {
     ->toBe("repeating-radial-gradient(circle, #9198e5)");
     expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#circle, ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(circle at center, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#circle, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#circle, ~size=Css.px(10), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=Css.px(10), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~size=#Ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~size=#Ellipse(Css.px(10), Css.px(10)), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(10px 10px at center, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=#Ellipse(Css.px(10.), Css.px(10.)), ~position=#center, Css.hexColor("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=#Ellipse(Css.px(10), Css.px(10)), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(ellipse 10px 10px at center, #9198e5)");
-    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
+    expect(repeatingRadialGradient(Css.repeatingRadialGradient(~endingShape=#ellipse, ~size=Css.px(10), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
     expect(repeatingRadialGradient(Css.repeatingRadialGradient2(~endingShape=#circle, Css.hexColor("9198e5"), #red)))
     ->toBe("repeating-radial-gradient(circle, #9198e5, red)");
@@ -312,7 +312,7 @@ describe("Image data types", (.) => {
   test("conicGradient", (.) => {
     expect(conicGradient(Css.conicGradient(#red)))->toBe("conic-gradient(red)");
     expect(conicGradient(Css.conicGradient(~angle=Css.deg(360.), #red)))->toBe("conic-gradient(from 360deg, red)");
-    expect(conicGradient(Css.conicGradient(~angle=Css.deg(360.), ~position=Css.px(10.), #red)))->toBe("conic-gradient(from 360deg at 10px, red)");
+    expect(conicGradient(Css.conicGradient(~angle=Css.deg(360.), ~position=Css.px(10), #red)))->toBe("conic-gradient(from 360deg at 10px, red)");
     expect(conicGradient(Css.conicGradient2(#red, #blue)))->toBe("conic-gradient(red, blue)");
     expect(conicGradient(Css.conicGradient3(#red, #blue, #yellow)))->toBe("conic-gradient(red, blue, yellow)");
     expect(conicGradient(Css.conicGradient4(#red, #blue, #yellow, Css.rgb(250., 250., 250.))))->toBe("conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
@@ -321,7 +321,7 @@ describe("Image data types", (.) => {
   test("repeatingConicGradient", (.) => {
     expect(repeatingConicGradient(Css.repeatingConicGradient(#red)))->toBe("repeating-conic-gradient(red)");
     expect(repeatingConicGradient(Css.repeatingConicGradient(~angle=Css.deg(360.), #red)))->toBe("repeating-conic-gradient(from 360deg, red)");
-    expect(repeatingConicGradient(Css.repeatingConicGradient(~angle=Css.deg(360.), ~position=Css.px(10.), #red)))->toBe("repeating-conic-gradient(from 360deg at 10px, red)");
+    expect(repeatingConicGradient(Css.repeatingConicGradient(~angle=Css.deg(360.), ~position=Css.px(10), #red)))->toBe("repeating-conic-gradient(from 360deg at 10px, red)");
     expect(repeatingConicGradient(Css.repeatingConicGradient2(#red, #blue)))->toBe("repeating-conic-gradient(red, blue)");
     expect(repeatingConicGradient(Css.repeatingConicGradient3(#red, #blue, #yellow)))->toBe("repeating-conic-gradient(red, blue, yellow)");
     expect(repeatingConicGradient(Css.repeatingConicGradient4(#red, #blue, #yellow, Css.rgb(250., 250., 250.))))->toBe("repeating-conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
@@ -346,10 +346,10 @@ describe("Image data types", (.) => {
     expect(gradient(Css.repeatingLinearGradient(~angle=Css.deg(360.), #red)))->toBe("repeating-linear-gradient(360deg, red)");
     expect(gradient(Css.radialGradient(~endingShape=#circle, ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("radial-gradient(circle at center, #9198e5)");
-    expect(gradient(Css.repeatingRadialGradient(~endingShape=#circle, ~size=Css.px(10.), ~position=#center, Css.hexColor("9198e5"))))
+    expect(gradient(Css.repeatingRadialGradient(~endingShape=#circle, ~size=Css.px(10), ~position=#center, Css.hexColor("9198e5"))))
     ->toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
-    expect(gradient(Css.conicGradient(~angle=Css.deg(360.), ~position=Css.px(10.), #red)))->toBe("conic-gradient(from 360deg at 10px, red)");
-    expect(gradient(Css.repeatingConicGradient(~angle=Css.deg(360.), ~position=Css.px(10.), #red)))
+    expect(gradient(Css.conicGradient(~angle=Css.deg(360.), ~position=Css.px(10), #red)))->toBe("conic-gradient(from 360deg at 10px, red)");
+    expect(gradient(Css.repeatingConicGradient(~angle=Css.deg(360.), ~position=Css.px(10), #red)))
     ->toBe("repeating-conic-gradient(from 360deg at 10px, red)");
   });
 
@@ -373,14 +373,14 @@ describe("Image data types", (.) => {
 
   test("bgSize", (.) => {
     expect(bgSize(#cover))->toBe("cover");
-    expect(bgSize(Css.px(24.)))->toBe("24px");
-    expect(bgSize(Css.bgSize2(#auto, Css.px(24.))))->toBe("auto 24px");
-    expect(bgSize(Css.bgSize2(Css.px(24.), Css.px(24.))))->toBe("24px 24px");
+    expect(bgSize(Css.px(24)))->toBe("24px");
+    expect(bgSize(Css.bgSize2(#auto, Css.px(24))))->toBe("auto 24px");
+    expect(bgSize(Css.bgSize2(Css.px(24), Css.px(24))))->toBe("24px 24px");
   });
 
   test("position", (.) => {
     expect(position(#center))->toBe("center");
-    expect(position(Css.px(20.)))->toBe("20px");
+    expect(position(Css.px(20)))->toBe("20px");
     expect(position(Css.position2(#left, #top)))->toBe("left top");
     expect(position(Css.position3(#left, #top, Css.pct(10.))))->toBe("left top 10%");
     expect(position(Css.position3(#left, Css.pct(20.), #bottom)))->toBe("left 20% bottom");
@@ -417,17 +417,17 @@ describe("background", (.) => {
 
 describe("Spacing", (.) => {
   test("margin", (.) => {
-    expect(margin(Css.px(10.)))->toBe("10px");
+    expect(margin(Css.px(10)))->toBe("10px");
     expect(margin(#auto))->toBe("auto");
     expect(margin(Css.pct(20.)))->toBe("20%");
-    expect(margin_global(Css.px(24.)))->toBe("24px");
+    expect(margin_global(Css.px(24)))->toBe("24px");
     expect(margin_global(#initial))->toBe("initial");
   });
 
   test("padding", (.) => {
-    expect(padding(Css.px(10.)))->toBe("10px");
+    expect(padding(Css.px(10)))->toBe("10px");
     expect(padding(Css.pct(20.)))->toBe("20%");
-    expect(padding_global(Css.px(24.)))->toBe("24px");
+    expect(padding_global(Css.px(24)))->toBe("24px");
     expect(padding_global(#initial))->toBe("initial");
   });
 });

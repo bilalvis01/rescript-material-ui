@@ -74,13 +74,13 @@ test("backgroundImage", (.) => {
 });
 
 test("backgroundPosition", (.) => {
-  expect(BackgroundPosition.value(px(10.)))
+  expect(BackgroundPosition.value(px(10)))
   ->toBe(BackgroundPosition.string("10px"));
-  expect(BackgroundPosition.value2(px(10.), position2(#center, #bottom)))
+  expect(BackgroundPosition.value2(px(10), position2(#center, #bottom)))
   ->toBe(BackgroundPosition.string("10px, center bottom"));
-  expect(BackgroundPosition.value3(px(10.), position2(#center, #bottom), #center))
+  expect(BackgroundPosition.value3(px(10), position2(#center, #bottom), #center))
   ->toBe(BackgroundPosition.string("10px, center bottom, center"));
-  expect(BackgroundPosition.value4(px(10.), position2(#center, #bottom), pct(10.), position4(#left, px(10.), #top, pct(10.))))
+  expect(BackgroundPosition.value4(px(10), position2(#center, #bottom), pct(10.), position4(#left, px(10), #top, pct(10.))))
   ->toBe(BackgroundPosition.string("10px, center bottom, 10%, left 10px top 10%"));
 });
 
