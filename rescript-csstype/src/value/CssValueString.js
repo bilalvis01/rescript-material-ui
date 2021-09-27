@@ -1460,18 +1460,7 @@ function cursorKeyword_global(v) {
   }
 }
 
-function cursorImage(v) {
-  var variant = v.NAME;
-  if (variant === "Url2") {
-    var match = v.VAL;
-    return "url(\"" + match[0] + "\") " + String(match[1]);
-  }
-  if (variant !== "Url3") {
-    return url(v);
-  }
-  var match$1 = v.VAL;
-  return "url(\"" + match$1[0] + "\") " + String(match$1[1]) + " " + String(match$1[2]);
-}
+var cursorImage = url;
 
 function fontWeight(v) {
   if (v === "bolder") {

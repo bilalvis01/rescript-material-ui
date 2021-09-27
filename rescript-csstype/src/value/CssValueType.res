@@ -1700,8 +1700,6 @@ type cursorImageCoondinatesValue = [
 
 type cursorImage = [
   | url
-  | #Url2(string, float)
-  | #Url3(string, float, float)
 ];
 
 type fontWeight = [

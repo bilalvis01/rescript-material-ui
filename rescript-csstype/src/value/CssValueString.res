@@ -928,8 +928,6 @@ let cursorKeyword_global = v => {
 let cursorImage = v => {
   switch v {
   | #...url as u => url(u)
-  | #Url2(u, x) => `url("${u}") ${Belt.Float.toString(x)}`
-  | #Url3(u, x, y) => `url("${u}") ${Belt.Float.toString(x)} ${Belt.Float.toString(y)}` 
   };
 };
 

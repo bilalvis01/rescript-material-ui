@@ -8,21 +8,6 @@ test("cursor", (function () {
         expect(CssCursor$Ress.value("auto")).toBe("auto");
         expect(CssCursor$Ress.value("initial")).toBe("initial");
         expect(CssCursor$Ress.value1(CssValueHelper$Ress.url("image.png"), "default")).toBe("url(\"image.png\"), default");
-        expect(CssCursor$Ress.value1({
-                    NAME: "Url2",
-                    VAL: [
-                      "image.png",
-                      12
-                    ]
-                  }, "default")).toBe("url(\"image.png\") 12, default");
-        expect(CssCursor$Ress.value1({
-                    NAME: "Url3",
-                    VAL: [
-                      "image.png",
-                      12,
-                      24
-                    ]
-                  }, "default")).toBe("url(\"image.png\") 12 24, default");
         expect(CssCursor$Ress.value2(CssValueHelper$Ress.url("image.png"), CssValueHelper$Ress.url("image2.png"), "default")).toBe("url(\"image.png\"), url(\"image2.png\"), default");
         expect(CssCursor$Ress.value3(CssValueHelper$Ress.url("image.png"), CssValueHelper$Ress.url("image2.png"), CssValueHelper$Ress.url("image3.png"), "default")).toBe("url(\"image.png\"), url(\"image2.png\"), url(\"image3.png\"), default");
         expect(CssCursor$Ress.value4(CssValueHelper$Ress.url("image.png"), CssValueHelper$Ress.url("image2.png"), CssValueHelper$Ress.url("image3.png"), CssValueHelper$Ress.url("image4.png"), "default")).toBe("url(\"image.png\"), url(\"image2.png\"), url(\"image3.png\"), url(\"image4.png\"), default");
