@@ -4,19 +4,13 @@
 var Curry = require("rescript/lib/js/curry.js");
 var Js_dict = require("rescript/lib/js/js_dict.js");
 var Belt_Array = require("rescript/lib/js/belt_Array.js");
-var CssJssImportant$Ress = require("./CssJssImportant.js");
-var CssAdvancedDeclaration$Ress = require("../declaration/CssAdvancedDeclaration.js");
+var CssAdvancedDeclaration$Ress = require("./CssAdvancedDeclaration.js");
 
 function Make(funarg) {
   var AdvancedDeclaration = CssAdvancedDeclaration$Ress.Make({});
-  var Important = CssJssImportant$Ress.Make({});
   var make = function (declarations) {
     return Js_dict.fromArray(Belt_Array.map(declarations, (function (declaration) {
-                      if (declaration.NAME === "Important") {
-                        return Curry._1(Important.make, declaration);
-                      } else {
-                        return Curry._1(AdvancedDeclaration.make, declaration);
-                      }
+                      return Curry._1(AdvancedDeclaration.make, declaration);
                     })));
   };
   return {

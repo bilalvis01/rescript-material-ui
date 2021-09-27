@@ -4,56 +4,13 @@
 var Curry = require("rescript/lib/js/curry.js");
 var Js_dict = require("rescript/lib/js/js_dict.js");
 var Belt_Array = require("rescript/lib/js/belt_Array.js");
-var CssRule$Ress = require("../rule/CssRule.js");
-var CssAtRule$Ress = require("../at_rule/CssAtRule.js");
-var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
-var CssPseudoClass$Ress = require("../rule/CssPseudoClass.js");
-var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
+var CssAdvancedDeclaration$Ress = require("../declaration/CssAdvancedDeclaration.js");
 
 function Make(funarg) {
-  var Declaration = CssDeclaration$Ress.Make({
-        map: (function (prim) {
-            return prim;
-          })
-      });
-  var DeclarationFn = CssDeclarationFn$Ress.Make({
-        map: (function (prim) {
-            return prim;
-          })
-      });
-  var map = function (v) {
-    return [
-            "&" + v[0],
-            v[1]
-          ];
-  };
-  var PseudoClass = CssPseudoClass$Ress.Make({
-        map: map
-      });
-  var Rule = CssRule$Ress.Make({
-        map: (function (prim) {
-            return prim;
-          })
-      });
-  var AtRule = CssAtRule$Ress.Make({
-        map: (function (prim) {
-            return prim;
-          })
-      });
+  var AdvancedDeclaration = CssAdvancedDeclaration$Ress.Make({});
   var make = function (declarations) {
     return Js_dict.fromArray(Belt_Array.map(declarations, (function (declaration) {
-                      var variant = declaration.NAME;
-                      if (variant === "AtRule") {
-                        return Curry._1(AtRule.make, declaration);
-                      } else if (variant === "PseudoClass") {
-                        return Curry._1(PseudoClass.make, declaration);
-                      } else if (variant === "DeclarationFn") {
-                        return Curry._1(DeclarationFn.make, declaration);
-                      } else if (variant === "Rule") {
-                        return Curry._1(Rule.make, declaration);
-                      } else {
-                        return Curry._1(Declaration.make, declaration);
-                      }
+                      return Curry._1(AdvancedDeclaration.make, declaration);
                     })));
   };
   return {

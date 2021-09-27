@@ -4,38 +4,18 @@
 var Curry = require("rescript/lib/js/curry.js");
 var Js_dict = require("rescript/lib/js/js_dict.js");
 var Belt_Array = require("rescript/lib/js/belt_Array.js");
-var CssRule$Ress = require("../rule/CssRule.js");
-var CssAtRule$Ress = require("../at_rule/CssAtRule.js");
-var CssPseudoClass$Ress = require("../rule/CssPseudoClass.js");
+var CssStatement$Ress = require("../statement/CssStatement.js");
 
 function Make(funarg) {
-  var map = function (v) {
-    return v;
+  var pseudoClassSelector = function (selector) {
+    return selector;
   };
-  var Rule = CssRule$Ress.Make({
-        map: map
-      });
-  var AtRule = CssAtRule$Ress.Make({
-        map: (function (prim) {
-            return prim;
-          })
-      });
-  var map$1 = function (v) {
-    return v;
-  };
-  var PseudoClass = CssPseudoClass$Ress.Make({
-        map: map$1
+  var Statement = CssStatement$Ress.Make({
+        pseudoClassSelector: pseudoClassSelector
       });
   var make = function (rules) {
     return Js_dict.fromArray(Belt_Array.map(rules, (function (rule) {
-                      var variant = rule.NAME;
-                      if (variant === "PseudoClass") {
-                        return Curry._1(PseudoClass.make, rule);
-                      } else if (variant === "Rule") {
-                        return Curry._1(Rule.make, rule);
-                      } else {
-                        return Curry._1(AtRule.make, rule);
-                      }
+                      return Curry._1(Statement.make, rule);
                     })));
   };
   return {

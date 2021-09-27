@@ -4,9 +4,9 @@
 var Curry = require("rescript/lib/js/curry.js");
 var CssHelper$Ress = require("../src/helper/CssHelper.js");
 var CssJssStatements$Ress = require("../src/jss/CssJssStatements.js");
-var CssJssDeclarationBlock$Ress = require("../src/jss/CssJssDeclarationBlock.js");
+var CssAdvancedDeclarationBlock$Ress = require("../src/declaration/CssAdvancedDeclarationBlock.js");
 
-var DeclarationBlock = CssJssDeclarationBlock$Ress.Make({});
+var DeclarationBlock = CssAdvancedDeclarationBlock$Ress.Make({});
 
 var Statements = CssJssStatements$Ress.Make({});
 

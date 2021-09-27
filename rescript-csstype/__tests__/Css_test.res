@@ -4,7 +4,7 @@ type value<'data>;
 type declarationBlock<'data>;
 type statements<'data>;
 
-module DeclarationBlock = CssJssDeclarationBlock.Make({
+module DeclarationBlock = CssAdvancedDeclarationBlock.Make({
   type t<'data> = declarationBlock<'data>;
   type value<'data> = value<'data>;
 });
@@ -19,7 +19,7 @@ Helper
 */
 include CssHelper.Make({ 
   type declarationBlock<'data> = declarationBlock<'data>; 
-  type declarationConstructor<'data> = DeclarationBlock.advancedDeclarationConstructor<'data>;
+  type declarationConstructor<'data> = CssAdvancedDeclaration.constructor<'data, declarationBlock<'data>>;
   let style = DeclarationBlock.make; 
 });
 

@@ -23,7 +23,7 @@ module Make = (
   */
   include CssHelper.Make({ 
     type declarationBlock<'data> = Type.declarationBlock<'data>; 
-    type declarationConstructor<'data> = DeclarationBlock.advancedDeclarationConstructor<'data>;
+    type declarationConstructor<'data> = CssMui5DeclarationBlock.constructor<'data, Type.declarationBlock<'data>>;
     let style = DeclarationBlock.make; 
   });
 };
