@@ -1,12 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`mui5 1`] = `
+exports[`mui5 Box 1`] = `
 .emotion-0 {
-  color: blue;
+  color: #1976d2;
   margin: 24px;
 }
 
 <div
   className="MuiBox-root emotion-0"
 />
+`;
+
+exports[`mui5 GlobalStyles 1`] = `
+<head>
+  <style
+    data-emotion="css-global"
+    data-s=""
+  >
+    
+    h1{color:#1976d2;}
+  </style>
+  <style
+    data-emotion="css"
+    data-s=""
+  >
+    
+    .css-e2n54l{color:#1976d2;margin:24px;}
+  </style>
+</head>
 `;
