@@ -9,7 +9,10 @@ var Theme = {};
 
 var Box = {};
 
+var GlobalStyles = {};
+
 exports.Css = Css;
 exports.Theme = Theme;
 exports.Box = Box;
+exports.GlobalStyles = GlobalStyles;
 /* Css Not a pure module */

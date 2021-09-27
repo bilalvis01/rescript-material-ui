@@ -18,3 +18,10 @@ module Box = {
     ~sx: declarationBlock<Theme.t>
   ) => React.element = "default";
 };
+
+module GlobalStyles = {
+  @react.component @module("@mui/material/GlobalStyles")
+  external make: (
+    ~styles: 'data => statements<'data>
+  ) => React.element = "default";
+};
