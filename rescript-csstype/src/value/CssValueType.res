@@ -919,7 +919,6 @@ type rgbDecimalValue = [
 type alpha = [
   | percentage
   | cssNum
-  | cssInt
 ];
 
 type hue = [

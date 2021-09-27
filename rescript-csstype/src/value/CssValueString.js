@@ -368,11 +368,10 @@ function hue(v) {
 }
 
 function alpha(v) {
-  var variant = v.NAME;
-  if (variant === "Num" || variant !== "Pct") {
-    return String(v.VAL);
-  } else {
+  if (v.NAME === "Pct") {
     return percentage(v);
+  } else {
+    return String(v.VAL);
   }
 }
 

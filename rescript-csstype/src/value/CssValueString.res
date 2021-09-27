@@ -243,7 +243,6 @@ let alpha = v => {
   switch v {
     | #...percentage as l => percentage(l)
     | #...cssNum as n => num(n)
-    | #...cssInt as i => int(i)
   };
 };
 let rgbParam = v => {
