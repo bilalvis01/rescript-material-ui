@@ -928,6 +928,7 @@ type hue = [
 type rgbParam = [
   | percentage
   | cssNum
+  | cssInt
 ];
 
 type hsl = [ | #Hsl(hue, percentage, percentage) ];

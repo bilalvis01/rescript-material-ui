@@ -249,6 +249,7 @@ let rgbParam = v => {
   switch v {
     | #...percentage as l => percentage(l)
     | #...cssNum as n => num(n)
+    | #...cssInt as i => int(i)
   };
 };
 let hsl = (v1, v2, v3) => `hsl(${hue(v1)}, ${percentage(v2)}, ${percentage(v3)})`;
