@@ -1,21 +1,29 @@
-open CssDeclaration.Helper;
-open CssDeclarationFn.Helper;
-
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 let property = "backgroundPosition";
 
+let { declaration } = module(CssDeclaration.Helper);
+let { declarationFn } = module(CssDeclarationFn.Helper);
+let {
+  backgroundPosition as bgPosition,
+  backgroundPosition2 as bgPosition2,
+  backgroundPosition3 as bgPosition3,
+  backgroundPosition4 as bgPosition4,
+} = module(CssPropertyValueString);
+
 external string: string => t = "%identity";
-let value = v => CssValueString.position(v)->string;
+let value = v => bgPosition(v)->string;
 let value2 = (v1, v2) => 
-  `${CssValueString.position(v1)}, ${CssValueString.position(v2)}`
+  bgPosition2(v1, v2)
   ->string;
 let value3 = (v1, v2, v3) => 
-  `${CssValueString.position(v1)}, ${CssValueString.position(v2)}, ${CssValueString.position(v3)}`
+  bgPosition3(v1, v2, v3)
   ->string;
 let value4 = (v1, v2, v3, v4) => 
-  `${CssValueString.position(v1)}, ${CssValueString.position(v2)}, ${CssValueString.position(v3)}, ${CssValueString.position(v4)}`
+  bgPosition4(v1, v2, v3, v4)
   ->string;
 
 module DeclarationHelper = {

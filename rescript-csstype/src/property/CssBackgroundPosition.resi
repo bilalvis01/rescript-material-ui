@@ -1,38 +1,23 @@
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 external string: string => t = "%identity";
-let value: CssValueType.position => t;
-let value2: (CssValueType.position, CssValueType.position) => t;
-let value3: (CssValueType.position, CssValueType.position, CssValueType.position) => t;
-let value4: (
-  CssValueType.position, 
-  CssValueType.position, 
-  CssValueType.position, 
-  CssValueType.position
-) => t;
+let value: CssValueType.backgroundPosition<t>;
+let value2: CssValueType.backgroundPosition2<t>;
+let value3: CssValueType.backgroundPosition3<t>;
+let value4: CssValueType.backgroundPosition4<t>;
 
 module DeclarationHelper: {
-  let backgroundPosition: CssValueType.position => [> CssDeclaration.constructor ];
-  let backgroundPosition2: (
-    CssValueType.position, 
-    CssValueType.position
-  ) => [> CssDeclaration.constructor ];
-  let backgroundPosition3: (
-    CssValueType.position, 
-    CssValueType.position, 
-    CssValueType.position
-  ) => [> CssDeclaration.constructor ];
-  let backgroundPosition4: (
-    CssValueType.position, 
-    CssValueType.position, 
-    CssValueType.position,
-    CssValueType.position
-  ) => [> CssDeclaration.constructor ];
-  let backgroundPositionUnion: t => [> CssDeclaration.constructor ];
-  let backgroundPositionString: string => [> CssDeclaration.constructor ];
+  let backgroundPosition: CssValueType.backgroundPosition<d<'a>>;
+  let backgroundPosition2: CssValueType.backgroundPosition2<d<'a>>;
+  let backgroundPosition3: CssValueType.backgroundPosition3<d<'a>>;
+  let backgroundPosition4: CssValueType.backgroundPosition4<d<'a>>;
+  let backgroundPositionUnion: t => d<'a>;
+  let backgroundPositionString: string => d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let backgroundPositionFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
+  let backgroundPositionFn: ('data => option<t>) => dFn<'a, 'data>;
 };

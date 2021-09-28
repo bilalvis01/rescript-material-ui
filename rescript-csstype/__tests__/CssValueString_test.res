@@ -391,21 +391,21 @@ describe("Image data types", (.) => {
 
 describe("background", (.) => {
   test("background", (.) => {
-    expect(background(#red))->toBe("red");
-    expect(background(Css.rgb(255, 255, 255)))->toBe("rgb(255, 255, 255)");
-    expect(background(~color=#red, Css.rgb(255, 255, 255)))->toBe("rgb(255, 255, 255)");
-    expect(background(Css.url("myimage.png")))->toBe(`url("myimage.png")`);
-    expect(background(~repeat=#repeatY, Css.url("test.jpg")))
+    expect(bg(#red))->toBe("red");
+    expect(bg(Css.rgb(255, 255, 255)))->toBe("rgb(255, 255, 255)");
+    expect(bg(~color=#red, Css.rgb(255, 255, 255)))->toBe("rgb(255, 255, 255)");
+    expect(bg(Css.url("myimage.png")))->toBe(`url("myimage.png")`);
+    expect(bg(~repeat=#repeatY, Css.url("test.jpg")))
       ->toBe(`url("test.jpg") repeat-y`)
-    expect(background(~origin=#borderBox, #red))
+    expect(bg(~origin=#borderBox, #red))
       ->toBe("red border-box");
-    expect(background(~origin=#borderBox, ~clip=#paddingBox, #red))
+    expect(bg(~origin=#borderBox, ~clip=#paddingBox, #red))
       ->toBe("red border-box padding-box");
-    expect(background(~clip=#paddingBox, #red))
+    expect(bg(~clip=#paddingBox, #red))
       ->toBe("red");
-    expect(background(~repeat=#noRepeat, ~position=#center, ~size=Css.pct(80.), Css.url("../img/image.png")))
+    expect(bg(~repeat=#noRepeat, ~position=#center, ~size=Css.pct(80.), Css.url("../img/image.png")))
       ->toBe(`url("../img/image.png") center / 80% no-repeat`);
-    expect(background(~repeat=#noRepeat, ~size=Css.pct(80.), Css.url("../img/image.png")))
+    expect(bg(~repeat=#noRepeat, ~size=Css.pct(80.), Css.url("../img/image.png")))
       ->toBe(`url("../img/image.png") no-repeat`);
     expect(bgLayer(#red))->toBe("red");
     expect(bgLayer(Css.url("myimage.png")))->toBe(`url("myimage.png")`);

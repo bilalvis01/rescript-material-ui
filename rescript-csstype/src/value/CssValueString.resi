@@ -108,16 +108,19 @@ let url: url => string;
 let imageSrc: imageSrc => string;
 let image: image => string;
 let bgImage: bgImage => string;
+let bgImage_global: bgImage_global => string;
 let bgSize: bgSize => string;
 let position: position => string;
+let position_global: position_global => string;
 let repeatStyle: repeatStyle => string;
 let attachment: attachment => string;
+let attachment_global: attachment_global => string;
 let box: box => string;
 
 /*
 Background
 */
-let background: (
+let bg: (
   ~color: color=?,
   ~position: position=?,
   ~size: bgSize=?,

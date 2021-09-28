@@ -1,10 +1,18 @@
-open CssDeclaration.Helper;
-open CssDeclarationFn.Helper;
-
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 let property = "background";
+
+let { declaration } = module(CssDeclaration.Helper);
+let { declarationFn } = module(CssDeclarationFn.Helper);
+let {
+  background as bg,
+  background2 as bg2,
+  background3 as bg3,
+  background4 as bg4,
+} = module(CssPropertyValueString);
 
 external string: string => t = "%identity";
 let value = (
@@ -16,31 +24,21 @@ let value = (
   ~origin=?,
   ~clip=?,
   imageOrColor
-) => {
-  switch imageOrColor {
-  | #...CssValueType.global as g => CssValueString.global(g)
-  | #...CssValueType.bgImage as imageOrColor
-  | #...CssValueType.color as imageOrColor =>
-    CssValueString.background(
-      ~color=?color,
-      ~position=?position,
-      ~size=?size,
-      ~repeat=?repeat,
-      ~attachment=?attachment,
-      ~origin=?origin,
-      ~clip=?clip,
-      imageOrColor
-    );
-  }
+) => 
+  bg(
+    ~color=?color,
+    ~position=?position,
+    ~size=?size,
+    ~repeat=?repeat,
+    ~attachment=?attachment,
+    ~origin=?origin,
+    ~clip=?clip,
+    imageOrColor
+  )
   ->string;
-};
-let value2 = (l1, l2) => 
-  `${CssValueString.bgLayer(l1)}, ${CssValueString.bgLayer(l2)}`->string;
-let value3 = (l1, l2, l3) =>
-  `${CssValueString.bgLayer(l1)}, ${CssValueString.bgLayer(l2)}, ${CssValueString.bgLayer(l3)}`->string;
-let value4 = (l1, l2, l3, l4) =>
-  `${CssValueString.bgLayer(l1)}, ${CssValueString.bgLayer(l2)}, ${CssValueString.bgLayer(l3)}, ${CssValueString.bgLayer(l4)}`
-  ->string;
+let value2 = (v1, v2) => bg2(v1, v2)->string;
+let value3 = (v1, v2, v3) => bg3(v1, v2, v3)->string;
+let value4 = (v1, v2, v3, v4) => bg4(v1, v2, v3, v4)->string;
 
 module DeclarationHelper = {
   let background = (
@@ -66,12 +64,12 @@ module DeclarationHelper = {
         imageOrColor
       )
     );
-  let background2 = (l1, l2) => 
-    declaration(property, value2(l1, l2));
-  let background3 = (l1, l2, l3) => 
-    declaration(property, value3(l1, l2, l3));
-  let background4 = (l1, l2, l3, l4) => 
-    declaration(property, value4(l1, l2, l3, l4));
+  let background2 = (v1, v2) => 
+    declaration(property, value2(v1, v2));
+  let background3 = (v1, v2, v3) => 
+    declaration(property, value3(v1, v2, v3));
+  let background4 = (v1, v2, v3, v4) => 
+    declaration(property, value4(v1, v2, v3, v4));
   let backgroundUnion = v =>
     declaration(property, v);
   let backgroundString = v => 

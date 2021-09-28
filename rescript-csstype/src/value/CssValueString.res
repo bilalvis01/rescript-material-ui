@@ -498,6 +498,13 @@ let position = v => {
   }
 };
 
+let position_global = v => {
+  switch v {
+  | #...global as g => global(g)
+  | #...position as p => position(p)
+  };
+};
+
 /*
 Image data types
 */
@@ -731,6 +738,12 @@ let bgImage = v => {
   | #none => "none"
   }
 };
+let bgImage_global = v => {
+  switch v {
+  | #...bgImage as i => bgImage(i)
+  | #...global as g => global(g)
+  }
+};
 let repeatStyle = v => {
   switch v {
   | #repeatX => "repeat-x" 
@@ -764,6 +777,12 @@ let attachment = v => {
   | #local => "local"
   }
 };
+let attachment_global = v => {
+  switch v {
+  | #...global as g => global(g)
+  | #...attachment as a => attachment(a)
+  }
+};
 let box = v => {
   switch v {
   | #borderBox => "border-box"
@@ -775,7 +794,7 @@ let box = v => {
 /*
 Background
 */
-let background = (
+let bg = (
   ~color as col=?,
   ~position as pos=?,
   ~size=?,
@@ -827,7 +846,7 @@ let bgLayer = v => {
   | #...color as c => color(c)
   | #...bgImage as i => bgImage(i)
   | #BgLayer(color, position, size, repeat, attachment, origin, clip, imageOrColor) =>
-    background(
+    bg(
       ~color=?color, 
       ~position=?position, 
       ~size=?size, 

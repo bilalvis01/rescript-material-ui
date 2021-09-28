@@ -1,22 +1,24 @@
-open CssDeclaration.Helper;
-open CssDeclarationFn.Helper;
-
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 let property = "backgroundAttachment";
 
+let { declaration } = module(CssDeclaration.Helper);
+let { declarationFn } = module(CssDeclarationFn.Helper);
+let {
+  backgroundAttachment as bgAtt,
+  backgroundAttachment2 as bgAtt2,
+  backgroundAttachment3 as bgAtt3,
+  backgroundAttachment4 as bgAtt4,
+} = module(CssPropertyValueString);
+
 external string: string => t = "%identity";
-let value = v => CssValueString.attachment(v)->string;
-let value2 = (v1, v2) => 
-  `${CssValueString.attachment(v1)}, ${CssValueString.attachment(v2)}`
-  ->string;
-let value3 = (v1, v2, v3) => 
-  `${CssValueString.attachment(v1)}, ${CssValueString.attachment(v2)}, ${CssValueString.attachment(v3)}`
-  ->string;
-let value4 = (v1, v2, v3, v4) => 
-  `${CssValueString.attachment(v1)}, ${CssValueString.attachment(v2)}, ${CssValueString.attachment(v3)}, ${CssValueString.attachment(v4)}`
-  ->string;
+let value = v => bgAtt(v)->string;
+let value2 = (v1, v2) => bgAtt2(v1, v2)->string;
+let value3 = (v1, v2, v3) => bgAtt3(v1, v2, v3)->string;
+let value4 = (v1, v2, v3, v4) => bgAtt4(v1, v2, v3, v4)->string;
 
 module DeclarationHelper = {
   let backgroundAttachment = v => 

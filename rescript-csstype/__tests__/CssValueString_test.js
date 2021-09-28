@@ -327,16 +327,16 @@ describe("Image data types", (function () {
 
 describe("background", (function () {
         test("background", (function () {
-                expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "red")).toBe("red");
-                expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
-                expect(CssValueString$Ress.background("red", undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
-                expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.url("myimage.png"))).toBe("url(\"myimage.png\")");
-                expect(CssValueString$Ress.background(undefined, undefined, undefined, "repeatY", undefined, undefined, undefined, CssValueHelper$Ress.url("test.jpg"))).toBe("url(\"test.jpg\") repeat-y");
-                expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, "borderBox", undefined, "red")).toBe("red border-box");
-                expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, "borderBox", "paddingBox", "red")).toBe("red border-box padding-box");
-                expect(CssValueString$Ress.background(undefined, undefined, undefined, undefined, undefined, undefined, "paddingBox", "red")).toBe("red");
-                expect(CssValueString$Ress.background(undefined, "center", CssValueHelper$Ress.pct(80), "noRepeat", undefined, undefined, undefined, CssValueHelper$Ress.url("../img/image.png"))).toBe("url(\"../img/image.png\") center / 80% no-repeat");
-                expect(CssValueString$Ress.background(undefined, undefined, CssValueHelper$Ress.pct(80), "noRepeat", undefined, undefined, undefined, CssValueHelper$Ress.url("../img/image.png"))).toBe("url(\"../img/image.png\") no-repeat");
+                expect(CssValueString$Ress.bg(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "red")).toBe("red");
+                expect(CssValueString$Ress.bg(undefined, undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
+                expect(CssValueString$Ress.bg("red", undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
+                expect(CssValueString$Ress.bg(undefined, undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.url("myimage.png"))).toBe("url(\"myimage.png\")");
+                expect(CssValueString$Ress.bg(undefined, undefined, undefined, "repeatY", undefined, undefined, undefined, CssValueHelper$Ress.url("test.jpg"))).toBe("url(\"test.jpg\") repeat-y");
+                expect(CssValueString$Ress.bg(undefined, undefined, undefined, undefined, undefined, "borderBox", undefined, "red")).toBe("red border-box");
+                expect(CssValueString$Ress.bg(undefined, undefined, undefined, undefined, undefined, "borderBox", "paddingBox", "red")).toBe("red border-box padding-box");
+                expect(CssValueString$Ress.bg(undefined, undefined, undefined, undefined, undefined, undefined, "paddingBox", "red")).toBe("red");
+                expect(CssValueString$Ress.bg(undefined, "center", CssValueHelper$Ress.pct(80), "noRepeat", undefined, undefined, undefined, CssValueHelper$Ress.url("../img/image.png"))).toBe("url(\"../img/image.png\") center / 80% no-repeat");
+                expect(CssValueString$Ress.bg(undefined, undefined, CssValueHelper$Ress.pct(80), "noRepeat", undefined, undefined, undefined, CssValueHelper$Ress.url("../img/image.png"))).toBe("url(\"../img/image.png\") no-repeat");
                 expect(CssValueString$Ress.bgLayer("red")).toBe("red");
                 expect(CssValueString$Ress.bgLayer(CssValueHelper$Ress.url("myimage.png"))).toBe("url(\"myimage.png\")");
                 expect(CssValueString$Ress.bgLayer(CssValueHelper$Ress.bgLayer(undefined, undefined, undefined, "repeatY", undefined, undefined, undefined, CssValueHelper$Ress.url("test.jpg")))).toBe("url(\"test.jpg\") repeat-y");

@@ -1,21 +1,31 @@
-open CssDeclaration.Helper;
-open CssDeclarationFn.Helper;
-
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 let property = "backgroundImage";
 
+let { declaration } = module(CssDeclaration.Helper);
+let { declarationFn } = module(CssDeclarationFn.Helper);
+let {
+  backgroundImage as bgImage,
+  backgroundImage2 as bgImage2,
+  backgroundImage3 as bgImage3,
+  backgroundImage4 as bgImage4,
+} = module(CssPropertyValueString);
+
 external string: string => t = "%identity";
-let value = v => CssValueString.bgImage(v)->string;
+let value = v => 
+  bgImage(v)
+  ->string;
 let value2 = (v1, v2) => 
-  `${CssValueString.bgImage(v1)}, ${CssValueString.bgImage(v2)}`
+  bgImage2(v1, v2)
   ->string;
 let value3 = (v1, v2, v3) => 
-  `${CssValueString.bgImage(v1)}, ${CssValueString.bgImage(v2)}, ${CssValueString.bgImage(v3)}`
+  bgImage3(v1, v2, v3)
   ->string;
 let value4 = (v1, v2, v3, v4) => 
-  `${CssValueString.bgImage(v1)}, ${CssValueString.bgImage(v2)}, ${CssValueString.bgImage(v3)}, ${CssValueString.bgImage(v4)}`
+  bgImage4(v1, v2, v3, v4)
   ->string;
 
 module DeclarationHelper = {

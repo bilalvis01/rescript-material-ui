@@ -820,6 +820,14 @@ function position(v) {
   return v1$4 + " " + length_percentage(match$2[1]) + " " + v3$2 + " " + length_percentage(match$2[3]);
 }
 
+function position_global(v) {
+  if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
+    return position(v);
+  } else {
+    return $$global(v);
+  }
+}
+
 function gradientLineStartingPoint(v) {
   if (v === "toBottomRight") {
     return "to bottom right";
@@ -1189,6 +1197,14 @@ function bgImage(v) {
   }
 }
 
+function bgImage_global(v) {
+  if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
+    return bgImage(v);
+  } else {
+    return $$global(v);
+  }
+}
+
 function repeatStyle(v) {
   if (v === "space__noRepeat") {
     return "space no-repeat";
@@ -1247,6 +1263,14 @@ function attachment(v) {
   }
 }
 
+function attachment_global(v) {
+  if (v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
+    return $$global(v);
+  } else {
+    return attachment(v);
+  }
+}
+
 function box(v) {
   if (v === "borderBox") {
     return "border-box";
@@ -1257,25 +1281,25 @@ function box(v) {
   }
 }
 
-function background(col, pos, size, repeat, att, origin, clip, imageOrColor) {
+function bg(col, pos, size, repeat, att, origin, clip, imageOrColor) {
   var pos$1 = pos !== undefined ? (
       size !== undefined ? position(pos) + " / " + bgSize(size) : position(pos)
     ) : undefined;
-  var bg = pos$1 !== undefined ? (
+  var bg$1 = pos$1 !== undefined ? (
       repeat !== undefined ? pos$1 + " " + repeatStyle(repeat) : pos$1
     ) : (
       repeat !== undefined ? repeatStyle(repeat) : undefined
     );
-  var bg$1 = bg !== undefined ? (
-      att !== undefined ? bg + " " + attachment(att) : bg
+  var bg$2 = bg$1 !== undefined ? (
+      att !== undefined ? bg$1 + " " + attachment(att) : bg$1
     ) : (
       att !== undefined ? attachment(att) : undefined
     );
   var box$1 = origin !== undefined ? (
       clip !== undefined ? box(origin) + " " + box(clip) : box(origin)
     ) : undefined;
-  var bg$2 = bg$1 !== undefined ? (
-      box$1 !== undefined ? bg$1 + " " + box$1 : bg$1
+  var bg$3 = bg$2 !== undefined ? (
+      box$1 !== undefined ? bg$2 + " " + box$1 : bg$2
     ) : (
       box$1 !== undefined ? box$1 : undefined
     );
@@ -1289,19 +1313,19 @@ function background(col, pos, size, repeat, att, origin, clip, imageOrColor) {
   switch (exit) {
     case 1 :
         if (col !== undefined) {
-          if (bg$2 !== undefined) {
-            return color(col) + " " + bgImage(imageOrColor) + " " + bg$2;
+          if (bg$3 !== undefined) {
+            return color(col) + " " + bgImage(imageOrColor) + " " + bg$3;
           } else {
             return color(col) + " " + bgImage(imageOrColor);
           }
-        } else if (bg$2 !== undefined) {
-          return bgImage(imageOrColor) + " " + bg$2;
+        } else if (bg$3 !== undefined) {
+          return bgImage(imageOrColor) + " " + bg$3;
         } else {
           return bgImage(imageOrColor);
         }
     case 2 :
-        if (bg$2 !== undefined) {
-          return color(imageOrColor) + " " + bg$2;
+        if (bg$3 !== undefined) {
+          return color(imageOrColor) + " " + bg$3;
         } else {
           return color(imageOrColor);
         }
@@ -1325,7 +1349,7 @@ function bgLayer(v) {
     return bgImage(v);
   }
   var match = v.VAL;
-  return background(match[0], match[1], match[2], match[3], match[4], match[5], match[6], match[7]);
+  return bg(match[0], match[1], match[2], match[3], match[4], match[5], match[6], match[7]);
 }
 
 function margin(v) {
@@ -1603,12 +1627,15 @@ exports.url = url;
 exports.imageSrc = imageSrc;
 exports.image = image;
 exports.bgImage = bgImage;
+exports.bgImage_global = bgImage_global;
 exports.bgSize = bgSize;
 exports.position = position;
+exports.position_global = position_global;
 exports.repeatStyle = repeatStyle;
 exports.attachment = attachment;
+exports.attachment_global = attachment_global;
 exports.box = box;
-exports.background = background;
+exports.bg = bg;
 exports.bgLayer = bgLayer;
 exports.margin = margin;
 exports.margin_global = margin_global;

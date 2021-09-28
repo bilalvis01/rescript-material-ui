@@ -1,54 +1,24 @@
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 
 external string: string => t = "%identity";
-let value: (
-  ~color: CssValueType.color=?,
-  ~position: CssValueType.position=?,
-  ~size: CssValueType.bgSize=?,
-  ~repeat: CssValueType.repeatStyle=?,
-  ~attachment: CssValueType.attachment=?,
-  ~origin: CssValueType.box=?,
-  ~clip: CssValueType.box=?,
-  [ | CssValueType.global | CssValueType.bgImage | CssValueType.color ]
-) => t;
-let value2: (CssValueType.bgLayer, CssValueType.bgLayer) => t;
-let value3: (CssValueType.bgLayer, CssValueType.bgLayer, CssValueType.bgLayer) => t;
-let value4: (
-  CssValueType.bgLayer, 
-  CssValueType.bgLayer, 
-  CssValueType.bgLayer, 
-  CssValueType.bgLayer
-) => t;
+let value: CssValueType.background<t>;
+let value2: CssValueType.background2<t>;
+let value3: CssValueType.background3<t>;
+let value4: CssValueType.background4<t>;
 
 module DeclarationHelper: {
-  let background: (
-    ~color: CssValueType.color=?,
-    ~position: CssValueType.position=?,
-    ~size: CssValueType.bgSize=?,
-    ~repeat: CssValueType.repeatStyle=?,
-    ~attachment: CssValueType.attachment=?,
-    ~origin: CssValueType.box=?,
-    ~clip: CssValueType.box=?,
-    [ | CssValueType.global | CssValueType.bgImage | CssValueType.color]
-  ) => [> CssDeclaration.constructor ];
-  let background2: (CssValueType.bgLayer, CssValueType.bgLayer) => [> CssDeclaration.constructor ];
-  let background3: (
-    CssValueType.bgLayer, 
-    CssValueType.bgLayer, 
-    CssValueType.bgLayer,
-  ) => [> CssDeclaration.constructor ];
-  let background4: (
-    CssValueType.bgLayer, 
-    CssValueType.bgLayer, 
-    CssValueType.bgLayer, 
-    CssValueType.bgLayer,
-  ) => [> CssDeclaration.constructor ];
-  let backgroundUnion: t => [> CssDeclaration.constructor ];
-  let backgroundString: string => [> CssDeclaration.constructor ];
+  let background: CssValueType.background<d<'a>>;
+  let background2: CssValueType.background2<d<'a>>;
+  let background3: CssValueType.background3<d<'a>>;
+  let background4: CssValueType.background4<d<'a>>;
+  let backgroundUnion: t => d<'a>;
+  let backgroundString: string => d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let backgroundFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
+  let backgroundFn: ('data => option<t>) => dFn<'a, 'data>;
 };
