@@ -1,14 +1,16 @@
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 include (module type of CssBorderSideColor.MakeValue({ type t = t; }));
 
 module DeclarationHelper: {
-  let borderLeftColor: CssValueType.color_global => [> CssDeclaration.constructor ];
-  let borderLeftColorUnion: t => [> CssDeclaration.constructor ];
-  let borderLeftColorString: string => [> CssDeclaration.constructor ];
+  let borderLeftColor: CssPropertyValueType.color<d<'a>>;
+  let borderLeftColorUnion: t => d<'a>;
+  let borderLeftColorString: string => d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let borderLeftColorFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
+  let borderLeftColorFn: ('data => option<t>) => dFn<'a, 'data>;
 };

@@ -4,5 +4,5 @@ module MakeValue: (
   }
 ) => {
   external string: string => Type.t = "%identity";
-  let value: CssValueType.color_global => Type.t;
+  let value: CssPropertyValueType.color<Type.t>;
 };

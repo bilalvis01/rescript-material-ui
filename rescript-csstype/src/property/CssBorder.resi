@@ -1,5 +1,7 @@
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 module MakeValue: (
   Type: {
@@ -7,25 +9,17 @@ module MakeValue: (
   }
 ) => {
   external string: string => Type.t = "%identity";
-  let value: (
-    ~width: CssValueType.lineWidth=?,
-    ~color: CssValueType.color=?,
-    [ | CssValueType.global | CssValueType.lineStyle ]
-  ) => Type.t;
+  let value: CssPropertyValueType.border<Type.t>;
 };
 
 include (module type of MakeValue({ type t = t }));
 
 module DeclarationHelper: {
-  let border: (
-    ~width: CssValueType.lineWidth=?, 
-    ~color: CssValueType.color=?, 
-    CssValueType.lineStyle_global
-  ) => [> CssDeclaration.constructor ];
-  let borderUnion: t => [> CssDeclaration.constructor ];
-  let borderString: string => [> CssDeclaration.constructor ];
+  let border: CssPropertyValueType.border<d<'a>>;
+  let borderUnion: t => d<'a>;
+  let borderString: string => d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let borderFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
+  let borderFn: ('data => option<t>) => dFn<'a, 'data>;
 };

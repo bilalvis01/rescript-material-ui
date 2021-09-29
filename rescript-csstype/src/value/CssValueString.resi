@@ -113,6 +113,7 @@ let bgSize: bgSize => string;
 let position: position => string;
 let position_global: position_global => string;
 let repeatStyle: repeatStyle => string;
+let repeatStyle_global: repeatStyle_global => string;
 let attachment: attachment => string;
 let attachment_global: attachment_global => string;
 let box: box => string;

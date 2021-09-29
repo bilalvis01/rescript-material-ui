@@ -1584,6 +1584,11 @@ type repeatStyle = [
   | #noRepeat__noRepeat
 ];
 
+type repeatStyle_global = [
+  | global
+  | repeatStyle
+];
+
 type attachment = [
   | #scroll
   | #fixed
@@ -1753,89 +1758,3 @@ type fontFamily_global = [
   | fontFamily
   | global
 ];
-
-/*
-=====================================================================
-Property
-=====================================================================
-*/
-type background<'return> = (
-  ~color: color=?,
-  ~position: position=?,
-  ~size: bgSize=?,
-  ~repeat: repeatStyle=?,
-  ~attachment: attachment=?,
-  ~origin: box=?,
-  ~clip: box=?,
-  [ | global | bgImage | color ]
-) => 'return;
-type background2<'return> = (
-  bgLayer, 
-  bgLayer,
-) => 'return;
-type background3<'return> = (
-  bgLayer, 
-  bgLayer, 
-  bgLayer,
-) => 'return;
-type background4<'return> = (
-  bgLayer, 
-  bgLayer, 
-  bgLayer, 
-  bgLayer
-) => 'return;
-
-type backgroundAttachment<'return> = attachment_global => 
-  'return;
-type backgroundAttachment2<'return> = (
-  attachment, 
-  attachment,
-) => 'return;
-type backgroundAttachment3<'return> = (
-  attachment, 
-  attachment, 
-  attachment,
-) => 'return;
-type backgroundAttachment4<'return> = (
-  attachment, 
-  attachment, 
-  attachment, 
-  attachment
-) => 'return;
-
-type backgroundColor<'return> = color_global => 'return;
-
-type backgroundImage<'return> = bgImage_global => 
-  'return;
-type backgroundImage2<'return> = (
-  bgImage, 
-  bgImage,
-) => 'return;
-type backgroundImage3<'return> = (
-  bgImage, 
-  bgImage, 
-  bgImage,
-) => 'return;
-type backgroundImage4<'return> = (
-  bgImage, 
-  bgImage, 
-  bgImage, 
-  bgImage,
-) => 'return;
-
-type backgroundPosition<'return> = position_global => 'return;
-type backgroundPosition2<'return> = (
-  position, 
-  position,
-) => 'return;
-type backgroundPosition3<'return> = (
-  position, 
-  position, 
-  position,
-) => 'return;
-type backgroundPosition4<'return> = (
-  position, 
-  position, 
-  position, 
-  position
-) => 'return;

@@ -1,42 +1,23 @@
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 external string: string => t = "%identity";
-let value: CssValueType.lineStyle_global => t;
-let value2: (~tb: CssValueType.lineStyle, ~lr: CssValueType.lineStyle) => t;
-let value3: (
-  ~top: CssValueType.lineStyle, 
-  ~lr: CssValueType.lineStyle, 
-  ~bottom: CssValueType.lineStyle
-) => t;
-let value4: (
-  ~top: CssValueType.lineStyle, 
-  ~right: CssValueType.lineStyle, 
-  ~bottom: CssValueType.lineStyle, 
-  ~left: CssValueType.lineStyle
-) => t;
+let value: CssPropertyValueType.borderStyle<t>;
+let value2: CssPropertyValueType.borderStyle2<t>;
+let value3: CssPropertyValueType.borderStyle3<t>;
+let value4: CssPropertyValueType.borderStyle4<t>;
 
 module DeclarationHelper: {
-  let borderStyle: CssValueType.lineStyle_global => [> CssDeclaration.constructor ];
-  let borderStyle2: (
-    ~tb: CssValueType.lineStyle, 
-    ~lr: CssValueType.lineStyle
-  ) => [> CssDeclaration.constructor ];
-  let borderStyle3: (
-    ~top: CssValueType.lineStyle, 
-    ~lr: CssValueType.lineStyle, 
-    ~bottom: CssValueType.lineStyle
-  ) => [> CssDeclaration.constructor ];
-  let borderStyle4: (
-    ~top: CssValueType.lineStyle, 
-    ~right: CssValueType.lineStyle, 
-    ~bottom: CssValueType.lineStyle, 
-    ~left: CssValueType.lineStyle
-  ) => [> CssDeclaration.constructor ];
-  let borderStyleUnion: t => [> CssDeclaration.constructor ];
-  let borderStyleString: string => [> CssDeclaration.constructor ];
+  let borderStyle: CssPropertyValueType.borderStyle<d<'a>>;
+  let borderStyle2: CssPropertyValueType.borderStyle2<d<'a>>;
+  let borderStyle3: CssPropertyValueType.borderStyle3<d<'a>>;
+  let borderStyle4: CssPropertyValueType.borderStyle4<d<'a>>;
+  let borderStyleUnion: t => d<'a>;
+  let borderStyleString: string => d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let borderStyleFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
+  let borderStyleFn: ('data => option<t>) => dFn<'a, 'data>;
 };

@@ -1253,6 +1253,14 @@ function repeatStyle(v) {
   }
 }
 
+function repeatStyle_global(v) {
+  if (v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
+    return $$global(v);
+  } else {
+    return repeatStyle(v);
+  }
+}
+
 function attachment(v) {
   if (v === "local") {
     return "local";
@@ -1632,6 +1640,7 @@ exports.bgSize = bgSize;
 exports.position = position;
 exports.position_global = position_global;
 exports.repeatStyle = repeatStyle;
+exports.repeatStyle_global = repeatStyle_global;
 exports.attachment = attachment;
 exports.attachment_global = attachment_global;
 exports.box = box;

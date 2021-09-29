@@ -8,20 +8,24 @@ var CssBorderSideColor$Ress = require("./CssBorderSideColor.js");
 
 var property = "borderTopColor";
 
+var declaration = CssDeclaration$Ress.Helper.declaration;
+
+var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
+
 var include = CssBorderSideColor$Ress.MakeValue({});
 
 var value = include.value;
 
 function borderTopColor(v) {
-  return CssDeclaration$Ress.Helper.declaration(property, Curry._1(value, v));
+  return Curry._2(declaration, property, Curry._1(value, v));
 }
 
 function borderTopColorUnion(v) {
-  return CssDeclaration$Ress.Helper.declaration(property, v);
+  return Curry._2(declaration, property, v);
 }
 
 function borderTopColorString(v) {
-  return CssDeclaration$Ress.Helper.declaration(property, v);
+  return Curry._2(declaration, property, v);
 }
 
 var DeclarationHelper = {
@@ -31,7 +35,7 @@ var DeclarationHelper = {
 };
 
 function borderTopColorFn(v) {
-  return CssDeclarationFn$Ress.Helper.declarationFn(property, v);
+  return Curry._2(declarationFn, property, v);
 }
 
 var DeclarationFnHelper = {

@@ -4,16 +4,16 @@ type d<'a> = [> CssDeclaration.constructor ] as 'a;
 type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 external string: string => t = "%identity";
-let value: CssValueType.backgroundPosition<t>;
-let value2: CssValueType.backgroundPosition2<t>;
-let value3: CssValueType.backgroundPosition3<t>;
-let value4: CssValueType.backgroundPosition4<t>;
+let value: CssPropertyValueType.backgroundPosition<t>;
+let value2: CssPropertyValueType.backgroundPosition2<t>;
+let value3: CssPropertyValueType.backgroundPosition3<t>;
+let value4: CssPropertyValueType.backgroundPosition4<t>;
 
 module DeclarationHelper: {
-  let backgroundPosition: CssValueType.backgroundPosition<d<'a>>;
-  let backgroundPosition2: CssValueType.backgroundPosition2<d<'a>>;
-  let backgroundPosition3: CssValueType.backgroundPosition3<d<'a>>;
-  let backgroundPosition4: CssValueType.backgroundPosition4<d<'a>>;
+  let backgroundPosition: CssPropertyValueType.backgroundPosition<d<'a>>;
+  let backgroundPosition2: CssPropertyValueType.backgroundPosition2<d<'a>>;
+  let backgroundPosition3: CssPropertyValueType.backgroundPosition3<d<'a>>;
+  let backgroundPosition4: CssPropertyValueType.backgroundPosition4<d<'a>>;
   let backgroundPositionUnion: t => d<'a>;
   let backgroundPositionString: string => d<'a>;
 };

@@ -42,8 +42,6 @@ function backgroundAttachment4(v1, v2, v3, v4) {
   return CssValueString$Ress.attachment(v1) + ", " + CssValueString$Ress.attachment(v2) + ", " + CssValueString$Ress.attachment(v3) + ", " + CssValueString$Ress.attachment(v4);
 }
 
-var backgroundColor = CssValueString$Ress.color_global;
-
 var backgroundImage = CssValueString$Ress.bgImage_global;
 
 function backgroundImage2(v1, v2) {
@@ -72,6 +70,51 @@ function backgroundPosition4(v1, v2, v3, v4) {
   return CssValueString$Ress.position(v1) + ", " + CssValueString$Ress.position(v2) + ", " + CssValueString$Ress.position(v3) + ", " + CssValueString$Ress.position(v4);
 }
 
+var backgroundStyle = CssValueString$Ress.repeatStyle_global;
+
+function backgroundStyle2(v1, v2) {
+  return CssValueString$Ress.repeatStyle(v1) + ", " + CssValueString$Ress.repeatStyle(v2);
+}
+
+function backgroundStyle3(v1, v2, v3) {
+  return CssValueString$Ress.repeatStyle(v1) + ", " + CssValueString$Ress.repeatStyle(v2) + ", " + CssValueString$Ress.repeatStyle(v3);
+}
+
+function backgroundStyle4(v1, v2, v3, v4) {
+  return CssValueString$Ress.repeatStyle(v1) + ", " + CssValueString$Ress.repeatStyle(v2) + ", " + CssValueString$Ress.repeatStyle(v3) + ", " + CssValueString$Ress.repeatStyle(v4);
+}
+
+function border(width, color, style) {
+  var border$1 = width !== undefined ? (
+      color !== undefined ? CssValueString$Ress.lineWidth(width) + " " + CssValueString$Ress.color(color) : CssValueString$Ress.lineWidth(width)
+    ) : (
+      color !== undefined ? CssValueString$Ress.color(color) : undefined
+    );
+  if (style === "inherit" || style === "unset" || style === "revert" || style === "initial") {
+    return CssValueString$Ress.$$global(style);
+  } else if (border$1 !== undefined) {
+    return border$1 + " " + CssValueString$Ress.lineStyle(style);
+  } else {
+    return CssValueString$Ress.lineStyle(style);
+  }
+}
+
+var borderStyle = CssValueString$Ress.lineStyle_global;
+
+function borderStyle2(tb, lr) {
+  return CssValueString$Ress.lineStyle(tb) + " " + CssValueString$Ress.lineStyle(lr);
+}
+
+function borderStyle3(top, lr, bottom) {
+  return CssValueString$Ress.lineStyle(top) + " " + CssValueString$Ress.lineStyle(lr) + " " + CssValueString$Ress.lineStyle(bottom);
+}
+
+function borderStyle4(top, right, bottom, left) {
+  return CssValueString$Ress.lineStyle(top) + " " + CssValueString$Ress.lineStyle(right) + " " + CssValueString$Ress.lineStyle(bottom) + " " + CssValueString$Ress.lineStyle(left);
+}
+
+var color = CssValueString$Ress.color_global;
+
 exports.background = background;
 exports.background2 = background2;
 exports.background3 = background3;
@@ -80,7 +123,6 @@ exports.backgroundAttachment = backgroundAttachment;
 exports.backgroundAttachment2 = backgroundAttachment2;
 exports.backgroundAttachment3 = backgroundAttachment3;
 exports.backgroundAttachment4 = backgroundAttachment4;
-exports.backgroundColor = backgroundColor;
 exports.backgroundImage = backgroundImage;
 exports.backgroundImage2 = backgroundImage2;
 exports.backgroundImage3 = backgroundImage3;
@@ -89,4 +131,14 @@ exports.backgroundPosition = backgroundPosition;
 exports.backgroundPosition2 = backgroundPosition2;
 exports.backgroundPosition3 = backgroundPosition3;
 exports.backgroundPosition4 = backgroundPosition4;
+exports.backgroundStyle = backgroundStyle;
+exports.backgroundStyle2 = backgroundStyle2;
+exports.backgroundStyle3 = backgroundStyle3;
+exports.backgroundStyle4 = backgroundStyle4;
+exports.border = border;
+exports.borderStyle = borderStyle;
+exports.borderStyle2 = borderStyle2;
+exports.borderStyle3 = borderStyle3;
+exports.borderStyle4 = borderStyle4;
+exports.color = color;
 /* No side effect */

@@ -8,20 +8,24 @@ var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 
 var property = "borderLeft";
 
+var declaration = CssDeclaration$Ress.Helper.declaration;
+
+var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
+
 var include = CssBorder$Ress.MakeValue({});
 
 var value = include.value;
 
 function borderLeft(width, color, style) {
-  return CssDeclaration$Ress.Helper.declaration(property, Curry._3(value, width, color, style));
+  return Curry._2(declaration, property, Curry._3(value, width, color, style));
 }
 
 function borderLeftUnion(v) {
-  return CssDeclaration$Ress.Helper.declaration(property, v);
+  return Curry._2(declaration, property, v);
 }
 
 function borderLeftString(v) {
-  return CssDeclaration$Ress.Helper.declaration(property, v);
+  return Curry._2(declaration, property, v);
 }
 
 var DeclarationHelper = {
@@ -31,7 +35,7 @@ var DeclarationHelper = {
 };
 
 function borderLeftFn(v) {
-  return CssDeclarationFn$Ress.Helper.declarationFn(property, v);
+  return Curry._2(declarationFn, property, v);
 }
 
 var DeclarationFnHelper = {

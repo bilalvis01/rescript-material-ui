@@ -1,20 +1,29 @@
-open CssDeclaration.Helper;
-open CssDeclarationFn.Helper;
-
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 let property = "borderStyle";
 
+let { declaration } = module(CssDeclaration.Helper);
+let { declarationFn } = module(CssDeclarationFn.Helper);
+let { 
+  borderStyle,
+  borderStyle2,
+  borderStyle3,
+  borderStyle4,
+} = module(CssPropertyValueString);
+
 external string: string => t = "%identity";
-let value = v => CssValueString.lineStyle_global(v)->string;
+let value = v => borderStyle(v)->string;
 let value2 = (~tb, ~lr) =>
-  `${CssValueString.lineStyle(tb)} ${CssValueString.lineStyle(lr)}`->string;
+  borderStyle2(~tb, ~lr)
+  ->string;
 let value3 = (~top, ~lr, ~bottom) =>
-  `${CssValueString.lineStyle(top)} ${CssValueString.lineStyle(lr)} ${CssValueString.lineStyle(bottom)}`
+  borderStyle3(~top, ~lr, ~bottom)
   ->string;
 let value4 = (~top, ~right, ~bottom, ~left) =>
-  `${CssValueString.lineStyle(top)} ${CssValueString.lineStyle(right)} ${CssValueString.lineStyle(bottom)} ${CssValueString.lineStyle(left)}`
+  borderStyle4(~top, ~right, ~bottom, ~left)
   ->string;
 
 module DeclarationHelper = {

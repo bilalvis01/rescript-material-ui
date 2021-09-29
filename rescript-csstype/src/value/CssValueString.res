@@ -770,6 +770,12 @@ let repeatStyle = v => {
   | #noRepeat__noRepeat => "no-repeat no-repeat"
   }
 };
+let repeatStyle_global = v => {
+  switch v {
+  | #...global as g => global(g)
+  | #...repeatStyle as r => repeatStyle(r)
+  }
+};
 let attachment = v => {
   switch v {
   | #scroll => "scroll"
