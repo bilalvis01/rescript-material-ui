@@ -1,15 +1,17 @@
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 external string: string => t = "%identity";
-let value: CssValueType.color_global => t;
+let value: CssPropertyValueType.color<t>;
 
 module DeclarationHelper: {
-  let color: CssValueType.color_global => [> CssDeclaration.constructor ];
-  let colorUnion: t => [> CssDeclaration.constructor ];
-  let colorString: string => [> CssDeclaration.constructor ];
+  let color: CssPropertyValueType.color<d<'a>>;
+  let colorUnion: t => d<'a>;
+  let colorString: string => d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let colorFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
+  let colorFn: ('data => option<t>) => dFn<'a, 'data>;
 };

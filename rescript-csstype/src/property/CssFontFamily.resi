@@ -1,45 +1,23 @@
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 external string: string => t = "%identity";
-let value: CssValueType.fontFamily_global => t;
-let value2: (
-  CssValueType.fontFamily, 
-  CssValueType.fontFamily,
-) => t;
-let value3: (
-  CssValueType.fontFamily, 
-  CssValueType.fontFamily,
-  CssValueType.fontFamily,
-) => t;
-let value4: (
-  CssValueType.fontFamily, 
-  CssValueType.fontFamily,
-  CssValueType.fontFamily,
-  CssValueType.fontFamily,
-) => t;
+let value: CssPropertyValueType.fontFamily<t>;
+let value2: CssPropertyValueType.fontFamily2<t>;
+let value3: CssPropertyValueType.fontFamily3<t>;
+let value4: CssPropertyValueType.fontFamily4<t>;
 
 module DeclarationHelper: {
-  let fontFamily: CssValueType.fontFamily_global => [> CssDeclaration.constructor ];
-  let fontFamily2: (
-    CssValueType.fontFamily,
-    CssValueType.fontFamily,
-  ) => [> CssDeclaration.constructor ];
-  let fontFamily3: (
-    CssValueType.fontFamily,
-    CssValueType.fontFamily,
-    CssValueType.fontFamily,
-  ) => [> CssDeclaration.constructor ];
-  let fontFamily4: (
-    CssValueType.fontFamily,
-    CssValueType.fontFamily,
-    CssValueType.fontFamily,
-    CssValueType.fontFamily,
-  ) => [> CssDeclaration.constructor ];
-  let fontFamilyUnion: t => [> CssDeclaration.constructor ];
-  let fontFamilyString: string => [> CssDeclaration.constructor ];
+  let fontFamily: CssPropertyValueType.fontFamily<d<'a>>;
+  let fontFamily2: CssPropertyValueType.fontFamily2<d<'a>>;
+  let fontFamily3: CssPropertyValueType.fontFamily3<d<'a>>;
+  let fontFamily4: CssPropertyValueType.fontFamily4<d<'a>>;
+  let fontFamilyUnion: t => d<'a>;
+  let fontFamilyString: string => d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let fontFamilyFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
+  let fontFamilyFn: ('data => option<t>) => dFn<'a, 'data>;
 };

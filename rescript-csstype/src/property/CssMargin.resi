@@ -1,5 +1,7 @@
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 external string: string => t = "%identity";
 external number: float => t = "%identity";
@@ -14,35 +16,19 @@ let number4: (
   ~left: float,
 ) => t;
 */
-let value: CssValueType.margin_global => t;
-let value2: (~tb: CssValueType.margin, ~lr: CssValueType.margin) => t;
-let value3: (~top: CssValueType.margin, ~lr: CssValueType.margin, ~bottom: CssValueType.margin) => t;
-let value4: (
-  ~top: CssValueType.margin, 
-  ~right: CssValueType.margin, 
-  ~bottom: CssValueType.margin, 
-  ~left: CssValueType.margin,
-) => t;
+let value: CssPropertyValueType.margin<t>;
+let value2: CssPropertyValueType.margin2<t>;
+let value3: CssPropertyValueType.margin3<t>;
+let value4: CssPropertyValueType.margin4<t>;
+
 module DeclarationHelper: {
-  let margin: CssValueType.margin_global => [> CssDeclaration.constructor ];
-  let margin2: (
-    ~tb: CssValueType.margin, 
-    ~lr: CssValueType.margin
-  ) => [> CssDeclaration.constructor ];
-  let margin3: (
-    ~top: CssValueType.margin, 
-    ~lr: CssValueType.margin, 
-    ~bottom: CssValueType.margin
-  ) => [> CssDeclaration.constructor ];
-  let margin4: (
-    ~top: CssValueType.margin, 
-    ~right: CssValueType.margin, 
-    ~bottom: CssValueType.margin, 
-    ~left: CssValueType.margin
-  ) => [> CssDeclaration.constructor ];
-  let marginUnion: t => [> CssDeclaration.constructor ];
-  let marginString: string => [> CssDeclaration.constructor ];
-  let marginNumber: float => [> CssDeclaration.constructor ];
+  let margin: CssPropertyValueType.margin<d<'a>>;
+  let margin2: CssPropertyValueType.margin2<d<'a>>;
+  let margin3: CssPropertyValueType.margin3<d<'a>>;
+  let margin4: CssPropertyValueType.margin4<d<'a>>;
+  let marginUnion: t => d<'a>;
+  let marginString: string => d<'a>;
+  let marginNumber: float => d<'a>;
   /*
   let margin2Number: (
     ~tb: float, 
@@ -63,5 +49,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  let marginFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
+  let marginFn: ('data => option<t>) => dFn<'a, 'data>;
 };

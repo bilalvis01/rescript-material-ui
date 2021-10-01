@@ -115,4 +115,83 @@ type borderStyle4<'return> = (
   ~left: lineStyle
 ) => 'return;
 
+type borderWidth<'return> = lineWidth_global => 'return;
+type borderWidth2<'return> = (
+  ~tb: lineWidth, ~
+  lr: lineWidth,
+) => 'return;
+type borderWidth3<'return> = (
+  ~top: lineWidth, 
+  ~lr: lineWidth, 
+  ~bottom: lineWidth,
+) => 'return;
+type borderWidth4<'return> = (
+  ~top: lineWidth, 
+  ~right: lineWidth, 
+  ~bottom: lineWidth, 
+  ~left: lineWidth,
+) => 'return;
+
 type color<'return> = color_global => 'return;
+
+type clear<'return> = clear_global => 'return;
+
+type cursor<'return> = cursorKeyword_global => 'return;
+type cursor1<'return> = (
+  cursorImage, 
+  cursorKeyword,
+) => 'return;
+type cursor2<'return> = (
+  cursorImage, 
+  cursorImage, 
+  cursorKeyword,
+) => 'return;
+type cursor3<'return> = (
+  cursorImage, 
+  cursorImage, 
+  cursorImage, 
+  cursorKeyword,
+) => 'return;
+type cursor4<'return> = (
+  cursorImage, 
+  cursorImage, 
+  cursorImage, 
+  cursorImage, 
+  cursorKeyword,
+) => 'return;
+
+type fontFamily<'return> = fontFamily_global => 'return;
+type fontFamily2<'return> = (
+  CssValueType.fontFamily, 
+  CssValueType.fontFamily,
+) => 'return;
+type fontFamily3<'return> = (
+  CssValueType.fontFamily, 
+  CssValueType.fontFamily,
+  CssValueType.fontFamily,
+) => 'return;
+type fontFamily4<'return> = (
+  CssValueType.fontFamily, 
+  CssValueType.fontFamily,
+  CssValueType.fontFamily,
+  CssValueType.fontFamily,
+) => 'return;
+
+type fontWeight<'return> = fontWeight_global => 'return;
+
+type margin<'return> = CssValueType.margin_global => 'return;
+type margin2<'return> = (
+  ~tb: CssValueType.margin, 
+  ~lr: CssValueType.margin,
+) => 'return;
+type margin3<'return> = (
+  ~top: CssValueType.margin, 
+  ~lr: CssValueType.margin, 
+  ~bottom: CssValueType.margin,
+) => 'return;
+type margin4<'return> = (
+  ~top: CssValueType.margin, 
+  ~right: CssValueType.margin, 
+  ~bottom: CssValueType.margin, 
+  ~left: CssValueType.margin,
+) => 'return;

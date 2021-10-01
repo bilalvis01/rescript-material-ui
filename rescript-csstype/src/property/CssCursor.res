@@ -1,24 +1,33 @@
-open CssDeclaration.Helper;
-open CssDeclarationFn.Helper;
-
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 let property = "cursor";
 
+let { declaration } = module(CssDeclaration.Helper);
+let { declarationFn } = module(CssDeclarationFn.Helper);
+let {
+  cursor,
+  cursor1,
+  cursor2,
+  cursor3,
+  cursor4,
+} = module(CssPropertyValueString);
+
 external string: string => t = "%identity";
-let value = v => CssValueString.cursorKeyword_global(v)->string;
+let value = k => cursor(k)->string;
 let value1 = (i, k) =>
-  `${CssValueString.cursorImage(i)}, ${CssValueString.cursorKeyword(k)}`
+  cursor1(i, k)
   ->string;
 let value2 = (i1, i2, k) =>
-  `${CssValueString.cursorImage(i1)}, ${CssValueString.cursorImage(i2)}, ${CssValueString.cursorKeyword(k)}`
+  cursor2(i1, i2, k)
   ->string;
 let value3 = (i1, i2, i3, k) =>
-  `${CssValueString.cursorImage(i1)}, ${CssValueString.cursorImage(i2)}, ${CssValueString.cursorImage(i3)}, ${CssValueString.cursorKeyword(k)}`
+  cursor3(i1, i2, i3, k)
   ->string;
 let value4 = (i1, i2, i3, i4, k) =>
-  `${CssValueString.cursorImage(i1)}, ${CssValueString.cursorImage(i2)}, ${CssValueString.cursorImage(i3)}, ${CssValueString.cursorImage(i4)}, ${CssValueString.cursorKeyword(k)}`
+  cursor4(i1, i2, i3, i4, k)
   ->string;
 
 module DeclarationHelper = {

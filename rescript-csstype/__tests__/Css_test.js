@@ -584,6 +584,10 @@ var borderWidthString = include.borderWidthString;
 
 var clear = include.clear;
 
+var clearUnion = include.clearUnion;
+
+var clearString = include.clearString;
+
 var colorUnion = include.colorUnion;
 
 var colorString = include.colorString;
@@ -620,7 +624,7 @@ var fontWeightUnion = include.fontWeightUnion;
 
 var fontWeightString = include.fontWeightString;
 
-var fontWeightNumber = include.fontWeightNumber;
+var fontWeightInteger = include.fontWeightInteger;
 
 var margin = include.margin;
 
@@ -1010,6 +1014,8 @@ exports.borderWidth4 = borderWidth4;
 exports.borderWidthUnion = borderWidthUnion;
 exports.borderWidthString = borderWidthString;
 exports.clear = clear;
+exports.clearUnion = clearUnion;
+exports.clearString = clearString;
 exports.color = color;
 exports.colorUnion = colorUnion;
 exports.colorString = colorString;
@@ -1029,7 +1035,7 @@ exports.fontFamilyString = fontFamilyString;
 exports.fontWeight = fontWeight;
 exports.fontWeightUnion = fontWeightUnion;
 exports.fontWeightString = fontWeightString;
-exports.fontWeightNumber = fontWeightNumber;
+exports.fontWeightInteger = fontWeightInteger;
 exports.margin = margin;
 exports.margin2 = margin2;
 exports.margin3 = margin3;

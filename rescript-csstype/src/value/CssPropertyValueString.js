@@ -113,7 +113,71 @@ function borderStyle4(top, right, bottom, left) {
   return CssValueString$Ress.lineStyle(top) + " " + CssValueString$Ress.lineStyle(right) + " " + CssValueString$Ress.lineStyle(bottom) + " " + CssValueString$Ress.lineStyle(left);
 }
 
+var borderWidth = CssValueString$Ress.lineWidth_global;
+
+function borderWidth2(tb, lr) {
+  return CssValueString$Ress.lineWidth(tb) + " " + CssValueString$Ress.lineWidth(lr);
+}
+
+function borderWidth3(top, lr, bottom) {
+  return CssValueString$Ress.lineWidth(top) + " " + CssValueString$Ress.lineWidth(lr) + " " + CssValueString$Ress.lineWidth(bottom);
+}
+
+function borderWidth4(top, right, bottom, left) {
+  return CssValueString$Ress.lineWidth(top) + " " + CssValueString$Ress.lineWidth(right) + " " + CssValueString$Ress.lineWidth(bottom) + " " + CssValueString$Ress.lineWidth(left);
+}
+
 var color = CssValueString$Ress.color_global;
+
+var clear = CssValueString$Ress.clear_global;
+
+var cursor = CssValueString$Ress.cursorKeyword_global;
+
+function cursor1(i, k) {
+  return CssValueString$Ress.cursorImage(i) + ", " + CssValueString$Ress.cursorKeyword(k);
+}
+
+function cursor2(i1, i2, k) {
+  return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorKeyword(k);
+}
+
+function cursor3(i1, i2, i3, k) {
+  return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorImage(i3) + ", " + CssValueString$Ress.cursorKeyword(k);
+}
+
+function cursor4(i1, i2, i3, i4, k) {
+  return CssValueString$Ress.cursorImage(i1) + ", " + CssValueString$Ress.cursorImage(i2) + ", " + CssValueString$Ress.cursorImage(i3) + ", " + CssValueString$Ress.cursorImage(i4) + ", " + CssValueString$Ress.cursorKeyword(k);
+}
+
+var fontFamily = CssValueString$Ress.fontFamily_global;
+
+function fontFamily2(v1, v2) {
+  return CssValueString$Ress.fontFamily(v1) + ", " + CssValueString$Ress.fontFamily(v2);
+}
+
+function fontFamily3(v1, v2, v3) {
+  return CssValueString$Ress.fontFamily(v1) + ", " + CssValueString$Ress.fontFamily(v2) + ", " + CssValueString$Ress.fontFamily(v3);
+}
+
+function fontFamily4(v1, v2, v3, v4) {
+  return CssValueString$Ress.fontFamily(v1) + ", " + CssValueString$Ress.fontFamily(v2) + ", " + CssValueString$Ress.fontFamily(v3) + ", " + CssValueString$Ress.fontFamily(v4);
+}
+
+var fontWeight = CssValueString$Ress.fontWeight_global;
+
+var margin = CssValueString$Ress.margin_global;
+
+function margin2(tb, lr) {
+  return CssValueString$Ress.margin(tb) + " " + CssValueString$Ress.margin(lr);
+}
+
+function margin3(top, lr, bottom) {
+  return CssValueString$Ress.margin(top) + " " + CssValueString$Ress.margin(lr) + " " + CssValueString$Ress.margin(bottom);
+}
+
+function margin4(top, right, bottom, left) {
+  return CssValueString$Ress.margin(top) + " " + CssValueString$Ress.margin(right) + " " + CssValueString$Ress.margin(bottom) + " " + CssValueString$Ress.margin(left);
+}
 
 exports.background = background;
 exports.background2 = background2;
@@ -140,5 +204,24 @@ exports.borderStyle = borderStyle;
 exports.borderStyle2 = borderStyle2;
 exports.borderStyle3 = borderStyle3;
 exports.borderStyle4 = borderStyle4;
+exports.borderWidth = borderWidth;
+exports.borderWidth2 = borderWidth2;
+exports.borderWidth3 = borderWidth3;
+exports.borderWidth4 = borderWidth4;
 exports.color = color;
+exports.clear = clear;
+exports.cursor = cursor;
+exports.cursor1 = cursor1;
+exports.cursor2 = cursor2;
+exports.cursor3 = cursor3;
+exports.cursor4 = cursor4;
+exports.fontFamily = fontFamily;
+exports.fontFamily2 = fontFamily2;
+exports.fontFamily3 = fontFamily3;
+exports.fontFamily4 = fontFamily4;
+exports.fontWeight = fontWeight;
+exports.margin = margin;
+exports.margin2 = margin2;
+exports.margin3 = margin3;
+exports.margin4 = margin4;
 /* No side effect */

@@ -1,22 +1,29 @@
-open CssDeclaration.Helper;
-open CssDeclarationFn.Helper;
-
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 let property = "borderWidth";
 
+let { declaration } = module(CssDeclaration.Helper);
+let { declarationFn } = module(CssDeclarationFn.Helper);
+let {
+  borderWidth,
+  borderWidth2,
+  borderWidth3,
+  borderWidth4,
+} = module(CssPropertyValueString);
+
 external string: string => t = "%identity";
 external number: float => t = "%identity";
-let value = v => CssValueString.lineWidth_global(v)->string;
+let value = v => 
+  borderWidth(v)->string;
 let value2 = (~tb, ~lr) => 
-  `${CssValueString.lineWidth(tb)} ${CssValueString.lineWidth(lr)}`->string;
+  borderWidth2(~tb, ~lr)->string;
 let value3 = (~top, ~lr, ~bottom) =>
-  `${CssValueString.lineWidth(top)} ${CssValueString.lineWidth(lr)} ${CssValueString.lineWidth(bottom)}`
-  ->string;
+  borderWidth3(~top, ~lr, ~bottom)->string;
 let value4 = (~top, ~right, ~bottom, ~left) =>
-  `${CssValueString.lineWidth(top)} ${CssValueString.lineWidth(right)} ${CssValueString.lineWidth(bottom)} ${CssValueString.lineWidth(left)}`
-  ->string;
+  borderWidth4(~top, ~right, ~bottom, ~left)->string;
 
 module DeclarationHelper = {
   let borderWidth = v => 

@@ -1,16 +1,20 @@
-open CssDeclaration.Helper;
-open CssDeclarationFn.Helper;
-
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 let property = "clear";
+
+let { declaration } = module(CssDeclaration.Helper);
+let { declarationFn } = module(CssDeclarationFn.Helper);
 
 external string: string => t = "%identity";
 let value = v => CssValueString.clear_global(v)->string;
 
 module DeclarationHelper = {
   let clear = v => declaration(property, value(v));
+  let clearUnion = v => declaration(property, v);
+  let clearString = v => declaration(property, string(v));
 };
 
 module DeclarationFnHelper = {

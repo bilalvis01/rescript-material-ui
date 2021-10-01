@@ -32,4 +32,30 @@ let borderStyle2: borderStyle2<string>;
 let borderStyle3: borderStyle3<string>;
 let borderStyle4: borderStyle4<string>;
 
+let borderWidth: borderWidth<string>;
+let borderWidth2: borderWidth2<string>;
+let borderWidth3: borderWidth3<string>;
+let borderWidth4: borderWidth4<string>;
+
+
 let color: color<string>;
+
+let clear: clear<string>;
+
+let cursor: cursor<string>;
+let cursor1: cursor1<string>;
+let cursor2: cursor2<string>;
+let cursor3: cursor3<string>;
+let cursor4: cursor4<string>;
+
+let fontFamily: fontFamily<string>;
+let fontFamily2: fontFamily2<string>;
+let fontFamily3: fontFamily3<string>;
+let fontFamily4: fontFamily4<string>;
+
+let fontWeight: fontWeight<string>;
+
+let margin: margin<string>;
+let margin2: margin2<string>;
+let margin3: margin3<string>;
+let margin4: margin4<string>;

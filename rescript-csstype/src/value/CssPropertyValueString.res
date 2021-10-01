@@ -15,8 +15,18 @@ let {
   repeatStyle,
   repeatStyle_global,
   lineWidth,
+  lineWidth_global,
   lineStyle,
   lineStyle_global,
+  clear_global,
+  cursorKeyword_global,
+  cursorKeyword,
+  cursorImage,
+  fontFamily as fontFam,
+  fontFamily_global,
+  fontWeight_global,
+  margin as m,
+  margin_global,
 } = module(CssValueString);
 
 let background = (
@@ -107,4 +117,43 @@ let borderStyle3 = (~top, ~lr, ~bottom) =>
 let borderStyle4 = (~top, ~right, ~bottom, ~left) =>
   `${lineStyle(top)} ${lineStyle(right)} ${lineStyle(bottom)} ${lineStyle(left)}`;
 
+let borderWidth = v => lineWidth_global(v);
+let borderWidth2 = (~tb, ~lr) => 
+  `${lineWidth(tb)} ${lineWidth(lr)}`;
+let borderWidth3 = (~top, ~lr, ~bottom) =>
+  `${lineWidth(top)} ${lineWidth(lr)} ${lineWidth(bottom)}`;
+let borderWidth4 = (~top, ~right, ~bottom, ~left) =>
+  `${lineWidth(top)} ${lineWidth(right)} ${lineWidth(bottom)} ${lineWidth(left)}`;
+
 let color = v => color_global(v);
+
+let clear = v => clear_global(v);
+
+let cursor = v => cursorKeyword_global(v);
+let cursor1 = (i, k) =>
+  `${cursorImage(i)}, ${cursorKeyword(k)}`;
+let cursor2 = (i1, i2, k) =>
+  `${cursorImage(i1)}, ${cursorImage(i2)}, ${cursorKeyword(k)}`;
+let cursor3 = (i1, i2, i3, k) =>
+  `${cursorImage(i1)}, ${cursorImage(i2)}, ${cursorImage(i3)}, ${cursorKeyword(k)}`;
+let cursor4 = (i1, i2, i3, i4, k) =>
+  `${cursorImage(i1)}, ${cursorImage(i2)}, ${cursorImage(i3)}, ${cursorImage(i4)}, ${cursorKeyword(k)}`;
+
+let fontFamily = v => 
+  fontFamily_global(v);
+let fontFamily2 = (v1, v2) =>
+  `${fontFam(v1)}, ${fontFam(v2)}`;
+let fontFamily3 = (v1, v2, v3) =>
+  `${fontFam(v1)}, ${fontFam(v2)}, ${fontFam(v3)}`;
+let fontFamily4 = (v1, v2, v3, v4) =>
+  `${fontFam(v1)}, ${fontFam(v2)}, ${fontFam(v3)}, ${fontFam(v4)}`;
+
+let fontWeight = v => fontWeight_global(v);
+
+let margin = v => margin_global(v);
+let margin2 = (~tb, ~lr) => 
+  `${m(tb)} ${m(lr)}`;
+let margin3 = (~top, ~lr, ~bottom) =>
+  `${m(top)} ${m(lr)} ${m(bottom)}`;
+let margin4 = (~top, ~right, ~bottom, ~left) =>
+  `${m(top)} ${m(right)} ${m(bottom)} ${m(left)}`;

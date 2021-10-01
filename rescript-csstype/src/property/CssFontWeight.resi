@@ -1,15 +1,17 @@
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 external string: string => t = "%identity";
-external number: float => t = "%identity";
-let value: CssValueType.fontWeight_global => t;
+external integer: int => t = "%identity";
+let value: CssPropertyValueType.fontWeight<t>;
 
 module DeclarationHelper: {
-  let fontWeight: CssValueType.fontWeight_global => [> CssDeclaration.constructor ];
-  let fontWeightUnion: t => [> CssDeclaration.constructor ];
-  let fontWeightString: string => [> CssDeclaration.constructor ];
-  let fontWeightNumber: float => [> CssDeclaration.constructor ];
+  let fontWeight: CssPropertyValueType.fontWeight<d<'a>>;
+  let fontWeightUnion: t => d<'a>;
+  let fontWeightString: string => d<'a>;
+  let fontWeightInteger: int => d<'a>;
 };
 
 module DeclarationFnHelper: {

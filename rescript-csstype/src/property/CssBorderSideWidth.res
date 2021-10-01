@@ -1,3 +1,5 @@
+let { borderWidth } = module(CssPropertyValueString);
+
 module MakeValue = (
   Type: {
     type t;
@@ -5,5 +7,5 @@ module MakeValue = (
 ) => {
   external string: string => Type.t = "%identity";
   external number: float => Type.t = "%identity";
-  let value = v => CssValueString.lineWidth_global(v)->string;
+  let value = v => borderWidth(v)->string;
 };

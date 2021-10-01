@@ -1,10 +1,18 @@
-open CssDeclaration.Helper;
-open CssDeclarationFn.Helper;
-
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 let property = "margin";
+
+let { declaration } = module(CssDeclaration.Helper);
+let { declarationFn } = module(CssDeclarationFn.Helper);
+let {
+  margin as m,
+  margin2 as m2,
+  margin3 as m3,
+  margin4 as m4,
+} = module(CssPropertyValueString);
 
 external string: string => t = "%identity";
 external number: float => t = "%identity";
@@ -21,15 +29,15 @@ let number4 = (~top, ~right, ~bottom, ~left) =>
   [[top, right, bottom, left]]
   ->numberArray;
 */
-let value = v => CssValueString.margin_global(v)->string;
+let value = v => m(v)->string;
 let value2 = (~tb, ~lr) => 
-  `${CssValueString.margin(tb)} ${CssValueString.margin(lr)}`
+  m2(~tb, ~lr)
   ->string;
 let value3 = (~top, ~lr, ~bottom) =>
-  `${CssValueString.margin(top)} ${CssValueString.margin(lr)} ${CssValueString.margin(bottom)}`
+  m3(~top, ~lr, ~bottom)
   ->string;
 let value4 = (~top, ~right, ~bottom, ~left) =>
-  `${CssValueString.margin(top)} ${CssValueString.margin(right)} ${CssValueString.margin(bottom)} ${CssValueString.margin(left)}`
+  m4(~top, ~right, ~bottom, ~left)
   ->string;
 
 module DeclarationHelper = {

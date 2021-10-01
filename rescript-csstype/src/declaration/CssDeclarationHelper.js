@@ -252,6 +252,10 @@ var borderWidthString = CssBorderWidth$Ress.DeclarationHelper.borderWidthString;
 
 var clear = CssClear$Ress.DeclarationHelper.clear;
 
+var clearUnion = CssClear$Ress.DeclarationHelper.clearUnion;
+
+var clearString = CssClear$Ress.DeclarationHelper.clearString;
+
 var color = CssColor$Ress.DeclarationHelper.color;
 
 var colorUnion = CssColor$Ress.DeclarationHelper.colorUnion;
@@ -290,7 +294,7 @@ var fontWeightUnion = CssFontWeight$Ress.DeclarationHelper.fontWeightUnion;
 
 var fontWeightString = CssFontWeight$Ress.DeclarationHelper.fontWeightString;
 
-var fontWeightNumber = CssFontWeight$Ress.DeclarationHelper.fontWeightNumber;
+var fontWeightInteger = CssFontWeight$Ress.DeclarationHelper.fontWeightInteger;
 
 var margin = CssMargin$Ress.DeclarationHelper.margin;
 
@@ -488,6 +492,8 @@ exports.borderWidth4 = borderWidth4;
 exports.borderWidthUnion = borderWidthUnion;
 exports.borderWidthString = borderWidthString;
 exports.clear = clear;
+exports.clearUnion = clearUnion;
+exports.clearString = clearString;
 exports.color = color;
 exports.colorUnion = colorUnion;
 exports.colorString = colorString;
@@ -507,7 +513,7 @@ exports.fontFamilyString = fontFamilyString;
 exports.fontWeight = fontWeight;
 exports.fontWeightUnion = fontWeightUnion;
 exports.fontWeightString = fontWeightString;
-exports.fontWeightNumber = fontWeightNumber;
+exports.fontWeightInteger = fontWeightInteger;
 exports.margin = margin;
 exports.margin2 = margin2;
 exports.margin3 = margin3;

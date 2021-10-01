@@ -1,23 +1,31 @@
-open CssDeclaration.Helper;
-open CssDeclarationFn.Helper;
-
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 let property = "fontFamily";
 
+let { declaration } = module(CssDeclaration.Helper);
+let { declarationFn } = module(CssDeclarationFn.Helper);
+let {
+  fontFamily,
+  fontFamily2,
+  fontFamily3,
+  fontFamily4,
+} = module(CssPropertyValueString);
+
 external string: string => t = "%identity";
 let value = v => 
-  CssValueString.fontFamily_global(v)
+  fontFamily(v)
   ->string;
 let value2 = (v1, v2) =>
-  `${CssValueString.fontFamily(v1)}, ${CssValueString.fontFamily(v2)}`
+  fontFamily2(v1, v2)
   ->string;
 let value3 = (v1, v2, v3) =>
-  `${CssValueString.fontFamily(v1)}, ${CssValueString.fontFamily(v2)}, ${CssValueString.fontFamily(v3)}`
+  fontFamily3(v1, v2, v3)
   ->string;
 let value4 = (v1, v2, v3, v4) =>
-  `${CssValueString.fontFamily(v1)}, ${CssValueString.fontFamily(v2)}, ${CssValueString.fontFamily(v3)}, ${CssValueString.fontFamily(v4)}`
+  fontFamily4(v1, v2, v3, v4)
   ->string;
 
 module DeclarationHelper = {
