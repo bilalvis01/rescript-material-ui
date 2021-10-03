@@ -1,3 +1,7 @@
+let {
+  margin
+} = module(CssPropertyValueString);
+
 module MakeValue = (
   Type: {
     type t;
@@ -5,5 +9,5 @@ module MakeValue = (
 ) => {
   external string: string => Type.t = "%identity";
   external number: float => Type.t = "%identity";
-  let value = v => CssValueString.margin_global(v)->string;
+  let value = v => margin(v)->string;
 };

@@ -59,3 +59,8 @@ let margin: margin<string>;
 let margin2: margin2<string>;
 let margin3: margin3<string>;
 let margin4: margin4<string>;
+
+let padding: padding<string>;
+let padding2: padding2<string>;
+let padding3: padding3<string>;
+let padding4: padding4<string>;

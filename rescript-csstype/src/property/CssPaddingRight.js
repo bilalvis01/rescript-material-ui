@@ -8,24 +8,28 @@ var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 
 var property = "paddingRight";
 
+var declaration = CssDeclaration$Ress.Helper.declaration;
+
+var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
+
 var include = CssPaddingSide$Ress.MakeValue({});
 
 var value = include.value;
 
 function paddingRight(v) {
-  return CssDeclaration$Ress.Helper.declaration(property, Curry._1(value, v));
+  return Curry._2(declaration, property, Curry._1(value, v));
 }
 
 function paddingRightUnion(v) {
-  return CssDeclaration$Ress.Helper.declaration(property, v);
+  return Curry._2(declaration, property, v);
 }
 
 function paddingRightString(v) {
-  return CssDeclaration$Ress.Helper.declaration(property, v);
+  return Curry._2(declaration, property, v);
 }
 
 function paddingRightNumber(v) {
-  return CssDeclaration$Ress.Helper.declaration(property, v);
+  return Curry._2(declaration, property, v);
 }
 
 var DeclarationHelper = {
@@ -36,7 +40,7 @@ var DeclarationHelper = {
 };
 
 function paddingRightFn(v) {
-  return CssDeclarationFn$Ress.Helper.declarationFn(property, v);
+  return Curry._2(declarationFn, property, v);
 }
 
 var DeclarationFnHelper = {

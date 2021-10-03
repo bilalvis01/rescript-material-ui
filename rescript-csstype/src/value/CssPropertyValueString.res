@@ -27,6 +27,8 @@ let {
   fontWeight_global,
   margin as m,
   margin_global,
+  padding as p,
+  padding_global,
 } = module(CssValueString);
 
 let background = (
@@ -157,3 +159,11 @@ let margin3 = (~top, ~lr, ~bottom) =>
   `${m(top)} ${m(lr)} ${m(bottom)}`;
 let margin4 = (~top, ~right, ~bottom, ~left) =>
   `${m(top)} ${m(right)} ${m(bottom)} ${m(left)}`;
+
+let padding = v => padding_global(v);
+let padding2 = (~tb, ~lr) => 
+  `${p(tb)} ${p(lr)}`;
+let padding3 = (~top, ~lr, ~bottom) =>
+  `${p(top)} ${p(lr)} ${p(bottom)}`;
+let padding4 = (~top, ~right, ~bottom, ~left) =>
+  `${p(top)} ${p(right)} ${p(bottom)} ${p(left)}`;

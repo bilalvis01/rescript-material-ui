@@ -5,5 +5,5 @@ module MakeValue: (
 ) => {
   external string: string => Type.t = "%identity";
   external number: float => Type.t = "%identity";
-  let value: CssValueType.padding_global => Type.t;
+  let value: CssPropertyValueType.padding<Type.t>;
 };

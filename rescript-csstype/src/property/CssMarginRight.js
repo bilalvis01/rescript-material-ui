@@ -8,24 +8,28 @@ var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 
 var property = "marginRight";
 
+var declaration = CssDeclaration$Ress.Helper.declaration;
+
+var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
+
 var include = CssMarginSide$Ress.MakeValue({});
 
 var value = include.value;
 
 function marginRight(v) {
-  return CssDeclaration$Ress.Helper.declaration(property, Curry._1(value, v));
+  return Curry._2(declaration, property, Curry._1(value, v));
 }
 
 function marginRightUnion(v) {
-  return CssDeclaration$Ress.Helper.declaration(property, v);
+  return Curry._2(declaration, property, v);
 }
 
 function marginRightString(v) {
-  return CssDeclaration$Ress.Helper.declaration(property, v);
+  return Curry._2(declaration, property, v);
 }
 
 function marginRightNumber(v) {
-  return CssDeclaration$Ress.Helper.declaration(property, v);
+  return Curry._2(declaration, property, v);
 }
 
 var DeclarationHelper = {
@@ -36,7 +40,7 @@ var DeclarationHelper = {
 };
 
 function marginRightFn(v) {
-  return CssDeclarationFn$Ress.Helper.declarationFn(property, v);
+  return Curry._2(declarationFn, property, v);
 }
 
 var DeclarationFnHelper = {

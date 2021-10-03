@@ -1,10 +1,18 @@
-open CssDeclaration.Helper;
-open CssDeclarationFn.Helper;
-
 type tag;
 type t = CssValueType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 let property = "padding";
+
+let { declaration } = module(CssDeclaration.Helper);
+let { declarationFn } = module(CssDeclarationFn.Helper);
+let {
+  padding as p,
+  padding2 as p2,
+  padding3 as p3,
+  padding4 as p4,
+} = module(CssPropertyValueString);
 
 external string: string => t = "%identity";
 external number: float => t = "%identity";
@@ -21,15 +29,15 @@ let number4 = (~top, ~right, ~bottom, ~left) =>
   [top, right, bottom, left]
   ->numberArray;
 */
-let value = v => CssValueString.padding_global(v)->string;
+let value = v => p(v)->string;
 let value2 = (~tb, ~lr) => 
-  `${CssValueString.padding(tb)} ${CssValueString.padding(lr)}`
+  p2(~tb, ~lr)
   ->string;
 let value3 = (~top, ~lr, ~bottom) =>
-  `${CssValueString.padding(top)} ${CssValueString.padding(lr)} ${CssValueString.padding(bottom)}`
+  p3(~top, ~lr, ~bottom)
   ->string;
 let value4 = (~top, ~right, ~bottom, ~left) =>
-  `${CssValueString.padding(top)} ${CssValueString.padding(right)} ${CssValueString.padding(bottom)} ${CssValueString.padding(left)}`
+  p4(~top, ~right, ~bottom, ~left)
   ->string;
 
 module DeclarationHelper = {

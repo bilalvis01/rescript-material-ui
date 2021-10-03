@@ -179,6 +179,20 @@ function margin4(top, right, bottom, left) {
   return CssValueString$Ress.margin(top) + " " + CssValueString$Ress.margin(right) + " " + CssValueString$Ress.margin(bottom) + " " + CssValueString$Ress.margin(left);
 }
 
+var padding = CssValueString$Ress.padding_global;
+
+function padding2(tb, lr) {
+  return CssValueString$Ress.padding(tb) + " " + CssValueString$Ress.padding(lr);
+}
+
+function padding3(top, lr, bottom) {
+  return CssValueString$Ress.padding(top) + " " + CssValueString$Ress.padding(lr) + " " + CssValueString$Ress.padding(bottom);
+}
+
+function padding4(top, right, bottom, left) {
+  return CssValueString$Ress.padding(top) + " " + CssValueString$Ress.padding(right) + " " + CssValueString$Ress.padding(bottom) + " " + CssValueString$Ress.padding(left);
+}
+
 exports.background = background;
 exports.background2 = background2;
 exports.background3 = background3;
@@ -224,4 +238,8 @@ exports.margin = margin;
 exports.margin2 = margin2;
 exports.margin3 = margin3;
 exports.margin4 = margin4;
+exports.padding = padding;
+exports.padding2 = padding2;
+exports.padding3 = padding3;
+exports.padding4 = padding4;
 /* No side effect */

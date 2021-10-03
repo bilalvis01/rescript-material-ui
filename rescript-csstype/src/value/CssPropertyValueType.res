@@ -195,3 +195,13 @@ type margin4<'return> = (
   ~bottom: CssValueType.margin, 
   ~left: CssValueType.margin,
 ) => 'return;
+
+type padding<'return> = padding_global => 'return;
+type padding2<'return> = (~tb: CssValueType.padding, ~lr: CssValueType.padding) => 'return;
+type padding3<'return> = (~top: CssValueType.padding, ~lr: CssValueType.padding, ~bottom: CssValueType.padding) => 'return;
+type padding4<'return> = (
+  ~top: CssValueType.padding, 
+  ~right: CssValueType.padding, 
+  ~bottom: CssValueType.padding, 
+  ~left: CssValueType.padding
+) => 'return;
