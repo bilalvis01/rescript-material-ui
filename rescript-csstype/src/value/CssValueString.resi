@@ -1,4 +1,4 @@
-open CssValueType;
+open CssType;
 
 /*
 Textual data types

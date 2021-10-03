@@ -1,4 +1,4 @@
-open CssValueType;
+open CssType;
 
 type background<'return> = (
   ~color: color=?,
@@ -132,6 +132,23 @@ type borderWidth4<'return> = (
   ~left: lineWidth,
 ) => 'return;
 
+type borderColor<'return> = color_global => 'return;
+type borderColor2<'return> = (
+  ~tb: CssType.color, 
+  ~lr: CssType.color,
+) => 'return;
+type borderColor3<'return> = (
+  ~top: CssType.color, 
+  ~lr: CssType.color, 
+  ~bottom: CssType.color,
+) => 'return;
+type borderColor4<'return> = (
+  ~top: CssType.color, 
+  ~right: CssType.color, 
+  ~bottom: CssType.color, 
+  ~left: CssType.color,
+) => 'return;
+
 type color<'return> = color_global => 'return;
 
 type clear<'return> = clear_global => 'return;
@@ -162,46 +179,46 @@ type cursor4<'return> = (
 
 type fontFamily<'return> = fontFamily_global => 'return;
 type fontFamily2<'return> = (
-  CssValueType.fontFamily, 
-  CssValueType.fontFamily,
+  CssType.fontFamily, 
+  CssType.fontFamily,
 ) => 'return;
 type fontFamily3<'return> = (
-  CssValueType.fontFamily, 
-  CssValueType.fontFamily,
-  CssValueType.fontFamily,
+  CssType.fontFamily, 
+  CssType.fontFamily,
+  CssType.fontFamily,
 ) => 'return;
 type fontFamily4<'return> = (
-  CssValueType.fontFamily, 
-  CssValueType.fontFamily,
-  CssValueType.fontFamily,
-  CssValueType.fontFamily,
+  CssType.fontFamily, 
+  CssType.fontFamily,
+  CssType.fontFamily,
+  CssType.fontFamily,
 ) => 'return;
 
 type fontWeight<'return> = fontWeight_global => 'return;
 
-type margin<'return> = CssValueType.margin_global => 'return;
+type margin<'return> = CssType.margin_global => 'return;
 type margin2<'return> = (
-  ~tb: CssValueType.margin, 
-  ~lr: CssValueType.margin,
+  ~tb: CssType.margin, 
+  ~lr: CssType.margin,
 ) => 'return;
 type margin3<'return> = (
-  ~top: CssValueType.margin, 
-  ~lr: CssValueType.margin, 
-  ~bottom: CssValueType.margin,
+  ~top: CssType.margin, 
+  ~lr: CssType.margin, 
+  ~bottom: CssType.margin,
 ) => 'return;
 type margin4<'return> = (
-  ~top: CssValueType.margin, 
-  ~right: CssValueType.margin, 
-  ~bottom: CssValueType.margin, 
-  ~left: CssValueType.margin,
+  ~top: CssType.margin, 
+  ~right: CssType.margin, 
+  ~bottom: CssType.margin, 
+  ~left: CssType.margin,
 ) => 'return;
 
 type padding<'return> = padding_global => 'return;
-type padding2<'return> = (~tb: CssValueType.padding, ~lr: CssValueType.padding) => 'return;
-type padding3<'return> = (~top: CssValueType.padding, ~lr: CssValueType.padding, ~bottom: CssValueType.padding) => 'return;
+type padding2<'return> = (~tb: CssType.padding, ~lr: CssType.padding) => 'return;
+type padding3<'return> = (~top: CssType.padding, ~lr: CssType.padding, ~bottom: CssType.padding) => 'return;
 type padding4<'return> = (
-  ~top: CssValueType.padding, 
-  ~right: CssValueType.padding, 
-  ~bottom: CssValueType.padding, 
-  ~left: CssValueType.padding
+  ~top: CssType.padding, 
+  ~right: CssType.padding, 
+  ~bottom: CssType.padding, 
+  ~left: CssType.padding
 ) => 'return;

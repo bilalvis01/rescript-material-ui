@@ -1,4 +1,4 @@
-open CssValueType;
+open CssType;
 open Belt;
 
 /*

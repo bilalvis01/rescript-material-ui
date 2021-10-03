@@ -2,7 +2,7 @@ open CssDeclaration.Helper;
 open CssDeclarationFn.Helper;
 
 type tag;
-type t = CssValueType.propertyValue<tag>;
+type t = CssType.propertyValue<tag>;
 
 let property = "borderLeftStyle";
 

@@ -1,5 +1,5 @@
 type tag;
-type t = CssValueType.propertyValue<tag>;
+type t = CssType.propertyValue<tag>;
 
 external string: string => t = "%identity";
 external number: float => t = "%identity";

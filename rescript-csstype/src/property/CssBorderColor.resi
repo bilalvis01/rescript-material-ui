@@ -1,37 +1,39 @@
 type tag;
-type t = CssValueType.propertyValue<tag>;
+type t = CssType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 external string: string => t = "%identity";
-let value: CssValueType.color_global => t;
-let value2: (~tb: CssValueType.color, ~lr: CssValueType.color) => t;
+let value: CssPropertyValueType.borderColor<t>;
+let value2: (~tb: CssType.color, ~lr: CssType.color) => t;
 let value3: (
-  ~top: CssValueType.color, 
-  ~lr: CssValueType.color, 
-  ~bottom: CssValueType.color
+  ~top: CssType.color, 
+  ~lr: CssType.color, 
+  ~bottom: CssType.color
 ) => t;
 let value4: (
-  ~top: CssValueType.color, 
-  ~right: CssValueType.color, 
-  ~bottom: CssValueType.color, 
-  ~left: CssValueType.color
+  ~top: CssType.color, 
+  ~right: CssType.color, 
+  ~bottom: CssType.color, 
+  ~left: CssType.color
 ) => t;
 
 module DeclarationHelper: {
-  let borderColor: CssValueType.color_global => [> CssDeclaration.constructor ];
+  let borderColor: CssType.color_global => [> CssDeclaration.constructor ];
   let borderColor2: (
-    ~tb: CssValueType.color, 
-    ~lr: CssValueType.color
+    ~tb: CssType.color, 
+    ~lr: CssType.color
   ) => [> CssDeclaration.constructor ];
   let borderColor3: (
-    ~top: CssValueType.color, 
-    ~lr: CssValueType.color, 
-    ~bottom: CssValueType.color
+    ~top: CssType.color, 
+    ~lr: CssType.color, 
+    ~bottom: CssType.color
   ) => [> CssDeclaration.constructor ];
   let borderColor4: (
-    ~top: CssValueType.color, 
-    ~right: CssValueType.color, 
-    ~bottom: CssValueType.color, 
-    ~left: CssValueType.color
+    ~top: CssType.color, 
+    ~right: CssType.color, 
+    ~bottom: CssType.color, 
+    ~left: CssType.color
   ) => [> CssDeclaration.constructor ];
   let borderColorUnion: t => [> CssDeclaration.constructor ];
   let borderColorString: string => [> CssDeclaration.constructor ];

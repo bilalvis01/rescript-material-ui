@@ -1,283 +1,283 @@
 /*
 Textual data types
 */
-let str: string => [> CssValueType.cssStr ];
+let str: string => [> CssType.cssStr ];
 
 /*
 Numeric data types
 */
-let num: float => [> CssValueType.cssNum ];
-let int: int => [> CssValueType.cssInt ];
-let pct: float => [> CssValueType.percentage ];
-let ratio: (int, int) => [> CssValueType.ratio ];
-let fr: float => [> CssValueType.flexUnit ];
+let num: float => [> CssType.cssNum ];
+let int: int => [> CssType.cssInt ];
+let pct: float => [> CssType.percentage ];
+let ratio: (int, int) => [> CssType.ratio ];
+let fr: float => [> CssType.flexUnit ];
 
 /*
 Quantities data types
 */
 // length
-let ch: float => [> CssValueType.ch ];
-let em: float => [> CssValueType.em ];
-let ex: float => [> CssValueType.ex ];
-let rem: float => [> CssValueType.rem ];
-let vh: float => [> CssValueType.vh ];
-let vw: float => [> CssValueType.vw ];
-let vmin: float => [> CssValueType.vmin ];
-let vmax: float => [> CssValueType.vmax ];
-let px: int => [> CssValueType.px ];
-let cm: float => [> CssValueType.cm ];
-let mm: float => [> CssValueType.mm ];
-let inch: float => [> CssValueType.inch ];
-let pc: float => [> CssValueType.pc ];
-let pt: float => [> CssValueType.pt ];
+let ch: float => [> CssType.ch ];
+let em: float => [> CssType.em ];
+let ex: float => [> CssType.ex ];
+let rem: float => [> CssType.rem ];
+let vh: float => [> CssType.vh ];
+let vw: float => [> CssType.vw ];
+let vmin: float => [> CssType.vmin ];
+let vmax: float => [> CssType.vmax ];
+let px: int => [> CssType.px ];
+let cm: float => [> CssType.cm ];
+let mm: float => [> CssType.mm ];
+let inch: float => [> CssType.inch ];
+let pc: float => [> CssType.pc ];
+let pt: float => [> CssType.pt ];
 
 // Angle
-let deg: float => [> CssValueType.deg ];
-let grad: float => [> CssValueType.grad ];
-let rad: float => [> CssValueType.rad ];
-let turn: float => [> CssValueType.turn ];
+let deg: float => [> CssType.deg ];
+let grad: float => [> CssType.grad ];
+let rad: float => [> CssType.rad ];
+let turn: float => [> CssType.turn ];
 
 // Time
-let s: float => [> CssValueType.s ];
-let ms: float => [> CssValueType.ms ];
+let s: float => [> CssType.s ];
+let ms: float => [> CssType.ms ];
 
 // Frequency
-let hz: float => [> CssValueType.hz ];
-let kHz: float => [> CssValueType.kHz ];
+let hz: float => [> CssType.hz ];
+let kHz: float => [> CssType.kHz ];
 
 // Resolution
-let dpi: float => [> CssValueType.dpi ];
-let dpcm: float => [> CssValueType.dpcm ];
-let dppx: float => [> CssValueType.dppx ];
-let x: float => [> CssValueType.x ];
+let dpi: float => [> CssType.dpi ];
+let dpcm: float => [> CssType.dpcm ];
+let dppx: float => [> CssType.dppx ];
+let x: float => [> CssType.x ];
 
 /*
 Position
 */
 let position2: (
-  [ | #left | #center | #right | CssValueType.length_percentage ], 
-  [ | #top | #center | #bottom | CssValueType.length_percentage ],
-) => [> CssValueType.position2 ];
+  [ | #left | #center | #right | CssType.length_percentage ], 
+  [ | #top | #center | #bottom | CssType.length_percentage ],
+) => [> CssType.position2 ];
 let position3: (
   [ | #center | #left | #right ], 
-  [ | #top | #bottom | CssValueType.length_percentage ], 
-  [ | #center | #top | #bottom | CssValueType.length_percentage ]
-) => [> CssValueType.position3 ];
+  [ | #top | #bottom | CssType.length_percentage ], 
+  [ | #center | #top | #bottom | CssType.length_percentage ]
+) => [> CssType.position3 ];
 let position4: (
   [ | #left | #right ], 
-  CssValueType.length_percentage, 
+  CssType.length_percentage, 
   [ | #top | #bottom ], 
-  CssValueType.length_percentage
-) => [> CssValueType.position4 ];
+  CssType.length_percentage
+) => [> CssType.position4 ];
 
 /*
 Image data types
 */
-let src: string => [> CssValueType.src ];
+let src: string => [> CssType.src ];
 
 /*
 Background layer
 */
 let bgLayer: (
-  ~color: CssValueType.color=?,
-  ~position: CssValueType.position=?,
-  ~size: CssValueType.bgSize=?,
-  ~repeat: CssValueType.repeatStyle=?,
-  ~attachment: CssValueType.attachment=?,
-  ~origin: CssValueType.box=?,
-  ~clip: CssValueType.box=?,
-  [ | CssValueType.bgImage | CssValueType.color ]
+  ~color: CssType.color=?,
+  ~position: CssType.position=?,
+  ~size: CssType.bgSize=?,
+  ~repeat: CssType.repeatStyle=?,
+  ~attachment: CssType.attachment=?,
+  ~origin: CssType.box=?,
+  ~clip: CssType.box=?,
+  [ | CssType.bgImage | CssType.color ]
 ) => 
-  [> CssValueType.bgLayer ];
+  [> CssType.bgLayer ];
 let bgSize2: (
-  [ | #auto | CssValueType.length_percentage ], 
-  [ | #auto | CssValueType.length_percentage ],
-) => [> CssValueType.bgSize2 ];
+  [ | #auto | CssType.length_percentage ], 
+  [ | #auto | CssType.length_percentage ],
+) => [> CssType.bgSize2 ];
 
 /*
 Color functions
 */
-let hsl: (int, CssValueType.percentage, CssValueType.percentage) => 
-  [> CssValueType.hsl ];
-let hsla: (int, CssValueType.percentage, CssValueType.percentage, float) => 
-  [> CssValueType.hsla ];
+let hsl: (int, CssType.percentage, CssType.percentage) => 
+  [> CssType.hsl ];
+let hsla: (int, CssType.percentage, CssType.percentage, float) => 
+  [> CssType.hsla ];
 let rgb: (int, int, int) => 
-  [> CssValueType.rgb ];
+  [> CssType.rgb ];
 let rgba: (int, int, int, float) => 
-  [> CssValueType.rgba ];
-let hexColor: string => [> CssValueType.hexColor ];
+  [> CssType.rgba ];
+let hexColor: string => [> CssType.hexColor ];
 
 /*
 Image data types
 */
-let url: string => [> CssValueType.url ];
+let url: string => [> CssType.url ];
 let image: (
-  ~dir: CssValueType.imageTags=?, 
-  ~color: CssValueType.color=?, 
-  [ | CssValueType.imageSrc | CssValueType.color ]
-) => [> CssValueType.image ];
+  ~dir: CssType.imageTags=?, 
+  ~color: CssType.color=?, 
+  [ | CssType.imageSrc | CssType.color ]
+) => [> CssType.image ];
 let linearColorStop2: (
-  CssValueType.color, 
-  CssValueType.length_percentage
-) => [> CssValueType.linearColorStop2 ];
+  CssType.color, 
+  CssType.length_percentage
+) => [> CssType.linearColorStop2 ];
 let linearColorStop3: (
-  CssValueType.color, 
-  CssValueType.length_percentage, 
-  CssValueType.length_percentage
-) => [> CssValueType.linearColorStop3 ];
+  CssType.color, 
+  CssType.length_percentage, 
+  CssType.length_percentage
+) => [> CssType.linearColorStop3 ];
 let linearGradient: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  CssValueType.linearColorStop
-) => [> CssValueType.linearGradient1 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  CssType.linearColorStop
+) => [> CssType.linearGradient1 ];
 let linearGradient2: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop
-) => [> CssValueType.linearGradient2 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop
+) => [> CssType.linearGradient2 ];
 let linearGradient3: (
-  ~angle: CssValueType.gradientLineAngle=?,
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop
-) => [> CssValueType.linearGradient3 ];
+  ~angle: CssType.gradientLineAngle=?,
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop
+) => [> CssType.linearGradient3 ];
 let linearGradient4: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-  CssValueType.linearColorStop
-) => [> CssValueType.linearGradient4 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+  CssType.linearColorStop
+) => [> CssType.linearGradient4 ];
 let repeatingLinearGradient: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  CssValueType.linearColorStop
-) => [> CssValueType.repeatingLinearGradient1 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  CssType.linearColorStop
+) => [> CssType.repeatingLinearGradient1 ];
 let repeatingLinearGradient2: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop
-) => [> CssValueType.repeatingLinearGradient2 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop
+) => [> CssType.repeatingLinearGradient2 ];
 let repeatingLinearGradient3: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop
-) => [> CssValueType.repeatingLinearGradient3 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop
+) => [> CssType.repeatingLinearGradient3 ];
 let repeatingLinearGradient4: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-) => [> CssValueType.repeatingLinearGradient4 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+) => [> CssType.repeatingLinearGradient4 ];
 let radialGradient: (
-  ~position: CssValueType.radialGradientPosition=?, 
-  ~endingShape: CssValueType.radialGradientEndingShape=?, 
-  ~size: CssValueType.radialGradientSize=?, 
-  CssValueType.linearColorStop
-) => [> CssValueType.radialGradient1 ];
+  ~position: CssType.radialGradientPosition=?, 
+  ~endingShape: CssType.radialGradientEndingShape=?, 
+  ~size: CssType.radialGradientSize=?, 
+  CssType.linearColorStop
+) => [> CssType.radialGradient1 ];
 let radialGradient2: (
-  ~position: CssValueType.radialGradientPosition=?, 
-  ~endingShape: CssValueType.radialGradientEndingShape=?, 
-  ~size: CssValueType.radialGradientSize=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-) => [> CssValueType.radialGradient2 ];
+  ~position: CssType.radialGradientPosition=?, 
+  ~endingShape: CssType.radialGradientEndingShape=?, 
+  ~size: CssType.radialGradientSize=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+) => [> CssType.radialGradient2 ];
 let radialGradient3: (
-  ~position: CssValueType.radialGradientPosition=?, 
-  ~endingShape: CssValueType.radialGradientEndingShape=?, 
-  ~size: CssValueType.radialGradientSize=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-) => [> CssValueType.radialGradient3 ];
+  ~position: CssType.radialGradientPosition=?, 
+  ~endingShape: CssType.radialGradientEndingShape=?, 
+  ~size: CssType.radialGradientSize=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+) => [> CssType.radialGradient3 ];
 let radialGradient4: (
-  ~position: CssValueType.radialGradientPosition=?, 
-  ~endingShape: CssValueType.radialGradientEndingShape=?, 
-  ~size: CssValueType.radialGradientSize=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-) => [> CssValueType.radialGradient4 ];
+  ~position: CssType.radialGradientPosition=?, 
+  ~endingShape: CssType.radialGradientEndingShape=?, 
+  ~size: CssType.radialGradientSize=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+) => [> CssType.radialGradient4 ];
 let repeatingRadialGradient: (
-  ~position: CssValueType.radialGradientPosition=?, 
-  ~endingShape: CssValueType.radialGradientEndingShape=?, 
-  ~size: CssValueType.radialGradientSize=?, 
-  CssValueType.linearColorStop
-) => [> CssValueType.repeatingRadialGradient1 ];
+  ~position: CssType.radialGradientPosition=?, 
+  ~endingShape: CssType.radialGradientEndingShape=?, 
+  ~size: CssType.radialGradientSize=?, 
+  CssType.linearColorStop
+) => [> CssType.repeatingRadialGradient1 ];
 let repeatingRadialGradient2: (
-  ~position: CssValueType.radialGradientPosition=?, 
-  ~endingShape: CssValueType.radialGradientEndingShape=?, 
-  ~size: CssValueType.radialGradientSize=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-) => [> CssValueType.repeatingRadialGradient2 ];
+  ~position: CssType.radialGradientPosition=?, 
+  ~endingShape: CssType.radialGradientEndingShape=?, 
+  ~size: CssType.radialGradientSize=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+) => [> CssType.repeatingRadialGradient2 ];
 let repeatingRadialGradient3: (
-  ~position: CssValueType.radialGradientPosition=?, 
-  ~endingShape: CssValueType.radialGradientEndingShape=?, 
-  ~size: CssValueType.radialGradientSize=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-) => [> CssValueType.repeatingRadialGradient3 ];
+  ~position: CssType.radialGradientPosition=?, 
+  ~endingShape: CssType.radialGradientEndingShape=?, 
+  ~size: CssType.radialGradientSize=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+) => [> CssType.repeatingRadialGradient3 ];
 let repeatingRadialGradient4: (
-  ~position: CssValueType.radialGradientPosition=?, 
-  ~endingShape: CssValueType.radialGradientEndingShape=?, 
-  ~size: CssValueType.radialGradientSize=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-) => [> CssValueType.repeatingRadialGradient4 ];
+  ~position: CssType.radialGradientPosition=?, 
+  ~endingShape: CssType.radialGradientEndingShape=?, 
+  ~size: CssType.radialGradientSize=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+) => [> CssType.repeatingRadialGradient4 ];
 let conicGradient: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  ~position: CssValueType.position=?, 
-  CssValueType.linearColorStop
-) => [> CssValueType.conicGradient1 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  ~position: CssType.position=?, 
+  CssType.linearColorStop
+) => [> CssType.conicGradient1 ];
 let conicGradient2: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  ~position: CssValueType.position=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-) => [> CssValueType.conicGradient2 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  ~position: CssType.position=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+) => [> CssType.conicGradient2 ];
 let conicGradient3: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  ~position: CssValueType.position=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-) => [> CssValueType.conicGradient3 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  ~position: CssType.position=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+) => [> CssType.conicGradient3 ];
 let conicGradient4: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  ~position: CssValueType.position=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-) => [> CssValueType.conicGradient4 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  ~position: CssType.position=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+) => [> CssType.conicGradient4 ];
 let repeatingConicGradient: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  ~position: CssValueType.position=?, 
-  CssValueType.linearColorStop
-) => [> CssValueType.repeatingConicGradient ];
+  ~angle: CssType.gradientLineAngle=?, 
+  ~position: CssType.position=?, 
+  CssType.linearColorStop
+) => [> CssType.repeatingConicGradient ];
 let repeatingConicGradient2: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  ~position: CssValueType.position=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-) => [> CssValueType.repeatingConicGradient2 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  ~position: CssType.position=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+) => [> CssType.repeatingConicGradient2 ];
 let repeatingConicGradient3: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  ~position: CssValueType.position=?, 
-  CssValueType.linearColorStop,
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-) => [> CssValueType.repeatingConicGradient3 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  ~position: CssType.position=?, 
+  CssType.linearColorStop,
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+) => [> CssType.repeatingConicGradient3 ];
 let repeatingConicGradient4: (
-  ~angle: CssValueType.gradientLineAngle=?, 
-  ~position: CssValueType.position=?, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop, 
-  CssValueType.linearColorStop,
-) => [> CssValueType.repeatingConicGradient4 ];
+  ~angle: CssType.gradientLineAngle=?, 
+  ~position: CssType.position=?, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop, 
+  CssType.linearColorStop,
+) => [> CssType.repeatingConicGradient4 ];

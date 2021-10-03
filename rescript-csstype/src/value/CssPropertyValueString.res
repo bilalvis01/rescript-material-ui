@@ -1,4 +1,4 @@
-open CssValueType;
+open CssType;
 
 let {
   global,
@@ -42,9 +42,9 @@ let background = (
   imageOrColor
 ) => {
   switch imageOrColor {
-  | #...CssValueType.global as g => global(g)
-  | #...CssValueType.bgImage as imageOrColor
-  | #...CssValueType.color as imageOrColor =>
+  | #...CssType.global as g => global(g)
+  | #...CssType.bgImage as imageOrColor
+  | #...CssType.color as imageOrColor =>
     bg(
       ~color=?color,
       ~position=?position,

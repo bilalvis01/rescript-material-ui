@@ -1,10 +1,12 @@
-open CssDeclaration.Helper;
-open CssDeclarationFn.Helper;
-
 type tag;
-type t = CssValueType.propertyValue<tag>;
+type t = CssType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 let property = "borderColor";
+
+let { declaration } = module(CssDeclaration.Helper);
+let { declarationFn } = module(CssDeclarationFn.Helper);
 
 external string: string => t = "%identity";
 let value = v => CssValueString.color_global(v)->string;

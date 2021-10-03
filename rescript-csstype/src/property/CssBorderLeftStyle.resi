@@ -1,10 +1,10 @@
 type tag;
-type t = CssValueType.propertyValue<tag>;
+type t = CssType.propertyValue<tag>;
 
 include (module type of CssBorderSideStyle.MakeValue({ type t = t; }));
 
 module DeclarationHelper: {
-  let borderLeftStyle: CssValueType.lineStyle_global => [> CssDeclaration.constructor ];
+  let borderLeftStyle: CssType.lineStyle_global => [> CssDeclaration.constructor ];
   let borderLeftStyleUnion: t => [> CssDeclaration.constructor ];
   let borderLeftStyleString: string => [> CssDeclaration.constructor ];
 };

@@ -1,4 +1,4 @@
-type value<'data, 'a> = 'data => option<CssValueType.propertyValue<'a>>;
+type value<'data, 'a> = 'data => option<CssType.propertyValue<'a>>;
 
 @unboxed
 type rec boxValue<'data> =

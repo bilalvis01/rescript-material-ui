@@ -1,6 +1,6 @@
 @unboxed
 type rec boxValue =
-  | BoxValue(CssValueType.propertyValue<'a>): boxValue;
+  | BoxValue(CssType.propertyValue<'a>): boxValue;
 
 type constructor = [ 
   | #Declaration(string, boxValue) 
@@ -18,6 +18,6 @@ module Make: (
 
 module Helper: {
   let declaration: 
-    (string, CssValueType.propertyValue<'a>) => 
+    (string, CssType.propertyValue<'a>) => 
     [> constructor ];
 };

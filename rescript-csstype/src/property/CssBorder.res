@@ -1,5 +1,5 @@
 type tag;
-type t = CssValueType.propertyValue<tag>;
+type t = CssType.propertyValue<tag>;
 type d<'a> = [> CssDeclaration.constructor ] as 'a;
 type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 

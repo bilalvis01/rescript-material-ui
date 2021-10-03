@@ -1,6 +1,6 @@
 @unboxed
 type rec boxValue =
-  | BoxValue(CssValueType.propertyValue<'a>): boxValue;
+  | BoxValue(CssType.propertyValue<'a>): boxValue;
 
 type constructor = [ | #Declaration(string, boxValue) ];
 
