@@ -7,7 +7,7 @@ let property = "fontWeight";
 
 let { declaration } = module(CssDeclaration.Helper);
 let { declarationFn } = module(CssDeclarationFn.Helper);
-let { fontWeight } = module(CssPropertyValueString);
+let { fontWeight } = module(CssString);
 
 external string: string => t = "%identity";
 external integer: int => t = "%identity";

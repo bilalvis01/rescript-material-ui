@@ -1,6 +1,6 @@
 let {
   margin
-} = module(CssPropertyValueString);
+} = module(CssString);
 
 module MakeValue = (
   Type: {

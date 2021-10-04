@@ -2,9 +2,9 @@
 'use strict';
 
 var Curry = require("rescript/lib/js/curry.js");
+var CssString$Ress = require("../value/CssString.js");
 var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
-var CssPropertyValueString$Ress = require("../value/CssPropertyValueString.js");
 
 var property = "color";
 
@@ -12,7 +12,7 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssPropertyValueString$Ress.color;
+var value = CssString$Ress.color;
 
 function color(v) {
   return Curry._2(declaration, property, value(v));

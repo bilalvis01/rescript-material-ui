@@ -1,4 +1,4 @@
-let { padding } = module(CssPropertyValueString);
+let { padding } = module(CssString);
 
 module MakeValue = (
   Type: {

@@ -7,7 +7,7 @@ let property = "color";
 
 let { declaration } = module(CssDeclaration.Helper);
 let { declarationFn } = module(CssDeclarationFn.Helper);
-let { color } = module(CssPropertyValueString);
+let { color } = module(CssString);
 
 external string: string => t = "%identity";
 let value = v => color(v)->string;

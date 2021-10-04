@@ -12,7 +12,7 @@ let {
   borderStyle2,
   borderStyle3,
   borderStyle4,
-} = module(CssPropertyValueString);
+} = module(CssString);
 
 external string: string => t = "%identity";
 let value = v => borderStyle(v)->string;

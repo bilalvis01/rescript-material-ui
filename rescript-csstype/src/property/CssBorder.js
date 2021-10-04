@@ -2,9 +2,9 @@
 'use strict';
 
 var Curry = require("rescript/lib/js/curry.js");
+var CssString$Ress = require("../value/CssString.js");
 var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
-var CssPropertyValueString$Ress = require("../value/CssPropertyValueString.js");
 
 var property = "border";
 
@@ -13,13 +13,13 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
 function MakeValue(Type) {
-  var value = CssPropertyValueString$Ress.border;
+  var value = CssString$Ress.border;
   return {
           value: value
         };
 }
 
-var value = CssPropertyValueString$Ress.border;
+var value = CssString$Ress.border;
 
 function border(width, color, style) {
   return Curry._2(declaration, property, value(width, color, style));

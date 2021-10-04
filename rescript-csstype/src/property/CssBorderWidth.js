@@ -2,9 +2,9 @@
 'use strict';
 
 var Curry = require("rescript/lib/js/curry.js");
+var CssString$Ress = require("../value/CssString.js");
 var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
-var CssPropertyValueString$Ress = require("../value/CssPropertyValueString.js");
 
 var property = "borderWidth";
 
@@ -12,13 +12,13 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssPropertyValueString$Ress.borderWidth;
+var value = CssString$Ress.borderWidth;
 
-var value2 = CssPropertyValueString$Ress.borderWidth2;
+var value2 = CssString$Ress.borderWidth2;
 
-var value3 = CssPropertyValueString$Ress.borderWidth3;
+var value3 = CssString$Ress.borderWidth3;
 
-var value4 = CssPropertyValueString$Ress.borderWidth4;
+var value4 = CssString$Ress.borderWidth4;
 
 function borderWidth(v) {
   return Curry._2(declaration, property, value(v));

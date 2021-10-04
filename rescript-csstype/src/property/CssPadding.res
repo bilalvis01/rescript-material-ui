@@ -12,7 +12,7 @@ let {
   padding2 as p2,
   padding3 as p3,
   padding4 as p4,
-} = module(CssPropertyValueString);
+} = module(CssString);
 
 external string: string => t = "%identity";
 external number: float => t = "%identity";

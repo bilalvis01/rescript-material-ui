@@ -7,7 +7,7 @@ let property = "border";
 
 let { declaration } = module(CssDeclaration.Helper);
 let { declarationFn } = module(CssDeclarationFn.Helper);
-let { border as bd } = module(CssPropertyValueString); 
+let { border as bd } = module(CssString); 
 
 module MakeValue = (
   Type: {

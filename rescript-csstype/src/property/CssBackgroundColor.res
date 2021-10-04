@@ -7,7 +7,7 @@ let property = "backgroundColor";
 
 let { declaration } = module(CssDeclaration.Helper);
 let { declarationFn } = module(CssDeclarationFn.Helper);
-let { backgroundColor } = module(CssPropertyValueString);
+let { backgroundColor } = module(CssString);
 
 external string: string => t = "%identity";
 let value = v => backgroundColor(v)->string;

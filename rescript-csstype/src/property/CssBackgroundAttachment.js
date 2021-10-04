@@ -2,9 +2,9 @@
 'use strict';
 
 var Curry = require("rescript/lib/js/curry.js");
+var CssString$Ress = require("../value/CssString.js");
 var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
-var CssPropertyValueString$Ress = require("../value/CssPropertyValueString.js");
 
 var property = "backgroundAttachment";
 
@@ -12,13 +12,13 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssPropertyValueString$Ress.backgroundAttachment;
+var value = CssString$Ress.backgroundAttachment;
 
-var value2 = CssPropertyValueString$Ress.backgroundAttachment2;
+var value2 = CssString$Ress.backgroundAttachment2;
 
-var value3 = CssPropertyValueString$Ress.backgroundAttachment3;
+var value3 = CssString$Ress.backgroundAttachment3;
 
-var value4 = CssPropertyValueString$Ress.backgroundAttachment4;
+var value4 = CssString$Ress.backgroundAttachment4;
 
 function backgroundAttachment(v) {
   return Curry._2(declaration, property, value(v));

@@ -12,7 +12,7 @@ let {
   background2 as bg2,
   background3 as bg3,
   background4 as bg4,
-} = module(CssPropertyValueString);
+} = module(CssString);
 
 external string: string => t = "%identity";
 let value = (

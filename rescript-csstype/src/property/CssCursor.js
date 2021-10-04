@@ -2,9 +2,9 @@
 'use strict';
 
 var Curry = require("rescript/lib/js/curry.js");
+var CssString$Ress = require("../value/CssString.js");
 var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
-var CssPropertyValueString$Ress = require("../value/CssPropertyValueString.js");
 
 var property = "cursor";
 
@@ -12,15 +12,15 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssPropertyValueString$Ress.cursor;
+var value = CssString$Ress.cursor;
 
-var value1 = CssPropertyValueString$Ress.cursor1;
+var value1 = CssString$Ress.cursor1;
 
-var value2 = CssPropertyValueString$Ress.cursor2;
+var value2 = CssString$Ress.cursor2;
 
-var value3 = CssPropertyValueString$Ress.cursor3;
+var value3 = CssString$Ress.cursor3;
 
-var value4 = CssPropertyValueString$Ress.cursor4;
+var value4 = CssString$Ress.cursor4;
 
 function cursor(v) {
   return Curry._2(declaration, property, value(v));

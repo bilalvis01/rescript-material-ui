@@ -12,7 +12,7 @@ let {
   borderWidth2,
   borderWidth3,
   borderWidth4,
-} = module(CssPropertyValueString);
+} = module(CssString);
 
 external string: string => t = "%identity";
 external number: float => t = "%identity";

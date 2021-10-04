@@ -1,4 +1,4 @@
-let { borderStyle } = module(CssPropertyValueString);
+let { borderStyle } = module(CssString);
 
 module MakeValue = (
   Type: {

@@ -1,6 +1,6 @@
 let {
   color
-} = module(CssPropertyValueString);
+} = module(CssString);
 
 module MakeValue = (
   Type: {

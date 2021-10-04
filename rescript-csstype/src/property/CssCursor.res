@@ -13,7 +13,7 @@ let {
   cursor2,
   cursor3,
   cursor4,
-} = module(CssPropertyValueString);
+} = module(CssString);
 
 external string: string => t = "%identity";
 let value = k => cursor(k)->string;
