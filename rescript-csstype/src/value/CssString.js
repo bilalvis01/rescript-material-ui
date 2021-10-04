@@ -1560,6 +1560,212 @@ function fontFml_global(v) {
   }
 }
 
+function background(color, position, size, repeat, attachment, origin, clip, imageOrColor) {
+  var imageOrColor$1;
+  if (typeof imageOrColor === "object") {
+    imageOrColor$1 = imageOrColor;
+  } else {
+    if (imageOrColor === "inherit" || imageOrColor === "unset" || imageOrColor === "revert" || imageOrColor === "initial") {
+      return $$global(imageOrColor);
+    }
+    imageOrColor$1 = imageOrColor;
+  }
+  return bg(color, position, size, repeat, attachment, origin, clip, imageOrColor$1);
+}
+
+function background2(v1, v2) {
+  return bgLayer(v1) + ", " + bgLayer(v2);
+}
+
+function background3(v1, v2, v3) {
+  return bgLayer(v1) + ", " + bgLayer(v2) + ", " + bgLayer(v3);
+}
+
+function background4(v1, v2, v3, v4) {
+  return bgLayer(v1) + ", " + bgLayer(v2) + ", " + bgLayer(v3) + ", " + bgLayer(v4);
+}
+
+var backgroundAttachment = attachment_global;
+
+function backgroundAttachment2(v1, v2) {
+  return attachment(v1) + ", " + attachment(v2);
+}
+
+function backgroundAttachment3(v1, v2, v3) {
+  return attachment(v1) + ", " + attachment(v2) + ", " + attachment(v3);
+}
+
+function backgroundAttachment4(v1, v2, v3, v4) {
+  return attachment(v1) + ", " + attachment(v2) + ", " + attachment(v3) + ", " + attachment(v4);
+}
+
+var backgroundColor = col_global;
+
+var backgroundImage = bgImage_global;
+
+function backgroundImage2(v1, v2) {
+  return bgImage(v1) + ", " + bgImage(v2);
+}
+
+function backgroundImage3(v1, v2, v3) {
+  return bgImage(v1) + ", " + bgImage(v2) + ", " + bgImage(v3);
+}
+
+function backgroundImage4(v1, v2, v3, v4) {
+  return bgImage(v1) + ", " + bgImage(v2) + ", " + bgImage(v3) + ", " + bgImage(v4);
+}
+
+var backgroundPosition = position_global;
+
+function backgroundPosition2(v1, v2) {
+  return position(v1) + ", " + position(v2);
+}
+
+function backgroundPosition3(v1, v2, v3) {
+  return position(v1) + ", " + position(v2) + ", " + position(v3);
+}
+
+function backgroundPosition4(v1, v2, v3, v4) {
+  return position(v1) + ", " + position(v2) + ", " + position(v3) + ", " + position(v4);
+}
+
+var backgroundStyle = repeatStyle_global;
+
+function backgroundStyle2(v1, v2) {
+  return repeatStyle(v1) + ", " + repeatStyle(v2);
+}
+
+function backgroundStyle3(v1, v2, v3) {
+  return repeatStyle(v1) + ", " + repeatStyle(v2) + ", " + repeatStyle(v3);
+}
+
+function backgroundStyle4(v1, v2, v3, v4) {
+  return repeatStyle(v1) + ", " + repeatStyle(v2) + ", " + repeatStyle(v3) + ", " + repeatStyle(v4);
+}
+
+function border(width, color, style) {
+  var border$1 = width !== undefined ? (
+      color !== undefined ? lineWidth(width) + " " + col(color) : lineWidth(width)
+    ) : (
+      color !== undefined ? col(color) : undefined
+    );
+  if (style === "inherit" || style === "unset" || style === "revert" || style === "initial") {
+    return $$global(style);
+  } else if (border$1 !== undefined) {
+    return border$1 + " " + lineStyle(style);
+  } else {
+    return lineStyle(style);
+  }
+}
+
+var borderStyle = lineStyle_global;
+
+function borderStyle2(tb, lr) {
+  return lineStyle(tb) + " " + lineStyle(lr);
+}
+
+function borderStyle3(top, lr, bottom) {
+  return lineStyle(top) + " " + lineStyle(lr) + " " + lineStyle(bottom);
+}
+
+function borderStyle4(top, right, bottom, left) {
+  return lineStyle(top) + " " + lineStyle(right) + " " + lineStyle(bottom) + " " + lineStyle(left);
+}
+
+var borderWidth = lineWidth_global;
+
+function borderWidth2(tb, lr) {
+  return lineWidth(tb) + " " + lineWidth(lr);
+}
+
+function borderWidth3(top, lr, bottom) {
+  return lineWidth(top) + " " + lineWidth(lr) + " " + lineWidth(bottom);
+}
+
+function borderWidth4(top, right, bottom, left) {
+  return lineWidth(top) + " " + lineWidth(right) + " " + lineWidth(bottom) + " " + lineWidth(left);
+}
+
+var borderColor = col_global;
+
+function borderColor2(tb, lr) {
+  return col(tb) + " " + col(lr);
+}
+
+function borderColor3(top, lr, bottom) {
+  return col(top) + " " + col(lr) + " " + col(bottom);
+}
+
+function borderColor4(top, right, bottom, left) {
+  return col(top) + " " + col(right) + " " + col(bottom) + " " + col(left);
+}
+
+var color = col_global;
+
+var clear = clr_global;
+
+var cursor = cursorKeyword_global;
+
+function cursor1(i, k) {
+  return cursorImage(i) + ", " + cursorKeyword(k);
+}
+
+function cursor2(i1, i2, k) {
+  return cursorImage(i1) + ", " + cursorImage(i2) + ", " + cursorKeyword(k);
+}
+
+function cursor3(i1, i2, i3, k) {
+  return cursorImage(i1) + ", " + cursorImage(i2) + ", " + cursorImage(i3) + ", " + cursorKeyword(k);
+}
+
+function cursor4(i1, i2, i3, i4, k) {
+  return cursorImage(i1) + ", " + cursorImage(i2) + ", " + cursorImage(i3) + ", " + cursorImage(i4) + ", " + cursorKeyword(k);
+}
+
+var fontFamily = fontFml_global;
+
+function fontFamily2(v1, v2) {
+  return fontFml(v1) + ", " + fontFml(v2);
+}
+
+function fontFamily3(v1, v2, v3) {
+  return fontFml(v1) + ", " + fontFml(v2) + ", " + fontFml(v3);
+}
+
+function fontFamily4(v1, v2, v3, v4) {
+  return fontFml(v1) + ", " + fontFml(v2) + ", " + fontFml(v3) + ", " + fontFml(v4);
+}
+
+var fontWeight = fontWgt_global;
+
+var margin = mgn_global;
+
+function margin2(tb, lr) {
+  return mgn(tb) + " " + mgn(lr);
+}
+
+function margin3(top, lr, bottom) {
+  return mgn(top) + " " + mgn(lr) + " " + mgn(bottom);
+}
+
+function margin4(top, right, bottom, left) {
+  return mgn(top) + " " + mgn(right) + " " + mgn(bottom) + " " + mgn(left);
+}
+
+var padding = pdg_global;
+
+function padding2(tb, lr) {
+  return length_percentage(tb) + " " + length_percentage(lr);
+}
+
+function padding3(top, lr, bottom) {
+  return length_percentage(top) + " " + length_percentage(lr) + " " + length_percentage(bottom);
+}
+
+function padding4(top, right, bottom, left) {
+  return length_percentage(top) + " " + length_percentage(right) + " " + length_percentage(bottom) + " " + length_percentage(left);
+}
+
 exports.$$global = $$global;
 exports.str = str;
 exports.num = num;
@@ -1660,4 +1866,58 @@ exports.fontWgt_global = fontWgt_global;
 exports.genericFontFamilyName = genericFontFamilyName;
 exports.fontFml = fontFml;
 exports.fontFml_global = fontFml_global;
+exports.background = background;
+exports.background2 = background2;
+exports.background3 = background3;
+exports.background4 = background4;
+exports.backgroundAttachment = backgroundAttachment;
+exports.backgroundAttachment2 = backgroundAttachment2;
+exports.backgroundAttachment3 = backgroundAttachment3;
+exports.backgroundAttachment4 = backgroundAttachment4;
+exports.backgroundColor = backgroundColor;
+exports.backgroundImage = backgroundImage;
+exports.backgroundImage2 = backgroundImage2;
+exports.backgroundImage3 = backgroundImage3;
+exports.backgroundImage4 = backgroundImage4;
+exports.backgroundPosition = backgroundPosition;
+exports.backgroundPosition2 = backgroundPosition2;
+exports.backgroundPosition3 = backgroundPosition3;
+exports.backgroundPosition4 = backgroundPosition4;
+exports.backgroundStyle = backgroundStyle;
+exports.backgroundStyle2 = backgroundStyle2;
+exports.backgroundStyle3 = backgroundStyle3;
+exports.backgroundStyle4 = backgroundStyle4;
+exports.border = border;
+exports.borderStyle = borderStyle;
+exports.borderStyle2 = borderStyle2;
+exports.borderStyle3 = borderStyle3;
+exports.borderStyle4 = borderStyle4;
+exports.borderWidth = borderWidth;
+exports.borderWidth2 = borderWidth2;
+exports.borderWidth3 = borderWidth3;
+exports.borderWidth4 = borderWidth4;
+exports.borderColor = borderColor;
+exports.borderColor2 = borderColor2;
+exports.borderColor3 = borderColor3;
+exports.borderColor4 = borderColor4;
+exports.color = color;
+exports.clear = clear;
+exports.cursor = cursor;
+exports.cursor1 = cursor1;
+exports.cursor2 = cursor2;
+exports.cursor3 = cursor3;
+exports.cursor4 = cursor4;
+exports.fontFamily = fontFamily;
+exports.fontFamily2 = fontFamily2;
+exports.fontFamily3 = fontFamily3;
+exports.fontFamily4 = fontFamily4;
+exports.fontWeight = fontWeight;
+exports.margin = margin;
+exports.margin2 = margin2;
+exports.margin3 = margin3;
+exports.margin4 = margin4;
+exports.padding = padding;
+exports.padding2 = padding2;
+exports.padding3 = padding3;
+exports.padding4 = padding4;
 /* No side effect */
