@@ -6,7 +6,7 @@ type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 include (module type of CssPaddingSide.MakeValue({ type t = t; }));
 
 module DeclarationHelper: {
-  let paddingLeft: CssPropertyValueType.padding<d<'a>>;
+  let paddingLeft: CssType.padding<d<'a>>;
   let paddingLeftUnion: t => d<'a>;
   let paddingLeftString: string => d<'a>;
   let paddingLeftNumber: float => d<'a>;

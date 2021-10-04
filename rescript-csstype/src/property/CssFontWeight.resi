@@ -5,10 +5,10 @@ type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 external string: string => t = "%identity";
 external integer: int => t = "%identity";
-let value: CssPropertyValueType.fontWeight<t>;
+let value: CssType.fontWeight<t>;
 
 module DeclarationHelper: {
-  let fontWeight: CssPropertyValueType.fontWeight<d<'a>>;
+  let fontWeight: CssType.fontWeight<d<'a>>;
   let fontWeightUnion: t => d<'a>;
   let fontWeightString: string => d<'a>;
   let fontWeightInteger: int => d<'a>;

@@ -16,16 +16,16 @@ let number4: (
   ~left: float,
 ) => t;
 */
-let value: CssPropertyValueType.padding<t>;
-let value2: CssPropertyValueType.padding2<t>;
-let value3: CssPropertyValueType.padding3<t>;
-let value4: CssPropertyValueType.padding4<t>;
+let value: CssType.padding<t>;
+let value2: CssType.padding2<t>;
+let value3: CssType.padding3<t>;
+let value4: CssType.padding4<t>;
 
 module DeclarationHelper: {
-  let padding: CssPropertyValueType.padding<d<'a>>;
-  let padding2: CssPropertyValueType.padding2<d<'a>>;
-  let padding3: CssPropertyValueType.padding3<d<'a>>;
-  let padding4: CssPropertyValueType.padding4<d<'a>>;
+  let padding: CssType.padding<d<'a>>;
+  let padding2: CssType.padding2<d<'a>>;
+  let padding3: CssType.padding3<d<'a>>;
+  let padding4: CssType.padding4<d<'a>>;
   let paddingUnion: t => d<'a>;
   let paddingString: string => d<'a>;
   let paddingNumber: float => d<'a>;

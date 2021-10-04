@@ -4,10 +4,10 @@ type d<'a> = [> CssDeclaration.constructor ] as 'a;
 type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 external string: string => t = "%identity";
-let value: CssPropertyValueType.color<t>;
+let value: CssType.color<t>;
 
 module DeclarationHelper: {
-  let color: CssPropertyValueType.color<d<'a>>;
+  let color: CssType.color<d<'a>>;
   let colorUnion: t => d<'a>;
   let colorString: string => d<'a>;
 };

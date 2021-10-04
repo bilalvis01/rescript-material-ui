@@ -6,7 +6,7 @@ type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 include (module type of CssBorder.MakeValue({ type t = t }));
 
 module DeclarationHelper: {
-  let borderLeft: CssPropertyValueType.border<d<'a>>;
+  let borderLeft: CssType.border<d<'a>>;
   let borderLeftUnion: t => d<'a>;
   let borderLeftString: string => d<'a>;
 };

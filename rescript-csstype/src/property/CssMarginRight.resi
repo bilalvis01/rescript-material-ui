@@ -6,7 +6,7 @@ type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 include (module type of CssMarginSide.MakeValue({ type t = t; }));
 
 module DeclarationHelper: {
-  let marginRight: CssPropertyValueType.margin<d<'a>>;
+  let marginRight: CssType.margin<d<'a>>;
   let marginRightUnion: t => d<'a>;
   let marginRightString: string => d<'a>;
   let marginRightNumber: float => d<'a>;

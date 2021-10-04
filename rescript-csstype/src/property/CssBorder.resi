@@ -9,13 +9,13 @@ module MakeValue: (
   }
 ) => {
   external string: string => Type.t = "%identity";
-  let value: CssPropertyValueType.border<Type.t>;
+  let value: CssType.border<Type.t>;
 };
 
 include (module type of MakeValue({ type t = t }));
 
 module DeclarationHelper: {
-  let border: CssPropertyValueType.border<d<'a>>;
+  let border: CssType.border<d<'a>>;
   let borderUnion: t => d<'a>;
   let borderString: string => d<'a>;
 };

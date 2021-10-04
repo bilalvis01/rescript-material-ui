@@ -6,7 +6,7 @@ type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 include (module type of CssBorderSideColor.MakeValue({ type t = t; }));
 
 module DeclarationHelper: {
-  let borderBottomColor: CssPropertyValueType.borderColor<d<'a>>;
+  let borderBottomColor: CssType.borderColor<d<'a>>;
   let borderBottomColorUnion: t => d<'a>;
   let borderBottomColorString: string => d<'a>;
 };
