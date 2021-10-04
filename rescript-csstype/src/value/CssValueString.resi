@@ -87,8 +87,8 @@ let rgb: (rgbParam, rgbParam, rgbParam) => string;
 let rgba: (rgbParam, rgbParam, rgbParam, alpha) => string;
 let hexColor: string => string;
 let colorKeyword: colorKeyword => string; 
-let color: col => string;
-let color_global: col_global => string;
+let col: col => string;
+let col_global: col_global => string;
 
 /*
 Image data types
@@ -136,24 +136,24 @@ let bgLayer: bgLayer => string;
 /*
 Spacing
 */
-let margin: mgn => string;
-let margin_global: mgn_global => string;
-let padding: pdg => string;
-let padding_global: pdg_global => string;
+let mgn: mgn => string;
+let mgn_global: mgn_global => string;
+let pdg: pdg => string;
+let pdg_global: pdg_global => string;
 
-let clear: clr => string;
-let clear_global: clr_global => string;
+let clr: clr => string;
+let clr_global: clr_global => string;
 
 let cursorKeyword: cursorKeyword => string;
 let cursorKeyword_global: cursorKeyword_global => string;
 let cursorImage: cursorImage => string;
 
-let fontWeight: fontWgt => string;
-let fontWeight_global: fontWgt_global => string;
+let fontWgt: fontWgt => string;
+let fontWgt_global: fontWgt_global => string;
 
 /*
 Font Family
 */
 let genericFontFamilyName: genericFontFamilyName => string;
-let fontFamily: fontFml => string;
-let fontFamily_global: fontFml_global => string;
+let fontFml: fontFml => string;
+let fontFml_global: fontFml_global => string;

@@ -6,8 +6,8 @@ let {
   bgLayer,
   attachment,
   attachment_global,
-  color as col,
-  color_global,
+  col,
+  col_global,
   bgImage,
   bgImage_global,
   position,
@@ -18,17 +18,17 @@ let {
   lineWidth_global,
   lineStyle,
   lineStyle_global,
-  clear_global,
+  clr_global,
   cursorKeyword_global,
   cursorKeyword,
   cursorImage,
-  fontFamily as fontFam,
-  fontFamily_global,
-  fontWeight_global,
-  margin as m,
-  margin_global,
-  padding as p,
-  padding_global,
+  fontFml,
+  fontFml_global,
+  fontWgt_global,
+  mgn,
+  mgn_global,
+  pdg,
+  pdg_global,
 } = module(CssValueString);
 
 let background = (
@@ -72,7 +72,7 @@ let backgroundAttachment3 = (v1, v2, v3) =>
 let backgroundAttachment4 = (v1, v2, v3, v4) => 
   `${attachment(v1)}, ${attachment(v2)}, ${attachment(v3)}, ${attachment(v4)}`;
 
-let backgroundColor = v => color_global(v);
+let backgroundColor = v => col_global(v);
 
 let backgroundImage = v => 
   bgImage_global(v);
@@ -129,16 +129,16 @@ let borderWidth3 = (~top, ~lr, ~bottom) =>
 let borderWidth4 = (~top, ~right, ~bottom, ~left) =>
   `${lineWidth(top)} ${lineWidth(right)} ${lineWidth(bottom)} ${lineWidth(left)}`;
 
-let borderColor = v => CssValueString.color_global(v);
-let borderColor2 = (~tb, ~lr) => `${CssValueString.color(tb)} ${CssValueString.color(lr)}`;
+let borderColor = v => col_global(v);
+let borderColor2 = (~tb, ~lr) => `${col(tb)} ${col(lr)}`;
 let borderColor3 = (~top, ~lr, ~bottom) => 
-  `${CssValueString.color(top)} ${CssValueString.color(lr)} ${CssValueString.color(bottom)}`;
+  `${col(top)} ${col(lr)} ${col(bottom)}`;
 let borderColor4 = (~top, ~right, ~bottom, ~left) =>
-  `${CssValueString.color(top)} ${CssValueString.color(right)} ${CssValueString.color(bottom)} ${CssValueString.color(left)}`;
+  `${col(top)} ${col(right)} ${col(bottom)} ${col(left)}`;
 
-let color = v => color_global(v);
+let color = v => col_global(v);
 
-let clear = v => clear_global(v);
+let clear = v => clr_global(v);
 
 let cursor = v => cursorKeyword_global(v);
 let cursor1 = (i, k) =>
@@ -151,28 +151,28 @@ let cursor4 = (i1, i2, i3, i4, k) =>
   `${cursorImage(i1)}, ${cursorImage(i2)}, ${cursorImage(i3)}, ${cursorImage(i4)}, ${cursorKeyword(k)}`;
 
 let fontFamily = v => 
-  fontFamily_global(v);
+  fontFml_global(v);
 let fontFamily2 = (v1, v2) =>
-  `${fontFam(v1)}, ${fontFam(v2)}`;
+  `${fontFml(v1)}, ${fontFml(v2)}`;
 let fontFamily3 = (v1, v2, v3) =>
-  `${fontFam(v1)}, ${fontFam(v2)}, ${fontFam(v3)}`;
+  `${fontFml(v1)}, ${fontFml(v2)}, ${fontFml(v3)}`;
 let fontFamily4 = (v1, v2, v3, v4) =>
-  `${fontFam(v1)}, ${fontFam(v2)}, ${fontFam(v3)}, ${fontFam(v4)}`;
+  `${fontFml(v1)}, ${fontFml(v2)}, ${fontFml(v3)}, ${fontFml(v4)}`;
 
-let fontWeight = v => fontWeight_global(v);
+let fontWeight = v => fontWgt_global(v);
 
-let margin = v => margin_global(v);
+let margin = v => mgn_global(v);
 let margin2 = (~tb, ~lr) => 
-  `${m(tb)} ${m(lr)}`;
+  `${mgn(tb)} ${mgn(lr)}`;
 let margin3 = (~top, ~lr, ~bottom) =>
-  `${m(top)} ${m(lr)} ${m(bottom)}`;
+  `${mgn(top)} ${mgn(lr)} ${mgn(bottom)}`;
 let margin4 = (~top, ~right, ~bottom, ~left) =>
-  `${m(top)} ${m(right)} ${m(bottom)} ${m(left)}`;
+  `${mgn(top)} ${mgn(right)} ${mgn(bottom)} ${mgn(left)}`;
 
-let padding = v => padding_global(v);
+let padding = v => pdg_global(v);
 let padding2 = (~tb, ~lr) => 
-  `${p(tb)} ${p(lr)}`;
+  `${pdg(tb)} ${pdg(lr)}`;
 let padding3 = (~top, ~lr, ~bottom) =>
-  `${p(top)} ${p(lr)} ${p(bottom)}`;
+  `${pdg(top)} ${pdg(lr)} ${pdg(bottom)}`;
 let padding4 = (~top, ~right, ~bottom, ~left) =>
-  `${p(top)} ${p(right)} ${p(bottom)} ${p(left)}`;
+  `${pdg(top)} ${pdg(right)} ${pdg(bottom)} ${pdg(left)}`;

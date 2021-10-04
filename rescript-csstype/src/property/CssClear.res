@@ -7,9 +7,10 @@ let property = "clear";
 
 let { declaration } = module(CssDeclaration.Helper);
 let { declarationFn } = module(CssDeclarationFn.Helper);
+let { clear } = module(CssPropertyValueString);
 
 external string: string => t = "%identity";
-let value = v => CssValueString.clear_global(v)->string;
+let value = v => clear(v)->string;
 
 module DeclarationHelper = {
   let clear = v => declaration(property, value(v));

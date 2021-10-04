@@ -3,8 +3,8 @@
 
 var Curry = require("rescript/lib/js/curry.js");
 var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
-var CssValueString$Ress = require("../value/CssValueString.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
+var CssPropertyValueString$Ress = require("../value/CssPropertyValueString.js");
 
 var property = "clear";
 
@@ -12,10 +12,10 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssValueString$Ress.clear_global;
+var value = CssPropertyValueString$Ress.clear;
 
 function clear(v) {
-  return Curry._2(declaration, property, CssValueString$Ress.clear_global(v));
+  return Curry._2(declaration, property, value(v));
 }
 
 function clearUnion(v) {

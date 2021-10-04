@@ -706,7 +706,7 @@ function colorKeyword(v) {
   }
 }
 
-function color(v) {
+function col(v) {
   if (typeof v !== "object") {
     return colorKeyword(v);
   }
@@ -730,9 +730,9 @@ function color(v) {
   return rgba(match$3[0], match$3[1], match$3[2], match$3[3]);
 }
 
-function color_global(v) {
+function col_global(v) {
   if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
-    return color(v);
+    return col(v);
   } else {
     return $$global(v);
   }
@@ -858,22 +858,22 @@ function gradientLineAngle(v) {
 
 function linearColorStop(v) {
   if (typeof v !== "object") {
-    return color(v);
+    return col(v);
   }
   var variant = v.NAME;
   if (variant === "LinearColorStop2") {
     var match = v.VAL;
-    return color(match[0]) + " " + length_percentage(match[1]);
+    return col(match[0]) + " " + length_percentage(match[1]);
   }
   if (variant !== "LinearColorStop3") {
     if (variant === "Rgba" || variant === "Hsla" || variant === "Rgb" || variant === "Hsl" || variant === "HexColor") {
-      return color(v);
+      return col(v);
     } else {
       return length_percentage(v);
     }
   }
   var match$1 = v.VAL;
-  return color(match$1[0]) + " " + length_percentage(match$1[1]) + " " + length_percentage(match$1[2]);
+  return col(match$1[0]) + " " + length_percentage(match$1[1]) + " " + length_percentage(match$1[2]);
 }
 
 function linearGradient_(angle, linearColorStop) {
@@ -1163,10 +1163,10 @@ function image(v) {
       exit = 2;
     }
     if (exit === 2) {
-      return "image(" + imageTags(t) + " " + color(c$1) + ")";
+      return "image(" + imageTags(t) + " " + col(c$1) + ")";
     }
     if (c !== undefined) {
-      return "image(" + imageTags(t) + " " + imageSrc(match[2]) + ", " + color(c) + ")";
+      return "image(" + imageTags(t) + " " + imageSrc(match[2]) + ", " + col(c) + ")";
     } else {
       return "image(" + imageTags(t) + " " + imageSrc(match[2]) + ")";
     }
@@ -1176,14 +1176,14 @@ function image(v) {
   if (typeof c$3 === "object") {
     var variant$2 = c$3.NAME;
     if (variant$2 === "Rgba" || variant$2 === "Hsla" || variant$2 === "Rgb" || variant$2 === "Hsl" || variant$2 === "HexColor") {
-      return "image(" + color(c$3) + ")";
+      return "image(" + col(c$3) + ")";
     }
     
   } else if (c$3 === "olivedrab" || c$3 === "paleturquoise" || c$3 === "sandybrown" || c$3 === "maroon" || c$3 === "brown" || c$3 === "moccasin" || c$3 === "lightcoral" || c$3 === "silver" || c$3 === "honeydew" || c$3 === "ghostwhite" || c$3 === "black" || c$3 === "sienna" || c$3 === "powderblue" || c$3 === "cornflowerblue" || c$3 === "olive" || c$3 === "beige" || c$3 === "thistle" || c$3 === "darkorchid" || c$3 === "azure" || c$3 === "darkorange" || c$3 === "mediumslateblue" || c$3 === "saddlebrown" || c$3 === "limegreen" || c$3 === "goldenrod" || c$3 === "transparent" || c$3 === "mediumseagreen" || c$3 === "firebrick" || c$3 === "floralwhite" || c$3 === "lightslategrey" || c$3 === "lightslategray" || c$3 === "fuchsia" || c$3 === "chocolate" || c$3 === "royalblue" || c$3 === "salmon" || c$3 === "yellowgreen" || c$3 === "aliceblue" || c$3 === "green" || c$3 === "darkmagenta" || c$3 === "aquamarine" || c$3 === "darkolivegreen" || c$3 === "mediumorchid" || c$3 === "rebeccapurple" || c$3 === "mediumvioletred" || c$3 === "lightsteelblue" || c$3 === "indigo" || c$3 === "turquoise" || c$3 === "lawngreen" || c$3 === "blueviolet" || c$3 === "tomato" || c$3 === "oldlace" || c$3 === "burlywood" || c$3 === "currentColor" || c$3 === "springgreen" || c$3 === "magenta" || c$3 === "darkgray" || c$3 === "darkgoldenrod" || c$3 === "gainsboro" || c$3 === "darkcyan" || c$3 === "darkblue" || c$3 === "lightgreen" || c$3 === "chartreuse" || c$3 === "navajowhite" || c$3 === "palevioletred" || c$3 === "rosybrown" || c$3 === "lavender" || c$3 === "darksalmon" || c$3 === "tan" || c$3 === "red" || c$3 === "lightyellow" || c$3 === "darkturquoise" || c$3 === "palegreen" || c$3 === "seagreen" || c$3 === "darkgreen" || c$3 === "lightskyblue" || c$3 === "indianred" || c$3 === "linen" || c$3 === "greenyellow" || c$3 === "slategrey" || c$3 === "slategray" || c$3 === "darkred" || c$3 === "purple" || c$3 === "bisque" || c$3 === "slateblue" || c$3 === "lightseagreen" || c$3 === "dodgerblue" || c$3 === "violet" || c$3 === "midnightblue" || c$3 === "cadetblue" || c$3 === "deeppink" || c$3 === "steelblue" || c$3 === "crimson" || c$3 === "oranngered" || c$3 === "skyblue" || c$3 === "forestgreen" || c$3 === "lemonchiffon" || c$3 === "khaki" || c$3 === "papayawhip" || c$3 === "seashell" || c$3 === "darkslategrey" || c$3 === "darkslategray" || c$3 === "peachpuff" || c$3 === "cornsilk" || c$3 === "antiquewhite" || c$3 === "hotpink" || c$3 === "blanchedalmond" || c$3 === "darkslateblue" || c$3 === "lightgoldenrodyellow" || c$3 === "lightpink" || c$3 === "deepskyblue" || c$3 === "mediumspringgreen" || c$3 === "lightgrey" || c$3 === "lightgray" || c$3 === "mintcream" || c$3 === "darkviolet" || c$3 === "yellow" || c$3 === "lightcyan" || c$3 === "lightblue" || c$3 === "mediumturquoise" || c$3 === "mistyrose" || c$3 === "teal" || c$3 === "lightsalmon" || c$3 === "snow" || c$3 === "palegoldenrod" || c$3 === "darkseagreen" || c$3 === "mediumblue" || c$3 === "coral" || c$3 === "plum" || c$3 === "pink" || c$3 === "peru" || c$3 === "white" || c$3 === "wheat" || c$3 === "navy" || c$3 === "lavenderblush" || c$3 === "lime" || c$3 === "orchid" || c$3 === "orange" || c$3 === "grey" || c$3 === "gray" || c$3 === "gold" || c$3 === "whitesmoke" || c$3 === "ivory" || c$3 === "mediumpurple" || c$3 === "mediumaquamarine" || c$3 === "cyan" || c$3 === "blue" || c$3 === "dimgrey" || c$3 === "dimgray" || c$3 === "aqua" || c$3 === "darkkhaki") {
-    return "image(" + color(c$3) + ")";
+    return "image(" + col(c$3) + ")";
   }
   if (c$2 !== undefined) {
-    return "image(" + imageSrc(match[2]) + ", " + color(c$2) + ")";
+    return "image(" + imageSrc(match[2]) + ", " + col(c$2) + ")";
   } else {
     return "image(" + imageSrc(match[2]) + ")";
   }
@@ -1289,7 +1289,7 @@ function box(v) {
   }
 }
 
-function bg(col, pos, size, repeat, att, origin, clip, imageOrColor) {
+function bg(c, pos, size, repeat, att, origin, clip, imageOrColor) {
   var pos$1 = pos !== undefined ? (
       size !== undefined ? position(pos) + " / " + bgSize(size) : position(pos)
     ) : undefined;
@@ -1320,11 +1320,11 @@ function bg(col, pos, size, repeat, att, origin, clip, imageOrColor) {
   }
   switch (exit) {
     case 1 :
-        if (col !== undefined) {
+        if (c !== undefined) {
           if (bg$3 !== undefined) {
-            return color(col) + " " + bgImage(imageOrColor) + " " + bg$3;
+            return col(c) + " " + bgImage(imageOrColor) + " " + bg$3;
           } else {
-            return color(col) + " " + bgImage(imageOrColor);
+            return col(c) + " " + bgImage(imageOrColor);
           }
         } else if (bg$3 !== undefined) {
           return bgImage(imageOrColor) + " " + bg$3;
@@ -1333,9 +1333,9 @@ function bg(col, pos, size, repeat, att, origin, clip, imageOrColor) {
         }
     case 2 :
         if (bg$3 !== undefined) {
-          return color(imageOrColor) + " " + bg$3;
+          return col(imageOrColor) + " " + bg$3;
         } else {
-          return color(imageOrColor);
+          return col(imageOrColor);
         }
     
   }
@@ -1346,12 +1346,12 @@ function bgLayer(v) {
     if (v === "none") {
       return bgImage(v);
     } else {
-      return color(v);
+      return col(v);
     }
   }
   var variant = v.NAME;
   if (variant === "Rgba" || variant === "Hsla" || variant === "Rgb" || variant === "Hsl" || variant === "HexColor") {
-    return color(v);
+    return col(v);
   }
   if (variant !== "BgLayer") {
     return bgImage(v);
@@ -1360,7 +1360,7 @@ function bgLayer(v) {
   return bg(match[0], match[1], match[2], match[3], match[4], match[5], match[6], match[7]);
 }
 
-function margin(v) {
+function mgn(v) {
   if (typeof v === "object") {
     return length_percentage(v);
   } else {
@@ -1368,17 +1368,17 @@ function margin(v) {
   }
 }
 
-function margin_global(v) {
+function mgn_global(v) {
   if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
-    return margin(v);
+    return mgn(v);
   } else {
     return $$global(v);
   }
 }
 
-var padding = length_percentage;
+var pdg = length_percentage;
 
-function padding_global(v) {
+function pdg_global(v) {
   if (typeof v === "object") {
     return length_percentage(v);
   } else {
@@ -1386,7 +1386,7 @@ function padding_global(v) {
   }
 }
 
-function clear(v) {
+function clr(v) {
   if (v === "inlineStart") {
     return "inline-start";
   } else if (v === "left") {
@@ -1402,11 +1402,11 @@ function clear(v) {
   }
 }
 
-function clear_global(v) {
+function clr_global(v) {
   if (v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
     return $$global(v);
   } else {
-    return clear(v);
+    return clr(v);
   }
 }
 
@@ -1494,7 +1494,7 @@ function cursorKeyword_global(v) {
 
 var cursorImage = url;
 
-function fontWeight(v) {
+function fontWgt(v) {
   if (v === "bolder") {
     return "bolder";
   } else if (v === "lighter") {
@@ -1506,11 +1506,11 @@ function fontWeight(v) {
   }
 }
 
-function fontWeight_global(v) {
+function fontWgt_global(v) {
   if (v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
     return $$global(v);
   } else {
-    return fontWeight(v);
+    return fontWgt(v);
   }
 }
 
@@ -1544,7 +1544,7 @@ function genericFontFamilyName(v) {
   }
 }
 
-function fontFamily(v) {
+function fontFml(v) {
   if (typeof v === "object") {
     return "\"" + v.VAL + "\"";
   } else {
@@ -1552,9 +1552,9 @@ function fontFamily(v) {
   }
 }
 
-function fontFamily_global(v) {
+function fontFml_global(v) {
   if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
-    return fontFamily(v);
+    return fontFml(v);
   } else {
     return $$global(v);
   }
@@ -1618,8 +1618,8 @@ exports.rgb = rgb;
 exports.rgba = rgba;
 exports.hexColor = hexColor;
 exports.colorKeyword = colorKeyword;
-exports.color = color;
-exports.color_global = color_global;
+exports.col = col;
+exports.col_global = col_global;
 exports.gradientLineStartingPoint = gradientLineStartingPoint;
 exports.gradientLineAngle = gradientLineAngle;
 exports.linearColorStop = linearColorStop;
@@ -1646,18 +1646,18 @@ exports.attachment_global = attachment_global;
 exports.box = box;
 exports.bg = bg;
 exports.bgLayer = bgLayer;
-exports.margin = margin;
-exports.margin_global = margin_global;
-exports.padding = padding;
-exports.padding_global = padding_global;
-exports.clear = clear;
-exports.clear_global = clear_global;
+exports.mgn = mgn;
+exports.mgn_global = mgn_global;
+exports.pdg = pdg;
+exports.pdg_global = pdg_global;
+exports.clr = clr;
+exports.clr_global = clr_global;
 exports.cursorKeyword = cursorKeyword;
 exports.cursorKeyword_global = cursorKeyword_global;
 exports.cursorImage = cursorImage;
-exports.fontWeight = fontWeight;
-exports.fontWeight_global = fontWeight_global;
+exports.fontWgt = fontWgt;
+exports.fontWgt_global = fontWgt_global;
 exports.genericFontFamilyName = genericFontFamilyName;
-exports.fontFamily = fontFamily;
-exports.fontFamily_global = fontFamily_global;
+exports.fontFml = fontFml;
+exports.fontFml_global = fontFml_global;
 /* No side effect */

@@ -120,13 +120,13 @@ describe("Color data types", (function () {
                 expect(CssValueString$Ress.rgba(CssValueHelper$Ress.num(1), CssValueHelper$Ress.num(1), CssValueHelper$Ress.pct(10), CssValueHelper$Ress.num(1))).toBe("rgba(1, 1, 10%, 1)");
                 expect(CssValueString$Ress.rgba(CssValueHelper$Ress.num(0), CssValueHelper$Ress.num(0), CssValueHelper$Ress.num(0), CssValueHelper$Ress.num(1))).toBe("rgba(0, 0, 0, 1)");
                 expect(CssValueString$Ress.hexColor("000000")).toBe("#000000");
-                expect(CssValueString$Ress.color(CssValueHelper$Ress.hexColor("000000"))).toBe("#000000");
-                expect(CssValueString$Ress.color(CssValueHelper$Ress.rgb(10, 10, 10))).toBe("rgb(10, 10, 10)");
+                expect(CssValueString$Ress.col(CssValueHelper$Ress.hexColor("000000"))).toBe("#000000");
+                expect(CssValueString$Ress.col(CssValueHelper$Ress.rgb(10, 10, 10))).toBe("rgb(10, 10, 10)");
                 
               }));
         test("color_global", (function () {
-                expect(CssValueString$Ress.color_global(CssValueHelper$Ress.rgb(244, 244, 244))).toBe("rgb(244, 244, 244)");
-                expect(CssValueString$Ress.color_global("initial")).toBe("initial");
+                expect(CssValueString$Ress.col_global(CssValueHelper$Ress.rgb(244, 244, 244))).toBe("rgb(244, 244, 244)");
+                expect(CssValueString$Ress.col_global("initial")).toBe("initial");
                 
               }));
         
@@ -348,18 +348,18 @@ describe("background", (function () {
 
 describe("Spacing", (function () {
         test("margin", (function () {
-                expect(CssValueString$Ress.margin(CssValueHelper$Ress.px(10))).toBe("10px");
-                expect(CssValueString$Ress.margin("auto")).toBe("auto");
-                expect(CssValueString$Ress.margin(CssValueHelper$Ress.pct(20))).toBe("20%");
-                expect(CssValueString$Ress.margin_global(CssValueHelper$Ress.px(24))).toBe("24px");
-                expect(CssValueString$Ress.margin_global("initial")).toBe("initial");
+                expect(CssValueString$Ress.mgn(CssValueHelper$Ress.px(10))).toBe("10px");
+                expect(CssValueString$Ress.mgn("auto")).toBe("auto");
+                expect(CssValueString$Ress.mgn(CssValueHelper$Ress.pct(20))).toBe("20%");
+                expect(CssValueString$Ress.mgn_global(CssValueHelper$Ress.px(24))).toBe("24px");
+                expect(CssValueString$Ress.mgn_global("initial")).toBe("initial");
                 
               }));
         test("padding", (function () {
-                expect(CssValueString$Ress.padding(CssValueHelper$Ress.px(10))).toBe("10px");
-                expect(CssValueString$Ress.padding(CssValueHelper$Ress.pct(20))).toBe("20%");
-                expect(CssValueString$Ress.padding_global(CssValueHelper$Ress.px(24))).toBe("24px");
-                expect(CssValueString$Ress.padding_global("initial")).toBe("initial");
+                expect(CssValueString$Ress.pdg(CssValueHelper$Ress.px(10))).toBe("10px");
+                expect(CssValueString$Ress.pdg(CssValueHelper$Ress.pct(20))).toBe("20%");
+                expect(CssValueString$Ress.pdg_global(CssValueHelper$Ress.px(24))).toBe("24px");
+                expect(CssValueString$Ress.pdg_global("initial")).toBe("initial");
                 
               }));
         
@@ -367,14 +367,14 @@ describe("Spacing", (function () {
 
 describe("fontFamily", (function () {
         test("fontFamily", (function () {
-                expect(CssValueString$Ress.fontFamily({
+                expect(CssValueString$Ress.fontFml({
                             NAME: "Family",
                             VAL: "Goudy Bookletter 1911"
                           })).toBe("\"Goudy Bookletter 1911\"");
-                expect(CssValueString$Ress.fontFamily("serif")).toBe("serif");
-                expect(CssValueString$Ress.fontFamily("sansSerif")).toBe("sans-serif");
-                expect(CssValueString$Ress.fontFamily_global("initial")).toBe("initial");
-                expect(CssValueString$Ress.fontFamily_global({
+                expect(CssValueString$Ress.fontFml("serif")).toBe("serif");
+                expect(CssValueString$Ress.fontFml("sansSerif")).toBe("sans-serif");
+                expect(CssValueString$Ress.fontFml_global("initial")).toBe("initial");
+                expect(CssValueString$Ress.fontFml_global({
                             NAME: "Family",
                             VAL: "Gill Sans Extrabold"
                           })).toBe("\"Gill Sans Extrabold\"");
