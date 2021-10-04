@@ -2,8 +2,6 @@
 'use strict';
 
 
-var Property;
-
 var Background;
 
 var BackgroundAttachment;
@@ -86,7 +84,6 @@ var PaddingBottom;
 
 var PaddingLeft;
 
-exports.Property = Property;
 exports.Background = Background;
 exports.BackgroundAttachment = BackgroundAttachment;
 exports.BackgroundColor = BackgroundColor;

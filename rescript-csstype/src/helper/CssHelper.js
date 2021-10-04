@@ -13,7 +13,6 @@ function Make(D) {
   var include = CssRule$Ress.MakeHelper(D);
   var include$1 = CssPseudoClass$Ress.MakeHelper(D);
   return {
-          Property: CssPropertyValue$Ress.Property,
           Background: CssPropertyValue$Ress.Background,
           BackgroundAttachment: CssPropertyValue$Ress.BackgroundAttachment,
           BackgroundColor: CssPropertyValue$Ress.BackgroundColor,

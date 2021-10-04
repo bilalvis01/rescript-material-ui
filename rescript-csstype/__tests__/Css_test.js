@@ -156,8 +156,6 @@ test("statements", (function () {
         
       }));
 
-var Property = include.Property;
-
 var Background = include.Background;
 
 var BackgroundAttachment = include.BackgroundAttachment;
@@ -792,7 +790,6 @@ var paddingLeftFn = include.paddingLeftFn;
 
 exports.DeclarationBlock = DeclarationBlock;
 exports.Statements = Statements;
-exports.Property = Property;
 exports.Background = Background;
 exports.BackgroundAttachment = BackgroundAttachment;
 exports.BackgroundColor = BackgroundColor;

@@ -16,7 +16,6 @@ function Make(Type) {
           DeclarationBlock: DeclarationBlock,
           Statements: Statements,
           styles: Statements.make,
-          Property: include.Property,
           Background: include.Background,
           BackgroundAttachment: include.BackgroundAttachment,
           BackgroundColor: include.BackgroundColor,

@@ -25,9 +25,9 @@ include CssHelper.Make({
 
 test("declarationBlock", (.) => {
   expect(DeclarationBlock.make([
-    declaration("background", Property.string(`url("image.png")`)),
-    declaration("color", Property.string("rgb(200, 200, 200)")),
-    declaration("margin", Property.number(24.)),
+    declaration("background", string(`url("image.png")`)),
+    declaration("color", string("rgb(200, 200, 200)")),
+    declaration("margin", number(24.)),
     paddingTop(px(24)),
     paddingBottom(px(24)),
     paddingLeft(px(40)),
@@ -81,9 +81,9 @@ test("declarationBlock", (.) => {
 test("statements", (.) => {
   expect(Statements.make([
     rule("app", [
-      declaration("background", Property.string(`url("image.png")`)),
-      declaration("color", Property.string("rgb(200, 200, 200)")),
-      declaration("margin", Property.number(24.)),
+      declaration("background", string(`url("image.png")`)),
+      declaration("color", string("rgb(200, 200, 200)")),
+      declaration("margin", number(24.)),
       paddingTop(px(24)),
       paddingBottom(px(24)),
       paddingLeft(px(40)),
