@@ -1,5 +1,8 @@
 type propertyValue<'a>;
 
+type tag;
+type val = propertyValue<tag>;
+
 /* 
 Textual data types
 */

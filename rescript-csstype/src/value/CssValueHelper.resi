@@ -1,3 +1,7 @@
+external string: string => CssType.val = "%identity";
+external number: float => CssType.val = "%identity";
+external integer: int => CssType.val = "%identity";
+
 /*
 Textual data types
 */
