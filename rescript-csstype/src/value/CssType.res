@@ -1,7 +1,41 @@
 type propertyValue<'a>;
+type propertyValueFn<'a, 'data> = 'data => option<propertyValue<'a>>;
 
-type tag;
-type val = propertyValue<tag>;
+type value<'data>;
+type declarationBlock<'data>;
+type statements<'data>;
+type atRuleDesc<'a>;
+
+@unboxed
+type rec boxPropertyValue =
+  | BoxPropertyValue(propertyValue<'a>): boxPropertyValue;
+
+@unboxed
+type rec boxPropertyValueFn<'data> =
+  | BoxPropertyValueFn(propertyValueFn<'a, 'data>): boxPropertyValueFn<'data>;
+
+@unboxed
+type rec boxAtRuleDesc =
+  | BoxAtRuleDesc(atRuleDesc<'a>): boxAtRuleDesc;
+
+type declaration = [
+  | #Declaration(string, boxPropertyValue)
+];
+
+type rule<'data> = [
+  | #Rule(string, declarationBlock<'data>)
+];
+
+type pseudoClass<'data> = [
+  | #PseudoClass(string, declarationBlock<'data>)
+];
+
+type atRule = [
+  | #AtRule(string, boxAtRuleDesc)
+];
+
+type val; 
+type pVal = propertyValue<val>;
 
 /* 
 Textual data types

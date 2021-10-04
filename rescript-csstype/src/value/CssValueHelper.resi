@@ -1,6 +1,6 @@
-external string: string => CssType.val = "%identity";
-external number: float => CssType.val = "%identity";
-external integer: int => CssType.val = "%identity";
+external string: string => CssType.pVal = "%identity";
+external number: float => CssType.pVal = "%identity";
+external integer: int => CssType.pVal = "%identity";
 
 /*
 Textual data types
