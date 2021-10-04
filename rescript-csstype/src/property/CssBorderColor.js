@@ -3,8 +3,8 @@
 
 var Curry = require("rescript/lib/js/curry.js");
 var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
-var CssValueString$Ress = require("../value/CssValueString.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
+var CssPropertyValueString$Ress = require("../value/CssPropertyValueString.js");
 
 var property = "borderColor";
 
@@ -12,22 +12,16 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssValueString$Ress.color_global;
+var value = CssPropertyValueString$Ress.borderColor;
 
-function value2(tb, lr) {
-  return CssValueString$Ress.color(tb) + " " + CssValueString$Ress.color(lr);
-}
+var value2 = CssPropertyValueString$Ress.borderColor2;
 
-function value3(top, lr, bottom) {
-  return CssValueString$Ress.color(top) + " " + CssValueString$Ress.color(lr) + " " + CssValueString$Ress.color(bottom);
-}
+var value3 = CssPropertyValueString$Ress.borderColor3;
 
-function value4(top, right, bottom, left) {
-  return CssValueString$Ress.color(top) + " " + CssValueString$Ress.color(right) + " " + CssValueString$Ress.color(bottom) + " " + CssValueString$Ress.color(left);
-}
+var value4 = CssPropertyValueString$Ress.borderColor4;
 
 function borderColor(v) {
-  return Curry._2(declaration, property, CssValueString$Ress.color_global(v));
+  return Curry._2(declaration, property, value(v));
 }
 
 function borderColor2(tb, lr) {

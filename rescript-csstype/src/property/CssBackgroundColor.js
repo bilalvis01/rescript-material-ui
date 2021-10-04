@@ -12,7 +12,7 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssPropertyValueString$Ress.color;
+var value = CssPropertyValueString$Ress.backgroundColor;
 
 function backgroundColor(v) {
   return Curry._2(declaration, property, value(v));

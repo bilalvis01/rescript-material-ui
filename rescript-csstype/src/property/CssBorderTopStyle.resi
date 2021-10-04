@@ -1,14 +1,16 @@
 type tag;
 type t = CssType.propertyValue<tag>;
+type d<'a> = [> CssDeclaration.constructor ] as 'a;
+type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 include (module type of CssBorderSideStyle.MakeValue({ type t = t; }));
 
 module DeclarationHelper: {
-  let borderTopStyle: CssType.lineStyle_global => [> CssDeclaration.constructor ];
-  let borderTopStyleUnion: t => [> CssDeclaration.constructor ];
-  let borderTopStyleString: string => [> CssDeclaration.constructor ];
+  let borderTopStyle: CssPropertyValueType.borderStyle<d<'a>>
+  let borderTopStyleUnion: t => d<'a>;
+  let borderTopStyleString: string => d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let borderTopStyleFn: ('data => option<t>) => [> CssDeclarationFn.constructor<'data> ];
+  let borderTopStyleFn: ('data => option<t>) => dFn<'a, 'data>;
 };

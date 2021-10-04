@@ -72,6 +72,8 @@ let backgroundAttachment3 = (v1, v2, v3) =>
 let backgroundAttachment4 = (v1, v2, v3, v4) => 
   `${attachment(v1)}, ${attachment(v2)}, ${attachment(v3)}, ${attachment(v4)}`;
 
+let backgroundColor = v => color_global(v);
+
 let backgroundImage = v => 
   bgImage_global(v);
 let backgroundImage2 = (v1, v2) => 
@@ -126,6 +128,13 @@ let borderWidth3 = (~top, ~lr, ~bottom) =>
   `${lineWidth(top)} ${lineWidth(lr)} ${lineWidth(bottom)}`;
 let borderWidth4 = (~top, ~right, ~bottom, ~left) =>
   `${lineWidth(top)} ${lineWidth(right)} ${lineWidth(bottom)} ${lineWidth(left)}`;
+
+let borderColor = v => CssValueString.color_global(v);
+let borderColor2 = (~tb, ~lr) => `${CssValueString.color(tb)} ${CssValueString.color(lr)}`;
+let borderColor3 = (~top, ~lr, ~bottom) => 
+  `${CssValueString.color(top)} ${CssValueString.color(lr)} ${CssValueString.color(bottom)}`;
+let borderColor4 = (~top, ~right, ~bottom, ~left) =>
+  `${CssValueString.color(top)} ${CssValueString.color(right)} ${CssValueString.color(bottom)} ${CssValueString.color(left)}`;
 
 let color = v => color_global(v);
 

@@ -42,6 +42,8 @@ function backgroundAttachment4(v1, v2, v3, v4) {
   return CssValueString$Ress.attachment(v1) + ", " + CssValueString$Ress.attachment(v2) + ", " + CssValueString$Ress.attachment(v3) + ", " + CssValueString$Ress.attachment(v4);
 }
 
+var backgroundColor = CssValueString$Ress.color_global;
+
 var backgroundImage = CssValueString$Ress.bgImage_global;
 
 function backgroundImage2(v1, v2) {
@@ -127,6 +129,20 @@ function borderWidth4(top, right, bottom, left) {
   return CssValueString$Ress.lineWidth(top) + " " + CssValueString$Ress.lineWidth(right) + " " + CssValueString$Ress.lineWidth(bottom) + " " + CssValueString$Ress.lineWidth(left);
 }
 
+var borderColor = CssValueString$Ress.color_global;
+
+function borderColor2(tb, lr) {
+  return CssValueString$Ress.color(tb) + " " + CssValueString$Ress.color(lr);
+}
+
+function borderColor3(top, lr, bottom) {
+  return CssValueString$Ress.color(top) + " " + CssValueString$Ress.color(lr) + " " + CssValueString$Ress.color(bottom);
+}
+
+function borderColor4(top, right, bottom, left) {
+  return CssValueString$Ress.color(top) + " " + CssValueString$Ress.color(right) + " " + CssValueString$Ress.color(bottom) + " " + CssValueString$Ress.color(left);
+}
+
 var color = CssValueString$Ress.color_global;
 
 var clear = CssValueString$Ress.clear_global;
@@ -201,6 +217,7 @@ exports.backgroundAttachment = backgroundAttachment;
 exports.backgroundAttachment2 = backgroundAttachment2;
 exports.backgroundAttachment3 = backgroundAttachment3;
 exports.backgroundAttachment4 = backgroundAttachment4;
+exports.backgroundColor = backgroundColor;
 exports.backgroundImage = backgroundImage;
 exports.backgroundImage2 = backgroundImage2;
 exports.backgroundImage3 = backgroundImage3;
@@ -222,6 +239,10 @@ exports.borderWidth = borderWidth;
 exports.borderWidth2 = borderWidth2;
 exports.borderWidth3 = borderWidth3;
 exports.borderWidth4 = borderWidth4;
+exports.borderColor = borderColor;
+exports.borderColor2 = borderColor2;
+exports.borderColor3 = borderColor3;
+exports.borderColor4 = borderColor4;
 exports.color = color;
 exports.clear = clear;
 exports.cursor = cursor;

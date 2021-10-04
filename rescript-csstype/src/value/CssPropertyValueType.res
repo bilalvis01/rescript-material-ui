@@ -44,6 +44,8 @@ type backgroundAttachment4<'return> = (
   attachment
 ) => 'return;
 
+type backgroundColor<'return> = color_global => 'return;
+
 type backgroundImage<'return> = bgImage_global => 
   'return;
 type backgroundImage2<'return> = (

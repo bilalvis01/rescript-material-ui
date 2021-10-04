@@ -7,14 +7,20 @@ let property = "borderColor";
 
 let { declaration } = module(CssDeclaration.Helper);
 let { declarationFn } = module(CssDeclarationFn.Helper);
+let {
+  borderColor,
+  borderColor2,
+  borderColor3,
+  borderColor4,
+} = module(CssPropertyValueString);
 
 external string: string => t = "%identity";
-let value = v => CssValueString.color_global(v)->string;
-let value2 = (~tb, ~lr) => `${CssValueString.color(tb)} ${CssValueString.color(lr)}`->string;
+let value = v => borderColor(v)->string;
+let value2 = (~tb, ~lr) => borderColor2(~tb, ~lr)->string;
 let value3 = (~top, ~lr, ~bottom) => 
-  `${CssValueString.color(top)} ${CssValueString.color(lr)} ${CssValueString.color(bottom)}`->string;
+  borderColor3(~top, ~lr, ~bottom)->string;
 let value4 = (~top, ~right, ~bottom, ~left) =>
-  `${CssValueString.color(top)} ${CssValueString.color(right)} ${CssValueString.color(bottom)} ${CssValueString.color(left)}`
+  borderColor4(~top, ~right, ~bottom, ~left)
   ->string;
 
 module DeclarationHelper = {
