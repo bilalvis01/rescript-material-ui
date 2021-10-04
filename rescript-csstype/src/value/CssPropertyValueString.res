@@ -29,7 +29,7 @@ let {
   mgn_global,
   pdg,
   pdg_global,
-} = module(CssValueString);
+} = module(CssString);
 
 let background = (
   ~color=?,

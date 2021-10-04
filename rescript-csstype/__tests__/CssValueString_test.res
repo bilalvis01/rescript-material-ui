@@ -1,5 +1,5 @@
 open Jest;
-open CssValueString;
+open CssString;
 
 module Css = CssValueHelper;
 
