@@ -79,14 +79,14 @@ let src: string => [> CssType.src ];
 Background layer
 */
 let bgLayer: (
-  ~color: CssType.color=?,
+  ~color: CssType.col=?,
   ~position: CssType.position=?,
   ~size: CssType.bgSize=?,
   ~repeat: CssType.repeatStyle=?,
   ~attachment: CssType.attachment=?,
   ~origin: CssType.box=?,
   ~clip: CssType.box=?,
-  [ | CssType.bgImage | CssType.color ]
+  [ | CssType.bgImage | CssType.col ]
 ) => 
   [> CssType.bgLayer ];
 let bgSize2: (
@@ -113,15 +113,15 @@ Image data types
 let url: string => [> CssType.url ];
 let image: (
   ~dir: CssType.imageTags=?, 
-  ~color: CssType.color=?, 
-  [ | CssType.imageSrc | CssType.color ]
+  ~color: CssType.col=?, 
+  [ | CssType.imageSrc | CssType.col ]
 ) => [> CssType.image ];
 let linearColorStop2: (
-  CssType.color, 
+  CssType.col, 
   CssType.length_percentage
 ) => [> CssType.linearColorStop2 ];
 let linearColorStop3: (
-  CssType.color, 
+  CssType.col, 
   CssType.length_percentage, 
   CssType.length_percentage
 ) => [> CssType.linearColorStop3 ];

@@ -44,7 +44,7 @@ let background = (
   switch imageOrColor {
   | #...CssType.global as g => global(g)
   | #...CssType.bgImage as imageOrColor
-  | #...CssType.color as imageOrColor =>
+  | #...CssType.col as imageOrColor =>
     bg(
       ~color=?color,
       ~position=?position,

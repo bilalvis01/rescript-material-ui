@@ -422,7 +422,7 @@ let color = v => {
 };
 let color_global = v => {
   switch v {
-  | #...color as c => color(c)
+  | #...col as c => color(c)
   | #...global as g => global(g)
   };
 };
@@ -528,7 +528,7 @@ let gradientLineAngle = v => {
 };
 let linearColorStop = v => {
   switch v {
-  | #...color as c => color(c)
+  | #...col as c => color(c)
   | #...length_percentage as l => length_percentage(l)
   | #LinearColorStop2(c, l) => `${color(c)} ${length_percentage(l)}`
   | #LinearColorStop3(c, l1, l2) => `${color(c)} ${length_percentage(l1)} ${length_percentage(l2)}`
@@ -724,8 +724,8 @@ let image = v => {
   switch v {
   | #...imageSrc as s => imageSrc(s)
   | #...gradient as g => gradient(g)
-  | #Image(None, _, #...color as c) => `image(${color(c)})`
-  | #Image(Some(t), _, #...color as c) => `image(${imageTags(t)} ${color(c)})`
+  | #Image(None, _, #...col as c) => `image(${color(c)})`
+  | #Image(Some(t), _, #...col as c) => `image(${imageTags(t)} ${color(c)})`
   | #Image(None, None, #...imageSrc as s) => `image(${imageSrc(s)})`
   | #Image(Some(t), None, #...imageSrc as s) => `image(${imageTags(t)} ${imageSrc(s)})`
   | #Image(None, Some(c), #...imageSrc as s) => `image(${imageSrc(s)}, ${color(c)})`
@@ -843,13 +843,13 @@ let bg = (
   | (#...bgImage as i, Some(c), None) => `${color(c)} ${bgImage(i)}`
   | (#...bgImage as i, None, Some(bg)) => `${bgImage(i)} ${bg}`
   | (#...bgImage as i, Some(c), Some(bg)) => `${color(c)} ${bgImage(i)} ${bg}`
-  | (#...color as c, _, None) => color(c)
-  | (#...color as c, _, Some(bg)) => `${color(c)} ${bg}`
+  | (#...col as c, _, None) => color(c)
+  | (#...col as c, _, Some(bg)) => `${color(c)} ${bg}`
   };
 };
 let bgLayer = v => {
   switch v {
-  | #...color as c => color(c)
+  | #...col as c => color(c)
   | #...bgImage as i => bgImage(i)
   | #BgLayer(color, position, size, repeat, attachment, origin, clip, imageOrColor) =>
     bg(
@@ -876,14 +876,14 @@ let margin = v => {
 };
 let margin_global = v => {
   switch v {
-  | #...margin as m => margin(m)
+  | #...mgn as m => margin(m)
   | #...global as g => global(g)
   }
 };
 let padding = v => length_percentage(v);
 let padding_global = v => {
   switch v {
-  | #...padding as p => padding(p)
+  | #...pdg as p => padding(p)
   | #...global as g => global(g)
   }
 };
@@ -900,7 +900,7 @@ let clear = v => {
 };
 let clear_global = v => {
   switch v {
-  | #...clear as c => clear(c)
+  | #...clr as c => clear(c)
   | #...global as g => global(g)
   }
 };
@@ -967,7 +967,7 @@ let fontWeight = v => {
 
 let fontWeight_global = v => {
   switch v {
-  | #...fontWeight as w => fontWeight(w)
+  | #...fontWgt as w => fontWeight(w)
   | #...global as g => global(g)
   };
 };
@@ -1000,6 +1000,6 @@ let fontFamily = v => {
 let fontFamily_global = v => {
   switch v {
   | #...global as g => global(g)
-  | #...fontFamily as f => fontFamily(f) 
+  | #...fontFml as f => fontFamily(f) 
   };
 };

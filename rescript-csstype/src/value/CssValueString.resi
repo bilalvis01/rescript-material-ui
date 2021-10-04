@@ -87,8 +87,8 @@ let rgb: (rgbParam, rgbParam, rgbParam) => string;
 let rgba: (rgbParam, rgbParam, rgbParam, alpha) => string;
 let hexColor: string => string;
 let colorKeyword: colorKeyword => string; 
-let color: color => string;
-let color_global: color_global => string;
+let color: col => string;
+let color_global: col_global => string;
 
 /*
 Image data types
@@ -122,38 +122,38 @@ let box: box => string;
 Background
 */
 let bg: (
-  ~color: color=?,
+  ~color: col=?,
   ~position: position=?,
   ~size: bgSize=?,
   ~repeat: repeatStyle=?,
   ~attachment: attachment=?,
   ~origin: box=?,
   ~clip: box=?,
-  [ | bgImage | color ]
+  [ | bgImage | col ]
 ) => string;
 let bgLayer: bgLayer => string;
 
 /*
 Spacing
 */
-let margin: margin => string;
-let margin_global: margin_global => string;
-let padding: padding => string;
-let padding_global: padding_global => string;
+let margin: mgn => string;
+let margin_global: mgn_global => string;
+let padding: pdg => string;
+let padding_global: pdg_global => string;
 
-let clear: clear => string;
-let clear_global: clear_global => string;
+let clear: clr => string;
+let clear_global: clr_global => string;
 
 let cursorKeyword: cursorKeyword => string;
 let cursorKeyword_global: cursorKeyword_global => string;
 let cursorImage: cursorImage => string;
 
-let fontWeight: fontWeight => string;
-let fontWeight_global: fontWeight_global => string;
+let fontWeight: fontWgt => string;
+let fontWeight_global: fontWgt_global => string;
 
 /*
 Font Family
 */
 let genericFontFamilyName: genericFontFamilyName => string;
-let fontFamily: fontFamily => string;
-let fontFamily_global: fontFamily_global => string;
+let fontFamily: fontFml => string;
+let fontFamily_global: fontFml_global => string;
