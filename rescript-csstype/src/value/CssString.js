@@ -706,7 +706,7 @@ function colorKeyword(v) {
   }
 }
 
-function col(v) {
+function color(v) {
   if (typeof v !== "object") {
     return colorKeyword(v);
   }
@@ -730,9 +730,9 @@ function col(v) {
   return rgba(match$3[0], match$3[1], match$3[2], match$3[3]);
 }
 
-function col_global(v) {
+function color_global(v) {
   if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
-    return col(v);
+    return color(v);
   } else {
     return $$global(v);
   }
@@ -858,22 +858,22 @@ function gradientLineAngle(v) {
 
 function linearColorStop(v) {
   if (typeof v !== "object") {
-    return col(v);
+    return color(v);
   }
   var variant = v.NAME;
   if (variant === "LinearColorStop2") {
     var match = v.VAL;
-    return col(match[0]) + " " + length_percentage(match[1]);
+    return color(match[0]) + " " + length_percentage(match[1]);
   }
   if (variant !== "LinearColorStop3") {
     if (variant === "Rgba" || variant === "Hsla" || variant === "Rgb" || variant === "Hsl" || variant === "HexColor") {
-      return col(v);
+      return color(v);
     } else {
       return length_percentage(v);
     }
   }
   var match$1 = v.VAL;
-  return col(match$1[0]) + " " + length_percentage(match$1[1]) + " " + length_percentage(match$1[2]);
+  return color(match$1[0]) + " " + length_percentage(match$1[1]) + " " + length_percentage(match$1[2]);
 }
 
 function linearGradient_(angle, linearColorStop) {
@@ -1163,10 +1163,10 @@ function image(v) {
       exit = 2;
     }
     if (exit === 2) {
-      return "image(" + imageTags(t) + " " + col(c$1) + ")";
+      return "image(" + imageTags(t) + " " + color(c$1) + ")";
     }
     if (c !== undefined) {
-      return "image(" + imageTags(t) + " " + imageSrc(match[2]) + ", " + col(c) + ")";
+      return "image(" + imageTags(t) + " " + imageSrc(match[2]) + ", " + color(c) + ")";
     } else {
       return "image(" + imageTags(t) + " " + imageSrc(match[2]) + ")";
     }
@@ -1176,14 +1176,14 @@ function image(v) {
   if (typeof c$3 === "object") {
     var variant$2 = c$3.NAME;
     if (variant$2 === "Rgba" || variant$2 === "Hsla" || variant$2 === "Rgb" || variant$2 === "Hsl" || variant$2 === "HexColor") {
-      return "image(" + col(c$3) + ")";
+      return "image(" + color(c$3) + ")";
     }
     
   } else if (c$3 === "olivedrab" || c$3 === "paleturquoise" || c$3 === "sandybrown" || c$3 === "maroon" || c$3 === "brown" || c$3 === "moccasin" || c$3 === "lightcoral" || c$3 === "silver" || c$3 === "honeydew" || c$3 === "ghostwhite" || c$3 === "black" || c$3 === "sienna" || c$3 === "powderblue" || c$3 === "cornflowerblue" || c$3 === "olive" || c$3 === "beige" || c$3 === "thistle" || c$3 === "darkorchid" || c$3 === "azure" || c$3 === "darkorange" || c$3 === "mediumslateblue" || c$3 === "saddlebrown" || c$3 === "limegreen" || c$3 === "goldenrod" || c$3 === "transparent" || c$3 === "mediumseagreen" || c$3 === "firebrick" || c$3 === "floralwhite" || c$3 === "lightslategrey" || c$3 === "lightslategray" || c$3 === "fuchsia" || c$3 === "chocolate" || c$3 === "royalblue" || c$3 === "salmon" || c$3 === "yellowgreen" || c$3 === "aliceblue" || c$3 === "green" || c$3 === "darkmagenta" || c$3 === "aquamarine" || c$3 === "darkolivegreen" || c$3 === "mediumorchid" || c$3 === "rebeccapurple" || c$3 === "mediumvioletred" || c$3 === "lightsteelblue" || c$3 === "indigo" || c$3 === "turquoise" || c$3 === "lawngreen" || c$3 === "blueviolet" || c$3 === "tomato" || c$3 === "oldlace" || c$3 === "burlywood" || c$3 === "currentColor" || c$3 === "springgreen" || c$3 === "magenta" || c$3 === "darkgray" || c$3 === "darkgoldenrod" || c$3 === "gainsboro" || c$3 === "darkcyan" || c$3 === "darkblue" || c$3 === "lightgreen" || c$3 === "chartreuse" || c$3 === "navajowhite" || c$3 === "palevioletred" || c$3 === "rosybrown" || c$3 === "lavender" || c$3 === "darksalmon" || c$3 === "tan" || c$3 === "red" || c$3 === "lightyellow" || c$3 === "darkturquoise" || c$3 === "palegreen" || c$3 === "seagreen" || c$3 === "darkgreen" || c$3 === "lightskyblue" || c$3 === "indianred" || c$3 === "linen" || c$3 === "greenyellow" || c$3 === "slategrey" || c$3 === "slategray" || c$3 === "darkred" || c$3 === "purple" || c$3 === "bisque" || c$3 === "slateblue" || c$3 === "lightseagreen" || c$3 === "dodgerblue" || c$3 === "violet" || c$3 === "midnightblue" || c$3 === "cadetblue" || c$3 === "deeppink" || c$3 === "steelblue" || c$3 === "crimson" || c$3 === "oranngered" || c$3 === "skyblue" || c$3 === "forestgreen" || c$3 === "lemonchiffon" || c$3 === "khaki" || c$3 === "papayawhip" || c$3 === "seashell" || c$3 === "darkslategrey" || c$3 === "darkslategray" || c$3 === "peachpuff" || c$3 === "cornsilk" || c$3 === "antiquewhite" || c$3 === "hotpink" || c$3 === "blanchedalmond" || c$3 === "darkslateblue" || c$3 === "lightgoldenrodyellow" || c$3 === "lightpink" || c$3 === "deepskyblue" || c$3 === "mediumspringgreen" || c$3 === "lightgrey" || c$3 === "lightgray" || c$3 === "mintcream" || c$3 === "darkviolet" || c$3 === "yellow" || c$3 === "lightcyan" || c$3 === "lightblue" || c$3 === "mediumturquoise" || c$3 === "mistyrose" || c$3 === "teal" || c$3 === "lightsalmon" || c$3 === "snow" || c$3 === "palegoldenrod" || c$3 === "darkseagreen" || c$3 === "mediumblue" || c$3 === "coral" || c$3 === "plum" || c$3 === "pink" || c$3 === "peru" || c$3 === "white" || c$3 === "wheat" || c$3 === "navy" || c$3 === "lavenderblush" || c$3 === "lime" || c$3 === "orchid" || c$3 === "orange" || c$3 === "grey" || c$3 === "gray" || c$3 === "gold" || c$3 === "whitesmoke" || c$3 === "ivory" || c$3 === "mediumpurple" || c$3 === "mediumaquamarine" || c$3 === "cyan" || c$3 === "blue" || c$3 === "dimgrey" || c$3 === "dimgray" || c$3 === "aqua" || c$3 === "darkkhaki") {
-    return "image(" + col(c$3) + ")";
+    return "image(" + color(c$3) + ")";
   }
   if (c$2 !== undefined) {
-    return "image(" + imageSrc(match[2]) + ", " + col(c$2) + ")";
+    return "image(" + imageSrc(match[2]) + ", " + color(c$2) + ")";
   } else {
     return "image(" + imageSrc(match[2]) + ")";
   }
@@ -1322,9 +1322,9 @@ function bg(c, pos, size, repeat, att, origin, clip, imageOrColor) {
     case 1 :
         if (c !== undefined) {
           if (bg$3 !== undefined) {
-            return col(c) + " " + bgImage(imageOrColor) + " " + bg$3;
+            return color(c) + " " + bgImage(imageOrColor) + " " + bg$3;
           } else {
-            return col(c) + " " + bgImage(imageOrColor);
+            return color(c) + " " + bgImage(imageOrColor);
           }
         } else if (bg$3 !== undefined) {
           return bgImage(imageOrColor) + " " + bg$3;
@@ -1333,9 +1333,9 @@ function bg(c, pos, size, repeat, att, origin, clip, imageOrColor) {
         }
     case 2 :
         if (bg$3 !== undefined) {
-          return col(imageOrColor) + " " + bg$3;
+          return color(imageOrColor) + " " + bg$3;
         } else {
-          return col(imageOrColor);
+          return color(imageOrColor);
         }
     
   }
@@ -1346,12 +1346,12 @@ function bgLayer(v) {
     if (v === "none") {
       return bgImage(v);
     } else {
-      return col(v);
+      return color(v);
     }
   }
   var variant = v.NAME;
   if (variant === "Rgba" || variant === "Hsla" || variant === "Rgb" || variant === "Hsl" || variant === "HexColor") {
-    return col(v);
+    return color(v);
   }
   if (variant !== "BgLayer") {
     return bgImage(v);
@@ -1360,7 +1360,7 @@ function bgLayer(v) {
   return bg(match[0], match[1], match[2], match[3], match[4], match[5], match[6], match[7]);
 }
 
-function mgn(v) {
+function margin(v) {
   if (typeof v === "object") {
     return length_percentage(v);
   } else {
@@ -1368,17 +1368,17 @@ function mgn(v) {
   }
 }
 
-function mgn_global(v) {
+function margin_global(v) {
   if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
-    return mgn(v);
+    return margin(v);
   } else {
     return $$global(v);
   }
 }
 
-var pdg = length_percentage;
+var padding = length_percentage;
 
-function pdg_global(v) {
+function padding_global(v) {
   if (typeof v === "object") {
     return length_percentage(v);
   } else {
@@ -1386,7 +1386,7 @@ function pdg_global(v) {
   }
 }
 
-function clr(v) {
+function clear(v) {
   if (v === "inlineStart") {
     return "inline-start";
   } else if (v === "left") {
@@ -1402,11 +1402,11 @@ function clr(v) {
   }
 }
 
-function clr_global(v) {
+function clear_global(v) {
   if (v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
     return $$global(v);
   } else {
-    return clr(v);
+    return clear(v);
   }
 }
 
@@ -1474,7 +1474,7 @@ function cursorKeyword(v) {
   } else if (v === "contextMenu") {
     return "context-menu";
   } else if (v === "colResize") {
-    return "col-resize";
+    return "color-resize";
   } else if (v === "notAllowed") {
     return "not-allowed";
   } else if (v === "neResize") {
@@ -1494,7 +1494,7 @@ function cursorKeyword_global(v) {
 
 var cursorImage = url;
 
-function fontWgt(v) {
+function fontWeight(v) {
   if (v === "bolder") {
     return "bolder";
   } else if (v === "lighter") {
@@ -1506,11 +1506,11 @@ function fontWgt(v) {
   }
 }
 
-function fontWgt_global(v) {
+function fontWeight_global(v) {
   if (v === "inherit" || v === "unset" || v === "revert" || v === "initial") {
     return $$global(v);
   } else {
-    return fontWgt(v);
+    return fontWeight(v);
   }
 }
 
@@ -1544,7 +1544,7 @@ function genericFontFamilyName(v) {
   }
 }
 
-function fontFml(v) {
+function fontFamily(v) {
   if (typeof v === "object") {
     return "\"" + v.VAL + "\"";
   } else {
@@ -1552,9 +1552,9 @@ function fontFml(v) {
   }
 }
 
-function fontFml_global(v) {
+function fontFamily_global(v) {
   if (typeof v === "object" || !(v === "inherit" || v === "unset" || v === "revert" || v === "initial")) {
-    return fontFml(v);
+    return fontFamily(v);
   } else {
     return $$global(v);
   }
@@ -1599,7 +1599,7 @@ function backgroundAttachment4(v1, v2, v3, v4) {
   return attachment(v1) + ", " + attachment(v2) + ", " + attachment(v3) + ", " + attachment(v4);
 }
 
-var backgroundColor = col_global;
+var backgroundColor = color_global;
 
 var backgroundImage = bgImage_global;
 
@@ -1643,11 +1643,11 @@ function backgroundStyle4(v1, v2, v3, v4) {
   return repeatStyle(v1) + ", " + repeatStyle(v2) + ", " + repeatStyle(v3) + ", " + repeatStyle(v4);
 }
 
-function border(width, color, style) {
+function border(width, color$1, style) {
   var border$1 = width !== undefined ? (
-      color !== undefined ? lineWidth(width) + " " + col(color) : lineWidth(width)
+      color$1 !== undefined ? lineWidth(width) + " " + color(color$1) : lineWidth(width)
     ) : (
-      color !== undefined ? col(color) : undefined
+      color$1 !== undefined ? color(color$1) : undefined
     );
   if (style === "inherit" || style === "unset" || style === "revert" || style === "initial") {
     return $$global(style);
@@ -1686,23 +1686,23 @@ function borderWidth4(top, right, bottom, left) {
   return lineWidth(top) + " " + lineWidth(right) + " " + lineWidth(bottom) + " " + lineWidth(left);
 }
 
-var borderColor = col_global;
+var borderColor = color_global;
 
 function borderColor2(tb, lr) {
-  return col(tb) + " " + col(lr);
+  return color(tb) + " " + color(lr);
 }
 
 function borderColor3(top, lr, bottom) {
-  return col(top) + " " + col(lr) + " " + col(bottom);
+  return color(top) + " " + color(lr) + " " + color(bottom);
 }
 
 function borderColor4(top, right, bottom, left) {
-  return col(top) + " " + col(right) + " " + col(bottom) + " " + col(left);
+  return color(top) + " " + color(right) + " " + color(bottom) + " " + color(left);
 }
 
-var color = col_global;
+var color$1 = color_global;
 
-var clear = clr_global;
+var clear$1 = clear_global;
 
 var cursor = cursorKeyword_global;
 
@@ -1722,37 +1722,37 @@ function cursor4(i1, i2, i3, i4, k) {
   return cursorImage(i1) + ", " + cursorImage(i2) + ", " + cursorImage(i3) + ", " + cursorImage(i4) + ", " + cursorKeyword(k);
 }
 
-var fontFamily = fontFml_global;
+var fontFamily$1 = fontFamily_global;
 
 function fontFamily2(v1, v2) {
-  return fontFml(v1) + ", " + fontFml(v2);
+  return fontFamily(v1) + ", " + fontFamily(v2);
 }
 
 function fontFamily3(v1, v2, v3) {
-  return fontFml(v1) + ", " + fontFml(v2) + ", " + fontFml(v3);
+  return fontFamily(v1) + ", " + fontFamily(v2) + ", " + fontFamily(v3);
 }
 
 function fontFamily4(v1, v2, v3, v4) {
-  return fontFml(v1) + ", " + fontFml(v2) + ", " + fontFml(v3) + ", " + fontFml(v4);
+  return fontFamily(v1) + ", " + fontFamily(v2) + ", " + fontFamily(v3) + ", " + fontFamily(v4);
 }
 
-var fontWeight = fontWgt_global;
+var fontWeight$1 = fontWeight_global;
 
-var margin = mgn_global;
+var margin$1 = margin_global;
 
 function margin2(tb, lr) {
-  return mgn(tb) + " " + mgn(lr);
+  return margin(tb) + " " + margin(lr);
 }
 
 function margin3(top, lr, bottom) {
-  return mgn(top) + " " + mgn(lr) + " " + mgn(bottom);
+  return margin(top) + " " + margin(lr) + " " + margin(bottom);
 }
 
 function margin4(top, right, bottom, left) {
-  return mgn(top) + " " + mgn(right) + " " + mgn(bottom) + " " + mgn(left);
+  return margin(top) + " " + margin(right) + " " + margin(bottom) + " " + margin(left);
 }
 
-var padding = pdg_global;
+var padding$1 = padding_global;
 
 function padding2(tb, lr) {
   return length_percentage(tb) + " " + length_percentage(lr);
@@ -1766,106 +1766,110 @@ function padding4(top, right, bottom, left) {
   return length_percentage(top) + " " + length_percentage(right) + " " + length_percentage(bottom) + " " + length_percentage(left);
 }
 
-exports.$$global = $$global;
-exports.str = str;
-exports.num = num;
-exports.$$int = $$int;
-exports.pct = pct;
-exports.percentage = percentage;
-exports.ratio = ratio;
-exports.fr = fr;
-exports.flexUnit = flexUnit;
-exports.ch = ch;
-exports.em = em;
-exports.ex = ex;
-exports.rem = rem;
-exports.vh = vh;
-exports.vw = vw;
-exports.vmin = vmin;
-exports.vmax = vmax;
-exports.px = px;
-exports.cm = cm;
-exports.mm = mm;
-exports.inch = inch;
-exports.pc = pc;
-exports.pt = pt;
-exports.length = length;
-exports.s = s;
-exports.ms = ms;
-exports.time = time;
-exports.deg = deg;
-exports.grad = grad;
-exports.rad = rad;
-exports.turn = turn;
-exports.angle = angle;
-exports.hz = hz;
-exports.kHz = kHz;
-exports.frequency = frequency;
-exports.dpi = dpi;
-exports.dpcm = dpcm;
-exports.dppx = dppx;
-exports.x = x;
-exports.resolution = resolution;
-exports.length_percentage = length_percentage;
-exports.frequency_percentage = frequency_percentage;
-exports.angle_percentage = angle_percentage;
-exports.time_percentage = time_percentage;
-exports.lineWidth = lineWidth;
-exports.lineWidth_global = lineWidth_global;
-exports.lineStyle = lineStyle;
-exports.lineStyle_global = lineStyle_global;
-exports.transformOrigin = transformOrigin;
-exports.hue = hue;
-exports.alpha = alpha;
-exports.rgbParam = rgbParam;
-exports.hsl = hsl;
-exports.hsla = hsla;
-exports.rgb = rgb;
-exports.rgba = rgba;
-exports.hexColor = hexColor;
-exports.colorKeyword = colorKeyword;
-exports.col = col;
-exports.col_global = col_global;
-exports.gradientLineStartingPoint = gradientLineStartingPoint;
-exports.gradientLineAngle = gradientLineAngle;
-exports.linearColorStop = linearColorStop;
-exports.linearGradient = linearGradient;
-exports.repeatingLinearGradient = repeatingLinearGradient;
-exports.radialGradient = radialGradient;
-exports.repeatingRadialGradient = repeatingRadialGradient;
-exports.conicGradient = conicGradient;
-exports.repeatingConicGradient = repeatingConicGradient;
-exports.gradient = gradient;
-exports.imageTags = imageTags;
-exports.url = url;
-exports.imageSrc = imageSrc;
-exports.image = image;
-exports.bgImage = bgImage;
-exports.bgImage_global = bgImage_global;
-exports.bgSize = bgSize;
-exports.position = position;
-exports.position_global = position_global;
-exports.repeatStyle = repeatStyle;
-exports.repeatStyle_global = repeatStyle_global;
-exports.attachment = attachment;
-exports.attachment_global = attachment_global;
-exports.box = box;
-exports.bg = bg;
-exports.bgLayer = bgLayer;
-exports.mgn = mgn;
-exports.mgn_global = mgn_global;
-exports.pdg = pdg;
-exports.pdg_global = pdg_global;
-exports.clr = clr;
-exports.clr_global = clr_global;
-exports.cursorKeyword = cursorKeyword;
-exports.cursorKeyword_global = cursorKeyword_global;
-exports.cursorImage = cursorImage;
-exports.fontWgt = fontWgt;
-exports.fontWgt_global = fontWgt_global;
-exports.genericFontFamilyName = genericFontFamilyName;
-exports.fontFml = fontFml;
-exports.fontFml_global = fontFml_global;
+var Data = {
+  $$global: $$global,
+  str: str,
+  num: num,
+  $$int: $$int,
+  pct: pct,
+  percentage: percentage,
+  ratio: ratio,
+  fr: fr,
+  flexUnit: flexUnit,
+  ch: ch,
+  em: em,
+  ex: ex,
+  rem: rem,
+  vh: vh,
+  vw: vw,
+  vmin: vmin,
+  vmax: vmax,
+  px: px,
+  cm: cm,
+  mm: mm,
+  inch: inch,
+  pc: pc,
+  pt: pt,
+  length: length,
+  s: s,
+  ms: ms,
+  time: time,
+  deg: deg,
+  grad: grad,
+  rad: rad,
+  turn: turn,
+  angle: angle,
+  hz: hz,
+  kHz: kHz,
+  frequency: frequency,
+  dpi: dpi,
+  dpcm: dpcm,
+  dppx: dppx,
+  x: x,
+  resolution: resolution,
+  length_percentage: length_percentage,
+  frequency_percentage: frequency_percentage,
+  angle_percentage: angle_percentage,
+  time_percentage: time_percentage,
+  lineWidth: lineWidth,
+  lineWidth_global: lineWidth_global,
+  lineStyle: lineStyle,
+  lineStyle_global: lineStyle_global,
+  transformOrigin: transformOrigin,
+  hue: hue,
+  alpha: alpha,
+  rgbParam: rgbParam,
+  hsl: hsl,
+  hsla: hsla,
+  rgb: rgb,
+  rgba: rgba,
+  hexColor: hexColor,
+  colorKeyword: colorKeyword,
+  color: color,
+  color_global: color_global,
+  gradientLineStartingPoint: gradientLineStartingPoint,
+  gradientLineAngle: gradientLineAngle,
+  linearColorStop: linearColorStop,
+  linearGradient: linearGradient,
+  repeatingLinearGradient: repeatingLinearGradient,
+  radialGradient: radialGradient,
+  repeatingRadialGradient: repeatingRadialGradient,
+  conicGradient: conicGradient,
+  repeatingConicGradient: repeatingConicGradient,
+  gradient: gradient,
+  imageTags: imageTags,
+  url: url,
+  imageSrc: imageSrc,
+  image: image,
+  bgImage: bgImage,
+  bgImage_global: bgImage_global,
+  bgSize: bgSize,
+  position: position,
+  position_global: position_global,
+  repeatStyle: repeatStyle,
+  repeatStyle_global: repeatStyle_global,
+  attachment: attachment,
+  attachment_global: attachment_global,
+  box: box,
+  bg: bg,
+  bgLayer: bgLayer,
+  margin: margin,
+  margin_global: margin_global,
+  padding: padding,
+  padding_global: padding_global,
+  clear: clear,
+  clear_global: clear_global,
+  cursorKeyword: cursorKeyword,
+  cursorKeyword_global: cursorKeyword_global,
+  cursorImage: cursorImage,
+  fontWeight: fontWeight,
+  fontWeight_global: fontWeight_global,
+  genericFontFamilyName: genericFontFamilyName,
+  fontFamily: fontFamily,
+  fontFamily_global: fontFamily_global
+};
+
+exports.Data = Data;
 exports.background = background;
 exports.background2 = background2;
 exports.background3 = background3;
@@ -1900,23 +1904,23 @@ exports.borderColor = borderColor;
 exports.borderColor2 = borderColor2;
 exports.borderColor3 = borderColor3;
 exports.borderColor4 = borderColor4;
-exports.color = color;
-exports.clear = clear;
+exports.color = color$1;
+exports.clear = clear$1;
 exports.cursor = cursor;
 exports.cursor1 = cursor1;
 exports.cursor2 = cursor2;
 exports.cursor3 = cursor3;
 exports.cursor4 = cursor4;
-exports.fontFamily = fontFamily;
+exports.fontFamily = fontFamily$1;
 exports.fontFamily2 = fontFamily2;
 exports.fontFamily3 = fontFamily3;
 exports.fontFamily4 = fontFamily4;
-exports.fontWeight = fontWeight;
-exports.margin = margin;
+exports.fontWeight = fontWeight$1;
+exports.margin = margin$1;
 exports.margin2 = margin2;
 exports.margin3 = margin3;
 exports.margin4 = margin4;
-exports.padding = padding;
+exports.padding = padding$1;
 exports.padding2 = padding2;
 exports.padding3 = padding3;
 exports.padding4 = padding4;

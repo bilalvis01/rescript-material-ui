@@ -6,25 +6,25 @@ var CssValueHelper$Ress = require("../src/value/CssValueHelper.js");
 
 describe("Numeric data types", (function () {
         test("number", (function () {
-                expect(CssString$Ress.num(CssValueHelper$Ress.num(1))).toBe("1");
+                expect(CssString$Ress.Data.num(CssValueHelper$Ress.num(1))).toBe("1");
                 
               }));
         test("integer", (function () {
-                expect(CssString$Ress.$$int(CssValueHelper$Ress.$$int(1))).toBe("1");
+                expect(CssString$Ress.Data.$$int(CssValueHelper$Ress.$$int(1))).toBe("1");
                 
               }));
         test("percentage", (function () {
-                expect(CssString$Ress.pct(1)).toBe("1%");
-                expect(CssString$Ress.percentage(CssValueHelper$Ress.pct(1))).toBe("1%");
+                expect(CssString$Ress.Data.pct(1)).toBe("1%");
+                expect(CssString$Ress.Data.percentage(CssValueHelper$Ress.pct(1))).toBe("1%");
                 
               }));
         test("ratio", (function () {
-                expect(CssString$Ress.ratio(CssValueHelper$Ress.ratio(10, 10))).toBe("10/10");
+                expect(CssString$Ress.Data.ratio(CssValueHelper$Ress.ratio(10, 10))).toBe("10/10");
                 
               }));
         test("flex", (function () {
-                expect(CssString$Ress.fr(1)).toBe("1fr");
-                expect(CssString$Ress.flexUnit(CssValueHelper$Ress.fr(1))).toBe("1fr");
+                expect(CssString$Ress.Data.fr(1)).toBe("1fr");
+                expect(CssString$Ress.Data.flexUnit(CssValueHelper$Ress.fr(1))).toBe("1fr");
                 
               }));
         
@@ -32,54 +32,54 @@ describe("Numeric data types", (function () {
 
 describe("Quantities data types", (function () {
         test("length", (function () {
-                expect(CssString$Ress.ch(1)).toBe("1ch");
-                expect(CssString$Ress.em(1)).toBe("1em");
-                expect(CssString$Ress.ex(1)).toBe("1ex");
-                expect(CssString$Ress.rem(1)).toBe("1rem");
-                expect(CssString$Ress.vh(1)).toBe("1vh");
-                expect(CssString$Ress.vw(1)).toBe("1vw");
-                expect(CssString$Ress.vmin(1)).toBe("1vmin");
-                expect(CssString$Ress.vmax(1)).toBe("1vmax");
-                expect(CssString$Ress.px(1)).toBe("1px");
-                expect(CssString$Ress.cm(1)).toBe("1cm");
-                expect(CssString$Ress.mm(1)).toBe("1mm");
-                expect(CssString$Ress.inch(1)).toBe("1in");
-                expect(CssString$Ress.pc(1)).toBe("1pc");
-                expect(CssString$Ress.pt(1)).toBe("1pt");
-                expect(CssString$Ress.length(CssValueHelper$Ress.mm(1))).toBe("1mm");
-                expect(CssString$Ress.length(CssValueHelper$Ress.cm(1))).toBe("1cm");
+                expect(CssString$Ress.Data.ch(1)).toBe("1ch");
+                expect(CssString$Ress.Data.em(1)).toBe("1em");
+                expect(CssString$Ress.Data.ex(1)).toBe("1ex");
+                expect(CssString$Ress.Data.rem(1)).toBe("1rem");
+                expect(CssString$Ress.Data.vh(1)).toBe("1vh");
+                expect(CssString$Ress.Data.vw(1)).toBe("1vw");
+                expect(CssString$Ress.Data.vmin(1)).toBe("1vmin");
+                expect(CssString$Ress.Data.vmax(1)).toBe("1vmax");
+                expect(CssString$Ress.Data.px(1)).toBe("1px");
+                expect(CssString$Ress.Data.cm(1)).toBe("1cm");
+                expect(CssString$Ress.Data.mm(1)).toBe("1mm");
+                expect(CssString$Ress.Data.inch(1)).toBe("1in");
+                expect(CssString$Ress.Data.pc(1)).toBe("1pc");
+                expect(CssString$Ress.Data.pt(1)).toBe("1pt");
+                expect(CssString$Ress.Data.length(CssValueHelper$Ress.mm(1))).toBe("1mm");
+                expect(CssString$Ress.Data.length(CssValueHelper$Ress.cm(1))).toBe("1cm");
                 
               }));
         test("angle", (function () {
-                expect(CssString$Ress.deg(1)).toBe("1deg");
-                expect(CssString$Ress.grad(1)).toBe("1grad");
-                expect(CssString$Ress.rad(1)).toBe("1rad");
-                expect(CssString$Ress.turn(1)).toBe("1turn");
-                expect(CssString$Ress.angle(CssValueHelper$Ress.deg(1))).toBe("1deg");
-                expect(CssString$Ress.angle(CssValueHelper$Ress.grad(1))).toBe("1grad");
+                expect(CssString$Ress.Data.deg(1)).toBe("1deg");
+                expect(CssString$Ress.Data.grad(1)).toBe("1grad");
+                expect(CssString$Ress.Data.rad(1)).toBe("1rad");
+                expect(CssString$Ress.Data.turn(1)).toBe("1turn");
+                expect(CssString$Ress.Data.angle(CssValueHelper$Ress.deg(1))).toBe("1deg");
+                expect(CssString$Ress.Data.angle(CssValueHelper$Ress.grad(1))).toBe("1grad");
                 
               }));
         test("time", (function () {
-                expect(CssString$Ress.s(10)).toBe("10s");
-                expect(CssString$Ress.ms(10)).toBe("10ms");
-                expect(CssString$Ress.time(CssValueHelper$Ress.s(10))).toBe("10s");
-                expect(CssString$Ress.time(CssValueHelper$Ress.ms(10))).toBe("10ms");
+                expect(CssString$Ress.Data.s(10)).toBe("10s");
+                expect(CssString$Ress.Data.ms(10)).toBe("10ms");
+                expect(CssString$Ress.Data.time(CssValueHelper$Ress.s(10))).toBe("10s");
+                expect(CssString$Ress.Data.time(CssValueHelper$Ress.ms(10))).toBe("10ms");
                 
               }));
         test("frequency", (function () {
-                expect(CssString$Ress.hz(50)).toBe("50Hz");
-                expect(CssString$Ress.kHz(100)).toBe("100kHz");
-                expect(CssString$Ress.kHz(-100)).toBe("-100kHz");
-                expect(CssString$Ress.frequency(CssValueHelper$Ress.hz(50))).toBe("50Hz");
-                expect(CssString$Ress.frequency(CssValueHelper$Ress.kHz(100))).toBe("100kHz");
+                expect(CssString$Ress.Data.hz(50)).toBe("50Hz");
+                expect(CssString$Ress.Data.kHz(100)).toBe("100kHz");
+                expect(CssString$Ress.Data.kHz(-100)).toBe("-100kHz");
+                expect(CssString$Ress.Data.frequency(CssValueHelper$Ress.hz(50))).toBe("50Hz");
+                expect(CssString$Ress.Data.frequency(CssValueHelper$Ress.kHz(100))).toBe("100kHz");
                 
               }));
         test("resolution", (function () {
-                expect(CssString$Ress.dpi(1)).toBe("1dpi");
-                expect(CssString$Ress.dpcm(1)).toBe("1dpcm");
-                expect(CssString$Ress.dppx(1)).toBe("1dppx");
-                expect(CssString$Ress.x(1)).toBe("1x");
-                expect(CssString$Ress.resolution(CssValueHelper$Ress.dpi(1))).toBe("1dpi");
+                expect(CssString$Ress.Data.dpi(1)).toBe("1dpi");
+                expect(CssString$Ress.Data.dpcm(1)).toBe("1dpcm");
+                expect(CssString$Ress.Data.dppx(1)).toBe("1dppx");
+                expect(CssString$Ress.Data.x(1)).toBe("1x");
+                expect(CssString$Ress.Data.resolution(CssValueHelper$Ress.dpi(1))).toBe("1dpi");
                 
               }));
         
@@ -87,23 +87,23 @@ describe("Quantities data types", (function () {
 
 describe("Combination data types", (function () {
         test("length_percentage", (function () {
-                expect(CssString$Ress.length_percentage(CssValueHelper$Ress.mm(1))).toBe("1mm");
-                expect(CssString$Ress.length_percentage(CssValueHelper$Ress.pct(1))).toBe("1%");
+                expect(CssString$Ress.Data.length_percentage(CssValueHelper$Ress.mm(1))).toBe("1mm");
+                expect(CssString$Ress.Data.length_percentage(CssValueHelper$Ress.pct(1))).toBe("1%");
                 
               }));
         test("frequency_percentage", (function () {
-                expect(CssString$Ress.frequency_percentage(CssValueHelper$Ress.hz(1))).toBe("1Hz");
-                expect(CssString$Ress.frequency_percentage(CssValueHelper$Ress.pct(1))).toBe("1%");
+                expect(CssString$Ress.Data.frequency_percentage(CssValueHelper$Ress.hz(1))).toBe("1Hz");
+                expect(CssString$Ress.Data.frequency_percentage(CssValueHelper$Ress.pct(1))).toBe("1%");
                 
               }));
         test("angle_percentage", (function () {
-                expect(CssString$Ress.angle_percentage(CssValueHelper$Ress.deg(1))).toBe("1deg");
-                expect(CssString$Ress.angle_percentage(CssValueHelper$Ress.pct(1))).toBe("1%");
+                expect(CssString$Ress.Data.angle_percentage(CssValueHelper$Ress.deg(1))).toBe("1deg");
+                expect(CssString$Ress.Data.angle_percentage(CssValueHelper$Ress.pct(1))).toBe("1%");
                 
               }));
         test("time_percentage", (function () {
-                expect(CssString$Ress.time_percentage(CssValueHelper$Ress.s(1))).toBe("1s");
-                expect(CssString$Ress.time_percentage(CssValueHelper$Ress.pct(1))).toBe("1%");
+                expect(CssString$Ress.Data.time_percentage(CssValueHelper$Ress.s(1))).toBe("1s");
+                expect(CssString$Ress.Data.time_percentage(CssValueHelper$Ress.pct(1))).toBe("1%");
                 
               }));
         
@@ -111,22 +111,22 @@ describe("Combination data types", (function () {
 
 describe("Color data types", (function () {
         test("color", (function () {
-                expect(CssString$Ress.hue(CssValueHelper$Ress.deg(1))).toBe("1deg");
-                expect(CssString$Ress.alpha(CssValueHelper$Ress.pct(1))).toBe("1%");
-                expect(CssString$Ress.alpha(CssValueHelper$Ress.num(1))).toBe("1");
-                expect(CssString$Ress.rgbParam(CssValueHelper$Ress.pct(1))).toBe("1%");
-                expect(CssString$Ress.rgbParam(CssValueHelper$Ress.num(1))).toBe("1");
-                expect(CssString$Ress.rgb(CssValueHelper$Ress.num(1), CssValueHelper$Ress.num(1), CssValueHelper$Ress.pct(10))).toBe("rgb(1, 1, 10%)");
-                expect(CssString$Ress.rgba(CssValueHelper$Ress.num(1), CssValueHelper$Ress.num(1), CssValueHelper$Ress.pct(10), CssValueHelper$Ress.num(1))).toBe("rgba(1, 1, 10%, 1)");
-                expect(CssString$Ress.rgba(CssValueHelper$Ress.num(0), CssValueHelper$Ress.num(0), CssValueHelper$Ress.num(0), CssValueHelper$Ress.num(1))).toBe("rgba(0, 0, 0, 1)");
-                expect(CssString$Ress.hexColor("000000")).toBe("#000000");
-                expect(CssString$Ress.col(CssValueHelper$Ress.hexColor("000000"))).toBe("#000000");
-                expect(CssString$Ress.col(CssValueHelper$Ress.rgb(10, 10, 10))).toBe("rgb(10, 10, 10)");
+                expect(CssString$Ress.Data.hue(CssValueHelper$Ress.deg(1))).toBe("1deg");
+                expect(CssString$Ress.Data.alpha(CssValueHelper$Ress.pct(1))).toBe("1%");
+                expect(CssString$Ress.Data.alpha(CssValueHelper$Ress.num(1))).toBe("1");
+                expect(CssString$Ress.Data.rgbParam(CssValueHelper$Ress.pct(1))).toBe("1%");
+                expect(CssString$Ress.Data.rgbParam(CssValueHelper$Ress.num(1))).toBe("1");
+                expect(CssString$Ress.Data.rgb(CssValueHelper$Ress.num(1), CssValueHelper$Ress.num(1), CssValueHelper$Ress.pct(10))).toBe("rgb(1, 1, 10%)");
+                expect(CssString$Ress.Data.rgba(CssValueHelper$Ress.num(1), CssValueHelper$Ress.num(1), CssValueHelper$Ress.pct(10), CssValueHelper$Ress.num(1))).toBe("rgba(1, 1, 10%, 1)");
+                expect(CssString$Ress.Data.rgba(CssValueHelper$Ress.num(0), CssValueHelper$Ress.num(0), CssValueHelper$Ress.num(0), CssValueHelper$Ress.num(1))).toBe("rgba(0, 0, 0, 1)");
+                expect(CssString$Ress.Data.hexColor("000000")).toBe("#000000");
+                expect(CssString$Ress.Data.color(CssValueHelper$Ress.hexColor("000000"))).toBe("#000000");
+                expect(CssString$Ress.Data.color(CssValueHelper$Ress.rgb(10, 10, 10))).toBe("rgb(10, 10, 10)");
                 
               }));
         test("color_global", (function () {
-                expect(CssString$Ress.col_global(CssValueHelper$Ress.rgb(244, 244, 244))).toBe("rgb(244, 244, 244)");
-                expect(CssString$Ress.col_global("initial")).toBe("initial");
+                expect(CssString$Ress.Data.color_global(CssValueHelper$Ress.rgb(244, 244, 244))).toBe("rgb(244, 244, 244)");
+                expect(CssString$Ress.Data.color_global("initial")).toBe("initial");
                 
               }));
         
@@ -134,13 +134,13 @@ describe("Color data types", (function () {
 
 describe("Line", (function () {
         test("lineWidth", (function () {
-                expect(CssString$Ress.lineWidth("thick")).toBe("thick");
-                expect(CssString$Ress.lineWidth(CssValueHelper$Ress.mm(10))).toBe("10mm");
+                expect(CssString$Ress.Data.lineWidth("thick")).toBe("thick");
+                expect(CssString$Ress.Data.lineWidth(CssValueHelper$Ress.mm(10))).toBe("10mm");
                 
               }));
         test("lineWidth", (function () {
-                expect(CssString$Ress.lineWidth_global("thick")).toBe("thick");
-                expect(CssString$Ress.lineWidth_global("initial")).toBe("initial");
+                expect(CssString$Ress.Data.lineWidth_global("thick")).toBe("thick");
+                expect(CssString$Ress.Data.lineWidth_global("initial")).toBe("initial");
                 
               }));
         
@@ -148,16 +148,16 @@ describe("Line", (function () {
 
 describe("transformOrigin", (function () {
         test("transformOrigin", (function () {
-                expect(CssString$Ress.transformOrigin("left")).toBe("left");
-                expect(CssString$Ress.transformOrigin(CssValueHelper$Ress.px(20))).toBe("20px");
-                expect(CssString$Ress.transformOrigin({
+                expect(CssString$Ress.Data.transformOrigin("left")).toBe("left");
+                expect(CssString$Ress.Data.transformOrigin(CssValueHelper$Ress.px(20))).toBe("20px");
+                expect(CssString$Ress.Data.transformOrigin({
                             NAME: "TransformOrigin2",
                             VAL: [
                               "left",
                               "top"
                             ]
                           })).toBe("left top");
-                expect(CssString$Ress.transformOrigin({
+                expect(CssString$Ress.Data.transformOrigin({
                             NAME: "TransformOrigin3",
                             VAL: [
                               "left",
@@ -172,154 +172,154 @@ describe("transformOrigin", (function () {
 
 describe("Image data types", (function () {
         test("gradientLineDirection", (function () {
-                expect(CssString$Ress.gradientLineAngle("toTop")).toBe("to top");
-                expect(CssString$Ress.gradientLineAngle("toTopLeft")).toBe("to top left");
-                expect(CssString$Ress.gradientLineAngle(CssValueHelper$Ress.turn(0.25))).toBe("0.25turn");
+                expect(CssString$Ress.Data.gradientLineAngle("toTop")).toBe("to top");
+                expect(CssString$Ress.Data.gradientLineAngle("toTopLeft")).toBe("to top left");
+                expect(CssString$Ress.Data.gradientLineAngle(CssValueHelper$Ress.turn(0.25))).toBe("0.25turn");
                 
               }));
         test("linearColorStop", (function () {
-                expect(CssString$Ress.linearColorStop("red")).toBe("red");
-                expect(CssString$Ress.linearColorStop(CssValueHelper$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
-                expect(CssString$Ress.linearColorStop(CssValueHelper$Ress.pct(10))).toBe("10%");
-                expect(CssString$Ress.linearColorStop(CssValueHelper$Ress.px(25))).toBe("25px");
-                expect(CssString$Ress.linearColorStop(CssValueHelper$Ress.linearColorStop2("red", CssValueHelper$Ress.pct(10)))).toBe("red 10%");
-                expect(CssString$Ress.linearColorStop(CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10), CssValueHelper$Ress.pct(50)))).toBe("rgb(255, 255, 255) 10% 50%");
+                expect(CssString$Ress.Data.linearColorStop("red")).toBe("red");
+                expect(CssString$Ress.Data.linearColorStop(CssValueHelper$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
+                expect(CssString$Ress.Data.linearColorStop(CssValueHelper$Ress.pct(10))).toBe("10%");
+                expect(CssString$Ress.Data.linearColorStop(CssValueHelper$Ress.px(25))).toBe("25px");
+                expect(CssString$Ress.Data.linearColorStop(CssValueHelper$Ress.linearColorStop2("red", CssValueHelper$Ress.pct(10)))).toBe("red 10%");
+                expect(CssString$Ress.Data.linearColorStop(CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10), CssValueHelper$Ress.pct(50)))).toBe("rgb(255, 255, 255) 10% 50%");
                 
               }));
         test("linearGradient", (function () {
-                expect(CssString$Ress.linearGradient(CssValueHelper$Ress.linearGradient(undefined, CssValueHelper$Ress.rgb(0, 0, 0)))).toBe("linear-gradient(rgb(0, 0, 0))");
-                expect(CssString$Ress.linearGradient(CssValueHelper$Ress.linearGradient(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.rgb(0, 0, 0)))).toBe("linear-gradient(0.25turn, rgb(0, 0, 0))");
-                expect(CssString$Ress.linearGradient(CssValueHelper$Ress.linearGradient(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%)");
-                expect(CssString$Ress.linearGradient(CssValueHelper$Ress.linearGradient2(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%)");
-                expect(CssString$Ress.linearGradient(CssValueHelper$Ress.linearGradient3(undefined, CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("linear-gradient(rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
-                expect(CssString$Ress.linearGradient(CssValueHelper$Ress.linearGradient3(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
-                expect(CssString$Ress.linearGradient(CssValueHelper$Ress.linearGradient3(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.pct(30), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
-                expect(CssString$Ress.linearGradient(CssValueHelper$Ress.linearGradient4(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60)), CssValueHelper$Ress.linearColorStop3("red", CssValueHelper$Ress.pct(70), CssValueHelper$Ress.pct(100))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
+                expect(CssString$Ress.Data.linearGradient(CssValueHelper$Ress.linearGradient(undefined, CssValueHelper$Ress.rgb(0, 0, 0)))).toBe("linear-gradient(rgb(0, 0, 0))");
+                expect(CssString$Ress.Data.linearGradient(CssValueHelper$Ress.linearGradient(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.rgb(0, 0, 0)))).toBe("linear-gradient(0.25turn, rgb(0, 0, 0))");
+                expect(CssString$Ress.Data.linearGradient(CssValueHelper$Ress.linearGradient(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%)");
+                expect(CssString$Ress.Data.linearGradient(CssValueHelper$Ress.linearGradient2(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%)");
+                expect(CssString$Ress.Data.linearGradient(CssValueHelper$Ress.linearGradient3(undefined, CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("linear-gradient(rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
+                expect(CssString$Ress.Data.linearGradient(CssValueHelper$Ress.linearGradient3(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
+                expect(CssString$Ress.Data.linearGradient(CssValueHelper$Ress.linearGradient3(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.pct(30), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
+                expect(CssString$Ress.Data.linearGradient(CssValueHelper$Ress.linearGradient4(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60)), CssValueHelper$Ress.linearColorStop3("red", CssValueHelper$Ress.pct(70), CssValueHelper$Ress.pct(100))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
                 
               }));
         test("repeatingLinearGradient", (function () {
-                expect(CssString$Ress.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient(undefined, CssValueHelper$Ress.rgb(0, 0, 0)))).toBe("repeating-linear-gradient(rgb(0, 0, 0))");
-                expect(CssString$Ress.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.rgb(0, 0, 0)))).toBe("repeating-linear-gradient(0.25turn, rgb(0, 0, 0))");
-                expect(CssString$Ress.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10))))).toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%)");
-                expect(CssString$Ress.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient2(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40))))).toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%)");
-                expect(CssString$Ress.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient3(undefined, CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("repeating-linear-gradient(rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
-                expect(CssString$Ress.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient3(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
-                expect(CssString$Ress.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient3(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.pct(30), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
-                expect(CssString$Ress.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient4(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60)), CssValueHelper$Ress.linearColorStop3("red", CssValueHelper$Ress.pct(70), CssValueHelper$Ress.pct(100))))).toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
+                expect(CssString$Ress.Data.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient(undefined, CssValueHelper$Ress.rgb(0, 0, 0)))).toBe("repeating-linear-gradient(rgb(0, 0, 0))");
+                expect(CssString$Ress.Data.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.rgb(0, 0, 0)))).toBe("repeating-linear-gradient(0.25turn, rgb(0, 0, 0))");
+                expect(CssString$Ress.Data.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10))))).toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%)");
+                expect(CssString$Ress.Data.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient2(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40))))).toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%)");
+                expect(CssString$Ress.Data.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient3(undefined, CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("repeating-linear-gradient(rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
+                expect(CssString$Ress.Data.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient3(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%)");
+                expect(CssString$Ress.Data.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient3(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.pct(30), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
+                expect(CssString$Ress.Data.repeatingLinearGradient(CssValueHelper$Ress.repeatingLinearGradient4(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60)), CssValueHelper$Ress.linearColorStop3("red", CssValueHelper$Ress.pct(70), CssValueHelper$Ress.pct(100))))).toBe("repeating-linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
                 
               }));
         test("radialGradient", (function () {
-                expect(CssString$Ress.radialGradient(CssValueHelper$Ress.radialGradient(undefined, undefined, undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(#9198e5)");
-                expect(CssString$Ress.radialGradient(CssValueHelper$Ress.radialGradient(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(circle, #9198e5)");
-                expect(CssString$Ress.radialGradient(CssValueHelper$Ress.radialGradient("center", "circle", undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(circle at center, #9198e5)");
-                expect(CssString$Ress.radialGradient(CssValueHelper$Ress.radialGradient("center", "circle", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(circle 10px at center, #9198e5)");
-                expect(CssString$Ress.radialGradient(CssValueHelper$Ress.radialGradient("center", "ellipse", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
-                expect(CssString$Ress.radialGradient(CssValueHelper$Ress.radialGradient("center", undefined, {
+                expect(CssString$Ress.Data.radialGradient(CssValueHelper$Ress.radialGradient(undefined, undefined, undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(#9198e5)");
+                expect(CssString$Ress.Data.radialGradient(CssValueHelper$Ress.radialGradient(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(circle, #9198e5)");
+                expect(CssString$Ress.Data.radialGradient(CssValueHelper$Ress.radialGradient("center", "circle", undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(circle at center, #9198e5)");
+                expect(CssString$Ress.Data.radialGradient(CssValueHelper$Ress.radialGradient("center", "circle", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(circle 10px at center, #9198e5)");
+                expect(CssString$Ress.Data.radialGradient(CssValueHelper$Ress.radialGradient("center", "ellipse", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
+                expect(CssString$Ress.Data.radialGradient(CssValueHelper$Ress.radialGradient("center", undefined, {
                                 NAME: "Ellipse",
                                 VAL: [
                                   CssValueHelper$Ress.px(10),
                                   CssValueHelper$Ress.px(10)
                                 ]
                               }, CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(10px 10px at center, #9198e5)");
-                expect(CssString$Ress.radialGradient(CssValueHelper$Ress.radialGradient("center", "ellipse", {
+                expect(CssString$Ress.Data.radialGradient(CssValueHelper$Ress.radialGradient("center", "ellipse", {
                                 NAME: "Ellipse",
                                 VAL: [
                                   CssValueHelper$Ress.px(10),
                                   CssValueHelper$Ress.px(10)
                                 ]
                               }, CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(ellipse 10px 10px at center, #9198e5)");
-                expect(CssString$Ress.radialGradient(CssValueHelper$Ress.radialGradient("center", "ellipse", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
-                expect(CssString$Ress.radialGradient(CssValueHelper$Ress.radialGradient2(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5"), "red"))).toBe("radial-gradient(circle, #9198e5, red)");
-                expect(CssString$Ress.radialGradient(CssValueHelper$Ress.radialGradient3(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5"), "red", CssValueHelper$Ress.rgb(255, 255, 255)))).toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
-                expect(CssString$Ress.radialGradient(CssValueHelper$Ress.radialGradient4(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5"), "red", CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.linearColorStop2("blue", CssValueHelper$Ress.pct(10))))).toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
+                expect(CssString$Ress.Data.radialGradient(CssValueHelper$Ress.radialGradient("center", "ellipse", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(ellipse at center, #9198e5)");
+                expect(CssString$Ress.Data.radialGradient(CssValueHelper$Ress.radialGradient2(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5"), "red"))).toBe("radial-gradient(circle, #9198e5, red)");
+                expect(CssString$Ress.Data.radialGradient(CssValueHelper$Ress.radialGradient3(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5"), "red", CssValueHelper$Ress.rgb(255, 255, 255)))).toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
+                expect(CssString$Ress.Data.radialGradient(CssValueHelper$Ress.radialGradient4(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5"), "red", CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.linearColorStop2("blue", CssValueHelper$Ress.pct(10))))).toBe("radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
                 
               }));
         test("repeatingRadialGradient", (function () {
-                expect(CssString$Ress.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient(undefined, undefined, undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(#9198e5)");
-                expect(CssString$Ress.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(circle, #9198e5)");
-                expect(CssString$Ress.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient("center", "circle", undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(circle at center, #9198e5)");
-                expect(CssString$Ress.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient("center", "circle", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
-                expect(CssString$Ress.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient("center", "ellipse", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
-                expect(CssString$Ress.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient("center", undefined, {
+                expect(CssString$Ress.Data.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient(undefined, undefined, undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(#9198e5)");
+                expect(CssString$Ress.Data.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(circle, #9198e5)");
+                expect(CssString$Ress.Data.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient("center", "circle", undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(circle at center, #9198e5)");
+                expect(CssString$Ress.Data.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient("center", "circle", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
+                expect(CssString$Ress.Data.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient("center", "ellipse", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
+                expect(CssString$Ress.Data.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient("center", undefined, {
                                 NAME: "Ellipse",
                                 VAL: [
                                   CssValueHelper$Ress.px(10),
                                   CssValueHelper$Ress.px(10)
                                 ]
                               }, CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(10px 10px at center, #9198e5)");
-                expect(CssString$Ress.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient("center", "ellipse", {
+                expect(CssString$Ress.Data.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient("center", "ellipse", {
                                 NAME: "Ellipse",
                                 VAL: [
                                   CssValueHelper$Ress.px(10),
                                   CssValueHelper$Ress.px(10)
                                 ]
                               }, CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(ellipse 10px 10px at center, #9198e5)");
-                expect(CssString$Ress.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient("center", "ellipse", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
-                expect(CssString$Ress.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient2(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5"), "red"))).toBe("repeating-radial-gradient(circle, #9198e5, red)");
-                expect(CssString$Ress.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient3(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5"), "red", CssValueHelper$Ress.rgb(255, 255, 255)))).toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
-                expect(CssString$Ress.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient4(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5"), "red", CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.linearColorStop2("blue", CssValueHelper$Ress.pct(10))))).toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
+                expect(CssString$Ress.Data.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient("center", "ellipse", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(ellipse at center, #9198e5)");
+                expect(CssString$Ress.Data.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient2(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5"), "red"))).toBe("repeating-radial-gradient(circle, #9198e5, red)");
+                expect(CssString$Ress.Data.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient3(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5"), "red", CssValueHelper$Ress.rgb(255, 255, 255)))).toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255))");
+                expect(CssString$Ress.Data.repeatingRadialGradient(CssValueHelper$Ress.repeatingRadialGradient4(undefined, "circle", undefined, CssValueHelper$Ress.hexColor("9198e5"), "red", CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.linearColorStop2("blue", CssValueHelper$Ress.pct(10))))).toBe("repeating-radial-gradient(circle, #9198e5, red, rgb(255, 255, 255), blue 10%)");
                 
               }));
         test("conicGradient", (function () {
-                expect(CssString$Ress.conicGradient(CssValueHelper$Ress.conicGradient(undefined, undefined, "red"))).toBe("conic-gradient(red)");
-                expect(CssString$Ress.conicGradient(CssValueHelper$Ress.conicGradient(CssValueHelper$Ress.deg(360), undefined, "red"))).toBe("conic-gradient(from 360deg, red)");
-                expect(CssString$Ress.conicGradient(CssValueHelper$Ress.conicGradient(CssValueHelper$Ress.deg(360), CssValueHelper$Ress.px(10), "red"))).toBe("conic-gradient(from 360deg at 10px, red)");
-                expect(CssString$Ress.conicGradient(CssValueHelper$Ress.conicGradient2(undefined, undefined, "red", "blue"))).toBe("conic-gradient(red, blue)");
-                expect(CssString$Ress.conicGradient(CssValueHelper$Ress.conicGradient3(undefined, undefined, "red", "blue", "yellow"))).toBe("conic-gradient(red, blue, yellow)");
-                expect(CssString$Ress.conicGradient(CssValueHelper$Ress.conicGradient4(undefined, undefined, "red", "blue", "yellow", CssValueHelper$Ress.rgb(250, 250, 250)))).toBe("conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
+                expect(CssString$Ress.Data.conicGradient(CssValueHelper$Ress.conicGradient(undefined, undefined, "red"))).toBe("conic-gradient(red)");
+                expect(CssString$Ress.Data.conicGradient(CssValueHelper$Ress.conicGradient(CssValueHelper$Ress.deg(360), undefined, "red"))).toBe("conic-gradient(from 360deg, red)");
+                expect(CssString$Ress.Data.conicGradient(CssValueHelper$Ress.conicGradient(CssValueHelper$Ress.deg(360), CssValueHelper$Ress.px(10), "red"))).toBe("conic-gradient(from 360deg at 10px, red)");
+                expect(CssString$Ress.Data.conicGradient(CssValueHelper$Ress.conicGradient2(undefined, undefined, "red", "blue"))).toBe("conic-gradient(red, blue)");
+                expect(CssString$Ress.Data.conicGradient(CssValueHelper$Ress.conicGradient3(undefined, undefined, "red", "blue", "yellow"))).toBe("conic-gradient(red, blue, yellow)");
+                expect(CssString$Ress.Data.conicGradient(CssValueHelper$Ress.conicGradient4(undefined, undefined, "red", "blue", "yellow", CssValueHelper$Ress.rgb(250, 250, 250)))).toBe("conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
                 
               }));
         test("repeatingConicGradient", (function () {
-                expect(CssString$Ress.repeatingConicGradient(CssValueHelper$Ress.repeatingConicGradient(undefined, undefined, "red"))).toBe("repeating-conic-gradient(red)");
-                expect(CssString$Ress.repeatingConicGradient(CssValueHelper$Ress.repeatingConicGradient(CssValueHelper$Ress.deg(360), undefined, "red"))).toBe("repeating-conic-gradient(from 360deg, red)");
-                expect(CssString$Ress.repeatingConicGradient(CssValueHelper$Ress.repeatingConicGradient(CssValueHelper$Ress.deg(360), CssValueHelper$Ress.px(10), "red"))).toBe("repeating-conic-gradient(from 360deg at 10px, red)");
-                expect(CssString$Ress.repeatingConicGradient(CssValueHelper$Ress.repeatingConicGradient2(undefined, undefined, "red", "blue"))).toBe("repeating-conic-gradient(red, blue)");
-                expect(CssString$Ress.repeatingConicGradient(CssValueHelper$Ress.repeatingConicGradient3(undefined, undefined, "red", "blue", "yellow"))).toBe("repeating-conic-gradient(red, blue, yellow)");
-                expect(CssString$Ress.repeatingConicGradient(CssValueHelper$Ress.repeatingConicGradient4(undefined, undefined, "red", "blue", "yellow", CssValueHelper$Ress.rgb(250, 250, 250)))).toBe("repeating-conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
+                expect(CssString$Ress.Data.repeatingConicGradient(CssValueHelper$Ress.repeatingConicGradient(undefined, undefined, "red"))).toBe("repeating-conic-gradient(red)");
+                expect(CssString$Ress.Data.repeatingConicGradient(CssValueHelper$Ress.repeatingConicGradient(CssValueHelper$Ress.deg(360), undefined, "red"))).toBe("repeating-conic-gradient(from 360deg, red)");
+                expect(CssString$Ress.Data.repeatingConicGradient(CssValueHelper$Ress.repeatingConicGradient(CssValueHelper$Ress.deg(360), CssValueHelper$Ress.px(10), "red"))).toBe("repeating-conic-gradient(from 360deg at 10px, red)");
+                expect(CssString$Ress.Data.repeatingConicGradient(CssValueHelper$Ress.repeatingConicGradient2(undefined, undefined, "red", "blue"))).toBe("repeating-conic-gradient(red, blue)");
+                expect(CssString$Ress.Data.repeatingConicGradient(CssValueHelper$Ress.repeatingConicGradient3(undefined, undefined, "red", "blue", "yellow"))).toBe("repeating-conic-gradient(red, blue, yellow)");
+                expect(CssString$Ress.Data.repeatingConicGradient(CssValueHelper$Ress.repeatingConicGradient4(undefined, undefined, "red", "blue", "yellow", CssValueHelper$Ress.rgb(250, 250, 250)))).toBe("repeating-conic-gradient(red, blue, yellow, rgb(250, 250, 250))");
                 
               }));
         test("gradient", (function () {
-                expect(CssString$Ress.gradient(CssValueHelper$Ress.linearGradient3(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.pct(30), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
-                expect(CssString$Ress.gradient(CssValueHelper$Ress.linearGradient4(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60)), CssValueHelper$Ress.linearColorStop3("red", CssValueHelper$Ress.pct(70), CssValueHelper$Ress.pct(100))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
-                expect(CssString$Ress.gradient(CssValueHelper$Ress.repeatingLinearGradient(CssValueHelper$Ress.deg(360), "red"))).toBe("repeating-linear-gradient(360deg, red)");
-                expect(CssString$Ress.gradient(CssValueHelper$Ress.radialGradient("center", "circle", undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(circle at center, #9198e5)");
-                expect(CssString$Ress.gradient(CssValueHelper$Ress.repeatingRadialGradient("center", "circle", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
-                expect(CssString$Ress.gradient(CssValueHelper$Ress.conicGradient(CssValueHelper$Ress.deg(360), CssValueHelper$Ress.px(10), "red"))).toBe("conic-gradient(from 360deg at 10px, red)");
-                expect(CssString$Ress.gradient(CssValueHelper$Ress.repeatingConicGradient(CssValueHelper$Ress.deg(360), CssValueHelper$Ress.px(10), "red"))).toBe("repeating-conic-gradient(from 360deg at 10px, red)");
+                expect(CssString$Ress.Data.gradient(CssValueHelper$Ress.linearGradient3(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.pct(30), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, 30%, rgb(255, 255, 255) 50% 60%)");
+                expect(CssString$Ress.Data.gradient(CssValueHelper$Ress.linearGradient4(CssValueHelper$Ress.turn(0.25), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(10)), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(40)), CssValueHelper$Ress.linearColorStop3(CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.pct(50), CssValueHelper$Ress.pct(60)), CssValueHelper$Ress.linearColorStop3("red", CssValueHelper$Ress.pct(70), CssValueHelper$Ress.pct(100))))).toBe("linear-gradient(0.25turn, rgb(255, 255, 255) 10%, rgb(255, 255, 255) 40%, rgb(255, 255, 255) 50% 60%, red 70% 100%)");
+                expect(CssString$Ress.Data.gradient(CssValueHelper$Ress.repeatingLinearGradient(CssValueHelper$Ress.deg(360), "red"))).toBe("repeating-linear-gradient(360deg, red)");
+                expect(CssString$Ress.Data.gradient(CssValueHelper$Ress.radialGradient("center", "circle", undefined, CssValueHelper$Ress.hexColor("9198e5")))).toBe("radial-gradient(circle at center, #9198e5)");
+                expect(CssString$Ress.Data.gradient(CssValueHelper$Ress.repeatingRadialGradient("center", "circle", CssValueHelper$Ress.px(10), CssValueHelper$Ress.hexColor("9198e5")))).toBe("repeating-radial-gradient(circle 10px at center, #9198e5)");
+                expect(CssString$Ress.Data.gradient(CssValueHelper$Ress.conicGradient(CssValueHelper$Ress.deg(360), CssValueHelper$Ress.px(10), "red"))).toBe("conic-gradient(from 360deg at 10px, red)");
+                expect(CssString$Ress.Data.gradient(CssValueHelper$Ress.repeatingConicGradient(CssValueHelper$Ress.deg(360), CssValueHelper$Ress.px(10), "red"))).toBe("repeating-conic-gradient(from 360deg at 10px, red)");
                 
               }));
         test("url", (function () {
-                expect(CssString$Ress.url(CssValueHelper$Ress.url("myimage.png"))).toBe("url(\"myimage.png\")");
+                expect(CssString$Ress.Data.url(CssValueHelper$Ress.url("myimage.png"))).toBe("url(\"myimage.png\")");
                 
               }));
         test("imageSrc", (function () {
-                expect(CssString$Ress.imageSrc(CssValueHelper$Ress.url("myimage.png"))).toBe("url(\"myimage.png\")");
-                expect(CssString$Ress.imageSrc(CssValueHelper$Ress.src("myimage.png"))).toBe("\"myimage.png\"");
+                expect(CssString$Ress.Data.imageSrc(CssValueHelper$Ress.url("myimage.png"))).toBe("url(\"myimage.png\")");
+                expect(CssString$Ress.Data.imageSrc(CssValueHelper$Ress.src("myimage.png"))).toBe("\"myimage.png\"");
                 
               }));
         test("image", (function () {
-                expect(CssString$Ress.image(CssValueHelper$Ress.image(undefined, undefined, CssValueHelper$Ress.src("myimage.webp#xywh=0,20,40,60")))).toBe("image(\"myimage.webp#xywh=0,20,40,60\")");
-                expect(CssString$Ress.image(CssValueHelper$Ress.image(undefined, undefined, CssValueHelper$Ress.url("myimage.png")))).toBe("image(url(\"myimage.png\"))");
-                expect(CssString$Ress.image(CssValueHelper$Ress.image(undefined, undefined, CssValueHelper$Ress.rgba(0, 0, 0, 0.25)))).toBe("image(rgba(0, 0, 0, 0.25))");
-                expect(CssString$Ress.image(CssValueHelper$Ress.image(undefined, CssValueHelper$Ress.rgba(0, 0, 0, 0.25), "red"))).toBe("image(red)");
-                expect(CssString$Ress.image(CssValueHelper$Ress.image("ltr", undefined, CssValueHelper$Ress.src("myimage.png")))).toBe("image(ltr \"myimage.png\")");
-                expect(CssString$Ress.image(CssValueHelper$Ress.image("ltr", "red", CssValueHelper$Ress.src("myimage.png")))).toBe("image(ltr \"myimage.png\", red)");
+                expect(CssString$Ress.Data.image(CssValueHelper$Ress.image(undefined, undefined, CssValueHelper$Ress.src("myimage.webp#xywh=0,20,40,60")))).toBe("image(\"myimage.webp#xywh=0,20,40,60\")");
+                expect(CssString$Ress.Data.image(CssValueHelper$Ress.image(undefined, undefined, CssValueHelper$Ress.url("myimage.png")))).toBe("image(url(\"myimage.png\"))");
+                expect(CssString$Ress.Data.image(CssValueHelper$Ress.image(undefined, undefined, CssValueHelper$Ress.rgba(0, 0, 0, 0.25)))).toBe("image(rgba(0, 0, 0, 0.25))");
+                expect(CssString$Ress.Data.image(CssValueHelper$Ress.image(undefined, CssValueHelper$Ress.rgba(0, 0, 0, 0.25), "red"))).toBe("image(red)");
+                expect(CssString$Ress.Data.image(CssValueHelper$Ress.image("ltr", undefined, CssValueHelper$Ress.src("myimage.png")))).toBe("image(ltr \"myimage.png\")");
+                expect(CssString$Ress.Data.image(CssValueHelper$Ress.image("ltr", "red", CssValueHelper$Ress.src("myimage.png")))).toBe("image(ltr \"myimage.png\", red)");
                 
               }));
         test("bgSize", (function () {
-                expect(CssString$Ress.bgSize("cover")).toBe("cover");
-                expect(CssString$Ress.bgSize(CssValueHelper$Ress.px(24))).toBe("24px");
-                expect(CssString$Ress.bgSize(CssValueHelper$Ress.bgSize2("auto", CssValueHelper$Ress.px(24)))).toBe("auto 24px");
-                expect(CssString$Ress.bgSize(CssValueHelper$Ress.bgSize2(CssValueHelper$Ress.px(24), CssValueHelper$Ress.px(24)))).toBe("24px 24px");
+                expect(CssString$Ress.Data.bgSize("cover")).toBe("cover");
+                expect(CssString$Ress.Data.bgSize(CssValueHelper$Ress.px(24))).toBe("24px");
+                expect(CssString$Ress.Data.bgSize(CssValueHelper$Ress.bgSize2("auto", CssValueHelper$Ress.px(24)))).toBe("auto 24px");
+                expect(CssString$Ress.Data.bgSize(CssValueHelper$Ress.bgSize2(CssValueHelper$Ress.px(24), CssValueHelper$Ress.px(24)))).toBe("24px 24px");
                 
               }));
         test("position", (function () {
-                expect(CssString$Ress.position("center")).toBe("center");
-                expect(CssString$Ress.position(CssValueHelper$Ress.px(20))).toBe("20px");
-                expect(CssString$Ress.position(CssValueHelper$Ress.position2("left", "top"))).toBe("left top");
-                expect(CssString$Ress.position(CssValueHelper$Ress.position3("left", "top", CssValueHelper$Ress.pct(10)))).toBe("left top 10%");
-                expect(CssString$Ress.position(CssValueHelper$Ress.position3("left", CssValueHelper$Ress.pct(20), "bottom"))).toBe("left 20% bottom");
-                expect(CssString$Ress.position(CssValueHelper$Ress.position4("right", CssValueHelper$Ress.pct(35), "bottom", CssValueHelper$Ress.pct(45)))).toBe("right 35% bottom 45%");
+                expect(CssString$Ress.Data.position("center")).toBe("center");
+                expect(CssString$Ress.Data.position(CssValueHelper$Ress.px(20))).toBe("20px");
+                expect(CssString$Ress.Data.position(CssValueHelper$Ress.position2("left", "top"))).toBe("left top");
+                expect(CssString$Ress.Data.position(CssValueHelper$Ress.position3("left", "top", CssValueHelper$Ress.pct(10)))).toBe("left top 10%");
+                expect(CssString$Ress.Data.position(CssValueHelper$Ress.position3("left", CssValueHelper$Ress.pct(20), "bottom"))).toBe("left 20% bottom");
+                expect(CssString$Ress.Data.position(CssValueHelper$Ress.position4("right", CssValueHelper$Ress.pct(35), "bottom", CssValueHelper$Ress.pct(45)))).toBe("right 35% bottom 45%");
                 
               }));
         
@@ -327,20 +327,20 @@ describe("Image data types", (function () {
 
 describe("background", (function () {
         test("background", (function () {
-                expect(CssString$Ress.bg(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "red")).toBe("red");
-                expect(CssString$Ress.bg(undefined, undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
-                expect(CssString$Ress.bg("red", undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
-                expect(CssString$Ress.bg(undefined, undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.url("myimage.png"))).toBe("url(\"myimage.png\")");
-                expect(CssString$Ress.bg(undefined, undefined, undefined, "repeatY", undefined, undefined, undefined, CssValueHelper$Ress.url("test.jpg"))).toBe("url(\"test.jpg\") repeat-y");
-                expect(CssString$Ress.bg(undefined, undefined, undefined, undefined, undefined, "borderBox", undefined, "red")).toBe("red border-box");
-                expect(CssString$Ress.bg(undefined, undefined, undefined, undefined, undefined, "borderBox", "paddingBox", "red")).toBe("red border-box padding-box");
-                expect(CssString$Ress.bg(undefined, undefined, undefined, undefined, undefined, undefined, "paddingBox", "red")).toBe("red");
-                expect(CssString$Ress.bg(undefined, "center", CssValueHelper$Ress.pct(80), "noRepeat", undefined, undefined, undefined, CssValueHelper$Ress.url("../img/image.png"))).toBe("url(\"../img/image.png\") center / 80% no-repeat");
-                expect(CssString$Ress.bg(undefined, undefined, CssValueHelper$Ress.pct(80), "noRepeat", undefined, undefined, undefined, CssValueHelper$Ress.url("../img/image.png"))).toBe("url(\"../img/image.png\") no-repeat");
-                expect(CssString$Ress.bgLayer("red")).toBe("red");
-                expect(CssString$Ress.bgLayer(CssValueHelper$Ress.url("myimage.png"))).toBe("url(\"myimage.png\")");
-                expect(CssString$Ress.bgLayer(CssValueHelper$Ress.bgLayer(undefined, undefined, undefined, "repeatY", undefined, undefined, undefined, CssValueHelper$Ress.url("test.jpg")))).toBe("url(\"test.jpg\") repeat-y");
-                expect(CssString$Ress.bgLayer(CssValueHelper$Ress.bgLayer(undefined, "center", CssValueHelper$Ress.pct(80), "noRepeat", undefined, undefined, undefined, CssValueHelper$Ress.url("../img/image.png")))).toBe("url(\"../img/image.png\") center / 80% no-repeat");
+                expect(CssString$Ress.Data.bg(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "red")).toBe("red");
+                expect(CssString$Ress.Data.bg(undefined, undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
+                expect(CssString$Ress.Data.bg("red", undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
+                expect(CssString$Ress.Data.bg(undefined, undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.url("myimage.png"))).toBe("url(\"myimage.png\")");
+                expect(CssString$Ress.Data.bg(undefined, undefined, undefined, "repeatY", undefined, undefined, undefined, CssValueHelper$Ress.url("test.jpg"))).toBe("url(\"test.jpg\") repeat-y");
+                expect(CssString$Ress.Data.bg(undefined, undefined, undefined, undefined, undefined, "borderBox", undefined, "red")).toBe("red border-box");
+                expect(CssString$Ress.Data.bg(undefined, undefined, undefined, undefined, undefined, "borderBox", "paddingBox", "red")).toBe("red border-box padding-box");
+                expect(CssString$Ress.Data.bg(undefined, undefined, undefined, undefined, undefined, undefined, "paddingBox", "red")).toBe("red");
+                expect(CssString$Ress.Data.bg(undefined, "center", CssValueHelper$Ress.pct(80), "noRepeat", undefined, undefined, undefined, CssValueHelper$Ress.url("../img/image.png"))).toBe("url(\"../img/image.png\") center / 80% no-repeat");
+                expect(CssString$Ress.Data.bg(undefined, undefined, CssValueHelper$Ress.pct(80), "noRepeat", undefined, undefined, undefined, CssValueHelper$Ress.url("../img/image.png"))).toBe("url(\"../img/image.png\") no-repeat");
+                expect(CssString$Ress.Data.bgLayer("red")).toBe("red");
+                expect(CssString$Ress.Data.bgLayer(CssValueHelper$Ress.url("myimage.png"))).toBe("url(\"myimage.png\")");
+                expect(CssString$Ress.Data.bgLayer(CssValueHelper$Ress.bgLayer(undefined, undefined, undefined, "repeatY", undefined, undefined, undefined, CssValueHelper$Ress.url("test.jpg")))).toBe("url(\"test.jpg\") repeat-y");
+                expect(CssString$Ress.Data.bgLayer(CssValueHelper$Ress.bgLayer(undefined, "center", CssValueHelper$Ress.pct(80), "noRepeat", undefined, undefined, undefined, CssValueHelper$Ress.url("../img/image.png")))).toBe("url(\"../img/image.png\") center / 80% no-repeat");
                 
               }));
         
@@ -348,18 +348,18 @@ describe("background", (function () {
 
 describe("Spacing", (function () {
         test("margin", (function () {
-                expect(CssString$Ress.mgn(CssValueHelper$Ress.px(10))).toBe("10px");
-                expect(CssString$Ress.mgn("auto")).toBe("auto");
-                expect(CssString$Ress.mgn(CssValueHelper$Ress.pct(20))).toBe("20%");
-                expect(CssString$Ress.mgn_global(CssValueHelper$Ress.px(24))).toBe("24px");
-                expect(CssString$Ress.mgn_global("initial")).toBe("initial");
+                expect(CssString$Ress.Data.margin(CssValueHelper$Ress.px(10))).toBe("10px");
+                expect(CssString$Ress.Data.margin("auto")).toBe("auto");
+                expect(CssString$Ress.Data.margin(CssValueHelper$Ress.pct(20))).toBe("20%");
+                expect(CssString$Ress.Data.margin_global(CssValueHelper$Ress.px(24))).toBe("24px");
+                expect(CssString$Ress.Data.margin_global("initial")).toBe("initial");
                 
               }));
         test("padding", (function () {
-                expect(CssString$Ress.pdg(CssValueHelper$Ress.px(10))).toBe("10px");
-                expect(CssString$Ress.pdg(CssValueHelper$Ress.pct(20))).toBe("20%");
-                expect(CssString$Ress.pdg_global(CssValueHelper$Ress.px(24))).toBe("24px");
-                expect(CssString$Ress.pdg_global("initial")).toBe("initial");
+                expect(CssString$Ress.Data.padding(CssValueHelper$Ress.px(10))).toBe("10px");
+                expect(CssString$Ress.Data.padding(CssValueHelper$Ress.pct(20))).toBe("20%");
+                expect(CssString$Ress.Data.padding_global(CssValueHelper$Ress.px(24))).toBe("24px");
+                expect(CssString$Ress.Data.padding_global("initial")).toBe("initial");
                 
               }));
         
@@ -367,14 +367,14 @@ describe("Spacing", (function () {
 
 describe("fontFamily", (function () {
         test("fontFamily", (function () {
-                expect(CssString$Ress.fontFml({
+                expect(CssString$Ress.Data.fontFamily({
                             NAME: "Family",
                             VAL: "Goudy Bookletter 1911"
                           })).toBe("\"Goudy Bookletter 1911\"");
-                expect(CssString$Ress.fontFml("serif")).toBe("serif");
-                expect(CssString$Ress.fontFml("sansSerif")).toBe("sans-serif");
-                expect(CssString$Ress.fontFml_global("initial")).toBe("initial");
-                expect(CssString$Ress.fontFml_global({
+                expect(CssString$Ress.Data.fontFamily("serif")).toBe("serif");
+                expect(CssString$Ress.Data.fontFamily("sansSerif")).toBe("sans-serif");
+                expect(CssString$Ress.Data.fontFamily_global("initial")).toBe("initial");
+                expect(CssString$Ress.Data.fontFamily_global({
                             NAME: "Family",
                             VAL: "Gill Sans Extrabold"
                           })).toBe("\"Gill Sans Extrabold\"");

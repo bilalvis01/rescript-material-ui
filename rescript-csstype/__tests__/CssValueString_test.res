@@ -1,5 +1,5 @@
 open Jest;
-open CssString;
+open CssString.Data;
 
 module Css = CssValueHelper;
 
@@ -128,14 +128,14 @@ describe("Color data types", (.) => {
     expect(rgba(Css.num(0.), Css.num(0.), Css.num(0.), Css.num(1.)))
       ->toBe("rgba(0, 0, 0, 1)");
     expect(hexColor("000000"))->toBe("#000000");
-    expect(col(Css.hexColor("000000")))->toBe("#000000");
-    expect(col(Css.rgb(10, 10, 10)))
+    expect(color(Css.hexColor("000000")))->toBe("#000000");
+    expect(color(Css.rgb(10, 10, 10)))
       ->toBe("rgb(10, 10, 10)");
   });
 
   test("color_global", (.) => {
-    expect(col_global(Css.rgb(244, 244, 244)))->toBe("rgb(244, 244, 244)");
-    expect(col_global(#initial))->toBe("initial");
+    expect(color_global(Css.rgb(244, 244, 244)))->toBe("rgb(244, 244, 244)");
+    expect(color_global(#initial))->toBe("initial");
   });
 });
 
@@ -417,32 +417,32 @@ describe("background", (.) => {
 
 describe("Spacing", (.) => {
   test("margin", (.) => {
-    expect(mgn(Css.px(10)))->toBe("10px");
-    expect(mgn(#auto))->toBe("auto");
-    expect(mgn(Css.pct(20.)))->toBe("20%");
-    expect(mgn_global(Css.px(24)))->toBe("24px");
-    expect(mgn_global(#initial))->toBe("initial");
+    expect(margin(Css.px(10)))->toBe("10px");
+    expect(margin(#auto))->toBe("auto");
+    expect(margin(Css.pct(20.)))->toBe("20%");
+    expect(margin_global(Css.px(24)))->toBe("24px");
+    expect(margin_global(#initial))->toBe("initial");
   });
 
   test("padding", (.) => {
-    expect(pdg(Css.px(10)))->toBe("10px");
-    expect(pdg(Css.pct(20.)))->toBe("20%");
-    expect(pdg_global(Css.px(24)))->toBe("24px");
-    expect(pdg_global(#initial))->toBe("initial");
+    expect(padding(Css.px(10)))->toBe("10px");
+    expect(padding(Css.pct(20.)))->toBe("20%");
+    expect(padding_global(Css.px(24)))->toBe("24px");
+    expect(padding_global(#initial))->toBe("initial");
   });
 });
 
 describe("fontFamily", (.) => {
   test("fontFamily", (.) => {
-    expect(fontFml(#Family("Goudy Bookletter 1911")))
+    expect(fontFamily(#Family("Goudy Bookletter 1911")))
     ->toBe(`"Goudy Bookletter 1911"`);
-    expect(fontFml(#serif))
+    expect(fontFamily(#serif))
     ->toBe("serif");
-    expect(fontFml(#sansSerif))
+    expect(fontFamily(#sansSerif))
     ->toBe("sans-serif");
-    expect(fontFml_global(#initial))
+    expect(fontFamily_global(#initial))
     ->toBe("initial");
-    expect(fontFml_global(#Family("Gill Sans Extrabold")))
+    expect(fontFamily_global(#Family("Gill Sans Extrabold")))
     ->toBe(`"Gill Sans Extrabold"`);
   });
 });
