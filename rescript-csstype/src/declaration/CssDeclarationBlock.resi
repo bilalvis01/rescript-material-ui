@@ -1,0 +1,1 @@
+let make: array<CssType.styleDeclaration<'data>> => CssType.declarationBlock<'data>;

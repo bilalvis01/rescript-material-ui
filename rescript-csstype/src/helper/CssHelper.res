@@ -1,24 +1,19 @@
 module Make = (
-  D: {
-    type declarationConstructor<'data>;
-    type declarationBlock<'data>;
-    let style: 
-      array<declarationConstructor<'data>> => 
-      declarationBlock<'data>;
+  DeclarationBlock: {
+    type styleDeclaration<'data>;
+    let declarationBlock: array<styleDeclaration<'data>> => CssType.declarationBlock<'data>;
   }
 ) => {
   include CssPropertyValue;
   include CssValueHelper;
   include CssRule.MakeHelper({ 
-    type declarationBlock<'data> = D.declarationBlock<'data>; 
-    type declarationConstructor<'data> = D.declarationConstructor<'data>;
-    let style = D.style; 
+    type styleDeclaration<'data> = DeclarationBlock.styleDeclaration<'data>;
+    let declarationBlock = DeclarationBlock.declarationBlock; 
   });
   include CssAtRuleHelper;
   include CssPseudoClass.MakeHelper({ 
-    type declarationBlock<'data> = D.declarationBlock<'data>; 
-    type declarationConstructor<'data> = D.declarationConstructor<'data>;
-    let style = D.style; 
+    type styleDeclaration<'data> = DeclarationBlock.styleDeclaration<'data>;
+    let declarationBlock = DeclarationBlock.declarationBlock; 
   });
   include CssDeclarationHelper;
   include CssDeclarationFnHelper;

@@ -1,16 +1,14 @@
 type tag;
 type t = CssType.propertyValue<tag>;
-type d<'a> = [> CssDeclaration.constructor ] as 'a;
-type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 include (module type of CssBorderSideWidth.MakeValue({ type t = t; }));
 
 module DeclarationHelper: {
-  let borderLeftWidth: CssType.borderWidth<d<'a>>;
-  let borderLeftWidthUnion: t => d<'a>;
-  let borderLeftWidthString: string => d<'a>;
+  let borderLeftWidth: CssType.borderWidth<CssDeclaration.d<'a>>;
+  let borderLeftWidthUnion: t => CssDeclaration.d<'a>;
+  let borderLeftWidthString: string => CssDeclaration.d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let borderLeftWidthFn: ('data => option<t>) => dFn<'a, 'data>;
+  let borderLeftWidthFn: ('data => option<t>) => CssDeclarationFn.d<'a, 'data>;
 };

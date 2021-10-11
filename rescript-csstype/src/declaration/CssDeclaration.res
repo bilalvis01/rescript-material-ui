@@ -1,26 +1,14 @@
-@unboxed
-type rec boxValue =
-  | BoxValue(CssType.propertyValue<'a>): boxValue;
+type d<'a> = [> CssType.declaration ] as 'a;
 
-type constructor = [ | #Declaration(string, boxValue) ];
-
-module Make = (
-  D: {
-    type value<'data>; 
-    let map: ((string, boxValue)) => (string, value<'data>);
-  }
-) => {
-  type t<'data> = (string, D.value<'data>);
-  let { map } = module(D);
-  let make = declaration => {
-    switch declaration {
-    | #Declaration(property, value) => (property, value)
-    }
-    ->map;
+let make = declaration => {
+  switch declaration {
+  | #Declaration(property, value) => (property, value)
   };
 };
 
+external toStyleDeclaration: CssType.declarationEntry => CssType.styleDeclarationEntry<'data> = "%identity";
+
 module Helper = {
   let declaration = (property, value) => 
-    #Declaration(property, BoxValue(value));
+    #Declaration(property, CssType.BoxPropertyValue(value));
 };

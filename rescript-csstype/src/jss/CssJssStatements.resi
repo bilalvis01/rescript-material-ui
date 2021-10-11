@@ -1,13 +1,5 @@
-type constructor<'declarationBlock> = [
-  | CssStatement.constructor<'declarationBlock>
+type styleRule<'data> = [
+  | CssType.styleRule<'data>
 ];
 
-
-module Make: (
-  Type: {
-    type t<'data>;
-    type declarationBlock<'data>;
-  }
-) => {
-  let make: array<constructor<Type.declarationBlock<'data>>> => Type.t<'data>;
-}
+let make: array<styleRule<'data>> => CssType.statements<'data>;

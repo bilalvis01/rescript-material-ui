@@ -1,12 +1,4 @@
-type value<'data>;
-type declarationBlock<'data>;
-type statements<'data>;
-
-module Css = CssMui5.Make({
-  type value<'data> = value<'data>;
-  type declarationBlock<'data> = declarationBlock<'data>;
-  type statements<'data> = statements<'data>;
-});
+module Css = CssMui5;
 
 module Primary = {
   type t;
@@ -32,13 +24,13 @@ module Theme = {
 module Box = {
   @react.component @module("@mui/material/Box")
   external make: (
-    ~sx: declarationBlock<Theme.t>
+    ~sx: CssType.declarationBlock<Theme.t>
   ) => React.element = "default";
 };
 
 module GlobalStyles = {
   @react.component @module("@mui/material/GlobalStyles")
   external make: (
-    ~styles: Theme.t => statements<Theme.t>
+    ~styles: Theme.t => CssType.statements<Theme.t>
   ) => React.element = "default";
 };

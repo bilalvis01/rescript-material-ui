@@ -3,8 +3,8 @@
 
 var Jss = require("jss").default;
 var Curry = require("rescript/lib/js/curry.js");
-var Jss$Ress = require("../bindings/Jss.js");
 var Belt_Option = require("rescript/lib/js/belt_Option.js");
+var CssJss$Ress = require("../src/jss/CssJss.js");
 var CssColor$Ress = require("../src/property/CssColor.js");
 var JssPresetDefault = require("jss-preset-default").default;
 
@@ -16,25 +16,25 @@ var data = {
 };
 
 test("jss", (function () {
-        var s = Curry._1(Jss$Ress.Css.styles, [
-              Curry._2(Jss$Ress.Css.rule, "app", [
-                    Curry._2(Jss$Ress.Css.rule, "& .wrapper", [
-                          Curry._8(Jss$Ress.Css.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Curry._1(Jss$Ress.Css.url, "image.png")),
-                          Curry._1(Jss$Ress.Css.color, Curry._3(Jss$Ress.Css.rgb, 255, 255, 255)),
-                          Curry._1(Jss$Ress.Css.paddingTop, Curry._1(Jss$Ress.Css.px, 24)),
-                          Curry._1(Jss$Ress.Css.paddingBottom, Curry._1(Jss$Ress.Css.px, 24)),
-                          Curry._1(Jss$Ress.Css.paddingLeft, Curry._1(Jss$Ress.Css.px, 40)),
-                          Curry._1(Jss$Ress.Css.paddingRight, Curry._1(Jss$Ress.Css.px, 40)),
-                          Curry._1(Jss$Ress.Css.marginNumber, 24)
+        var s = CssJss$Ress.styles([
+              Curry._2(CssJss$Ress.rule, "app", [
+                    Curry._2(CssJss$Ress.rule, "& .wrapper", [
+                          Curry._8(CssJss$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Curry._1(CssJss$Ress.url, "image.png")),
+                          Curry._1(CssJss$Ress.color, Curry._3(CssJss$Ress.rgb, 255, 255, 255)),
+                          Curry._1(CssJss$Ress.paddingTop, Curry._1(CssJss$Ress.px, 24)),
+                          Curry._1(CssJss$Ress.paddingBottom, Curry._1(CssJss$Ress.px, 24)),
+                          Curry._1(CssJss$Ress.paddingLeft, Curry._1(CssJss$Ress.px, 40)),
+                          Curry._1(CssJss$Ress.paddingRight, Curry._1(CssJss$Ress.px, 40)),
+                          Curry._1(CssJss$Ress.marginNumber, 24)
                         ]),
-                    Curry._2(Jss$Ress.Css.rule, "& .button", [
-                          Curry._1(Jss$Ress.Css.color, Curry._4(Jss$Ress.Css.hsla, 360, Curry._1(Jss$Ress.Css.pct, 100), Curry._1(Jss$Ress.Css.pct, 50), 0.5)),
-                          Curry._1(Jss$Ress.Css.hover, [Curry._8(Jss$Ress.Css.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
+                    Curry._2(CssJss$Ress.rule, "& .button", [
+                          Curry._1(CssJss$Ress.color, Curry._4(CssJss$Ress.hsla, 360, Curry._1(CssJss$Ress.pct, 100), Curry._1(CssJss$Ress.pct, 50), 0.5)),
+                          Curry._1(CssJss$Ress.hover, [Curry._8(CssJss$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                         ]),
-                    Curry._1(Jss$Ress.Css.hover, [Curry._1(Jss$Ress.Css.color, "blue")])
+                    Curry._1(CssJss$Ress.hover, [Curry._1(CssJss$Ress.color, "blue")])
                   ]),
-              Curry._2(Jss$Ress.Css.rule, "header", [
-                    Curry._1(Jss$Ress.Css.important, Curry._1(Jss$Ress.Css.colorFn, (function (data) {
+              Curry._2(CssJss$Ress.rule, "header", [
+                    CssJss$Ress.important(Curry._1(CssJss$Ress.colorFn, (function (data) {
                                 return Belt_Option.map(data.color, (function (color) {
                                               if (color) {
                                                 return CssColor$Ress.value("red");
@@ -43,7 +43,7 @@ test("jss", (function () {
                                               }
                                             }));
                               }))),
-                    Curry._1(Jss$Ress.Css.marginFn, (function (data) {
+                    Curry._1(CssJss$Ress.marginFn, (function (data) {
                             return Belt_Option.map(data.space, (function (space) {
                                           return space;
                                         }));

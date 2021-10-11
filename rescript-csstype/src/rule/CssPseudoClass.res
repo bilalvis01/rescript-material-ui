@@ -1,37 +1,21 @@
-type constructor<'declarationBlock> = [
-  | #PseudoClass(string, 'declarationBlock)
-];
+type r<'a, 'data> = [> CssType.pseudoClass<'data> ] as 'a;
 
-module Make = (
-  D: {
-    type value<'data>;
-    type declarationBlock<'data>;
-    let map: ((string, declarationBlock<'data>)) => (string, value<'data>);
-  }
-) => {
-  type t<'data> = (string, D.value<'data>);
-
-  let { map } = module(D);
-
-  let make = v => {
-    switch v {
-    | #PseudoClass(selector, declarationBlock) => (selector, declarationBlock)
-    }
-    ->map
+let make = v => {
+  switch v {
+  | #PseudoClass(selector, declarationBlock) => (selector, declarationBlock)
   };
-}
+};
+
+external toStyleDeclaration: CssType.styleRuleEntry<'data> => CssType.styleDeclarationEntry<'data> = "%identity";
 
 module MakeHelper = (
-  D: {
-    type declarationBlock<'data>;
-    type declarationConstructor<'data>;
-    let style: 
-      array<declarationConstructor<'data>> => 
-      declarationBlock<'data>; 
+  DeclarationBlock: {
+    type styleDeclaration<'data>;
+    let declarationBlock: array<styleDeclaration<'data>> => CssType.declarationBlock<'data>; 
   }
 ) => {
-  let { style } = module(D);
+  type declarations<'data> = array<DeclarationBlock.styleDeclaration<'data>>;
   let pseudoClass = (selector, declarations) => 
-    #PseudoClass(selector, style(declarations));
+    #PseudoClass(selector, DeclarationBlock.declarationBlock(declarations));
   let hover = declarations => pseudoClass(":hover", declarations);
 }

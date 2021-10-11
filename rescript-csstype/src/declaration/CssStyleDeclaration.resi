@@ -1,0 +1,1 @@
+let make: CssType.styleDeclaration<'data> => CssType.styleDeclarationEntry<'data>;

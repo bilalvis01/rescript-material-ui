@@ -1,12 +1,5 @@
-type constructor<'data, 'declarationBlock> = [
-  CssAdvancedDeclaration.constructor<'data, 'declarationBlock>
+type styleDeclaration<'data> = [
+  CssType.styleDeclaration<'data>
 ];
 
-module Make: (
-  Type: {
-    type t<'data>;
-    type value<'data>;
-  }
-) => {
-  let make: array<constructor<'data, Type.t<'data>>> => Type.t<'data>;
-};
+let make: array<styleDeclaration<'data>> => CssType.declarationBlock<'data>;

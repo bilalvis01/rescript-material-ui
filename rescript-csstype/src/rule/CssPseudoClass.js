@@ -3,28 +3,21 @@
 
 var Curry = require("rescript/lib/js/curry.js");
 
-function Make(funarg) {
-  var map = funarg.map;
-  var make = function (v) {
-    var match = v.VAL;
-    return Curry._1(map, [
-                match[0],
-                match[1]
-              ]);
-  };
-  return {
-          make: make
-        };
+function make(v) {
+  var match = v.VAL;
+  return [
+          match[0],
+          match[1]
+        ];
 }
 
-function MakeHelper(funarg) {
-  var style = funarg.style;
+function MakeHelper(DeclarationBlock) {
   var pseudoClass = function (selector, declarations) {
     return {
             NAME: "PseudoClass",
             VAL: [
               selector,
-              Curry._1(style, declarations)
+              Curry._1(DeclarationBlock.declarationBlock, declarations)
             ]
           };
   };
@@ -37,6 +30,6 @@ function MakeHelper(funarg) {
         };
 }
 
-exports.Make = Make;
+exports.make = make;
 exports.MakeHelper = MakeHelper;
 /* No side effect */

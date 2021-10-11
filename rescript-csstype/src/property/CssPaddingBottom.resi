@@ -1,17 +1,15 @@
 type tag;
 type t = CssType.propertyValue<tag>;
-type d<'a> = [> CssDeclaration.constructor ] as 'a;
-type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 include (module type of CssPaddingSide.MakeValue({ type t = t; }));
 
 module DeclarationHelper: {
-  let paddingBottom: CssType.padding<d<'a>>;
-  let paddingBottomUnion: t => d<'a>;
-  let paddingBottomString: string => d<'a>;
-  let paddingBottomNumber: float => d<'a>;
+  let paddingBottom: CssType.padding<CssDeclaration.d<'a>>;
+  let paddingBottomUnion: t => CssDeclaration.d<'a>;
+  let paddingBottomString: string => CssDeclaration.d<'a>;
+  let paddingBottomNumber: float => CssDeclaration.d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let paddingBottomFn: ('data => option<t>) => dFn<'a, 'data>;
+  let paddingBottomFn: ('data => option<t>) => CssDeclarationFn.d<'a, 'data>;
 };

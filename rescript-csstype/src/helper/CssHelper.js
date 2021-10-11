@@ -9,9 +9,9 @@ var CssPropertyValue$Ress = require("../value/CssPropertyValue.js");
 var CssDeclarationHelper$Ress = require("../declaration/CssDeclarationHelper.js");
 var CssDeclarationFnHelper$Ress = require("../declaration/CssDeclarationFnHelper.js");
 
-function Make(D) {
-  var include = CssRule$Ress.MakeHelper(D);
-  var include$1 = CssPseudoClass$Ress.MakeHelper(D);
+function Make(DeclarationBlock) {
+  var include = CssRule$Ress.MakeHelper(DeclarationBlock);
+  var include$1 = CssPseudoClass$Ress.MakeHelper(DeclarationBlock);
   return {
           Background: CssPropertyValue$Ress.Background,
           BackgroundAttachment: CssPropertyValue$Ress.BackgroundAttachment,
@@ -126,7 +126,8 @@ function Make(D) {
           repeatingConicGradient3: CssValueHelper$Ress.repeatingConicGradient3,
           repeatingConicGradient4: CssValueHelper$Ress.repeatingConicGradient4,
           rule: include.rule,
-          atRule: CssAtRuleHelper$Ress.atRule,
+          regularAtRule: CssAtRuleHelper$Ress.regularAtRule,
+          nestedAtRule: CssAtRuleHelper$Ress.nestedAtRule,
           fontFace: CssAtRuleHelper$Ress.fontFace,
           $$FontFace: CssAtRuleHelper$Ress.$$FontFace,
           pseudoClass: include$1.pseudoClass,

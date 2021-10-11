@@ -1,10 +1,14 @@
 type propertyValue<'a>;
 type propertyValueFn<'a, 'data> = 'data => option<propertyValue<'a>>;
 
+type tag; 
+type val = propertyValue<tag>;
+
 type value<'data>;
 type declarationBlock<'data>;
+type descriptorBlock<'a>;
+
 type statements<'data>;
-type atRuleDesc<'a>;
 
 @unboxed
 type rec boxPropertyValue =
@@ -15,11 +19,15 @@ type rec boxPropertyValueFn<'data> =
   | BoxPropertyValueFn(propertyValueFn<'a, 'data>): boxPropertyValueFn<'data>;
 
 @unboxed
-type rec boxAtRuleDesc =
-  | BoxAtRuleDesc(atRuleDesc<'a>): boxAtRuleDesc;
+type rec boxDescriptorBlock =
+  | BoxDescriptorBlock(descriptorBlock<'a>): boxDescriptorBlock;
 
 type declaration = [
   | #Declaration(string, boxPropertyValue)
+];
+
+type declarationFn<'data> = [
+  | #DeclarationFn(string, boxPropertyValueFn<'data>)
 ];
 
 type rule<'data> = [
@@ -30,12 +38,36 @@ type pseudoClass<'data> = [
   | #PseudoClass(string, declarationBlock<'data>)
 ];
 
-type atRule = [
-  | #AtRule(string, boxAtRuleDesc)
+type regularAtRule = [
+  | #RegularAtRule(string, string)
 ];
 
-type val; 
-type pVal = propertyValue<val>;
+type nestedAtRule = [
+  | #NestedAtRule(string, option<string>, boxDescriptorBlock)
+];
+
+type styleDeclaration<'data> = [
+  | declaration
+  | declarationFn<'data>
+  | rule<'data>
+  | pseudoClass<'data>
+  | regularAtRule
+  | nestedAtRule
+];
+
+type styleRule<'data> = [
+  | rule<'data>
+  | regularAtRule
+  | nestedAtRule
+];
+
+type declarationEntry = (string, boxPropertyValue);
+type declarationFnEntry<'data> = (string, boxPropertyValueFn<'data>);
+type ruleEntry<'data> = (string, declarationBlock<'data>);
+type regularAtRuleEntry = (string, string);
+type nestedAtRuleEntry = (string, boxDescriptorBlock);
+type styleDeclarationEntry<'data> = (string, value<'data>);
+type styleRuleEntry<'data> = (string, declarationBlock<'data>);
 
 /* 
 Textual data types

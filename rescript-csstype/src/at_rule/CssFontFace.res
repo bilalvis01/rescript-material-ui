@@ -1,5 +1,5 @@
 type tag;
-type t = CssAtRule.rule<tag>;
+type t = CssType.descriptorBlock<tag>;
 
 type value;
 
@@ -9,21 +9,23 @@ type rec boxValue =
 
 type descriptor = (string, boxValue);
 
-module Rule = {
-  external makeRule: Js.Dict.t<boxValue> => t = "%identity";
+let { nestedAtRule } = module(CssNestedAtRule.Helper);
+
+module DescriptorBlock = {
+  external makeDescriptorBlock: Js.Dict.t<boxValue> => t = "%identity";
   let make = descriptors => {
     descriptors
     ->Js.Dict.fromArray
-    ->makeRule;
+    ->makeDescriptorBlock;
   };
 };
 
 module AtRuleHelper = {
   let fontFace = descriptors => 
-    CssAtRule.Helper.atRule("@font-face", Rule.make(descriptors))
+    nestedAtRule("@font-face", None, DescriptorBlock.make(descriptors))
 };
 
-module ValueType = {
+module Type = {
   type fontDisplay = [
     | #auto
     | #block
@@ -33,7 +35,7 @@ module ValueType = {
   ];
 };
 
-module ValueString = {
+module String = {
   let fontDisplay = v => {
     switch v {
     | #auto => "auto"
@@ -51,6 +53,6 @@ external integer: int => value = "%identity";
 let descriptor = (property, value) => (property, BoxValue(value));
 
 let fontDisplay = v => 
-  descriptor("fontDisplay", ValueString.fontDisplay(v)->string);
+  descriptor("fontDisplay", String.fontDisplay(v)->string);
 let fontDisplayString = v =>
   descriptor("fontDisplay", string(v));

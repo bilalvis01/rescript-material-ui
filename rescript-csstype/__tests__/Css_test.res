@@ -1,30 +1,12 @@
 open Jest;
 
-type value<'data>;
-type declarationBlock<'data>;
-type statements<'data>;
-
-module DeclarationBlock = CssAdvancedDeclarationBlock.Make({
-  type t<'data> = declarationBlock<'data>;
-  type value<'data> = value<'data>;
-});
-
-module Statements = CssStatements.Make({
-  type t<'data> = statements<'data>;
-  type declarationBlock<'data> = declarationBlock<'data>;
-});
-
-/*
-Helper
-*/
 include CssHelper.Make({ 
-  type declarationBlock<'data> = declarationBlock<'data>; 
-  type declarationConstructor<'data> = CssAdvancedDeclaration.constructor<'data, declarationBlock<'data>>;
-  let style = DeclarationBlock.make; 
+  type styleDeclaration<'data> = CssType.styleDeclaration<'data>;
+  let declarationBlock = CssDeclarationBlock.make; 
 });
 
 test("declarationBlock", (.) => {
-  expect(DeclarationBlock.make([
+  expect(CssDeclarationBlock.make([
     declaration("background", string(`url("image.png")`)),
     declaration("color", string("rgb(200, 200, 200)")),
     declaration("margin", number(24.)),
@@ -79,7 +61,7 @@ test("declarationBlock", (.) => {
 });
 
 test("statements", (.) => {
-  expect(Statements.make([
+  expect(CssStatements.make([
     rule("app", [
       declaration("background", string(`url("image.png")`)),
       declaration("color", string("rgb(200, 200, 200)")),
@@ -106,9 +88,6 @@ test("statements", (.) => {
       hover([
         color(#blue)
       ]),
-    ]),
-    hover([
-      color(rgb(100, 100, 100))
     ]),
   ]))
   ->toEqual(Obj.magic({
@@ -138,9 +117,6 @@ test("statements", (.) => {
       "&:hover": {
         "color": "blue"
       },
-    },
-    ":hover": {
-      "color": "rgb(100, 100, 100)",
     },
   }));
 });

@@ -1,7 +1,5 @@
 type tag;
 type t = CssType.propertyValue<tag>;
-type d<'a> = [> CssDeclaration.constructor ] as 'a;
-type dFn<'a, 'data> = [> CssDeclarationFn.constructor<'data> ] as 'a;
 
 external string: string => t = "%identity";
 let value: CssType.fontFamily<t>;
@@ -10,14 +8,14 @@ let value3: CssType.fontFamily3<t>;
 let value4: CssType.fontFamily4<t>;
 
 module DeclarationHelper: {
-  let fontFamily: CssType.fontFamily<d<'a>>;
-  let fontFamily2: CssType.fontFamily2<d<'a>>;
-  let fontFamily3: CssType.fontFamily3<d<'a>>;
-  let fontFamily4: CssType.fontFamily4<d<'a>>;
-  let fontFamilyUnion: t => d<'a>;
-  let fontFamilyString: string => d<'a>;
+  let fontFamily: CssType.fontFamily<CssDeclaration.d<'a>>;
+  let fontFamily2: CssType.fontFamily2<CssDeclaration.d<'a>>;
+  let fontFamily3: CssType.fontFamily3<CssDeclaration.d<'a>>;
+  let fontFamily4: CssType.fontFamily4<CssDeclaration.d<'a>>;
+  let fontFamilyUnion: t => CssDeclaration.d<'a>;
+  let fontFamilyString: string => CssDeclaration.d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let fontFamilyFn: ('data => option<t>) => dFn<'a, 'data>;
+  let fontFamilyFn: ('data => option<t>) => CssDeclarationFn.d<'a, 'data>;
 };

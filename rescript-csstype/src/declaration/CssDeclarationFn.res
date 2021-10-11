@@ -1,29 +1,13 @@
-type value<'data, 'a> = 'data => option<CssType.propertyValue<'a>>;
+type d<'a, 'data> = [> CssType.declarationFn<'data> ] as 'a;
 
-@unboxed
-type rec boxValue<'data> =
-  | BoxValue(value<'data, 'a>): boxValue<'data>;
-
-type constructor<'data> = [
-  | #DeclarationFn(string, boxValue<'data>)
-];
-
-module Make = (
-  D: {
-    type value<'data>; 
-    let map: ((string, boxValue<'data>)) => (string, value<'data>);
-  }
-) => {
-  type t<'data> = (string, D.value<'data>);
-  let { map } = module(D);
-  let make = declaration => {
-    switch declaration {
-    | #DeclarationFn(name, value) => (name, value)
-    }
-    ->map;
+let make = declaration => {
+  switch declaration {
+  | #DeclarationFn(name, value) => (name, value)
   };
 };
 
+external toStyleDeclaration: CssType.declarationFnEntry<'data> => CssType.styleDeclarationEntry<'data> = "%identity";
+
 module Helper = {
-  let declarationFn = (property, value) => #DeclarationFn(property, BoxValue(value));
+  let declarationFn = (property, value) => #DeclarationFn(property, CssType.BoxPropertyValueFn(value));
 };

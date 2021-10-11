@@ -4,14 +4,10 @@
 var Curry = require("rescript/lib/js/curry.js");
 var CssHelper$Ress = require("../src/helper/CssHelper.js");
 var CssStatements$Ress = require("../src/statement/CssStatements.js");
-var CssAdvancedDeclarationBlock$Ress = require("../src/declaration/CssAdvancedDeclarationBlock.js");
-
-var DeclarationBlock = CssAdvancedDeclarationBlock$Ress.Make({});
-
-var Statements = CssStatements$Ress.Make({});
+var CssDeclarationBlock$Ress = require("../src/declaration/CssDeclarationBlock.js");
 
 var include = CssHelper$Ress.Make({
-      style: DeclarationBlock.make
+      declarationBlock: CssDeclarationBlock$Ress.make
     });
 
 var pct = include.pct;
@@ -45,7 +41,7 @@ var paddingLeft = include.paddingLeft;
 var declaration = include.declaration;
 
 test("declarationBlock", (function () {
-        expect(Curry._1(DeclarationBlock.make, [
+        expect(CssDeclarationBlock$Ress.make([
                     Curry._2(declaration, "background", "url(\"image.png\")"),
                     Curry._2(declaration, "color", "rgb(200, 200, 200)"),
                     Curry._2(declaration, "margin", 24),
@@ -96,8 +92,7 @@ test("declarationBlock", (function () {
       }));
 
 test("statements", (function () {
-        expect(Curry._1(Statements.make, [
-                    Curry._2(rule, "app", [
+        expect(CssStatements$Ress.make([Curry._2(rule, "app", [
                           Curry._2(declaration, "background", "url(\"image.png\")"),
                           Curry._2(declaration, "color", "rgb(200, 200, 200)"),
                           Curry._2(declaration, "margin", 24),
@@ -119,9 +114,7 @@ test("statements", (function () {
                                 Curry._1(hover, [Curry._8(background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, "blue")])
                               ]),
                           Curry._1(hover, [Curry._1(color, "blue")])
-                        ]),
-                    Curry._1(hover, [Curry._1(color, Curry._3(rgb, 100, 100, 100))])
-                  ])).toEqual({
+                        ])])).toEqual({
               app: {
                 background: "url(\"image.png\")",
                 color: "rgb(200, 200, 200)",
@@ -148,9 +141,6 @@ test("statements", (function () {
                 "&:hover": {
                   color: "blue"
                 }
-              },
-              ":hover": {
-                color: "rgb(100, 100, 100)"
               }
             });
         
@@ -370,7 +360,9 @@ var repeatingConicGradient3 = include.repeatingConicGradient3;
 
 var repeatingConicGradient4 = include.repeatingConicGradient4;
 
-var atRule = include.atRule;
+var regularAtRule = include.regularAtRule;
+
+var nestedAtRule = include.nestedAtRule;
 
 var fontFace = include.fontFace;
 
@@ -788,8 +780,6 @@ var paddingBottomFn = include.paddingBottomFn;
 
 var paddingLeftFn = include.paddingLeftFn;
 
-exports.DeclarationBlock = DeclarationBlock;
-exports.Statements = Statements;
 exports.Background = Background;
 exports.BackgroundAttachment = BackgroundAttachment;
 exports.BackgroundColor = BackgroundColor;
@@ -903,7 +893,8 @@ exports.repeatingConicGradient2 = repeatingConicGradient2;
 exports.repeatingConicGradient3 = repeatingConicGradient3;
 exports.repeatingConicGradient4 = repeatingConicGradient4;
 exports.rule = rule;
-exports.atRule = atRule;
+exports.regularAtRule = regularAtRule;
+exports.nestedAtRule = nestedAtRule;
 exports.fontFace = fontFace;
 exports.$$FontFace = $$FontFace;
 exports.pseudoClass = pseudoClass;
@@ -1121,4 +1112,4 @@ exports.paddingTopFn = paddingTopFn;
 exports.paddingRightFn = paddingRightFn;
 exports.paddingBottomFn = paddingBottomFn;
 exports.paddingLeftFn = paddingLeftFn;
-/* DeclarationBlock Not a pure module */
+/* include Not a pure module */

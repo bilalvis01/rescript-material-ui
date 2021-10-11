@@ -1,0 +1,1 @@
+let make: CssType.styleRule<'data> => CssType.styleRuleEntry<'data>;
