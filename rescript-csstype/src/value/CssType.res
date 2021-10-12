@@ -51,7 +51,6 @@ type styleDeclaration<'data> = [
   | declarationFn<'data>
   | rule<'data>
   | pseudoClass<'data>
-  | regularAtRule
   | nestedAtRule
 ];
 

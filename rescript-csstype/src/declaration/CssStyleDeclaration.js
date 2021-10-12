@@ -6,7 +6,6 @@ var CssDeclaration$Ress = require("./CssDeclaration.js");
 var CssPseudoClass$Ress = require("../rule/CssPseudoClass.js");
 var CssNestedAtRule$Ress = require("../at_rule/CssNestedAtRule.js");
 var CssDeclarationFn$Ress = require("./CssDeclarationFn.js");
-var CssRegularAtRule$Ress = require("../at_rule/CssRegularAtRule.js");
 
 function make(declaration) {
   var variant = declaration.NAME;
@@ -14,8 +13,6 @@ function make(declaration) {
     return CssPseudoClass$Ress.make(declaration);
   } else if (variant === "NestedAtRule") {
     return CssNestedAtRule$Ress.make(declaration);
-  } else if (variant === "RegularAtRule") {
-    return CssRegularAtRule$Ress.make(declaration);
   } else if (variant === "DeclarationFn") {
     return CssDeclarationFn$Ress.make(declaration);
   } else if (variant === "Rule") {

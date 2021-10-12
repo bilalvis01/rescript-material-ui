@@ -12,9 +12,6 @@ let make = declaration => {
   | #...CssType.pseudoClass as r => 
     CssPseudoClass.make(r)
     ->CssPseudoClass.toStyleDeclaration
-  | #...CssType.regularAtRule as r => 
-    CssRegularAtRule.make(r)
-    ->CssRegularAtRule.toStyleDeclaration
   | #...CssType.nestedAtRule as r =>
     CssNestedAtRule.make(r)
     ->CssNestedAtRule.toStyleDeclaration
