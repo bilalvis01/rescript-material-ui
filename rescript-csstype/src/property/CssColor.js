@@ -2,7 +2,7 @@
 'use strict';
 
 var Curry = require("rescript/lib/js/curry.js");
-var CssString$Ress = require("../value/CssString.js");
+var CssString$Ress = require("../basic/CssString.js");
 var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
 var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
 

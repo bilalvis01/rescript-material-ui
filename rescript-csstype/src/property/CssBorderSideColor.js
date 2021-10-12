@@ -2,7 +2,7 @@
 'use strict';
 
 var Curry = require("rescript/lib/js/curry.js");
-var CssString$Ress = require("../value/CssString.js");
+var CssString$Ress = require("../basic/CssString.js");
 
 var color = CssString$Ress.Property.color;
 
