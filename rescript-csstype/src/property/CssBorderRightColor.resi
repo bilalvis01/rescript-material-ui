@@ -10,5 +10,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  let borderRightColorFn: ('data => option<t>) => CssDeclarationFn.d<'a, 'data>;
+  let borderRightColorFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
 };

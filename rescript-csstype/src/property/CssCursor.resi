@@ -19,5 +19,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  let cursorFn: ('data => option<t>) => CssDeclarationFn.d<'a, 'data>;
+  let cursorFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
 };

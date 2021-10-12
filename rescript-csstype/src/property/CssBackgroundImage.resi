@@ -17,5 +17,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  let backgroundImageFn: ('data => option<t>) => CssDeclarationFn.d<'a, 'data>;
+  let backgroundImageFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
 };

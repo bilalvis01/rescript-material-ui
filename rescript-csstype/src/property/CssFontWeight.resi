@@ -13,5 +13,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  let fontWeightFn: ('data => option<t>) => CssDeclarationFn.d<'a, 'data>;
+  let fontWeightFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
 };

@@ -11,5 +11,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  let clearFn: ('data => option<t>) => CssDeclarationFn.d<'a, 'data>;
+  let clearFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
 };

@@ -1,5 +1,3 @@
-type d<'a, 'data> = [> CssType.declarationFn<'data> ] as 'a;
-
 let make = declaration => {
   switch declaration {
   | #DeclarationFn(name, value) => (name, value)

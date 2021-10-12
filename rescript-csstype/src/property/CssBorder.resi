@@ -19,5 +19,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  let borderFn: ('data => option<t>) => CssDeclarationFn.d<'a, 'data>;
+  let borderFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
 };

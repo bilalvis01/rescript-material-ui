@@ -17,5 +17,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  let fontFamilyFn: ('data => option<t>) => CssDeclarationFn.d<'a, 'data>;
+  let fontFamilyFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
 };

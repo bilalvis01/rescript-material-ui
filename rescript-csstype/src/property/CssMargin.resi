@@ -47,5 +47,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  let marginFn: ('data => option<t>) => CssDeclarationFn.d<'a, 'data>;
+  let marginFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
 };

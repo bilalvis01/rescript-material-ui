@@ -11,5 +11,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  let paddingRightFn: ('data => option<t>) => CssDeclarationFn.d<'a, 'data>;
+  let paddingRightFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
 };
