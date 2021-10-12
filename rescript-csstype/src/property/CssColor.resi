@@ -5,9 +5,9 @@ external string: string => t = "%identity";
 let value: CssType.Property.color<t>;
 
 module DeclarationHelper: {
-  let color: CssType.Property.color<CssDeclaration.d<'a>>;
-  let colorUnion: t => CssDeclaration.d<'a>;
-  let colorString: string => CssDeclaration.d<'a>;
+  let color: CssType.Property.color<CssType.d<'a>>;
+  let colorUnion: t => CssType.d<'a>;
+  let colorString: string => CssType.d<'a>;
 };
 
 module DeclarationFnHelper: {

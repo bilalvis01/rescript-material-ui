@@ -4,10 +4,10 @@ type t = CssType.propertyValue<tag>;
 include (module type of CssPaddingSide.MakeValue({ type t = t; }));
 
 module DeclarationHelper: {
-  let paddingLeft: CssType.Property.padding<CssDeclaration.d<'a>>;
-  let paddingLeftUnion: t => CssDeclaration.d<'a>;
-  let paddingLeftString: string => CssDeclaration.d<'a>;
-  let paddingLeftNumber: float => CssDeclaration.d<'a>;
+  let paddingLeft: CssType.Property.padding<CssType.d<'a>>;
+  let paddingLeftUnion: t => CssType.d<'a>;
+  let paddingLeftString: string => CssType.d<'a>;
+  let paddingLeftNumber: float => CssType.d<'a>;
 };
 
 module DeclarationFnHelper: {

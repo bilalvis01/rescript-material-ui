@@ -4,10 +4,10 @@ type t = CssType.propertyValue<tag>;
 include (module type of CssMarginSide.MakeValue({ type t = t; }));
 
 module DeclarationHelper: {
-  let marginTop: CssType.Property.margin<CssDeclaration.d<'a>>;
-  let marginTopUnion: t => CssDeclaration.d<'a>;
-  let marginTopString: string => CssDeclaration.d<'a>;
-  let marginTopNumber: float => CssDeclaration.d<'a>;
+  let marginTop: CssType.Property.margin<CssType.d<'a>>;
+  let marginTopUnion: t => CssType.d<'a>;
+  let marginTopString: string => CssType.d<'a>;
+  let marginTopNumber: float => CssType.d<'a>;
 };
 
 module DeclarationFnHelper: {

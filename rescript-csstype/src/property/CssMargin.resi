@@ -20,29 +20,29 @@ let value3: CssType.Property.margin3<t>;
 let value4: CssType.Property.margin4<t>;
 
 module DeclarationHelper: {
-  let margin: CssType.Property.margin<CssDeclaration.d<'a>>;
-  let margin2: CssType.Property.margin2<CssDeclaration.d<'a>>;
-  let margin3: CssType.Property.margin3<CssDeclaration.d<'a>>;
-  let margin4: CssType.Property.margin4<CssDeclaration.d<'a>>;
-  let marginUnion: t => CssDeclaration.d<'a>;
-  let marginString: string => CssDeclaration.d<'a>;
-  let marginNumber: float => CssDeclaration.d<'a>;
+  let margin: CssType.Property.margin<CssType.d<'a>>;
+  let margin2: CssType.Property.margin2<CssType.d<'a>>;
+  let margin3: CssType.Property.margin3<CssType.d<'a>>;
+  let margin4: CssType.Property.margin4<CssType.d<'a>>;
+  let marginUnion: t => CssType.d<'a>;
+  let marginString: string => CssType.d<'a>;
+  let marginNumber: float => CssType.d<'a>;
   /*
   let margin2Number: (
     ~tb: float, 
     ~lr: float,
-  ) => [> CssDeclaration.constructor ];
+  ) => [> CssType.constructor ];
   let margin3Number: (
     ~top: float, 
     ~lr: float, 
     ~bottom: float,
-  ) => [> CssDeclaration.constructor ];
+  ) => [> CssType.constructor ];
   let margin4Number: (
     ~top: float, 
     ~right: float, 
     ~bottom: float, 
     ~left: float,
-  ) => [> CssDeclaration.constructor ];
+  ) => [> CssType.constructor ];
   */
 };
 

@@ -5,9 +5,9 @@ external string: string => t = "%identity";
 let value: CssType.Property.clear<t>;
 
 module DeclarationHelper: {
-  let clear: CssType.Property.clear<CssDeclaration.d<'a>>;
-  let clearUnion: t => CssDeclaration.d<'a>;
-  let clearString: string => CssDeclaration.d<'a>;
+  let clear: CssType.Property.clear<CssType.d<'a>>;
+  let clearUnion: t => CssType.d<'a>;
+  let clearString: string => CssType.d<'a>;
 };
 
 module DeclarationFnHelper: {

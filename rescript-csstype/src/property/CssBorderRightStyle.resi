@@ -4,9 +4,9 @@ type t = CssType.propertyValue<tag>;
 include (module type of CssBorderSideStyle.MakeValue({ type t = t; }));
 
 module DeclarationHelper: {
-  let borderRightStyle: CssType.Property.borderStyle<CssDeclaration.d<'a>>;
-  let borderRightStyleUnion: t => CssDeclaration.d<'a>;
-  let borderRightStyleString: string => CssDeclaration.d<'a>;
+  let borderRightStyle: CssType.Property.borderStyle<CssType.d<'a>>;
+  let borderRightStyleUnion: t => CssType.d<'a>;
+  let borderRightStyleString: string => CssType.d<'a>;
 };
 
 module DeclarationFnHelper: {

@@ -8,12 +8,12 @@ let value3: CssType.Property.backgroundPosition3<t>;
 let value4: CssType.Property.backgroundPosition4<t>;
 
 module DeclarationHelper: {
-  let backgroundPosition: CssType.Property.backgroundPosition<CssDeclaration.d<'a>>;
-  let backgroundPosition2: CssType.Property.backgroundPosition2<CssDeclaration.d<'a>>;
-  let backgroundPosition3: CssType.Property.backgroundPosition3<CssDeclaration.d<'a>>;
-  let backgroundPosition4: CssType.Property.backgroundPosition4<CssDeclaration.d<'a>>;
-  let backgroundPositionUnion: t => CssDeclaration.d<'a>;
-  let backgroundPositionString: string => CssDeclaration.d<'a>;
+  let backgroundPosition: CssType.Property.backgroundPosition<CssType.d<'a>>;
+  let backgroundPosition2: CssType.Property.backgroundPosition2<CssType.d<'a>>;
+  let backgroundPosition3: CssType.Property.backgroundPosition3<CssType.d<'a>>;
+  let backgroundPosition4: CssType.Property.backgroundPosition4<CssType.d<'a>>;
+  let backgroundPositionUnion: t => CssType.d<'a>;
+  let backgroundPositionString: string => CssType.d<'a>;
 };
 
 module DeclarationFnHelper: {

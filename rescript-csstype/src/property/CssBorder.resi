@@ -13,9 +13,9 @@ module MakeValue: (
 include (module type of MakeValue({ type t = t }));
 
 module DeclarationHelper: {
-  let border: CssType.Property.border<CssDeclaration.d<'a>>;
-  let borderUnion: t => CssDeclaration.d<'a>;
-  let borderString: string => CssDeclaration.d<'a>;
+  let border: CssType.Property.border<CssType.d<'a>>;
+  let borderUnion: t => CssType.d<'a>;
+  let borderString: string => CssType.d<'a>;
 };
 
 module DeclarationFnHelper: {

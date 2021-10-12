@@ -8,12 +8,12 @@ let value3: CssType.Property.borderStyle3<t>;
 let value4: CssType.Property.borderStyle4<t>;
 
 module DeclarationHelper: {
-  let borderStyle: CssType.Property.borderStyle<CssDeclaration.d<'a>>;
-  let borderStyle2: CssType.Property.borderStyle2<CssDeclaration.d<'a>>;
-  let borderStyle3: CssType.Property.borderStyle3<CssDeclaration.d<'a>>;
-  let borderStyle4: CssType.Property.borderStyle4<CssDeclaration.d<'a>>;
-  let borderStyleUnion: t => CssDeclaration.d<'a>;
-  let borderStyleString: string => CssDeclaration.d<'a>;
+  let borderStyle: CssType.Property.borderStyle<CssType.d<'a>>;
+  let borderStyle2: CssType.Property.borderStyle2<CssType.d<'a>>;
+  let borderStyle3: CssType.Property.borderStyle3<CssType.d<'a>>;
+  let borderStyle4: CssType.Property.borderStyle4<CssType.d<'a>>;
+  let borderStyleUnion: t => CssType.d<'a>;
+  let borderStyleString: string => CssType.d<'a>;
 };
 
 module DeclarationFnHelper: {

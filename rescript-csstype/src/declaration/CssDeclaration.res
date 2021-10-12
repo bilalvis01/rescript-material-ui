@@ -1,5 +1,3 @@
-type d<'a> = [> CssType.declaration ] as 'a;
-
 let make = declaration => {
   switch declaration {
   | #Declaration(property, value) => (property, value)
