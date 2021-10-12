@@ -1,5 +1,3 @@
-type r<'a, 'data> = [> CssType.rule<'data> ] as 'a;
-
 let make = v => {
   switch v {
   | #Rule(selector, declarationBlock) => (selector, declarationBlock);

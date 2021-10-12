@@ -1,5 +1,3 @@
-type r<'a, 'data> = [> CssType.pseudoClass<'data> ] as 'a;
-
 let make = v => {
   switch v {
   | #PseudoClass(selector, declarationBlock) => (selector, declarationBlock)

@@ -72,7 +72,7 @@ type styleRuleEntry<'data> = (string, declarationBlock<'data>);
 type d<'a> = [> declaration ] as 'a;
 type dfn<'a, 'data> = [> declarationFn<'data> ] as 'a;
 type r<'a, 'data> = [> rule<'data> ] as 'a;
-type pc<'a, 'data> = [> pseudoClass<'data> ] as 'a;
+type psc<'a, 'data> = [> pseudoClass<'data> ] as 'a;
 type rar<'a> = [> regularAtRule ] as 'a;
 type nar<'a> = [> nestedAtRule ] as 'a;
 

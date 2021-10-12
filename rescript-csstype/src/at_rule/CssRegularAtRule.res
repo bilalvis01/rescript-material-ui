@@ -1,5 +1,3 @@
-type r<'a> = [> CssType.regularAtRule ] as 'a;
-
 let make = v => {
   switch v {
   | #RegularAtRule(identifier, rule) => (identifier, rule)

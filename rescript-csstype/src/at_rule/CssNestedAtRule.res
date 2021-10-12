@@ -1,5 +1,3 @@
-type r<'a> = [> CssType.nestedAtRule ] as 'a;
-
 let make = v => {
   switch v {
   | #NestedAtRule(identifier, rule, descriptorBlock) =>
