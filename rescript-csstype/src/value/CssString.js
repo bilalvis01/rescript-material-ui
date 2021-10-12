@@ -1766,6 +1766,63 @@ function padding4(top, right, bottom, left) {
   return length_percentage(top) + " " + length_percentage(right) + " " + length_percentage(bottom) + " " + length_percentage(left);
 }
 
+var Property = {
+  background: background,
+  background2: background2,
+  background3: background3,
+  background4: background4,
+  backgroundAttachment: backgroundAttachment,
+  backgroundAttachment2: backgroundAttachment2,
+  backgroundAttachment3: backgroundAttachment3,
+  backgroundAttachment4: backgroundAttachment4,
+  backgroundColor: backgroundColor,
+  backgroundImage: backgroundImage,
+  backgroundImage2: backgroundImage2,
+  backgroundImage3: backgroundImage3,
+  backgroundImage4: backgroundImage4,
+  backgroundPosition: backgroundPosition,
+  backgroundPosition2: backgroundPosition2,
+  backgroundPosition3: backgroundPosition3,
+  backgroundPosition4: backgroundPosition4,
+  backgroundStyle: backgroundStyle,
+  backgroundStyle2: backgroundStyle2,
+  backgroundStyle3: backgroundStyle3,
+  backgroundStyle4: backgroundStyle4,
+  border: border,
+  borderStyle: borderStyle,
+  borderStyle2: borderStyle2,
+  borderStyle3: borderStyle3,
+  borderStyle4: borderStyle4,
+  borderWidth: borderWidth,
+  borderWidth2: borderWidth2,
+  borderWidth3: borderWidth3,
+  borderWidth4: borderWidth4,
+  borderColor: borderColor,
+  borderColor2: borderColor2,
+  borderColor3: borderColor3,
+  borderColor4: borderColor4,
+  color: color$1,
+  clear: clear$1,
+  cursor: cursor,
+  cursor1: cursor1,
+  cursor2: cursor2,
+  cursor3: cursor3,
+  cursor4: cursor4,
+  fontFamily: fontFamily$1,
+  fontFamily2: fontFamily2,
+  fontFamily3: fontFamily3,
+  fontFamily4: fontFamily4,
+  fontWeight: fontWeight$1,
+  margin: margin$1,
+  margin2: margin2,
+  margin3: margin3,
+  margin4: margin4,
+  padding: padding$1,
+  padding2: padding2,
+  padding3: padding3,
+  padding4: padding4
+};
+
 var Data = {
   $$global: $$global,
   str: str,
@@ -1870,58 +1927,5 @@ var Data = {
 };
 
 exports.Data = Data;
-exports.background = background;
-exports.background2 = background2;
-exports.background3 = background3;
-exports.background4 = background4;
-exports.backgroundAttachment = backgroundAttachment;
-exports.backgroundAttachment2 = backgroundAttachment2;
-exports.backgroundAttachment3 = backgroundAttachment3;
-exports.backgroundAttachment4 = backgroundAttachment4;
-exports.backgroundColor = backgroundColor;
-exports.backgroundImage = backgroundImage;
-exports.backgroundImage2 = backgroundImage2;
-exports.backgroundImage3 = backgroundImage3;
-exports.backgroundImage4 = backgroundImage4;
-exports.backgroundPosition = backgroundPosition;
-exports.backgroundPosition2 = backgroundPosition2;
-exports.backgroundPosition3 = backgroundPosition3;
-exports.backgroundPosition4 = backgroundPosition4;
-exports.backgroundStyle = backgroundStyle;
-exports.backgroundStyle2 = backgroundStyle2;
-exports.backgroundStyle3 = backgroundStyle3;
-exports.backgroundStyle4 = backgroundStyle4;
-exports.border = border;
-exports.borderStyle = borderStyle;
-exports.borderStyle2 = borderStyle2;
-exports.borderStyle3 = borderStyle3;
-exports.borderStyle4 = borderStyle4;
-exports.borderWidth = borderWidth;
-exports.borderWidth2 = borderWidth2;
-exports.borderWidth3 = borderWidth3;
-exports.borderWidth4 = borderWidth4;
-exports.borderColor = borderColor;
-exports.borderColor2 = borderColor2;
-exports.borderColor3 = borderColor3;
-exports.borderColor4 = borderColor4;
-exports.color = color$1;
-exports.clear = clear$1;
-exports.cursor = cursor;
-exports.cursor1 = cursor1;
-exports.cursor2 = cursor2;
-exports.cursor3 = cursor3;
-exports.cursor4 = cursor4;
-exports.fontFamily = fontFamily$1;
-exports.fontFamily2 = fontFamily2;
-exports.fontFamily3 = fontFamily3;
-exports.fontFamily4 = fontFamily4;
-exports.fontWeight = fontWeight$1;
-exports.margin = margin$1;
-exports.margin2 = margin2;
-exports.margin3 = margin3;
-exports.margin4 = margin4;
-exports.padding = padding$1;
-exports.padding2 = padding2;
-exports.padding3 = padding3;
-exports.padding4 = padding4;
+exports.Property = Property;
 /* No side effect */

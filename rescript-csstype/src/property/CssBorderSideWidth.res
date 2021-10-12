@@ -1,4 +1,4 @@
-let { borderWidth } = module(CssString);
+let { borderWidth } = module(CssString.Property);
 
 module MakeValue = (
   Type: {

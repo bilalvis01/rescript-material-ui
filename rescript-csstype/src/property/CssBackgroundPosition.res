@@ -10,7 +10,7 @@ let {
   backgroundPosition2 as bgPosition2,
   backgroundPosition3 as bgPosition3,
   backgroundPosition4 as bgPosition4,
-} = module(CssString);
+} = module(CssString.Property);
 
 external string: string => t = "%identity";
 let value = v => bgPosition(v)->string;

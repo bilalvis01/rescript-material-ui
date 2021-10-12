@@ -12,9 +12,11 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssString$Ress.fontWeight;
+var fontWeight = CssString$Ress.Property.fontWeight;
 
-function fontWeight(v) {
+var value = Curry.__1(fontWeight);
+
+function fontWeight$1(v) {
   return Curry._2(declaration, property, value(v));
 }
 
@@ -31,7 +33,7 @@ function fontWeightInteger(v) {
 }
 
 var DeclarationHelper = {
-  fontWeight: fontWeight,
+  fontWeight: fontWeight$1,
   fontWeightUnion: fontWeightUnion,
   fontWeightString: fontWeightString,
   fontWeightInteger: fontWeightInteger

@@ -10,7 +10,7 @@ let {
   backgroundAttachment2 as bgAtt2,
   backgroundAttachment3 as bgAtt3,
   backgroundAttachment4 as bgAtt4,
-} = module(CssString);
+} = module(CssString.Property);
 
 external string: string => t = "%identity";
 let value = v => bgAtt(v)->string;

@@ -12,27 +12,35 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssString$Ress.borderColor;
+var borderColor = CssString$Ress.Property.borderColor;
 
-var value2 = CssString$Ress.borderColor2;
+var borderColor2 = CssString$Ress.Property.borderColor2;
 
-var value3 = CssString$Ress.borderColor3;
+var borderColor3 = CssString$Ress.Property.borderColor3;
 
-var value4 = CssString$Ress.borderColor4;
+var borderColor4 = CssString$Ress.Property.borderColor4;
 
-function borderColor(v) {
+var value = Curry.__1(borderColor);
+
+var value2 = Curry.__2(borderColor2);
+
+var value3 = Curry.__3(borderColor3);
+
+var value4 = Curry.__4(borderColor4);
+
+function borderColor$1(v) {
   return Curry._2(declaration, property, value(v));
 }
 
-function borderColor2(tb, lr) {
+function borderColor2$1(tb, lr) {
   return Curry._2(declaration, property, value2(tb, lr));
 }
 
-function borderColor3(top, lr, bottom) {
+function borderColor3$1(top, lr, bottom) {
   return Curry._2(declaration, property, value3(top, lr, bottom));
 }
 
-function borderColor4(top, right, bottom, left) {
+function borderColor4$1(top, right, bottom, left) {
   return Curry._2(declaration, property, value4(top, right, bottom, left));
 }
 
@@ -45,10 +53,10 @@ function borderColorString(v) {
 }
 
 var DeclarationHelper = {
-  borderColor: borderColor,
-  borderColor2: borderColor2,
-  borderColor3: borderColor3,
-  borderColor4: borderColor4,
+  borderColor: borderColor$1,
+  borderColor2: borderColor2$1,
+  borderColor3: borderColor3$1,
+  borderColor4: borderColor4$1,
   borderColorUnion: borderColorUnion,
   borderColorString: borderColorString
 };

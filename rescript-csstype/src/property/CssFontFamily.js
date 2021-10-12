@@ -12,27 +12,35 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssString$Ress.fontFamily;
+var fontFamily = CssString$Ress.Property.fontFamily;
 
-var value2 = CssString$Ress.fontFamily2;
+var fontFamily2 = CssString$Ress.Property.fontFamily2;
 
-var value3 = CssString$Ress.fontFamily3;
+var fontFamily3 = CssString$Ress.Property.fontFamily3;
 
-var value4 = CssString$Ress.fontFamily4;
+var fontFamily4 = CssString$Ress.Property.fontFamily4;
 
-function fontFamily(v) {
+var value = Curry.__1(fontFamily);
+
+var value2 = Curry.__2(fontFamily2);
+
+var value3 = Curry.__3(fontFamily3);
+
+var value4 = Curry.__4(fontFamily4);
+
+function fontFamily$1(v) {
   return Curry._2(declaration, property, value(v));
 }
 
-function fontFamily2(v1, v2) {
+function fontFamily2$1(v1, v2) {
   return Curry._2(declaration, property, value2(v1, v2));
 }
 
-function fontFamily3(v1, v2, v3) {
+function fontFamily3$1(v1, v2, v3) {
   return Curry._2(declaration, property, value3(v1, v2, v3));
 }
 
-function fontFamily4(v1, v2, v3, v4) {
+function fontFamily4$1(v1, v2, v3, v4) {
   return Curry._2(declaration, property, value4(v1, v2, v3, v4));
 }
 
@@ -45,10 +53,10 @@ function fontFamilyString(v) {
 }
 
 var DeclarationHelper = {
-  fontFamily: fontFamily,
-  fontFamily2: fontFamily2,
-  fontFamily3: fontFamily3,
-  fontFamily4: fontFamily4,
+  fontFamily: fontFamily$1,
+  fontFamily2: fontFamily2$1,
+  fontFamily3: fontFamily3$1,
+  fontFamily4: fontFamily4$1,
   fontFamilyUnion: fontFamilyUnion,
   fontFamilyString: fontFamilyString
 };

@@ -10,7 +10,7 @@ let {
   margin2 as m2,
   margin3 as m3,
   margin4 as m4,
-} = module(CssString);
+} = module(CssString.Property);
 
 external string: string => t = "%identity";
 external number: float => t = "%identity";

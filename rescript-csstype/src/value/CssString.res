@@ -1,6 +1,5 @@
-open Belt;
-
 module Data = {
+  open Belt;
   open CssType.Data;
   /*
   Textual data type
@@ -1011,148 +1010,150 @@ module Data = {
 Property
 ===============================================================================
 */
-let background = (
-  ~color=?,
-  ~position=?,
-  ~size=?,
-  ~repeat=?,
-  ~attachment=?,
-  ~origin=?,
-  ~clip=?,
-  imageOrColor
-) => {
-  switch imageOrColor {
-  | #...CssType.Data.global as g => Data.global(g)
-  | #...CssType.Data.bgImage as imageOrColor
-  | #...CssType.Data.color as imageOrColor =>
-    Data.bg(
-      ~color=?color,
-      ~position=?position,
-      ~size=?size,
-      ~repeat=?repeat,
-      ~attachment=?attachment,
-      ~origin=?origin,
-      ~clip=?clip,
-      imageOrColor
-    );
+module Property = {
+  let background = (
+    ~color=?,
+    ~position=?,
+    ~size=?,
+    ~repeat=?,
+    ~attachment=?,
+    ~origin=?,
+    ~clip=?,
+    imageOrColor
+  ) => {
+    switch imageOrColor {
+    | #...CssType.Data.global as g => Data.global(g)
+    | #...CssType.Data.bgImage as imageOrColor
+    | #...CssType.Data.color as imageOrColor =>
+      Data.bg(
+        ~color=?color,
+        ~position=?position,
+        ~size=?size,
+        ~repeat=?repeat,
+        ~attachment=?attachment,
+        ~origin=?origin,
+        ~clip=?clip,
+        imageOrColor
+      );
+    };
   };
-};
-let background2 = (v1, v2) => 
-  `${Data.bgLayer(v1)}, ${Data.bgLayer(v2)}`;
-let background3 = (v1, v2, v3) =>
-  `${Data.bgLayer(v1)}, ${Data.bgLayer(v2)}, ${Data.bgLayer(v3)}`;
-let background4 = (v1, v2, v3, v4) =>
-  `${Data.bgLayer(v1)}, ${Data.bgLayer(v2)}, ${Data.bgLayer(v3)}, ${Data.bgLayer(v4)}`;
+  let background2 = (v1, v2) => 
+    `${Data.bgLayer(v1)}, ${Data.bgLayer(v2)}`;
+  let background3 = (v1, v2, v3) =>
+    `${Data.bgLayer(v1)}, ${Data.bgLayer(v2)}, ${Data.bgLayer(v3)}`;
+  let background4 = (v1, v2, v3, v4) =>
+    `${Data.bgLayer(v1)}, ${Data.bgLayer(v2)}, ${Data.bgLayer(v3)}, ${Data.bgLayer(v4)}`;
 
-let backgroundAttachment = v => Data.attachment_global(v);
-let backgroundAttachment2 = (v1, v2) => 
-  `${Data.attachment(v1)}, ${Data.attachment(v2)}`;
-let backgroundAttachment3 = (v1, v2, v3) => 
-  `${Data.attachment(v1)}, ${Data.attachment(v2)}, ${Data.attachment(v3)}`;
-let backgroundAttachment4 = (v1, v2, v3, v4) => 
-  `${Data.attachment(v1)}, ${Data.attachment(v2)}, ${Data.attachment(v3)}, ${Data.attachment(v4)}`;
+  let backgroundAttachment = v => Data.attachment_global(v);
+  let backgroundAttachment2 = (v1, v2) => 
+    `${Data.attachment(v1)}, ${Data.attachment(v2)}`;
+  let backgroundAttachment3 = (v1, v2, v3) => 
+    `${Data.attachment(v1)}, ${Data.attachment(v2)}, ${Data.attachment(v3)}`;
+  let backgroundAttachment4 = (v1, v2, v3, v4) => 
+    `${Data.attachment(v1)}, ${Data.attachment(v2)}, ${Data.attachment(v3)}, ${Data.attachment(v4)}`;
 
-let backgroundColor = v => Data.color_global(v);
+  let backgroundColor = v => Data.color_global(v);
 
-let backgroundImage = v => 
-  Data.bgImage_global(v);
-let backgroundImage2 = (v1, v2) => 
-  `${Data.bgImage(v1)}, ${Data.bgImage(v2)}`;
-let backgroundImage3 = (v1, v2, v3) => 
-  `${Data.bgImage(v1)}, ${Data.bgImage(v2)}, ${Data.bgImage(v3)}`;
-let backgroundImage4 = (v1, v2, v3, v4) => 
-  `${Data.bgImage(v1)}, ${Data.bgImage(v2)}, ${Data.bgImage(v3)}, ${Data.bgImage(v4)}`;
+  let backgroundImage = v => 
+    Data.bgImage_global(v);
+  let backgroundImage2 = (v1, v2) => 
+    `${Data.bgImage(v1)}, ${Data.bgImage(v2)}`;
+  let backgroundImage3 = (v1, v2, v3) => 
+    `${Data.bgImage(v1)}, ${Data.bgImage(v2)}, ${Data.bgImage(v3)}`;
+  let backgroundImage4 = (v1, v2, v3, v4) => 
+    `${Data.bgImage(v1)}, ${Data.bgImage(v2)}, ${Data.bgImage(v3)}, ${Data.bgImage(v4)}`;
 
-let backgroundPosition = v => Data.position_global(v);
-let backgroundPosition2 = (v1, v2) => 
-  `${Data.position(v1)}, ${Data.position(v2)}`;
-let backgroundPosition3 = (v1, v2, v3) => 
-  `${Data.position(v1)}, ${Data.position(v2)}, ${Data.position(v3)}`;
-let backgroundPosition4 = (v1, v2, v3, v4) => 
-  `${Data.position(v1)}, ${Data.position(v2)}, ${Data.position(v3)}, ${Data.position(v4)}`;
+  let backgroundPosition = v => Data.position_global(v);
+  let backgroundPosition2 = (v1, v2) => 
+    `${Data.position(v1)}, ${Data.position(v2)}`;
+  let backgroundPosition3 = (v1, v2, v3) => 
+    `${Data.position(v1)}, ${Data.position(v2)}, ${Data.position(v3)}`;
+  let backgroundPosition4 = (v1, v2, v3, v4) => 
+    `${Data.position(v1)}, ${Data.position(v2)}, ${Data.position(v3)}, ${Data.position(v4)}`;
 
-let backgroundStyle = v => Data.repeatStyle_global(v);
-let backgroundStyle2 = (v1, v2) => 
-  `${Data.repeatStyle(v1)}, ${Data.repeatStyle(v2)}`;
-let backgroundStyle3 = (v1, v2, v3) => 
-  `${Data.repeatStyle(v1)}, ${Data.repeatStyle(v2)}, ${Data.repeatStyle(v3)}`;
-let backgroundStyle4 = (v1, v2, v3, v4) => 
-  `${Data.repeatStyle(v1)}, ${Data.repeatStyle(v2)}, ${Data.repeatStyle(v3)}, ${Data.repeatStyle(v4)}`;
+  let backgroundStyle = v => Data.repeatStyle_global(v);
+  let backgroundStyle2 = (v1, v2) => 
+    `${Data.repeatStyle(v1)}, ${Data.repeatStyle(v2)}`;
+  let backgroundStyle3 = (v1, v2, v3) => 
+    `${Data.repeatStyle(v1)}, ${Data.repeatStyle(v2)}, ${Data.repeatStyle(v3)}`;
+  let backgroundStyle4 = (v1, v2, v3, v4) => 
+    `${Data.repeatStyle(v1)}, ${Data.repeatStyle(v2)}, ${Data.repeatStyle(v3)}, ${Data.repeatStyle(v4)}`;
 
-let border = (~width=?, ~color=?, style) => {
-  let border = switch (width, color) {
-  | (None, None) => None
-  | (Some(w), None) => Some(Data.lineWidth(w))
-  | (None, Some(c)) => Some(Data.color(c))
-  | (Some(w), Some(c)) => Some(`${Data.lineWidth(w)} ${Data.color(c)}`)
+  let border = (~width=?, ~color=?, style) => {
+    let border = switch (width, color) {
+    | (None, None) => None
+    | (Some(w), None) => Some(Data.lineWidth(w))
+    | (None, Some(c)) => Some(Data.color(c))
+    | (Some(w), Some(c)) => Some(`${Data.lineWidth(w)} ${Data.color(c)}`)
+    };
+    switch (border, style) {
+    | (_, #...CssType.Data.global as g) => Data.global(g)
+    | (None, #...CssType.Data.lineStyle as s) => Data.lineStyle(s)
+    | (Some(b), #...CssType.Data.lineStyle as s) => `${b} ${Data.lineStyle(s)}`
+    }
   };
-  switch (border, style) {
-  | (_, #...CssType.Data.global as g) => Data.global(g)
-  | (None, #...CssType.Data.lineStyle as s) => Data.lineStyle(s)
-  | (Some(b), #...CssType.Data.lineStyle as s) => `${b} ${Data.lineStyle(s)}`
-  }
+
+  let borderStyle = v => Data.lineStyle_global(v);
+  let borderStyle2 = (~tb, ~lr) =>
+    `${Data.lineStyle(tb)} ${Data.lineStyle(lr)}`;
+  let borderStyle3 = (~top, ~lr, ~bottom) =>
+    `${Data.lineStyle(top)} ${Data.lineStyle(lr)} ${Data.lineStyle(bottom)}`;
+  let borderStyle4 = (~top, ~right, ~bottom, ~left) =>
+    `${Data.lineStyle(top)} ${Data.lineStyle(right)} ${Data.lineStyle(bottom)} ${Data.lineStyle(left)}`;
+
+  let borderWidth = v => Data.lineWidth_global(v);
+  let borderWidth2 = (~tb, ~lr) => 
+    `${Data.lineWidth(tb)} ${Data.lineWidth(lr)}`;
+  let borderWidth3 = (~top, ~lr, ~bottom) =>
+    `${Data.lineWidth(top)} ${Data.lineWidth(lr)} ${Data.lineWidth(bottom)}`;
+  let borderWidth4 = (~top, ~right, ~bottom, ~left) =>
+    `${Data.lineWidth(top)} ${Data.lineWidth(right)} ${Data.lineWidth(bottom)} ${Data.lineWidth(left)}`;
+
+  let borderColor = v => Data.color_global(v);
+  let borderColor2 = (~tb, ~lr) => `${Data.color(tb)} ${Data.color(lr)}`;
+  let borderColor3 = (~top, ~lr, ~bottom) => 
+    `${Data.color(top)} ${Data.color(lr)} ${Data.color(bottom)}`;
+  let borderColor4 = (~top, ~right, ~bottom, ~left) =>
+    `${Data.color(top)} ${Data.color(right)} ${Data.color(bottom)} ${Data.color(left)}`;
+
+  let color = v => Data.color_global(v);
+
+  let clear = v => Data.clear_global(v);
+
+  let cursor = v => Data.cursorKeyword_global(v);
+  let cursor1 = (i, k) =>
+    `${Data.cursorImage(i)}, ${Data.cursorKeyword(k)}`;
+  let cursor2 = (i1, i2, k) =>
+    `${Data.cursorImage(i1)}, ${Data.cursorImage(i2)}, ${Data.cursorKeyword(k)}`;
+  let cursor3 = (i1, i2, i3, k) =>
+    `${Data.cursorImage(i1)}, ${Data.cursorImage(i2)}, ${Data.cursorImage(i3)}, ${Data.cursorKeyword(k)}`;
+  let cursor4 = (i1, i2, i3, i4, k) =>
+    `${Data.cursorImage(i1)}, ${Data.cursorImage(i2)}, ${Data.cursorImage(i3)}, ${Data.cursorImage(i4)}, ${Data.cursorKeyword(k)}`;
+
+  let fontFamily = v => 
+    Data.fontFamily_global(v);
+  let fontFamily2 = (v1, v2) =>
+    `${Data.fontFamily(v1)}, ${Data.fontFamily(v2)}`;
+  let fontFamily3 = (v1, v2, v3) =>
+    `${Data.fontFamily(v1)}, ${Data.fontFamily(v2)}, ${Data.fontFamily(v3)}`;
+  let fontFamily4 = (v1, v2, v3, v4) =>
+    `${Data.fontFamily(v1)}, ${Data.fontFamily(v2)}, ${Data.fontFamily(v3)}, ${Data.fontFamily(v4)}`;
+
+  let fontWeight = v => Data.fontWeight_global(v);
+
+  let margin = v => Data.margin_global(v);
+  let margin2 = (~tb, ~lr) => 
+    `${Data.margin(tb)} ${Data.margin(lr)}`;
+  let margin3 = (~top, ~lr, ~bottom) =>
+    `${Data.margin(top)} ${Data.margin(lr)} ${Data.margin(bottom)}`;
+  let margin4 = (~top, ~right, ~bottom, ~left) =>
+    `${Data.margin(top)} ${Data.margin(right)} ${Data.margin(bottom)} ${Data.margin(left)}`;
+
+  let padding = v => Data.padding_global(v);
+  let padding2 = (~tb, ~lr) => 
+    `${Data.padding(tb)} ${Data.padding(lr)}`;
+  let padding3 = (~top, ~lr, ~bottom) =>
+    `${Data.padding(top)} ${Data.padding(lr)} ${Data.padding(bottom)}`;
+  let padding4 = (~top, ~right, ~bottom, ~left) =>
+    `${Data.padding(top)} ${Data.padding(right)} ${Data.padding(bottom)} ${Data.padding(left)}`;
 };
-
-let borderStyle = v => Data.lineStyle_global(v);
-let borderStyle2 = (~tb, ~lr) =>
-  `${Data.lineStyle(tb)} ${Data.lineStyle(lr)}`;
-let borderStyle3 = (~top, ~lr, ~bottom) =>
-  `${Data.lineStyle(top)} ${Data.lineStyle(lr)} ${Data.lineStyle(bottom)}`;
-let borderStyle4 = (~top, ~right, ~bottom, ~left) =>
-  `${Data.lineStyle(top)} ${Data.lineStyle(right)} ${Data.lineStyle(bottom)} ${Data.lineStyle(left)}`;
-
-let borderWidth = v => Data.lineWidth_global(v);
-let borderWidth2 = (~tb, ~lr) => 
-  `${Data.lineWidth(tb)} ${Data.lineWidth(lr)}`;
-let borderWidth3 = (~top, ~lr, ~bottom) =>
-  `${Data.lineWidth(top)} ${Data.lineWidth(lr)} ${Data.lineWidth(bottom)}`;
-let borderWidth4 = (~top, ~right, ~bottom, ~left) =>
-  `${Data.lineWidth(top)} ${Data.lineWidth(right)} ${Data.lineWidth(bottom)} ${Data.lineWidth(left)}`;
-
-let borderColor = v => Data.color_global(v);
-let borderColor2 = (~tb, ~lr) => `${Data.color(tb)} ${Data.color(lr)}`;
-let borderColor3 = (~top, ~lr, ~bottom) => 
-  `${Data.color(top)} ${Data.color(lr)} ${Data.color(bottom)}`;
-let borderColor4 = (~top, ~right, ~bottom, ~left) =>
-  `${Data.color(top)} ${Data.color(right)} ${Data.color(bottom)} ${Data.color(left)}`;
-
-let color = v => Data.color_global(v);
-
-let clear = v => Data.clear_global(v);
-
-let cursor = v => Data.cursorKeyword_global(v);
-let cursor1 = (i, k) =>
-  `${Data.cursorImage(i)}, ${Data.cursorKeyword(k)}`;
-let cursor2 = (i1, i2, k) =>
-  `${Data.cursorImage(i1)}, ${Data.cursorImage(i2)}, ${Data.cursorKeyword(k)}`;
-let cursor3 = (i1, i2, i3, k) =>
-  `${Data.cursorImage(i1)}, ${Data.cursorImage(i2)}, ${Data.cursorImage(i3)}, ${Data.cursorKeyword(k)}`;
-let cursor4 = (i1, i2, i3, i4, k) =>
-  `${Data.cursorImage(i1)}, ${Data.cursorImage(i2)}, ${Data.cursorImage(i3)}, ${Data.cursorImage(i4)}, ${Data.cursorKeyword(k)}`;
-
-let fontFamily = v => 
-  Data.fontFamily_global(v);
-let fontFamily2 = (v1, v2) =>
-  `${Data.fontFamily(v1)}, ${Data.fontFamily(v2)}`;
-let fontFamily3 = (v1, v2, v3) =>
-  `${Data.fontFamily(v1)}, ${Data.fontFamily(v2)}, ${Data.fontFamily(v3)}`;
-let fontFamily4 = (v1, v2, v3, v4) =>
-  `${Data.fontFamily(v1)}, ${Data.fontFamily(v2)}, ${Data.fontFamily(v3)}, ${Data.fontFamily(v4)}`;
-
-let fontWeight = v => Data.fontWeight_global(v);
-
-let margin = v => Data.margin_global(v);
-let margin2 = (~tb, ~lr) => 
-  `${Data.margin(tb)} ${Data.margin(lr)}`;
-let margin3 = (~top, ~lr, ~bottom) =>
-  `${Data.margin(top)} ${Data.margin(lr)} ${Data.margin(bottom)}`;
-let margin4 = (~top, ~right, ~bottom, ~left) =>
-  `${Data.margin(top)} ${Data.margin(right)} ${Data.margin(bottom)} ${Data.margin(left)}`;
-
-let padding = v => Data.padding_global(v);
-let padding2 = (~tb, ~lr) => 
-  `${Data.padding(tb)} ${Data.padding(lr)}`;
-let padding3 = (~top, ~lr, ~bottom) =>
-  `${Data.padding(top)} ${Data.padding(lr)} ${Data.padding(bottom)}`;
-let padding4 = (~top, ~right, ~bottom, ~left) =>
-  `${Data.padding(top)} ${Data.padding(right)} ${Data.padding(bottom)} ${Data.padding(left)}`;

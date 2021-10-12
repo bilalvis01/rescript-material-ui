@@ -5,7 +5,7 @@ let property = "clear";
 
 let { declaration } = module(CssDeclaration.Helper);
 let { declarationFn } = module(CssDeclarationFn.Helper);
-let { clear } = module(CssString);
+let { clear } = module(CssString.Property);
 
 external string: string => t = "%identity";
 let value = v => clear(v)->string;

@@ -12,9 +12,11 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssString$Ress.clear;
+var clear = CssString$Ress.Property.clear;
 
-function clear(v) {
+var value = Curry.__1(clear);
+
+function clear$1(v) {
   return Curry._2(declaration, property, value(v));
 }
 
@@ -27,7 +29,7 @@ function clearString(v) {
 }
 
 var DeclarationHelper = {
-  clear: clear,
+  clear: clear$1,
   clearUnion: clearUnion,
   clearString: clearString
 };

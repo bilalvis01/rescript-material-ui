@@ -12,13 +12,21 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssString$Ress.backgroundPosition;
+var bgPosition = CssString$Ress.Property.backgroundPosition;
 
-var value2 = CssString$Ress.backgroundPosition2;
+var bgPosition2 = CssString$Ress.Property.backgroundPosition2;
 
-var value3 = CssString$Ress.backgroundPosition3;
+var bgPosition3 = CssString$Ress.Property.backgroundPosition3;
 
-var value4 = CssString$Ress.backgroundPosition4;
+var bgPosition4 = CssString$Ress.Property.backgroundPosition4;
+
+var value = Curry.__1(bgPosition);
+
+var value2 = Curry.__2(bgPosition2);
+
+var value3 = Curry.__3(bgPosition3);
+
+var value4 = Curry.__4(bgPosition4);
 
 function backgroundPosition(v) {
   return Curry._2(declaration, property, value(v));

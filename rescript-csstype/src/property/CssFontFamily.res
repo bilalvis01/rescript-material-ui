@@ -10,7 +10,7 @@ let {
   fontFamily2,
   fontFamily3,
   fontFamily4,
-} = module(CssString);
+} = module(CssString.Property);
 
 external string: string => t = "%identity";
 let value = v => 

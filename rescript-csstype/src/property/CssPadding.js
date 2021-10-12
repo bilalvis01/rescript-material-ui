@@ -12,13 +12,21 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssString$Ress.padding;
+var p = CssString$Ress.Property.padding;
 
-var value2 = CssString$Ress.padding2;
+var p2 = CssString$Ress.Property.padding2;
 
-var value3 = CssString$Ress.padding3;
+var p3 = CssString$Ress.Property.padding3;
 
-var value4 = CssString$Ress.padding4;
+var p4 = CssString$Ress.Property.padding4;
+
+var value = Curry.__1(p);
+
+var value2 = Curry.__2(p2);
+
+var value3 = Curry.__3(p3);
+
+var value4 = Curry.__4(p4);
 
 function padding(v) {
   return Curry._2(declaration, property, value(v));

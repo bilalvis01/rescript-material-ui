@@ -12,14 +12,16 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
+var bd = CssString$Ress.Property.border;
+
 function MakeValue(Type) {
-  var value = CssString$Ress.border;
+  var value = Curry.__3(bd);
   return {
           value: value
         };
 }
 
-var value = CssString$Ress.border;
+var value = Curry.__3(bd);
 
 function border(width, color, style) {
   return Curry._2(declaration, property, value(width, color, style));

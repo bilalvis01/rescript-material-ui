@@ -12,33 +12,43 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssString$Ress.cursor;
+var cursor = CssString$Ress.Property.cursor;
 
-var value1 = CssString$Ress.cursor1;
+var cursor1 = CssString$Ress.Property.cursor1;
 
-var value2 = CssString$Ress.cursor2;
+var cursor2 = CssString$Ress.Property.cursor2;
 
-var value3 = CssString$Ress.cursor3;
+var cursor3 = CssString$Ress.Property.cursor3;
 
-var value4 = CssString$Ress.cursor4;
+var cursor4 = CssString$Ress.Property.cursor4;
 
-function cursor(v) {
+var value = Curry.__1(cursor);
+
+var value1 = Curry.__2(cursor1);
+
+var value2 = Curry.__3(cursor2);
+
+var value3 = Curry.__4(cursor3);
+
+var value4 = Curry.__5(cursor4);
+
+function cursor$1(v) {
   return Curry._2(declaration, property, value(v));
 }
 
-function cursor1(i, k) {
+function cursor1$1(i, k) {
   return Curry._2(declaration, property, value1(i, k));
 }
 
-function cursor2(i1, i2, k) {
+function cursor2$1(i1, i2, k) {
   return Curry._2(declaration, property, value2(i1, i2, k));
 }
 
-function cursor3(i1, i2, i3, k) {
+function cursor3$1(i1, i2, i3, k) {
   return Curry._2(declaration, property, value3(i1, i2, i3, k));
 }
 
-function cursor4(i1, i2, i3, i4, k) {
+function cursor4$1(i1, i2, i3, i4, k) {
   return Curry._2(declaration, property, value4(i1, i2, i3, i4, k));
 }
 
@@ -51,11 +61,11 @@ function cursorString(v) {
 }
 
 var DeclarationHelper = {
-  cursor: cursor,
-  cursor1: cursor1,
-  cursor2: cursor2,
-  cursor3: cursor3,
-  cursor4: cursor4,
+  cursor: cursor$1,
+  cursor1: cursor1$1,
+  cursor2: cursor2$1,
+  cursor3: cursor3$1,
+  cursor4: cursor4$1,
   cursorUnion: cursorUnion,
   cursorString: cursorString
 };

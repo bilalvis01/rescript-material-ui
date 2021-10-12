@@ -12,13 +12,21 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssString$Ress.backgroundAttachment;
+var bgAtt = CssString$Ress.Property.backgroundAttachment;
 
-var value2 = CssString$Ress.backgroundAttachment2;
+var bgAtt2 = CssString$Ress.Property.backgroundAttachment2;
 
-var value3 = CssString$Ress.backgroundAttachment3;
+var bgAtt3 = CssString$Ress.Property.backgroundAttachment3;
 
-var value4 = CssString$Ress.backgroundAttachment4;
+var bgAtt4 = CssString$Ress.Property.backgroundAttachment4;
+
+var value = Curry.__1(bgAtt);
+
+var value2 = Curry.__2(bgAtt2);
+
+var value3 = Curry.__3(bgAtt3);
+
+var value4 = Curry.__4(bgAtt4);
 
 function backgroundAttachment(v) {
   return Curry._2(declaration, property, value(v));

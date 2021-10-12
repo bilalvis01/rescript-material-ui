@@ -12,27 +12,35 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssString$Ress.borderStyle;
+var borderStyle = CssString$Ress.Property.borderStyle;
 
-var value2 = CssString$Ress.borderStyle2;
+var borderStyle2 = CssString$Ress.Property.borderStyle2;
 
-var value3 = CssString$Ress.borderStyle3;
+var borderStyle3 = CssString$Ress.Property.borderStyle3;
 
-var value4 = CssString$Ress.borderStyle4;
+var borderStyle4 = CssString$Ress.Property.borderStyle4;
 
-function borderStyle(v) {
+var value = Curry.__1(borderStyle);
+
+var value2 = Curry.__2(borderStyle2);
+
+var value3 = Curry.__3(borderStyle3);
+
+var value4 = Curry.__4(borderStyle4);
+
+function borderStyle$1(v) {
   return Curry._2(declaration, property, value(v));
 }
 
-function borderStyle2(tb, lr) {
+function borderStyle2$1(tb, lr) {
   return Curry._2(declaration, property, value2(tb, lr));
 }
 
-function borderStyle3(top, lr, bottom) {
+function borderStyle3$1(top, lr, bottom) {
   return Curry._2(declaration, property, value3(top, lr, bottom));
 }
 
-function borderStyle4(top, right, bottom, left) {
+function borderStyle4$1(top, right, bottom, left) {
   return Curry._2(declaration, property, value4(top, right, bottom, left));
 }
 
@@ -45,10 +53,10 @@ function borderStyleString(v) {
 }
 
 var DeclarationHelper = {
-  borderStyle: borderStyle,
-  borderStyle2: borderStyle2,
-  borderStyle3: borderStyle3,
-  borderStyle4: borderStyle4,
+  borderStyle: borderStyle$1,
+  borderStyle2: borderStyle2$1,
+  borderStyle3: borderStyle3$1,
+  borderStyle4: borderStyle4$1,
   borderStyleUnion: borderStyleUnion,
   borderStyleString: borderStyleString
 };

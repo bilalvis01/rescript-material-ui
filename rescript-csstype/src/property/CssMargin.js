@@ -12,13 +12,21 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssString$Ress.margin;
+var m = CssString$Ress.Property.margin;
 
-var value2 = CssString$Ress.margin2;
+var m2 = CssString$Ress.Property.margin2;
 
-var value3 = CssString$Ress.margin3;
+var m3 = CssString$Ress.Property.margin3;
 
-var value4 = CssString$Ress.margin4;
+var m4 = CssString$Ress.Property.margin4;
+
+var value = Curry.__1(m);
+
+var value2 = Curry.__2(m2);
+
+var value3 = Curry.__3(m3);
+
+var value4 = Curry.__4(m4);
 
 function margin(v) {
   return Curry._2(declaration, property, value(v));

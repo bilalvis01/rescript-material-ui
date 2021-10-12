@@ -12,9 +12,11 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssString$Ress.color;
+var color = CssString$Ress.Property.color;
 
-function color(v) {
+var value = Curry.__1(color);
+
+function color$1(v) {
   return Curry._2(declaration, property, value(v));
 }
 
@@ -27,7 +29,7 @@ function colorString(v) {
 }
 
 var DeclarationHelper = {
-  color: color,
+  color: color$1,
   colorUnion: colorUnion,
   colorString: colorString
 };

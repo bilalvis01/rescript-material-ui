@@ -12,13 +12,21 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssString$Ress.backgroundStyle;
+var bgStyle = CssString$Ress.Property.backgroundStyle;
 
-var value2 = CssString$Ress.backgroundStyle2;
+var bgStyle2 = CssString$Ress.Property.backgroundStyle2;
 
-var value3 = CssString$Ress.backgroundStyle3;
+var bgStyle3 = CssString$Ress.Property.backgroundStyle3;
 
-var value4 = CssString$Ress.backgroundStyle4;
+var bgStyle4 = CssString$Ress.Property.backgroundStyle4;
+
+var value = Curry.__1(bgStyle);
+
+var value2 = Curry.__2(bgStyle2);
+
+var value3 = Curry.__3(bgStyle3);
+
+var value4 = Curry.__4(bgStyle4);
 
 function backgroundStyle(v) {
   return Curry._2(declaration, property, value(v));

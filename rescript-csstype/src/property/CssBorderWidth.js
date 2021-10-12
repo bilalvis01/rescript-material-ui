@@ -12,27 +12,35 @@ var declaration = CssDeclaration$Ress.Helper.declaration;
 
 var declarationFn = CssDeclarationFn$Ress.Helper.declarationFn;
 
-var value = CssString$Ress.borderWidth;
+var borderWidth = CssString$Ress.Property.borderWidth;
 
-var value2 = CssString$Ress.borderWidth2;
+var borderWidth2 = CssString$Ress.Property.borderWidth2;
 
-var value3 = CssString$Ress.borderWidth3;
+var borderWidth3 = CssString$Ress.Property.borderWidth3;
 
-var value4 = CssString$Ress.borderWidth4;
+var borderWidth4 = CssString$Ress.Property.borderWidth4;
 
-function borderWidth(v) {
+var value = Curry.__1(borderWidth);
+
+var value2 = Curry.__2(borderWidth2);
+
+var value3 = Curry.__3(borderWidth3);
+
+var value4 = Curry.__4(borderWidth4);
+
+function borderWidth$1(v) {
   return Curry._2(declaration, property, value(v));
 }
 
-function borderWidth2(tb, lr) {
+function borderWidth2$1(tb, lr) {
   return Curry._2(declaration, property, value2(tb, lr));
 }
 
-function borderWidth3(top, lr, bottom) {
+function borderWidth3$1(top, lr, bottom) {
   return Curry._2(declaration, property, value3(top, lr, bottom));
 }
 
-function borderWidth4(top, right, bottom, left) {
+function borderWidth4$1(top, right, bottom, left) {
   return Curry._2(declaration, property, value4(top, right, bottom, left));
 }
 
@@ -45,10 +53,10 @@ function borderWidthString(v) {
 }
 
 var DeclarationHelper = {
-  borderWidth: borderWidth,
-  borderWidth2: borderWidth2,
-  borderWidth3: borderWidth3,
-  borderWidth4: borderWidth4,
+  borderWidth: borderWidth$1,
+  borderWidth2: borderWidth2$1,
+  borderWidth3: borderWidth3$1,
+  borderWidth4: borderWidth4$1,
   borderWidthUnion: borderWidthUnion,
   borderWidthString: borderWidthString
 };

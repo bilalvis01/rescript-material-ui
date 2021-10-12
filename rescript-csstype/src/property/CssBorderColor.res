@@ -10,7 +10,7 @@ let {
   borderColor2,
   borderColor3,
   borderColor4,
-} = module(CssString);
+} = module(CssString.Property);
 
 external string: string => t = "%identity";
 let value = v => borderColor(v)->string;
