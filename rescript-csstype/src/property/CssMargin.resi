@@ -14,16 +14,16 @@ let number4: (
   ~left: float,
 ) => t;
 */
-let value: CssType.margin<t>;
-let value2: CssType.margin2<t>;
-let value3: CssType.margin3<t>;
-let value4: CssType.margin4<t>;
+let value: CssType.Property.margin<t>;
+let value2: CssType.Property.margin2<t>;
+let value3: CssType.Property.margin3<t>;
+let value4: CssType.Property.margin4<t>;
 
 module DeclarationHelper: {
-  let margin: CssType.margin<CssDeclaration.d<'a>>;
-  let margin2: CssType.margin2<CssDeclaration.d<'a>>;
-  let margin3: CssType.margin3<CssDeclaration.d<'a>>;
-  let margin4: CssType.margin4<CssDeclaration.d<'a>>;
+  let margin: CssType.Property.margin<CssDeclaration.d<'a>>;
+  let margin2: CssType.Property.margin2<CssDeclaration.d<'a>>;
+  let margin3: CssType.Property.margin3<CssDeclaration.d<'a>>;
+  let margin4: CssType.Property.margin4<CssDeclaration.d<'a>>;
   let marginUnion: t => CssDeclaration.d<'a>;
   let marginString: string => CssDeclaration.d<'a>;
   let marginNumber: float => CssDeclaration.d<'a>;

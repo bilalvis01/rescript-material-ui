@@ -160,7 +160,7 @@ module Data: {
   let fontFamily_global: fontFamily_global => string;
 }
 
-open CssType;
+open CssType.Property;
 /*
 ============================================================================
 Property

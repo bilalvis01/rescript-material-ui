@@ -5,5 +5,5 @@ module MakeValue: (
 ) => {
   external string: string => Type.t = "%identity";
   external number: float => Type.t = "%identity";
-  let value: CssType.borderWidth<Type.t>;
+  let value: CssType.Property.borderWidth<Type.t>;
 };

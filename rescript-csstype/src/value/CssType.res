@@ -69,6 +69,18 @@ type nestedAtRuleEntry = (string, boxDescriptorBlock);
 type styleDeclarationEntry<'data> = (string, value<'data>);
 type styleRuleEntry<'data> = (string, declarationBlock<'data>);
 
+type d<'a> = [> declaration ] as 'a;
+type dfn<'a, 'data> = [> declarationFn<'data> ] as 'a;
+type r<'a, 'data> = [> rule<'data> ] as 'a;
+type pc<'a, 'data> = [> pseudoClass<'data> ] as 'a;
+type rar<'a> = [> regularAtRule ] as 'a;
+type nar<'a> = [> nestedAtRule ] as 'a;
+
+/*
+==================================================================================
+Data
+==================================================================================
+*/
 module Data = {
   /* 
   Textual data types
@@ -1835,227 +1847,229 @@ module Data = {
 Property
 ==================================================================================
 */
-type background<'return> = (
-  ~color: Data.color=?,
-  ~position: Data.position=?,
-  ~size: Data.bgSize=?,
-  ~repeat: Data.repeatStyle=?,
-  ~attachment: Data.attachment=?,
-  ~origin: Data.box=?,
-  ~clip: Data.box=?,
-  [ | Data.global | Data.bgImage | Data.color ]
-) => 'return;
-type background2<'return> = (
-  Data.bgLayer, 
-  Data.bgLayer,
-) => 'return;
-type background3<'return> = (
-  Data.bgLayer, 
-  Data.bgLayer, 
-  Data.bgLayer,
-) => 'return;
-type background4<'return> = (
-  Data.bgLayer, 
-  Data.bgLayer, 
-  Data.bgLayer, 
-  Data.bgLayer
-) => 'return;
+module Property = {
+  type background<'return> = (
+    ~color: Data.color=?,
+    ~position: Data.position=?,
+    ~size: Data.bgSize=?,
+    ~repeat: Data.repeatStyle=?,
+    ~attachment: Data.attachment=?,
+    ~origin: Data.box=?,
+    ~clip: Data.box=?,
+    [ | Data.global | Data.bgImage | Data.color ]
+  ) => 'return;
+  type background2<'return> = (
+    Data.bgLayer, 
+    Data.bgLayer,
+  ) => 'return;
+  type background3<'return> = (
+    Data.bgLayer, 
+    Data.bgLayer, 
+    Data.bgLayer,
+  ) => 'return;
+  type background4<'return> = (
+    Data.bgLayer, 
+    Data.bgLayer, 
+    Data.bgLayer, 
+    Data.bgLayer
+  ) => 'return;
 
-type backgroundAttachment<'return> = Data.attachment_global => 
-  'return;
-type backgroundAttachment2<'return> = (
-  Data.attachment, 
-  Data.attachment,
-) => 'return;
-type backgroundAttachment3<'return> = (
-  Data.attachment, 
-  Data.attachment, 
-  Data.attachment,
-) => 'return;
-type backgroundAttachment4<'return> = (
-  Data.attachment, 
-  Data.attachment, 
-  Data.attachment, 
-  Data.attachment
-) => 'return;
+  type backgroundAttachment<'return> = Data.attachment_global => 
+    'return;
+  type backgroundAttachment2<'return> = (
+    Data.attachment, 
+    Data.attachment,
+  ) => 'return;
+  type backgroundAttachment3<'return> = (
+    Data.attachment, 
+    Data.attachment, 
+    Data.attachment,
+  ) => 'return;
+  type backgroundAttachment4<'return> = (
+    Data.attachment, 
+    Data.attachment, 
+    Data.attachment, 
+    Data.attachment
+  ) => 'return;
 
-type backgroundColor<'return> = Data.color_global => 'return;
+  type backgroundColor<'return> = Data.color_global => 'return;
 
-type backgroundImage<'return> = Data.bgImage_global => 
-  'return;
-type backgroundImage2<'return> = (
-  Data.bgImage, 
-  Data.bgImage,
-) => 'return;
-type backgroundImage3<'return> = (
-  Data.bgImage, 
-  Data.bgImage, 
-  Data.bgImage,
-) => 'return;
-type backgroundImage4<'return> = (
-  Data.bgImage, 
-  Data.bgImage, 
-  Data.bgImage, 
-  Data.bgImage,
-) => 'return;
+  type backgroundImage<'return> = Data.bgImage_global => 
+    'return;
+  type backgroundImage2<'return> = (
+    Data.bgImage, 
+    Data.bgImage,
+  ) => 'return;
+  type backgroundImage3<'return> = (
+    Data.bgImage, 
+    Data.bgImage, 
+    Data.bgImage,
+  ) => 'return;
+  type backgroundImage4<'return> = (
+    Data.bgImage, 
+    Data.bgImage, 
+    Data.bgImage, 
+    Data.bgImage,
+  ) => 'return;
 
-type backgroundPosition<'return> = Data.position_global => 'return;
-type backgroundPosition2<'return> = (
-  Data.position, 
-  Data.position,
-) => 'return;
-type backgroundPosition3<'return> = (
-  Data.position, 
-  Data.position, 
-  Data.position,
-) => 'return;
-type backgroundPosition4<'return> = (
-  Data.position, 
-  Data.position, 
-  Data.position, 
-  Data.position
-) => 'return;
+  type backgroundPosition<'return> = Data.position_global => 'return;
+  type backgroundPosition2<'return> = (
+    Data.position, 
+    Data.position,
+  ) => 'return;
+  type backgroundPosition3<'return> = (
+    Data.position, 
+    Data.position, 
+    Data.position,
+  ) => 'return;
+  type backgroundPosition4<'return> = (
+    Data.position, 
+    Data.position, 
+    Data.position, 
+    Data.position
+  ) => 'return;
 
-type backgroundStyle<'return> = Data.repeatStyle_global => 'return;
-type backgroundStyle2<'return> = (
-  Data.repeatStyle, 
-  Data.repeatStyle) => 'return;
-type backgroundStyle3<'return> = (
-  Data.repeatStyle, 
-  Data.repeatStyle, 
-  Data.repeatStyle,
-) => 'return;
-type backgroundStyle4<'return> = (
-  Data.repeatStyle, 
-  Data.repeatStyle, 
-  Data.repeatStyle, 
-  Data.repeatStyle,
-) => 'return;
+  type backgroundStyle<'return> = Data.repeatStyle_global => 'return;
+  type backgroundStyle2<'return> = (
+    Data.repeatStyle, 
+    Data.repeatStyle) => 'return;
+  type backgroundStyle3<'return> = (
+    Data.repeatStyle, 
+    Data.repeatStyle, 
+    Data.repeatStyle,
+  ) => 'return;
+  type backgroundStyle4<'return> = (
+    Data.repeatStyle, 
+    Data.repeatStyle, 
+    Data.repeatStyle, 
+    Data.repeatStyle,
+  ) => 'return;
 
-type border<'return> = (
-  ~width: Data.lineWidth=?,
-  ~color: Data.color=?,
-  [ | Data.global | Data.lineStyle ]
-) => 'return;
+  type border<'return> = (
+    ~width: Data.lineWidth=?,
+    ~color: Data.color=?,
+    [ | Data.global | Data.lineStyle ]
+  ) => 'return;
 
-type borderStyle<'return> = Data.lineStyle_global => 'return;
-type borderStyle2<'return> = (~tb: Data.lineStyle, ~lr: Data.lineStyle) => 'return;
-type borderStyle3<'return> = (
-  ~top: Data.lineStyle, 
-  ~lr: Data.lineStyle, 
-  ~bottom: Data.lineStyle
-) => 'return;
-type borderStyle4<'return> = (
-  ~top: Data.lineStyle, 
-  ~right: Data.lineStyle, 
-  ~bottom: Data.lineStyle, 
-  ~left: Data.lineStyle
-) => 'return;
+  type borderStyle<'return> = Data.lineStyle_global => 'return;
+  type borderStyle2<'return> = (~tb: Data.lineStyle, ~lr: Data.lineStyle) => 'return;
+  type borderStyle3<'return> = (
+    ~top: Data.lineStyle, 
+    ~lr: Data.lineStyle, 
+    ~bottom: Data.lineStyle
+  ) => 'return;
+  type borderStyle4<'return> = (
+    ~top: Data.lineStyle, 
+    ~right: Data.lineStyle, 
+    ~bottom: Data.lineStyle, 
+    ~left: Data.lineStyle
+  ) => 'return;
 
-type borderWidth<'return> = Data.lineWidth_global => 'return;
-type borderWidth2<'return> = (
-  ~tb: Data.lineWidth,
-  ~lr: Data.lineWidth,
-) => 'return;
-type borderWidth3<'return> = (
-  ~top: Data.lineWidth, 
-  ~lr: Data.lineWidth, 
-  ~bottom: Data.lineWidth,
-) => 'return;
-type borderWidth4<'return> = (
-  ~top: Data.lineWidth, 
-  ~right: Data.lineWidth, 
-  ~bottom: Data.lineWidth, 
-  ~left: Data.lineWidth,
-) => 'return;
+  type borderWidth<'return> = Data.lineWidth_global => 'return;
+  type borderWidth2<'return> = (
+    ~tb: Data.lineWidth,
+    ~lr: Data.lineWidth,
+  ) => 'return;
+  type borderWidth3<'return> = (
+    ~top: Data.lineWidth, 
+    ~lr: Data.lineWidth, 
+    ~bottom: Data.lineWidth,
+  ) => 'return;
+  type borderWidth4<'return> = (
+    ~top: Data.lineWidth, 
+    ~right: Data.lineWidth, 
+    ~bottom: Data.lineWidth, 
+    ~left: Data.lineWidth,
+  ) => 'return;
 
-type borderColor<'return> = Data.color_global => 'return;
-type borderColor2<'return> = (
-  ~tb: Data.color, 
-  ~lr: Data.color,
-) => 'return;
-type borderColor3<'return> = (
-  ~top: Data.color, 
-  ~lr: Data.color, 
-  ~bottom: Data.color,
-) => 'return;
-type borderColor4<'return> = (
-  ~top: Data.color, 
-  ~right: Data.color, 
-  ~bottom: Data.color, 
-  ~left: Data.color,
-) => 'return;
+  type borderColor<'return> = Data.color_global => 'return;
+  type borderColor2<'return> = (
+    ~tb: Data.color, 
+    ~lr: Data.color,
+  ) => 'return;
+  type borderColor3<'return> = (
+    ~top: Data.color, 
+    ~lr: Data.color, 
+    ~bottom: Data.color,
+  ) => 'return;
+  type borderColor4<'return> = (
+    ~top: Data.color, 
+    ~right: Data.color, 
+    ~bottom: Data.color, 
+    ~left: Data.color,
+  ) => 'return;
 
-type color<'return> = Data.color_global => 'return;
+  type color<'return> = Data.color_global => 'return;
 
-type clear<'return> = Data.clear_global => 'return;
+  type clear<'return> = Data.clear_global => 'return;
 
-type cursor<'return> = Data.cursorKeyword_global => 'return;
-type cursor1<'return> = (
-  Data.cursorImage, 
-  Data.cursorKeyword,
-) => 'return;
-type cursor2<'return> = (
-  Data.cursorImage, 
-  Data.cursorImage, 
-  Data.cursorKeyword,
-) => 'return;
-type cursor3<'return> = (
-  Data.cursorImage, 
-  Data.cursorImage, 
-  Data.cursorImage, 
-  Data.cursorKeyword,
-) => 'return;
-type cursor4<'return> = (
-  Data.cursorImage, 
-  Data.cursorImage, 
-  Data.cursorImage, 
-  Data.cursorImage, 
-  Data.cursorKeyword,
-) => 'return;
+  type cursor<'return> = Data.cursorKeyword_global => 'return;
+  type cursor1<'return> = (
+    Data.cursorImage, 
+    Data.cursorKeyword,
+  ) => 'return;
+  type cursor2<'return> = (
+    Data.cursorImage, 
+    Data.cursorImage, 
+    Data.cursorKeyword,
+  ) => 'return;
+  type cursor3<'return> = (
+    Data.cursorImage, 
+    Data.cursorImage, 
+    Data.cursorImage, 
+    Data.cursorKeyword,
+  ) => 'return;
+  type cursor4<'return> = (
+    Data.cursorImage, 
+    Data.cursorImage, 
+    Data.cursorImage, 
+    Data.cursorImage, 
+    Data.cursorKeyword,
+  ) => 'return;
 
-type fontFamily<'return> = Data.fontFamily_global => 'return;
-type fontFamily2<'return> = (
-  Data.fontFamily, 
-  Data.fontFamily,
-) => 'return;
-type fontFamily3<'return> = (
-  Data.fontFamily, 
-  Data.fontFamily,
-  Data.fontFamily,
-) => 'return;
-type fontFamily4<'return> = (
-  Data.fontFamily, 
-  Data.fontFamily,
-  Data.fontFamily,
-  Data.fontFamily,
-) => 'return;
+  type fontFamily<'return> = Data.fontFamily_global => 'return;
+  type fontFamily2<'return> = (
+    Data.fontFamily, 
+    Data.fontFamily,
+  ) => 'return;
+  type fontFamily3<'return> = (
+    Data.fontFamily, 
+    Data.fontFamily,
+    Data.fontFamily,
+  ) => 'return;
+  type fontFamily4<'return> = (
+    Data.fontFamily, 
+    Data.fontFamily,
+    Data.fontFamily,
+    Data.fontFamily,
+  ) => 'return;
 
-type fontWeight<'return> = Data.fontWeight_global => 'return;
+  type fontWeight<'return> = Data.fontWeight_global => 'return;
 
-type margin<'return> = Data.margin_global => 'return;
-type margin2<'return> = (
-  ~tb: Data.margin, 
-  ~lr: Data.margin,
-) => 'return;
-type margin3<'return> = (
-  ~top: Data.margin, 
-  ~lr: Data.margin, 
-  ~bottom: Data.margin,
-) => 'return;
-type margin4<'return> = (
-  ~top: Data.margin, 
-  ~right: Data.margin, 
-  ~bottom: Data.margin, 
-  ~left: Data.margin,
-) => 'return;
+  type margin<'return> = Data.margin_global => 'return;
+  type margin2<'return> = (
+    ~tb: Data.margin, 
+    ~lr: Data.margin,
+  ) => 'return;
+  type margin3<'return> = (
+    ~top: Data.margin, 
+    ~lr: Data.margin, 
+    ~bottom: Data.margin,
+  ) => 'return;
+  type margin4<'return> = (
+    ~top: Data.margin, 
+    ~right: Data.margin, 
+    ~bottom: Data.margin, 
+    ~left: Data.margin,
+  ) => 'return;
 
-type padding<'return> = Data.padding_global => 'return;
-type padding2<'return> = (~tb: Data.padding, ~lr: Data.padding) => 'return;
-type padding3<'return> = (~top: Data.padding, ~lr: Data.padding, ~bottom: Data.padding) => 'return;
-type padding4<'return> = (
-  ~top: Data.padding, 
-  ~right: Data.padding, 
-  ~bottom: Data.padding, 
-  ~left: Data.padding,
-) => 'return;
+  type padding<'return> = Data.padding_global => 'return;
+  type padding2<'return> = (~tb: Data.padding, ~lr: Data.padding) => 'return;
+  type padding3<'return> = (~top: Data.padding, ~lr: Data.padding, ~bottom: Data.padding) => 'return;
+  type padding4<'return> = (
+    ~top: Data.padding, 
+    ~right: Data.padding, 
+    ~bottom: Data.padding, 
+    ~left: Data.padding,
+  ) => 'return;
+};

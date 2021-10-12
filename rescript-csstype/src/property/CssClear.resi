@@ -2,10 +2,10 @@ type tag;
 type t = CssType.propertyValue<tag>;
 
 external string: string => t = "%identity";
-let value: CssType.clear<t>;
+let value: CssType.Property.clear<t>;
 
 module DeclarationHelper: {
-  let clear: CssType.clear<CssDeclaration.d<'a>>;
+  let clear: CssType.Property.clear<CssDeclaration.d<'a>>;
   let clearUnion: t => CssDeclaration.d<'a>;
   let clearString: string => CssDeclaration.d<'a>;
 };

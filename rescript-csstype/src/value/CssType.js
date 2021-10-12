@@ -4,5 +4,8 @@
 
 var Data = {};
 
+var Property = {};
+
 exports.Data = Data;
+exports.Property = Property;
 /* No side effect */

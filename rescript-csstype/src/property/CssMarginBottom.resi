@@ -4,7 +4,7 @@ type t = CssType.propertyValue<tag>;
 include (module type of CssMarginSide.MakeValue({ type t = t; }));
 
 module DeclarationHelper: {
-  let marginBottom: CssType.margin<CssDeclaration.d<'a>>;
+  let marginBottom: CssType.Property.margin<CssDeclaration.d<'a>>;
   let marginBottomUnion: t => CssDeclaration.d<'a>;
   let marginBottomString: string => CssDeclaration.d<'a>;
   let marginBottomNumber: float => CssDeclaration.d<'a>;
