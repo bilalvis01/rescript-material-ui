@@ -3,11 +3,11 @@
 
 var CssRule$Ress = require("../rule/CssRule.js");
 var CssPseudoClass$Ress = require("../rule/CssPseudoClass.js");
-var CssValueHelper$Ress = require("../value/CssValueHelper.js");
-var CssAtRuleHelper$Ress = require("../at_rule/CssAtRuleHelper.js");
+var CssValueHelper$Ress = require("./CssValueHelper.js");
+var CssAtRuleHelper$Ress = require("./CssAtRuleHelper.js");
 var CssPropertyValue$Ress = require("../value/CssPropertyValue.js");
-var CssDeclarationHelper$Ress = require("../declaration/CssDeclarationHelper.js");
-var CssDeclarationFnHelper$Ress = require("../declaration/CssDeclarationFnHelper.js");
+var CssDeclarationHelper$Ress = require("./CssDeclarationHelper.js");
+var CssDeclarationFnHelper$Ress = require("./CssDeclarationFnHelper.js");
 
 function Make(DeclarationBlock) {
   var include = CssRule$Ress.MakeHelper(DeclarationBlock);

@@ -2,7 +2,7 @@
 'use strict';
 
 var CssString$Ress = require("../src/value/CssString.js");
-var CssValueHelper$Ress = require("../src/value/CssValueHelper.js");
+var CssValueHelper$Ress = require("../src/helper/CssValueHelper.js");
 
 describe("Numeric data types", (function () {
         test("number", (function () {
