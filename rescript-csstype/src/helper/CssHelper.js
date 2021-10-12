@@ -2,7 +2,7 @@
 'use strict';
 
 var CssRule$Ress = require("../rule/CssRule.js");
-var CssProperty$Ress = require("../value/CssProperty.js");
+var CssProperty$Ress = require("./CssProperty.js");
 var CssPseudoClass$Ress = require("../rule/CssPseudoClass.js");
 var CssValueHelper$Ress = require("./CssValueHelper.js");
 var CssAtRuleHelper$Ress = require("./CssAtRuleHelper.js");
