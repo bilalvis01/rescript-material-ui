@@ -11,7 +11,7 @@ module Statements = CssStatements.Make({
 });
 
 include CssHelper.Make({ 
-  type styleDeclaration<'data> = CssType.Syntax.styleDeclaration<'data>;
+  type syntax<'data> = CssType.Syntax.styleDeclaration<'data>;
   let declarationBlock = DeclarationBlock.make; 
 });
 

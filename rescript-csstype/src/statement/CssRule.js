@@ -11,13 +11,13 @@ function make(v) {
         ];
 }
 
-function MakeHelper(DeclarationBlock) {
+function MakeHelper(D) {
   var rule = function (selector, declarations) {
     return {
             NAME: "Rule",
             VAL: [
               selector,
-              Curry._1(DeclarationBlock.declarationBlock, declarations)
+              Curry._1(D.declarationBlock, declarations)
             ]
           };
   };

@@ -11,13 +11,13 @@ function make(v) {
         ];
 }
 
-function MakeHelper(DeclarationBlock) {
+function MakeHelper(D) {
   var pseudoClass = function (selector, declarations) {
     return {
             NAME: "PseudoClass",
             VAL: [
               selector,
-              Curry._1(DeclarationBlock.declarationBlock, declarations)
+              Curry._1(D.declarationBlock, declarations)
             ]
           };
   };

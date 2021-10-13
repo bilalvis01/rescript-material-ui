@@ -107,7 +107,7 @@ module Statements = CssStatements.Make({
 let styles = Statements.make;
   
 include CssHelper.Make({ 
-  type styleDeclaration<'data> = Syntax.styleDeclaration<'data>;
+  type syntax<'data> = Syntax.styleDeclaration<'data>;
   let declarationBlock = DeclarationBlock.make;
 });
 
