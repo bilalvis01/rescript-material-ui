@@ -4,7 +4,7 @@
 var CssString$Ress = require("../src/basic/CssString.js");
 var CssValueHelper$Ress = require("../src/helper/CssValueHelper.js");
 
-describe("Numeric data types", (function () {
+describe("Data", (function () {
         test("number", (function () {
                 expect(CssString$Ress.Data.num(CssValueHelper$Ress.num(1))).toBe("1");
                 
@@ -27,10 +27,6 @@ describe("Numeric data types", (function () {
                 expect(CssString$Ress.Data.flexUnit(CssValueHelper$Ress.fr(1))).toBe("1fr");
                 
               }));
-        
-      }));
-
-describe("Quantities data types", (function () {
         test("length", (function () {
                 expect(CssString$Ress.Data.ch(1)).toBe("1ch");
                 expect(CssString$Ress.Data.em(1)).toBe("1em");
@@ -82,10 +78,6 @@ describe("Quantities data types", (function () {
                 expect(CssString$Ress.Data.resolution(CssValueHelper$Ress.dpi(1))).toBe("1dpi");
                 
               }));
-        
-      }));
-
-describe("Combination data types", (function () {
         test("length_percentage", (function () {
                 expect(CssString$Ress.Data.length_percentage(CssValueHelper$Ress.mm(1))).toBe("1mm");
                 expect(CssString$Ress.Data.length_percentage(CssValueHelper$Ress.pct(1))).toBe("1%");
@@ -106,10 +98,6 @@ describe("Combination data types", (function () {
                 expect(CssString$Ress.Data.time_percentage(CssValueHelper$Ress.pct(1))).toBe("1%");
                 
               }));
-        
-      }));
-
-describe("Color data types", (function () {
         test("color", (function () {
                 expect(CssString$Ress.Data.hue(CssValueHelper$Ress.deg(1))).toBe("1deg");
                 expect(CssString$Ress.Data.alpha(CssValueHelper$Ress.pct(1))).toBe("1%");
@@ -129,10 +117,6 @@ describe("Color data types", (function () {
                 expect(CssString$Ress.Data.color_global("initial")).toBe("initial");
                 
               }));
-        
-      }));
-
-describe("Line", (function () {
         test("lineWidth", (function () {
                 expect(CssString$Ress.Data.lineWidth("thick")).toBe("thick");
                 expect(CssString$Ress.Data.lineWidth(CssValueHelper$Ress.mm(10))).toBe("10mm");
@@ -143,10 +127,6 @@ describe("Line", (function () {
                 expect(CssString$Ress.Data.lineWidth_global("initial")).toBe("initial");
                 
               }));
-        
-      }));
-
-describe("transformOrigin", (function () {
         test("transformOrigin", (function () {
                 expect(CssString$Ress.Data.transformOrigin("left")).toBe("left");
                 expect(CssString$Ress.Data.transformOrigin(CssValueHelper$Ress.px(20))).toBe("20px");
@@ -167,10 +147,6 @@ describe("transformOrigin", (function () {
                           })).toBe("left top 10px");
                 
               }));
-        
-      }));
-
-describe("Image data types", (function () {
         test("gradientLineDirection", (function () {
                 expect(CssString$Ress.Data.gradientLineAngle("toTop")).toBe("to top");
                 expect(CssString$Ress.Data.gradientLineAngle("toTopLeft")).toBe("to top left");
@@ -322,10 +298,6 @@ describe("Image data types", (function () {
                 expect(CssString$Ress.Data.position(CssValueHelper$Ress.position4("right", CssValueHelper$Ress.pct(35), "bottom", CssValueHelper$Ress.pct(45)))).toBe("right 35% bottom 45%");
                 
               }));
-        
-      }));
-
-describe("background", (function () {
         test("background", (function () {
                 expect(CssString$Ress.Data.bg(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "red")).toBe("red");
                 expect(CssString$Ress.Data.bg(undefined, undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
@@ -343,10 +315,6 @@ describe("background", (function () {
                 expect(CssString$Ress.Data.bgLayer(CssValueHelper$Ress.bgLayer(undefined, "center", CssValueHelper$Ress.pct(80), "noRepeat", undefined, undefined, undefined, CssValueHelper$Ress.url("../img/image.png")))).toBe("url(\"../img/image.png\") center / 80% no-repeat");
                 
               }));
-        
-      }));
-
-describe("Spacing", (function () {
         test("margin", (function () {
                 expect(CssString$Ress.Data.margin(CssValueHelper$Ress.px(10))).toBe("10px");
                 expect(CssString$Ress.Data.margin("auto")).toBe("auto");
@@ -362,10 +330,6 @@ describe("Spacing", (function () {
                 expect(CssString$Ress.Data.padding_global("initial")).toBe("initial");
                 
               }));
-        
-      }));
-
-describe("fontFamily", (function () {
         test("fontFamily", (function () {
                 expect(CssString$Ress.Data.fontFamily({
                             NAME: "Family",
@@ -378,6 +342,143 @@ describe("fontFamily", (function () {
                             NAME: "Family",
                             VAL: "Gill Sans Extrabold"
                           })).toBe("\"Gill Sans Extrabold\"");
+                
+              }));
+        
+      }));
+
+describe("property", (function () {
+        test("background", (function () {
+                expect(CssString$Ress.Property.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "initial")).toBe("initial");
+                expect(CssString$Ress.Property.background("red", undefined, undefined, undefined, undefined, undefined, undefined, "initial")).toBe("initial");
+                expect(CssString$Ress.Property.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, "red")).toBe("red");
+                expect(CssString$Ress.Property.background(undefined, undefined, undefined, undefined, undefined, undefined, undefined, CssValueHelper$Ress.rgb(255, 255, 255))).toBe("rgb(255, 255, 255)");
+                expect(CssString$Ress.Property.background(undefined, undefined, undefined, "repeatY", undefined, undefined, undefined, CssValueHelper$Ress.url("test.jpg"))).toBe("url(\"test.jpg\") repeat-y");
+                expect(CssString$Ress.Property.background2(CssValueHelper$Ress.linearGradient2(CssValueHelper$Ress.deg(217), CssValueHelper$Ress.rgba(255, 0, 0, 0.8), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgba(255, 0, 0, 0), CssValueHelper$Ress.pct(70.71))), CssValueHelper$Ress.linearGradient2(CssValueHelper$Ress.deg(127), CssValueHelper$Ress.rgba(0, 255, 0, 0.8), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgba(0, 255, 0, 0), CssValueHelper$Ress.pct(70.71))))).toBe("linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%)");
+                expect(CssString$Ress.Property.background3(CssValueHelper$Ress.linearGradient2(CssValueHelper$Ress.deg(217), CssValueHelper$Ress.rgba(255, 0, 0, 0.8), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgba(255, 0, 0, 0), CssValueHelper$Ress.pct(70.71))), CssValueHelper$Ress.linearGradient2(CssValueHelper$Ress.deg(127), CssValueHelper$Ress.rgba(0, 255, 0, 0.8), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgba(0, 255, 0, 0), CssValueHelper$Ress.pct(70.71))), CssValueHelper$Ress.linearGradient2(CssValueHelper$Ress.deg(217), CssValueHelper$Ress.rgba(255, 0, 0, 0.8), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgba(255, 0, 0, 0), CssValueHelper$Ress.pct(70.71))))).toBe("linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%)");
+                expect(CssString$Ress.Property.background4(CssValueHelper$Ress.linearGradient2(CssValueHelper$Ress.deg(217), CssValueHelper$Ress.rgba(255, 0, 0, 0.8), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgba(255, 0, 0, 0), CssValueHelper$Ress.pct(70.71))), CssValueHelper$Ress.linearGradient2(CssValueHelper$Ress.deg(127), CssValueHelper$Ress.rgba(0, 255, 0, 0.8), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgba(0, 255, 0, 0), CssValueHelper$Ress.pct(70.71))), CssValueHelper$Ress.linearGradient2(CssValueHelper$Ress.deg(217), CssValueHelper$Ress.rgba(255, 0, 0, 0.8), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgba(255, 0, 0, 0), CssValueHelper$Ress.pct(70.71))), CssValueHelper$Ress.linearGradient2(CssValueHelper$Ress.deg(127), CssValueHelper$Ress.rgba(0, 255, 0, 0.8), CssValueHelper$Ress.linearColorStop2(CssValueHelper$Ress.rgba(0, 255, 0, 0), CssValueHelper$Ress.pct(70.71))))).toBe("linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%), linear-gradient(217deg, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0) 70.71%), linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%)");
+                expect(CssString$Ress.Property.background4(CssValueHelper$Ress.bgLayer(undefined, undefined, undefined, "repeat", undefined, undefined, undefined, CssValueHelper$Ress.url("myimage.png")), CssValueHelper$Ress.bgLayer(undefined, undefined, undefined, "repeat", undefined, undefined, undefined, CssValueHelper$Ress.url("myimage.png")), CssValueHelper$Ress.bgLayer(undefined, undefined, undefined, "repeat", undefined, undefined, undefined, CssValueHelper$Ress.url("myimage.png")), CssValueHelper$Ress.bgLayer(undefined, undefined, undefined, "repeat", undefined, undefined, undefined, CssValueHelper$Ress.url("myimage.png")))).toBe("url(\"myimage.png\") repeat, url(\"myimage.png\") repeat, url(\"myimage.png\") repeat, url(\"myimage.png\") repeat");
+                
+              }));
+        test("backgroundAttachment", (function () {
+                expect(CssString$Ress.Property.backgroundAttachment("scroll")).toBe("scroll");
+                expect(CssString$Ress.Property.backgroundAttachment2("scroll", "fixed")).toBe("scroll, fixed");
+                expect(CssString$Ress.Property.backgroundAttachment3("scroll", "fixed", "fixed")).toBe("scroll, fixed, fixed");
+                expect(CssString$Ress.Property.backgroundAttachment4("scroll", "fixed", "fixed", "local")).toBe("scroll, fixed, fixed, local");
+                
+              }));
+        test("backgroundColor", (function () {
+                expect(CssString$Ress.Property.backgroundColor(CssValueHelper$Ress.rgb(200, 200, 200))).toBe("rgb(200, 200, 200)");
+                
+              }));
+        test("backgroundImage", (function () {
+                expect(CssString$Ress.Property.backgroundImage(CssValueHelper$Ress.url("image.png"))).toBe("url(\"image.png\")");
+                expect(CssString$Ress.Property.backgroundImage2(CssValueHelper$Ress.url("image.png"), CssValueHelper$Ress.image(undefined, undefined, CssValueHelper$Ress.url("myimage.jpg")))).toBe("url(\"image.png\"), image(url(\"myimage.jpg\"))");
+                expect(CssString$Ress.Property.backgroundImage3(CssValueHelper$Ress.url("image.png"), CssValueHelper$Ress.image(undefined, undefined, CssValueHelper$Ress.url("myimage.jpg")), CssValueHelper$Ress.linearGradient(undefined, "red"))).toBe("url(\"image.png\"), image(url(\"myimage.jpg\")), linear-gradient(red)");
+                expect(CssString$Ress.Property.backgroundImage4(CssValueHelper$Ress.url("image.png"), CssValueHelper$Ress.image(undefined, undefined, CssValueHelper$Ress.url("myimage.jpg")), CssValueHelper$Ress.linearGradient(undefined, "red"), CssValueHelper$Ress.radialGradient(undefined, undefined, undefined, "blue"))).toBe("url(\"image.png\"), image(url(\"myimage.jpg\")), linear-gradient(red), radial-gradient(blue)");
+                
+              }));
+        test("backgroundPosition", (function () {
+                expect(CssString$Ress.Property.backgroundPosition(CssValueHelper$Ress.px(10))).toBe("10px");
+                expect(CssString$Ress.Property.backgroundPosition2(CssValueHelper$Ress.px(10), CssValueHelper$Ress.position2("center", "bottom"))).toBe("10px, center bottom");
+                expect(CssString$Ress.Property.backgroundPosition3(CssValueHelper$Ress.px(10), CssValueHelper$Ress.position2("center", "bottom"), "center")).toBe("10px, center bottom, center");
+                expect(CssString$Ress.Property.backgroundPosition4(CssValueHelper$Ress.px(10), CssValueHelper$Ress.position2("center", "bottom"), CssValueHelper$Ress.pct(10), CssValueHelper$Ress.position4("left", CssValueHelper$Ress.px(10), "top", CssValueHelper$Ress.pct(10)))).toBe("10px, center bottom, 10%, left 10px top 10%");
+                
+              }));
+        test("backgroundStyle", (function () {
+                expect(CssString$Ress.Property.backgroundStyle("repeatX")).toBe("repeat-x");
+                expect(CssString$Ress.Property.backgroundStyle2("repeatX", "repeat__repeat")).toBe("repeat-x, repeat repeat");
+                expect(CssString$Ress.Property.backgroundStyle3("repeatX", "repeat__repeat", "noRepeat")).toBe("repeat-x, repeat repeat, no-repeat");
+                expect(CssString$Ress.Property.backgroundStyle4("repeatX", "repeat__repeat", "noRepeat", "space")).toBe("repeat-x, repeat repeat, no-repeat, space");
+                
+              }));
+        test("border", (function () {
+                expect(CssString$Ress.Property.border(undefined, undefined, "solid")).toBe("solid");
+                expect(CssString$Ress.Property.border(undefined, "red", "dashed")).toBe("red dashed");
+                expect(CssString$Ress.Property.border(CssValueHelper$Ress.rem(1.0), undefined, "solid")).toBe("1rem solid");
+                expect(CssString$Ress.Property.border("thick", CssValueHelper$Ress.hexColor("32a1ce"), "double")).toBe("thick #32a1ce double");
+                expect(CssString$Ress.Property.border(CssValueHelper$Ress.mm(4), CssValueHelper$Ress.rgba(170, 50, 220, 0.6), "ridge")).toBe("4mm rgba(170, 50, 220, 0.6) ridge");
+                
+              }));
+        test("borderColor", (function () {
+                expect(CssString$Ress.Property.borderColor("red")).toBe("red");
+                expect(CssString$Ress.Property.borderColor2("red", CssValueHelper$Ress.hexColor("000000ff"))).toBe("red #000000ff");
+                expect(CssString$Ress.Property.borderColor3("red", CssValueHelper$Ress.rgb(255, 255, 255), CssValueHelper$Ress.hsl(360, CssValueHelper$Ress.pct(100), CssValueHelper$Ress.pct(50)))).toBe("red rgb(255, 255, 255) hsl(360, 100%, 50%)");
+                expect(CssString$Ress.Property.borderColor4("blue", CssValueHelper$Ress.rgba(0, 0, 0, 0.5), "red", CssValueHelper$Ress.rgb(255, 255, 255))).toBe("blue rgba(0, 0, 0, 0.5) red rgb(255, 255, 255)");
+                
+              }));
+        test("borderStyle", (function () {
+                expect(CssString$Ress.Property.borderStyle("solid")).toBe("solid");
+                expect(CssString$Ress.Property.borderStyle2("solid", "dashed")).toBe("solid dashed");
+                expect(CssString$Ress.Property.borderStyle3("solid", "dashed", "dotted")).toBe("solid dashed dotted");
+                expect(CssString$Ress.Property.borderStyle4("dashed", "solid", "dotted", "inset")).toBe("dashed solid dotted inset");
+                
+              }));
+        test("borderWidth", (function () {
+                expect(CssString$Ress.Property.borderWidth(CssValueHelper$Ress.px(1))).toBe("1px");
+                expect(CssString$Ress.Property.borderWidth2("thin", "medium")).toBe("thin medium");
+                expect(CssString$Ress.Property.borderWidth3("thin", "medium", CssValueHelper$Ress.px(2))).toBe("thin medium 2px");
+                expect(CssString$Ress.Property.borderWidth4("medium", CssValueHelper$Ress.px(2), "thin", CssValueHelper$Ress.px(4))).toBe("medium 2px thin 4px");
+                
+              }));
+        test("cursor", (function () {
+                expect(CssString$Ress.Property.cursor("auto")).toBe("auto");
+                expect(CssString$Ress.Property.cursor("initial")).toBe("initial");
+                expect(CssString$Ress.Property.cursor1(CssValueHelper$Ress.url("image.png"), "default")).toBe("url(\"image.png\"), default");
+                expect(CssString$Ress.Property.cursor2(CssValueHelper$Ress.url("image.png"), CssValueHelper$Ress.url("image2.png"), "default")).toBe("url(\"image.png\"), url(\"image2.png\"), default");
+                expect(CssString$Ress.Property.cursor3(CssValueHelper$Ress.url("image.png"), CssValueHelper$Ress.url("image2.png"), CssValueHelper$Ress.url("image3.png"), "default")).toBe("url(\"image.png\"), url(\"image2.png\"), url(\"image3.png\"), default");
+                expect(CssString$Ress.Property.cursor4(CssValueHelper$Ress.url("image.png"), CssValueHelper$Ress.url("image2.png"), CssValueHelper$Ress.url("image3.png"), CssValueHelper$Ress.url("image4.png"), "default")).toBe("url(\"image.png\"), url(\"image2.png\"), url(\"image3.png\"), url(\"image4.png\"), default");
+                
+              }));
+        test("FontFamily", (function () {
+                expect(CssString$Ress.Property.fontFamily("initial")).toBe("initial");
+                expect(CssString$Ress.Property.fontFamily("sansSerif")).toBe("sans-serif");
+                expect(CssString$Ress.Property.fontFamily({
+                            NAME: "Family",
+                            VAL: "Gill Sans Extrabold"
+                          })).toBe("\"Gill Sans Extrabold\"");
+                expect(CssString$Ress.Property.fontFamily2({
+                            NAME: "Family",
+                            VAL: "Gill Sans Extrabold"
+                          }, "sansSerif")).toBe("\"Gill Sans Extrabold\", sans-serif");
+                expect(CssString$Ress.Property.fontFamily3({
+                            NAME: "Family",
+                            VAL: "Roboto"
+                          }, {
+                            NAME: "Family",
+                            VAL: "Helvetica"
+                          }, "sansSerif")).toBe("\"Roboto\", \"Helvetica\", sans-serif");
+                expect(CssString$Ress.Property.fontFamily4({
+                            NAME: "Family",
+                            VAL: "Roboto"
+                          }, {
+                            NAME: "Family",
+                            VAL: "Helvetica"
+                          }, {
+                            NAME: "Family",
+                            VAL: "Arial"
+                          }, "sansSerif")).toBe("\"Roboto\", \"Helvetica\", \"Arial\", sans-serif");
+                
+              }));
+        test("fontWeight", (function () {
+                expect(CssString$Ress.Property.fontWeight("initial")).toBe("initial");
+                expect(CssString$Ress.Property.fontWeight("bold")).toBe("bold");
+                
+              }));
+        test("margin", (function () {
+                expect(CssString$Ress.Property.margin(CssValueHelper$Ress.px(24))).toBe("24px");
+                expect(CssString$Ress.Property.margin("initial")).toBe("initial");
+                expect(CssString$Ress.Property.margin2(CssValueHelper$Ress.rem(2), CssValueHelper$Ress.rem(4))).toBe("2rem 4rem");
+                expect(CssString$Ress.Property.margin3(CssValueHelper$Ress.px(10), CssValueHelper$Ress.px(24), CssValueHelper$Ress.px(40))).toBe("10px 24px 40px");
+                expect(CssString$Ress.Property.margin4(CssValueHelper$Ress.px(20), CssValueHelper$Ress.px(40), CssValueHelper$Ress.px(20), CssValueHelper$Ress.px(40))).toBe("20px 40px 20px 40px");
+                
+              }));
+        test("padding", (function () {
+                expect(CssString$Ress.Property.padding(CssValueHelper$Ress.px(24))).toBe("24px");
+                expect(CssString$Ress.Property.padding("initial")).toBe("initial");
+                expect(CssString$Ress.Property.padding2(CssValueHelper$Ress.rem(2), CssValueHelper$Ress.rem(4))).toBe("2rem 4rem");
+                expect(CssString$Ress.Property.padding3(CssValueHelper$Ress.px(10), CssValueHelper$Ress.px(24), CssValueHelper$Ress.px(40))).toBe("10px 24px 40px");
+                expect(CssString$Ress.Property.padding4(CssValueHelper$Ress.px(20), CssValueHelper$Ress.px(40), CssValueHelper$Ress.px(20), CssValueHelper$Ress.px(40))).toBe("20px 40px 20px 40px");
                 
               }));
         
