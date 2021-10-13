@@ -1,1 +1,1 @@
-let make: CssType.styleRule<'data> => CssType.styleRuleEntry<'data>;
+let make: CssType.Syntax.styleRule<'data> => CssType.styleRule<'data>;

@@ -1,5 +1,5 @@
 type styleDeclaration<'data> = [
-  CssType.styleDeclaration<'data>
+  CssType.Syntax.styleDeclaration<'data>
 ];
 
 let make: array<styleDeclaration<'data>> => CssType.declarationBlock<'data>;

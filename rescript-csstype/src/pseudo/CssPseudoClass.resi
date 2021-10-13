@@ -1,6 +1,6 @@
-let make: CssType.pseudoClass<'data> => CssType.styleRuleEntry<'data>;
+let make: CssType.Syntax.pseudoClass<'data> => CssType.styleRule<'data>;
 
-external toStyleDeclaration: CssType.styleRuleEntry<'data> => CssType.styleDeclarationEntry<'data> = "%identity";
+external toStyleDeclaration: CssType.styleRule<'data> => CssType.styleDeclaration<'data> = "%identity";
 
 module MakeHelper: (
   DeclarationBlock: {
@@ -9,6 +9,6 @@ module MakeHelper: (
   }
 ) => {
   type declarations<'data> = array<DeclarationBlock.styleDeclaration<'data>>;
-  let pseudoClass: (string, declarations<'data>) => CssType.psc<'a, 'data>;
-  let hover: declarations<'data> => CssType.psc<'a, 'data>;
+  let pseudoClass: (string, declarations<'data>) => CssType.Syntax.psc<'a, 'data>;
+  let hover: declarations<'data> => CssType.Syntax.psc<'a, 'data>;
 }

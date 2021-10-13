@@ -8,14 +8,14 @@ let value3: CssType.Property.borderStyle3<t>;
 let value4: CssType.Property.borderStyle4<t>;
 
 module DeclarationHelper: {
-  let borderStyle: CssType.Property.borderStyle<CssType.d<'a>>;
-  let borderStyle2: CssType.Property.borderStyle2<CssType.d<'a>>;
-  let borderStyle3: CssType.Property.borderStyle3<CssType.d<'a>>;
-  let borderStyle4: CssType.Property.borderStyle4<CssType.d<'a>>;
-  let borderStyleUnion: t => CssType.d<'a>;
-  let borderStyleString: string => CssType.d<'a>;
+  let borderStyle: CssType.Property.borderStyle<CssType.Syntax.d<'a>>;
+  let borderStyle2: CssType.Property.borderStyle2<CssType.Syntax.d<'a>>;
+  let borderStyle3: CssType.Property.borderStyle3<CssType.Syntax.d<'a>>;
+  let borderStyle4: CssType.Property.borderStyle4<CssType.Syntax.d<'a>>;
+  let borderStyleUnion: t => CssType.Syntax.d<'a>;
+  let borderStyleString: string => CssType.Syntax.d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let borderStyleFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
+  let borderStyleFn: ('data => option<t>) => CssType.Syntax.dfn<'a, 'data>;
 };

@@ -20,13 +20,13 @@ let value3: CssType.Property.padding3<t>;
 let value4: CssType.Property.padding4<t>;
 
 module DeclarationHelper: {
-  let padding: CssType.Property.padding<CssType.d<'a>>;
-  let padding2: CssType.Property.padding2<CssType.d<'a>>;
-  let padding3: CssType.Property.padding3<CssType.d<'a>>;
-  let padding4: CssType.Property.padding4<CssType.d<'a>>;
-  let paddingUnion: t => CssType.d<'a>;
-  let paddingString: string => CssType.d<'a>;
-  let paddingNumber: float => CssType.d<'a>;
+  let padding: CssType.Property.padding<CssType.Syntax.d<'a>>;
+  let padding2: CssType.Property.padding2<CssType.Syntax.d<'a>>;
+  let padding3: CssType.Property.padding3<CssType.Syntax.d<'a>>;
+  let padding4: CssType.Property.padding4<CssType.Syntax.d<'a>>;
+  let paddingUnion: t => CssType.Syntax.d<'a>;
+  let paddingString: string => CssType.Syntax.d<'a>;
+  let paddingNumber: float => CssType.Syntax.d<'a>;
   /*
   let padding2Number: (
     ~tb: float, 
@@ -47,5 +47,5 @@ module DeclarationHelper: {
 };
 
 module DeclarationFnHelper: {
-  let paddingFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
+  let paddingFn: ('data => option<t>) => CssType.Syntax.dfn<'a, 'data>;
 };

@@ -1,18 +1,18 @@
 let make = declaration => {
   switch declaration {
-  | #...CssType.declaration as d => 
+  | #...CssType.Syntax.declaration as d => 
     CssDeclaration.make(d)
     ->CssDeclaration.toStyleDeclaration
-  | #...CssType.declarationFn as d => 
+  | #...CssType.Syntax.declarationFn as d => 
     CssDeclarationFn.make(d)
     ->CssDeclarationFn.toStyleDeclaration
-  | #...CssType.rule as r => 
+  | #...CssType.Syntax.rule as r => 
     CssRule.make(r)
     ->CssRule.toStyleDeclaration
-  | #...CssType.pseudoClass as r => 
+  | #...CssType.Syntax.pseudoClass as r => 
     CssPseudoClass.make(r)
     ->CssPseudoClass.toStyleDeclaration
-  | #...CssType.nestedAtRule as r =>
+  | #...CssType.Syntax.nestedAtRule as r =>
     CssNestedAtRule.make(r)
     ->CssNestedAtRule.toStyleDeclaration
   };

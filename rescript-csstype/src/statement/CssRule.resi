@@ -1,6 +1,6 @@
-let make: CssType.rule<'data> => CssType.styleRuleEntry<'data>;
+let make: CssType.Syntax.rule<'data> => CssType.styleRule<'data>;
 
-external toStyleDeclaration: CssType.styleRuleEntry<'data> => CssType.styleDeclarationEntry<'data> = "%identity";
+external toStyleDeclaration: CssType.styleRule<'data> => CssType.styleDeclaration<'data> = "%identity";
 
 module MakeHelper: (
   DeclarationBlock: {
@@ -8,5 +8,5 @@ module MakeHelper: (
     let declarationBlock: array<styleDeclaration<'data>> => CssType.declarationBlock<'data>;
   }
 ) => {
-  let rule: (string, array<DeclarationBlock.styleDeclaration<'data>>) => CssType.r<'a, 'data>;
+  let rule: (string, array<DeclarationBlock.styleDeclaration<'data>>) => CssType.Syntax.r<'a, 'data>;
 };

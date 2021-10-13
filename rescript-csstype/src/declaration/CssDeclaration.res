@@ -4,7 +4,7 @@ let make = declaration => {
   };
 };
 
-external toStyleDeclaration: CssType.declarationEntry => CssType.styleDeclarationEntry<'data> = "%identity";
+external toStyleDeclaration: CssType.declaration => CssType.styleDeclaration<'data> = "%identity";
 
 module Helper = {
   let declaration = (property, value) => 

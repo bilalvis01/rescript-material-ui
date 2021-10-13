@@ -4,7 +4,7 @@ let make = declaration => {
   };
 };
 
-external toStyleDeclaration: CssType.declarationFnEntry<'data> => CssType.styleDeclarationEntry<'data> = "%identity";
+external toStyleDeclaration: CssType.declarationFn<'data> => CssType.styleDeclaration<'data> = "%identity";
 
 module Helper = {
   let declarationFn = (property, value) => #DeclarationFn(property, CssType.BoxPropertyValueFn(value));

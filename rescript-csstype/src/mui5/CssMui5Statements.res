@@ -1,5 +1,5 @@
 type styleRule<'data> = [
-  | CssType.styleRule<'data>
+  | CssType.Syntax.styleRule<'data>
 ];
 
 external makeStatements: Js.Dict.t<CssType.declarationBlock<'data>> => CssType.statements<'data> = "%identity";
@@ -7,7 +7,7 @@ external makeStatements: Js.Dict.t<CssType.declarationBlock<'data>> => CssType.s
 let make = rules => {
   Belt.Array.map(rules, rule => {
     switch rule {
-    | #...CssType.styleRule as styleRule => CssStyleRule.make(styleRule)
+    | #...CssType.Syntax.styleRule as styleRule => CssStyleRule.make(styleRule)
     }
   })
   ->Js.Dict.fromArray

@@ -6,12 +6,12 @@ external integer: int => t = "%identity";
 let value: CssType.Property.fontWeight<t>;
 
 module DeclarationHelper: {
-  let fontWeight: CssType.Property.fontWeight<CssType.d<'a>>;
-  let fontWeightUnion: t => CssType.d<'a>;
-  let fontWeightString: string => CssType.d<'a>;
-  let fontWeightInteger: int => CssType.d<'a>;
+  let fontWeight: CssType.Property.fontWeight<CssType.Syntax.d<'a>>;
+  let fontWeightUnion: t => CssType.Syntax.d<'a>;
+  let fontWeightString: string => CssType.Syntax.d<'a>;
+  let fontWeightInteger: int => CssType.Syntax.d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let fontWeightFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
+  let fontWeightFn: ('data => option<t>) => CssType.Syntax.dfn<'a, 'data>;
 };

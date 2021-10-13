@@ -4,7 +4,7 @@ let make = v => {
   };
 };
 
-external toStyleDeclaration: CssType.styleRuleEntry<'data> => CssType.styleDeclarationEntry<'data> = "%identity";
+external toStyleDeclaration: CssType.styleRule<'data> => CssType.styleDeclaration<'data> = "%identity";
 
 module MakeHelper = (
   DeclarationBlock: {

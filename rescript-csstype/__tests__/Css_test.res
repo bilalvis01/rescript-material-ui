@@ -1,7 +1,7 @@
 open Jest;
 
 include CssHelper.Make({ 
-  type styleDeclaration<'data> = CssType.styleDeclaration<'data>;
+  type styleDeclaration<'data> = CssType.Syntax.styleDeclaration<'data>;
   let declarationBlock = CssDeclarationBlock.make; 
 });
 

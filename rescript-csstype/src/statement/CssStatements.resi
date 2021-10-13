@@ -1,1 +1,1 @@
-let make: array<CssType.styleRule<'data>> => CssType.statements<'data>;
+let make: array<CssType.Syntax.styleRule<'data>> => CssType.statements<'data>;

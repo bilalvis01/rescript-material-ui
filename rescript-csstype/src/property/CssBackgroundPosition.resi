@@ -8,14 +8,14 @@ let value3: CssType.Property.backgroundPosition3<t>;
 let value4: CssType.Property.backgroundPosition4<t>;
 
 module DeclarationHelper: {
-  let backgroundPosition: CssType.Property.backgroundPosition<CssType.d<'a>>;
-  let backgroundPosition2: CssType.Property.backgroundPosition2<CssType.d<'a>>;
-  let backgroundPosition3: CssType.Property.backgroundPosition3<CssType.d<'a>>;
-  let backgroundPosition4: CssType.Property.backgroundPosition4<CssType.d<'a>>;
-  let backgroundPositionUnion: t => CssType.d<'a>;
-  let backgroundPositionString: string => CssType.d<'a>;
+  let backgroundPosition: CssType.Property.backgroundPosition<CssType.Syntax.d<'a>>;
+  let backgroundPosition2: CssType.Property.backgroundPosition2<CssType.Syntax.d<'a>>;
+  let backgroundPosition3: CssType.Property.backgroundPosition3<CssType.Syntax.d<'a>>;
+  let backgroundPosition4: CssType.Property.backgroundPosition4<CssType.Syntax.d<'a>>;
+  let backgroundPositionUnion: t => CssType.Syntax.d<'a>;
+  let backgroundPositionString: string => CssType.Syntax.d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let backgroundPositionFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
+  let backgroundPositionFn: ('data => option<t>) => CssType.Syntax.dfn<'a, 'data>;
 };

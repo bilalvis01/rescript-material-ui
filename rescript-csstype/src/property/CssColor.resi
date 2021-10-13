@@ -5,11 +5,11 @@ external string: string => t = "%identity";
 let value: CssType.Property.color<t>;
 
 module DeclarationHelper: {
-  let color: CssType.Property.color<CssType.d<'a>>;
-  let colorUnion: t => CssType.d<'a>;
-  let colorString: string => CssType.d<'a>;
+  let color: CssType.Property.color<CssType.Syntax.d<'a>>;
+  let colorUnion: t => CssType.Syntax.d<'a>;
+  let colorString: string => CssType.Syntax.d<'a>;
 };
 
 module DeclarationFnHelper: {
-  let colorFn: ('data => option<t>) => CssType.dfn<'a, 'data>;
+  let colorFn: ('data => option<t>) => CssType.Syntax.dfn<'a, 'data>;
 };

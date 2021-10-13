@@ -4,8 +4,8 @@ let make = v => {
   };
 };
 
-external toStyleDeclaration: CssType.regularAtRuleEntry => CssType.styleDeclarationEntry<'data> = "%identity";
-external toRuleSet: CssType.regularAtRuleEntry => CssType.styleRuleEntry<'data> = "%identity";
+external toStyleDeclaration: CssType.regularAtRule => CssType.styleDeclaration<'data> = "%identity";
+external toRuleSet: CssType.regularAtRule => CssType.styleRule<'data> = "%identity";
 
 module Helper = {
   let regularAtRule = (identifier, rule) => #RegularAtRule(identifier, rule);

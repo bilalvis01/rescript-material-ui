@@ -14,7 +14,7 @@ module DescriptorBlock: {
 };
 
 module AtRuleHelper: {
-  let fontFace: array<descriptor> => CssType.nar<'a>;
+  let fontFace: array<descriptor> => CssType.Syntax.nar<'a>;
 };
 
 module Type: {

@@ -1,5 +1,5 @@
 type styleDeclaration<'data> = [
-  | CssType.styleDeclaration<'data>
+  | CssType.Syntax.styleDeclaration<'data>
   | CssJssImportant.constructor<'data>
 ];
 
@@ -9,7 +9,7 @@ let make = declarations => {
   declarations
   ->Belt.Array.map(declaration => {
     switch declaration {
-    | #...CssType.styleDeclaration as d => CssStyleDeclaration.make(d)
+    | #...CssType.Syntax.styleDeclaration as d => CssStyleDeclaration.make(d)
     | #...CssJssImportant.constructor as d => CssJssImportant.make(d)
     }
   })

@@ -1,8 +1,8 @@
-let make: CssType.regularAtRule => CssType.regularAtRuleEntry;
+let make: CssType.Syntax.regularAtRule => CssType.regularAtRule;
 
-external toStyleDeclaration: CssType.regularAtRuleEntry => CssType.styleDeclarationEntry<'data> = "%identity";
-external toRuleSet: CssType.regularAtRuleEntry => CssType.styleRuleEntry<'data> = "%identity";
+external toStyleDeclaration: CssType.regularAtRule => CssType.styleDeclaration<'data> = "%identity";
+external toRuleSet: CssType.regularAtRule => CssType.styleRule<'data> = "%identity";
 
 module Helper: {
-  let regularAtRule: (string, string) => CssType.rar<'a>;
+  let regularAtRule: (string, string) => CssType.Syntax.rar<'a>;
 };

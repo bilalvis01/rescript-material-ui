@@ -1,1 +1,1 @@
-let make: array<CssType.styleDeclaration<'data>> => CssType.declarationBlock<'data>;
+let make: array<CssType.Syntax.styleDeclaration<'data>> => CssType.declarationBlock<'data>;

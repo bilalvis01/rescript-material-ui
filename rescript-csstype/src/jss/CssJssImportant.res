@@ -1,6 +1,6 @@
 type declaration<'data> = [ 
-  | CssType.declaration
-  | CssType.declarationFn<'data> 
+  | CssType.Syntax.declaration
+  | CssType.Syntax.declarationFn<'data> 
 ];
 
 type constructor<'data> = [
@@ -54,12 +54,12 @@ let make = v => {
   switch v { 
   | #Important(v) =>
     switch v {
-    | #...CssType.declaration as d => {
+    | #...CssType.Syntax.declaration as d => {
         let (selector, value) = CssDeclaration.make(d);
         (selector, makeValueImportant(value))
         ->CssDeclaration.toStyleDeclaration;
       }
-    | #...CssType.declarationFn as d => {
+    | #...CssType.Syntax.declarationFn as d => {
         let (selector, value) = CssDeclarationFn.make(d);
         (selector, makeValueFnImportant(value))
         ->CssDeclarationFn.toStyleDeclaration;

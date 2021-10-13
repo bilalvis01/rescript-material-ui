@@ -1,7 +1,7 @@
-let make: CssType.declarationFn<'data> => CssType.declarationFnEntry<'data>;
+let make: CssType.Syntax.declarationFn<'data> => CssType.declarationFn<'data>;
 
-external toStyleDeclaration: CssType.declarationFnEntry<'data> => CssType.styleDeclarationEntry<'data> = "%identity";
+external toStyleDeclaration: CssType.declarationFn<'data> => CssType.styleDeclaration<'data> = "%identity";
 
 module Helper: {
-  let declarationFn: (string, CssType.propertyValueFn<'a, 'data>) => CssType.dfn<'b, 'data>;
+  let declarationFn: (string, CssType.propertyValueFn<'a, 'data>) => CssType.Syntax.dfn<'b, 'data>;
 };

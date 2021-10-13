@@ -4,7 +4,7 @@ external makeStatements: Js.Dict.t<CssType.declarationBlock<'data>> =>
 let make = rules => {
   Belt.Array.map(rules, rule => {
     switch rule {
-    | #...CssType.styleRule as r => CssStyleRule.make(r)
+    | #...CssType.Syntax.styleRule as r => CssStyleRule.make(r)
     }
   })
   ->Js.Dict.fromArray

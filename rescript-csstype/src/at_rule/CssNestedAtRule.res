@@ -8,8 +8,8 @@ let make = v => {
   };
 };
 
-external toStyleDeclaration: CssType.nestedAtRuleEntry => CssType.styleDeclarationEntry<'data> = "%identity";
-external toRuleSet: CssType.nestedAtRuleEntry => CssType.styleRuleEntry<'data> = "%identity";
+external toStyleDeclaration: CssType.nestedAtRule => CssType.styleDeclaration<'data> = "%identity";
+external toRuleSet: CssType.nestedAtRule => CssType.styleRule<'data> = "%identity";
 
 module Helper = {
   let nestedAtRule = (identifier, rule, descriptorBlock) => 
