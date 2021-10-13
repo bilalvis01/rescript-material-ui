@@ -762,19 +762,25 @@ function bgSize(v) {
   return autoOrLength(match[0]) + " " + autoOrLength(match[1]);
 }
 
+function position1(v) {
+  if (typeof v === "object") {
+    return length_percentage(v);
+  } else if (v === "bottom") {
+    return "bottom";
+  } else if (v === "right") {
+    return "right";
+  } else if (v === "top") {
+    return "top";
+  } else if (v === "center") {
+    return "center";
+  } else {
+    return "left";
+  }
+}
+
 function position(v) {
   if (typeof v !== "object") {
-    if (v === "bottom") {
-      return "bottom";
-    } else if (v === "right") {
-      return "right";
-    } else if (v === "top") {
-      return "top";
-    } else if (v === "center") {
-      return "center";
-    } else {
-      return "left";
-    }
+    return position1(v);
   }
   var variant = v.NAME;
   if (variant === "Position2") {
@@ -792,8 +798,7 @@ function position(v) {
           )
       );
     return v1$1 + " " + v2$1;
-  }
-  if (variant === "Position3") {
+  } else if (variant === "Position3") {
     var match$1 = v.VAL;
     var v3 = match$1[2];
     var v2$2 = match$1[1];
@@ -810,14 +815,14 @@ function position(v) {
           )
       );
     return v1$3 + " " + v2$3 + " " + v3$1;
+  } else if (variant === "Position4") {
+    var match$2 = v.VAL;
+    var v1$4 = match$2[0] === "right" ? "right" : "left";
+    var v3$2 = match$2[2] === "top" ? "top" : "bottom";
+    return v1$4 + " " + length_percentage(match$2[1]) + " " + v3$2 + " " + length_percentage(match$2[3]);
+  } else {
+    return position1(v);
   }
-  if (variant !== "Position4") {
-    return length_percentage(v);
-  }
-  var match$2 = v.VAL;
-  var v1$4 = match$2[0] === "right" ? "right" : "left";
-  var v3$2 = match$2[2] === "top" ? "top" : "bottom";
-  return v1$4 + " " + length_percentage(match$2[1]) + " " + v3$2 + " " + length_percentage(match$2[3]);
 }
 
 function position_global(v) {
@@ -876,7 +881,19 @@ function linearColorStop(v) {
   return color(match$1[0]) + " " + length_percentage(match$1[1]) + " " + length_percentage(match$1[2]);
 }
 
-function linearGradient_(angle, linearColorStop) {
+function linearColorStop2(c1, c2) {
+  return linearColorStop(c1) + ", " + linearColorStop(c2);
+}
+
+function linearColorStop3(c1, c2, c3) {
+  return linearColorStop(c1) + ", " + linearColorStop(c2) + ", " + linearColorStop(c3);
+}
+
+function linearColorStop4(c1, c2, c3, c4) {
+  return linearColorStop(c1) + ", " + linearColorStop(c2) + ", " + linearColorStop(c3) + ", " + linearColorStop(c4);
+}
+
+function linearGradient_(linearColorStop, angle) {
   if (angle !== undefined) {
     return gradientLineAngle(angle) + ", " + linearColorStop;
   } else {
@@ -889,16 +906,16 @@ function linearGradient(v) {
   var arg;
   if (variant === "LinearGradient2") {
     var match = v.VAL;
-    arg = linearGradient_(match[0], linearColorStop(match[1]) + ", " + linearColorStop(match[2]));
+    arg = linearGradient_(linearColorStop2(match[1], match[2]), match[0]);
   } else if (variant === "LinearGradient3") {
     var match$1 = v.VAL;
-    arg = linearGradient_(match$1[0], linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]));
+    arg = linearGradient_(linearColorStop3(match$1[1], match$1[2], match$1[3]), match$1[0]);
   } else if (variant === "LinearGradient4") {
     var match$2 = v.VAL;
-    arg = linearGradient_(match$2[0], linearColorStop(match$2[1]) + ", " + linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]));
+    arg = linearGradient_(linearColorStop4(match$2[1], match$2[2], match$2[3], match$2[4]), match$2[0]);
   } else {
     var match$3 = v.VAL;
-    arg = linearGradient_(match$3[0], linearColorStop(match$3[1]));
+    arg = linearGradient_(linearColorStop(match$3[1]), match$3[0]);
   }
   return "linear-gradient(" + arg + ")";
 }
@@ -908,16 +925,16 @@ function repeatingLinearGradient(v) {
   var arg;
   if (variant === "RepeatingLinearGradient2") {
     var match = v.VAL;
-    arg = linearGradient_(match[0], linearColorStop(match[1]) + ", " + linearColorStop(match[2]));
+    arg = linearGradient_(linearColorStop2(match[1], match[2]), match[0]);
   } else if (variant === "RepeatingLinearGradient3") {
     var match$1 = v.VAL;
-    arg = linearGradient_(match$1[0], linearColorStop(match$1[1]) + ", " + linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]));
+    arg = linearGradient_(linearColorStop3(match$1[1], match$1[2], match$1[3]), match$1[0]);
   } else if (variant === "RepeatingLinearGradient4") {
     var match$2 = v.VAL;
-    arg = linearGradient_(match$2[0], linearColorStop(match$2[1]) + ", " + linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]));
+    arg = linearGradient_(linearColorStop4(match$2[1], match$2[2], match$2[3], match$2[4]), match$2[0]);
   } else {
     var match$3 = v.VAL;
-    arg = linearGradient_(match$3[0], linearColorStop(match$3[1]));
+    arg = linearGradient_(linearColorStop(match$3[1]), match$3[0]);
   }
   return "repeating-linear-gradient(" + arg + ")";
 }
@@ -995,9 +1012,10 @@ function radialGradientEndingShape(position, endingShape, size) {
   }
 }
 
-function radialGradient_(endingShape, linearColorStop) {
-  if (endingShape !== undefined) {
-    return endingShape + ", " + linearColorStop;
+function radialGradient_(linearColorStop, position, endingShape, size) {
+  var endingShape$1 = radialGradientEndingShape(position, endingShape, size);
+  if (endingShape$1 !== undefined) {
+    return endingShape$1 + ", " + linearColorStop;
   } else {
     return linearColorStop;
   }
@@ -1008,16 +1026,16 @@ function radialGradient(v) {
   var arg;
   if (variant === "RadialGradient3") {
     var match = v.VAL;
-    arg = radialGradient_(radialGradientEndingShape(match[0], match[1], match[2]), linearColorStop(match[3]) + ", " + linearColorStop(match[4]) + ", " + linearColorStop(match[5]));
+    arg = radialGradient_(linearColorStop3(match[3], match[4], match[5]), match[0], match[1], match[2]);
   } else if (variant === "RadialGradient4") {
     var match$1 = v.VAL;
-    arg = radialGradient_(radialGradientEndingShape(match$1[0], match$1[1], match$1[2]), linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) + ", " + linearColorStop(match$1[5]) + ", " + linearColorStop(match$1[6]));
+    arg = radialGradient_(linearColorStop4(match$1[3], match$1[4], match$1[5], match$1[6]), match$1[0], match$1[1], match$1[2]);
   } else if (variant === "RadialGradient") {
     var match$2 = v.VAL;
-    arg = radialGradient_(radialGradientEndingShape(match$2[0], match$2[1], match$2[2]), linearColorStop(match$2[3]));
+    arg = radialGradient_(linearColorStop(match$2[3]), match$2[0], match$2[1], match$2[2]);
   } else {
     var match$3 = v.VAL;
-    arg = radialGradient_(radialGradientEndingShape(match$3[0], match$3[1], match$3[2]), linearColorStop(match$3[3]) + ", " + linearColorStop(match$3[4]));
+    arg = radialGradient_(linearColorStop2(match$3[3], match$3[4]), match$3[0], match$3[1], match$3[2]);
   }
   return "radial-gradient(" + arg + ")";
 }
@@ -1027,16 +1045,16 @@ function repeatingRadialGradient(v) {
   var arg;
   if (variant === "RepeatingRadialGradient2") {
     var match = v.VAL;
-    arg = radialGradient_(radialGradientEndingShape(match[0], match[1], match[2]), linearColorStop(match[3]) + ", " + linearColorStop(match[4]));
+    arg = radialGradient_(linearColorStop2(match[3], match[4]), match[0], match[1], match[2]);
   } else if (variant === "RepeatingRadialGradient3") {
     var match$1 = v.VAL;
-    arg = radialGradient_(radialGradientEndingShape(match$1[0], match$1[1], match$1[2]), linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]) + ", " + linearColorStop(match$1[5]));
+    arg = radialGradient_(linearColorStop3(match$1[3], match$1[4], match$1[5]), match$1[0], match$1[1], match$1[2]);
   } else if (variant === "RepeatingRadialGradient4") {
     var match$2 = v.VAL;
-    arg = radialGradient_(radialGradientEndingShape(match$2[0], match$2[1], match$2[2]), linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) + ", " + linearColorStop(match$2[5]) + ", " + linearColorStop(match$2[6]));
+    arg = radialGradient_(linearColorStop4(match$2[3], match$2[4], match$2[5], match$2[6]), match$2[0], match$2[1], match$2[2]);
   } else {
     var match$3 = v.VAL;
-    arg = radialGradient_(radialGradientEndingShape(match$3[0], match$3[1], match$3[2]), linearColorStop(match$3[3]));
+    arg = radialGradient_(linearColorStop(match$3[3]), match$3[0], match$3[1], match$3[2]);
   }
   return "repeating-radial-gradient(" + arg + ")";
 }
@@ -1055,9 +1073,10 @@ function conicGradientAngle(angle, pos) {
   }
 }
 
-function conicGradient_(angle, linearColorStop) {
-  if (angle !== undefined) {
-    return angle + ", " + linearColorStop;
+function conicGradient_(linearColorStop, angle, pos) {
+  var angle$1 = conicGradientAngle(angle, pos);
+  if (angle$1 !== undefined) {
+    return angle$1 + ", " + linearColorStop;
   } else {
     return linearColorStop;
   }
@@ -1068,16 +1087,16 @@ function conicGradient(v) {
   var arg;
   if (variant === "ConicGradient2") {
     var match = v.VAL;
-    arg = conicGradient_(conicGradientAngle(match[0], match[1]), linearColorStop(match[2]) + ", " + linearColorStop(match[3]));
+    arg = conicGradient_(linearColorStop2(match[2], match[3]), match[0], match[1]);
   } else if (variant === "ConicGradient3") {
     var match$1 = v.VAL;
-    arg = conicGradient_(conicGradientAngle(match$1[0], match$1[1]), linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]));
+    arg = conicGradient_(linearColorStop3(match$1[2], match$1[3], match$1[4]), match$1[0], match$1[1]);
   } else if (variant === "ConicGradient4") {
     var match$2 = v.VAL;
-    arg = conicGradient_(conicGradientAngle(match$2[0], match$2[1]), linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) + ", " + linearColorStop(match$2[5]));
+    arg = conicGradient_(linearColorStop4(match$2[2], match$2[3], match$2[4], match$2[5]), match$2[0], match$2[1]);
   } else {
     var match$3 = v.VAL;
-    arg = conicGradient_(conicGradientAngle(match$3[0], match$3[1]), linearColorStop(match$3[2]));
+    arg = conicGradient_(linearColorStop(match$3[2]), match$3[0], match$3[1]);
   }
   return "conic-gradient(" + arg + ")";
 }
@@ -1087,16 +1106,16 @@ function repeatingConicGradient(v) {
   var arg;
   if (variant === "RepeatingConicGradient2") {
     var match = v.VAL;
-    arg = conicGradient_(conicGradientAngle(match[0], match[1]), linearColorStop(match[2]) + ", " + linearColorStop(match[3]));
+    arg = conicGradient_(linearColorStop2(match[2], match[3]), match[0], match[1]);
   } else if (variant === "RepeatingConicGradient3") {
     var match$1 = v.VAL;
-    arg = conicGradient_(conicGradientAngle(match$1[0], match$1[1]), linearColorStop(match$1[2]) + ", " + linearColorStop(match$1[3]) + ", " + linearColorStop(match$1[4]));
+    arg = conicGradient_(linearColorStop3(match$1[2], match$1[3], match$1[4]), match$1[0], match$1[1]);
   } else if (variant === "RepeatingConicGradient4") {
     var match$2 = v.VAL;
-    arg = conicGradient_(conicGradientAngle(match$2[0], match$2[1]), linearColorStop(match$2[2]) + ", " + linearColorStop(match$2[3]) + ", " + linearColorStop(match$2[4]) + ", " + linearColorStop(match$2[5]));
+    arg = conicGradient_(linearColorStop4(match$2[2], match$2[3], match$2[4], match$2[5]), match$2[0], match$2[1]);
   } else {
     var match$3 = v.VAL;
-    arg = conicGradient_(conicGradientAngle(match$3[0], match$3[1]), linearColorStop(match$3[2]));
+    arg = conicGradient_(linearColorStop(match$3[2]), match$3[0], match$3[1]);
   }
   return "repeating-conic-gradient(" + arg + ")";
 }
