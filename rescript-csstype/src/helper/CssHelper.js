@@ -9,9 +9,9 @@ var CssAtRuleHelper$Ress = require("./CssAtRuleHelper.js");
 var CssDeclarationHelper$Ress = require("./CssDeclarationHelper.js");
 var CssDeclarationFnHelper$Ress = require("./CssDeclarationFnHelper.js");
 
-function Make(DeclarationBlock) {
-  var include = CssRule$Ress.MakeHelper(DeclarationBlock);
-  var include$1 = CssPseudoClass$Ress.MakeHelper(DeclarationBlock);
+function Make(D) {
+  var include = CssRule$Ress.MakeHelper(D);
+  var include$1 = CssPseudoClass$Ress.MakeHelper(D);
   return {
           Background: CssProperty$Ress.Background,
           BackgroundAttachment: CssProperty$Ress.BackgroundAttachment,
