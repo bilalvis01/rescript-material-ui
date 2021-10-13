@@ -334,6 +334,8 @@ var repeatingConicGradient3 = include.repeatingConicGradient3;
 
 var repeatingConicGradient4 = include.repeatingConicGradient4;
 
+var font = include.font;
+
 var rule = include.rule;
 
 var regularAtRule = include.regularAtRule;
@@ -891,6 +893,7 @@ exports.repeatingConicGradient = repeatingConicGradient;
 exports.repeatingConicGradient2 = repeatingConicGradient2;
 exports.repeatingConicGradient3 = repeatingConicGradient3;
 exports.repeatingConicGradient4 = repeatingConicGradient4;
+exports.font = font;
 exports.rule = rule;
 exports.regularAtRule = regularAtRule;
 exports.nestedAtRule = nestedAtRule;

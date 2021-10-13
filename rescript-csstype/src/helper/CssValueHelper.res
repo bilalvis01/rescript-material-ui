@@ -144,3 +144,5 @@ let repeatingConicGradient = (~angle=?, ~position=?, c) => #RepeatingConicGradie
 let repeatingConicGradient2 = (~angle=?, ~position=?, c1, c2) => #RepeatingConicGradient2(angle, position, c1, c2);
 let repeatingConicGradient3 = (~angle=?, ~position=?, c1, c2, c3) => #RepeatingConicGradient3(angle, position, c1, c2, c3);
 let repeatingConicGradient4 = (~angle=?, ~position=?, c1, c2, c3, c4) => #RepeatingConicGradient4(angle, position, c1, c2, c3, c4);
+
+let font = v => #Font(v);

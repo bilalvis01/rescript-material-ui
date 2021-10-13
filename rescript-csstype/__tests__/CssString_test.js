@@ -331,17 +331,11 @@ describe("Data", (function () {
                 
               }));
         test("fontFamily", (function () {
-                expect(CssString$Ress.Data.fontFamily({
-                            NAME: "Family",
-                            VAL: "Goudy Bookletter 1911"
-                          })).toBe("\"Goudy Bookletter 1911\"");
+                expect(CssString$Ress.Data.fontFamily(CssValueHelper$Ress.font("Goudy Bookletter 1911"))).toBe("\"Goudy Bookletter 1911\"");
                 expect(CssString$Ress.Data.fontFamily("serif")).toBe("serif");
                 expect(CssString$Ress.Data.fontFamily("sansSerif")).toBe("sans-serif");
                 expect(CssString$Ress.Data.fontFamily_global("initial")).toBe("initial");
-                expect(CssString$Ress.Data.fontFamily_global({
-                            NAME: "Family",
-                            VAL: "Gill Sans Extrabold"
-                          })).toBe("\"Gill Sans Extrabold\"");
+                expect(CssString$Ress.Data.fontFamily_global(CssValueHelper$Ress.font("Gill Sans Extrabold"))).toBe("\"Gill Sans Extrabold\"");
                 
               }));
         
@@ -433,31 +427,10 @@ describe("property", (function () {
         test("FontFamily", (function () {
                 expect(CssString$Ress.Property.fontFamily("initial")).toBe("initial");
                 expect(CssString$Ress.Property.fontFamily("sansSerif")).toBe("sans-serif");
-                expect(CssString$Ress.Property.fontFamily({
-                            NAME: "Family",
-                            VAL: "Gill Sans Extrabold"
-                          })).toBe("\"Gill Sans Extrabold\"");
-                expect(CssString$Ress.Property.fontFamily2({
-                            NAME: "Family",
-                            VAL: "Gill Sans Extrabold"
-                          }, "sansSerif")).toBe("\"Gill Sans Extrabold\", sans-serif");
-                expect(CssString$Ress.Property.fontFamily3({
-                            NAME: "Family",
-                            VAL: "Roboto"
-                          }, {
-                            NAME: "Family",
-                            VAL: "Helvetica"
-                          }, "sansSerif")).toBe("\"Roboto\", \"Helvetica\", sans-serif");
-                expect(CssString$Ress.Property.fontFamily4({
-                            NAME: "Family",
-                            VAL: "Roboto"
-                          }, {
-                            NAME: "Family",
-                            VAL: "Helvetica"
-                          }, {
-                            NAME: "Family",
-                            VAL: "Arial"
-                          }, "sansSerif")).toBe("\"Roboto\", \"Helvetica\", \"Arial\", sans-serif");
+                expect(CssString$Ress.Property.fontFamily(CssValueHelper$Ress.font("Gill Sans Extrabold"))).toBe("\"Gill Sans Extrabold\"");
+                expect(CssString$Ress.Property.fontFamily2(CssValueHelper$Ress.font("Gill Sans Extrabold"), "sansSerif")).toBe("\"Gill Sans Extrabold\", sans-serif");
+                expect(CssString$Ress.Property.fontFamily3(CssValueHelper$Ress.font("Roboto"), CssValueHelper$Ress.font("Helvetica"), "sansSerif")).toBe("\"Roboto\", \"Helvetica\", sans-serif");
+                expect(CssString$Ress.Property.fontFamily4(CssValueHelper$Ress.font("Roboto"), CssValueHelper$Ress.font("Helvetica"), CssValueHelper$Ress.font("Arial"), "sansSerif")).toBe("\"Roboto\", \"Helvetica\", \"Arial\", sans-serif");
                 
               }));
         test("fontWeight", (function () {

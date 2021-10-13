@@ -717,6 +717,13 @@ function repeatingConicGradient4(angle, position, c1, c2, c3, c4) {
         };
 }
 
+function font(v) {
+  return {
+          NAME: "Font",
+          VAL: v
+        };
+}
+
 exports.str = str;
 exports.num = num;
 exports.$$int = $$int;
@@ -788,4 +795,5 @@ exports.repeatingConicGradient = repeatingConicGradient;
 exports.repeatingConicGradient2 = repeatingConicGradient2;
 exports.repeatingConicGradient3 = repeatingConicGradient3;
 exports.repeatingConicGradient4 = repeatingConicGradient4;
+exports.font = font;
 /* No side effect */

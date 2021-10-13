@@ -285,3 +285,5 @@ let repeatingConicGradient4: (
   CssType.Data.linearColorStop, 
   CssType.Data.linearColorStop,
 ) => [> CssType.Data.repeatingConicGradient4 ];
+
+let font: string => [> CssType.Data.font ];

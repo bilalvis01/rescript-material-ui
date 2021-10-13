@@ -1837,8 +1837,12 @@ module Data = {
     | #fangsong
   ];
 
+  type font = [
+    | #Font(string)
+  ];
+
   type fontFamily = [
-    | #Family(string)
+    | font
     | genericFontFamilyName
   ];
 

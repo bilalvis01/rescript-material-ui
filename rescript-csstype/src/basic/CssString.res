@@ -1055,7 +1055,7 @@ module Data = {
   let fontFamily = v => {
     switch v {
     | #...genericFontFamilyName as g => genericFontFamilyName(g)
-    | #Family(n) => `"${n}"`
+    | #Font(n) => `"${n}"`
     };
   };
 

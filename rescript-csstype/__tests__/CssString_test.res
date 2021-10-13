@@ -406,7 +406,7 @@ describe("Data", (.) => {
   });
 
   test("fontFamily", (.) => {
-    expect(CssString.Data.fontFamily(#Family("Goudy Bookletter 1911")))
+    expect(CssString.Data.fontFamily(Css.font("Goudy Bookletter 1911")))
     ->toBe(`"Goudy Bookletter 1911"`);
     expect(CssString.Data.fontFamily(#serif))
     ->toBe("serif");
@@ -414,7 +414,7 @@ describe("Data", (.) => {
     ->toBe("sans-serif");
     expect(CssString.Data.fontFamily_global(#initial))
     ->toBe("initial");
-    expect(CssString.Data.fontFamily_global(#Family("Gill Sans Extrabold")))
+    expect(CssString.Data.fontFamily_global(Css.font("Gill Sans Extrabold")))
     ->toBe(`"Gill Sans Extrabold"`);
   });
 });
@@ -573,13 +573,13 @@ describe("property", (.) => {
     ->toBe("initial");
     expect(CssString.Property.fontFamily(#sansSerif))
     ->toBe("sans-serif");
-    expect(CssString.Property.fontFamily(#Family("Gill Sans Extrabold")))
+    expect(CssString.Property.fontFamily(Css.font("Gill Sans Extrabold")))
     ->toBe(`"Gill Sans Extrabold"`);
-    expect(CssString.Property.fontFamily2(#Family("Gill Sans Extrabold"), #sansSerif))
+    expect(CssString.Property.fontFamily2(Css.font("Gill Sans Extrabold"), #sansSerif))
     ->toBe(`"Gill Sans Extrabold", sans-serif`);
-    expect(CssString.Property.fontFamily3(#Family("Roboto"), #Family("Helvetica"), #sansSerif))
+    expect(CssString.Property.fontFamily3(Css.font("Roboto"), Css.font("Helvetica"), #sansSerif))
     ->toBe(`"Roboto", "Helvetica", sans-serif`);
-    expect(CssString.Property.fontFamily4(#Family("Roboto"), #Family("Helvetica"), #Family("Arial"), #sansSerif))
+    expect(CssString.Property.fontFamily4(Css.font("Roboto"), Css.font("Helvetica"), Css.font("Arial"), #sansSerif))
     ->toBe(`"Roboto", "Helvetica", "Arial", sans-serif`);
   });
 

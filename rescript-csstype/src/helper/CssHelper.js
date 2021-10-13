@@ -125,6 +125,7 @@ function Make(D) {
           repeatingConicGradient2: CssValueHelper$Ress.repeatingConicGradient2,
           repeatingConicGradient3: CssValueHelper$Ress.repeatingConicGradient3,
           repeatingConicGradient4: CssValueHelper$Ress.repeatingConicGradient4,
+          font: CssValueHelper$Ress.font,
           rule: include.rule,
           regularAtRule: CssAtRuleHelper$Ress.regularAtRule,
           nestedAtRule: CssAtRuleHelper$Ress.nestedAtRule,
