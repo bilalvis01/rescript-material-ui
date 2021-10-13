@@ -16,7 +16,7 @@ var data = {
 };
 
 test("jss", (function () {
-        var s = CssJss$Ress.styles([
+        var s = Curry._1(CssJss$Ress.styles, [
               Curry._2(CssJss$Ress.rule, "app", [
                     Curry._2(CssJss$Ress.rule, "& .wrapper", [
                           Curry._8(CssJss$Ress.background, undefined, undefined, undefined, undefined, undefined, undefined, undefined, Curry._1(CssJss$Ress.url, "image.png")),

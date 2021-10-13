@@ -11,7 +11,7 @@ var GlobalStyles = require("@mui/material/GlobalStyles").default;
 
 test("mui5 Box", (function () {
         var tree = ReactTestRenderer.create(React.createElement(Box, {
-                    sx: CssMui5$Ress.sx([
+                    sx: Curry._1(CssMui5$Ress.sx, [
                           Curry._1(CssMui5$Ress.colorFn, (function (theme) {
                                   return Caml_option.some(theme.palette.primary.main);
                                 })),
@@ -25,7 +25,7 @@ test("mui5 Box", (function () {
 test("mui5 GlobalStyles", (function () {
         ReactTestRenderer.create(React.createElement(React.Fragment, undefined, React.createElement(GlobalStyles, {
                         styles: (function (theme) {
-                            return CssMui5$Ress.styles([Curry._2(CssMui5$Ress.rule, "h1", [Curry._1(CssMui5$Ress.colorString, theme.palette.primary.main)])]);
+                            return Curry._1(CssMui5$Ress.styles, [Curry._2(CssMui5$Ress.rule, "h1", [Curry._1(CssMui5$Ress.colorString, theme.palette.primary.main)])]);
                           })
                       }))).toJSON();
         expect(document.head).toMatchSnapshot();

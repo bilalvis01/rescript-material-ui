@@ -3,11 +3,21 @@
 
 var Curry = require("rescript/lib/js/curry.js");
 var CssHelper$Ress = require("../src/helper/CssHelper.js");
+var CssStyleRule$Ress = require("../src/statement/CssStyleRule.js");
 var CssStatements$Ress = require("../src/statement/CssStatements.js");
 var CssDeclarationBlock$Ress = require("../src/declaration/CssDeclarationBlock.js");
+var CssStyleDeclaration$Ress = require("../src/declaration/CssStyleDeclaration.js");
+
+var DeclarationBlock = CssDeclarationBlock$Ress.Make({
+      styleDeclaration: CssStyleDeclaration$Ress.make
+    });
+
+var Statements = CssStatements$Ress.Make({
+      styleRule: CssStyleRule$Ress.make
+    });
 
 var include = CssHelper$Ress.Make({
-      declarationBlock: CssDeclarationBlock$Ress.make
+      declarationBlock: DeclarationBlock.make
     });
 
 var pct = include.pct;
@@ -41,7 +51,7 @@ var paddingLeft = include.paddingLeft;
 var declaration = include.declaration;
 
 test("declarationBlock", (function () {
-        expect(CssDeclarationBlock$Ress.make([
+        expect(Curry._1(DeclarationBlock.make, [
                     Curry._2(declaration, "background", "url(\"image.png\")"),
                     Curry._2(declaration, "color", "rgb(200, 200, 200)"),
                     Curry._2(declaration, "margin", 24),
@@ -92,7 +102,7 @@ test("declarationBlock", (function () {
       }));
 
 test("statements", (function () {
-        expect(CssStatements$Ress.make([Curry._2(rule, "app", [
+        expect(Curry._1(Statements.make, [Curry._2(rule, "app", [
                           Curry._2(declaration, "background", "url(\"image.png\")"),
                           Curry._2(declaration, "color", "rgb(200, 200, 200)"),
                           Curry._2(declaration, "margin", 24),
@@ -780,6 +790,8 @@ var paddingBottomFn = include.paddingBottomFn;
 
 var paddingLeftFn = include.paddingLeftFn;
 
+exports.DeclarationBlock = DeclarationBlock;
+exports.Statements = Statements;
 exports.Background = Background;
 exports.BackgroundAttachment = BackgroundAttachment;
 exports.BackgroundColor = BackgroundColor;
@@ -1112,4 +1124,4 @@ exports.paddingTopFn = paddingTopFn;
 exports.paddingRightFn = paddingRightFn;
 exports.paddingBottomFn = paddingBottomFn;
 exports.paddingLeftFn = paddingLeftFn;
-/* include Not a pure module */
+/* DeclarationBlock Not a pure module */

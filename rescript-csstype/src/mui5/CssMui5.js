@@ -2,16 +2,32 @@
 'use strict';
 
 var CssHelper$Ress = require("../helper/CssHelper.js");
-var CssMui5Statements$Ress = require("./CssMui5Statements.js");
-var CssMui5DeclarationBlock$Ress = require("./CssMui5DeclarationBlock.js");
+var CssStyleRule$Ress = require("../statement/CssStyleRule.js");
+var CssStatements$Ress = require("../statement/CssStatements.js");
+var CssDeclarationBlock$Ress = require("../declaration/CssDeclarationBlock.js");
+var CssStyleDeclaration$Ress = require("../declaration/CssStyleDeclaration.js");
 
-var include = CssHelper$Ress.Make({
-      declarationBlock: CssMui5DeclarationBlock$Ress.make
+var Syntax = {};
+
+var styleDeclaration = CssStyleDeclaration$Ress.make;
+
+var DeclarationBlock = CssDeclarationBlock$Ress.Make({
+      styleDeclaration: styleDeclaration
     });
 
-var sx = CssMui5DeclarationBlock$Ress.make;
+var styleRule = CssStyleRule$Ress.make;
 
-var styles = CssMui5Statements$Ress.make;
+var Statements = CssStatements$Ress.Make({
+      styleRule: styleRule
+    });
+
+var include = CssHelper$Ress.Make({
+      declarationBlock: DeclarationBlock.make
+    });
+
+var sx = DeclarationBlock.make;
+
+var styles = Statements.make;
 
 var Background = include.Background;
 
@@ -677,6 +693,9 @@ var paddingBottomFn = include.paddingBottomFn;
 
 var paddingLeftFn = include.paddingLeftFn;
 
+exports.Syntax = Syntax;
+exports.DeclarationBlock = DeclarationBlock;
+exports.Statements = Statements;
 exports.sx = sx;
 exports.styles = styles;
 exports.Background = Background;
@@ -1011,4 +1030,4 @@ exports.paddingTopFn = paddingTopFn;
 exports.paddingRightFn = paddingRightFn;
 exports.paddingBottomFn = paddingBottomFn;
 exports.paddingLeftFn = paddingLeftFn;
-/* include Not a pure module */
+/* DeclarationBlock Not a pure module */

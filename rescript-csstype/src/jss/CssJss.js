@@ -2,15 +2,113 @@
 'use strict';
 
 var CssHelper$Ress = require("../helper/CssHelper.js");
-var CssJssImportant$Ress = require("./CssJssImportant.js");
-var CssJssStatements$Ress = require("./CssJssStatements.js");
-var CssJssDeclarationBlock$Ress = require("./CssJssDeclarationBlock.js");
+var CssStyleRule$Ress = require("../statement/CssStyleRule.js");
+var CssStatements$Ress = require("../statement/CssStatements.js");
+var CssDeclaration$Ress = require("../declaration/CssDeclaration.js");
+var CssDeclarationFn$Ress = require("../declaration/CssDeclarationFn.js");
+var CssDeclarationBlock$Ress = require("../declaration/CssDeclarationBlock.js");
+var CssStyleDeclaration$Ress = require("../declaration/CssStyleDeclaration.js");
 
-var include = CssHelper$Ress.Make({
-      declarationBlock: CssJssDeclarationBlock$Ress.make
+var Syntax = {};
+
+function makeValueImportant(value) {
+  return (function (value) {                
+        if (Array.isArray(value)) {
+          let val = value.map(item => {
+            if (Array.isArray(item)) {
+              return item;
+            }
+
+            return [item];
+          });
+          
+          return [...val, '!important'];
+        }
+
+        return [[value], '!important'];
+      })(value);
+}
+
+function makeValueFnImportant(value) {
+  return (function (valueFn) {
+        return function (data) {
+          let value = valueFn(data)
+      
+          if (Array.isArray(value)) {
+            let val = value
+              .map(item => {
+                if (Array.isArray(item)) {
+                  return item
+                }
+
+                return [item]
+              });
+            
+            return [...val, '!important'];
+          }
+
+          return [[value], '!important'];
+        }
+      })(value);
+}
+
+function make(v) {
+  var v$1 = v.VAL;
+  if (v$1.NAME === "DeclarationFn") {
+    var match = CssDeclarationFn$Ress.make(v$1);
+    return [
+            match[0],
+            makeValueFnImportant(match[1])
+          ];
+  }
+  var match$1 = CssDeclaration$Ress.make(v$1);
+  return [
+          match$1[0],
+          makeValueImportant(match$1[1])
+        ];
+}
+
+function important(v) {
+  return {
+          NAME: "Important",
+          VAL: v
+        };
+}
+
+var Helper = {
+  important: important
+};
+
+var Important = {
+  makeValueImportant: makeValueImportant,
+  makeValueFnImportant: makeValueFnImportant,
+  make: make,
+  Helper: Helper
+};
+
+function styleDeclaration(declaration) {
+  if (declaration.NAME === "Important") {
+    return make(declaration);
+  } else {
+    return CssStyleDeclaration$Ress.make(declaration);
+  }
+}
+
+var DeclarationBlock = CssDeclarationBlock$Ress.Make({
+      styleDeclaration: styleDeclaration
     });
 
-var styles = CssJssStatements$Ress.make;
+var styleRule = CssStyleRule$Ress.make;
+
+var Statements = CssStatements$Ress.Make({
+      styleRule: styleRule
+    });
+
+var include = CssHelper$Ress.Make({
+      declarationBlock: DeclarationBlock.make
+    });
+
+var styles = Statements.make;
 
 var Background = include.Background;
 
@@ -676,8 +774,10 @@ var paddingBottomFn = include.paddingBottomFn;
 
 var paddingLeftFn = include.paddingLeftFn;
 
-var important = CssJssImportant$Ress.Helper.important;
-
+exports.Syntax = Syntax;
+exports.Important = Important;
+exports.DeclarationBlock = DeclarationBlock;
+exports.Statements = Statements;
 exports.styles = styles;
 exports.Background = Background;
 exports.BackgroundAttachment = BackgroundAttachment;
@@ -1012,4 +1112,4 @@ exports.paddingRightFn = paddingRightFn;
 exports.paddingBottomFn = paddingBottomFn;
 exports.paddingLeftFn = paddingLeftFn;
 exports.important = important;
-/* include Not a pure module */
+/* DeclarationBlock Not a pure module */
