@@ -1034,7 +1034,7 @@ module Data = {
     };
   };
 
-  let genericFontFamilyName = v => {
+  let genericFont = v => {
     switch v {
     | #serif => "serif"
     | #sansSerif => "sans-serif"
@@ -1054,7 +1054,7 @@ module Data = {
 
   let fontFamily = v => {
     switch v {
-    | #...genericFontFamilyName as g => genericFontFamilyName(g)
+    | #...genericFont as g => genericFont(g)
     | #Font(n) => `"${n}"`
     };
   };

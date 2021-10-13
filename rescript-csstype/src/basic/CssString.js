@@ -1533,7 +1533,7 @@ function fontWeight_global(v) {
   }
 }
 
-function genericFontFamilyName(v) {
+function genericFont(v) {
   if (v === "math") {
     return "math";
   } else if (v === "cursive") {
@@ -1567,7 +1567,7 @@ function fontFamily(v) {
   if (typeof v === "object") {
     return "\"" + v.VAL + "\"";
   } else {
-    return genericFontFamilyName(v);
+    return genericFont(v);
   }
 }
 
@@ -1940,7 +1940,7 @@ var Data = {
   cursorImage: cursorImage,
   fontWeight: fontWeight,
   fontWeight_global: fontWeight_global,
-  genericFontFamilyName: genericFontFamilyName,
+  genericFont: genericFont,
   fontFamily: fontFamily,
   fontFamily_global: fontFamily_global
 };

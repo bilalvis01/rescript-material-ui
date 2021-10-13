@@ -155,7 +155,7 @@ module Data: {
   /*
   Font Family
   */
-  let genericFontFamilyName: genericFontFamilyName => string;
+  let genericFont: genericFont => string;
   let fontFamily: fontFamily => string;
   let fontFamily_global: fontFamily_global => string;
 }

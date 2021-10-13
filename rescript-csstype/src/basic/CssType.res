@@ -1821,7 +1821,7 @@ module Data = {
     | global
   ];
 
-  type genericFontFamilyName = [
+  type genericFont = [
     | #serif
     | #sansSerif
     | #monospace
@@ -1843,7 +1843,7 @@ module Data = {
 
   type fontFamily = [
     | font
-    | genericFontFamilyName
+    | genericFont
   ];
 
   type fontFamily_global = [
