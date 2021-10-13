@@ -24,7 +24,6 @@ type rec boxDescriptorBlock =
 
 type declaration = (string, boxPropertyValue);
 type declarationFn<'data> = (string, boxPropertyValueFn<'data>);
-type rule<'data> = (string, declarationBlock<'data>);
 type regularAtRule = (string, string);
 type nestedAtRule = (string, boxDescriptorBlock);
 type styleDeclaration<'data> = (string, value<'data>);
