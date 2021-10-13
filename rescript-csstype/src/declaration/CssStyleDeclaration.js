@@ -3,7 +3,7 @@
 
 var CssRule$Ress = require("../statement/CssRule.js");
 var CssDeclaration$Ress = require("./CssDeclaration.js");
-var CssPseudoClass$Ress = require("../rule/CssPseudoClass.js");
+var CssPseudoClass$Ress = require("../pseudo/CssPseudoClass.js");
 var CssNestedAtRule$Ress = require("../at_rule/CssNestedAtRule.js");
 var CssDeclarationFn$Ress = require("./CssDeclarationFn.js");
 
