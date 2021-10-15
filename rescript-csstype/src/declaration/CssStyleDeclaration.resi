@@ -1,1 +1,0 @@
-let make: CssType.Syntax.styleDeclaration<'data> => CssType.styleDeclaration<'data>;
