@@ -26,10 +26,6 @@
   "suffix": ".js",
   "bs-dependencies": [
     "@rescript/react",
-    "resstype",
-    "@bilalvis01/rescript-jest"
-  ],
-  "pinned-dependencies": [
-    "@bilalvis01/rescript-jest"
+    "resstype"
   ]
 }
