@@ -20,13 +20,13 @@ describe("default typography", (.) => {
     expect(typography->Typography.fontSize)
     ->toBe(14.);
     expect(typography->Typography.fontWeightLight)
-    ->toBe(Css.FontWeight.number(300.));
+    ->toBe(Css.FontWeight.integer(300));
     expect(typography->Typography.fontWeightRegular)
-    ->toBe(Css.FontWeight.number(400.));
+    ->toBe(Css.FontWeight.integer(400));
     expect(typography->Typography.fontWeightMedium)
-    ->toBe(Css.FontWeight.number(500.));
+    ->toBe(Css.FontWeight.integer(500));
     expect(typography->Typography.fontWeightBold)
-    ->toBe(Css.FontWeight.number(700.));
+    ->toBe(Css.FontWeight.integer(700));
   });
 
   test("h1", (.) => {
