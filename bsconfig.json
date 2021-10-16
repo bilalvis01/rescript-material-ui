@@ -1,6 +1,6 @@
 {
   "name": "@bilalvis01/rescript-material-ui",
-  "namespace": "materialui",
+  "namespace": "mui",
   "reason": {
     "react-jsx": 3
   },
@@ -11,10 +11,12 @@
     },
     {
       "dir": "__tests__",
+      "type": "dev",
       "subdirs": true
     },
     {
-      "dir": "bindings"
+      "dir": "bindings",
+      "type": "dev"
     }
   ],
   "package-specs": [
