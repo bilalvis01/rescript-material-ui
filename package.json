@@ -26,9 +26,6 @@
     "url": "git+https://github.com/bilalvis01/rescript-material-ui.git"
   },
   "homepage": "https://github.com/bilalvis01/rescript-material-ui/#readme",
-  "peerDependencies": {
-    "@material-ui/core": "^4.5.0"
-  },
   "devDependencies": {
     "@rescript/react": "^0.10.3",
     "jest": "^24.9.0",
