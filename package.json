@@ -28,6 +28,7 @@
   "homepage": "https://github.com/bilalvis01/rescript-material-ui/#readme",
   "devDependencies": {
     "@rescript/react": "^0.10.3",
+    "gulp": "^4.0.2",
     "jest": "^24.9.0",
     "rescript": "^9.1.3"
   },
