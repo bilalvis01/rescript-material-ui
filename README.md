@@ -12,11 +12,9 @@ This package is still under active development thus unstable api, breaking chang
 Here is a quick examples to get you started, it's all you need:
 
 ```
-/* App.re */
+/* App.res */
 @react.component
 let make = () => {
-  open MaterialuiPropsTypes;
-
   <Mui.Box
     sx=Css.sx([
       Css.background(Css.rgb(200, 200, 200)),
@@ -26,12 +24,6 @@ let make = () => {
     {React.string("Material UI 5")}
   </Mui.Box>
 }
-```
-
-in another file:
-
-```
-ReactDOMRe.renderToElementWithId(<App />, "root");
 ```
 
 ## Examples
